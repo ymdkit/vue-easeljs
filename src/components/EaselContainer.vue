@@ -10,9 +10,10 @@ import EaselDisplayObject from '../mixins/EaselDisplayObject.js';
 import EaselParent from '../mixins/EaselParent.js';
 import EaselCache from '../mixins/EaselCache.js';
 import EaselFilter from '../mixins/EaselFilter.js';
+import EaselAlign from '../mixins/EaselAlign.js';
 
 export default {
-    mixins: [EaselDisplayObject, EaselParent, EaselCache, EaselFilter],
+    mixins: [EaselDisplayObject, EaselParent, EaselCache, EaselFilter, EaselAlign],
     updatesEaselCache: ['children', 'scale'],
     mounted() {
         this.component = new easeljs.Container();
