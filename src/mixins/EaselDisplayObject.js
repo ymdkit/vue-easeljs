@@ -19,6 +19,8 @@ export default {
     props: {
         x: {},
         y: {},
+        regX: {},
+        regY: {},
         flip: {},
         rotation: {},
         scale: {},
@@ -63,6 +65,16 @@ export default {
         this.$watch('y', () => {
             if (this.component) {
                 this.component.y = this.y || 0;
+            }
+        });
+        this.$watch('regX', () => {
+            if (this.component) {
+                this.component.regX = this.regX || 0;
+            }
+        });
+        this.$watch('regY', () => {
+            if (this.component) {
+                this.component.regY = this.regY || 0;
             }
         });
         this.$watch('flip', () => {
