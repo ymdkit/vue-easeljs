@@ -19,6 +19,9 @@ export default {
         this.component = new easeljs.Container();
     },
     methods: {
+        getAlignDimensions() {
+            return this.getCacheBounds();
+        },
         getCacheBounds() {
             return Promise.all(
                     this.children

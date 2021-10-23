@@ -22185,6 +22185,9 @@ module.exports = intersection;
         this.component = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Container();
     },
     methods: {
+        getAlignDimensions: function getAlignDimensions() {
+            return this.getCacheBounds();
+        },
         getCacheBounds: function getCacheBounds() {
             var this$1 = this;
 
