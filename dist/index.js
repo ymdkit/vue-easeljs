@@ -1,4 +1,87 @@
-!function(t,e){for(var i in e)t[i]=e[i]}(exports,function(t){function e(n){if(i[n])return i[n].exports;var r=i[n]={i:n,l:!1,exports:{}};return t[n].call(r.exports,r,r.exports,e),r.l=!0,r.exports}var i={};return e.m=t,e.c=i,e.i=function(t){return t},e.d=function(t,e,i){Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:i})},e.n=function(t){var i=t&&t.__esModule?function(){return t["default"]}:function(){return t};return e.d(i,"a",i),i},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="",e(e.s=38)}([function(t,e,i){"use strict";var n=this.createjs=this.createjs||{};e.a=n,/*!
+(function(e, a) { for(var i in a) e[i] = a[i]; }(exports, /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmory imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmory exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		Object.defineProperty(exports, name, {
+/******/ 			configurable: false,
+/******/ 			enumerable: true,
+/******/ 			get: getter
+/******/ 		});
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 38);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * This header gets attached to the code from the easeljs repo to create a
+ * full, importable module.
+ */
+
+var createjs = this.createjs = this.createjs || {};
+
+/* harmony default export */ exports["a"] = createjs;
+
+// If any content follows this line, it comes from the easeljs repo.
+// ----------------------------------------------------------------------------
+
+/*!
 * EaselJS
 * Visit http://createjs.com/ for documentation, updates and examples.
 *
@@ -25,9 +108,22473 @@
 * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 * OTHER DEALINGS IN THE SOFTWARE.
 */
-this.createjs=this.createjs||{},n.extend=function(t,e){function i(){this.constructor=t}return i.prototype=e.prototype,t.prototype=new i},this.createjs=this.createjs||{},n.promote=function(t,e){var i=t.prototype,n=Object.getPrototypeOf&&Object.getPrototypeOf(i)||i.__proto__;if(n){i[(e+="_")+"constructor"]=n.constructor;for(var r in n)i.hasOwnProperty(r)&&"function"==typeof n[r]&&(i[e+r]=n[r])}return t},this.createjs=this.createjs||{},n.indexOf=function(t,e){for(var i=0,n=t.length;i<n;i++)if(e===t[i])return i;return-1},this.createjs=this.createjs||{},function(){function t(){throw"UID cannot be instantiated"}t._nextID=0,t.get=function(){return t._nextID++},n.UID=t}(),this.createjs=this.createjs||{},n.deprecate=function(t,e){return function(){var i="Deprecated property or method '"+e+"'. See docs for info.";return console&&(console.warn?console.warn(i):console.log(i)),t&&t.apply(this,arguments)}},this.createjs=this.createjs||{},function(){function t(t,e,i){this.type=t,this.target=null,this.currentTarget=null,this.eventPhase=0,this.bubbles=!!e,this.cancelable=!!i,this.timeStamp=(new Date).getTime(),this.defaultPrevented=!1,this.propagationStopped=!1,this.immediatePropagationStopped=!1,this.removed=!1}var e=t.prototype;e.preventDefault=function(){this.defaultPrevented=this.cancelable&&!0},e.stopPropagation=function(){this.propagationStopped=!0},e.stopImmediatePropagation=function(){this.immediatePropagationStopped=this.propagationStopped=!0},e.remove=function(){this.removed=!0},e.clone=function(){return new t(this.type,this.bubbles,this.cancelable)},e.set=function(t){var e=this;for(var i in t)e[i]=t[i];return this},e.toString=function(){return"[Event (type="+this.type+")]"},n.Event=t}(),this.createjs=this.createjs||{},function(){function t(){this._listeners=null,this._captureListeners=null}var e=t.prototype;t.initialize=function(t){t.addEventListener=e.addEventListener,t.on=e.on,t.removeEventListener=t.off=e.removeEventListener,t.removeAllEventListeners=e.removeAllEventListeners,t.hasEventListener=e.hasEventListener,t.dispatchEvent=e.dispatchEvent,t._dispatchEvent=e._dispatchEvent,t.willTrigger=e.willTrigger},e.addEventListener=function(t,e,i){var n;n=i?this._captureListeners=this._captureListeners||{}:this._listeners=this._listeners||{};var r=n[t];return r&&this.removeEventListener(t,e,i),r=n[t],r?r.push(e):n[t]=[e],e},e.on=function(t,e,i,n,r,s){return e.handleEvent&&(i=i||e,e=e.handleEvent),i=i||this,this.addEventListener(t,function(t){e.call(i,t,r),n&&t.remove()},s)},e.removeEventListener=function(t,e,i){var n=i?this._captureListeners:this._listeners;if(n){var r=n[t];if(r)for(var s=0,a=r.length;s<a;s++)if(r[s]==e){1==a?delete n[t]:r.splice(s,1);break}}},e.off=e.removeEventListener,e.removeAllEventListeners=function(t){t?(this._listeners&&delete this._listeners[t],this._captureListeners&&delete this._captureListeners[t]):this._listeners=this._captureListeners=null},e.dispatchEvent=function(t,e,i){if("string"==typeof t){var r=this._listeners;if(!(e||r&&r[t]))return!0;t=new n.Event(t,e,i)}else t.target&&t.clone&&(t=t.clone());try{t.target=this}catch(s){}if(t.bubbles&&this.parent){for(var a=this,o=[a];a.parent;)o.push(a=a.parent);var h,c=o.length;for(h=c-1;h>=0&&!t.propagationStopped;h--)o[h]._dispatchEvent(t,1+(0==h));for(h=1;h<c&&!t.propagationStopped;h++)o[h]._dispatchEvent(t,3)}else this._dispatchEvent(t,2);return!t.defaultPrevented},e.hasEventListener=function(t){var e=this._listeners,i=this._captureListeners;return!!(e&&e[t]||i&&i[t])},e.willTrigger=function(t){for(var e=this;e;){if(e.hasEventListener(t))return!0;e=e.parent}return!1},e.toString=function(){return"[EventDispatcher]"},e._dispatchEvent=function(t,e){var i,n,r=this,s=e<=2?this._captureListeners:this._listeners;if(t&&s&&(n=s[t.type])&&(i=n.length)){try{t.currentTarget=this}catch(a){}try{t.eventPhase=0|e}catch(a){}t.removed=!1,n=n.slice();for(var o=0;o<i&&!t.immediatePropagationStopped;o++){var h=n[o];h.handleEvent?h.handleEvent(t):h(t),t.removed&&(r.off(t.type,h,1==e),t.removed=!1)}}2===e&&this._dispatchEvent(t,2.1)},n.EventDispatcher=t}(),this.createjs=this.createjs||{},function(){function t(){throw"Ticker cannot be instantiated."}t.RAF_SYNCHED="synched",t.RAF="raf",t.TIMEOUT="timeout",t.timingMode=null,t.maxDelta=0,t.paused=!1,t.removeEventListener=null,t.removeAllEventListeners=null,t.dispatchEvent=null,t.hasEventListener=null,t._listeners=null,n.EventDispatcher.initialize(t),t._addEventListener=t.addEventListener,t.addEventListener=function(){return!t._inited&&t.init(),t._addEventListener.apply(t,arguments)},t._inited=!1,t._startTime=0,t._pausedTime=0,t._ticks=0,t._pausedTicks=0,t._interval=50,t._lastTime=0,t._times=null,t._tickTimes=null,t._timerId=null,t._raf=!0,t._setInterval=function(e){t._interval=e,t._inited&&t._setupTick()},t.setInterval=n.deprecate(t._setInterval,"Ticker.setInterval"),t._getInterval=function(){return t._interval},t.getInterval=n.deprecate(t._getInterval,"Ticker.getInterval"),t._setFPS=function(e){t._setInterval(1e3/e)},t.setFPS=n.deprecate(t._setFPS,"Ticker.setFPS"),t._getFPS=function(){return 1e3/t._interval},t.getFPS=n.deprecate(t._getFPS,"Ticker.getFPS");try{Object.defineProperties(t,{interval:{get:t._getInterval,set:t._setInterval},framerate:{get:t._getFPS,set:t._setFPS}})}catch(e){console.log(e)}t.init=function(){t._inited||(t._inited=!0,t._times=[],t._tickTimes=[],t._startTime=t._getTime(),t._times.push(t._lastTime=0),t.interval=t._interval)},t.reset=function(){if(t._raf){var e=window.cancelAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame||window.oCancelAnimationFrame||window.msCancelAnimationFrame;e&&e(t._timerId)}else clearTimeout(t._timerId);t.removeAllEventListeners("tick"),t._timerId=t._times=t._tickTimes=null,t._startTime=t._lastTime=t._ticks=t._pausedTime=0,t._inited=!1},t.getMeasuredTickTime=function(e){var i=0,n=t._tickTimes;if(!n||n.length<1)return-1;e=Math.min(n.length,e||0|t._getFPS());for(var r=0;r<e;r++)i+=n[r];return i/e},t.getMeasuredFPS=function(e){var i=t._times;return!i||i.length<2?-1:(e=Math.min(i.length-1,e||0|t._getFPS()),1e3/((i[0]-i[e])/e))},t.getTime=function(e){return t._startTime?t._getTime()-(e?t._pausedTime:0):-1},t.getEventTime=function(e){return t._startTime?(t._lastTime||t._startTime)-(e?t._pausedTime:0):-1},t.getTicks=function(e){return t._ticks-(e?t._pausedTicks:0)},t._handleSynch=function(){t._timerId=null,t._setupTick(),t._getTime()-t._lastTime>=.97*(t._interval-1)&&t._tick()},t._handleRAF=function(){t._timerId=null,t._setupTick(),t._tick()},t._handleTimeout=function(){t._timerId=null,t._setupTick(),t._tick()},t._setupTick=function(){if(null==t._timerId){var e=t.timingMode;if(e==t.RAF_SYNCHED||e==t.RAF){var i=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame;if(i)return t._timerId=i(e==t.RAF?t._handleRAF:t._handleSynch),void(t._raf=!0)}t._raf=!1,t._timerId=setTimeout(t._handleTimeout,t._interval)}},t._tick=function(){var e=t.paused,i=t._getTime(),r=i-t._lastTime;if(t._lastTime=i,t._ticks++,e&&(t._pausedTicks++,t._pausedTime+=r),t.hasEventListener("tick")){var s=new n.Event("tick"),a=t.maxDelta;s.delta=a&&r>a?a:r,s.paused=e,s.time=i,s.runTime=i-t._pausedTime,t.dispatchEvent(s)}for(t._tickTimes.unshift(t._getTime()-i);t._tickTimes.length>100;)t._tickTimes.pop();for(t._times.unshift(i);t._times.length>100;)t._times.pop()};var i=window,r=i.performance.now||i.performance.mozNow||i.performance.msNow||i.performance.oNow||i.performance.webkitNow;t._getTime=function(){return(r&&r.call(i.performance)||(new Date).getTime())-t._startTime},n.Ticker=t}(),this.createjs=this.createjs||{},function(){function t(t){this.readyState=t.readyState,this._video=t,this._canvas=null,this._lastTime=-1,this.readyState<2&&t.addEventListener("canplaythrough",this._videoReady.bind(this))}var e=t.prototype;e.getImage=function(){if(!(this.readyState<2)){var t=this._canvas,e=this._video;if(t||(t=this._canvas=n.createCanvas?n.createCanvas():document.createElement("canvas"),t.width=e.videoWidth,t.height=e.videoHeight),e.readyState>=2&&e.currentTime!==this._lastTime){var i=t.getContext("2d");i.clearRect(0,0,t.width,t.height),i.drawImage(e,0,0,t.width,t.height),this._lastTime=e.currentTime}return t}},e._videoReady=function(){this.readyState=2},n.VideoBuffer=t}(),this.createjs=this.createjs||{},function(){function t(t,e,i,n,r,s,a,o,h,c,u){this.Event_constructor(t,e,i),this.stageX=n,this.stageY=r,this.rawX=null==h?n:h,this.rawY=null==c?r:c,this.nativeEvent=s,this.pointerID=a,this.primary=!!o,this.relatedTarget=u}var e=n.extend(t,n.Event);e._get_localX=function(){return this.currentTarget.globalToLocal(this.rawX,this.rawY).x},e._get_localY=function(){return this.currentTarget.globalToLocal(this.rawX,this.rawY).y},e._get_isTouch=function(){return this.pointerID!==-1};try{Object.defineProperties(e,{localX:{get:e._get_localX},localY:{get:e._get_localY},isTouch:{get:e._get_isTouch}})}catch(i){}e.clone=function(){return new t(this.type,this.bubbles,this.cancelable,this.stageX,this.stageY,this.nativeEvent,this.pointerID,this.primary,this.rawX,this.rawY)},e.toString=function(){return"[MouseEvent (type="+this.type+" stageX="+this.stageX+" stageY="+this.stageY+")]"},n.MouseEvent=n.promote(t,"Event")}(),this.createjs=this.createjs||{},function(){function t(t,e,i,n,r,s){this.setValues(t,e,i,n,r,s)}var e=t.prototype;t.DEG_TO_RAD=Math.PI/180,t.identity=null,e.setValues=function(t,e,i,n,r,s){return this.a=null==t?1:t,this.b=e||0,this.c=i||0,this.d=null==n?1:n,this.tx=r||0,this.ty=s||0,this},e.append=function(t,e,i,n,r,s){var a=this.a,o=this.b,h=this.c,c=this.d;return 1==t&&0==e&&0==i&&1==n||(this.a=a*t+h*e,this.b=o*t+c*e,this.c=a*i+h*n,this.d=o*i+c*n),this.tx=a*r+h*s+this.tx,this.ty=o*r+c*s+this.ty,this},e.prepend=function(t,e,i,n,r,s){var a=this.a,o=this.c,h=this.tx;return this.a=t*a+i*this.b,this.b=e*a+n*this.b,this.c=t*o+i*this.d,this.d=e*o+n*this.d,this.tx=t*h+i*this.ty+r,this.ty=e*h+n*this.ty+s,this},e.appendMatrix=function(t){return this.append(t.a,t.b,t.c,t.d,t.tx,t.ty)},e.prependMatrix=function(t){return this.prepend(t.a,t.b,t.c,t.d,t.tx,t.ty)},e.appendTransform=function(e,i,n,r,s,a,o,h,c){if(s%360)var u=s*t.DEG_TO_RAD,l=Math.cos(u),d=Math.sin(u);else l=1,d=0;return a||o?(a*=t.DEG_TO_RAD,o*=t.DEG_TO_RAD,this.append(Math.cos(o),Math.sin(o),-Math.sin(a),Math.cos(a),e,i),this.append(l*n,d*n,-d*r,l*r,0,0)):this.append(l*n,d*n,-d*r,l*r,e,i),(h||c)&&(this.tx-=h*this.a+c*this.c,this.ty-=h*this.b+c*this.d),this},e.prependTransform=function(e,i,n,r,s,a,o,h,c){if(s%360)var u=s*t.DEG_TO_RAD,l=Math.cos(u),d=Math.sin(u);else l=1,d=0;return(h||c)&&(this.tx-=h,this.ty-=c),a||o?(a*=t.DEG_TO_RAD,o*=t.DEG_TO_RAD,this.prepend(l*n,d*n,-d*r,l*r,0,0),this.prepend(Math.cos(o),Math.sin(o),-Math.sin(a),Math.cos(a),e,i)):this.prepend(l*n,d*n,-d*r,l*r,e,i),this},e.rotate=function(e){e*=t.DEG_TO_RAD;var i=Math.cos(e),n=Math.sin(e),r=this.a,s=this.b;return this.a=r*i+this.c*n,this.b=s*i+this.d*n,this.c=-r*n+this.c*i,this.d=-s*n+this.d*i,this},e.skew=function(e,i){return e*=t.DEG_TO_RAD,i*=t.DEG_TO_RAD,this.append(Math.cos(i),Math.sin(i),-Math.sin(e),Math.cos(e),0,0),this},e.scale=function(t,e){return this.a*=t,this.b*=t,this.c*=e,this.d*=e,this},e.translate=function(t,e){return this.tx+=this.a*t+this.c*e,this.ty+=this.b*t+this.d*e,this},e.identity=function(){return this.a=this.d=1,this.b=this.c=this.tx=this.ty=0,this},e.invert=function(){var t=this.a,e=this.b,i=this.c,n=this.d,r=this.tx,s=t*n-e*i;return this.a=n/s,this.b=-e/s,this.c=-i/s,this.d=t/s,this.tx=(i*this.ty-n*r)/s,this.ty=-(t*this.ty-e*r)/s,this},e.isIdentity=function(){return 0===this.tx&&0===this.ty&&1===this.a&&0===this.b&&0===this.c&&1===this.d},e.equals=function(t){return this.tx===t.tx&&this.ty===t.ty&&this.a===t.a&&this.b===t.b&&this.c===t.c&&this.d===t.d},e.transformPoint=function(t,e,i){return i=i||{},i.x=t*this.a+e*this.c+this.tx,i.y=t*this.b+e*this.d+this.ty,i},e.decompose=function(e){null==e&&(e={}),e.x=this.tx,e.y=this.ty,e.scaleX=Math.sqrt(this.a*this.a+this.b*this.b),e.scaleY=Math.sqrt(this.c*this.c+this.d*this.d);var i=Math.atan2(-this.c,this.d),n=Math.atan2(this.b,this.a),r=Math.abs(1-i/n);return r<1e-5?(e.rotation=n/t.DEG_TO_RAD,this.a<0&&this.d>=0&&(e.rotation+=e.rotation<=0?180:-180),e.skewX=e.skewY=0):(e.skewX=i/t.DEG_TO_RAD,e.skewY=n/t.DEG_TO_RAD),e},e.copy=function(t){return this.setValues(t.a,t.b,t.c,t.d,t.tx,t.ty)},e.clone=function(){return new t(this.a,this.b,this.c,this.d,this.tx,this.ty)},e.toString=function(){return"[Matrix2D (a="+this.a+" b="+this.b+" c="+this.c+" d="+this.d+" tx="+this.tx+" ty="+this.ty+")]"},t.identity=new t,n.Matrix2D=t}(),this.createjs=this.createjs||{},function(){function t(t,e,i,n,r){this.setValues(t,e,i,n,r)}var e=t.prototype;e.setValues=function(t,e,i,r,s){return this.visible=null==t||!!t,this.alpha=null==e?1:e,this.shadow=i,this.compositeOperation=r,this.matrix=s||this.matrix&&this.matrix.identity()||new n.Matrix2D,this},e.append=function(t,e,i,n,r){return this.alpha*=e,this.shadow=i||this.shadow,this.compositeOperation=n||this.compositeOperation,this.visible=this.visible&&t,r&&this.matrix.appendMatrix(r),this},e.prepend=function(t,e,i,n,r){return this.alpha*=e,this.shadow=this.shadow||i,this.compositeOperation=this.compositeOperation||n,this.visible=this.visible&&t,r&&this.matrix.prependMatrix(r),this},e.identity=function(){return this.visible=!0,this.alpha=1,this.shadow=this.compositeOperation=null,this.matrix.identity(),this},e.clone=function(){return new t(this.alpha,this.shadow,this.compositeOperation,this.visible,this.matrix.clone())},n.DisplayProps=t}(),this.createjs=this.createjs||{},function(){function t(t,e){this.setValues(t,e)}var e=t.prototype;e.setValues=function(t,e){return this.x=t||0,this.y=e||0,this},e.copy=function(t){return this.x=t.x,this.y=t.y,this},e.clone=function(){return new t(this.x,this.y)},e.toString=function(){return"[Point (x="+this.x+" y="+this.y+")]"},n.Point=t}(),this.createjs=this.createjs||{},function(){function t(t,e,i,n){this.setValues(t,e,i,n)}var e=t.prototype;e.setValues=function(t,e,i,n){return this.x=t||0,this.y=e||0,this.width=i||0,this.height=n||0,this},e.extend=function(t,e,i,n){return i=i||0,n=n||0,t+i>this.x+this.width&&(this.width=t+i-this.x),e+n>this.y+this.height&&(this.height=e+n-this.y),t<this.x&&(this.width+=this.x-t,this.x=t),e<this.y&&(this.height+=this.y-e,this.y=e),this},e.pad=function(t,e,i,n){return this.x-=e,this.y-=t,this.width+=e+n,this.height+=t+i,this},e.copy=function(t){return this.setValues(t.x,t.y,t.width,t.height)},e.contains=function(t,e,i,n){return i=i||0,n=n||0,t>=this.x&&t+i<=this.x+this.width&&e>=this.y&&e+n<=this.y+this.height},e.union=function(t){return this.clone().extend(t.x,t.y,t.width,t.height)},e.intersection=function(e){var i=e.x,n=e.y,r=i+e.width,s=n+e.height;return this.x>i&&(i=this.x),this.y>n&&(n=this.y),this.x+this.width<r&&(r=this.x+this.width),this.y+this.height<s&&(s=this.y+this.height),r<=i||s<=n?null:new t(i,n,r-i,s-n)},e.intersects=function(t){return t.x<=this.x+this.width&&this.x<=t.x+t.width&&t.y<=this.y+this.height&&this.y<=t.y+t.height},e.isEmpty=function(){return this.width<=0||this.height<=0},e.clone=function(){return new t(this.x,this.y,this.width,this.height)},e.toString=function(){return"[Rectangle (x="+this.x+" y="+this.y+" width="+this.width+" height="+this.height+")]"},n.Rectangle=t}(),this.createjs=this.createjs||{},function(){function t(t,e,i,n,r,s,a){t.addEventListener&&(this.target=t,this.overLabel=null==i?"over":i,this.outLabel=null==e?"out":e,this.downLabel=null==n?"down":n,this.play=r,this._isPressed=!1,this._isOver=!1,this._enabled=!1,t.mouseChildren=!1,this.enabled=!0,this.handleEvent({}),s&&(a&&(s.actionsEnabled=!1,s.gotoAndStop&&s.gotoAndStop(a)),t.hitArea=s))}var e=t.prototype;e._setEnabled=function(t){if(t!=this._enabled){var e=this.target;this._enabled=t,t?(e.cursor="pointer",e.addEventListener("rollover",this),e.addEventListener("rollout",this),e.addEventListener("mousedown",this),e.addEventListener("pressup",this),e._reset&&(e.__reset=e._reset,e._reset=this._reset)):(e.cursor=null,e.removeEventListener("rollover",this),e.removeEventListener("rollout",this),e.removeEventListener("mousedown",this),e.removeEventListener("pressup",this),e.__reset&&(e._reset=e.__reset,delete e.__reset))}},e.setEnabled=n.deprecate(e._setEnabled,"ButtonHelper.setEnabled"),e._getEnabled=function(){return this._enabled},e.getEnabled=n.deprecate(e._getEnabled,"ButtonHelper.getEnabled");try{Object.defineProperties(e,{enabled:{get:e._getEnabled,set:e._setEnabled}})}catch(i){}e.toString=function(){return"[ButtonHelper]"},e.handleEvent=function(t){var e,i=this.target,n=t.type;"mousedown"==n?(this._isPressed=!0,e=this.downLabel):"pressup"==n?(this._isPressed=!1,e=this._isOver?this.overLabel:this.outLabel):"rollover"==n?(this._isOver=!0,e=this._isPressed?this.downLabel:this.overLabel):(this._isOver=!1,e=this._isPressed?this.overLabel:this.outLabel),this.play?i.gotoAndPlay&&i.gotoAndPlay(e):i.gotoAndStop&&i.gotoAndStop(e)},e._reset=function(){var t=this.paused;this.__reset(),this.paused=t},n.ButtonHelper=t}(),this.createjs=this.createjs||{},function(){function t(t,e,i,n){this.color=t||"black",this.offsetX=e||0,this.offsetY=i||0,this.blur=n||0}var e=t.prototype;t.identity=new t("transparent",0,0,0),e.toString=function(){return"[Shadow]"},e.clone=function(){return new t(this.color,this.offsetX,this.offsetY,this.blur)},n.Shadow=t}(),this.createjs=this.createjs||{},function(){function t(t){this.EventDispatcher_constructor(),this.complete=!0,this.framerate=0,this._animations=null,this._frames=null,this._images=null,this._data=null,this._loadCount=0,this._frameHeight=0,this._frameWidth=0,this._numFrames=0,this._regX=0,this._regY=0,this._spacing=0,this._margin=0,this._parseData(t)}var e=n.extend(t,n.EventDispatcher);e._getAnimations=function(){return this._animations.slice()},e.getAnimations=n.deprecate(e._getAnimations,"SpriteSheet.getAnimations");try{Object.defineProperties(e,{animations:{get:e._getAnimations}})}catch(i){}e.getNumFrames=function(t){if(null==t)return this._frames?this._frames.length:this._numFrames||0;var e=this._data[t];return null==e?0:e.frames.length},e.getAnimation=function(t){return this._data[t]},e.getFrame=function(t){var e;return this._frames&&(e=this._frames[t])?e:null},e.getFrameBounds=function(t,e){var i=this.getFrame(t);return i?(e||new n.Rectangle).setValues(-i.regX,-i.regY,i.rect.width,i.rect.height):null},e.toString=function(){return"[SpriteSheet]"},e.clone=function(){throw"SpriteSheet cannot be cloned."},e._parseData=function(t){var e,i,r,s,a=this;if(null!=t){if(this.framerate=t.framerate||0,t.images&&(i=t.images.length)>0)for(s=this._images=[],e=0;e<i;e++){var o=t.images[e];if("string"==typeof o){var h=o;o=document.createElement("img"),o.src=h}s.push(o),o.getContext||o.naturalWidth||(a._loadCount++,a.complete=!1,function(t,e){o.onload=function(){t._handleImageLoad(e)}}(a,h),function(t,e){o.onerror=function(){t._handleImageError(e)}}(a,h))}if(null==t.frames);else if(Array.isArray(t.frames))for(this._frames=[],s=t.frames,e=0,i=s.length;e<i;e++){var c=s[e];a._frames.push({image:a._images[c[4]?c[4]:0],rect:new n.Rectangle(c[0],c[1],c[2],c[3]),regX:c[5]||0,regY:c[6]||0})}else r=t.frames,this._frameWidth=r.width,this._frameHeight=r.height,this._regX=r.regX||0,this._regY=r.regY||0,this._spacing=r.spacing||0,this._margin=r.margin||0,this._numFrames=r.count,0==this._loadCount&&this._calculateFrames();if(this._animations=[],null!=(r=t.animations)){this._data={};var u;for(u in r){var l={name:u},d=r[u];if("number"==typeof d)s=l.frames=[d];else if(Array.isArray(d))if(1==d.length)l.frames=[d[0]];else for(l.speed=d[3],l.next=d[2],s=l.frames=[],e=d[0];e<=d[1];e++)s.push(e);else{l.speed=d.speed,l.next=d.next;var f=d.frames;s=l.frames="number"==typeof f?[f]:f.slice(0)}l.next!==!0&&void 0!==l.next||(l.next=u),(l.next===!1||s.length<2&&l.next==u)&&(l.next=null),l.speed||(l.speed=1),a._animations.push(u),a._data[u]=l}}}},e._handleImageLoad=function(t){0==--this._loadCount&&(this._calculateFrames(),this.complete=!0,this.dispatchEvent("complete"))},e._handleImageError=function(t){var e=new n.Event("error");e.src=t,this.dispatchEvent(e),0==--this._loadCount&&this.dispatchEvent("complete")},e._calculateFrames=function(){var t=this;if(!this._frames&&0!=this._frameWidth){this._frames=[];var e=this._numFrames||1e5,i=0,r=this._frameWidth,s=this._frameHeight,a=this._spacing,o=this._margin;t:for(var h=0,c=this._images;h<c.length;h++)for(var u=c[h],l=u.width||u.naturalWidth,d=u.height||u.naturalHeight,f=o;f<=d-o-s;){for(var p=o;p<=l-o-r;){if(i>=e)break t;i++,t._frames.push({image:u,rect:new n.Rectangle(p,f,r,s),regX:t._regX,regY:t._regY}),p+=r+a}f+=s+a}this._numFrames=i}},n.SpriteSheet=n.promote(t,"EventDispatcher")}(),this.createjs=this.createjs||{},function(){function t(){this.command=null,this._stroke=null,this._strokeStyle=null,this._oldStrokeStyle=null,this._strokeDash=null,this._oldStrokeDash=null,this._strokeIgnoreScale=!1,this._fill=null,this._instructions=[],this._commitIndex=0,this._activeInstructions=[],this._dirty=!1,this._storeIndex=0,this.clear()}var e=t.prototype,i=t;t.getRGB=function(t,e,i,n){return null!=t&&null==i&&(n=e,i=255&t,e=t>>8&255,t=t>>16&255),null==n?"rgb("+t+","+e+","+i+")":"rgba("+t+","+e+","+i+","+n+")"},t.getHSL=function(t,e,i,n){return null==n?"hsl("+t%360+","+e+"%,"+i+"%)":"hsla("+t%360+","+e+"%,"+i+"%,"+n+")"},t.BASE_64={A:0,B:1,C:2,D:3,E:4,F:5,G:6,H:7,I:8,J:9,K:10,L:11,M:12,N:13,O:14,P:15,Q:16,R:17,S:18,T:19,U:20,V:21,W:22,X:23,Y:24,Z:25,a:26,b:27,c:28,d:29,e:30,f:31,g:32,h:33,i:34,j:35,k:36,l:37,m:38,n:39,o:40,p:41,q:42,r:43,s:44,t:45,u:46,v:47,w:48,x:49,y:50,z:51,0:52,1:53,2:54,3:55,4:56,5:57,6:58,7:59,8:60,9:61,"+":62,"/":63},t.STROKE_CAPS_MAP=["butt","round","square"],t.STROKE_JOINTS_MAP=["miter","round","bevel"];var r=n.createCanvas?n.createCanvas():document.createElement("canvas");r.getContext&&(t._ctx=r.getContext("2d"),r.width=r.height=1),e._getInstructions=function(){return this._updateInstructions(),this._instructions},e.getInstructions=n.deprecate(e._getInstructions,"Graphics.getInstructions");try{Object.defineProperties(e,{instructions:{get:e._getInstructions}})}catch(s){}e.isEmpty=function(){return!(this._instructions.length||this._activeInstructions.length)},e.draw=function(t,e){this._updateInstructions();for(var i=this._instructions,n=this._storeIndex,r=i.length;n<r;n++)i[n].exec(t,e)},e.drawAsPath=function(t){this._updateInstructions();for(var e,i=this._instructions,n=this._storeIndex,r=i.length;n<r;n++)(e=i[n]).path!==!1&&e.exec(t)},e.moveTo=function(t,e){return this.append(new i.MoveTo(t,e),!0)},e.lineTo=function(t,e){return this.append(new i.LineTo(t,e))},e.arcTo=function(t,e,n,r,s){return this.append(new i.ArcTo(t,e,n,r,s))},e.arc=function(t,e,n,r,s,a){return this.append(new i.Arc(t,e,n,r,s,a))},e.quadraticCurveTo=function(t,e,n,r){return this.append(new i.QuadraticCurveTo(t,e,n,r))},e.bezierCurveTo=function(t,e,n,r,s,a){return this.append(new i.BezierCurveTo(t,e,n,r,s,a))},e.rect=function(t,e,n,r){return this.append(new i.Rect(t,e,n,r))},e.closePath=function(){return this._activeInstructions.length?this.append(new i.ClosePath):this},e.clear=function(){return this._instructions.length=this._activeInstructions.length=this._commitIndex=0,this._strokeStyle=this._oldStrokeStyle=this._stroke=this._fill=this._strokeDash=this._oldStrokeDash=null,this._dirty=this._strokeIgnoreScale=!1,this},e.beginFill=function(t){return this._setFill(t?new i.Fill(t):null)},e.beginLinearGradientFill=function(t,e,n,r,s,a){return this._setFill((new i.Fill).linearGradient(t,e,n,r,s,a))},e.beginRadialGradientFill=function(t,e,n,r,s,a,o,h){return this._setFill((new i.Fill).radialGradient(t,e,n,r,s,a,o,h))},e.beginBitmapFill=function(t,e,n){return this._setFill(new i.Fill(null,n).bitmap(t,e))},e.endFill=function(){return this.beginFill()},e.setStrokeStyle=function(t,e,n,r,s){return this._updateInstructions(!0),this._strokeStyle=this.command=new i.StrokeStyle(t,e,n,r,s),this._stroke&&(this._stroke.ignoreScale=s),this._strokeIgnoreScale=s,this},e.setStrokeDash=function(t,e){return this._updateInstructions(!0),this._strokeDash=this.command=new i.StrokeDash(t,e),this},e.beginStroke=function(t){return this._setStroke(t?new i.Stroke(t):null)},e.beginLinearGradientStroke=function(t,e,n,r,s,a){return this._setStroke((new i.Stroke).linearGradient(t,e,n,r,s,a))},e.beginRadialGradientStroke=function(t,e,n,r,s,a,o,h){return this._setStroke((new i.Stroke).radialGradient(t,e,n,r,s,a,o,h))},e.beginBitmapStroke=function(t,e){return this._setStroke((new i.Stroke).bitmap(t,e))},e.endStroke=function(){return this.beginStroke()},e.curveTo=e.quadraticCurveTo,e.drawRect=e.rect,e.drawRoundRect=function(t,e,i,n,r){return this.drawRoundRectComplex(t,e,i,n,r,r,r,r)},e.drawRoundRectComplex=function(t,e,n,r,s,a,o,h){return this.append(new i.RoundRect(t,e,n,r,s,a,o,h))},e.drawCircle=function(t,e,n){return this.append(new i.Circle(t,e,n))},e.drawEllipse=function(t,e,n,r){return this.append(new i.Ellipse(t,e,n,r))},e.drawPolyStar=function(t,e,n,r,s,a){return this.append(new i.PolyStar(t,e,n,r,s,a))},e.append=function(t,e){return this._activeInstructions.push(t),this.command=t,e||(this._dirty=!0),this},e.decodePath=function(e){for(var i=this,n=[this.moveTo,this.lineTo,this.quadraticCurveTo,this.bezierCurveTo,this.closePath],r=[2,2,4,6,0],s=0,a=e.length,o=[],h=0,c=0,u=t.BASE_64;s<a;){var l=e.charAt(s),d=u[l],f=d>>3,p=n[f];if(!p||3&d)throw"bad path data (@"+s+"): "+l;var _=r[f];f||(h=c=0),o.length=0,s++;for(var v=(d>>2&1)+2,m=0;m<_;m++){var g=u[e.charAt(s)],x=g>>5?-1:1;g=(31&g)<<6|u[e.charAt(s+1)],3==v&&(g=g<<6|u[e.charAt(s+2)]),g=x*g/10,m%2?h=g+=h:c=g+=c,o[m]=g,s+=v}p.apply(i,o)}return this},e.store=function(){return this._updateInstructions(!0),this._storeIndex=this._instructions.length,this},e.unstore=function(){return this._storeIndex=0,this},e.clone=function(){var e=new t;return e.command=this.command,e._stroke=this._stroke,e._strokeStyle=this._strokeStyle,e._strokeDash=this._strokeDash,e._strokeIgnoreScale=this._strokeIgnoreScale,e._fill=this._fill,e._instructions=this._instructions.slice(),e._commitIndex=this._commitIndex,e._activeInstructions=this._activeInstructions.slice(),e._dirty=this._dirty,e._storeIndex=this._storeIndex,e},e.toString=function(){return"[Graphics]"},e.mt=e.moveTo,e.lt=e.lineTo,e.at=e.arcTo,e.bt=e.bezierCurveTo,e.qt=e.quadraticCurveTo,e.a=e.arc,e.r=e.rect,e.cp=e.closePath,e.c=e.clear,e.f=e.beginFill,e.lf=e.beginLinearGradientFill,e.rf=e.beginRadialGradientFill,e.bf=e.beginBitmapFill,e.ef=e.endFill,e.ss=e.setStrokeStyle,e.sd=e.setStrokeDash,e.s=e.beginStroke,e.ls=e.beginLinearGradientStroke,e.rs=e.beginRadialGradientStroke,e.bs=e.beginBitmapStroke,e.es=e.endStroke,e.dr=e.drawRect,e.rr=e.drawRoundRect,e.rc=e.drawRoundRectComplex,e.dc=e.drawCircle,e.de=e.drawEllipse,e.dp=e.drawPolyStar,e.p=e.decodePath,e._updateInstructions=function(e){var i=this._instructions,n=this._activeInstructions,r=this._commitIndex;if(this._dirty&&n.length){i.length=r,i.push(t.beginCmd);var s=n.length,a=i.length;i.length=a+s;for(var o=0;o<s;o++)i[o+a]=n[o];this._fill&&i.push(this._fill),this._stroke&&(this._strokeDash!==this._oldStrokeDash&&i.push(this._strokeDash),this._strokeStyle!==this._oldStrokeStyle&&i.push(this._strokeStyle),e&&(this._oldStrokeStyle=this._strokeStyle,this._oldStrokeDash=this._strokeDash),i.push(this._stroke)),this._dirty=!1}e&&(n.length=0,this._commitIndex=i.length)},e._setFill=function(t){return this._updateInstructions(!0),this.command=this._fill=t,this},e._setStroke=function(t){return this._updateInstructions(!0),(this.command=this._stroke=t)&&(t.ignoreScale=this._strokeIgnoreScale),this},(i.LineTo=function(t,e){this.x=t,this.y=e}).prototype.exec=function(t){t.lineTo(this.x,this.y)},(i.MoveTo=function(t,e){this.x=t,this.y=e}).prototype.exec=function(t){t.moveTo(this.x,this.y)},(i.ArcTo=function(t,e,i,n,r){this.x1=t,this.y1=e,this.x2=i,this.y2=n,this.radius=r}).prototype.exec=function(t){t.arcTo(this.x1,this.y1,this.x2,this.y2,this.radius)},(i.Arc=function(t,e,i,n,r,s){this.x=t,this.y=e,this.radius=i,this.startAngle=n,this.endAngle=r,this.anticlockwise=!!s}).prototype.exec=function(t){t.arc(this.x,this.y,this.radius,this.startAngle,this.endAngle,this.anticlockwise)},(i.QuadraticCurveTo=function(t,e,i,n){this.cpx=t,this.cpy=e,this.x=i,this.y=n}).prototype.exec=function(t){t.quadraticCurveTo(this.cpx,this.cpy,this.x,this.y)},(i.BezierCurveTo=function(t,e,i,n,r,s){this.cp1x=t,this.cp1y=e,this.cp2x=i,this.cp2y=n,this.x=r,this.y=s}).prototype.exec=function(t){t.bezierCurveTo(this.cp1x,this.cp1y,this.cp2x,this.cp2y,this.x,this.y)},(i.Rect=function(t,e,i,n){this.x=t,this.y=e,this.w=i,this.h=n}).prototype.exec=function(t){t.rect(this.x,this.y,this.w,this.h)},(i.ClosePath=function(){}).prototype.exec=function(t){t.closePath()},(i.BeginPath=function(){}).prototype.exec=function(t){t.beginPath()},e=(i.Fill=function(t,e){this.style=t,this.matrix=e}).prototype,e.exec=function(t){if(this.style){t.fillStyle=this.style;var e=this.matrix;e&&(t.save(),t.transform(e.a,e.b,e.c,e.d,e.tx,e.ty)),t.fill(),e&&t.restore()}},e.linearGradient=function(e,i,n,r,s,a){for(var o=this.style=t._ctx.createLinearGradient(n,r,s,a),h=0,c=e.length;h<c;h++)o.addColorStop(i[h],e[h]);return o.props={colors:e,ratios:i,x0:n,y0:r,x1:s,y1:a,type:"linear"},this},e.radialGradient=function(e,i,n,r,s,a,o,h){for(var c=this.style=t._ctx.createRadialGradient(n,r,s,a,o,h),u=0,l=e.length;u<l;u++)c.addColorStop(i[u],e[u]);return c.props={colors:e,ratios:i,x0:n,y0:r,r0:s,x1:a,y1:o,r1:h,type:"radial"},this},e.bitmap=function(e,i){if(e.naturalWidth||e.getContext||e.readyState>=2){var n=this.style=t._ctx.createPattern(e,i||"");n.props={image:e,repetition:i,type:"bitmap"}}return this},e.path=!1,e=(i.Stroke=function(t,e){this.style=t,this.ignoreScale=e}).prototype,e.exec=function(t){this.style&&(t.strokeStyle=this.style,this.ignoreScale&&(t.save(),t.setTransform(1,0,0,1,0,0)),t.stroke(),this.ignoreScale&&t.restore())},e.linearGradient=i.Fill.prototype.linearGradient,e.radialGradient=i.Fill.prototype.radialGradient,e.bitmap=i.Fill.prototype.bitmap,e.path=!1,e=(i.StrokeStyle=function(t,e,i,n,r){this.width=t,this.caps=e,this.joints=i,this.miterLimit=n,this.ignoreScale=r}).prototype,e.exec=function(e){e.lineWidth=null==this.width?"1":this.width,e.lineCap=null==this.caps?"butt":isNaN(this.caps)?this.caps:t.STROKE_CAPS_MAP[this.caps],e.lineJoin=null==this.joints?"miter":isNaN(this.joints)?this.joints:t.STROKE_JOINTS_MAP[this.joints],e.miterLimit=null==this.miterLimit?"10":this.miterLimit,e.ignoreScale=null!=this.ignoreScale&&this.ignoreScale},e.path=!1,(i.StrokeDash=function(t,e){this.segments=t,this.offset=e||0}).prototype.exec=function(t){t.setLineDash&&(t.setLineDash(this.segments||i.StrokeDash.EMPTY_SEGMENTS),t.lineDashOffset=this.offset||0)},i.StrokeDash.EMPTY_SEGMENTS=[],(i.RoundRect=function(t,e,i,n,r,s,a,o){this.x=t,this.y=e,this.w=i,this.h=n,this.radiusTL=r,this.radiusTR=s,this.radiusBR=a,this.radiusBL=o}).prototype.exec=function(t){var e=(h<c?h:c)/2,i=0,n=0,r=0,s=0,a=this.x,o=this.y,h=this.w,c=this.h,u=this.radiusTL,l=this.radiusTR,d=this.radiusBR,f=this.radiusBL;u<0&&(u*=i=-1),u>e&&(u=e),l<0&&(l*=n=-1),l>e&&(l=e),d<0&&(d*=r=-1),d>e&&(d=e),f<0&&(f*=s=-1),f>e&&(f=e),t.moveTo(a+h-l,o),t.arcTo(a+h+l*n,o-l*n,a+h,o+l,l),t.lineTo(a+h,o+c-d),t.arcTo(a+h+d*r,o+c+d*r,a+h-d,o+c,d),t.lineTo(a+f,o+c),t.arcTo(a-f*s,o+c+f*s,a,o+c-f,f),t.lineTo(a,o+u),t.arcTo(a-u*i,o-u*i,a+u,o,u),t.closePath()},(i.Circle=function(t,e,i){this.x=t,this.y=e,this.radius=i}).prototype.exec=function(t){t.arc(this.x,this.y,this.radius,0,2*Math.PI)},(i.Ellipse=function(t,e,i,n){this.x=t,this.y=e,this.w=i,this.h=n}).prototype.exec=function(t){var e=this.x,i=this.y,n=this.w,r=this.h,s=.5522848,a=n/2*s,o=r/2*s,h=e+n,c=i+r,u=e+n/2,l=i+r/2;t.moveTo(e,l),t.bezierCurveTo(e,l-o,u-a,i,u,i),t.bezierCurveTo(u+a,i,h,l-o,h,l),t.bezierCurveTo(h,l+o,u+a,c,u,c),t.bezierCurveTo(u-a,c,e,l+o,e,l);
-},(i.PolyStar=function(t,e,i,n,r,s){this.x=t,this.y=e,this.radius=i,this.sides=n,this.pointSize=r,this.angle=s}).prototype.exec=function(t){var e=this.x,i=this.y,n=this.radius,r=(this.angle||0)/180*Math.PI,s=this.sides,a=1-(this.pointSize||0),o=Math.PI/s;t.moveTo(e+Math.cos(r)*n,i+Math.sin(r)*n);for(var h=0;h<s;h++)r+=o,1!=a&&t.lineTo(e+Math.cos(r)*n*a,i+Math.sin(r)*n*a),r+=o,t.lineTo(e+Math.cos(r)*n,i+Math.sin(r)*n);t.closePath()},t.beginCmd=new i.BeginPath,n.Graphics=t}(),this.createjs=this.createjs||{},function(){function t(){this.EventDispatcher_constructor(),this.alpha=1,this.cacheCanvas=null,this.bitmapCache=null,this.id=n.UID.get(),this.mouseEnabled=!0,this.tickEnabled=!0,this.name=null,this.parent=null,this.regX=0,this.regY=0,this.rotation=0,this.scaleX=1,this.scaleY=1,this.skewX=0,this.skewY=0,this.shadow=null,this.visible=!0,this.x=0,this.y=0,this.transformMatrix=null,this.compositeOperation=null,this.snapToPixel=!0,this.filters=null,this.mask=null,this.hitArea=null,this.cursor=null,this._props=new n.DisplayProps,this._rectangle=new n.Rectangle,this._bounds=null,this._webGLRenderStyle=t._StageGL_NONE}var e=n.extend(t,n.EventDispatcher);t._MOUSE_EVENTS=["click","dblclick","mousedown","mouseout","mouseover","pressmove","pressup","rollout","rollover"],t.suppressCrossDomainErrors=!1,t._snapToPixelEnabled=!1,t._StageGL_NONE=0,t._StageGL_SPRITE=1,t._StageGL_BITMAP=2;var i=n.createCanvas?n.createCanvas():document.createElement("canvas");i.getContext&&(t._hitTestCanvas=i,t._hitTestContext=i.getContext("2d"),i.width=i.height=1),e._getStage=function(){for(var t=this,e=n.Stage;t.parent;)t=t.parent;return t instanceof e?t:null},e.getStage=n.deprecate(e._getStage,"DisplayObject.getStage");try{Object.defineProperties(e,{stage:{get:e._getStage},cacheID:{get:function(){return this.bitmapCache&&this.bitmapCache.cacheID},set:function(t){this.bitmapCache&&(this.bitmapCache.cacheID=t)}},scale:{get:function(){return this.scaleX},set:function(t){this.scaleX=this.scaleY=t}}})}catch(r){}e.isVisible=function(){return!!(this.visible&&this.alpha>0&&0!=this.scaleX&&0!=this.scaleY)},e.draw=function(t,e){var i=this.bitmapCache;return!(!i||e)&&i.draw(t)},e.updateContext=function(e){var i=this,n=i.mask,r=i._props.matrix;n&&n.graphics&&!n.graphics.isEmpty()&&(n.getMatrix(r),e.transform(r.a,r.b,r.c,r.d,r.tx,r.ty),n.graphics.drawAsPath(e),e.clip(),r.invert(),e.transform(r.a,r.b,r.c,r.d,r.tx,r.ty)),this.getMatrix(r);var s=r.tx,a=r.ty;t._snapToPixelEnabled&&i.snapToPixel&&(s=s+(s<0?-.5:.5)|0,a=a+(a<0?-.5:.5)|0),e.transform(r.a,r.b,r.c,r.d,s,a),e.globalAlpha*=i.alpha,i.compositeOperation&&(e.globalCompositeOperation=i.compositeOperation),i.shadow&&this._applyShadow(e,i.shadow)},e.cache=function(t,e,i,r,s,a){this.bitmapCache||(this.bitmapCache=new n.BitmapCache),this.bitmapCache.define(this,t,e,i,r,s,a)},e.updateCache=function(t){if(!this.bitmapCache)throw"cache() must be called before updateCache()";this.bitmapCache.update(t)},e.uncache=function(){this.bitmapCache&&(this.bitmapCache.release(),this.bitmapCache=void 0)},e.getCacheDataURL=function(){return this.bitmapCache?this.bitmapCache.getDataURL():null},e.localToGlobal=function(t,e,i){return this.getConcatenatedMatrix(this._props.matrix).transformPoint(t,e,i||new n.Point)},e.globalToLocal=function(t,e,i){return this.getConcatenatedMatrix(this._props.matrix).invert().transformPoint(t,e,i||new n.Point)},e.localToLocal=function(t,e,i,n){return n=this.localToGlobal(t,e,n),i.globalToLocal(n.x,n.y,n)},e.setTransform=function(t,e,i,n,r,s,a,o,h){return this.x=t||0,this.y=e||0,this.scaleX=null==i?1:i,this.scaleY=null==n?1:n,this.rotation=r||0,this.skewX=s||0,this.skewY=a||0,this.regX=o||0,this.regY=h||0,this},e.getMatrix=function(t){var e=this,i=t&&t.identity()||new n.Matrix2D;return e.transformMatrix?i.copy(e.transformMatrix):i.appendTransform(e.x,e.y,e.scaleX,e.scaleY,e.rotation,e.skewX,e.skewY,e.regX,e.regY)},e.getConcatenatedMatrix=function(t){for(var e=this,i=this.getMatrix(t);e=e.parent;)i.prependMatrix(e.getMatrix(e._props.matrix));return i},e.getConcatenatedDisplayProps=function(t){var e=this;t=t?t.identity():new n.DisplayProps;var i=this,r=i.getMatrix(t.matrix);do t.prepend(i.visible,i.alpha,i.shadow,i.compositeOperation),i!=e&&r.prependMatrix(i.getMatrix(i._props.matrix));while(i=i.parent);return t},e.hitTest=function(e,i){var n=t._hitTestContext;n.setTransform(1,0,0,1,-e,-i),this.draw(n);var r=this._testHit(n);return n.setTransform(1,0,0,1,0,0),n.clearRect(0,0,2,2),r},e.set=function(t){var e=this;for(var i in t)e[i]=t[i];return this},e.getBounds=function(){if(this._bounds)return this._rectangle.copy(this._bounds);var t=this.cacheCanvas;if(t){var e=this._cacheScale;return this._rectangle.setValues(this._cacheOffsetX,this._cacheOffsetY,t.width/e,t.height/e)}return null},e.getTransformedBounds=function(){return this._getBounds()},e.setBounds=function(t,e,i,r){return null==t?void(this._bounds=t):void(this._bounds=(this._bounds||new n.Rectangle).setValues(t,e,i,r))},e.clone=function(){return this._cloneProps(new t)},e.toString=function(){return"[DisplayObject (name="+this.name+")]"},e._updateState=null,e._cloneProps=function(t){return t.alpha=this.alpha,t.mouseEnabled=this.mouseEnabled,t.tickEnabled=this.tickEnabled,t.name=this.name,t.regX=this.regX,t.regY=this.regY,t.rotation=this.rotation,t.scaleX=this.scaleX,t.scaleY=this.scaleY,t.shadow=this.shadow,t.skewX=this.skewX,t.skewY=this.skewY,t.visible=this.visible,t.x=this.x,t.y=this.y,t.compositeOperation=this.compositeOperation,t.snapToPixel=this.snapToPixel,t.filters=null==this.filters?null:this.filters.slice(0),t.mask=this.mask,t.hitArea=this.hitArea,t.cursor=this.cursor,t._bounds=this._bounds,t},e._applyShadow=function(t,e){e=e||Shadow.identity,t.shadowColor=e.color,t.shadowOffsetX=e.offsetX,t.shadowOffsetY=e.offsetY,t.shadowBlur=e.blur},e._tick=function(t){var e=this._listeners;e&&e.tick&&(t.target=null,t.propagationStopped=t.immediatePropagationStopped=!1,this.dispatchEvent(t))},e._testHit=function(e){try{var i=e.getImageData(0,0,1,1).data[3]>1}catch(n){if(!t.suppressCrossDomainErrors)throw"An error has occurred. This is most likely due to security restrictions on reading canvas pixel data with local or cross-domain images."}return i},e._getBounds=function(t,e){return this._transformBounds(this.getBounds(),t,e)},e._transformBounds=function(t,e,i){if(!t)return t;var n=t.x,r=t.y,s=t.width,a=t.height,o=this._props.matrix;o=i?o.identity():this.getMatrix(o),(n||r)&&o.appendTransform(0,0,1,1,0,0,0,-n,-r),e&&o.prependMatrix(e);var h=s*o.a,c=s*o.b,u=a*o.c,l=a*o.d,d=o.tx,f=o.ty,p=d,_=d,v=f,m=f;return(n=h+d)<p?p=n:n>_&&(_=n),(n=h+u+d)<p?p=n:n>_&&(_=n),(n=u+d)<p?p=n:n>_&&(_=n),(r=c+f)<v?v=r:r>m&&(m=r),(r=c+l+f)<v?v=r:r>m&&(m=r),(r=l+f)<v?v=r:r>m&&(m=r),t.setValues(p,v,_-p,m-v)},e._hasMouseEventListener=function(){for(var e=this,i=t._MOUSE_EVENTS,n=0,r=i.length;n<r;n++)if(e.hasEventListener(i[n]))return!0;return!!this.cursor},n.DisplayObject=n.promote(t,"EventDispatcher")}(),this.createjs=this.createjs||{},function(){function t(){this.DisplayObject_constructor(),this.children=[],this.mouseChildren=!0,this.tickChildren=!0}var e=n.extend(t,n.DisplayObject);e._getNumChildren=function(){return this.children.length},e.getNumChildren=n.deprecate(e._getNumChildren,"Container.getNumChildren");try{Object.defineProperties(e,{numChildren:{get:e._getNumChildren}})}catch(i){}e.initialize=t,e.isVisible=function(){var t=this.cacheCanvas||this.children.length;return!!(this.visible&&this.alpha>0&&0!=this.scaleX&&0!=this.scaleY&&t)},e.draw=function(t,e){if(this.DisplayObject_draw(t,e))return!0;for(var i=this.children.slice(),n=0,r=i.length;n<r;n++){var s=i[n];s.isVisible()&&(t.save(),s.updateContext(t),s.draw(t),t.restore())}return!0},e.addChild=function(t){var e=arguments,i=this;if(null==t)return t;var r=arguments.length;if(r>1){for(var s=0;s<r;s++)i.addChild(e[s]);return arguments[r-1]}var a=t.parent,o=a===this;return a&&a._removeChildAt(n.indexOf(a.children,t),o),t.parent=this,this.children.push(t),o||t.dispatchEvent("added"),t},e.addChildAt=function(t,e){var i=arguments,r=this,s=arguments.length,a=arguments[s-1];if(a<0||a>this.children.length)return arguments[s-2];if(s>2){for(var o=0;o<s-1;o++)r.addChildAt(i[o],a+o);return arguments[s-2]}var h=t.parent,c=h===this;return h&&h._removeChildAt(n.indexOf(h.children,t),c),t.parent=this,this.children.splice(e,0,t),c||t.dispatchEvent("added"),t},e.removeChild=function(t){var e=arguments,i=this,r=arguments.length;if(r>1){for(var s=!0,a=0;a<r;a++)s=s&&i.removeChild(e[a]);return s}return this._removeChildAt(n.indexOf(this.children,t))},e.removeChildAt=function(t){var e=arguments,i=this,n=arguments.length;if(n>1){for(var r=[],s=0;s<n;s++)r[s]=e[s];r.sort(function(t,e){return e-t});for(var a=!0,s=0;s<n;s++)a=a&&i._removeChildAt(r[s]);return a}return this._removeChildAt(t)},e.removeAllChildren=function(){for(var t=this,e=this.children;e.length;)t._removeChildAt(0)},e.getChildAt=function(t){return this.children[t]},e.getChildByName=function(t){for(var e=this.children,i=0,n=e.length;i<n;i++)if(e[i].name==t)return e[i];return null},e.sortChildren=function(t){this.children.sort(t)},e.getChildIndex=function(t){return n.indexOf(this.children,t)},e.swapChildrenAt=function(t,e){var i=this.children,n=i[t],r=i[e];n&&r&&(i[t]=r,i[e]=n)},e.swapChildren=function(t,e){for(var i,n,r=this.children,s=0,a=r.length;s<a&&(r[s]==t&&(i=s),r[s]==e&&(n=s),null==i||null==n);s++);s!=a&&(r[i]=e,r[n]=t)},e.setChildIndex=function(t,e){var i=this.children,n=i.length;if(!(t.parent!=this||e<0||e>=n)){for(var r=0;r<n&&i[r]!=t;r++);r!=n&&r!=e&&(i.splice(r,1),i.splice(e,0,t))}},e.contains=function(t){for(var e=this;t;){if(t==e)return!0;t=t.parent}return!1},e.hitTest=function(t,e){return null!=this.getObjectUnderPoint(t,e)},e.getObjectsUnderPoint=function(t,e,i){var n=[],r=this.localToGlobal(t,e);return this._getObjectsUnderPoint(r.x,r.y,n,i>0,1==i),n},e.getObjectUnderPoint=function(t,e,i){var n=this.localToGlobal(t,e);return this._getObjectsUnderPoint(n.x,n.y,null,i>0,1==i)},e.getBounds=function(){return this._getBounds(null,!0)},e.getTransformedBounds=function(){return this._getBounds()},e.clone=function(e){var i=this._cloneProps(new t);return e&&this._cloneChildren(i),i},e.toString=function(){return"[Container (name="+this.name+")]"},e._tick=function(t){var e=this;if(this.tickChildren)for(var i=this.children.length-1;i>=0;i--){var n=e.children[i];n.tickEnabled&&n._tick&&n._tick(t)}this.DisplayObject__tick(t)},e._cloneChildren=function(t){var e=this;t.children.length&&t.removeAllChildren();for(var i=t.children,n=0,r=this.children.length;n<r;n++){var s=e.children[n].clone(!0);s.parent=t,i.push(s)}},e._removeChildAt=function(t,e){if(t<0||t>this.children.length-1)return!1;var i=this.children[t];return i&&(i.parent=null),this.children.splice(t,1),e||i.dispatchEvent("removed"),!0},e._getObjectsUnderPoint=function(e,i,r,s,a,o){var h=this;if(o=o||0,!o&&!this._testMask(this,e,i))return null;var c,u=n.DisplayObject._hitTestContext;a=a||s&&this._hasMouseEventListener();for(var l=this.children,d=l.length,f=d-1;f>=0;f--){var p=l[f],_=p.hitArea;if(p.visible&&(_||p.isVisible())&&(!s||p.mouseEnabled)&&(_||h._testMask(p,e,i)))if(!_&&p instanceof t){var v=p._getObjectsUnderPoint(e,i,r,s,a,o+1);if(!r&&v)return s&&!h.mouseChildren?h:v}else{if(s&&!a&&!p._hasMouseEventListener())continue;var m=p.getConcatenatedDisplayProps(p._props);if(c=m.matrix,_&&(c.appendMatrix(_.getMatrix(_._props.matrix)),m.alpha=_.alpha),u.globalAlpha=m.alpha,u.setTransform(c.a,c.b,c.c,c.d,c.tx-e,c.ty-i),(_||p).draw(u),!h._testHit(u))continue;if(u.setTransform(1,0,0,1,0,0),u.clearRect(0,0,2,2),!r)return s&&!h.mouseChildren?h:p;r.push(p)}}return null},e._testMask=function(t,e,i){var r=t.mask;if(!r||!r.graphics||r.graphics.isEmpty())return!0;var s=this._props.matrix,a=t.parent;s=a?a.getConcatenatedMatrix(s):s.identity(),s=r.getMatrix(r._props.matrix).prependMatrix(s);var o=n.DisplayObject._hitTestContext;return o.setTransform(s.a,s.b,s.c,s.d,s.tx-e,s.ty-i),r.graphics.drawAsPath(o),o.fillStyle="#000",o.fill(),!!this._testHit(o)&&(o.setTransform(1,0,0,1,0,0),o.clearRect(0,0,2,2),!0)},e._getBounds=function(t,e){var i=this,n=this.DisplayObject_getBounds();if(n)return this._transformBounds(n,t,e);var r=this._props.matrix;r=e?r.identity():this.getMatrix(r),t&&r.prependMatrix(t);for(var s=this.children.length,a=null,o=0;o<s;o++){var h=i.children[o];h.visible&&(n=h._getBounds(r))&&(a?a.extend(n.x,n.y,n.width,n.height):a=n.clone())}return a},n.Container=n.promote(t,"DisplayObject")}(),this.createjs=this.createjs||{},function(){function t(t){this.Container_constructor(),this.autoClear=!0,this.canvas="string"==typeof t?document.getElementById(t):t,this.mouseX=0,this.mouseY=0,this.drawRect=null,this.snapToPixelEnabled=!1,this.mouseInBounds=!1,this.tickOnUpdate=!0,this.mouseMoveOutside=!1,this.preventSelection=!0,this._pointerData={},this._pointerCount=0,this._primaryPointerID=null,this._mouseOverIntervalID=null,this._nextStage=null,this._prevStage=null,this.enableDOMEvents(!0)}var e=n.extend(t,n.Container);e._get_nextStage=function(){return this._nextStage},e._set_nextStage=function(t){this._nextStage&&(this._nextStage._prevStage=null),t&&(t._prevStage=this),this._nextStage=t};try{Object.defineProperties(e,{nextStage:{get:e._get_nextStage,set:e._set_nextStage}})}catch(i){}e.update=function(t){if(this.canvas&&(this.tickOnUpdate&&this.tick(t),this.dispatchEvent("drawstart",!1,!0)!==!1)){n.DisplayObject._snapToPixelEnabled=this.snapToPixelEnabled;var e=this.drawRect,i=this.canvas.getContext("2d");i.setTransform(1,0,0,1,0,0),this.autoClear&&(e?i.clearRect(e.x,e.y,e.width,e.height):i.clearRect(0,0,this.canvas.width+1,this.canvas.height+1)),i.save(),this.drawRect&&(i.beginPath(),i.rect(e.x,e.y,e.width,e.height),i.clip()),this.updateContext(i),this.draw(i,!1),i.restore(),this.dispatchEvent("drawend")}},e.tick=function(t){if(this.tickEnabled&&this.dispatchEvent("tickstart",!1,!0)!==!1){var e=new n.Event("tick");if(t)for(var i in t)t.hasOwnProperty(i)&&(e[i]=t[i]);this._tick(e),this.dispatchEvent("tickend")}},e.handleEvent=function(t){"tick"==t.type&&this.update(t)},e.clear=function(){if(this.canvas){var t=this.canvas.getContext("2d");t.setTransform(1,0,0,1,0,0),t.clearRect(0,0,this.canvas.width+1,this.canvas.height+1)}},e.toDataURL=function(t,e){var i,n=this.canvas.getContext("2d"),r=this.canvas.width,s=this.canvas.height;if(t){i=n.getImageData(0,0,r,s);var a=n.globalCompositeOperation;n.globalCompositeOperation="destination-over",n.fillStyle=t,n.fillRect(0,0,r,s)}var o=this.canvas.toDataURL(e||"image/png");return t&&(n.putImageData(i,0,0),n.globalCompositeOperation=a),o},e.enableMouseOver=function(t){if(this._mouseOverIntervalID&&(clearInterval(this._mouseOverIntervalID),this._mouseOverIntervalID=null,0==t&&this._testMouseOver(!0)),null==t)t=20;else if(t<=0)return;var e=this;this._mouseOverIntervalID=setInterval(function(){e._testMouseOver()},1e3/Math.min(50,t))},e.enableDOMEvents=function(t){null==t&&(t=!0);var e,i,n=this._eventListeners;if(!t&&n){for(e in n)i=n[e],i.t.removeEventListener(e,i.f,!1);this._eventListeners=null}else if(t&&!n&&this.canvas){var r=window.addEventListener?window:document,s=this;n=this._eventListeners={},n.mouseup={t:r,f:function(t){s._handleMouseUp(t)}},n.mousemove={t:r,f:function(t){s._handleMouseMove(t)}},n.dblclick={t:this.canvas,f:function(t){s._handleDoubleClick(t)}},n.mousedown={t:this.canvas,f:function(t){s._handleMouseDown(t)}};for(e in n)i=n[e],i.t.addEventListener(e,i.f,!1)}},e.clone=function(){throw"Stage cannot be cloned."},e.toString=function(){return"[Stage (name="+this.name+")]"},e._getElementRect=function(t){var e;try{e=t.getBoundingClientRect()}catch(i){e={top:t.offsetTop,left:t.offsetLeft,width:t.offsetWidth,height:t.offsetHeight}}var n=(window.pageXOffset||document.scrollLeft||0)-(document.clientLeft||document.body.clientLeft||0),r=(window.pageYOffset||document.scrollTop||0)-(document.clientTop||document.body.clientTop||0),s=window.getComputedStyle?getComputedStyle(t,null):t.currentStyle,a=parseInt(s.paddingLeft)+parseInt(s.borderLeftWidth),o=parseInt(s.paddingTop)+parseInt(s.borderTopWidth),h=parseInt(s.paddingRight)+parseInt(s.borderRightWidth),c=parseInt(s.paddingBottom)+parseInt(s.borderBottomWidth);return{left:e.left+n+a,right:e.right+n-h,top:e.top+r+o,bottom:e.bottom+r-c}},e._getPointerData=function(t){var e=this._pointerData[t];return e||(e=this._pointerData[t]={x:0,y:0}),e},e._handleMouseMove=function(t){t||(t=window.event),this._handlePointerMove(-1,t,t.pageX,t.pageY)},e._handlePointerMove=function(t,e,i,n,r){if((!this._prevStage||void 0!==r)&&this.canvas){var s=this._nextStage,a=this._getPointerData(t),o=a.inBounds;this._updatePointerPosition(t,e,i,n),(o||a.inBounds||this.mouseMoveOutside)&&(t===-1&&a.inBounds==!o&&this._dispatchMouseEvent(this,o?"mouseleave":"mouseenter",!1,t,a,e),this._dispatchMouseEvent(this,"stagemousemove",!1,t,a,e),this._dispatchMouseEvent(a.target,"pressmove",!0,t,a,e)),s&&s._handlePointerMove(t,e,i,n,null)}},e._updatePointerPosition=function(t,e,i,n){var r=this._getElementRect(this.canvas);i-=r.left,n-=r.top;var s=this.canvas.width,a=this.canvas.height;i/=(r.right-r.left)/s,n/=(r.bottom-r.top)/a;var o=this._getPointerData(t);(o.inBounds=i>=0&&n>=0&&i<=s-1&&n<=a-1)?(o.x=i,o.y=n):this.mouseMoveOutside&&(o.x=i<0?0:i>s-1?s-1:i,o.y=n<0?0:n>a-1?a-1:n),o.posEvtObj=e,o.rawX=i,o.rawY=n,t!==this._primaryPointerID&&t!==-1||(this.mouseX=o.x,this.mouseY=o.y,this.mouseInBounds=o.inBounds)},e._handleMouseUp=function(t){this._handlePointerUp(-1,t,!1)},e._handlePointerUp=function(t,e,i,n){var r=this._nextStage,s=this._getPointerData(t);if(!this._prevStage||void 0!==n){var a=null,o=s.target;n||!o&&!r||(a=this._getObjectsUnderPoint(s.x,s.y,null,!0)),s.down&&(this._dispatchMouseEvent(this,"stagemouseup",!1,t,s,e,a),s.down=!1),a==o&&this._dispatchMouseEvent(o,"click",!0,t,s,e),this._dispatchMouseEvent(o,"pressup",!0,t,s,e),i?(t==this._primaryPointerID&&(this._primaryPointerID=null),delete this._pointerData[t]):s.target=null,r&&r._handlePointerUp(t,e,i,n||a&&this)}},e._handleMouseDown=function(t){this._handlePointerDown(-1,t,t.pageX,t.pageY)},e._handlePointerDown=function(t,e,i,n,r){this.preventSelection&&e.preventDefault(),null!=this._primaryPointerID&&t!==-1||(this._primaryPointerID=t),null!=n&&this._updatePointerPosition(t,e,i,n);var s=null,a=this._nextStage,o=this._getPointerData(t);r||(s=o.target=this._getObjectsUnderPoint(o.x,o.y,null,!0)),o.inBounds&&(this._dispatchMouseEvent(this,"stagemousedown",!1,t,o,e,s),o.down=!0),this._dispatchMouseEvent(s,"mousedown",!0,t,o,e),a&&a._handlePointerDown(t,e,i,n,r||s&&this)},e._testMouseOver=function(t,e,i){var n=this;if(!this._prevStage||void 0!==e){var r=this._nextStage;if(!this._mouseOverIntervalID)return void(r&&r._testMouseOver(t,e,i));var s=this._getPointerData(-1);if(s&&(t||this.mouseX!=this._mouseOverX||this.mouseY!=this._mouseOverY||!this.mouseInBounds)){var a,o,h,c=s.posEvtObj,u=i||c&&c.target==this.canvas,l=null,d=-1,f="";!e&&(t||this.mouseInBounds&&u)&&(l=this._getObjectsUnderPoint(this.mouseX,this.mouseY,null,!0),this._mouseOverX=this.mouseX,this._mouseOverY=this.mouseY);var p=this._mouseOverTarget||[],_=p[p.length-1],v=this._mouseOverTarget=[];for(a=l;a;)v.unshift(a),f||(f=a.cursor),a=a.parent;for(this.canvas.style.cursor=f,!e&&i&&(i.canvas.style.cursor=f),o=0,h=v.length;o<h&&v[o]==p[o];o++)d=o;for(_!=l&&this._dispatchMouseEvent(_,"mouseout",!0,-1,s,c,l),o=p.length-1;o>d;o--)n._dispatchMouseEvent(p[o],"rollout",!1,-1,s,c,l);for(o=v.length-1;o>d;o--)n._dispatchMouseEvent(v[o],"rollover",!1,-1,s,c,_);_!=l&&this._dispatchMouseEvent(l,"mouseover",!0,-1,s,c,_),r&&r._testMouseOver(t,e||l&&this,i||u&&this)}}},e._handleDoubleClick=function(t,e){var i=null,n=this._nextStage,r=this._getPointerData(-1);e||(i=this._getObjectsUnderPoint(r.x,r.y,null,!0),this._dispatchMouseEvent(i,"dblclick",!0,-1,r,t)),n&&n._handleDoubleClick(t,e||i&&this)},e._dispatchMouseEvent=function(t,e,i,r,s,a,o){if(t&&(i||t.hasEventListener(e))){var h=new n.MouseEvent(e,i,(!1),s.x,s.y,a,r,r===this._primaryPointerID||r===-1,s.rawX,s.rawY,o);t.dispatchEvent(h)}},n.Stage=n.promote(t,"Container")}(),this.createjs=this.createjs||{},function(){function t(e,i){if(this.Stage_constructor(e),void 0!==i){if("object"!=typeof i)throw"Invalid options object";var r=i.premultiply,s=i.transparent,a=i.antialias,o=i.preserveBuffer,h=i.autoPurge}this.vocalDebug=!1,this._preserveBuffer=o||!1,this._antialias=a||!1,this._transparent=s||!1,this._premultiply=r||!1,this._autoPurge=void 0,this.autoPurge=h,this._viewportWidth=0,this._viewportHeight=0,this._projectionMatrix=null,this._webGLContext=null,this._clearColor={r:.5,g:.5,b:.5,a:0},this._maxCardsPerBatch=t.DEFAULT_MAX_BATCH_SIZE,this._activeShader=null,this._vertices=null,this._vertexPositionBuffer=null,this._uvs=null,this._uvPositionBuffer=null,this._indices=null,this._textureIndexBuffer=null,this._alphas=null,this._alphaBuffer=null,this._textureDictionary=[],this._textureIDs={},this._batchTextures=[],this._baseTextures=[],this._batchTextureCount=8,this._lastTextureInsert=-1,this._batchID=0,this._drawID=0,this._slotBlacklist=[],this._isDrawing=0,this._lastTrackedCanvas=0,this.isCacheControlled=!1,this._cacheContainer=new n.Container,this._initializeWebGL()}var e=n.extend(t,n.Stage);t.buildUVRects=function(t,e,i){if(!t||!t._frames)return null;void 0===e&&(e=-1),void 0===i&&(i=!1);for(var n=e!=-1&&i?e:0,r=e!=-1&&i?e+1:t._frames.length,s=n;s<r;s++){var a=t._frames[s];if(!(a.uvRect||a.image.width<=0||a.image.height<=0)){var o=a.rect;a.uvRect={t:o.y/a.image.height,l:o.x/a.image.width,b:(o.y+o.height)/a.image.height,r:(o.x+o.width)/a.image.width}}}return t._frames[e!=-1?e:0].uvRect||{t:0,l:0,b:1,r:1}},t.isWebGLActive=function(t){return t&&t instanceof WebGLRenderingContext&&"undefined"!=typeof WebGLRenderingContext},t.VERTEX_PROPERTY_COUNT=6,t.INDICIES_PER_CARD=6,t.DEFAULT_MAX_BATCH_SIZE=1e4,t.WEBGL_MAX_INDEX_NUM=Math.pow(2,16),t.UV_RECT={t:0,l:0,b:1,r:1};try{t.COVER_VERT=new Float32Array([-1,1,1,1,-1,-1,1,1,1,-1,-1,-1]),t.COVER_UV=new Float32Array([0,0,1,0,0,1,1,0,1,1,0,1]),t.COVER_UV_FLIP=new Float32Array([0,1,1,1,0,0,1,1,1,0,0,0])}catch(i){}t.REGULAR_VARYING_HEADER="precision mediump float;varying vec2 vTextureCoord;varying lowp float indexPicker;varying lowp float alphaValue;",t.REGULAR_VERTEX_HEADER=t.REGULAR_VARYING_HEADER+"attribute vec2 vertexPosition;attribute vec2 uvPosition;attribute lowp float textureIndex;attribute lowp float objectAlpha;uniform mat4 pMatrix;",t.REGULAR_FRAGMENT_HEADER=t.REGULAR_VARYING_HEADER+"uniform sampler2D uSampler[{{count}}];",t.REGULAR_VERTEX_BODY="void main(void) {gl_Position = vec4((vertexPosition.x * pMatrix[0][0]) + pMatrix[3][0],(vertexPosition.y * pMatrix[1][1]) + pMatrix[3][1],pMatrix[3][2],1.0);alphaValue = objectAlpha;indexPicker = textureIndex;vTextureCoord = uvPosition;}",t.REGULAR_FRAGMENT_BODY="void main(void) {vec4 color = vec4(1.0, 0.0, 0.0, 1.0);if (indexPicker <= 0.5) {color = texture2D(uSampler[0], vTextureCoord);{{alternates}}}{{fragColor}}}",t.REGULAR_FRAG_COLOR_NORMAL="gl_FragColor = vec4(color.rgb, color.a * alphaValue);",t.REGULAR_FRAG_COLOR_PREMULTIPLY="if(color.a > 0.0035) {gl_FragColor = vec4(color.rgb/color.a, color.a * alphaValue);} else {gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);}",t.PARTICLE_VERTEX_BODY=t.REGULAR_VERTEX_BODY,t.PARTICLE_FRAGMENT_BODY=t.REGULAR_FRAGMENT_BODY,t.COVER_VARYING_HEADER="precision mediump float;varying highp vec2 vRenderCoord;varying highp vec2 vTextureCoord;",t.COVER_VERTEX_HEADER=t.COVER_VARYING_HEADER+"attribute vec2 vertexPosition;attribute vec2 uvPosition;uniform float uUpright;",t.COVER_FRAGMENT_HEADER=t.COVER_VARYING_HEADER+"uniform sampler2D uSampler;",t.COVER_VERTEX_BODY="void main(void) {gl_Position = vec4(vertexPosition.x, vertexPosition.y, 0.0, 1.0);vRenderCoord = uvPosition;vTextureCoord = vec2(uvPosition.x, abs(uUpright - uvPosition.y));}",t.COVER_FRAGMENT_BODY="void main(void) {vec4 color = texture2D(uSampler, vRenderCoord);gl_FragColor = color;}",e._get_isWebGL=function(){return!!this._webGLContext},e._set_autoPurge=function(t){t=isNaN(t)?1200:t,t!=-1&&(t=t<10?10:t),this._autoPurge=t},e._get_autoPurge=function(){return Number(this._autoPurge)};try{Object.defineProperties(e,{isWebGL:{get:e._get_isWebGL},autoPurge:{get:e._get_autoPurge,set:e._set_autoPurge}})}catch(i){}e._initializeWebGL=function(){if(this.canvas){if(!this._webGLContext||this._webGLContext.canvas!==this.canvas){var t={depth:!1,alpha:this._transparent,stencil:!0,antialias:this._antialias,premultipliedAlpha:this._premultiply,preserveDrawingBuffer:this._preserveBuffer},e=this._webGLContext=this._fetchWebGLContext(this.canvas,t);if(!e)return null;this.updateSimultaneousTextureCount(e.getParameter(e.MAX_TEXTURE_IMAGE_UNITS)),this._maxTextureSlots=e.getParameter(e.MAX_COMBINED_TEXTURE_IMAGE_UNITS),this._createBuffers(e),this._initTextures(e),e.disable(e.DEPTH_TEST),e.enable(e.BLEND),e.blendFuncSeparate(e.SRC_ALPHA,e.ONE_MINUS_SRC_ALPHA,e.ONE,e.ONE_MINUS_SRC_ALPHA),e.pixelStorei(e.UNPACK_PREMULTIPLY_ALPHA_WEBGL,this._premultiply),this._webGLContext.clearColor(this._clearColor.r,this._clearColor.g,this._clearColor.b,this._clearColor.a),this.updateViewport(this._viewportWidth||this.canvas.width,this._viewportHeight||this.canvas.height)}}else this._webGLContext=null;return this._webGLContext},e.update=function(t){if(this.canvas){if(this.tickOnUpdate&&this.tick(t),this.dispatchEvent("drawstart"),this.autoClear&&this.clear(),this._webGLContext)this._batchDraw(this,this._webGLContext),this._autoPurge==-1||this._drawID%(this._autoPurge/2|0)||this.purgeTextures(this._autoPurge);else{var e=this.canvas.getContext("2d");e.save(),this.updateContext(e),this.draw(e,!1),e.restore()}this.dispatchEvent("drawend")}},e.clear=function(){if(this.canvas)if(t.isWebGLActive(this._webGLContext)){var e=this._webGLContext,i=this._clearColor,n=this._transparent?i.a:1;this._webGLContext.clearColor(i.r*n,i.g*n,i.b*n,n),e.clear(e.COLOR_BUFFER_BIT),this._webGLContext.clearColor(i.r,i.g,i.b,i.a)}else this.Stage_clear()},e.draw=function(e,i){if(e===this._webGLContext&&t.isWebGLActive(this._webGLContext)){var n=this._webGLContext;return this._batchDraw(this,n,i),!0}return this.Stage_draw(e,i)},e.cacheDraw=function(e,i,n){if(t.isWebGLActive(this._webGLContext)){var r=this._webGLContext;return this._cacheDraw(r,e,i,n),!0}return!1},e.protectTextureSlot=function(t,e){if(t>this._maxTextureSlots||t<0)throw"Slot outside of acceptable range";this._slotBlacklist[t]=!!e},e.getTargetRenderTexture=function(t,e,i){var n,r=!1,s=this._webGLContext;if(void 0!==t.__lastRT&&t.__lastRT===t.__rtA&&(r=!0),r?(void 0===t.__rtB?t.__rtB=this.getRenderBufferTexture(e,i):(e==t.__rtB._width&&i==t.__rtB._height||this.resizeTexture(t.__rtB,e,i),this.setTextureParams(s)),n=t.__rtB):(void 0===t.__rtA?t.__rtA=this.getRenderBufferTexture(e,i):(e==t.__rtA._width&&i==t.__rtA._height||this.resizeTexture(t.__rtA,e,i),this.setTextureParams(s)),n=t.__rtA),!n)throw"Problems creating render textures, known causes include using too much VRAM by not releasing WebGL texture instances";return t.__lastRT=n,n},e.releaseTexture=function(t){var e,i,n=this;if(t){if(t.children)for(e=0,i=t.children.length;e<i;e++)n.releaseTexture(t.children[e]);t.cacheCanvas&&t.uncache();var r=void 0;if(void 0!==t._storeID){if(t===this._textureDictionary[t._storeID])return this._killTextureObject(t),void(t._storeID=void 0);r=t}else if(2===t._webGLRenderStyle)r=t.image;else if(1===t._webGLRenderStyle){for(e=0,i=t.spriteSheet._images.length;e<i;e++)n.releaseTexture(t.spriteSheet._images[e]);return}if(void 0===r)return void(this.vocalDebug&&console.log("No associated texture found on release"));this._killTextureObject(this._textureDictionary[r._storeID]),r._storeID=void 0}},e.purgeTextures=function(t){var e=this;void 0==t&&(t=100);for(var i=this._textureDictionary,n=i.length,r=0;r<n;r++){var s=i[r];s&&s._drawID+t<=e._drawID&&e._killTextureObject(s)}},e.updateSimultaneousTextureCount=function(t){var e=this,i=this._webGLContext,n=!1;for((t<1||isNaN(t))&&(t=1),this._batchTextureCount=t;!n;)try{e._activeShader=e._fetchShaderProgram(i),n=!0}catch(r){if(1==e._batchTextureCount)throw"Cannot compile shader "+r;e._batchTextureCount-=4,e._batchTextureCount<1&&(e._batchTextureCount=1),e.vocalDebug&&console.log("Reducing desired texture count due to errors: "+e._batchTextureCount)}},e.updateViewport=function(t,e){this._viewportWidth=0|t,this._viewportHeight=0|e;var i=this._webGLContext;i&&(i.viewport(0,0,this._viewportWidth,this._viewportHeight),this._projectionMatrix=new Float32Array([2/this._viewportWidth,0,0,0,0,-2/this._viewportHeight,1,0,0,0,1,0,-1,1,.1,0]),this._projectionMatrixFlip=new Float32Array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]),this._projectionMatrixFlip.set(this._projectionMatrix),this._projectionMatrixFlip[5]*=-1,this._projectionMatrixFlip[13]*=-1)},e.getFilterShader=function(t){t||(t=this);var e=this._webGLContext,i=this._activeShader;if(t._builtShader)i=t._builtShader,t.shaderParamSetup&&(e.useProgram(i),t.shaderParamSetup(e,this,i));else try{i=this._fetchShaderProgram(e,"filter",t.VTX_SHADER_BODY,t.FRAG_SHADER_BODY,t.shaderParamSetup&&t.shaderParamSetup.bind(t)),t._builtShader=i,i._name=t.toString()}catch(n){console&&console.log("SHADER SWITCH FAILURE",n)}return i},e.getBaseTexture=function(t,e){var i=Math.ceil(t>0?t:1)||1,n=Math.ceil(e>0?e:1)||1,r=this._webGLContext,s=r.createTexture();return this.resizeTexture(s,i,n),this.setTextureParams(r,!1),s},e.resizeTexture=function(t,e,i){var n=this._webGLContext;n.bindTexture(n.TEXTURE_2D,t),n.texImage2D(n.TEXTURE_2D,0,n.RGBA,e,i,0,n.RGBA,n.UNSIGNED_BYTE,null),t.width=e,t.height=i},e.getRenderBufferTexture=function(t,e){var i=this._webGLContext,n=this.getBaseTexture(t,e);if(!n)return null;var r=i.createFramebuffer();return r?(n.width=t,n.height=e,i.bindFramebuffer(i.FRAMEBUFFER,r),i.framebufferTexture2D(i.FRAMEBUFFER,i.COLOR_ATTACHMENT0,i.TEXTURE_2D,n,0),r._renderTexture=n,n._frameBuffer=r,n._storeID=this._textureDictionary.length,this._textureDictionary[n._storeID]=n,i.bindFramebuffer(i.FRAMEBUFFER,null),n):null},e.setTextureParams=function(t,e){e&&this._antialias?(t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MIN_FILTER,t.LINEAR),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MAG_FILTER,t.LINEAR)):(t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MIN_FILTER,t.NEAREST),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MAG_FILTER,t.NEAREST)),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_S,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_T,t.CLAMP_TO_EDGE)},e.setClearColor=function(t){var e,i,n,r,s;"string"==typeof t?0==t.indexOf("#")?(4==t.length&&(t="#"+t.charAt(1)+t.charAt(1)+t.charAt(2)+t.charAt(2)+t.charAt(3)+t.charAt(3)),e=Number("0x"+t.slice(1,3))/255,i=Number("0x"+t.slice(3,5))/255,n=Number("0x"+t.slice(5,7))/255,r=Number("0x"+t.slice(7,9))/255):0==t.indexOf("rgba(")&&(s=t.slice(5,-1).split(","),e=Number(s[0])/255,i=Number(s[1])/255,n=Number(s[2])/255,r=Number(s[3])):(e=((4278190080&t)>>>24)/255,i=((16711680&t)>>>16)/255,n=((65280&t)>>>8)/255,r=(255&t)/255),this._clearColor.r=e||0,this._clearColor.g=i||0,this._clearColor.b=n||0,this._clearColor.a=r||0,this._webGLContext&&this._webGLContext.clearColor(this._clearColor.r,this._clearColor.g,this._clearColor.b,this._clearColor.a)},e.toString=function(){return"[StageGL (name="+this.name+")]"},e._fetchWebGLContext=function(t,e){var i;try{i=t.getContext("webgl",e)||t.getContext("experimental-webgl",e)}catch(n){}if(i)i.viewportWidth=t.width,i.viewportHeight=t.height;else{var r="Could not initialize WebGL";console.error?console.error(r):console.log(r)}return i},e._fetchShaderProgram=function(e,i,n,r,s){e.useProgram(null);var a,o;switch(i){case"filter":o=t.COVER_VERTEX_HEADER+(n||t.COVER_VERTEX_BODY),a=t.COVER_FRAGMENT_HEADER+(r||t.COVER_FRAGMENT_BODY);break;case"particle":o=t.REGULAR_VERTEX_HEADER+t.PARTICLE_VERTEX_BODY,a=t.REGULAR_FRAGMENT_HEADER+t.PARTICLE_FRAGMENT_BODY;break;case"override":o=t.REGULAR_VERTEX_HEADER+(n||t.REGULAR_VERTEX_BODY),a=t.REGULAR_FRAGMENT_HEADER+(r||t.REGULAR_FRAGMENT_BODY);
-break;case"regular":default:o=t.REGULAR_VERTEX_HEADER+t.REGULAR_VERTEX_BODY,a=t.REGULAR_FRAGMENT_HEADER+t.REGULAR_FRAGMENT_BODY}var h=this._createShader(e,e.VERTEX_SHADER,o),c=this._createShader(e,e.FRAGMENT_SHADER,a),u=e.createProgram();if(e.attachShader(u,h),e.attachShader(u,c),e.linkProgram(u),u._type=i,!e.getProgramParameter(u,e.LINK_STATUS))throw e.useProgram(this._activeShader),e.getProgramInfoLog(u);switch(e.useProgram(u),i){case"filter":u.vertexPositionAttribute=e.getAttribLocation(u,"vertexPosition"),e.enableVertexAttribArray(u.vertexPositionAttribute),u.uvPositionAttribute=e.getAttribLocation(u,"uvPosition"),e.enableVertexAttribArray(u.uvPositionAttribute),u.samplerUniform=e.getUniformLocation(u,"uSampler"),e.uniform1i(u.samplerUniform,0),u.uprightUniform=e.getUniformLocation(u,"uUpright"),e.uniform1f(u.uprightUniform,0),s&&s(e,this,u);break;case"override":case"particle":case"regular":default:u.vertexPositionAttribute=e.getAttribLocation(u,"vertexPosition"),e.enableVertexAttribArray(u.vertexPositionAttribute),u.uvPositionAttribute=e.getAttribLocation(u,"uvPosition"),e.enableVertexAttribArray(u.uvPositionAttribute),u.textureIndexAttribute=e.getAttribLocation(u,"textureIndex"),e.enableVertexAttribArray(u.textureIndexAttribute),u.alphaAttribute=e.getAttribLocation(u,"objectAlpha"),e.enableVertexAttribArray(u.alphaAttribute);for(var l=[],d=0;d<this._batchTextureCount;d++)l[d]=d;u.samplerData=l,u.samplerUniform=e.getUniformLocation(u,"uSampler"),e.uniform1iv(u.samplerUniform,l),u.pMatrixUniform=e.getUniformLocation(u,"pMatrix")}return e.useProgram(this._activeShader),u},e._createShader=function(e,i,n){n=n.replace(/{{count}}/g,this._batchTextureCount);for(var r="",s=1;s<this._batchTextureCount;s++)r+="} else if (indexPicker <= "+s+".5) { color = texture2D(uSampler["+s+"], vTextureCoord);";n=n.replace(/{{alternates}}/g,r),n=n.replace(/{{fragColor}}/g,this._premultiply?t.REGULAR_FRAG_COLOR_PREMULTIPLY:t.REGULAR_FRAG_COLOR_NORMAL);var a=e.createShader(i);if(e.shaderSource(a,n),e.compileShader(a),!e.getShaderParameter(a,e.COMPILE_STATUS))throw e.getShaderInfoLog(a);return a},e._createBuffers=function(e){var i,n,r,s=this._maxCardsPerBatch*t.INDICIES_PER_CARD,a=this._vertexPositionBuffer=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,a),i=2;var o=this._vertices=new Float32Array(s*i);for(n=0,r=o.length;n<r;n+=i)o[n]=o[n+1]=0;e.bufferData(e.ARRAY_BUFFER,o,e.DYNAMIC_DRAW),a.itemSize=i,a.numItems=s;var h=this._uvPositionBuffer=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,h),i=2;var c=this._uvs=new Float32Array(s*i);for(n=0,r=c.length;n<r;n+=i)c[n]=c[n+1]=0;e.bufferData(e.ARRAY_BUFFER,c,e.DYNAMIC_DRAW),h.itemSize=i,h.numItems=s;var u=this._textureIndexBuffer=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,u),i=1;var l=this._indices=new Float32Array(s*i);for(n=0,r=l.length;n<r;n++)l[n]=0;e.bufferData(e.ARRAY_BUFFER,l,e.DYNAMIC_DRAW),u.itemSize=i,u.numItems=s;var d=this._alphaBuffer=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,d),i=1;var f=this._alphas=new Float32Array(s*i);for(n=0,r=f.length;n<r;n++)f[n]=1;e.bufferData(e.ARRAY_BUFFER,f,e.DYNAMIC_DRAW),d.itemSize=i,d.numItems=s},e._initTextures=function(){var t=this;this._lastTextureInsert=-1,this._textureDictionary=[],this._textureIDs={},this._baseTextures=[],this._batchTextures=[];for(var e=0;e<this._batchTextureCount;e++){var i=t.getBaseTexture();if(t._baseTextures[e]=t._batchTextures[e]=i,!i)throw"Problems creating basic textures, known causes include using too much VRAM by not releasing WebGL texture instances"}},e._loadTextureImage=function(t,e){var i=e.src;i||(e._isCanvas=!0,i=e.src="canvas_"+this._lastTrackedCanvas++);var n=this._textureIDs[i];void 0===n&&(n=this._textureIDs[i]=this._textureDictionary.length),void 0===this._textureDictionary[n]&&(this._textureDictionary[n]=this.getBaseTexture());var r=this._textureDictionary[n];if(r)r._batchID=this._batchID,r._storeID=n,r._imageData=e,this._insertTextureInBatch(t,r),e._storeID=n,e.complete||e.naturalWidth||e._isCanvas?this._updateTextureImageData(t,e):e.addEventListener("load",this._updateTextureImageData.bind(this,t,e));else{var s="Problem creating desired texture, known causes include using too much VRAM by not releasing WebGL texture instances";console.error&&console.error(s)||console.log(s),r=this._baseTextures[0],r._batchID=this._batchID,r._storeID=-1,r._imageData=r,this._insertTextureInBatch(t,r)}return r},e._updateTextureImageData=function(t,e){var i=e.width&e.width-1||e.height&e.height-1,n=this._textureDictionary[e._storeID];t.activeTexture(t.TEXTURE0+n._activeIndex),t.bindTexture(t.TEXTURE_2D,n),n.isPOT=!i,this.setTextureParams(t,n.isPOT);try{t.texImage2D(t.TEXTURE_2D,0,t.RGBA,t.RGBA,t.UNSIGNED_BYTE,e)}catch(r){var s="\nAn error has occurred. This is most likely due to security restrictions on WebGL images with local or cross-domain origins";console.error?(console.error(s),console.error(r)):console&&(console.log(s),console.log(r))}e._invalid=!1,n._w=e.width,n._h=e.height,this.vocalDebug&&(i&&console.warn("NPOT(Non Power of Two) Texture: "+e.src),(e.width>t.MAX_TEXTURE_SIZE||e.height>t.MAX_TEXTURE_SIZE)&&console&&console.error("Oversized Texture: "+e.width+"x"+e.height+" vs "+t.MAX_TEXTURE_SIZE+"max"))},e._insertTextureInBatch=function(t,e){var i=this;if(this._batchTextures[e._activeIndex]!==e){var n=-1,r=(this._lastTextureInsert+1)%this._batchTextureCount,s=r;do{if(i._batchTextures[s]._batchID!=i._batchID&&!i._slotBlacklist[s]){n=s;break}s=(s+1)%i._batchTextureCount}while(s!==r);n===-1&&(this.batchReason="textureOverflow",this._drawBuffers(t),this.batchCardCount=0,n=r),this._batchTextures[n]=e,e._activeIndex=n;var a=e._imageData;a&&a._invalid&&void 0!==e._drawID?this._updateTextureImageData(t,a):(t.activeTexture(t.TEXTURE0+n),t.bindTexture(t.TEXTURE_2D,e),this.setTextureParams(t)),this._lastTextureInsert=n}else{var a=e._imageData;void 0!=e._storeID&&a&&a._invalid&&this._updateTextureImageData(t,a)}e._drawID=this._drawID,e._batchID=this._batchID},e._killTextureObject=function(t){var e=this;if(t){var i=this._webGLContext;if(void 0!==t._storeID&&t._storeID>=0){this._textureDictionary[t._storeID]=void 0;for(var n in this._textureIDs)e._textureIDs[n]==t._storeID&&delete e._textureIDs[n];t._imageData&&(t._imageData._storeID=void 0),t._imageData=t._storeID=void 0}void 0!==t._activeIndex&&this._batchTextures[t._activeIndex]===t&&(this._batchTextures[t._activeIndex]=this._baseTextures[t._activeIndex]);try{t._frameBuffer&&i.deleteFramebuffer(t._frameBuffer),t._frameBuffer=void 0}catch(r){this.vocalDebug&&console.log(r)}try{i.deleteTexture(t)}catch(r){this.vocalDebug&&console.log(r)}}},e._backupBatchTextures=function(t,e){var i=this,n=this._webGLContext;this._backupTextures||(this._backupTextures=[]),void 0===e&&(e=this._backupTextures);for(var r=0;r<this._batchTextureCount;r++)n.activeTexture(n.TEXTURE0+r),t?i._batchTextures[r]=e[r]:(e[r]=i._batchTextures[r],i._batchTextures[r]=i._baseTextures[r]),n.bindTexture(n.TEXTURE_2D,i._batchTextures[r]),i.setTextureParams(n,i._batchTextures[r].isPOT);t&&e===this._backupTextures&&(this._backupTextures=[])},e._batchDraw=function(t,e,i){this._isDrawing>0&&this._drawBuffers(e),this._isDrawing++,this._drawID++,this.batchCardCount=0,this.depth=0,this._appendToBatchGroup(t,e,new n.Matrix2D,this.alpha,i),this.batchReason="drawFinish",this._drawBuffers(e),this._isDrawing--},e._cacheDraw=function(t,e,i,n){var r,s=this._activeShader,a=this._slotBlacklist,o=this._maxTextureSlots-1,h=this._viewportWidth,c=this._viewportHeight;this.protectTextureSlot(o,!0);var u=e.getMatrix();u=u.clone(),u.scale(1/n.scale,1/n.scale),u=u.invert(),u.translate(-n.offX/n.scale*e.scaleX,-n.offY/n.scale*e.scaleY);var l=this._cacheContainer;l.children=[e],l.transformMatrix=u,this._backupBatchTextures(!1),i&&i.length?this._drawFilters(e,i,n):this.isCacheControlled?(t.clear(t.COLOR_BUFFER_BIT),this._batchDraw(l,t,!0)):(t.activeTexture(t.TEXTURE0+o),e.cacheCanvas=this.getTargetRenderTexture(e,n._drawWidth,n._drawHeight),r=e.cacheCanvas,t.bindFramebuffer(t.FRAMEBUFFER,r._frameBuffer),this.updateViewport(n._drawWidth,n._drawHeight),this._projectionMatrix=this._projectionMatrixFlip,t.clear(t.COLOR_BUFFER_BIT),this._batchDraw(l,t,!0),t.bindFramebuffer(t.FRAMEBUFFER,null),this.updateViewport(h,c)),this._backupBatchTextures(!0),this.protectTextureSlot(o,!1),this._activeShader=s,this._slotBlacklist=a},e._drawFilters=function(t,e,i){var n,r=this,s=this._webGLContext,a=this._maxTextureSlots-1,o=this._viewportWidth,h=this._viewportHeight,c=this._cacheContainer,u=e.length;s.activeTexture(s.TEXTURE0+a),n=this.getTargetRenderTexture(t,i._drawWidth,i._drawHeight),s.bindFramebuffer(s.FRAMEBUFFER,n._frameBuffer),this.updateViewport(i._drawWidth,i._drawHeight),s.clear(s.COLOR_BUFFER_BIT),this._batchDraw(c,s,!0),s.activeTexture(s.TEXTURE0),s.bindTexture(s.TEXTURE_2D,n),this.setTextureParams(s);var l=!1,d=0,f=e[d];do r._activeShader=r.getFilterShader(f),r._activeShader&&(s.activeTexture(s.TEXTURE0+a),n=r.getTargetRenderTexture(t,i._drawWidth,i._drawHeight),s.bindFramebuffer(s.FRAMEBUFFER,n._frameBuffer),s.viewport(0,0,i._drawWidth,i._drawHeight),s.clear(s.COLOR_BUFFER_BIT),r._drawCover(s,l),s.activeTexture(s.TEXTURE0),s.bindTexture(s.TEXTURE_2D,n),r.setTextureParams(s),(u>1||e[0]._multiPass)&&(l=!l),f=null!==f._multiPass?f._multiPass:e[++d]);while(f);this.isCacheControlled?(s.bindFramebuffer(s.FRAMEBUFFER,null),this.updateViewport(o,h),this._activeShader=this.getFilterShader(this),s.clear(s.COLOR_BUFFER_BIT),this._drawCover(s,l)):(l&&(s.activeTexture(s.TEXTURE0+a),n=this.getTargetRenderTexture(t,i._drawWidth,i._drawHeight),s.bindFramebuffer(s.FRAMEBUFFER,n._frameBuffer),this._activeShader=this.getFilterShader(this),s.viewport(0,0,i._drawWidth,i._drawHeight),s.clear(s.COLOR_BUFFER_BIT),this._drawCover(s,!l)),s.bindFramebuffer(s.FRAMEBUFFER,null),this.updateViewport(o,h),t.cacheCanvas=n)},e._appendToBatchGroup=function(e,i,r,s,a){var o=this;e._glMtx||(e._glMtx=new n.Matrix2D);var h=e._glMtx;h.copy(r),e.transformMatrix?h.appendMatrix(e.transformMatrix):h.appendTransform(e.x,e.y,e.scaleX,e.scaleY,e.rotation,e.skewX,e.skewY,e.regX,e.regY);for(var c,u,l,d,f=e.children.length,p=0;p<f;p++){var _=e.children[p];if(_.visible&&s)if(_.cacheCanvas&&!a||(_._updateState&&_._updateState(),!_.children)){o.batchCardCount+1>o._maxCardsPerBatch&&(o.batchReason="vertexOverflow",o._drawBuffers(i),o.batchCardCount=0),_._glMtx||(_._glMtx=new n.Matrix2D);var v=_._glMtx;v.copy(h),_.transformMatrix?v.appendMatrix(_.transformMatrix):v.appendTransform(_.x,_.y,_.scaleX,_.scaleY,_.rotation,_.skewX,_.skewY,_.regX,_.regY);var m,g,x,b,w,y,E=_.cacheCanvas&&!a;if(2===_._webGLRenderStyle||E)x=!a&&_.cacheCanvas||_.image;else{if(1!==_._webGLRenderStyle)continue;if(b=_.spriteSheet.getFrame(_.currentFrame),null===b)continue;x=b.image}var T=o._uvs,C=o._vertices,S=o._indices,R=o._alphas;if(x){if(void 0===x._storeID)w=o._loadTextureImage(i,x),o._insertTextureInBatch(i,w);else{if(w=o._textureDictionary[x._storeID],!w){o.vocalDebug&&console.log("Texture should not be looked up while not being stored.");continue}w._batchID!==o._batchID&&o._insertTextureInBatch(i,w)}if(g=w._activeIndex,2===_._webGLRenderStyle||E)!E&&_.sourceRect?(_._uvRect||(_._uvRect={}),y=_.sourceRect,m=_._uvRect,m.t=y.y/x.height,m.l=y.x/x.width,m.b=(y.y+y.height)/x.height,m.r=(y.x+y.width)/x.width,c=0,u=0,l=y.width+c,d=y.height+u):(m=t.UV_RECT,E?(y=_.bitmapCache,c=y.x+y._filterOffX/y.scale,u=y.y+y._filterOffY/y.scale,l=y._drawWidth/y.scale+c,d=y._drawHeight/y.scale+u):(c=0,u=0,l=x.width+c,d=x.height+u));else if(1===_._webGLRenderStyle){var A=b.rect;m=b.uvRect,m||(m=t.buildUVRects(_.spriteSheet,_.currentFrame,!1)),c=-b.regX,u=-b.regY,l=A.width-b.regX,d=A.height-b.regY}var D=o.batchCardCount*t.INDICIES_PER_CARD,M=2*D;C[M]=c*v.a+u*v.c+v.tx,C[M+1]=c*v.b+u*v.d+v.ty,C[M+2]=c*v.a+d*v.c+v.tx,C[M+3]=c*v.b+d*v.d+v.ty,C[M+4]=l*v.a+u*v.c+v.tx,C[M+5]=l*v.b+u*v.d+v.ty,C[M+6]=C[M+2],C[M+7]=C[M+3],C[M+8]=C[M+4],C[M+9]=C[M+5],C[M+10]=l*v.a+d*v.c+v.tx,C[M+11]=l*v.b+d*v.d+v.ty,T[M]=m.l,T[M+1]=m.t,T[M+2]=m.l,T[M+3]=m.b,T[M+4]=m.r,T[M+5]=m.t,T[M+6]=m.l,T[M+7]=m.b,T[M+8]=m.r,T[M+9]=m.t,T[M+10]=m.r,T[M+11]=m.b,S[D]=S[D+1]=S[D+2]=S[D+3]=S[D+4]=S[D+5]=g,R[D]=R[D+1]=R[D+2]=R[D+3]=R[D+4]=R[D+5]=_.alpha*s,o.batchCardCount++}}else o._appendToBatchGroup(_,i,h,_.alpha*s)}},e._drawBuffers=function(e){var i=this;if(!(this.batchCardCount<=0)){this.vocalDebug&&console.log("Draw["+this._drawID+":"+this._batchID+"] : "+this.batchReason);var n=this._activeShader,r=this._vertexPositionBuffer,s=this._textureIndexBuffer,a=this._uvPositionBuffer,o=this._alphaBuffer;e.useProgram(n),e.bindBuffer(e.ARRAY_BUFFER,r),e.vertexAttribPointer(n.vertexPositionAttribute,r.itemSize,e.FLOAT,!1,0,0),e.bufferSubData(e.ARRAY_BUFFER,0,this._vertices),e.bindBuffer(e.ARRAY_BUFFER,s),e.vertexAttribPointer(n.textureIndexAttribute,s.itemSize,e.FLOAT,!1,0,0),e.bufferSubData(e.ARRAY_BUFFER,0,this._indices),e.bindBuffer(e.ARRAY_BUFFER,a),e.vertexAttribPointer(n.uvPositionAttribute,a.itemSize,e.FLOAT,!1,0,0),e.bufferSubData(e.ARRAY_BUFFER,0,this._uvs),e.bindBuffer(e.ARRAY_BUFFER,o),e.vertexAttribPointer(n.alphaAttribute,o.itemSize,e.FLOAT,!1,0,0),e.bufferSubData(e.ARRAY_BUFFER,0,this._alphas),e.uniformMatrix4fv(n.pMatrixUniform,e.FALSE,this._projectionMatrix);for(var h=0;h<this._batchTextureCount;h++){var c=i._batchTextures[h];e.activeTexture(e.TEXTURE0+h),e.bindTexture(e.TEXTURE_2D,c),i.setTextureParams(e,c.isPOT)}e.drawArrays(e.TRIANGLES,0,this.batchCardCount*t.INDICIES_PER_CARD),this._batchID++}},e._drawCover=function(e,i){this._isDrawing>0&&this._drawBuffers(e),this.vocalDebug&&console.log("Draw["+this._drawID+":"+this._batchID+"] : Cover");var n=this._activeShader,r=this._vertexPositionBuffer,s=this._uvPositionBuffer;e.clear(e.COLOR_BUFFER_BIT),e.useProgram(n),e.bindBuffer(e.ARRAY_BUFFER,r),e.vertexAttribPointer(n.vertexPositionAttribute,r.itemSize,e.FLOAT,!1,0,0),e.bufferSubData(e.ARRAY_BUFFER,0,t.COVER_VERT),e.bindBuffer(e.ARRAY_BUFFER,s),e.vertexAttribPointer(n.uvPositionAttribute,s.itemSize,e.FLOAT,!1,0,0),e.bufferSubData(e.ARRAY_BUFFER,0,i?t.COVER_UV_FLIP:t.COVER_UV),e.uniform1i(n.samplerUniform,0),e.uniform1f(n.uprightUniform,i?0:1),e.drawArrays(e.TRIANGLES,0,t.INDICIES_PER_CARD)},n.StageGL=n.promote(t,"Stage")}(),this.createjs=this.createjs||{},function(){function t(t){this.DisplayObject_constructor(),"string"==typeof t?(this.image=document.createElement("img"),this.image.src=t):this.image=t,this.sourceRect=null,this._webGLRenderStyle=n.DisplayObject._StageGL_BITMAP}var e=n.extend(t,n.DisplayObject);e.initialize=t,e.isVisible=function(){var t=this.image,e=this.cacheCanvas||t&&(t.naturalWidth||t.getContext||t.readyState>=2);return!!(this.visible&&this.alpha>0&&0!=this.scaleX&&0!=this.scaleY&&e)},e.draw=function(t,e){if(this.DisplayObject_draw(t,e))return!0;var i=this.image,n=this.sourceRect;if(i.getImage&&(i=i.getImage()),!i)return!0;if(n){var r=n.x,s=n.y,a=r+n.width,o=s+n.height,h=0,c=0,u=i.width,l=i.height;r<0&&(h-=r,r=0),a>u&&(a=u),s<0&&(c-=s,s=0),o>l&&(o=l),t.drawImage(i,r,s,a-r,o-s,h,c,a-r,o-s)}else t.drawImage(i,0,0);return!0},e.getBounds=function(){var t=this.DisplayObject_getBounds();if(t)return t;var e=this.image,i=this.sourceRect||e,n=e&&(e.naturalWidth||e.getContext||e.readyState>=2);return n?this._rectangle.setValues(0,0,i.width,i.height):null},e.clone=function(e){var i=this.image;i&&e&&(i=i.cloneNode());var n=new t(i);return this.sourceRect&&(n.sourceRect=this.sourceRect.clone()),this._cloneProps(n),n},e.toString=function(){return"[Bitmap (name="+this.name+")]"},n.Bitmap=n.promote(t,"DisplayObject")}(),this.createjs=this.createjs||{},function(){function t(t,e){this.DisplayObject_constructor(),this.currentFrame=0,this.currentAnimation=null,this.paused=!0,this.spriteSheet=t,this.currentAnimationFrame=0,this.framerate=0,this._animation=null,this._currentFrame=null,this._skipAdvance=!1,this._webGLRenderStyle=n.DisplayObject._StageGL_SPRITE,null!=e&&this.gotoAndPlay(e)}var e=n.extend(t,n.DisplayObject);e.initialize=t,e.isVisible=function(){var t=this.cacheCanvas||this.spriteSheet.complete;return!!(this.visible&&this.alpha>0&&0!=this.scaleX&&0!=this.scaleY&&t)},e.draw=function(t,e){if(this.DisplayObject_draw(t,e))return!0;this._normalizeFrame();var i=this.spriteSheet.getFrame(0|this._currentFrame);if(!i)return!1;var n=i.rect;return n.width&&n.height&&t.drawImage(i.image,n.x,n.y,n.width,n.height,-i.regX,-i.regY,n.width,n.height),!0},e.play=function(){this.paused=!1},e.stop=function(){this.paused=!0},e.gotoAndPlay=function(t){this.paused=!1,this._skipAdvance=!0,this._goto(t)},e.gotoAndStop=function(t){this.paused=!0,this._goto(t)},e.advance=function(t){var e=this.framerate||this.spriteSheet.framerate,i=e&&null!=t?t/(1e3/e):1;this._normalizeFrame(i)},e.getBounds=function(){return this.DisplayObject_getBounds()||this.spriteSheet.getFrameBounds(this.currentFrame,this._rectangle)},e.clone=function(){return this._cloneProps(new t(this.spriteSheet))},e.toString=function(){return"[Sprite (name="+this.name+")]"},e._cloneProps=function(t){return this.DisplayObject__cloneProps(t),t.currentFrame=this.currentFrame,t.currentAnimation=this.currentAnimation,t.paused=this.paused,t.currentAnimationFrame=this.currentAnimationFrame,t.framerate=this.framerate,t._animation=this._animation,t._currentFrame=this._currentFrame,t._skipAdvance=this._skipAdvance,t},e._tick=function(t){this.paused||(this._skipAdvance||this.advance(t&&t.delta),this._skipAdvance=!1),this.DisplayObject__tick(t)},e._normalizeFrame=function(t){t=t||0;var e,i=this._animation,n=this.paused,r=this._currentFrame;if(i){var s=i.speed||1,a=this.currentAnimationFrame;if(e=i.frames.length,a+t*s>=e){var o=i.next;if(this._dispatchAnimationEnd(i,r,n,o,e-1))return;if(o)return this._goto(o,t-(e-a)/s);this.paused=!0,a=i.frames.length-1}else a+=t*s;this.currentAnimationFrame=a,this._currentFrame=i.frames[0|a]}else if(r=this._currentFrame+=t,e=this.spriteSheet.getNumFrames(),r>=e&&e>0&&!this._dispatchAnimationEnd(i,r,n,e-1)&&(this._currentFrame-=e)>=e)return this._normalizeFrame();r=0|this._currentFrame,this.currentFrame!=r&&(this.currentFrame=r,this.dispatchEvent("change"))},e._dispatchAnimationEnd=function(t,e,i,r,s){var a=t?t.name:null;if(this.hasEventListener("animationend")){var o=new n.Event("animationend");o.name=a,o.next=r,this.dispatchEvent(o)}var h=this._animation!=t||this._currentFrame!=e;return h||i||!this.paused||(this.currentAnimationFrame=s,h=!0),h},e._goto=function(t,e){if(this.currentAnimationFrame=0,isNaN(t)){var i=this.spriteSheet.getAnimation(t);i&&(this._animation=i,this.currentAnimation=t,this._normalizeFrame(e))}else this.currentAnimation=this._animation=null,this._currentFrame=t,this._normalizeFrame()},n.Sprite=n.promote(t,"DisplayObject")}(),this.createjs=this.createjs||{},function(){function t(t){this.DisplayObject_constructor(),this.graphics=t?t:new n.Graphics}var e=n.extend(t,n.DisplayObject);e.isVisible=function(){var t=this.cacheCanvas||this.graphics&&!this.graphics.isEmpty();return!!(this.visible&&this.alpha>0&&0!=this.scaleX&&0!=this.scaleY&&t)},e.draw=function(t,e){return!!this.DisplayObject_draw(t,e)||(this.graphics.draw(t,this),!0)},e.clone=function(e){var i=e&&this.graphics?this.graphics.clone():this.graphics;return this._cloneProps(new t(i))},e.toString=function(){return"[Shape (name="+this.name+")]"},n.Shape=n.promote(t,"DisplayObject")}(),this.createjs=this.createjs||{},function(){function t(t,e,i){this.DisplayObject_constructor(),this.text=t,this.font=e,this.color=i,this.textAlign="left",this.textBaseline="top",this.maxWidth=null,this.outline=0,this.lineHeight=0,this.lineWidth=null}var e=n.extend(t,n.DisplayObject),i=n.createCanvas?n.createCanvas():document.createElement("canvas");i.getContext&&(t._workingContext=i.getContext("2d"),i.width=i.height=1),t.H_OFFSETS={start:0,left:0,center:-.5,end:-1,right:-1},t.V_OFFSETS={top:0,hanging:-.01,middle:-.4,alphabetic:-.8,ideographic:-.85,bottom:-1},e.isVisible=function(){var t=this.cacheCanvas||null!=this.text&&""!==this.text;return!!(this.visible&&this.alpha>0&&0!=this.scaleX&&0!=this.scaleY&&t)},e.draw=function(t,e){if(this.DisplayObject_draw(t,e))return!0;var i=this.color||"#000";return this.outline?(t.strokeStyle=i,t.lineWidth=1*this.outline):t.fillStyle=i,this._drawText(this._prepContext(t)),!0},e.getMeasuredWidth=function(){return this._getMeasuredWidth(this.text)},e.getMeasuredLineHeight=function(){return 1.2*this._getMeasuredWidth("M")},e.getMeasuredHeight=function(){return this._drawText(null,{}).height},e.getBounds=function(){var e=this.DisplayObject_getBounds();if(e)return e;if(null==this.text||""===this.text)return null;var i=this._drawText(null,{}),n=this.maxWidth&&this.maxWidth<i.width?this.maxWidth:i.width,r=n*t.H_OFFSETS[this.textAlign||"left"],s=this.lineHeight||this.getMeasuredLineHeight(),a=s*t.V_OFFSETS[this.textBaseline||"top"];return this._rectangle.setValues(r,a,n,i.height)},e.getMetrics=function(){var e={lines:[]};return e.lineHeight=this.lineHeight||this.getMeasuredLineHeight(),e.vOffset=e.lineHeight*t.V_OFFSETS[this.textBaseline||"top"],this._drawText(null,e,e.lines)},e.clone=function(){return this._cloneProps(new t(this.text,this.font,this.color))},e.toString=function(){return"[Text (text="+(this.text.length>20?this.text.substr(0,17)+"...":this.text)+")]"},e._cloneProps=function(t){return this.DisplayObject__cloneProps(t),t.textAlign=this.textAlign,t.textBaseline=this.textBaseline,t.maxWidth=this.maxWidth,t.outline=this.outline,t.lineHeight=this.lineHeight,t.lineWidth=this.lineWidth,t},e._prepContext=function(t){return t.font=this.font||"10px sans-serif",t.textAlign=this.textAlign||"left",t.textBaseline=this.textBaseline||"top",t.lineJoin="miter",t.miterLimit=2.5,t},e._drawText=function(e,i,n){var r=this,s=!!e;s||(e=t._workingContext,e.save(),this._prepContext(e));for(var a=this.lineHeight||this.getMeasuredLineHeight(),o=0,h=0,c=String(this.text).split(/(?:\r\n|\r|\n)/),u=0,l=c.length;u<l;u++){var d=c[u],f=null;if(null!=r.lineWidth&&(f=e.measureText(d).width)>r.lineWidth){var p=d.split(/(\s)/);d=p[0],f=e.measureText(d).width;for(var _=1,v=p.length;_<v;_+=2){var m=e.measureText(p[_]+p[_+1]).width;f+m>r.lineWidth?(s&&r._drawTextLine(e,d,h*a),n&&n.push(d),f>o&&(o=f),d=p[_+1],f=e.measureText(d).width,h++):(d+=p[_]+p[_+1],f+=m)}}s&&r._drawTextLine(e,d,h*a),n&&n.push(d),i&&null==f&&(f=e.measureText(d).width),f>o&&(o=f),h++}return i&&(i.width=o,i.height=h*a),s||e.restore(),i},e._drawTextLine=function(t,e,i){this.outline?t.strokeText(e,0,i,this.maxWidth||65535):t.fillText(e,0,i,this.maxWidth||65535)},e._getMeasuredWidth=function(e){var i=t._workingContext;i.save();var n=this._prepContext(i).measureText(e).width;return i.restore(),n},n.Text=n.promote(t,"DisplayObject")}(),this.createjs=this.createjs||{},function(){function t(t,e){this.Container_constructor(),this.text=t||"",this.spriteSheet=e,this.lineHeight=0,this.letterSpacing=0,this.spaceWidth=0,this._oldProps={text:0,spriteSheet:0,lineHeight:0,letterSpacing:0,spaceWidth:0},this._oldStage=null,this._drawAction=null}var e=n.extend(t,n.Container);t.maxPoolSize=100,t._spritePool=[],e.draw=function(t,e){this.DisplayObject_draw(t,e)||(this._updateState(),this.Container_draw(t,e))},e.getBounds=function(){return this._updateText(),this.Container_getBounds()},e.isVisible=function(){var t=this.cacheCanvas||this.spriteSheet&&this.spriteSheet.complete&&this.text;return!!(this.visible&&this.alpha>0&&0!==this.scaleX&&0!==this.scaleY&&t)},e.clone=function(){return this._cloneProps(new t(this.text,this.spriteSheet))},e.addChild=e.addChildAt=e.removeChild=e.removeChildAt=e.removeAllChildren=function(){},e._updateState=function(){this._updateText()},e._cloneProps=function(t){return this.Container__cloneProps(t),t.lineHeight=this.lineHeight,t.letterSpacing=this.letterSpacing,t.spaceWidth=this.spaceWidth,t},e._getFrameIndex=function(t,e){var i,n=e.getAnimation(t);return n||(t!=(i=t.toUpperCase())||t!=(i=t.toLowerCase())||(i=null),i&&(n=e.getAnimation(i))),n&&n.frames[0]},e._getFrame=function(t,e){var i=this._getFrameIndex(t,e);return null==i?i:e.getFrame(i)},e._getLineHeight=function(t){var e=this._getFrame("1",t)||this._getFrame("T",t)||this._getFrame("L",t)||t.getFrame(0);return e?e.rect.height:1},e._getSpaceWidth=function(t){var e=this._getFrame("1",t)||this._getFrame("l",t)||this._getFrame("e",t)||this._getFrame("a",t)||t.getFrame(0);return e?e.rect.width:1},e._updateText=function(){var e,i=this,r=0,s=0,a=this._oldProps,o=!1,h=this.spaceWidth,c=this.lineHeight,u=this.spriteSheet,l=t._spritePool,d=this.children,f=0,p=d.length;for(var _ in a)a[_]!=i[_]&&(a[_]=i[_],o=!0);if(o){var v=!!this._getFrame(" ",u);v||h||(h=this._getSpaceWidth(u)),c||(c=this._getLineHeight(u));for(var m=0,g=this.text.length;m<g;m++){var x=i.text.charAt(m);if(" "!=x||v)if("\n"!=x&&"\r"!=x){var b=i._getFrameIndex(x,u);null!=b&&(f<p?e=d[f]:(d.push(e=l.length?l.pop():new n.Sprite),e.parent=i,p++),e.spriteSheet=u,e.gotoAndStop(b),e.x=r,e.y=s,f++,r+=e.getBounds().width+i.letterSpacing)}else"\r"==x&&"\n"==i.text.charAt(m+1)&&m++,r=0,s+=c;else r+=h}for(;p>f;)l.push(e=d.pop()),e.parent=null,p--;l.length>t.maxPoolSize&&(l.length=t.maxPoolSize)}},n.BitmapText=n.promote(t,"Container")}(),this.createjs=this.createjs||{},function(){function t(e){this.Container_constructor(),!t.inited&&t.init();var i,r,s,a;e instanceof String||arguments.length>1?(i=e,r=arguments[1],s=arguments[2],a=arguments[3],null==s&&(s=-1),e=null):e&&(i=e.mode,r=e.startPosition,s=e.loop,a=e.labels),e||(e={labels:a}),this.mode=i||t.INDEPENDENT,this.startPosition=r||0,this.loop=s===!0?-1:s||0,this.currentFrame=0,this.paused=e.paused||!1,this.actionsEnabled=!0,this.autoReset=!0,this.frameBounds=this.frameBounds||e.frameBounds,this.framerate=null,e.useTicks=e.paused=!0,this.timeline=new n.Timeline(e),this._synchOffset=0,this._rawPosition=-1,this._bound_resolveState=this._resolveState.bind(this),this._t=0,this._managed={}}function e(){throw"MovieClipPlugin cannot be instantiated."}var i=n.extend(t,n.Container);t.INDEPENDENT="independent",t.SINGLE_FRAME="single",t.SYNCHED="synched",t.inited=!1,t.init=function(){t.inited||(e.install(),t.inited=!0)},i._getLabels=function(){return this.timeline.getLabels()},i.getLabels=n.deprecate(i._getLabels,"MovieClip.getLabels"),i._getCurrentLabel=function(){return this.timeline.currentLabel},i.getCurrentLabel=n.deprecate(i._getCurrentLabel,"MovieClip.getCurrentLabel"),i._getDuration=function(){return this.timeline.duration},i.getDuration=n.deprecate(i._getDuration,"MovieClip.getDuration");try{Object.defineProperties(i,{labels:{get:i._getLabels},currentLabel:{get:i._getCurrentLabel},totalFrames:{get:i._getDuration},duration:{get:i._getDuration}})}catch(r){}i.initialize=t,i.isVisible=function(){return!!(this.visible&&this.alpha>0&&0!=this.scaleX&&0!=this.scaleY)},i.draw=function(t,e){return!!this.DisplayObject_draw(t,e)||(this._updateState(),this.Container_draw(t,e),!0)},i.play=function(){this.paused=!1},i.stop=function(){this.paused=!0},i.gotoAndPlay=function(t){this.paused=!1,this._goto(t)},i.gotoAndStop=function(t){this.paused=!0,this._goto(t)},i.advance=function(e){var i=this,n=t.INDEPENDENT;if(this.mode===n){for(var r=this,s=r.framerate;(r=r.parent)&&null===s;)r.mode===n&&(s=r._framerate);if(this._framerate=s,!this.paused){var a=null!==s&&s!==-1&&null!==e?e/(1e3/s)+this._t:1,o=0|a;for(this._t=a-o;o--;)i._updateTimeline(i._rawPosition+1,!1)}}},i.clone=function(){throw"MovieClip cannot be cloned."},i.toString=function(){return"[MovieClip (name="+this.name+")]"},i._updateState=function(){this._rawPosition!==-1&&this.mode===t.INDEPENDENT||this._updateTimeline(-1)},i._tick=function(t){this.advance(t&&t.delta),this.Container__tick(t)},i._goto=function(t){var e=this.timeline.resolve(t);null!=e&&(this._t=0,this._updateTimeline(e,!0))},i._reset=function(){this._rawPosition=-1,this._t=this.currentFrame=0,this.paused=!1},i._updateTimeline=function(e,i){var n=this.mode!==t.INDEPENDENT,r=this.timeline;n&&(e=this.startPosition+(this.mode===t.SINGLE_FRAME?0:this._synchOffset)),e<0&&(e=0),(this._rawPosition!==e||n)&&(this._rawPosition=e,r.loop=this.loop,r.setPosition(e,n||!this.actionsEnabled,i,this._bound_resolveState))},i._renderFirstFrame=function(){var t=this.timeline,e=t.rawPosition;t.setPosition(0,!0,!0,this._bound_resolveState),t.rawPosition=e},i._resolveState=function(){var t=this,e=this.timeline;this.currentFrame=e.position;for(var i in this._managed)t._managed[i]=1;for(var r=e.tweens,s=0,a=r.length;s<a;s++){var o=r[s],h=o.target;if(h!==t&&!o.passive){var c=o._stepPosition;h instanceof n.DisplayObject?t._addManagedChild(h,c):t._setState(h.state,c)}}var u=this.children;for(s=u.length-1;s>=0;s--){var l=u[s].id;1===t._managed[l]&&(t.removeChildAt(s),delete t._managed[l])}},i._setState=function(t,e){var i=this;if(t)for(var n=t.length-1;n>=0;n--){var r=t[n],s=r.t,a=r.p;for(var o in a)s[o]=a[o];i._addManagedChild(s,e)}},i._addManagedChild=function(e,i){e._off||(this.addChildAt(e,0),e instanceof t&&(e._synchOffset=i,e.mode===t.INDEPENDENT&&e.autoReset&&!this._managed[e.id]&&e._reset()),this._managed[e.id]=2)},i._getBounds=function(t,e){var i=this.DisplayObject_getBounds();return i||this.frameBounds&&(i=this._rectangle.copy(this.frameBounds[this.currentFrame])),i?this._transformBounds(i,t,e):this.Container__getBounds(t,e)},n.MovieClip=n.promote(t,"Container"),e.priority=100,e.ID="MovieClip",e.install=function(){n.Tween._installPlugin(e)},e.init=function(i,n,r){"startPosition"===n&&i.target instanceof t&&i._addPlugin(e)},e.step=function(t,e,i){},e.change=function(t,e,i,n,r,s){if("startPosition"===i)return 1===r?e.props[i]:e.prev.props[i]}}(),this.createjs=this.createjs||{},function(){function t(){throw"SpriteSheetUtils cannot be instantiated"}var e=n.createCanvas?n.createCanvas():document.createElement("canvas");e.getContext&&(t._workingCanvas=e,t._workingContext=e.getContext("2d"),e.width=e.height=1),t.extractFrame=function(e,i){isNaN(i)&&(i=e.getAnimation(i).frames[0]);var n=e.getFrame(i);if(!n)return null;var r=n.rect,s=t._workingCanvas;s.width=r.width,s.height=r.height,t._workingContext.drawImage(n.image,r.x,r.y,r.width,r.height,0,0,r.width,r.height);var a=document.createElement("img");return a.src=s.toDataURL("image/png"),a},t.addFlippedFrames=n.deprecate(null,"SpriteSheetUtils.addFlippedFrames"),t.mergeAlpha=n.deprecate(null,"SpriteSheetUtils.mergeAlpha"),t._flip=function(e,i,n,r){for(var s=e._images,a=t._workingCanvas,o=t._workingContext,h=s.length/i,c=0;c<h;c++){var u=s[c];u.__tmp=c,o.setTransform(1,0,0,1,0,0),o.clearRect(0,0,a.width+1,a.height+1),a.width=u.width,a.height=u.height,o.setTransform(n?-1:1,0,0,r?-1:1,n?u.width:0,r?u.height:0),o.drawImage(u,0,0);var l=document.createElement("img");l.src=a.toDataURL("image/png"),l.width=u.width||u.naturalWidth,l.height=u.height||u.naturalHeight,s.push(l)}var d=e._frames,f=d.length/i;for(c=0;c<f;c++){u=d[c];var p=u.rect.clone();l=s[u.image.__tmp+h*i];var _={image:l,rect:p,regX:u.regX,regY:u.regY};n&&(p.x=(l.width||l.naturalWidth)-p.x-p.width,_.regX=p.width-u.regX),r&&(p.y=(l.height||l.naturalHeight)-p.y-p.height,_.regY=p.height-u.regY),d.push(_)}var v="_"+(n?"h":"")+(r?"v":""),m=e._animations,g=e._data,x=m.length/i;for(c=0;c<x;c++){var b=m[c];u=g[b];var w={name:b+v,speed:u.speed,next:u.next,frames:[]};u.next&&(w.next+=v),d=u.frames;for(var y=0,E=d.length;y<E;y++)w.frames.push(d[y]+f*i);g[w.name]=w,m.push(w.name)}},n.SpriteSheetUtils=t}(),this.createjs=this.createjs||{},function(){function t(t){this.EventDispatcher_constructor(),this.maxWidth=2048,this.maxHeight=2048,this.spriteSheet=null,this.scale=1,this.padding=1,this.timeSlice=.3,this.progress=-1,this.framerate=t||0,this._frames=[],this._animations={},this._data=null,this._nextFrameIndex=0,this._index=0,this._timerID=null,this._scale=1}var e=n.extend(t,n.EventDispatcher);t.ERR_DIMENSIONS="frame dimensions exceed max spritesheet dimensions",t.ERR_RUNNING="a build is already running",e.addFrame=function(e,i,n,r,s){if(this._data)throw t.ERR_RUNNING;var a=i||e.bounds||e.nominalBounds;return!a&&e.getBounds&&(a=e.getBounds()),
-a?(n=n||1,this._frames.push({source:e,sourceRect:a,scale:n,funct:r,data:s,index:this._frames.length,height:a.height*n})-1):null},e.addAnimation=function(e,i,n,r){if(this._data)throw t.ERR_RUNNING;this._animations[e]={frames:i,next:n,speed:r}},e.addMovieClip=function(e,i,n,r,s,a){var o=this;if(this._data)throw t.ERR_RUNNING;var h=e.frameBounds,c=i||e.bounds||e.nominalBounds;if(!c&&e.getBounds&&(c=e.getBounds()),c||h){var u,l,d=this._frames.length,f=e.timeline.duration;for(u=0;u<f;u++){var p=h&&h[u]?h[u]:c;o.addFrame(e,p,n,o._setupMovieClipFrame,{i:u,f:r,d:s})}var _=e.timeline._labels,v=[];for(var m in _)v.push({index:_[m],label:m});if(v.length)for(v.sort(function(t,e){return t.index-e.index}),u=0,l=v.length;u<l;u++){for(var g=v[u].label,x=d+v[u].index,b=d+(u==l-1?f:v[u+1].index),w=[],y=x;y<b;y++)w.push(y);a&&!(g=a(g,e,x,b))||o.addAnimation(g,w,!0)}}},e.build=function(){if(this._data)throw t.ERR_RUNNING;for(this._startBuild();this._drawNext(););return this._endBuild(),this.spriteSheet},e.buildAsync=function(e){if(this._data)throw t.ERR_RUNNING;this.timeSlice=e,this._startBuild();var i=this;this._timerID=setTimeout(function(){i._run()},50-50*Math.max(.01,Math.min(.99,this.timeSlice||.3)))},e.stopAsync=function(){clearTimeout(this._timerID),this._data=null},e.clone=function(){throw"SpriteSheetBuilder cannot be cloned."},e.toString=function(){return"[SpriteSheetBuilder]"},e._startBuild=function(){var e=this,i=this.padding||0;this.progress=0,this.spriteSheet=null,this._index=0,this._scale=this.scale;var r=[];this._data={images:[],frames:r,framerate:this.framerate,animations:this._animations};var s=this._frames.slice();if(s.sort(function(t,e){return t.height<=e.height?-1:1}),s[s.length-1].height+2*i>this.maxHeight)throw t.ERR_DIMENSIONS;for(var a=0,o=0,h=0;s.length;){var c=e._fillRow(s,a,h,r,i);if(c.w>o&&(o=c.w),a+=c.h,!c.h||!s.length){var u=n.createCanvas?n.createCanvas():document.createElement("canvas");u.width=e._getSize(o,e.maxWidth),u.height=e._getSize(a,e.maxHeight),e._data.images[h]=u,c.h||(o=a=0,h++)}}},e._setupMovieClipFrame=function(t,e){var i=t.actionsEnabled;t.actionsEnabled=!1,t.gotoAndStop(e.i),t.actionsEnabled=i,e.f&&e.f(t,e.d,e.i)},e._getSize=function(t,e){for(var i=4;Math.pow(2,++i)<t;);return Math.min(e,Math.pow(2,i))},e._fillRow=function(e,i,r,s,a){var o=this,h=this.maxWidth,c=this.maxHeight;i+=a;for(var u=c-i,l=a,d=0,f=e.length-1;f>=0;f--){var p=e[f],_=o._scale*p.scale,v=p.sourceRect,m=p.source,g=Math.floor(_*v.x-a),x=Math.floor(_*v.y-a),b=Math.ceil(_*v.height+2*a),w=Math.ceil(_*v.width+2*a);if(w>h)throw t.ERR_DIMENSIONS;b>u||l+w>h||(p.img=r,p.rect=new n.Rectangle(l,i,w,b),d=d||b,e.splice(f,1),s[p.index]=[l,i,w,b,r,Math.round(-g+_*m.regX-a),Math.round(-x+_*m.regY-a)],l+=w)}return{w:l,h:d}},e._endBuild=function(){this.spriteSheet=new n.SpriteSheet(this._data),this._data=null,this.progress=1,this.dispatchEvent("complete")},e._run=function(){for(var t=this,e=50*Math.max(.01,Math.min(.99,this.timeSlice||.3)),i=(new Date).getTime()+e,r=!1;i>(new Date).getTime();)if(!t._drawNext()){r=!0;break}if(r)this._endBuild();else{var s=this;this._timerID=setTimeout(function(){s._run()},50-e)}var a=this.progress=this._index/this._frames.length;if(this.hasEventListener("progress")){var o=new n.Event("progress");o.progress=a,this.dispatchEvent(o)}},e._drawNext=function(){var t=this._frames[this._index],e=t.scale*this._scale,i=t.rect,n=t.sourceRect,r=this._data.images[t.img],s=r.getContext("2d");return t.funct&&t.funct(t.source,t.data),s.save(),s.beginPath(),s.rect(i.x,i.y,i.width,i.height),s.clip(),s.translate(Math.ceil(i.x-n.x*e),Math.ceil(i.y-n.y*e)),s.scale(e,e),t.source.draw(s),s.restore(),++this._index<this._frames.length},n.SpriteSheetBuilder=n.promote(t,"EventDispatcher")}(),this.createjs=this.createjs||{},function(){function t(t){this.DisplayObject_constructor(),"string"==typeof t&&(t=document.getElementById(t)),this.mouseEnabled=!1;var e=t.style;e.position="absolute",e.transformOrigin=e.WebkitTransformOrigin=e.msTransformOrigin=e.MozTransformOrigin=e.OTransformOrigin="0% 0%",this.htmlElement=t,this._oldProps=null,this._oldStage=null,this._drawAction=null}var e=n.extend(t,n.DisplayObject);e.isVisible=function(){return null!=this.htmlElement},e.draw=function(t,e){return!0},e.cache=function(){},e.uncache=function(){},e.updateCache=function(){},e.hitTest=function(){},e.localToGlobal=function(){},e.globalToLocal=function(){},e.localToLocal=function(){},e.clone=function(){throw"DOMElement cannot be cloned."},e.toString=function(){return"[DOMElement (name="+this.name+")]"},e._tick=function(t){var e=this.stage;e&&e!==this._oldStage&&(this._drawAction&&e.off("drawend",this._drawAction),this._drawAction=e.on("drawend",this._handleDrawEnd,this),this._oldStage=e),this.DisplayObject__tick(t)},e._handleDrawEnd=function(t){var e=this.htmlElement;if(e){var i=e.style,r=this.getConcatenatedDisplayProps(this._props),s=r.matrix,a=r.visible?"visible":"hidden";if(a!=i.visibility&&(i.visibility=a),r.visible){var o=this._oldProps,h=o&&o.matrix,c=1e4;if(!h||!h.equals(s)){var u="matrix("+(s.a*c|0)/c+","+(s.b*c|0)/c+","+(s.c*c|0)/c+","+(s.d*c|0)/c+","+(s.tx+.5|0);i.transform=i.WebkitTransform=i.OTransform=i.msTransform=u+","+(s.ty+.5|0)+")",i.MozTransform=u+"px,"+(s.ty+.5|0)+"px)",o||(o=this._oldProps=new n.DisplayProps((!0),null)),o.matrix.copy(s)}o.alpha!=r.alpha&&(i.opacity=""+(r.alpha*c|0)/c,o.alpha=r.alpha)}}},n.DOMElement=n.promote(t,"DisplayObject")}(),this.createjs=this.createjs||{},function(){function t(){this.usesContext=!1,this._multiPass=null,this.VTX_SHADER_BODY=null,this.FRAG_SHADER_BODY=null}var e=t.prototype;e.getBounds=function(t){return t},e.shaderParamSetup=function(t,e,i){},e.applyFilter=function(t,e,i,n,r,s,a,o){s=s||t,null==a&&(a=e),null==o&&(o=i);try{var h=t.getImageData(e,i,n,r)}catch(c){return!1}return!!this._applyFilter(h)&&(s.putImageData(h,a,o),!0)},e.toString=function(){return"[Filter]"},e.clone=function(){return new t},e._applyFilter=function(t){return!0},n.Filter=t}(),this.createjs=this.createjs||{},function(){function t(){this.width=void 0,this.height=void 0,this.x=void 0,this.y=void 0,this.scale=1,this.offX=0,this.offY=0,this.cacheID=0,this._filterOffX=0,this._filterOffY=0,this._cacheDataURLID=0,this._cacheDataURL=null,this._drawWidth=0,this._drawHeight=0}var e=t.prototype;t.getFilterBounds=function(t,e){e||(e=new n.Rectangle);var i=t.filters,r=i&&i.length;if(!!r<=0)return e;for(var s=0;s<r;s++){var a=i[s];if(a&&a.getBounds){var o=a.getBounds();o&&(0==s?e.setValues(o.x,o.y,o.width,o.height):e.extend(o.x,o.y,o.width,o.height))}}return e},e.toString=function(){return"[BitmapCache]"},e.define=function(t,e,i,n,r,s,a){if(!t)throw"No symbol to cache";this._options=a,this.target=t,this.width=n>=1?n:1,this.height=r>=1?r:1,this.x=e||0,this.y=i||0,this.scale=s||1,this.update()},e.update=function(e){if(!this.target)throw"define() must be called before update()";var i=t.getFilterBounds(this.target),n=this.target.cacheCanvas;this._drawWidth=Math.ceil(this.width*this.scale)+i.width,this._drawHeight=Math.ceil(this.height*this.scale)+i.height,n&&this._drawWidth==n.width&&this._drawHeight==n.height||this._updateSurface(),this._filterOffX=i.x,this._filterOffY=i.y,this.offX=this.x*this.scale+this._filterOffX,this.offY=this.y*this.scale+this._filterOffY,this._drawToCache(e),this.cacheID=this.cacheID?this.cacheID+1:1},e.release=function(){if(this._webGLCache)this._webGLCache.isCacheControlled||(this.__lastRT&&(this.__lastRT=void 0),this.__rtA&&this._webGLCache._killTextureObject(this.__rtA),this.__rtB&&this._webGLCache._killTextureObject(this.__rtB),this.target&&this.target.cacheCanvas&&this._webGLCache._killTextureObject(this.target.cacheCanvas)),this._webGLCache=!1;else{var t=this.target.stage;t instanceof n.StageGL&&t.releaseTexture(this.target.cacheCanvas)}this.target=this.target.cacheCanvas=null,this.cacheID=this._cacheDataURLID=this._cacheDataURL=void 0,this.width=this.height=this.x=this.y=this.offX=this.offY=0,this.scale=1},e.getCacheDataURL=function(){var t=this.target&&this.target.cacheCanvas;return t?(this.cacheID!=this._cacheDataURLID&&(this._cacheDataURLID=this.cacheID,this._cacheDataURL=t.toDataURL?t.toDataURL():null),this._cacheDataURL):null},e.draw=function(t){return!!this.target&&(t.drawImage(this.target.cacheCanvas,this.x+this._filterOffX/this.scale,this.y+this._filterOffY/this.scale,this._drawWidth/this.scale,this._drawHeight/this.scale),!0)},e._updateSurface=function(){if(!this._options||!this._options.useGL){var t=this.target.cacheCanvas;return t||(t=this.target.cacheCanvas=n.createCanvas?n.createCanvas():document.createElement("canvas")),t.width=this._drawWidth,void(t.height=this._drawHeight)}if(!this._webGLCache)if("stage"===this._options.useGL){if(!this.target.stage||!this.target.stage.isWebGL){var e="Cannot use 'stage' for cache because the object's parent stage is ";throw e+=this.target.stage?"non WebGL.":"not set, please addChild to the correct stage."}this.target.cacheCanvas=!0,this._webGLCache=this.target.stage}else if("new"===this._options.useGL)this.target.cacheCanvas=document.createElement("canvas"),this._webGLCache=new n.StageGL(this.target.cacheCanvas,{antialias:!0,transparent:!0,autoPurge:-1}),this._webGLCache.isCacheControlled=!0;else{if(!(this._options.useGL instanceof n.StageGL))throw"Invalid option provided to useGL, expected ['stage', 'new', StageGL, undefined], got "+this._options.useGL;this.target.cacheCanvas=!0,this._webGLCache=this._options.useGL,this._webGLCache.isCacheControlled=!0}var t=this.target.cacheCanvas,i=this._webGLCache;i.isCacheControlled&&(t.width=this._drawWidth,t.height=this._drawHeight,i.updateViewport(this._drawWidth,this._drawHeight)),this.target.filters?(i.getTargetRenderTexture(this.target,this._drawWidth,this._drawHeight),i.getTargetRenderTexture(this.target,this._drawWidth,this._drawHeight)):i.isCacheControlled||i.getTargetRenderTexture(this.target,this._drawWidth,this._drawHeight)},e._drawToCache=function(t){var e=this.target.cacheCanvas,i=this.target,n=this._webGLCache;if(n)n.cacheDraw(i,i.filters,this),e=this.target.cacheCanvas,e.width=this._drawWidth,e.height=this._drawHeight;else{var r=e.getContext("2d");t||r.clearRect(0,0,this._drawWidth+1,this._drawHeight+1),r.save(),r.globalCompositeOperation=t,r.setTransform(this.scale,0,0,this.scale,-this._filterOffX,-this._filterOffY),r.translate(-this.x,-this.y),i.draw(r,!0),r.restore(),i.filters&&i.filters.length&&this._applyFilters(r)}e._invalid=!0},e._applyFilters=function(t){var e,i=this.target.filters,n=this._drawWidth,r=this._drawHeight,s=0,a=i[s];do a.usesContext?(e&&(t.putImageData(e,0,0),e=null),a.applyFilter(t,0,0,n,r)):(e||(e=t.getImageData(0,0,n,r)),a._applyFilter(e)),a=null!==a._multiPass?a._multiPass:i[++s];while(a);e&&t.putImageData(e,0,0)},n.BitmapCache=t}(),this.createjs=this.createjs||{},function(){function t(t,e,i){this.Filter_constructor(),this._blurX=t,this._blurXTable=[],this._lastBlurX=null,this._blurY=e,this._blurYTable=[],this._lastBlurY=null,this._quality,this._lastQuality=null,this.FRAG_SHADER_TEMPLATE="uniform float xWeight[{{blurX}}];uniform float yWeight[{{blurY}}];uniform vec2 textureOffset;void main(void) {vec4 color = vec4(0.0);float xAdj = ({{blurX}}.0-1.0)/2.0;float yAdj = ({{blurY}}.0-1.0)/2.0;vec2 sampleOffset;for(int i=0; i<{{blurX}}; i++) {for(int j=0; j<{{blurY}}; j++) {sampleOffset = vRenderCoord + (textureOffset * vec2(float(i)-xAdj, float(j)-yAdj));color += texture2D(uSampler, sampleOffset) * (xWeight[i] * yWeight[j]);}}gl_FragColor = color.rgba;}",(isNaN(i)||i<1)&&(i=1),this.setQuality(0|i)}var e=n.extend(t,n.Filter);e.getBlurX=function(){return this._blurX},e.getBlurY=function(){return this._blurY},e.setBlurX=function(t){(isNaN(t)||t<0)&&(t=0),this._blurX=t},e.setBlurY=function(t){(isNaN(t)||t<0)&&(t=0),this._blurY=t},e.getQuality=function(){return this._quality},e.setQuality=function(t){(isNaN(t)||t<0)&&(t=0),this._quality=0|t},e._getShader=function(){var t=this._lastBlurX!==this._blurX,e=this._lastBlurY!==this._blurY,i=this._lastQuality!==this._quality;return t||e||i?((t||i)&&(this._blurXTable=this._getTable(this._blurX*this._quality)),(e||i)&&(this._blurYTable=this._getTable(this._blurY*this._quality)),this._updateShader(),this._lastBlurX=this._blurX,this._lastBlurY=this._blurY,void(this._lastQuality=this._quality)):this._compiledShader},e._setShader=function(){this._compiledShader};try{Object.defineProperties(e,{blurX:{get:e.getBlurX,set:e.setBlurX},blurY:{get:e.getBlurY,set:e.setBlurY},quality:{get:e.getQuality,set:e.setQuality},_builtShader:{get:e._getShader,set:e._setShader}})}catch(i){console.log(i)}e._getTable=function(t){var e=4.2;if(t<=1)return[1];var i=[],n=Math.ceil(2*t);n+=n%2?0:1;for(var r=n/2|0,s=-r;s<=r;s++){var a=s/r*e;i.push(1/Math.sqrt(2*Math.PI)*Math.pow(Math.E,-(Math.pow(a,2)/4)))}var o=i.reduce(function(t,e){return t+e});return i.map(function(t,e,i){return t/o})},e._updateShader=function(){if(void 0!==this._blurX&&void 0!==this._blurY){var t=this.FRAG_SHADER_TEMPLATE;t=t.replace(/\{\{blurX\}\}/g,this._blurXTable.length.toFixed(0)),t=t.replace(/\{\{blurY\}\}/g,this._blurYTable.length.toFixed(0)),this.FRAG_SHADER_BODY=t}},e.shaderParamSetup=function(t,e,i){t.uniform1fv(t.getUniformLocation(i,"xWeight"),this._blurXTable),t.uniform1fv(t.getUniformLocation(i,"yWeight"),this._blurYTable),t.uniform2f(t.getUniformLocation(i,"textureOffset"),2/(e._viewportWidth*this._quality),2/(e._viewportHeight*this._quality))},t.MUL_TABLE=[1,171,205,293,57,373,79,137,241,27,391,357,41,19,283,265,497,469,443,421,25,191,365,349,335,161,155,149,9,278,269,261,505,245,475,231,449,437,213,415,405,395,193,377,369,361,353,345,169,331,325,319,313,307,301,37,145,285,281,69,271,267,263,259,509,501,493,243,479,118,465,459,113,446,55,435,429,423,209,413,51,403,199,393,97,3,379,375,371,367,363,359,355,351,347,43,85,337,333,165,327,323,5,317,157,311,77,305,303,75,297,294,73,289,287,71,141,279,277,275,68,135,67,133,33,262,260,129,511,507,503,499,495,491,61,121,481,477,237,235,467,232,115,457,227,451,7,445,221,439,218,433,215,427,425,211,419,417,207,411,409,203,202,401,399,396,197,49,389,387,385,383,95,189,47,187,93,185,23,183,91,181,45,179,89,177,11,175,87,173,345,343,341,339,337,21,167,83,331,329,327,163,81,323,321,319,159,79,315,313,39,155,309,307,153,305,303,151,75,299,149,37,295,147,73,291,145,289,287,143,285,71,141,281,35,279,139,69,275,137,273,17,271,135,269,267,133,265,33,263,131,261,130,259,129,257,1],t.SHG_TABLE=[0,9,10,11,9,12,10,11,12,9,13,13,10,9,13,13,14,14,14,14,10,13,14,14,14,13,13,13,9,14,14,14,15,14,15,14,15,15,14,15,15,15,14,15,15,15,15,15,14,15,15,15,15,15,15,12,14,15,15,13,15,15,15,15,16,16,16,15,16,14,16,16,14,16,13,16,16,16,15,16,13,16,15,16,14,9,16,16,16,16,16,16,16,16,16,13,14,16,16,15,16,16,10,16,15,16,14,16,16,14,16,16,14,16,16,14,15,16,16,16,14,15,14,15,13,16,16,15,17,17,17,17,17,17,14,15,17,17,16,16,17,16,15,17,16,17,11,17,16,17,16,17,16,17,17,16,17,17,16,17,17,16,16,17,17,17,16,14,17,17,17,17,15,16,14,16,15,16,13,16,15,16,14,16,15,16,12,16,15,16,17,17,17,17,17,13,16,15,17,17,17,16,15,17,17,17,16,15,17,17,14,16,17,17,16,17,17,16,15,17,16,14,17,16,15,17,16,17,17,16,17,15,16,17,14,17,16,15,17,16,17,13,17,16,17,17,16,17,14,17,16,17,16,17,16,17,9],e.getBounds=function(t){var e=0|this.blurX,i=0|this.blurY;if(e<=0&&i<=0)return t;var r=Math.pow(this.quality,.2);return(t||new n.Rectangle).pad(i*r+1,e*r+1,i*r+1,e*r+1)},e.clone=function(){return new t(this.blurX,this.blurY,this.quality)},e.toString=function(){return"[BlurFilter]"},e._applyFilter=function(e){var i=this._blurX>>1;if(isNaN(i)||i<0)return!1;var n=this._blurY>>1;if(isNaN(n)||n<0)return!1;if(0==i&&0==n)return!1;var r=this.quality;(isNaN(r)||r<1)&&(r=1),r|=0,r>3&&(r=3),r<1&&(r=1);var s=e.data,a=0,o=0,h=0,c=0,u=0,l=0,d=0,f=0,p=0,_=0,v=0,m=0,g=0,x=0,b=0,w=i+i+1|0,y=n+n+1|0,E=0|e.width,T=0|e.height,C=E-1|0,S=T-1|0,R=i+1|0,A=n+1|0,D={r:0,b:0,g:0,a:0},M=D;for(h=1;h<w;h++)M=M.n={r:0,b:0,g:0,a:0};M.n=D;var I={r:0,b:0,g:0,a:0},P=I;for(h=1;h<y;h++)P=P.n={r:0,b:0,g:0,a:0};P.n=I;for(var O=null,F=0|t.MUL_TABLE[i],L=0|t.SHG_TABLE[i],B=0|t.MUL_TABLE[n],j=0|t.SHG_TABLE[n];r-- >0;){d=l=0;var k=F,U=L;for(o=T;--o>-1;){for(f=R*(m=s[0|l]),p=R*(g=s[l+1|0]),_=R*(x=s[l+2|0]),v=R*(b=s[l+3|0]),M=D,h=R;--h>-1;)M.r=m,M.g=g,M.b=x,M.a=b,M=M.n;for(h=1;h<R;h++)c=l+((C<h?C:h)<<2)|0,f+=M.r=s[c],p+=M.g=s[c+1],_+=M.b=s[c+2],v+=M.a=s[c+3],M=M.n;for(O=D,a=0;a<E;a++)s[l++]=f*k>>>U,s[l++]=p*k>>>U,s[l++]=_*k>>>U,s[l++]=v*k>>>U,c=d+((c=a+i+1)<C?c:C)<<2,f-=O.r-(O.r=s[c]),p-=O.g-(O.g=s[c+1]),_-=O.b-(O.b=s[c+2]),v-=O.a-(O.a=s[c+3]),O=O.n;d+=E}for(k=B,U=j,a=0;a<E;a++){for(l=a<<2|0,f=A*(m=s[l])|0,p=A*(g=s[l+1|0])|0,_=A*(x=s[l+2|0])|0,v=A*(b=s[l+3|0])|0,P=I,h=0;h<A;h++)P.r=m,P.g=g,P.b=x,P.a=b,P=P.n;for(u=E,h=1;h<=n;h++)l=u+a<<2,f+=P.r=s[l],p+=P.g=s[l+1],_+=P.b=s[l+2],v+=P.a=s[l+3],P=P.n,h<S&&(u+=E);if(l=a,O=I,r>0)for(o=0;o<T;o++)c=l<<2,s[c+3]=b=v*k>>>U,b>0?(s[c]=f*k>>>U,s[c+1]=p*k>>>U,s[c+2]=_*k>>>U):s[c]=s[c+1]=s[c+2]=0,c=a+((c=o+A)<S?c:S)*E<<2,f-=O.r-(O.r=s[c]),p-=O.g-(O.g=s[c+1]),_-=O.b-(O.b=s[c+2]),v-=O.a-(O.a=s[c+3]),O=O.n,l+=E;else for(o=0;o<T;o++)c=l<<2,s[c+3]=b=v*k>>>U,b>0?(b=255/b,s[c]=(f*k>>>U)*b,s[c+1]=(p*k>>>U)*b,s[c+2]=(_*k>>>U)*b):s[c]=s[c+1]=s[c+2]=0,c=a+((c=o+A)<S?c:S)*E<<2,f-=O.r-(O.r=s[c]),p-=O.g-(O.g=s[c+1]),_-=O.b-(O.b=s[c+2]),v-=O.a-(O.a=s[c+3]),O=O.n,l+=E}}return!0},n.BlurFilter=n.promote(t,"Filter")}(),this.createjs=this.createjs||{},function(){function t(t){this.Filter_constructor(),this.alphaMap=t,this._alphaMap=null,this._mapData=null,this._mapTexture=null,this.FRAG_SHADER_BODY="uniform sampler2D uAlphaSampler;void main(void) {vec4 color = texture2D(uSampler, vRenderCoord);vec4 alphaMap = texture2D(uAlphaSampler, vTextureCoord);gl_FragColor = vec4(color.rgb, color.a * (alphaMap.r * ceil(alphaMap.a)));}"}var e=n.extend(t,n.Filter);e.shaderParamSetup=function(t,e,i){this._mapTexture||(this._mapTexture=t.createTexture()),t.activeTexture(t.TEXTURE1),t.bindTexture(t.TEXTURE_2D,this._mapTexture),e.setTextureParams(t),t.texImage2D(t.TEXTURE_2D,0,t.RGBA,t.RGBA,t.UNSIGNED_BYTE,this.alphaMap),t.uniform1i(t.getUniformLocation(i,"uAlphaSampler"),1)},e.clone=function(){var e=new t(this.alphaMap);return e._alphaMap=this._alphaMap,e._mapData=this._mapData,e},e.toString=function(){return"[AlphaMapFilter]"},e._applyFilter=function(t){if(!this.alphaMap)return!0;if(!this._prepAlphaMap())return!1;for(var e=t.data,i=this._mapData,n=0,r=e.length;n<r;n+=4)e[n+3]=i[n]||0;return!0},e._prepAlphaMap=function(){if(!this.alphaMap)return!1;if(this.alphaMap==this._alphaMap&&this._mapData)return!0;this._mapData=null;var t,e=this._alphaMap=this.alphaMap,i=e;e instanceof HTMLCanvasElement?t=i.getContext("2d"):(i=n.createCanvas?n.createCanvas():document.createElement("canvas"),i.width=e.width,i.height=e.height,t=i.getContext("2d"),t.drawImage(e,0,0));try{var r=t.getImageData(0,0,e.width,e.height)}catch(s){return!1}return this._mapData=r.data,!0},n.AlphaMapFilter=n.promote(t,"Filter")}(),this.createjs=this.createjs||{},function(){function t(t){this.Filter_constructor(),this.mask=t,this.usesContext=!0,this.FRAG_SHADER_BODY="uniform sampler2D uAlphaSampler;void main(void) {vec4 color = texture2D(uSampler, vRenderCoord);vec4 alphaMap = texture2D(uAlphaSampler, vTextureCoord);gl_FragColor = vec4(color.rgb, color.a * alphaMap.a);}"}var e=n.extend(t,n.Filter);e.shaderParamSetup=function(t,e,i){this._mapTexture||(this._mapTexture=t.createTexture()),t.activeTexture(t.TEXTURE1),t.bindTexture(t.TEXTURE_2D,this._mapTexture),e.setTextureParams(t),t.texImage2D(t.TEXTURE_2D,0,t.RGBA,t.RGBA,t.UNSIGNED_BYTE,this.mask),t.uniform1i(t.getUniformLocation(i,"uAlphaSampler"),1)},e.applyFilter=function(t,e,i,n,r,s,a,o){return!this.mask||(s=s||t,null==a&&(a=e),null==o&&(o=i),s.save(),t==s&&(s.globalCompositeOperation="destination-in",s.drawImage(this.mask,a,o),s.restore(),!0))},e.clone=function(){return new t(this.mask)},e.toString=function(){return"[AlphaMaskFilter]"},n.AlphaMaskFilter=n.promote(t,"Filter")}(),this.createjs=this.createjs||{},function(){function t(t,e,i,n,r,s,a,o){this.Filter_constructor(),this.redMultiplier=null!=t?t:1,this.greenMultiplier=null!=e?e:1,this.blueMultiplier=null!=i?i:1,this.alphaMultiplier=null!=n?n:1,this.redOffset=r||0,this.greenOffset=s||0,this.blueOffset=a||0,this.alphaOffset=o||0,this.FRAG_SHADER_BODY="uniform vec4 uColorMultiplier;uniform vec4 uColorOffset;void main(void) {vec4 color = texture2D(uSampler, vRenderCoord);gl_FragColor = (color * uColorMultiplier) + uColorOffset;}"}var e=n.extend(t,n.Filter);e.shaderParamSetup=function(t,e,i){t.uniform4f(t.getUniformLocation(i,"uColorMultiplier"),this.redMultiplier,this.greenMultiplier,this.blueMultiplier,this.alphaMultiplier),t.uniform4f(t.getUniformLocation(i,"uColorOffset"),this.redOffset/255,this.greenOffset/255,this.blueOffset/255,this.alphaOffset/255)},e.toString=function(){return"[ColorFilter]"},e.clone=function(){return new t(this.redMultiplier,this.greenMultiplier,this.blueMultiplier,this.alphaMultiplier,this.redOffset,this.greenOffset,this.blueOffset,this.alphaOffset)},e._applyFilter=function(t){for(var e=this,i=t.data,n=i.length,r=0;r<n;r+=4)i[r]=i[r]*e.redMultiplier+e.redOffset,i[r+1]=i[r+1]*e.greenMultiplier+e.greenOffset,i[r+2]=i[r+2]*e.blueMultiplier+e.blueOffset,i[r+3]=i[r+3]*e.alphaMultiplier+e.alphaOffset;return!0},n.ColorFilter=n.promote(t,"Filter")}(),this.createjs=this.createjs||{},function(){function t(t,e,i,n){this.setColor(t,e,i,n)}var e=t.prototype;t.DELTA_INDEX=[0,.01,.02,.04,.05,.06,.07,.08,.1,.11,.12,.14,.15,.16,.17,.18,.2,.21,.22,.24,.25,.27,.28,.3,.32,.34,.36,.38,.4,.42,.44,.46,.48,.5,.53,.56,.59,.62,.65,.68,.71,.74,.77,.8,.83,.86,.89,.92,.95,.98,1,1.06,1.12,1.18,1.24,1.3,1.36,1.42,1.48,1.54,1.6,1.66,1.72,1.78,1.84,1.9,1.96,2,2.12,2.25,2.37,2.5,2.62,2.75,2.87,3,3.2,3.4,3.6,3.8,4,4.3,4.7,4.9,5,5.5,6,6.5,6.8,7,7.3,7.5,7.8,8,8.4,8.7,9,9.4,9.6,9.8,10],t.IDENTITY_MATRIX=[1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1],t.LENGTH=t.IDENTITY_MATRIX.length,e.setColor=function(t,e,i,n){return this.reset().adjustColor(t,e,i,n)},e.reset=function(){return this.copy(t.IDENTITY_MATRIX)},e.adjustColor=function(t,e,i,n){return this.adjustHue(n),this.adjustContrast(e),this.adjustBrightness(t),this.adjustSaturation(i)},e.adjustBrightness=function(t){return 0==t||isNaN(t)?this:(t=this._cleanValue(t,255),this._multiplyMatrix([1,0,0,0,t,0,1,0,0,t,0,0,1,0,t,0,0,0,1,0,0,0,0,0,1]),this)},e.adjustContrast=function(e){if(0==e||isNaN(e))return this;e=this._cleanValue(e,100);var i;return e<0?i=127+e/100*127:(i=e%1,i=0==i?t.DELTA_INDEX[e]:t.DELTA_INDEX[e<<0]*(1-i)+t.DELTA_INDEX[(e<<0)+1]*i,i=127*i+127),this._multiplyMatrix([i/127,0,0,0,.5*(127-i),0,i/127,0,0,.5*(127-i),0,0,i/127,0,.5*(127-i),0,0,0,1,0,0,0,0,0,1]),this},e.adjustSaturation=function(t){if(0==t||isNaN(t))return this;t=this._cleanValue(t,100);var e=1+(t>0?3*t/100:t/100),i=.3086,n=.6094,r=.082;return this._multiplyMatrix([i*(1-e)+e,n*(1-e),r*(1-e),0,0,i*(1-e),n*(1-e)+e,r*(1-e),0,0,i*(1-e),n*(1-e),r*(1-e)+e,0,0,0,0,0,1,0,0,0,0,0,1]),this},e.adjustHue=function(t){if(0==t||isNaN(t))return this;t=this._cleanValue(t,180)/180*Math.PI;var e=Math.cos(t),i=Math.sin(t),n=.213,r=.715,s=.072;return this._multiplyMatrix([n+e*(1-n)+i*-n,r+e*-r+i*-r,s+e*-s+i*(1-s),0,0,n+e*-n+.143*i,r+e*(1-r)+.14*i,s+e*-s+i*-.283,0,0,n+e*-n+i*-(1-n),r+e*-r+i*r,s+e*(1-s)+i*s,0,0,0,0,0,1,0,0,0,0,0,1]),this},e.concat=function(e){return e=this._fixMatrix(e),e.length!=t.LENGTH?this:(this._multiplyMatrix(e),this)},e.clone=function(){return(new t).copy(this)},e.toArray=function(){for(var e=this,i=[],n=0,r=t.LENGTH;n<r;n++)i[n]=e[n];return i},e.copy=function(e){for(var i=this,n=t.LENGTH,r=0;r<n;r++)i[r]=e[r];return this},e.toString=function(){return"[ColorMatrix]"},e._multiplyMatrix=function(t){var e,i,n,r=this,s=[];for(e=0;e<5;e++){for(i=0;i<5;i++)s[i]=r[i+5*e];for(i=0;i<5;i++){var a=0;for(n=0;n<5;n++)a+=t[i+5*n]*s[n];r[i+5*e]=a}}},e._cleanValue=function(t,e){return Math.min(e,Math.max(-e,t))},e._fixMatrix=function(e){return e instanceof t&&(e=e.toArray()),e.length<t.LENGTH?e=e.slice(0,e.length).concat(t.IDENTITY_MATRIX.slice(e.length,t.LENGTH)):e.length>t.LENGTH&&(e=e.slice(0,t.LENGTH)),e},n.ColorMatrix=t}(),this.createjs=this.createjs||{},function(){function t(t){this.Filter_constructor(),this.matrix=t,this.FRAG_SHADER_BODY="uniform mat4 uColorMatrix;uniform vec4 uColorMatrixOffset;void main(void) {vec4 color = texture2D(uSampler, vRenderCoord);mat4 m = uColorMatrix;vec4 newColor = vec4(0,0,0,0);newColor.r = color.r*m[0][0] + color.g*m[0][1] + color.b*m[0][2] + color.a*m[0][3];newColor.g = color.r*m[1][0] + color.g*m[1][1] + color.b*m[1][2] + color.a*m[1][3];newColor.b = color.r*m[2][0] + color.g*m[2][1] + color.b*m[2][2] + color.a*m[2][3];newColor.a = color.r*m[3][0] + color.g*m[3][1] + color.b*m[3][2] + color.a*m[3][3];gl_FragColor = newColor + uColorMatrixOffset;}"}var e=n.extend(t,n.Filter);e.shaderParamSetup=function(t,e,i){var n=this.matrix,r=new Float32Array([n[0],n[1],n[2],n[3],n[5],n[6],n[7],n[8],n[10],n[11],n[12],n[13],n[15],n[16],n[17],n[18]]);t.uniformMatrix4fv(t.getUniformLocation(i,"uColorMatrix"),!1,r),t.uniform4f(t.getUniformLocation(i,"uColorMatrixOffset"),n[4]/255,n[9]/255,n[14]/255,n[19]/255)},e.toString=function(){return"[ColorMatrixFilter]"},e.clone=function(){return new t(this.matrix)},e._applyFilter=function(t){for(var e,i,n,r,s=t.data,a=s.length,o=this.matrix,h=o[0],c=o[1],u=o[2],l=o[3],d=o[4],f=o[5],p=o[6],_=o[7],v=o[8],m=o[9],g=o[10],x=o[11],b=o[12],w=o[13],y=o[14],E=o[15],T=o[16],C=o[17],S=o[18],R=o[19],A=0;A<a;A+=4)e=s[A],i=s[A+1],n=s[A+2],r=s[A+3],s[A]=e*h+i*c+n*u+r*l+d,s[A+1]=e*f+i*p+n*_+r*v+m,s[A+2]=e*g+i*x+n*b+r*w+y,s[A+3]=e*E+i*T+n*C+r*S+R;return!0},n.ColorMatrixFilter=n.promote(t,"Filter")}(),this.createjs=this.createjs||{},function(){function t(){throw"Touch cannot be instantiated"}t.isSupported=function(){return!!("ontouchstart"in window||window.navigator.msPointerEnabled&&window.navigator.msMaxTouchPoints>0||window.navigator.pointerEnabled&&window.navigator.maxTouchPoints>0)},t.enable=function(e,i,n){return!!(e&&e.canvas&&t.isSupported())&&(!!e.__touch||(e.__touch={pointers:{},multitouch:!i,preventDefault:!n,count:0},"ontouchstart"in window?t._IOS_enable(e):(window.navigator.msPointerEnabled||window.navigator.pointerEnabled)&&t._IE_enable(e),!0))},t.disable=function(e){e&&("ontouchstart"in window?t._IOS_disable(e):(window.navigator.msPointerEnabled||window.navigator.pointerEnabled)&&t._IE_disable(e),delete e.__touch)},t._IOS_enable=function(e){var i=e.canvas,n=e.__touch.f=function(i){t._IOS_handleEvent(e,i)};i.addEventListener("touchstart",n,!1),i.addEventListener("touchmove",n,!1),i.addEventListener("touchend",n,!1),i.addEventListener("touchcancel",n,!1)},t._IOS_disable=function(t){var e=t.canvas;if(e){var i=t.__touch.f;e.removeEventListener("touchstart",i,!1),e.removeEventListener("touchmove",i,!1),e.removeEventListener("touchend",i,!1),e.removeEventListener("touchcancel",i,!1)}},t._IOS_handleEvent=function(t,e){var i=this;if(t){t.__touch.preventDefault&&e.preventDefault&&e.preventDefault();for(var n=e.changedTouches,r=e.type,s=0,a=n.length;s<a;s++){var o=n[s],h=o.identifier;o.target==t.canvas&&("touchstart"==r?i._handleStart(t,h,e,o.pageX,o.pageY):"touchmove"==r?i._handleMove(t,h,e,o.pageX,o.pageY):"touchend"!=r&&"touchcancel"!=r||i._handleEnd(t,h,e))}}},t._IE_enable=function(e){var i=e.canvas,n=e.__touch.f=function(i){t._IE_handleEvent(e,i)};void 0===window.navigator.pointerEnabled?(i.addEventListener("MSPointerDown",n,!1),window.addEventListener("MSPointerMove",n,!1),window.addEventListener("MSPointerUp",n,!1),window.addEventListener("MSPointerCancel",n,!1),e.__touch.preventDefault&&(i.style.msTouchAction="none")):(i.addEventListener("pointerdown",n,!1),window.addEventListener("pointermove",n,!1),window.addEventListener("pointerup",n,!1),window.addEventListener("pointercancel",n,!1),e.__touch.preventDefault&&(i.style.touchAction="none")),e.__touch.activeIDs={}},t._IE_disable=function(t){var e=t.__touch.f;void 0===window.navigator.pointerEnabled?(window.removeEventListener("MSPointerMove",e,!1),window.removeEventListener("MSPointerUp",e,!1),window.removeEventListener("MSPointerCancel",e,!1),t.canvas&&t.canvas.removeEventListener("MSPointerDown",e,!1)):(window.removeEventListener("pointermove",e,!1),window.removeEventListener("pointerup",e,!1),window.removeEventListener("pointercancel",e,!1),t.canvas&&t.canvas.removeEventListener("pointerdown",e,!1))},t._IE_handleEvent=function(t,e){if(t){t.__touch.preventDefault&&e.preventDefault&&e.preventDefault();var i=e.type,n=e.pointerId,r=t.__touch.activeIDs;if("MSPointerDown"==i||"pointerdown"==i){if(e.srcElement!=t.canvas)return;r[n]=!0,this._handleStart(t,n,e,e.pageX,e.pageY)}else r[n]&&("MSPointerMove"==i||"pointermove"==i?this._handleMove(t,n,e,e.pageX,e.pageY):"MSPointerUp"!=i&&"MSPointerCancel"!=i&&"pointerup"!=i&&"pointercancel"!=i||(delete r[n],this._handleEnd(t,n,e)))}},t._handleStart=function(t,e,i,n,r){var s=t.__touch;if(s.multitouch||!s.count){var a=s.pointers;a[e]||(a[e]=!0,s.count++,t._handlePointerDown(e,i,n,r))}},t._handleMove=function(t,e,i,n,r){t.__touch.pointers[e]&&t._handlePointerMove(e,i,n,r)},t._handleEnd=function(t,e,i){var n=t.__touch,r=n.pointers;r[e]&&(n.count--,t._handlePointerUp(e,i,!0),delete r[e])},n.Touch=t}(),this.createjs=this.createjs||{},function(){var t=n.EaselJS=n.EaselJS||{};t.version="1.0.0",t.buildDate="Thu, 14 Sep 2017 19:47:53 GMT"}()},function(t,e){t.exports=function(t,e,i,n){var r,s=t=t||{},a=typeof t["default"];"object"!==a&&"function"!==a||(r=t,s=t["default"]);var o="function"==typeof s?s.options:s;if(e&&(o.render=e.render,o.staticRenderFns=e.staticRenderFns),i&&(o._scopeId=i),n){var h=o.computed||(o.computed={});Object.keys(n).forEach(function(t){var e=n[t];h[t]=function(){return e}})}return{esModule:r,exports:s,options:o}}},function(t,e,i){"use strict";e.a={props:["cache"],updatesEaselCache:["scale"],data:function(){return{cacheStarted:!1,cacheNeedsUpdate:!1,beforeCaches:[],cacheWhens:[]}},mounted:function(){var t=this;this.updateCacheOnChange=function(){t.cacheNeedsUpdate=!0,t.setParentCacheNeedsUpdate()};var e=function(){t.component&&t.component.on("change",t.updateCacheOnChange)};window.addEventListener("resize",this.updateCacheOnChange),e(),this.$watch("component",e),this.$options.updatesEaselCache.forEach(function(e){t.$watch(e,function(){return t.cacheNeedsUpdate=!0})}),Object.keys(this.$options.props).forEach(function(e){t.$watch(e,function(){return t.setParentCacheNeedsUpdate()})}),this.$nextTick(function(){return t.cacheInit()})},destroyed:function(){window.removeEventListener("resize",this.updateCacheOnChange)},watch:{shouldCache:function(){this.shouldCache?this.cacheInit():this.cacheDestroy()},cacheNeedsUpdate:function(){var t=this;this.cacheNeedsUpdate&&this.shouldCache&&this.$nextTick(function(){t.component&&t.component.cacheCanvas&&(t.cacheDestroy(),t.cacheInit())})}},computed:{shouldCache:function(){return this.cache||this.cacheWhens.reduce(function(t,e){return t||e()},!1)},cacheScale:function(){for(var t=this.scale||1,e=this.easelParent;e;)t*=e.viewportScale?e.viewportScale.scaleX:e.scale||1,e=e.easelParent;return t}},methods:{beforeCache:function(t){this.beforeCaches.push(t)},triggerBeforeCaches:function(){this.beforeCaches.forEach(function(t){return t()})},cacheWhen:function(t){this.cacheWhens.push(t)},cacheInit:function(){var t=this;this.shouldCache&&this.getCacheBounds().then(function(e){var i=e.x,n=e.y,r=e.width,s=e.height;t.triggerBeforeCaches(),t.easelCanvas.createCanvas(function(){t.component.cache(i,n,r,s,t.cacheScale*window.devicePixelRatio)}),t.cacheStarted=!0,t.cacheNeedsUpdate=!1})["catch"](function(t){return console.error("Cannot cache: "+t,t)})},cacheDestroy:function(){this.component.uncache(),this.cacheStarted=!1,this.cacheNeedsUpdate=!1},setParentCacheNeedsUpdate:function(){this.easelParent&&"cacheNeedsUpdate"in this.easelParent&&(this.easelParent.cacheNeedsUpdate=!0)},getCacheBounds:function(){return Promise.reject("EaselCache components must define a `getCacheBounds` method")},getRelativeCacheBounds:function(){
-var t=this;return this.getCacheBounds().then(function(e){var i=(t.x||0)-t.component.regX+e.x,n=(t.y||0)-t.component.regY+e.y;return{x:i,y:n,width:e.width,height:e.height}}).then(function(e){return t.expandForShadow(e)}).then(function(e){return t.getSmallestSquare(e)})},getSmallestSquare:function(t){var e=(t.x,t.y,t.width),i=t.height,n=Math.sqrt(Math.pow(e,2)+Math.pow(i,2));return{x:-n,y:-n,width:2*n,height:2*n}},getSmallestCombination:function(t,e){var i=Math.min(t.x,e.x),n=Math.min(t.y,e.y),r=Math.max(e.x-i+e.width,t.x-i+t.width),s=Math.max(e.y-n+e.height,t.y-n+t.height);return{x:i,y:n,width:r,height:s}},expandForShadow:function(t){if(!this.shadow)return t;var e=this.shadow,i=(e[0],e[1]),n=e[2],r=e[3],s=Math.max(i,n)+r;return{x:t.x-s,y:t.y-s,width:t.width+2*s,height:t.height+2*s}}}}},function(t,e,i){"use strict";var n=i(8),r=i(0),s=i(22),a=["rotation","cursor","name"];e.a={inject:["easelParent","easelCanvas"],props:{x:{},y:{},flip:{},rotation:{},scale:{},alpha:{},shadow:{},cursor:{},visible:{"default":!0},name:{}},data:function(){var t=this;return{component:null,forceInvisiblePromises:(new s.a).on("change",function(e){return t.forceInvisible=e>0}),forceInvisible:!1}},mounted:function(){var t=this;this.$watch("component",function(e,i){i&&t.displayObjectBreakdown(i),e&&t.displayObjectInit()}),a.forEach(function(e){t.$watch(e,function(){t.component&&(t.component[e]=t[e])})}),this.$watch("x",function(){t.component&&(t.component.x=t.x||0)}),this.$watch("y",function(){t.component&&(t.component.y=t.y||0)}),this.$watch("flip",function(){t.component&&t.updateScales()}),this.$watch("scale",function(){t.component&&t.updateScales()}),this.$watch("alpha",function(){t.component&&t.updateAlpha()}),this.$watch("shadow",function(){t.component&&t.updateShadow()}),this.$watch("shouldBeVisible",function(){t.component&&t.updateVisibility()})},computed:{shouldBeVisible:function(){return this.visible&&!this.forceInvisible}},destroyed:function(){this.displayObjectBreakdown()},methods:{displayObjectInit:function(){var t=this;n.a.bindEvents(this,this.component),this.component.x=this.x||0,this.component.y=this.y||0,a.forEach(function(e){t.component[e]=t[e]}),this.updateScales(),this.updateAlpha(),this.updateShadow(),this.updateVisibility(),this.easelParent.addChild(this)},displayObjectBreakdown:function(t){void 0===t&&(t=null),this.easelParent.removeChild(this,t)},updateScales:function(){if(this.component){var t=this.scale||1;this.component.scaleX="horizontal"===this.flip||"both"===this.flip?-t:t,this.component.scaleY="vertical"===this.flip||"both"===this.flip?-t:t}},updateAlpha:function(){this.component.alpha=isNaN(this.alpha)||null===this.alpha?1:this.alpha},updateShadow:function(){this.shadow?this.component.shadow=new r.a.Shadow(this.shadow[0],this.shadow[1],this.shadow[2],this.shadow[3]):this.component.shadow=null},updateVisibility:function(){this.component.visible=this.shouldBeVisible},remainInvisibleUntil:function(t){return this.forceInvisiblePromises.add(t),t}}}},function(t,e,i){"use strict";var n=(i(0),i(7)),r=n.a.build.bind(n.a);e.a={props:["filters"],mounted:function(){var t=this;this.cacheWhen(function(){return t.filters&&t.filters.length>0}),this.beforeCache(function(){t.filters&&t.filters.length>0?t.component.filters=t.filters.map(r):t.component.filters=null})}}},function(t,e,i){"use strict";var n=(i(0),i(23));e.a={props:["align"],watch:{align:function(){this.component&&this.updateAlign()}},mounted:function(){var t=this;this.$watch("component",function(){return t.updateAlign()})},computed:{normalizedAlign:function(){return i.i(n.a)(this.align||["",""])}},methods:{updateAlign:function(){var t=this;return this.remainInvisibleUntil(this.getAlignDimensions().then(function(e){var i=e.width,n=e.height,r=t.normalizedAlign[0]||"left",s=t.normalizedAlign[1]||"top";return"left"===r?t.component.regX=0:"center"===r?t.component.regX=i/2:"right"===r&&(t.component.regX=i),"top"===s?t.component.regY=0:"center"===s?t.component.regY=n/2:"bottom"===s&&(t.component.regY=n),e},function(t){throw console.error("Cannot align:",t),t}))},getAlignDimensions:function(){throw new Error("EaselAlign components must define a `getAlignDimensions` method")}}}},function(t,e,i){"use strict";function n(t){return new Promise(function(e,i){var n=function(){try{if(t.component){if(t.component.getBounds()){clearInterval(r);var i=t.component.getBounds(),n=i.x,s=i.y,a=i.width,o=i.height;e({x:n,y:s,width:a,height:o})}}else clearInterval(r),reject("No component available to getBounds")}catch(h){throw clearInterval(r),h}},r=setInterval(n,10);n()})}e.a=n},function(t,e,i){"use strict";var n=i(0),r=i(19),s=i(18),a=i(20),o=new r.a;o.register("BlurFilter",n.a.BlurFilter),o.register("ColorFilter",n.a.ColorFilter),o.register("ColorMatrixFilter",s.a),o.register("PixelStrokeFilter",a.a),e.a=o},function(t,e,i){"use strict";var n=i(26),r=(i.n(n),["added","animationend","change","click","dblclick","mousedown","mouseout","mouseover","pressmove","pressup","removed","rollout","rollover","tick"]),s=function(t,e){return Boolean(t.$options._parentListeners&&t.$options._parentListeners[e])},a=function(t,e){return e.component=t,t.easelCanvas&&t.easelCanvas.augmentEvent&&(e=t.easelCanvas.augmentEvent(e)),e};e.a={bindEvents:function(t,e){r.forEach(function(i){s(t,i)&&e.addEventListener(i,function(e){return t.$emit(i,a(t,e))})})}}},function(t,e,i){"use strict";var n=(i(0),i(24)),r=i(25),s=i.n(r);e.a={provide:function(){return{easelParent:this}},data:function(){return{children:[]}},updated:function(){var t=this;this.$nextTick(function(){return t.syncEaselChildren()})},watch:{children:function(){this.syncEaselChildren()}},methods:{syncEaselChildren:function(){var t=this;this.component&&i.i(n.a)(this.children).forEach(function(e,i){var n=t.component.numChildren>=i?t.component.getChildAt(i):null;e.component!==n&&t.component.addChildAt(e.component,i)})},addChild:function(t){this.hasChild(t)||this.children.push(t)},removeChild:function(t,e){void 0===e&&(e=null);var i=this.indexOfChild(t);return!(i<0)&&(this.children.splice(i,1),this.component&&this.component.removeChild(e||t.component),!0)},hasChild:function(t){return this.indexOfChild(t)>-1},indexOfChild:function(t){return s()(this.children,t)}}}},function(t,e){var i;i=function(){return this}();try{i=i||Function("return this")()||(0,eval)("this")}catch(n){"object"==typeof window&&(i=window)}t.exports=i},function(t,e,i){var n=i(1)(i(27),null,null,null);n.options.__file="/Users/dan/vue-easeljs/src/components/EaselBitmap.vue",n.esModule&&Object.keys(n.esModule).some(function(t){return"default"!==t&&"__esModule"!==t})&&console.error("named exports are not supported in *.vue files."),t.exports=n.exports},function(t,e,i){var n=i(1)(i(28),i(37),null,null);n.options.__file="/Users/dan/vue-easeljs/src/components/EaselCanvas.vue",n.esModule&&Object.keys(n.esModule).some(function(t){return"default"!==t&&"__esModule"!==t})&&console.error("named exports are not supported in *.vue files."),n.options.functional&&console.error("[vue-loader] EaselCanvas.vue: functional components are not supported with templates, they should use render functions."),t.exports=n.exports},function(t,e,i){var n=i(1)(i(29),i(36),null,null);n.options.__file="/Users/dan/vue-easeljs/src/components/EaselContainer.vue",n.esModule&&Object.keys(n.esModule).some(function(t){return"default"!==t&&"__esModule"!==t})&&console.error("named exports are not supported in *.vue files."),n.options.functional&&console.error("[vue-loader] EaselContainer.vue: functional components are not supported with templates, they should use render functions."),t.exports=n.exports},function(t,e,i){var n=i(1)(i(30),null,null,null);n.options.__file="/Users/dan/vue-easeljs/src/components/EaselShape.vue",n.esModule&&Object.keys(n.esModule).some(function(t){return"default"!==t&&"__esModule"!==t})&&console.error("named exports are not supported in *.vue files."),t.exports=n.exports},function(t,e,i){var n=i(1)(i(31),null,null,null);n.options.__file="/Users/dan/vue-easeljs/src/components/EaselSprite.vue",n.esModule&&Object.keys(n.esModule).some(function(t){return"default"!==t&&"__esModule"!==t})&&console.error("named exports are not supported in *.vue files."),t.exports=n.exports},function(t,e,i){var n=i(1)(i(32),i(35),null,null);n.options.__file="/Users/dan/vue-easeljs/src/components/EaselSpriteSheet.vue",n.esModule&&Object.keys(n.esModule).some(function(t){return"default"!==t&&"__esModule"!==t})&&console.error("named exports are not supported in *.vue files."),n.options.functional&&console.error("[vue-loader] EaselSpriteSheet.vue: functional components are not supported with templates, they should use render functions."),t.exports=n.exports},function(t,e,i){var n=i(1)(i(33),null,null,null);n.options.__file="/Users/dan/vue-easeljs/src/components/EaselText.vue",n.esModule&&Object.keys(n.esModule).some(function(t){return"default"!==t&&"__esModule"!==t})&&console.error("named exports are not supported in *.vue files."),t.exports=n.exports},function(t,e,i){"use strict";var n=i(0),r=function(t){function e(t,e,i,r){var s=new n.a.ColorMatrix(t,e,i,r);n.a.ColorMatrixFilter.apply(this,[s])}return t&&(e.__proto__=t),e.prototype=Object.create(t&&t.prototype),e.prototype.constructor=e,e}(n.a.ColorMatrixFilter);e.a=r},function(t,e,i){"use strict";var n=i(0),r=function(){this.filters=[]};r.prototype.register=function(t,e){if(e.prototype.applyFilter)this.filters[t]=e;else{var i=e.prototype||e.constructor.prototype;if(i.adjustContext)i.usesContext=!0,i.applyFilter=function(t,e,i,n,r,s,a,o){return this.adjustContext(t,e,i,n,r,s,a,o)};else{if(!i.adjustImageData)throw new Error("Incompatible filter");i.usesContext=!1,i._applyFilter=function(t){return this.adjustImageData(t)}}for(var r in n.a.Filter.prototype)i[r]||(i[r]=n.a.Filter.prototype[r]);this.filters[t]=e}},r.prototype.build=function(t){var e=t[0],i=[null].concat(t.slice(1)),n=this.filters[e];if(!n)throw new Error("No such filter registered: "+e);return new(Function.prototype.bind.apply(n,i))},e.a=r},function(t,e,i){"use strict";var n=i(0),r={},s=function(t,e,i){void 0===t&&(t=[]),void 0===e&&(e=1),void 0===i&&(i={}),this.strokeRed=t[0]||0,this.strokeGreen=t[1]||0,this.strokeBlue=t[2]||0,this.strokeAlpha=t[3]||255,this.size=e,this.brush=this.calculateBrush(e),this.alphaCache={},this.options=i};s.prototype.adjustImageData=function(t){for(var e=this,i=this,n=i.strokeRed,r=i.strokeGreen,s=i.strokeBlue,a=i.strokeAlpha,o="undefined"==typeof this.options.antiAlias||this.options.antiAlias,h=t.data,c=t.width,u=t.height,l=(h.length,h.slice(0)),d=function(t,i,d){if(!(t<0||i<0||t>=c||i>=u)){var f=4*(i*c+t),p=o?e.alphaCache[d]||(e.alphaCache[d]=Math.round(Math.floor(a*d))):a;!l[f+3]&&h[f+3]<p&&(h[f+0]=n,h[f+1]=r,h[f+2]=s,h[f+3]=p)}},f=function(t,i){for(var n=0;n<e.brush.length;n++){var r=e.brush[n],s=r.y,a=r.minX,o=r.maxX,h=r.a;d(t+a,i+s,h),d(t+o,i+s,h);for(var c=a+1;c<=o-1;c++)d(t+c,i+s,1)}},p=0;p<c;p++)for(var _=0;_<u;_++)l[4*(_*c+p)+3]>0&&f(p,_);return!0},s.prototype.calculateBrush=function(t){if(r[t])return r[t];for(var e={},i=0;i<=t;i++){var n=i/t,s=Math.atan(n),a=Math.cos(s),o=Math.sin(s),h=a*t,c=o*t,u=Math.ceil(h),l=Math.ceil(c),d=h-Math.floor(h),f=c-Math.floor(c),p=(d+f)/2;0===p&&(p=1),e[l]={x:u,y:l,a:p}}for(var _ in e){var v=e[_],m=v.x,g=v.y,x=v.a;e[m]||(e[m]={x:g,y:m,a:x})}var b=[];for(var w in e){var y=e[w],E=y.x,T=y.y,C=y.a;b.push({y:T,minX:-E,maxX:E,a:C}),0!==T&&b.push({y:-T,minX:-E,maxX:E,a:C})}return r[t]=b,r[t]},s.prototype.getBounds=function(t){return void 0===t&&(t=null),(t||new n.a.Rectangle).pad(2*this.size,2*this.size,2*this.size,2*this.size)},e.a=s},function(t,e,i){"use strict";var n=function(t){void 0===t&&(t={});var e=t.errorCode;this.callbacks=[],this.errorCode=e};n.prototype.on=function(t,e){this.callbacks.push({event:t,cb:e})},n.prototype.off=function(t,e){this.callbacks=this.callbacks.filter(function(i){var n=i.event,r=i.cb;return!(n===t&&r===e)})},n.prototype.fire=function(t){for(var e=arguments,i=this,n=[],r=arguments.length-1;r-- >0;)n[r]=e[r+1];this.callbacks.filter(function(e){var i=e.event;return i===t}).forEach(function(e){var r=e.cb;try{r.apply(void 0,n)}catch(s){i.errorCode&&t!==i.errorCode&&i.fire(i.errorCode,t,n,r,s)}})},e.a=n},function(t,e,i){"use strict";var n=i(21),r=function(){this.events=new n.a({errorCode:"error"}),this.promises=new Set};r.prototype.add=function(t){var e=this;if(!t["finally"])throw new Error("We only accept promises here");this.promises.add(t),this.events.fire("add",this.promises.size),this.events.fire("change",this.promises.size),t["finally"](function(){e.promises["delete"](t),e.events.fire("remove",e.promises.size),e.events.fire("change",e.promises.size)})},r.prototype.on=function(t,e){return this.events.on(t,e),this},r.prototype.off=function(t,e){return this.events.off(t,e),this},e.a=r},function(t,e,i){"use strict";function n(t){"string"==typeof t&&(t=t.trim().split(/\-/));var e=t[0],i=t[1];if(a(e)&&o(i))return[e,i];if(o(e)&&a(i))return[i,e];throw new Error("Illegal alignment, bad mix of values or unknown value in: "+e+", "+i)}e.a=n;var r=["","left","center","right","start","end"],s=["","top","center","bottom","hanging","middle","alphabetic","ideographic"],a=function(t){return r.indexOf(t)>-1},o=function(t){return s.indexOf(t)>-1}},function(t,e,i){"use strict";function n(t){return[].concat(t).sort(r)}function r(t,e){var i=t.$el.compareDocumentPosition(e.$el);if(i&Node.DOCUMENT_POSITION_DISCONNECTED)throw new Error("Nodes are not in the same tree");return i&Node.DOCUMENT_POSITION_CONTAINS?1:i&Node.DOCUMENT_POSITION_CONTAINED_BY?-1:i&Node.DOCUMENT_POSITION_PRECEDING?1:i&Node.DOCUMENT_POSITION_FOLLOWING?-1:0}e.a=n},function(t,e,i){(function(t,i){function n(t,e){for(var i=-1,n=t?t.length:0;++i<n;)if(e(t[i],i,t))return!0;return!1}function r(t,e,i,n){for(var r=t.length,s=i+(n?1:-1);n?s--:++s<r;)if(e(t[s],s,t))return s;return-1}function s(t){return function(e){return null==e?void 0:e[t]}}function a(t,e){for(var i=-1,n=Array(t);++i<t;)n[i]=e(i);return n}function o(t){return function(e){return t(e)}}function h(t,e){return null==t?void 0:t[e]}function c(t){var e=!1;if(null!=t&&"function"!=typeof t.toString)try{e=!!(t+"")}catch(i){}return e}function u(t){var e=-1,i=Array(t.size);return t.forEach(function(t,n){i[++e]=[n,t]}),i}function l(t,e){return function(i){return t(e(i))}}function d(t){var e=-1,i=Array(t.size);return t.forEach(function(t){i[++e]=t}),i}function f(t){var e=this,i=-1,n=t?t.length:0;for(this.clear();++i<n;){var r=t[i];e.set(r[0],r[1])}}function p(){this.__data__=ui?ui(null):{}}function _(t){return this.has(t)&&delete this.__data__[t]}function v(t){var e=this.__data__;if(ui){var i=e[t];return i===Nt?void 0:i}return Qe.call(e,t)?e[t]:void 0}function m(t){var e=this.__data__;return ui?void 0!==e[t]:Qe.call(e,t)}function g(t,e){var i=this.__data__;return i[t]=ui&&void 0===e?Nt:e,this}function x(t){var e=this,i=-1,n=t?t.length:0;for(this.clear();++i<n;){var r=t[i];e.set(r[0],r[1])}}function b(){this.__data__=[]}function w(t){var e=this.__data__,i=N(e,t);if(i<0)return!1;var n=e.length-1;return i==n?e.pop():ii.call(e,i,1),!0}function y(t){var e=this.__data__,i=N(e,t);return i<0?void 0:e[i][1]}function E(t){return N(this.__data__,t)>-1}function T(t,e){var i=this.__data__,n=N(i,t);return n<0?i.push([t,e]):i[n][1]=e,this}function C(t){var e=this,i=-1,n=t?t.length:0;for(this.clear();++i<n;){var r=t[i];e.set(r[0],r[1])}}function S(){this.__data__={hash:new f,map:new(ai||x),string:new f}}function R(t){return at(this,t)["delete"](t)}function A(t){return at(this,t).get(t)}function D(t){return at(this,t).has(t)}function M(t,e){return at(this,t).set(t,e),this}function I(t){var e=this,i=-1,n=t?t.length:0;for(this.__data__=new C;++i<n;)e.add(t[i])}function P(t){return this.__data__.set(t,Nt),this}function O(t){return this.__data__.has(t)}function F(t){this.__data__=new x(t)}function L(){this.__data__=new x}function B(t){return this.__data__["delete"](t)}function j(t){return this.__data__.get(t)}function k(t){return this.__data__.has(t)}function U(t,e){var i=this.__data__;if(i instanceof x){var n=i.__data__;if(!ai||n.length<Ut-1)return n.push([t,e]),this;i=this.__data__=new C(n)}return i.set(t,e),this}function G(t,e){var i=wi(t)||yt(t)?a(t.length,String):[],n=i.length,r=!!n;for(var s in t)!e&&!Qe.call(t,s)||r&&("length"==s||ut(s,n))||i.push(s);return i}function N(t,e){for(var i=t.length;i--;)if(wt(t[i][0],e))return i;return-1}function X(t,e){e=lt(e,t)?[e]:it(e);for(var i=0,n=e.length;null!=t&&i<n;)t=t[mt(e[i++])];return i&&i==n?t:void 0}function Y(t){return Je.call(t)}function H(t,e){return null!=t&&e in Object(t)}function W(t,e,i,n,r){return t===e||(null==t||null==e||!Rt(t)&&!At(e)?t!==t&&e!==e:V(t,e,W,i,n,r))}function V(t,e,i,n,r,s){var a=wi(t),o=wi(e),h=qt,u=qt;a||(h=xi(t),h=h==$t?ne:h),o||(u=xi(e),u=u==$t?ne:u);var l=h==ne&&!c(t),d=u==ne&&!c(e),f=h==u;if(f&&!l)return s||(s=new F),a||yi(t)?nt(t,e,i,n,r,s):rt(t,e,h,i,n,r,s);if(!(r&Yt)){var p=l&&Qe.call(t,"__wrapped__"),_=d&&Qe.call(e,"__wrapped__");if(p||_){var v=p?t.value():t,m=_?e.value():e;return s||(s=new F),i(v,m,n,r,s)}}return!!f&&(s||(s=new F),st(t,e,i,n,r,s))}function z(t,e,i,n){var r=i.length,s=r,a=!n;if(null==t)return!s;for(t=Object(t);r--;){var o=i[r];if(a&&o[2]?o[1]!==t[o[0]]:!(o[0]in t))return!1}for(;++r<s;){o=i[r];var h=o[0],c=t[h],u=o[1];if(a&&o[2]){if(void 0===c&&!(h in t))return!1}else{var l=new F;if(n)var d=n(c,u,h,t,e,l);if(!(void 0===d?W(u,c,n,Xt|Yt,l):d))return!1}}return!0}function $(t){if(!Rt(t)||ft(t))return!1;var e=Ct(t)||c(t)?Ke:Me;return e.test(gt(t))}function q(t){return At(t)&&St(t.length)&&!!Oe[Je.call(t)]}function Q(t){return"function"==typeof t?t:null==t?jt:"object"==typeof t?wi(t)?Z(t[0],t[1]):K(t):kt(t)}function J(t){if(!pt(t))return ni(t);var e=[];for(var i in Object(t))Qe.call(t,i)&&"constructor"!=i&&e.push(i);return e}function K(t){var e=ot(t);return 1==e.length&&e[0][2]?vt(e[0][0],e[0][1]):function(i){return i===t||z(i,t,e)}}function Z(t,e){return lt(t)&&_t(e)?vt(mt(t),e):function(i){var n=Ft(i,t);return void 0===n&&n===e?Lt(i,t):W(e,n,void 0,Xt|Yt)}}function tt(t){return function(e){return X(e,t)}}function et(t){if("string"==typeof t)return t;if(Dt(t))return gi?gi.call(t):"";var e=t+"";return"0"==e&&1/t==-Ht?"-0":e}function it(t){return wi(t)?t:bi(t)}function nt(t,e,i,r,s,a){var o=s&Yt,h=t.length,c=e.length;if(h!=c&&!(o&&c>h))return!1;var u=a.get(t);if(u&&a.get(e))return u==e;var l=-1,d=!0,f=s&Xt?new I:void 0;for(a.set(t,e),a.set(e,t);++l<h;){var p=t[l],_=e[l];if(r)var v=o?r(_,p,l,e,t,a):r(p,_,l,t,e,a);if(void 0!==v){if(v)continue;d=!1;break}if(f){if(!n(e,function(t,e){if(!f.has(e)&&(p===t||i(p,t,r,s,a)))return f.add(e)})){d=!1;break}}else if(p!==_&&!i(p,_,r,s,a)){d=!1;break}}return a["delete"](t),a["delete"](e),d}function rt(t,e,i,n,r,s,a){switch(i){case le:if(t.byteLength!=e.byteLength||t.byteOffset!=e.byteOffset)return!1;t=t.buffer,e=e.buffer;case ue:return!(t.byteLength!=e.byteLength||!n(new ti(t),new ti(e)));case Qt:case Jt:case ie:return wt(+t,+e);case Kt:return t.name==e.name&&t.message==e.message;case se:case oe:return t==e+"";case ee:var o=u;case ae:var h=s&Yt;if(o||(o=d),t.size!=e.size&&!h)return!1;var c=a.get(t);if(c)return c==e;s|=Xt,a.set(t,e);var l=nt(o(t),o(e),n,r,s,a);return a["delete"](t),l;case he:if(mi)return mi.call(t)==mi.call(e)}return!1}function st(t,e,i,n,r,s){var a=r&Yt,o=Bt(t),h=o.length,c=Bt(e),u=c.length;if(h!=u&&!a)return!1;for(var l=h;l--;){var d=o[l];if(!(a?d in e:Qe.call(e,d)))return!1}var f=s.get(t);if(f&&s.get(e))return f==e;var p=!0;s.set(t,e),s.set(e,t);for(var _=a;++l<h;){d=o[l];var v=t[d],m=e[d];if(n)var g=a?n(m,v,d,e,t,s):n(v,m,d,t,e,s);if(!(void 0===g?v===m||i(v,m,n,r,s):g)){p=!1;break}_||(_="constructor"==d)}if(p&&!_){var x=t.constructor,b=e.constructor;x!=b&&"constructor"in t&&"constructor"in e&&!("function"==typeof x&&x instanceof x&&"function"==typeof b&&b instanceof b)&&(p=!1)}return s["delete"](t),s["delete"](e),p}function at(t,e){var i=t.__data__;return dt(e)?i["string"==typeof e?"string":"hash"]:i.map}function ot(t){for(var e=Bt(t),i=e.length;i--;){var n=e[i],r=t[n];e[i]=[n,r,_t(r)]}return e}function ht(t,e){var i=h(t,e);return $(i)?i:void 0}function ct(t,e,i){e=lt(e,t)?[e]:it(e);for(var n,r=-1,s=e.length;++r<s;){var a=mt(e[r]);if(!(n=null!=t&&i(t,a)))break;t=t[a]}if(n)return n;var s=t?t.length:0;return!!s&&St(s)&&ut(a,s)&&(wi(t)||yt(t))}function ut(t,e){return e=null==e?Wt:e,!!e&&("number"==typeof t||Pe.test(t))&&t>-1&&t%1==0&&t<e}function lt(t,e){if(wi(t))return!1;var i=typeof t;return!("number"!=i&&"symbol"!=i&&"boolean"!=i&&null!=t&&!Dt(t))||(ye.test(t)||!we.test(t)||null!=e&&t in Object(e))}function dt(t){var e=typeof t;return"string"==e||"number"==e||"symbol"==e||"boolean"==e?"__proto__"!==t:null===t}function ft(t){return!!$e&&$e in t}function pt(t){var e=t&&t.constructor,i="function"==typeof e&&e.prototype||Ve;return t===i}function _t(t){return t===t&&!Rt(t)}function vt(t,e){return function(i){return null!=i&&(i[t]===e&&(void 0!==e||t in Object(i)))}}function mt(t){if("string"==typeof t||Dt(t))return t;var e=t+"";return"0"==e&&1/t==-Ht?"-0":e}function gt(t){if(null!=t){try{return qe.call(t)}catch(e){}try{return t+""}catch(e){}}return""}function xt(t,e,i){var n=t?t.length:0;if(!n)return-1;var s=null==i?0:It(i);return s<0&&(s=ri(n+s,0)),r(t,Q(e,3),s)}function bt(t,e){if("function"!=typeof t||e&&"function"!=typeof e)throw new TypeError(Gt);var i=function(){var n=arguments,r=e?e.apply(this,n):n[0],s=i.cache;if(s.has(r))return s.get(r);var a=t.apply(this,n);return i.cache=s.set(r,a),a};return i.cache=new(bt.Cache||C),i}function wt(t,e){return t===e||t!==t&&e!==e}function yt(t){return Tt(t)&&Qe.call(t,"callee")&&(!ei.call(t,"callee")||Je.call(t)==$t)}function Et(t){return null!=t&&St(t.length)&&!Ct(t)}function Tt(t){return At(t)&&Et(t)}function Ct(t){var e=Rt(t)?Je.call(t):"";return e==Zt||e==te}function St(t){return"number"==typeof t&&t>-1&&t%1==0&&t<=Wt}function Rt(t){var e=typeof t;return!!t&&("object"==e||"function"==e)}function At(t){return!!t&&"object"==typeof t}function Dt(t){return"symbol"==typeof t||At(t)&&Je.call(t)==he}function Mt(t){if(!t)return 0===t?t:0;if(t=Pt(t),t===Ht||t===-Ht){var e=t<0?-1:1;return e*Vt}return t===t?t:0}function It(t){var e=Mt(t),i=e%1;return e===e?i?e-i:e:0}function Pt(t){if("number"==typeof t)return t;if(Dt(t))return zt;if(Rt(t)){var e="function"==typeof t.valueOf?t.valueOf():t;t=Rt(e)?e+"":e}if("string"!=typeof t)return 0===t?t:+t;t=t.replace(Se,"");var i=De.test(t);return i||Ie.test(t)?Fe(t.slice(2),i?2:8):Ae.test(t)?zt:+t}function Ot(t){return null==t?"":et(t)}function Ft(t,e,i){var n=null==t?void 0:X(t,e);return void 0===n?i:n}function Lt(t,e){return null!=t&&ct(t,e,H)}function Bt(t){return Et(t)?G(t):J(t)}function jt(t){return t}function kt(t){return lt(t)?s(mt(t)):tt(t)}var Ut=200,Gt="Expected a function",Nt="__lodash_hash_undefined__",Xt=1,Yt=2,Ht=1/0,Wt=9007199254740991,Vt=1.7976931348623157e308,zt=NaN,$t="[object Arguments]",qt="[object Array]",Qt="[object Boolean]",Jt="[object Date]",Kt="[object Error]",Zt="[object Function]",te="[object GeneratorFunction]",ee="[object Map]",ie="[object Number]",ne="[object Object]",re="[object Promise]",se="[object RegExp]",ae="[object Set]",oe="[object String]",he="[object Symbol]",ce="[object WeakMap]",ue="[object ArrayBuffer]",le="[object DataView]",de="[object Float32Array]",fe="[object Float64Array]",pe="[object Int8Array]",_e="[object Int16Array]",ve="[object Int32Array]",me="[object Uint8Array]",ge="[object Uint8ClampedArray]",xe="[object Uint16Array]",be="[object Uint32Array]",we=/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,ye=/^\w*$/,Ee=/^\./,Te=/[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,Ce=/[\\^$.*+?()[\]{}|]/g,Se=/^\s+|\s+$/g,Re=/\\(\\)?/g,Ae=/^[-+]0x[0-9a-f]+$/i,De=/^0b[01]+$/i,Me=/^\[object .+?Constructor\]$/,Ie=/^0o[0-7]+$/i,Pe=/^(?:0|[1-9]\d*)$/,Oe={};Oe[de]=Oe[fe]=Oe[pe]=Oe[_e]=Oe[ve]=Oe[me]=Oe[ge]=Oe[xe]=Oe[be]=!0,Oe[$t]=Oe[qt]=Oe[ue]=Oe[Qt]=Oe[le]=Oe[Jt]=Oe[Kt]=Oe[Zt]=Oe[ee]=Oe[ie]=Oe[ne]=Oe[se]=Oe[ae]=Oe[oe]=Oe[ce]=!1;var Fe=parseInt,Le="object"==typeof t&&t&&t.Object===Object&&t,Be="object"==typeof self&&self&&self.Object===Object&&self,je=Le||Be||Function("return this")(),ke="object"==typeof e&&e&&!e.nodeType&&e,Ue=ke&&"object"==typeof i&&i&&!i.nodeType&&i,Ge=Ue&&Ue.exports===ke,Ne=Ge&&Le.process,Xe=function(){try{return Ne&&Ne.binding("util")}catch(t){}}(),Ye=Xe&&Xe.isTypedArray,He=Array.prototype,We=Function.prototype,Ve=Object.prototype,ze=je["__core-js_shared__"],$e=function(){var t=/[^.]+$/.exec(ze&&ze.keys&&ze.keys.IE_PROTO||"");return t?"Symbol(src)_1."+t:""}(),qe=We.toString,Qe=Ve.hasOwnProperty,Je=Ve.toString,Ke=RegExp("^"+qe.call(Qe).replace(Ce,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$"),Ze=je.Symbol,ti=je.Uint8Array,ei=Ve.propertyIsEnumerable,ii=He.splice,ni=l(Object.keys,Object),ri=Math.max,si=ht(je,"DataView"),ai=ht(je,"Map"),oi=ht(je,"Promise"),hi=ht(je,"Set"),ci=ht(je,"WeakMap"),ui=ht(Object,"create"),li=gt(si),di=gt(ai),fi=gt(oi),pi=gt(hi),_i=gt(ci),vi=Ze?Ze.prototype:void 0,mi=vi?vi.valueOf:void 0,gi=vi?vi.toString:void 0;f.prototype.clear=p,f.prototype["delete"]=_,f.prototype.get=v,f.prototype.has=m,f.prototype.set=g,x.prototype.clear=b,x.prototype["delete"]=w,x.prototype.get=y,x.prototype.has=E,x.prototype.set=T,C.prototype.clear=S,C.prototype["delete"]=R,C.prototype.get=A,C.prototype.has=D,C.prototype.set=M,I.prototype.add=I.prototype.push=P,I.prototype.has=O,F.prototype.clear=L,F.prototype["delete"]=B,F.prototype.get=j,F.prototype.has=k,F.prototype.set=U;var xi=Y;(si&&xi(new si(new ArrayBuffer(1)))!=le||ai&&xi(new ai)!=ee||oi&&xi(oi.resolve())!=re||hi&&xi(new hi)!=ae||ci&&xi(new ci)!=ce)&&(xi=function(t){var e=Je.call(t),i=e==ne?t.constructor:void 0,n=i?gt(i):void 0;if(n)switch(n){case li:return le;case di:return ee;case fi:return re;case pi:return ae;case _i:return ce}return e});var bi=bt(function(t){t=Ot(t);var e=[];return Ee.test(t)&&e.push(""),t.replace(Te,function(t,i,n,r){e.push(n?r.replace(Re,"$1"):i||t)}),e});bt.Cache=C;var wi=Array.isArray,yi=Ye?o(Ye):q;i.exports=xt}).call(e,i(10),i(34)(t))},function(t,e,i){(function(e){function i(t,e,i){switch(i.length){case 0:return t.call(e);case 1:return t.call(e,i[0]);case 2:return t.call(e,i[0],i[1]);case 3:return t.call(e,i[0],i[1],i[2])}return t.apply(e,i)}function n(t,e){var i=t?t.length:0;return!!i&&o(t,e,0)>-1}function r(t,e,i){for(var n=-1,r=t?t.length:0;++n<r;)if(i(e,t[n]))return!0;return!1}function s(t,e){for(var i=-1,n=t?t.length:0,r=Array(n);++i<n;)r[i]=e(t[i],i,t);return r}function a(t,e,i,n){for(var r=t.length,s=i+(n?1:-1);n?s--:++s<r;)if(e(t[s],s,t))return s;return-1}function o(t,e,i){if(e!==e)return a(t,h,i);for(var n=i-1,r=t.length;++n<r;)if(t[n]===e)return n;return-1}function h(t){return t!==t}function c(t){return function(e){return t(e)}}function u(t,e){return t.has(e)}function l(t,e){return null==t?void 0:t[e]}function d(t){var e=!1;if(null!=t&&"function"!=typeof t.toString)try{e=!!(t+"")}catch(i){}return e}function f(t){var e=this,i=-1,n=t?t.length:0;for(this.clear();++i<n;){var r=t[i];e.set(r[0],r[1])}}function p(){this.__data__=xt?xt(null):{}}function _(t){return this.has(t)&&delete this.__data__[t]}function v(t){var e=this.__data__;if(xt){var i=e[t];return i===J?void 0:i}return dt.call(e,t)?e[t]:void 0}function m(t){var e=this.__data__;return xt?void 0!==e[t]:dt.call(e,t)}function g(t,e){var i=this.__data__;return i[t]=xt&&void 0===e?J:e,this}function x(t){var e=this,i=-1,n=t?t.length:0;for(this.clear();++i<n;){var r=t[i];e.set(r[0],r[1])}}function b(){this.__data__=[]}function w(t){var e=this.__data__,i=F(e,t);if(i<0)return!1;var n=e.length-1;return i==n?e.pop():_t.call(e,i,1),!0}function y(t){var e=this.__data__,i=F(e,t);return i<0?void 0:e[i][1]}function E(t){return F(this.__data__,t)>-1}function T(t,e){var i=this.__data__,n=F(i,t);return n<0?i.push([t,e]):i[n][1]=e,this}function C(t){var e=this,i=-1,n=t?t.length:0;for(this.clear();++i<n;){var r=t[i];e.set(r[0],r[1])}}function S(){this.__data__={hash:new f,map:new(gt||x),string:new f}}function R(t){return U(this,t)["delete"](t)}function A(t){return U(this,t).get(t)}function D(t){return U(this,t).has(t)}function M(t,e){return U(this,t).set(t,e),this}function I(t){var e=this,i=-1,n=t?t.length:0;for(this.__data__=new C;++i<n;)e.add(t[i])}function P(t){return this.__data__.set(t,J),this}function O(t){return this.__data__.has(t)}function F(t,e){for(var i=t.length;i--;)if(H(t[i][0],e))return i;return-1}function L(t,e,i){for(var a=i?r:n,o=t[0].length,h=t.length,l=h,d=Array(h),f=1/0,p=[];l--;){var _=t[l];l&&e&&(_=s(_,c(e))),f=mt(_.length,f),d[l]=!i&&(e||o>=120&&_.length>=120)?new I(l&&_):void 0}_=t[0];var v=-1,m=d[0];t:for(;++v<o&&p.length<f;){var g=_[v],x=e?e(g):g;if(g=i||0!==g?g:0,!(m?u(m,x):a(p,x,i))){for(l=h;--l;){var b=d[l];if(!(b?u(b,x):a(t[l],x,i)))continue t}m&&m.push(x),p.push(g)}}return p}function B(t){if(!q(t)||X(t))return!1;var e=z(t)||d(t)?pt:it;return e.test(Y(t))}function j(t,e){return e=vt(void 0===e?t.length-1:e,0),function(){for(var n=arguments,r=-1,s=vt(n.length-e,0),a=Array(s);++r<s;)a[r]=n[e+r];r=-1;for(var o=Array(e+1);++r<e;)o[r]=n[r];return o[e]=a,i(t,this,o)}}function k(t){return V(t)?t:[]}function U(t,e){var i=t.__data__;return N(e)?i["string"==typeof e?"string":"hash"]:i.map}function G(t,e){var i=l(t,e);return B(i)?i:void 0}function N(t){var e=typeof t;return"string"==e||"number"==e||"symbol"==e||"boolean"==e?"__proto__"!==t:null===t}function X(t){return!!ut&&ut in t}function Y(t){if(null!=t){try{return lt.call(t)}catch(e){}try{return t+""}catch(e){}}return""}function H(t,e){return t===e||t!==t&&e!==e}function W(t){return null!=t&&$(t.length)&&!z(t)}function V(t){return Q(t)&&W(t)}function z(t){var e=q(t)?ft.call(t):"";return e==Z||e==tt}function $(t){return"number"==typeof t&&t>-1&&t%1==0&&t<=K}function q(t){var e=typeof t;return!!t&&("object"==e||"function"==e)}function Q(t){return!!t&&"object"==typeof t}var J="__lodash_hash_undefined__",K=9007199254740991,Z="[object Function]",tt="[object GeneratorFunction]",et=/[\\^$.*+?()[\]{}|]/g,it=/^\[object .+?Constructor\]$/,nt="object"==typeof e&&e&&e.Object===Object&&e,rt="object"==typeof self&&self&&self.Object===Object&&self,st=nt||rt||Function("return this")(),at=Array.prototype,ot=Function.prototype,ht=Object.prototype,ct=st["__core-js_shared__"],ut=function(){var t=/[^.]+$/.exec(ct&&ct.keys&&ct.keys.IE_PROTO||"");return t?"Symbol(src)_1."+t:""}(),lt=ot.toString,dt=ht.hasOwnProperty,ft=ht.toString,pt=RegExp("^"+lt.call(dt).replace(et,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$"),_t=at.splice,vt=Math.max,mt=Math.min,gt=G(st,"Map"),xt=G(Object,"create");f.prototype.clear=p,f.prototype["delete"]=_,f.prototype.get=v,f.prototype.has=m,f.prototype.set=g,x.prototype.clear=b,x.prototype["delete"]=w,x.prototype.get=y,x.prototype.has=E,x.prototype.set=T,C.prototype.clear=S,C.prototype["delete"]=R,C.prototype.get=A,C.prototype.has=D,C.prototype.set=M,I.prototype.add=I.prototype.push=P,I.prototype.has=O;var bt=j(function(t){var e=s(t,k);return e.length&&e[0]===t[0]?L(e):[]});t.exports=bt}).call(e,i(10))},function(t,e,i){"use strict";var n=i(0),r=i(3),s=i(6),a=i(5),o=i(2),h=i(4);e["default"]={props:["image"],updatesEaselCache:["component","scale"],mixins:[r.a,a.a,o.a,h.a],render:function(){return"<!-- bitmap -->"},watch:{image:function(){this.component=new n.a.Bitmap(this.image)}},mounted:function(){this.component=new n.a.Bitmap(this.image)},methods:{getAlignDimensions:function(){return i.i(s.a)(this)},getCacheBounds:function(){return this.updateAlign().then(function(t){var e=t.width,i=t.height;return{x:0,y:0,width:e,height:i}})}}}},function(t,e,i){"use strict";var n=i(8),r=i(0),s=i(9);e["default"]={mixins:[s.a],provide:function(){return{easelCanvas:this}},props:{antiAlias:{"default":!0},height:{},width:{},viewportHeight:{},viewportWidth:{}},data:function(){return{component:null,context:null,easelCanvas:this}},mounted:function(){var t=this;
-this.component=new r.a.Stage(this.$refs.canvas),this.context=this.component.canvas.getContext("2d"),r.a.Touch.enable(this.component,!1,!0),n.a.bindEvents(this,this.component),r.a.Ticker.addEventListener("tick",function(e){return t.component.update(e)}),this.resizeHandler=function(){return t.updateSize()},window.addEventListener("resize",this.resizeHandler),this.updateSize(),this.component.enableMouseOver()},destroyed:function(){r.a.Touch.disable(this.component),window.removeEventListener("resize",this.resizeHandler)},watch:{antiAlias:function(){this.updateAntiAlias()},height:function(){this.updateSize()},width:function(){this.updateSize()},viewportScale:function(){this.updateSize()}},computed:{viewport:function(){return{width:this.viewportWidth||this.width,height:this.viewportHeight||this.height}},viewportScale:function(){return{scaleX:this.width/this.viewport.width,scaleY:this.height/this.viewport.height}}},methods:{updateAntiAlias:function(){this.context.imageSmoothingEnabled=this.antiAlias,this.context.mozImageSmoothingEnabled=this.antiAlias,this.context.webkitImageSmoothingEnabled=this.antiAlias,this.context.msImageSmoothingEnabled=this.antiAlias},updateSize:function(){var t=this,e=this.$refs.canvas;e.width=this.width*window.devicePixelRatio,e.height=this.height*window.devicePixelRatio,e.style.width=this.width+"px",e.style.height=this.height+"px",this.component.scaleX=this.viewportScale.scaleX*window.devicePixelRatio,this.component.scaleY=this.viewportScale.scaleY*window.devicePixelRatio,this.$nextTick(function(){return t.updateAntiAlias()})},createCanvas:function(t){var e=r.a.createCanvas;r.a.createCanvas=this.createCreateCanvasMethod(),t(),r.a.createCanvas=e},createCreateCanvasMethod:function(){var t=this;return function(){var e=document.createElement("canvas"),i=e.getContext.bind(e);return e.getContext=function(e){var n=i(e);return n.imageSmoothingEnabled=t.antiAlias,n.mozImageSmoothingEnabled=t.antiAlias,n.webkitImageSmoothingEnabled=t.antiAlias,n.msImageSmoothingEnabled=t.antiAlias,n},e}},augmentEvent:function(t){var e=this.translateCoordinates(t.stageX,t.stageY),i=e[0],n=e[1];return t.viewportX=i,t.viewportY=n,t},translateCoordinates:function(t,e){return[t/this.component.scaleX,e/this.component.scaleY]}}}},function(t,e,i){"use strict";var n=i(0),r=i(3),s=i(9),a=i(2),o=i(4);e["default"]={mixins:[r.a,s.a,a.a,o.a],updatesEaselCache:["children","scale"],mounted:function(){this.component=new n.a.Container},methods:{getCacheBounds:function(){var t=this;return Promise.all(this.children.map(function(t){return t.getRelativeCacheBounds?t.getRelativeCacheBounds():Promise.reject("<"+t.$options.name+"> does not mixin EaselCache")})).then(function(e){return e.reduce(t.getSmallestCombination,{x:0,y:0,width:1,height:1})})}}}},function(t,e,i){"use strict";var n=i(0),r=i(3),s=i(2),a=i(4),o=i(5);e["default"]={mixins:[r.a,o.a,s.a,a.a],props:["form","fill","stroke","dimensions"],updatesEaselCache:["form","fill","stroke","dimensions","scale"],render:function(){return"<!-- shape -->"},watch:{form:function(){this.refresh()},fill:function(){this.refresh()},stroke:function(){this.refresh()},dimensions:function(){this.refresh()}},computed:{radiuses:function(){return this.dimensions.length<=2?[]:6===this.dimensions.length?this.dimensions.slice(2,6):[this.dimensions[2],this.dimensions[2],this.dimensions[2],this.dimensions[2]]}},mounted:function(){this.component=new n.a.Shape,this.refresh()},methods:{refresh:function(){this.component&&(this.component.graphics.clear(),this.fill&&this.component.graphics.beginFill(this.fill),this.stroke&&this.component.graphics.beginStroke(this.stroke),this.drawForm(),this.updateAlign())},drawForm:function(){if("circle"===this.form)this.component.graphics.drawCircle(this.dimensions,this.dimensions,this.dimensions);else if("ellipse"===this.form)this.component.graphics.drawEllipse(0,0,this.dimensions[0],this.dimensions[1]);else if("rect"===this.form){var t=this.radiuses;0===t.length?this.component.graphics.drawRect(0,0,this.dimensions[0],this.dimensions[1]):this.component.graphics.drawRoundRectComplex(0,0,this.dimensions[0],this.dimensions[1],t[0],t[1],t[2],t[3])}else"star"===this.form&&this.component.graphics.drawPolyStar(this.dimensions[0],this.dimensions[0],this.dimensions[0],this.dimensions[1],this.dimensions[2],0)},getAlignDimensions:function(){return"rect"===this.form||"ellipse"===this.form?Promise.resolve({width:this.dimensions[0],height:this.dimensions[1]}):"circle"===this.form?Promise.resolve({width:2*this.dimensions,height:2*this.dimensions}):"star"===this.form?Promise.resolve({width:2*this.dimensions[0],height:2*this.dimensions[0]}):Promise.reject("No dimensions available for form "+this.form)},getCacheBounds:function(){return this.updateAlign().then(function(t){var e=t.width,i=t.height;return{x:0,y:0,width:e,height:i}})}}}},function(t,e,i){"use strict";var n=i(0),r=i(3),s=i(6),a=i(5),o=i(2),h=i(4);e["default"]={inject:["spriteSheet"],props:["animation"],updatesEaselCache:["animation","scale"],mixins:[r.a,a.a,o.a,h.a],render:function(){return"<!-- sprite -->"},watch:{animation:function(){this.component&&this.component.gotoAndPlay(this.animation)}},mounted:function(){this.component=new n.a.Sprite(this.spriteSheet),this.animation&&this.component.gotoAndPlay(this.animation)},methods:{getAlignDimensions:function(){return i.i(s.a)(this)},getCacheBounds:function(){return this.updateAlign().then(function(t){var e=t.width,i=t.height;return{x:0,y:0,width:e,height:i}})}}}},function(t,e,i){"use strict";var n=i(0);e["default"]={provide:function(){return{spriteSheet:this.spriteSheet}},props:["images","frames","animations","framerate"],data:function(){return{spriteSheet:new n.a.SpriteSheet({images:this.images,frames:this.frames,animations:this.animations,framerate:this.framerate})}}}},function(t,e,i){"use strict";var n=i(0),r=i(3),s=i(5),a=i(2),o=i(6),h=i(4);e["default"]={mixins:[r.a,s.a,a.a,h.a],props:["text","font","color"],updatesEaselCache:["text","font","color","scale"],render:function(){return"<!-- text -->"},watch:{text:function(){this.component.text=this.text},font:function(){this.component.font=this.font},color:function(){this.component.color=this.color}},mounted:function(){this.component=new n.a.Text(this.text,this.font,this.color)},methods:{updateAlign:function(){var t=this.normalizedAlign,e=t[0],i=t[1];this.component.textAlign=e||"left",this.component.textBaseline="center"===i?"middle":i||"top"},getAlignDimensions:function(){return this.getCacheBounds()},getCacheBounds:function(){return i.i(o.a)(this).then(function(t){var e=t.x,i=t.y,n=t.width,r=t.height;return{x:e,y:i,width:n,height:r}})}}}},function(t,e){t.exports=function(t){return t.webpackPolyfill||(t.deprecate=function(){},t.paths=[],t.children||(t.children=[]),Object.defineProperty(t,"loaded",{enumerable:!0,configurable:!1,get:function(){return t.l}}),Object.defineProperty(t,"id",{enumerable:!0,configurable:!1,get:function(){return t.i}}),t.webpackPolyfill=1),t}},function(t,e,i){t.exports={render:function(){var t=this,e=t.$createElement,i=t._self._c||e;return i("span",[t._t("default")],2)},staticRenderFns:[]},t.exports.render._withStripped=!0},function(t,e,i){t.exports={render:function(){var t=this,e=t.$createElement,i=t._self._c||e;return i("div",[t._t("default")],2)},staticRenderFns:[]},t.exports.render._withStripped=!0},function(t,e,i){t.exports={render:function(){var t=this,e=t.$createElement,i=t._self._c||e;return i("canvas",{ref:"canvas"},[t._t("default")],2)},staticRenderFns:[]},t.exports.render._withStripped=!0},function(t,e,i){"use strict";var n=i(0),r=i(7);t.exports={createjs:n.a,easeljs:n.a,EaselBitmap:i(11),EaselCanvas:i(12),EaselContainer:i(13),EaselShape:i(14),EaselSprite:i(15),EaselSpriteSheet:i(16),EaselText:i(17),install:function(t){t.component("easel-bitmap",this.EaselBitmap),t.component("easel-canvas",this.EaselCanvas),t.component("easel-container",this.EaselContainer),t.component("easel-shape",this.EaselShape),t.component("easel-sprite",this.EaselSprite),t.component("easel-sprite-sheet",this.EaselSpriteSheet),t.component("easel-text",this.EaselText)},registerFilter:function(){for(var t=arguments,e=[],i=arguments.length;i--;)e[i]=t[i];return r.a.register.apply(r.a,e)}}}]));
+
+
+//##############################################################################
+// extend.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+/**
+ * @class Utility Methods
+ */
+
+/**
+ * Sets up the prototype chain and constructor property for a new class.
+ *
+ * This should be called right after creating the class constructor.
+ *
+ * 	function MySubClass() {}
+ * 	createjs.extend(MySubClass, MySuperClass);
+ * 	MySubClass.prototype.doSomething = function() { }
+ *
+ * 	var foo = new MySubClass();
+ * 	console.log(foo instanceof MySuperClass); // true
+ * 	console.log(foo.prototype.constructor === MySubClass); // true
+ *
+ * @method extend
+ * @param {Function} subclass The subclass.
+ * @param {Function} superclass The superclass to extend.
+ * @return {Function} Returns the subclass's new prototype.
+ */
+createjs.extend = function(subclass, superclass) {
+	"use strict";
+
+	function o() { this.constructor = subclass; }
+	o.prototype = superclass.prototype;
+	return (subclass.prototype = new o());
+};
+
+//##############################################################################
+// promote.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+/**
+ * @class Utility Methods
+ */
+
+/**
+ * Promotes any methods on the super class that were overridden, by creating an alias in the format `prefix_methodName`.
+ * It is recommended to use the super class's name as the prefix.
+ * An alias to the super class's constructor is always added in the format `prefix_constructor`.
+ * This allows the subclass to call super class methods without using `function.call`, providing better performance.
+ *
+ * For example, if `MySubClass` extends `MySuperClass`, and both define a `draw` method, then calling `promote(MySubClass, "MySuperClass")`
+ * would add a `MySuperClass_constructor` method to MySubClass and promote the `draw` method on `MySuperClass` to the
+ * prototype of `MySubClass` as `MySuperClass_draw`.
+ *
+ * This should be called after the class's prototype is fully defined.
+ *
+ * 	function ClassA(name) {
+ * 		this.name = name;
+ * 	}
+ * 	ClassA.prototype.greet = function() {
+ * 		return "Hello "+this.name;
+ * 	}
+ *
+ * 	function ClassB(name, punctuation) {
+ * 		this.ClassA_constructor(name);
+ * 		this.punctuation = punctuation;
+ * 	}
+ * 	createjs.extend(ClassB, ClassA);
+ * 	ClassB.prototype.greet = function() {
+ * 		return this.ClassA_greet()+this.punctuation;
+ * 	}
+ * 	createjs.promote(ClassB, "ClassA");
+ *
+ * 	var foo = new ClassB("World", "!?!");
+ * 	console.log(foo.greet()); // Hello World!?!
+ *
+ * @method promote
+ * @param {Function} subclass The class to promote super class methods on.
+ * @param {String} prefix The prefix to add to the promoted method names. Usually the name of the superclass.
+ * @return {Function} Returns the subclass.
+ */
+createjs.promote = function(subclass, prefix) {
+	"use strict";
+
+	var subP = subclass.prototype, supP = (Object.getPrototypeOf&&Object.getPrototypeOf(subP))||subP.__proto__;
+	if (supP) {
+		subP[(prefix+="_") + "constructor"] = supP.constructor; // constructor is not always innumerable
+		for (var n in supP) {
+			if (subP.hasOwnProperty(n) && (typeof supP[n] == "function")) { subP[prefix + n] = supP[n]; }
+		}
+	}
+	return subclass;
+};
+
+//##############################################################################
+// indexOf.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+/**
+ * @class Utility Methods
+ */
+
+/**
+ * Finds the first occurrence of a specified value searchElement in the passed in array, and returns the index of
+ * that value.  Returns -1 if value is not found.
+ *
+ *      var i = createjs.indexOf(myArray, myElementToFind);
+ *
+ * @method indexOf
+ * @param {Array} array Array to search for searchElement
+ * @param searchElement Element to find in array.
+ * @return {Number} The first index of searchElement in array.
+ */
+createjs.indexOf = function (array, searchElement){
+	"use strict";
+
+	for (var i = 0,l=array.length; i < l; i++) {
+		if (searchElement === array[i]) {
+			return i;
+		}
+	}
+	return -1;
+};
+
+//##############################################################################
+// UID.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Global utility for generating sequential unique ID numbers. The UID class uses a static interface (ex. <code>UID.get()</code>)
+	 * and should not be instantiated.
+	 * @class UID
+	 * @static
+	 **/
+	function UID() {
+		throw "UID cannot be instantiated";
+	}
+
+
+// private static properties:
+	/**
+	 * @property _nextID
+	 * @type Number
+	 * @protected
+	 **/
+	UID._nextID = 0;
+
+
+// public static methods:
+	/**
+	 * Returns the next unique id.
+	 * @method get
+	 * @return {Number} The next unique id
+	 * @static
+	 **/
+	UID.get = function() {
+		return UID._nextID++;
+	};
+
+
+	createjs.UID = UID;
+}());
+
+//##############################################################################
+// deprecate.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+/**
+ * @class Utility Methods
+ */
+
+/**
+ * Wraps deprecated methods so they still be used, but throw warnings to developers.
+ *
+ *	obj.deprecatedMethod = createjs.deprecate("Old Method Name", obj._fallbackMethod);
+ *
+ * The recommended approach for deprecated properties is:
+ *
+ *	try {
+ *		Obj	ect.defineProperties(object, {
+ *			readyOnlyProp: { get: createjs.deprecate("readOnlyProp", function() { return this.alternateProp; }) },
+ *			readWriteProp: {
+ *				get: createjs.deprecate("readOnlyProp", function() { return this.alternateProp; }),
+ *				set: createjs.deprecate("readOnlyProp", function(val) { this.alternateProp = val; })
+ *		});
+ *	} catch (e) {}
+ *
+ * @method deprecate
+ * @param {Function} [fallbackMethod=null] A method to call when the deprecated method is used. See the example for how
+ * @param {String} [name=null] The name of the method or property to display in the console warning.
+ * to deprecate properties.
+ * @return {Function} If a fallbackMethod is supplied, returns a closure that will call the fallback method after
+ * logging the warning in the console.
+ */
+createjs.deprecate = function(fallbackMethod, name) {
+	"use strict";
+	return function() {
+		var msg = "Deprecated property or method '"+name+"'. See docs for info.";
+		console && (console.warn ? console.warn(msg) : console.log(msg));
+		return fallbackMethod && fallbackMethod.apply(this, arguments);
+	}
+};
+
+//##############################################################################
+// Event.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+// constructor:
+	/**
+	 * Contains properties and methods shared by all events for use with
+	 * {{#crossLink "EventDispatcher"}}{{/crossLink}}.
+	 * 
+	 * Note that Event objects are often reused, so you should never
+	 * rely on an event object's state outside of the call stack it was received in.
+	 * @class Event
+	 * @param {String} type The event type.
+	 * @param {Boolean} bubbles Indicates whether the event will bubble through the display list.
+	 * @param {Boolean} cancelable Indicates whether the default behaviour of this event can be cancelled.
+	 * @constructor
+	 **/
+	function Event(type, bubbles, cancelable) {
+		
+	
+	// public properties:
+		/**
+		 * The type of event.
+		 * @property type
+		 * @type String
+		 **/
+		this.type = type;
+	
+		/**
+		 * The object that generated an event.
+		 * @property target
+		 * @type Object
+		 * @default null
+		 * @readonly
+		*/
+		this.target = null;
+	
+		/**
+		 * The current target that a bubbling event is being dispatched from. For non-bubbling events, this will
+		 * always be the same as target. For example, if childObj.parent = parentObj, and a bubbling event
+		 * is generated from childObj, then a listener on parentObj would receive the event with
+		 * target=childObj (the original target) and currentTarget=parentObj (where the listener was added).
+		 * @property currentTarget
+		 * @type Object
+		 * @default null
+		 * @readonly
+		*/
+		this.currentTarget = null;
+	
+		/**
+		 * For bubbling events, this indicates the current event phase:<OL>
+		 * 	<LI> capture phase: starting from the top parent to the target</LI>
+		 * 	<LI> at target phase: currently being dispatched from the target</LI>
+		 * 	<LI> bubbling phase: from the target to the top parent</LI>
+		 * </OL>
+		 * @property eventPhase
+		 * @type Number
+		 * @default 0
+		 * @readonly
+		*/
+		this.eventPhase = 0;
+	
+		/**
+		 * Indicates whether the event will bubble through the display list.
+		 * @property bubbles
+		 * @type Boolean
+		 * @default false
+		 * @readonly
+		*/
+		this.bubbles = !!bubbles;
+	
+		/**
+		 * Indicates whether the default behaviour of this event can be cancelled via
+		 * {{#crossLink "Event/preventDefault"}}{{/crossLink}}. This is set via the Event constructor.
+		 * @property cancelable
+		 * @type Boolean
+		 * @default false
+		 * @readonly
+		*/
+		this.cancelable = !!cancelable;
+	
+		/**
+		 * The epoch time at which this event was created.
+		 * @property timeStamp
+		 * @type Number
+		 * @default 0
+		 * @readonly
+		*/
+		this.timeStamp = (new Date()).getTime();
+	
+		/**
+		 * Indicates if {{#crossLink "Event/preventDefault"}}{{/crossLink}} has been called
+		 * on this event.
+		 * @property defaultPrevented
+		 * @type Boolean
+		 * @default false
+		 * @readonly
+		*/
+		this.defaultPrevented = false;
+	
+		/**
+		 * Indicates if {{#crossLink "Event/stopPropagation"}}{{/crossLink}} or
+		 * {{#crossLink "Event/stopImmediatePropagation"}}{{/crossLink}} has been called on this event.
+		 * @property propagationStopped
+		 * @type Boolean
+		 * @default false
+		 * @readonly
+		*/
+		this.propagationStopped = false;
+	
+		/**
+		 * Indicates if {{#crossLink "Event/stopImmediatePropagation"}}{{/crossLink}} has been called
+		 * on this event.
+		 * @property immediatePropagationStopped
+		 * @type Boolean
+		 * @default false
+		 * @readonly
+		*/
+		this.immediatePropagationStopped = false;
+		
+		/**
+		 * Indicates if {{#crossLink "Event/remove"}}{{/crossLink}} has been called on this event.
+		 * @property removed
+		 * @type Boolean
+		 * @default false
+		 * @readonly
+		*/
+		this.removed = false;
+	}
+	var p = Event.prototype;
+
+// public methods:
+	/**
+	 * Sets {{#crossLink "Event/defaultPrevented"}}{{/crossLink}} to true if the event is cancelable.
+	 * Mirrors the DOM level 2 event standard. In general, cancelable events that have `preventDefault()` called will
+	 * cancel the default behaviour associated with the event.
+	 * @method preventDefault
+	 **/
+	p.preventDefault = function() {
+		this.defaultPrevented = this.cancelable&&true;
+	};
+
+	/**
+	 * Sets {{#crossLink "Event/propagationStopped"}}{{/crossLink}} to true.
+	 * Mirrors the DOM event standard.
+	 * @method stopPropagation
+	 **/
+	p.stopPropagation = function() {
+		this.propagationStopped = true;
+	};
+
+	/**
+	 * Sets {{#crossLink "Event/propagationStopped"}}{{/crossLink}} and
+	 * {{#crossLink "Event/immediatePropagationStopped"}}{{/crossLink}} to true.
+	 * Mirrors the DOM event standard.
+	 * @method stopImmediatePropagation
+	 **/
+	p.stopImmediatePropagation = function() {
+		this.immediatePropagationStopped = this.propagationStopped = true;
+	};
+	
+	/**
+	 * Causes the active listener to be removed via removeEventListener();
+	 * 
+	 * 		myBtn.addEventListener("click", function(evt) {
+	 * 			// do stuff...
+	 * 			evt.remove(); // removes this listener.
+	 * 		});
+	 * 
+	 * @method remove
+	 **/
+	p.remove = function() {
+		this.removed = true;
+	};
+	
+	/**
+	 * Returns a clone of the Event instance.
+	 * @method clone
+	 * @return {Event} a clone of the Event instance.
+	 **/
+	p.clone = function() {
+		return new Event(this.type, this.bubbles, this.cancelable);
+	};
+	
+	/**
+	 * Provides a chainable shortcut method for setting a number of properties on the instance.
+	 *
+	 * @method set
+	 * @param {Object} props A generic object containing properties to copy to the instance.
+	 * @return {Event} Returns the instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	*/
+	p.set = function(props) {
+		var this$1 = this;
+
+		for (var n in props) { this$1[n] = props[n]; }
+		return this;
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Event (type="+this.type+")]";
+	};
+
+	createjs.Event = Event;
+}());
+
+//##############################################################################
+// EventDispatcher.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * EventDispatcher provides methods for managing queues of event listeners and dispatching events.
+	 *
+	 * You can either extend EventDispatcher or mix its methods into an existing prototype or instance by using the
+	 * EventDispatcher {{#crossLink "EventDispatcher/initialize"}}{{/crossLink}} method.
+	 * 
+	 * Together with the CreateJS Event class, EventDispatcher provides an extended event model that is based on the
+	 * DOM Level 2 event model, including addEventListener, removeEventListener, and dispatchEvent. It supports
+	 * bubbling / capture, preventDefault, stopPropagation, stopImmediatePropagation, and handleEvent.
+	 * 
+	 * EventDispatcher also exposes a {{#crossLink "EventDispatcher/on"}}{{/crossLink}} method, which makes it easier
+	 * to create scoped listeners, listeners that only run once, and listeners with associated arbitrary data. The 
+	 * {{#crossLink "EventDispatcher/off"}}{{/crossLink}} method is merely an alias to
+	 * {{#crossLink "EventDispatcher/removeEventListener"}}{{/crossLink}}.
+	 * 
+	 * Another addition to the DOM Level 2 model is the {{#crossLink "EventDispatcher/removeAllEventListeners"}}{{/crossLink}}
+	 * method, which can be used to listeners for all events, or listeners for a specific event. The Event object also 
+	 * includes a {{#crossLink "Event/remove"}}{{/crossLink}} method which removes the active listener.
+	 *
+	 * <h4>Example</h4>
+	 * Add EventDispatcher capabilities to the "MyClass" class.
+	 *
+	 *      EventDispatcher.initialize(MyClass.prototype);
+	 *
+	 * Add an event (see {{#crossLink "EventDispatcher/addEventListener"}}{{/crossLink}}).
+	 *
+	 *      instance.addEventListener("eventName", handlerMethod);
+	 *      function handlerMethod(event) {
+	 *          console.log(event.target + " Was Clicked");
+	 *      }
+	 *
+	 * <b>Maintaining proper scope</b><br />
+	 * Scope (ie. "this") can be be a challenge with events. Using the {{#crossLink "EventDispatcher/on"}}{{/crossLink}}
+	 * method to subscribe to events simplifies this.
+	 *
+	 *      instance.addEventListener("click", function(event) {
+	 *          console.log(instance == this); // false, scope is ambiguous.
+	 *      });
+	 *      
+	 *      instance.on("click", function(event) {
+	 *          console.log(instance == this); // true, "on" uses dispatcher scope by default.
+	 *      });
+	 * 
+	 * If you want to use addEventListener instead, you may want to use function.bind() or a similar proxy to manage
+	 * scope.
+	 *
+	 * <b>Browser support</b>
+	 * The event model in CreateJS can be used separately from the suite in any project, however the inheritance model
+	 * requires modern browsers (IE9+).
+	 *      
+	 *
+	 * @class EventDispatcher
+	 * @constructor
+	 **/
+	function EventDispatcher() {
+	
+	
+	// private properties:
+		/**
+		 * @protected
+		 * @property _listeners
+		 * @type Object
+		 **/
+		this._listeners = null;
+		
+		/**
+		 * @protected
+		 * @property _captureListeners
+		 * @type Object
+		 **/
+		this._captureListeners = null;
+	}
+	var p = EventDispatcher.prototype;
+
+// static public methods:
+	/**
+	 * Static initializer to mix EventDispatcher methods into a target object or prototype.
+	 * 
+	 * 		EventDispatcher.initialize(MyClass.prototype); // add to the prototype of the class
+	 * 		EventDispatcher.initialize(myObject); // add to a specific instance
+	 * 
+	 * @method initialize
+	 * @static
+	 * @param {Object} target The target object to inject EventDispatcher methods into. This can be an instance or a
+	 * prototype.
+	 **/
+	EventDispatcher.initialize = function(target) {
+		target.addEventListener = p.addEventListener;
+		target.on = p.on;
+		target.removeEventListener = target.off =  p.removeEventListener;
+		target.removeAllEventListeners = p.removeAllEventListeners;
+		target.hasEventListener = p.hasEventListener;
+		target.dispatchEvent = p.dispatchEvent;
+		target._dispatchEvent = p._dispatchEvent;
+		target.willTrigger = p.willTrigger;
+	};
+	
+
+// public methods:
+	/**
+	 * Adds the specified event listener. Note that adding multiple listeners to the same function will result in
+	 * multiple callbacks getting fired.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      displayObject.addEventListener("click", handleClick);
+	 *      function handleClick(event) {
+	 *         // Click happened.
+	 *      }
+	 *
+	 * @method addEventListener
+	 * @param {String} type The string type of the event.
+	 * @param {Function | Object} listener An object with a handleEvent method, or a function that will be called when
+	 * the event is dispatched.
+	 * @param {Boolean} [useCapture] For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.
+	 * @return {Function | Object} Returns the listener for chaining or assignment.
+	 **/
+	p.addEventListener = function(type, listener, useCapture) {
+		var listeners;
+		if (useCapture) {
+			listeners = this._captureListeners = this._captureListeners||{};
+		} else {
+			listeners = this._listeners = this._listeners||{};
+		}
+		var arr = listeners[type];
+		if (arr) { this.removeEventListener(type, listener, useCapture); }
+		arr = listeners[type]; // remove may have deleted the array
+		if (!arr) { listeners[type] = [listener];  }
+		else { arr.push(listener); }
+		return listener;
+	};
+	
+	/**
+	 * A shortcut method for using addEventListener that makes it easier to specify an execution scope, have a listener
+	 * only run once, associate arbitrary data with the listener, and remove the listener.
+	 * 
+	 * This method works by creating an anonymous wrapper function and subscribing it with addEventListener.
+	 * The wrapper function is returned for use with `removeEventListener` (or `off`).
+	 * 
+	 * <b>IMPORTANT:</b> To remove a listener added with `on`, you must pass in the returned wrapper function as the listener, or use
+	 * {{#crossLink "Event/remove"}}{{/crossLink}}. Likewise, each time you call `on` a NEW wrapper function is subscribed, so multiple calls
+	 * to `on` with the same params will create multiple listeners.
+	 * 
+	 * <h4>Example</h4>
+	 * 
+	 * 		var listener = myBtn.on("click", handleClick, null, false, {count:3});
+	 * 		function handleClick(evt, data) {
+	 * 			data.count -= 1;
+	 * 			console.log(this == myBtn); // true - scope defaults to the dispatcher
+	 * 			if (data.count == 0) {
+	 * 				alert("clicked 3 times!");
+	 * 				myBtn.off("click", listener);
+	 * 				// alternately: evt.remove();
+	 * 			}
+	 * 		}
+	 * 
+	 * @method on
+	 * @param {String} type The string type of the event.
+	 * @param {Function | Object} listener An object with a handleEvent method, or a function that will be called when
+	 * the event is dispatched.
+	 * @param {Object} [scope] The scope to execute the listener in. Defaults to the dispatcher/currentTarget for function listeners, and to the listener itself for object listeners (ie. using handleEvent).
+	 * @param {Boolean} [once=false] If true, the listener will remove itself after the first time it is triggered.
+	 * @param {*} [data] Arbitrary data that will be included as the second parameter when the listener is called.
+	 * @param {Boolean} [useCapture=false] For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.
+	 * @return {Function} Returns the anonymous function that was created and assigned as the listener. This is needed to remove the listener later using .removeEventListener.
+	 **/
+	p.on = function(type, listener, scope, once, data, useCapture) {
+		if (listener.handleEvent) {
+			scope = scope||listener;
+			listener = listener.handleEvent;
+		}
+		scope = scope||this;
+		return this.addEventListener(type, function(evt) {
+				listener.call(scope, evt, data);
+				once&&evt.remove();
+			}, useCapture);
+	};
+
+	/**
+	 * Removes the specified event listener.
+	 *
+	 * <b>Important Note:</b> that you must pass the exact function reference used when the event was added. If a proxy
+	 * function, or function closure is used as the callback, the proxy/closure reference must be used - a new proxy or
+	 * closure will not work.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      displayObject.removeEventListener("click", handleClick);
+	 *
+	 * @method removeEventListener
+	 * @param {String} type The string type of the event.
+	 * @param {Function | Object} listener The listener function or object.
+	 * @param {Boolean} [useCapture] For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.
+	 **/
+	p.removeEventListener = function(type, listener, useCapture) {
+		var listeners = useCapture ? this._captureListeners : this._listeners;
+		if (!listeners) { return; }
+		var arr = listeners[type];
+		if (!arr) { return; }
+		for (var i=0,l=arr.length; i<l; i++) {
+			if (arr[i] == listener) {
+				if (l==1) { delete(listeners[type]); } // allows for faster checks.
+				else { arr.splice(i,1); }
+				break;
+			}
+		}
+	};
+	
+	/**
+	 * A shortcut to the removeEventListener method, with the same parameters and return value. This is a companion to the
+	 * .on method.
+	 * 
+	 * <b>IMPORTANT:</b> To remove a listener added with `on`, you must pass in the returned wrapper function as the listener. See 
+	 * {{#crossLink "EventDispatcher/on"}}{{/crossLink}} for an example.
+	 *
+	 * @method off
+	 * @param {String} type The string type of the event.
+	 * @param {Function | Object} listener The listener function or object.
+	 * @param {Boolean} [useCapture] For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.
+	 **/
+	p.off = p.removeEventListener;
+
+	/**
+	 * Removes all listeners for the specified type, or all listeners of all types.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      // Remove all listeners
+	 *      displayObject.removeAllEventListeners();
+	 *
+	 *      // Remove all click listeners
+	 *      displayObject.removeAllEventListeners("click");
+	 *
+	 * @method removeAllEventListeners
+	 * @param {String} [type] The string type of the event. If omitted, all listeners for all types will be removed.
+	 **/
+	p.removeAllEventListeners = function(type) {
+		if (!type) { this._listeners = this._captureListeners = null; }
+		else {
+			if (this._listeners) { delete(this._listeners[type]); }
+			if (this._captureListeners) { delete(this._captureListeners[type]); }
+		}
+	};
+
+	/**
+	 * Dispatches the specified event to all listeners.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      // Use a string event
+	 *      this.dispatchEvent("complete");
+	 *
+	 *      // Use an Event instance
+	 *      var event = new createjs.Event("progress");
+	 *      this.dispatchEvent(event);
+	 *
+	 * @method dispatchEvent
+	 * @param {Object | String | Event} eventObj An object with a "type" property, or a string type.
+	 * While a generic object will work, it is recommended to use a CreateJS Event instance. If a string is used,
+	 * dispatchEvent will construct an Event instance if necessary with the specified type. This latter approach can
+	 * be used to avoid event object instantiation for non-bubbling events that may not have any listeners.
+	 * @param {Boolean} [bubbles] Specifies the `bubbles` value when a string was passed to eventObj.
+	 * @param {Boolean} [cancelable] Specifies the `cancelable` value when a string was passed to eventObj.
+	 * @return {Boolean} Returns false if `preventDefault()` was called on a cancelable event, true otherwise.
+	 **/
+	p.dispatchEvent = function(eventObj, bubbles, cancelable) {
+		if (typeof eventObj == "string") {
+			// skip everything if there's no listeners and it doesn't bubble:
+			var listeners = this._listeners;
+			if (!bubbles && (!listeners || !listeners[eventObj])) { return true; }
+			eventObj = new createjs.Event(eventObj, bubbles, cancelable);
+		} else if (eventObj.target && eventObj.clone) {
+			// redispatching an active event object, so clone it:
+			eventObj = eventObj.clone();
+		}
+		
+		// TODO: it would be nice to eliminate this. Maybe in favour of evtObj instanceof Event? Or !!evtObj.createEvent
+		try { eventObj.target = this; } catch (e) {} // try/catch allows redispatching of native events
+
+		if (!eventObj.bubbles || !this.parent) {
+			this._dispatchEvent(eventObj, 2);
+		} else {
+			var top=this, list=[top];
+			while (top.parent) { list.push(top = top.parent); }
+			var i, l=list.length;
+
+			// capture & atTarget
+			for (i=l-1; i>=0 && !eventObj.propagationStopped; i--) {
+				list[i]._dispatchEvent(eventObj, 1+(i==0));
+			}
+			// bubbling
+			for (i=1; i<l && !eventObj.propagationStopped; i++) {
+				list[i]._dispatchEvent(eventObj, 3);
+			}
+		}
+		return !eventObj.defaultPrevented;
+	};
+
+	/**
+	 * Indicates whether there is at least one listener for the specified event type.
+	 * @method hasEventListener
+	 * @param {String} type The string type of the event.
+	 * @return {Boolean} Returns true if there is at least one listener for the specified event.
+	 **/
+	p.hasEventListener = function(type) {
+		var listeners = this._listeners, captureListeners = this._captureListeners;
+		return !!((listeners && listeners[type]) || (captureListeners && captureListeners[type]));
+	};
+	
+	/**
+	 * Indicates whether there is at least one listener for the specified event type on this object or any of its
+	 * ancestors (parent, parent's parent, etc). A return value of true indicates that if a bubbling event of the
+	 * specified type is dispatched from this object, it will trigger at least one listener.
+	 * 
+	 * This is similar to {{#crossLink "EventDispatcher/hasEventListener"}}{{/crossLink}}, but it searches the entire
+	 * event flow for a listener, not just this object.
+	 * @method willTrigger
+	 * @param {String} type The string type of the event.
+	 * @return {Boolean} Returns `true` if there is at least one listener for the specified event.
+	 **/
+	p.willTrigger = function(type) {
+		var o = this;
+		while (o) {
+			if (o.hasEventListener(type)) { return true; }
+			o = o.parent;
+		}
+		return false;
+	};
+
+	/**
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[EventDispatcher]";
+	};
+
+
+// private methods:
+	/**
+	 * @method _dispatchEvent
+	 * @param {Object | Event} eventObj
+	 * @param {Object} eventPhase
+	 * @protected
+	 **/
+	p._dispatchEvent = function(eventObj, eventPhase) {
+		var this$1 = this;
+
+		var l, arr, listeners = (eventPhase <= 2) ? this._captureListeners : this._listeners;
+		if (eventObj && listeners && (arr = listeners[eventObj.type]) && (l=arr.length)) {
+			try { eventObj.currentTarget = this; } catch (e) {}
+			try { eventObj.eventPhase = eventPhase|0; } catch (e) {}
+			eventObj.removed = false;
+			
+			arr = arr.slice(); // to avoid issues with items being removed or added during the dispatch
+			for (var i=0; i<l && !eventObj.immediatePropagationStopped; i++) {
+				var o = arr[i];
+				if (o.handleEvent) { o.handleEvent(eventObj); }
+				else { o(eventObj); }
+				if (eventObj.removed) {
+					this$1.off(eventObj.type, o, eventPhase==1);
+					eventObj.removed = false;
+				}
+			}
+		}
+		if (eventPhase === 2) { this._dispatchEvent(eventObj, 2.1); }
+	};
+
+
+	createjs.EventDispatcher = EventDispatcher;
+}());
+
+//##############################################################################
+// Ticker.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * The Ticker provides a centralized tick or heartbeat broadcast at a set interval. Listeners can subscribe to the tick
+	 * event to be notified when a set time interval has elapsed.
+	 *
+	 * Note that the interval that the tick event is called is a target interval, and may be broadcast at a slower interval
+	 * when under high CPU load. The Ticker class uses a static interface (ex. `Ticker.framerate = 30;`) and
+	 * can not be instantiated.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      createjs.Ticker.addEventListener("tick", handleTick);
+	 *      function handleTick(event) {
+	 *          // Actions carried out each tick (aka frame)
+	 *          if (!event.paused) {
+	 *              // Actions carried out when the Ticker is not paused.
+	 *          }
+	 *      }
+	 *
+	 * @class Ticker
+	 * @uses EventDispatcher
+	 * @static
+	 **/
+	function Ticker() {
+		throw "Ticker cannot be instantiated.";
+	}
+
+
+// constants:
+	/**
+	 * In this mode, Ticker uses the requestAnimationFrame API, but attempts to synch the ticks to target framerate. It
+	 * uses a simple heuristic that compares the time of the RAF return to the target time for the current frame and
+	 * dispatches the tick when the time is within a certain threshold.
+	 *
+	 * This mode has a higher variance for time between frames than {{#crossLink "Ticker/TIMEOUT:property"}}{{/crossLink}},
+	 * but does not require that content be time based as with {{#crossLink "Ticker/RAF:property"}}{{/crossLink}} while
+	 * gaining the benefits of that API (screen synch, background throttling).
+	 *
+	 * Variance is usually lowest for framerates that are a divisor of the RAF frequency. This is usually 60, so
+	 * framerates of 10, 12, 15, 20, and 30 work well.
+	 *
+	 * Falls back to {{#crossLink "Ticker/TIMEOUT:property"}}{{/crossLink}} if the requestAnimationFrame API is not
+	 * supported.
+	 * @property RAF_SYNCHED
+	 * @static
+	 * @type {String}
+	 * @default "synched"
+	 * @readonly
+	 **/
+	Ticker.RAF_SYNCHED = "synched";
+
+	/**
+	 * In this mode, Ticker passes through the requestAnimationFrame heartbeat, ignoring the target framerate completely.
+	 * Because requestAnimationFrame frequency is not deterministic, any content using this mode should be time based.
+	 * You can leverage {{#crossLink "Ticker/getTime"}}{{/crossLink}} and the {{#crossLink "Ticker/tick:event"}}{{/crossLink}}
+	 * event object's "delta" properties to make this easier.
+	 *
+	 * Falls back on {{#crossLink "Ticker/TIMEOUT:property"}}{{/crossLink}} if the requestAnimationFrame API is not
+	 * supported.
+	 * @property RAF
+	 * @static
+	 * @type {String}
+	 * @default "raf"
+	 * @readonly
+	 **/
+	Ticker.RAF = "raf";
+
+	/**
+	 * In this mode, Ticker uses the setTimeout API. This provides predictable, adaptive frame timing, but does not
+	 * provide the benefits of requestAnimationFrame (screen synch, background throttling).
+	 * @property TIMEOUT
+	 * @static
+	 * @type {String}
+	 * @default "timeout"
+	 * @readonly
+	 **/
+	Ticker.TIMEOUT = "timeout";
+
+
+// static events:
+	/**
+	 * Dispatched each tick. The event will be dispatched to each listener even when the Ticker has been paused using
+	 * {{#crossLink "Ticker/paused:property"}}{{/crossLink}}.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      createjs.Ticker.addEventListener("tick", handleTick);
+	 *      function handleTick(event) {
+	 *          console.log("Paused:", event.paused, event.delta);
+	 *      }
+	 *
+	 * @event tick
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type.
+	 * @param {Boolean} paused Indicates whether the ticker is currently paused.
+	 * @param {Number} delta The time elapsed in ms since the last tick.
+	 * @param {Number} time The total time in ms since Ticker was initialized.
+	 * @param {Number} runTime The total time in ms that Ticker was not paused since it was initialized. For example,
+	 * 	you could determine the amount of time that the Ticker has been paused since initialization with `time-runTime`.
+	 * @since 0.6.0
+	 */
+
+
+// public static properties:
+	/**
+	 * Specifies the timing api (setTimeout or requestAnimationFrame) and mode to use. See
+	 * {{#crossLink "Ticker/TIMEOUT:property"}}{{/crossLink}}, {{#crossLink "Ticker/RAF:property"}}{{/crossLink}}, and
+	 * {{#crossLink "Ticker/RAF_SYNCHED:property"}}{{/crossLink}} for mode details.
+	 * @property timingMode
+	 * @static
+	 * @type {String}
+	 * @default Ticker.TIMEOUT
+	 **/
+	Ticker.timingMode = null;
+
+	/**
+	 * Specifies a maximum value for the delta property in the tick event object. This is useful when building time
+	 * based animations and systems to prevent issues caused by large time gaps caused by background tabs, system sleep,
+	 * alert dialogs, or other blocking routines. Double the expected frame duration is often an effective value
+	 * (ex. maxDelta=50 when running at 40fps).
+	 * 
+	 * This does not impact any other values (ex. time, runTime, etc), so you may experience issues if you enable maxDelta
+	 * when using both delta and other values.
+	 * 
+	 * If 0, there is no maximum.
+	 * @property maxDelta
+	 * @static
+	 * @type {number}
+	 * @default 0
+	 */
+	Ticker.maxDelta = 0;
+	
+	/**
+	 * When the ticker is paused, all listeners will still receive a tick event, but the <code>paused</code> property
+	 * of the event will be `true`. Also, while paused the `runTime` will not increase. See {{#crossLink "Ticker/tick:event"}}{{/crossLink}},
+	 * {{#crossLink "Ticker/getTime"}}{{/crossLink}}, and {{#crossLink "Ticker/getEventTime"}}{{/crossLink}} for more
+	 * info.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      createjs.Ticker.addEventListener("tick", handleTick);
+	 *      createjs.Ticker.paused = true;
+	 *      function handleTick(event) {
+	 *          console.log(event.paused,
+	 *          	createjs.Ticker.getTime(false),
+	 *          	createjs.Ticker.getTime(true));
+	 *      }
+	 *
+	 * @property paused
+	 * @static
+	 * @type {Boolean}
+	 * @default false
+	 **/
+	Ticker.paused = false;
+
+
+// mix-ins:
+	// EventDispatcher methods:
+	Ticker.removeEventListener = null;
+	Ticker.removeAllEventListeners = null;
+	Ticker.dispatchEvent = null;
+	Ticker.hasEventListener = null;
+	Ticker._listeners = null;
+	createjs.EventDispatcher.initialize(Ticker); // inject EventDispatcher methods.
+	Ticker._addEventListener = Ticker.addEventListener;
+	Ticker.addEventListener = function() {
+		!Ticker._inited&&Ticker.init();
+		return Ticker._addEventListener.apply(Ticker, arguments);
+	};
+
+
+// private static properties:
+	/**
+	 * @property _inited
+	 * @static
+	 * @type {Boolean}
+	 * @private
+	 **/
+	Ticker._inited = false;
+
+	/**
+	 * @property _startTime
+	 * @static
+	 * @type {Number}
+	 * @private
+	 **/
+	Ticker._startTime = 0;
+
+	/**
+	 * @property _pausedTime
+	 * @static
+	 * @type {Number}
+	 * @private
+	 **/
+	Ticker._pausedTime=0;
+
+	/**
+	 * The number of ticks that have passed
+	 * @property _ticks
+	 * @static
+	 * @type {Number}
+	 * @private
+	 **/
+	Ticker._ticks = 0;
+
+	/**
+	 * The number of ticks that have passed while Ticker has been paused
+	 * @property _pausedTicks
+	 * @static
+	 * @type {Number}
+	 * @private
+	 **/
+	Ticker._pausedTicks = 0;
+
+	/**
+	 * @property _interval
+	 * @static
+	 * @type {Number}
+	 * @private
+	 **/
+	Ticker._interval = 50;
+
+	/**
+	 * @property _lastTime
+	 * @static
+	 * @type {Number}
+	 * @private
+	 **/
+	Ticker._lastTime = 0;
+
+	/**
+	 * @property _times
+	 * @static
+	 * @type {Array}
+	 * @private
+	 **/
+	Ticker._times = null;
+
+	/**
+	 * @property _tickTimes
+	 * @static
+	 * @type {Array}
+	 * @private
+	 **/
+	Ticker._tickTimes = null;
+
+	/**
+	 * Stores the timeout or requestAnimationFrame id.
+	 * @property _timerId
+	 * @static
+	 * @type {Number}
+	 * @private
+	 **/
+	Ticker._timerId = null;
+	
+	/**
+	 * True if currently using requestAnimationFrame, false if using setTimeout. This may be different than timingMode
+	 * if that property changed and a tick hasn't fired.
+	 * @property _raf
+	 * @static
+	 * @type {Boolean}
+	 * @private
+	 **/
+	Ticker._raf = true;
+	
+
+// static getter / setters:
+	/**
+	 * Use the {{#crossLink "Ticker/interval:property"}}{{/crossLink}} property instead.
+	 * @method _setInterval
+	 * @private
+	 * @static
+	 * @param {Number} interval
+	 **/
+	Ticker._setInterval = function(interval) {
+		Ticker._interval = interval;
+		if (!Ticker._inited) { return; }
+		Ticker._setupTick();
+	};
+	// Ticker.setInterval is @deprecated. Remove for 1.1+
+	Ticker.setInterval = createjs.deprecate(Ticker._setInterval, "Ticker.setInterval");
+
+	/**
+	 * Use the {{#crossLink "Ticker/interval:property"}}{{/crossLink}} property instead.
+	 * @method _getInterval
+	 * @private
+	 * @static
+	 * @return {Number}
+	 **/
+	Ticker._getInterval = function() {
+		return Ticker._interval;
+	};
+	// Ticker.getInterval is @deprecated. Remove for 1.1+
+	Ticker.getInterval = createjs.deprecate(Ticker._getInterval, "Ticker.getInterval");
+
+	/**
+	 * Use the {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} property instead.
+	 * @method _setFPS
+	 * @private
+	 * @static
+	 * @param {Number} value
+	 **/
+	Ticker._setFPS = function(value) {
+		Ticker._setInterval(1000/value);
+	};
+	// Ticker.setFPS is @deprecated. Remove for 1.1+
+	Ticker.setFPS = createjs.deprecate(Ticker._setFPS, "Ticker.setFPS");
+
+	/**
+	 * Use the {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} property instead.
+	 * @method _getFPS
+	 * @static
+	 * @private
+	 * @return {Number}
+	 **/
+	Ticker._getFPS = function() {
+		return 1000/Ticker._interval;
+	};
+	// Ticker.getFPS is @deprecated. Remove for 1.1+
+	Ticker.getFPS = createjs.deprecate(Ticker._getFPS, "Ticker.getFPS");
+
+	/**
+	 * Indicates the target time (in milliseconds) between ticks. Default is 50 (20 FPS).
+	 * Note that actual time between ticks may be more than specified depending on CPU load.
+	 * This property is ignored if the ticker is using the `RAF` timing mode.
+	 * @property interval
+	 * @static
+	 * @type {Number}
+	 **/
+	 
+	/**
+	 * Indicates the target frame rate in frames per second (FPS). Effectively just a shortcut to `interval`, where
+	 * `framerate == 1000/interval`.
+	 * @property framerate
+	 * @static
+	 * @type {Number}
+	 **/
+	try {
+		Object.defineProperties(Ticker, {
+			interval: { get: Ticker._getInterval, set: Ticker._setInterval },
+			framerate: { get: Ticker._getFPS, set: Ticker._setFPS }
+		});
+	} catch (e) { console.log(e); }
+
+
+// public static methods:
+	/**
+	 * Starts the tick. This is called automatically when the first listener is added.
+	 * @method init
+	 * @static
+	 **/
+	Ticker.init = function() {
+		if (Ticker._inited) { return; }
+		Ticker._inited = true;
+		Ticker._times = [];
+		Ticker._tickTimes = [];
+		Ticker._startTime = Ticker._getTime();
+		Ticker._times.push(Ticker._lastTime = 0);
+		Ticker.interval = Ticker._interval;
+	};
+	
+	/**
+	 * Stops the Ticker and removes all listeners. Use init() to restart the Ticker.
+	 * @method reset
+	 * @static
+	 **/
+	Ticker.reset = function() {
+		if (Ticker._raf) {
+			var f = window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || window.oCancelAnimationFrame || window.msCancelAnimationFrame;
+			f&&f(Ticker._timerId);
+		} else {
+			clearTimeout(Ticker._timerId);
+		}
+		Ticker.removeAllEventListeners("tick");
+		Ticker._timerId = Ticker._times = Ticker._tickTimes = null;
+		Ticker._startTime = Ticker._lastTime = Ticker._ticks = Ticker._pausedTime = 0;
+		Ticker._inited = false;
+	};
+
+	/**
+	 * Returns the average time spent within a tick. This can vary significantly from the value provided by getMeasuredFPS
+	 * because it only measures the time spent within the tick execution stack. 
+	 * 
+	 * Example 1: With a target FPS of 20, getMeasuredFPS() returns 20fps, which indicates an average of 50ms between 
+	 * the end of one tick and the end of the next. However, getMeasuredTickTime() returns 15ms. This indicates that 
+	 * there may be up to 35ms of "idle" time between the end of one tick and the start of the next.
+	 *
+	 * Example 2: With a target FPS of 30, {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} returns 10fps, which
+	 * indicates an average of 100ms between the end of one tick and the end of the next. However, {{#crossLink "Ticker/getMeasuredTickTime"}}{{/crossLink}}
+	 * returns 20ms. This would indicate that something other than the tick is using ~80ms (another script, DOM
+	 * rendering, etc).
+	 * @method getMeasuredTickTime
+	 * @static
+	 * @param {Number} [ticks] The number of previous ticks over which to measure the average time spent in a tick.
+	 * Defaults to the number of ticks per second. To get only the last tick's time, pass in 1.
+	 * @return {Number} The average time spent in a tick in milliseconds.
+	 **/
+	Ticker.getMeasuredTickTime = function(ticks) {
+		var ttl=0, times=Ticker._tickTimes;
+		if (!times || times.length < 1) { return -1; }
+
+		// by default, calculate average for the past ~1 second:
+		ticks = Math.min(times.length, ticks||(Ticker._getFPS()|0));
+		for (var i=0; i<ticks; i++) { ttl += times[i]; }
+		return ttl/ticks;
+	};
+
+	/**
+	 * Returns the actual frames / ticks per second.
+	 * @method getMeasuredFPS
+	 * @static
+	 * @param {Number} [ticks] The number of previous ticks over which to measure the actual frames / ticks per second.
+	 * Defaults to the number of ticks per second.
+	 * @return {Number} The actual frames / ticks per second. Depending on performance, this may differ
+	 * from the target frames per second.
+	 **/
+	Ticker.getMeasuredFPS = function(ticks) {
+		var times = Ticker._times;
+		if (!times || times.length < 2) { return -1; }
+
+		// by default, calculate fps for the past ~1 second:
+		ticks = Math.min(times.length-1, ticks||(Ticker._getFPS()|0));
+		return 1000/((times[0]-times[ticks])/ticks);
+	};
+
+	/**
+	 * Returns the number of milliseconds that have elapsed since Ticker was initialized via {{#crossLink "Ticker/init"}}.
+	 * Returns -1 if Ticker has not been initialized. For example, you could use
+	 * this in a time synchronized animation to determine the exact amount of time that has elapsed.
+	 * @method getTime
+	 * @static
+	 * @param {Boolean} [runTime=false] If true only time elapsed while Ticker was not paused will be returned.
+	 * If false, the value returned will be total time elapsed since the first tick event listener was added.
+	 * @return {Number} Number of milliseconds that have elapsed since Ticker was initialized or -1.
+	 **/
+	Ticker.getTime = function(runTime) {
+		return Ticker._startTime ? Ticker._getTime() - (runTime ? Ticker._pausedTime : 0) : -1;
+	};
+
+	/**
+	 * Similar to the {{#crossLink "Ticker/getTime"}}{{/crossLink}} method, but returns the time on the most recent {{#crossLink "Ticker/tick:event"}}{{/crossLink}}
+	 * event object.
+	 * @method getEventTime
+	 * @static
+	 * @param runTime {Boolean} [runTime=false] If true, the runTime property will be returned instead of time.
+	 * @returns {number} The time or runTime property from the most recent tick event or -1.
+	 */
+	Ticker.getEventTime = function(runTime) {
+		return Ticker._startTime ? (Ticker._lastTime || Ticker._startTime) - (runTime ? Ticker._pausedTime : 0) : -1;
+	};
+	
+	/**
+	 * Returns the number of ticks that have been broadcast by Ticker.
+	 * @method getTicks
+	 * @static
+	 * @param {Boolean} pauseable Indicates whether to include ticks that would have been broadcast
+	 * while Ticker was paused. If true only tick events broadcast while Ticker is not paused will be returned.
+	 * If false, tick events that would have been broadcast while Ticker was paused will be included in the return
+	 * value. The default value is false.
+	 * @return {Number} of ticks that have been broadcast.
+	 **/
+	Ticker.getTicks = function(pauseable) {
+		return  Ticker._ticks - (pauseable ? Ticker._pausedTicks : 0);
+	};
+
+
+// private static methods:
+	/**
+	 * @method _handleSynch
+	 * @static
+	 * @private
+	 **/
+	Ticker._handleSynch = function() {
+		Ticker._timerId = null;
+		Ticker._setupTick();
+
+		// run if enough time has elapsed, with a little bit of flexibility to be early:
+		if (Ticker._getTime() - Ticker._lastTime >= (Ticker._interval-1)*0.97) {
+			Ticker._tick();
+		}
+	};
+
+	/**
+	 * @method _handleRAF
+	 * @static
+	 * @private
+	 **/
+	Ticker._handleRAF = function() {
+		Ticker._timerId = null;
+		Ticker._setupTick();
+		Ticker._tick();
+	};
+
+	/**
+	 * @method _handleTimeout
+	 * @static
+	 * @private
+	 **/
+	Ticker._handleTimeout = function() {
+		Ticker._timerId = null;
+		Ticker._setupTick();
+		Ticker._tick();
+	};
+
+	/**
+	 * @method _setupTick
+	 * @static
+	 * @private
+	 **/
+	Ticker._setupTick = function() {
+		if (Ticker._timerId != null) { return; } // avoid duplicates
+
+		var mode = Ticker.timingMode;
+		if (mode == Ticker.RAF_SYNCHED || mode == Ticker.RAF) {
+			var f = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame;
+			if (f) {
+				Ticker._timerId = f(mode == Ticker.RAF ? Ticker._handleRAF : Ticker._handleSynch);
+				Ticker._raf = true;
+				return;
+			}
+		}
+		Ticker._raf = false;
+		Ticker._timerId = setTimeout(Ticker._handleTimeout, Ticker._interval);
+	};
+
+	/**
+	 * @method _tick
+	 * @static
+	 * @private
+	 **/
+	Ticker._tick = function() {
+		var paused = Ticker.paused;
+		var time = Ticker._getTime();
+		var elapsedTime = time-Ticker._lastTime;
+		Ticker._lastTime = time;
+		Ticker._ticks++;
+		
+		if (paused) {
+			Ticker._pausedTicks++;
+			Ticker._pausedTime += elapsedTime;
+		}
+		
+		if (Ticker.hasEventListener("tick")) {
+			var event = new createjs.Event("tick");
+			var maxDelta = Ticker.maxDelta;
+			event.delta = (maxDelta && elapsedTime > maxDelta) ? maxDelta : elapsedTime;
+			event.paused = paused;
+			event.time = time;
+			event.runTime = time-Ticker._pausedTime;
+			Ticker.dispatchEvent(event);
+		}
+		
+		Ticker._tickTimes.unshift(Ticker._getTime()-time);
+		while (Ticker._tickTimes.length > 100) { Ticker._tickTimes.pop(); }
+
+		Ticker._times.unshift(time);
+		while (Ticker._times.length > 100) { Ticker._times.pop(); }
+	};
+
+	/**
+	 * @method _getTime
+	 * @static
+	 * @private
+	 **/
+	var w=window, now=w.performance.now || w.performance.mozNow || w.performance.msNow || w.performance.oNow || w.performance.webkitNow;
+	Ticker._getTime = function() {
+		return ((now&&now.call(w.performance))||(new Date().getTime())) - Ticker._startTime;
+	};
+
+
+	createjs.Ticker = Ticker;
+}());
+
+//##############################################################################
+// VideoBuffer.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * When an HTML video seeks, including when looping, there is an indeterminate period before a new frame is available.
+	 * This can result in the video blinking or flashing when it is drawn to a canvas. The VideoBuffer class resolves
+	 * this issue by drawing each frame to an off-screen canvas and preserving the prior frame during a seek.
+	 * 
+	 * 	var myBuffer = new createjs.VideoBuffer(myVideo);
+	 * 	var myBitmap = new Bitmap(myBuffer);
+	 * 
+	 * @class VideoBuffer
+	 * @param {HTMLVideoElement} video The HTML video element to buffer.
+	 * @constructor
+	 **/
+	function VideoBuffer(video) {
+		
+	// private properties:
+		/**
+		 * Used by Bitmap to determine when the video buffer is ready to be drawn. Not intended for general use.
+		 * @property readyState
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.readyState = video.readyState;
+		
+		/**
+		 * @property _video
+		 * @protected
+		 * @type {HTMLVideoElement}
+		 * @default 0
+		 **/
+		this._video = video;
+		
+		/**
+		 * @property _canvas
+		 * @protected
+		 * @type {HTMLCanvasElement}
+		 * @default 0
+		 **/
+		this._canvas = null;
+		
+		/**
+		 * @property _lastTime
+		 * @protected
+		 * @type {Number}
+		 * @default -1
+		 **/
+		this._lastTime = -1;
+		
+		if (this.readyState < 2) { video.addEventListener("canplaythrough", this._videoReady.bind(this)); } //once:true isn't supported everywhere, but its a non-critical optimization here.
+	}
+	var p = VideoBuffer.prototype;
+	
+	
+// public methods:
+	/**
+	 * Gets an HTML canvas element showing the current video frame, or the previous frame if in a seek / loop.
+	 * Primarily for use by {{#crossLink "Bitmap"}}{{/crossLink}}.
+	 * @method getImage
+	 **/
+	p.getImage = function() {
+		if (this.readyState < 2) { return; }
+		var canvas=this._canvas, video = this._video;
+		if (!canvas) {
+			canvas = this._canvas = createjs.createCanvas?createjs.createCanvas():document.createElement("canvas");
+			canvas.width = video.videoWidth;
+			canvas.height = video.videoHeight;
+		}
+		if (video.readyState >= 2 && video.currentTime !== this._lastTime) {
+			var ctx = canvas.getContext("2d");
+			ctx.clearRect(0,0,canvas.width,canvas.height);
+			ctx.drawImage(video,0,0,canvas.width,canvas.height);
+			this._lastTime = video.currentTime;
+		}
+		return canvas;
+	};
+	
+// private methods:
+	/**
+	 * @method _videoReady
+	 * @protected
+	 **/
+	p._videoReady = function() {
+		this.readyState = 2;
+	};
+
+
+	createjs.VideoBuffer = VideoBuffer;
+}());
+
+//##############################################################################
+// MouseEvent.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Passed as the parameter to all mouse/pointer/touch related events. For a listing of mouse events and their properties,
+	 * see the {{#crossLink "DisplayObject"}}{{/crossLink}} and {{#crossLink "Stage"}}{{/crossLink}} event listings.
+	 * @class MouseEvent
+	 * @param {String} type The event type.
+	 * @param {Boolean} bubbles Indicates whether the event will bubble through the display list.
+	 * @param {Boolean} cancelable Indicates whether the default behaviour of this event can be cancelled.
+	 * @param {Number} stageX The normalized x position relative to the stage.
+	 * @param {Number} stageY The normalized y position relative to the stage.
+	 * @param {MouseEvent} nativeEvent The native DOM event related to this mouse event.
+	 * @param {Number} pointerID The unique id for the pointer.
+	 * @param {Boolean} primary Indicates whether this is the primary pointer in a multitouch environment.
+	 * @param {Number} rawX The raw x position relative to the stage.
+	 * @param {Number} rawY The raw y position relative to the stage.
+	 * @param {DisplayObject} relatedTarget The secondary target for the event.
+	 * @extends Event
+	 * @constructor
+	 **/
+	function MouseEvent(type, bubbles, cancelable, stageX, stageY, nativeEvent, pointerID, primary, rawX, rawY, relatedTarget) {
+		this.Event_constructor(type, bubbles, cancelable);
+		
+		
+	// public properties:
+		/**
+		 * The normalized x position on the stage. This will always be within the range 0 to stage width.
+		 * @property stageX
+		 * @type Number
+		*/
+		this.stageX = stageX;
+	
+		/**
+		 * The normalized y position on the stage. This will always be within the range 0 to stage height.
+		 * @property stageY
+		 * @type Number
+		 **/
+		this.stageY = stageY;
+	
+		/**
+		 * The raw x position relative to the stage. Normally this will be the same as the stageX value, unless
+		 * stage.mouseMoveOutside is true and the pointer is outside of the stage bounds.
+		 * @property rawX
+		 * @type Number
+		*/
+		this.rawX = (rawX==null)?stageX:rawX;
+	
+		/**
+		 * The raw y position relative to the stage. Normally this will be the same as the stageY value, unless
+		 * stage.mouseMoveOutside is true and the pointer is outside of the stage bounds.
+		 * @property rawY
+		 * @type Number
+		*/
+		this.rawY = (rawY==null)?stageY:rawY;
+	
+		/**
+		 * The native MouseEvent generated by the browser. The properties and API for this
+		 * event may differ between browsers. This property will be null if the
+		 * EaselJS property was not directly generated from a native MouseEvent.
+		 * @property nativeEvent
+		 * @type HtmlMouseEvent
+		 * @default null
+		 **/
+		this.nativeEvent = nativeEvent;
+	
+		/**
+		 * The unique id for the pointer (touch point or cursor). This will be either -1 for the mouse, or the system
+		 * supplied id value.
+		 * @property pointerID
+		 * @type {Number}
+		 */
+		this.pointerID = pointerID;
+	
+		/**
+		 * Indicates whether this is the primary pointer in a multitouch environment. This will always be true for the mouse.
+		 * For touch pointers, the first pointer in the current stack will be considered the primary pointer.
+		 * @property primary
+		 * @type {Boolean}
+		 */
+		this.primary = !!primary;
+		
+		/**
+		 * The secondary target for the event, if applicable. This is used for mouseout/rollout
+		 * events to indicate the object that the mouse entered from, mouseover/rollover for the object the mouse exited,
+		 * and stagemousedown/stagemouseup events for the object that was the under the cursor, if any.
+		 * 
+		 * Only valid interaction targets will be returned (ie. objects with mouse listeners or a cursor set).
+		 * @property relatedTarget
+		 * @type {DisplayObject}
+		 */
+		this.relatedTarget = relatedTarget;
+	}
+	var p = createjs.extend(MouseEvent, createjs.Event);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+	
+	
+// getter / setters:
+	/**
+	 * Returns the x position of the mouse in the local coordinate system of the current target (ie. the dispatcher).
+	 * @property localX
+	 * @type {Number}
+	 * @readonly
+	 */
+	p._get_localX = function() {
+		return this.currentTarget.globalToLocal(this.rawX, this.rawY).x;
+	};
+	
+	/**
+	 * Returns the y position of the mouse in the local coordinate system of the current target (ie. the dispatcher).
+	 * @property localY
+	 * @type {Number}
+	 * @readonly
+	 */
+	p._get_localY = function() {
+		return this.currentTarget.globalToLocal(this.rawX, this.rawY).y;
+	};
+	
+	/**
+	 * Indicates whether the event was generated by a touch input (versus a mouse input).
+	 * @property isTouch
+	 * @type {Boolean}
+	 * @readonly
+	 */
+	p._get_isTouch = function() {
+		return this.pointerID !== -1;
+	};
+	
+	
+	try {
+		Object.defineProperties(p, {
+			localX: { get: p._get_localX },
+			localY: { get: p._get_localY },
+			isTouch: { get: p._get_isTouch }
+		});
+	} catch (e) {} // TODO: use Log
+
+
+// public methods:
+	/**
+	 * Returns a clone of the MouseEvent instance.
+	 * @method clone
+	 * @return {MouseEvent} a clone of the MouseEvent instance.
+	 **/
+	p.clone = function() {
+		return new MouseEvent(this.type, this.bubbles, this.cancelable, this.stageX, this.stageY, this.nativeEvent, this.pointerID, this.primary, this.rawX, this.rawY);
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[MouseEvent (type="+this.type+" stageX="+this.stageX+" stageY="+this.stageY+")]";
+	};
+
+
+	createjs.MouseEvent = createjs.promote(MouseEvent, "Event");
+}());
+
+//##############################################################################
+// Matrix2D.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Represents an affine transformation matrix, and provides tools for constructing and concatenating matrices.
+	 *
+	 * This matrix can be visualized as:
+	 *
+	 * 	[ a  c  tx
+	 * 	  b  d  ty
+	 * 	  0  0  1  ]
+	 *
+	 * Note the locations of b and c.
+	 *
+	 * @class Matrix2D
+	 * @param {Number} [a=1] Specifies the a property for the new matrix.
+	 * @param {Number} [b=0] Specifies the b property for the new matrix.
+	 * @param {Number} [c=0] Specifies the c property for the new matrix.
+	 * @param {Number} [d=1] Specifies the d property for the new matrix.
+	 * @param {Number} [tx=0] Specifies the tx property for the new matrix.
+	 * @param {Number} [ty=0] Specifies the ty property for the new matrix.
+	 * @constructor
+	 **/
+	function Matrix2D(a, b, c, d, tx, ty) {
+		this.setValues(a,b,c,d,tx,ty);
+		
+	// public properties:
+		// assigned in the setValues method.
+		/**
+		 * Position (0, 0) in a 3x3 affine transformation matrix.
+		 * @property a
+		 * @type Number
+		 **/
+	
+		/**
+		 * Position (0, 1) in a 3x3 affine transformation matrix.
+		 * @property b
+		 * @type Number
+		 **/
+	
+		/**
+		 * Position (1, 0) in a 3x3 affine transformation matrix.
+		 * @property c
+		 * @type Number
+		 **/
+	
+		/**
+		 * Position (1, 1) in a 3x3 affine transformation matrix.
+		 * @property d
+		 * @type Number
+		 **/
+	
+		/**
+		 * Position (2, 0) in a 3x3 affine transformation matrix.
+		 * @property tx
+		 * @type Number
+		 **/
+	
+		/**
+		 * Position (2, 1) in a 3x3 affine transformation matrix.
+		 * @property ty
+		 * @type Number
+		 **/
+	}
+	var p = Matrix2D.prototype;
+
+// constants:
+	/**
+	 * Multiplier for converting degrees to radians. Used internally by Matrix2D.
+	 * @property DEG_TO_RAD
+	 * @static
+	 * @final
+	 * @type Number
+	 * @readonly
+	 **/
+	Matrix2D.DEG_TO_RAD = Math.PI/180;
+
+
+// static public properties:
+	/**
+	 * An identity matrix, representing a null transformation.
+	 * @property identity
+	 * @static
+	 * @type Matrix2D
+	 * @readonly
+	 **/
+	Matrix2D.identity = null; // set at bottom of class definition.
+	
+
+// public methods:
+	/**
+	 * Sets the specified values on this instance. 
+	 * @method setValues
+	 * @param {Number} [a=1] Specifies the a property for the new matrix.
+	 * @param {Number} [b=0] Specifies the b property for the new matrix.
+	 * @param {Number} [c=0] Specifies the c property for the new matrix.
+	 * @param {Number} [d=1] Specifies the d property for the new matrix.
+	 * @param {Number} [tx=0] Specifies the tx property for the new matrix.
+	 * @param {Number} [ty=0] Specifies the ty property for the new matrix.
+	 * @return {Matrix2D} This instance. Useful for chaining method calls.
+	*/
+	p.setValues = function(a, b, c, d, tx, ty) {
+		// don't forget to update docs in the constructor if these change:
+		this.a = (a == null) ? 1 : a;
+		this.b = b || 0;
+		this.c = c || 0;
+		this.d = (d == null) ? 1 : d;
+		this.tx = tx || 0;
+		this.ty = ty || 0;
+		return this;
+	};
+
+	/**
+	 * Appends the specified matrix properties to this matrix. All parameters are required.
+	 * This is the equivalent of multiplying `(this matrix) * (specified matrix)`.
+	 * @method append
+	 * @param {Number} a
+	 * @param {Number} b
+	 * @param {Number} c
+	 * @param {Number} d
+	 * @param {Number} tx
+	 * @param {Number} ty
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.append = function(a, b, c, d, tx, ty) {
+		var a1 = this.a;
+		var b1 = this.b;
+		var c1 = this.c;
+		var d1 = this.d;
+		if (a != 1 || b != 0 || c != 0 || d != 1) {
+			this.a  = a1*a+c1*b;
+			this.b  = b1*a+d1*b;
+			this.c  = a1*c+c1*d;
+			this.d  = b1*c+d1*d;
+		}
+		this.tx = a1*tx+c1*ty+this.tx;
+		this.ty = b1*tx+d1*ty+this.ty;
+		return this;
+	};
+
+	/**
+	 * Prepends the specified matrix properties to this matrix.
+	 * This is the equivalent of multiplying `(specified matrix) * (this matrix)`.
+	 * All parameters are required.
+	 * @method prepend
+	 * @param {Number} a
+	 * @param {Number} b
+	 * @param {Number} c
+	 * @param {Number} d
+	 * @param {Number} tx
+	 * @param {Number} ty
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.prepend = function(a, b, c, d, tx, ty) {
+		var a1 = this.a;
+		var c1 = this.c;
+		var tx1 = this.tx;
+
+		this.a  = a*a1+c*this.b;
+		this.b  = b*a1+d*this.b;
+		this.c  = a*c1+c*this.d;
+		this.d  = b*c1+d*this.d;
+		this.tx = a*tx1+c*this.ty+tx;
+		this.ty = b*tx1+d*this.ty+ty;
+		return this;
+	};
+
+	/**
+	 * Appends the specified matrix to this matrix.
+	 * This is the equivalent of multiplying `(this matrix) * (specified matrix)`.
+	 * @method appendMatrix
+	 * @param {Matrix2D} matrix
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.appendMatrix = function(matrix) {
+		return this.append(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty);
+	};
+
+	/**
+	 * Prepends the specified matrix to this matrix.
+	 * This is the equivalent of multiplying `(specified matrix) * (this matrix)`.
+	 * For example, you could calculate the combined transformation for a child object using:
+	 * 
+	 * 	var o = myDisplayObject;
+	 * 	var mtx = o.getMatrix();
+	 * 	while (o = o.parent) {
+	 * 		// prepend each parent's transformation in turn:
+	 * 		o.prependMatrix(o.getMatrix());
+	 * 	}
+	 * @method prependMatrix
+	 * @param {Matrix2D} matrix
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.prependMatrix = function(matrix) {
+		return this.prepend(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty);
+	};
+
+	/**
+	 * Generates matrix properties from the specified display object transform properties, and appends them to this matrix.
+	 * For example, you can use this to generate a matrix representing the transformations of a display object:
+	 * 
+	 * 	var mtx = new createjs.Matrix2D();
+	 * 	mtx.appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation);
+	 * @method appendTransform
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} scaleX
+	 * @param {Number} scaleY
+	 * @param {Number} rotation
+	 * @param {Number} skewX
+	 * @param {Number} skewY
+	 * @param {Number} regX Optional.
+	 * @param {Number} regY Optional.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.appendTransform = function(x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) {
+		if (rotation%360) {
+			var r = rotation*Matrix2D.DEG_TO_RAD;
+			var cos = Math.cos(r);
+			var sin = Math.sin(r);
+		} else {
+			cos = 1;
+			sin = 0;
+		}
+
+		if (skewX || skewY) {
+			// TODO: can this be combined into a single append operation?
+			skewX *= Matrix2D.DEG_TO_RAD;
+			skewY *= Matrix2D.DEG_TO_RAD;
+			this.append(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), x, y);
+			this.append(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, 0, 0);
+		} else {
+			this.append(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y);
+		}
+		
+		if (regX || regY) {
+			// append the registration offset:
+			this.tx -= regX*this.a+regY*this.c; 
+			this.ty -= regX*this.b+regY*this.d;
+		}
+		return this;
+	};
+
+	/**
+	 * Generates matrix properties from the specified display object transform properties, and prepends them to this matrix.
+	 * For example, you could calculate the combined transformation for a child object using:
+	 * 
+	 * 	var o = myDisplayObject;
+	 * 	var mtx = new createjs.Matrix2D();
+	 * 	do  {
+	 * 		// prepend each parent's transformation in turn:
+	 * 		mtx.prependTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY);
+	 * 	} while (o = o.parent);
+	 * 	
+	 * 	Note that the above example would not account for {{#crossLink "DisplayObject/transformMatrix:property"}}{{/crossLink}}
+	 * 	values. See {{#crossLink "Matrix2D/prependMatrix"}}{{/crossLink}} for an example that does.
+	 * @method prependTransform
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} scaleX
+	 * @param {Number} scaleY
+	 * @param {Number} rotation
+	 * @param {Number} skewX
+	 * @param {Number} skewY
+	 * @param {Number} regX Optional.
+	 * @param {Number} regY Optional.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.prependTransform = function(x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) {
+		if (rotation%360) {
+			var r = rotation*Matrix2D.DEG_TO_RAD;
+			var cos = Math.cos(r);
+			var sin = Math.sin(r);
+		} else {
+			cos = 1;
+			sin = 0;
+		}
+
+		if (regX || regY) {
+			// prepend the registration offset:
+			this.tx -= regX; this.ty -= regY;
+		}
+		if (skewX || skewY) {
+			// TODO: can this be combined into a single prepend operation?
+			skewX *= Matrix2D.DEG_TO_RAD;
+			skewY *= Matrix2D.DEG_TO_RAD;
+			this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, 0, 0);
+			this.prepend(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), x, y);
+		} else {
+			this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y);
+		}
+		return this;
+	};
+
+	/**
+	 * Applies a clockwise rotation transformation to the matrix.
+	 * @method rotate
+	 * @param {Number} angle The angle to rotate by, in degrees. To use a value in radians, multiply it by `180/Math.PI`.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.rotate = function(angle) {
+		angle = angle*Matrix2D.DEG_TO_RAD;
+		var cos = Math.cos(angle);
+		var sin = Math.sin(angle);
+
+		var a1 = this.a;
+		var b1 = this.b;
+
+		this.a = a1*cos+this.c*sin;
+		this.b = b1*cos+this.d*sin;
+		this.c = -a1*sin+this.c*cos;
+		this.d = -b1*sin+this.d*cos;
+		return this;
+	};
+
+	/**
+	 * Applies a skew transformation to the matrix.
+	 * @method skew
+	 * @param {Number} skewX The amount to skew horizontally in degrees. To use a value in radians, multiply it by `180/Math.PI`.
+	 * @param {Number} skewY The amount to skew vertically in degrees.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	*/
+	p.skew = function(skewX, skewY) {
+		skewX = skewX*Matrix2D.DEG_TO_RAD;
+		skewY = skewY*Matrix2D.DEG_TO_RAD;
+		this.append(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), 0, 0);
+		return this;
+	};
+
+	/**
+	 * Applies a scale transformation to the matrix.
+	 * @method scale
+	 * @param {Number} x The amount to scale horizontally. E.G. a value of 2 will double the size in the X direction, and 0.5 will halve it.
+	 * @param {Number} y The amount to scale vertically.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.scale = function(x, y) {
+		this.a *= x;
+		this.b *= x;
+		this.c *= y;
+		this.d *= y;
+		//this.tx *= x;
+		//this.ty *= y;
+		return this;
+	};
+
+	/**
+	 * Translates the matrix on the x and y axes.
+	 * @method translate
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.translate = function(x, y) {
+		this.tx += this.a*x + this.c*y;
+		this.ty += this.b*x + this.d*y;
+		return this;
+	};
+
+	/**
+	 * Sets the properties of the matrix to those of an identity matrix (one that applies a null transformation).
+	 * @method identity
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.identity = function() {
+		this.a = this.d = 1;
+		this.b = this.c = this.tx = this.ty = 0;
+		return this;
+	};
+
+	/**
+	 * Inverts the matrix, causing it to perform the opposite transformation.
+	 * @method invert
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **/
+	p.invert = function() {
+		var a1 = this.a;
+		var b1 = this.b;
+		var c1 = this.c;
+		var d1 = this.d;
+		var tx1 = this.tx;
+		var n = a1*d1-b1*c1;
+
+		this.a = d1/n;
+		this.b = -b1/n;
+		this.c = -c1/n;
+		this.d = a1/n;
+		this.tx = (c1*this.ty-d1*tx1)/n;
+		this.ty = -(a1*this.ty-b1*tx1)/n;
+		return this;
+	};
+
+	/**
+	 * Returns true if the matrix is an identity matrix.
+	 * @method isIdentity
+	 * @return {Boolean}
+	 **/
+	p.isIdentity = function() {
+		return this.tx === 0 && this.ty === 0 && this.a === 1 && this.b === 0 && this.c === 0 && this.d === 1;
+	};
+	
+	/**
+	 * Returns true if this matrix is equal to the specified matrix (all property values are equal).
+	 * @method equals
+	 * @param {Matrix2D} matrix The matrix to compare.
+	 * @return {Boolean}
+	 **/
+	p.equals = function(matrix) {
+		return this.tx === matrix.tx && this.ty === matrix.ty && this.a === matrix.a && this.b === matrix.b && this.c === matrix.c && this.d === matrix.d;
+	};
+
+	/**
+	 * Transforms a point according to this matrix.
+	 * @method transformPoint
+	 * @param {Number} x The x component of the point to transform.
+	 * @param {Number} y The y component of the point to transform.
+	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a generic object with x/y properties will be returned.
+	 * @return {Point} This matrix. Useful for chaining method calls.
+	 **/
+	p.transformPoint = function(x, y, pt) {
+		pt = pt||{};
+		pt.x = x*this.a+y*this.c+this.tx;
+		pt.y = x*this.b+y*this.d+this.ty;
+		return pt;
+	};
+
+	/**
+	 * Decomposes the matrix into transform properties (x, y, scaleX, scaleY, and rotation). Note that these values
+	 * may not match the transform properties you used to generate the matrix, though they will produce the same visual
+	 * results.
+	 * @method decompose
+	 * @param {Object} target The object to apply the transform properties to. If null, then a new object will be returned.
+	 * @return {Object} The target, or a new generic object with the transform properties applied.
+	*/
+	p.decompose = function(target) {
+		// TODO: it would be nice to be able to solve for whether the matrix can be decomposed into only scale/rotation even when scale is negative
+		if (target == null) { target = {}; }
+		target.x = this.tx;
+		target.y = this.ty;
+		target.scaleX = Math.sqrt(this.a * this.a + this.b * this.b);
+		target.scaleY = Math.sqrt(this.c * this.c + this.d * this.d);
+
+		var skewX = Math.atan2(-this.c, this.d);
+		var skewY = Math.atan2(this.b, this.a);
+
+		var delta = Math.abs(1-skewX/skewY);
+		if (delta < 0.00001) { // effectively identical, can use rotation:
+			target.rotation = skewY/Matrix2D.DEG_TO_RAD;
+			if (this.a < 0 && this.d >= 0) {
+				target.rotation += (target.rotation <= 0) ? 180 : -180;
+			}
+			target.skewX = target.skewY = 0;
+		} else {
+			target.skewX = skewX/Matrix2D.DEG_TO_RAD;
+			target.skewY = skewY/Matrix2D.DEG_TO_RAD;
+		}
+		return target;
+	};
+	
+	/**
+	 * Copies all properties from the specified matrix to this matrix.
+	 * @method copy
+	 * @param {Matrix2D} matrix The matrix to copy properties from.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	*/
+	p.copy = function(matrix) {
+		return this.setValues(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty);
+	};
+
+	/**
+	 * Returns a clone of the Matrix2D instance.
+	 * @method clone
+	 * @return {Matrix2D} a clone of the Matrix2D instance.
+	 **/
+	p.clone = function() {
+		return new Matrix2D(this.a, this.b, this.c, this.d, this.tx, this.ty);
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Matrix2D (a="+this.a+" b="+this.b+" c="+this.c+" d="+this.d+" tx="+this.tx+" ty="+this.ty+")]";
+	};
+
+	// this has to be populated after the class is defined:
+	Matrix2D.identity = new Matrix2D();
+
+
+	createjs.Matrix2D = Matrix2D;
+}());
+
+//##############################################################################
+// DisplayProps.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+	/**
+	 * Used for calculating and encapsulating display related properties.
+	 * @class DisplayProps
+	 * @param {Number} [visible=true] Visible value.
+	 * @param {Number} [alpha=1] Alpha value.
+	 * @param {Number} [shadow=null] A Shadow instance or null.
+	 * @param {Number} [compositeOperation=null] A compositeOperation value or null.
+	 * @param {Number} [matrix] A transformation matrix. Defaults to a new identity matrix.
+	 * @constructor
+	 **/
+	function DisplayProps(visible, alpha, shadow, compositeOperation, matrix) {
+		this.setValues(visible, alpha, shadow, compositeOperation, matrix);
+		
+	// public properties:
+		// assigned in the setValues method.
+		/**
+		 * Property representing the alpha that will be applied to a display object.
+		 * @property alpha
+		 * @type Number
+		 **/
+	
+		/**
+		 * Property representing the shadow that will be applied to a display object.
+		 * @property shadow
+		 * @type Shadow
+		 **/
+	
+		/**
+		 * Property representing the compositeOperation that will be applied to a display object.
+		 * You can find a list of valid composite operations at:
+		 * <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing">https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing</a>
+		 * @property compositeOperation
+		 * @type String
+		 **/
+		
+		/**
+		 * Property representing the value for visible that will be applied to a display object.
+		 * @property visible
+		 * @type Boolean
+		 **/
+		
+		/**
+		 * The transformation matrix that will be applied to a display object.
+		 * @property matrix
+		 * @type Matrix2D
+		 **/
+	}
+	var p = DisplayProps.prototype;
+
+// initialization:
+	/**
+	 * Reinitializes the instance with the specified values.
+	 * @method setValues
+	 * @param {Number} [visible=true] Visible value.
+	 * @param {Number} [alpha=1] Alpha value.
+	 * @param {Number} [shadow=null] A Shadow instance or null.
+	 * @param {Number} [compositeOperation=null] A compositeOperation value or null.
+	 * @param {Number} [matrix] A transformation matrix. Defaults to an identity matrix.
+	 * @return {DisplayProps} This instance. Useful for chaining method calls.
+	 * @chainable
+	*/
+	p.setValues = function (visible, alpha, shadow, compositeOperation, matrix) {
+		this.visible = visible == null ? true : !!visible;
+		this.alpha = alpha == null ? 1 : alpha;
+		this.shadow = shadow;
+		this.compositeOperation = compositeOperation;
+		this.matrix = matrix || (this.matrix&&this.matrix.identity()) || new createjs.Matrix2D();
+		return this;
+	};
+
+// public methods:
+	/**
+	 * Appends the specified display properties. This is generally used to apply a child's properties its parent's.
+	 * @method append
+	 * @param {Boolean} visible desired visible value
+	 * @param {Number} alpha desired alpha value
+	 * @param {Shadow} shadow desired shadow value
+	 * @param {String} compositeOperation desired composite operation value
+	 * @param {Matrix2D} [matrix] a Matrix2D instance
+	 * @return {DisplayProps} This instance. Useful for chaining method calls.
+	 * @chainable
+	*/
+	p.append = function(visible, alpha, shadow, compositeOperation, matrix) {
+		this.alpha *= alpha;
+		this.shadow = shadow || this.shadow;
+		this.compositeOperation = compositeOperation || this.compositeOperation;
+		this.visible = this.visible && visible;
+		matrix&&this.matrix.appendMatrix(matrix);
+		return this;
+	};
+	
+	/**
+	 * Prepends the specified display properties. This is generally used to apply a parent's properties to a child's.
+	 * For example, to get the combined display properties that would be applied to a child, you could use:
+	 * 
+	 * 	var o = myDisplayObject;
+	 * 	var props = new createjs.DisplayProps();
+	 * 	do {
+	 * 		// prepend each parent's props in turn:
+	 * 		props.prepend(o.visible, o.alpha, o.shadow, o.compositeOperation, o.getMatrix());
+	 * 	} while (o = o.parent);
+	 * 	
+	 * @method prepend
+	 * @param {Boolean} visible desired visible value
+	 * @param {Number} alpha desired alpha value
+	 * @param {Shadow} shadow desired shadow value
+	 * @param {String} compositeOperation desired composite operation value
+	 * @param {Matrix2D} [matrix] a Matrix2D instance
+	 * @return {DisplayProps} This instance. Useful for chaining method calls.
+	 * @chainable
+	*/
+	p.prepend = function(visible, alpha, shadow, compositeOperation, matrix) {
+		this.alpha *= alpha;
+		this.shadow = this.shadow || shadow;
+		this.compositeOperation = this.compositeOperation || compositeOperation;
+		this.visible = this.visible && visible;
+		matrix&&this.matrix.prependMatrix(matrix);
+		return this;
+	};
+	
+	/**
+	 * Resets this instance and its matrix to default values.
+	 * @method identity
+	 * @return {DisplayProps} This instance. Useful for chaining method calls.
+	 * @chainable
+	*/
+	p.identity = function() {
+		this.visible = true;
+		this.alpha = 1;
+		this.shadow = this.compositeOperation = null;
+		this.matrix.identity();
+		return this;
+	};
+	
+	/**
+	 * Returns a clone of the DisplayProps instance. Clones the associated matrix.
+	 * @method clone
+	 * @return {DisplayProps} a clone of the DisplayProps instance.
+	 **/
+	p.clone = function() {
+		return new DisplayProps(this.alpha, this.shadow, this.compositeOperation, this.visible, this.matrix.clone());
+	};
+
+// private methods:
+
+	createjs.DisplayProps = DisplayProps;
+})();
+
+//##############################################################################
+// Point.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Represents a point on a 2 dimensional x / y coordinate system.
+	 *
+	 * <h4>Example</h4>
+	 * 
+	 *      var point = new createjs.Point(0, 100);
+	 * 
+	 * @class Point
+	 * @param {Number} [x=0] X position.
+	 * @param {Number} [y=0] Y position.
+	 * @constructor
+	 **/
+	function Point(x, y) {
+	 	this.setValues(x, y);
+	 	
+	 	
+	// public properties:
+		// assigned in the setValues method.
+		/**
+		 * X position.
+		 * @property x
+		 * @type Number
+		 **/
+	
+		/**
+		 * Y position.
+		 * @property y
+		 * @type Number
+		 **/
+	}
+	var p = Point.prototype;
+	
+// public methods:
+	/** 
+	 * Sets the specified values on this instance.
+	 * @method setValues
+	 * @param {Number} [x=0] X position.
+	 * @param {Number} [y=0] Y position.
+	 * @return {Point} This instance. Useful for chaining method calls.
+	 * @chainable
+	*/
+	p.setValues = function(x, y) {
+		this.x = x||0;
+		this.y = y||0;
+		return this;
+	};
+	
+	/**
+	 * Copies all properties from the specified point to this point.
+	 * @method copy
+	 * @param {Point} point The point to copy properties from.
+	 * @return {Point} This point. Useful for chaining method calls.
+	 * @chainable
+	*/
+	p.copy = function(point) {
+		this.x = point.x;
+		this.y = point.y;
+		return this;
+	};
+	
+	/**
+	 * Returns a clone of the Point instance.
+	 * @method clone
+	 * @return {Point} a clone of the Point instance.
+	 **/
+	p.clone = function() {
+		return new Point(this.x, this.y);
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Point (x="+this.x+" y="+this.y+")]";
+	};
+	
+	
+	createjs.Point = Point;
+}());
+
+//##############################################################################
+// Rectangle.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Represents a rectangle as defined by the points (x, y) and (x+width, y+height).
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      var rect = new createjs.Rectangle(0, 0, 100, 100);
+	 *
+	 * @class Rectangle
+	 * @param {Number} [x=0] X position.
+	 * @param {Number} [y=0] Y position.
+	 * @param {Number} [width=0] The width of the Rectangle.
+	 * @param {Number} [height=0] The height of the Rectangle.
+	 * @constructor
+	 **/
+	function Rectangle(x, y, width, height) {
+		this.setValues(x, y, width, height);
+		
+		
+	// public properties:
+		// assigned in the setValues method.
+		/**
+		 * X position.
+		 * @property x
+		 * @type Number
+		 **/
+	
+		/**
+		 * Y position.
+		 * @property y
+		 * @type Number
+		 **/
+	
+		/**
+		 * Width.
+		 * @property width
+		 * @type Number
+		 **/
+	
+		/**
+		 * Height.
+		 * @property height
+		 * @type Number
+		 **/
+	}
+	var p = Rectangle.prototype;
+
+// public methods:
+	/** 
+	 * Sets the specified values on this instance.
+	 * @method setValues
+	 * @param {Number} [x=0] X position.
+	 * @param {Number} [y=0] Y position.
+	 * @param {Number} [width=0] The width of the Rectangle.
+	 * @param {Number} [height=0] The height of the Rectangle.
+	 * @return {Rectangle} This instance. Useful for chaining method calls.
+	 * @chainable
+	*/
+	p.setValues = function(x, y, width, height) {
+		// don't forget to update docs in the constructor if these change:
+		this.x = x||0;
+		this.y = y||0;
+		this.width = width||0;
+		this.height = height||0;
+		return this;
+	};
+	
+	/** 
+	 * Extends the rectangle's bounds to include the described point or rectangle.
+	 * @method extend
+	 * @param {Number} x X position of the point or rectangle.
+	 * @param {Number} y Y position of the point or rectangle.
+	 * @param {Number} [width=0] The width of the rectangle.
+	 * @param {Number} [height=0] The height of the rectangle.
+	 * @return {Rectangle} This instance. Useful for chaining method calls.
+	 * @chainable
+	*/
+	p.extend = function(x, y, width, height) {
+		width = width||0;
+		height = height||0;
+		if (x+width > this.x+this.width) { this.width = x+width-this.x; }
+		if (y+height > this.y+this.height) { this.height = y+height-this.y; }
+		if (x < this.x) { this.width += this.x-x; this.x = x; }
+		if (y < this.y) { this.height += this.y-y; this.y = y; }
+		return this;
+	};
+	
+	/** 
+	 * Adds the specified padding to the rectangle's bounds.
+	 * @method pad
+	 * @param {Number} top
+	 * @param {Number} left
+	 * @param {Number} bottom
+	 * @param {Number} right
+	 * @return {Rectangle} This instance. Useful for chaining method calls.
+	 * @chainable
+	*/
+	p.pad = function(top, left, bottom, right) {
+		this.x -= left;
+		this.y -= top;
+		this.width += left+right;
+		this.height += top+bottom;
+		return this;
+	};
+	
+	/**
+	 * Copies all properties from the specified rectangle to this rectangle.
+	 * @method copy
+	 * @param {Rectangle} rectangle The rectangle to copy properties from.
+	 * @return {Rectangle} This rectangle. Useful for chaining method calls.
+	 * @chainable
+	*/
+	p.copy = function(rectangle) {
+		return this.setValues(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+	};
+	
+	/** 
+	 * Returns true if this rectangle fully encloses the described point or rectangle.
+	 * @method contains
+	 * @param {Number} x X position of the point or rectangle.
+	 * @param {Number} y Y position of the point or rectangle.
+	 * @param {Number} [width=0] The width of the rectangle.
+	 * @param {Number} [height=0] The height of the rectangle.
+	 * @return {Boolean} True if the described point or rectangle is contained within this rectangle.
+	*/
+	p.contains = function(x, y, width, height) {
+		width = width||0;
+		height = height||0;
+		return (x >= this.x && x+width <= this.x+this.width && y >= this.y && y+height <= this.y+this.height);
+	};
+	
+	/** 
+	 * Returns a new rectangle which contains this rectangle and the specified rectangle.
+	 * @method union
+	 * @param {Rectangle} rect The rectangle to calculate a union with.
+	 * @return {Rectangle} A new rectangle describing the union.
+	*/
+	p.union = function(rect) {
+		return this.clone().extend(rect.x, rect.y, rect.width, rect.height);
+	};
+	
+	/** 
+	 * Returns a new rectangle which describes the intersection (overlap) of this rectangle and the specified rectangle,
+	 * or null if they do not intersect.
+	 * @method intersection
+	 * @param {Rectangle} rect The rectangle to calculate an intersection with.
+	 * @return {Rectangle} A new rectangle describing the intersection or null.
+	*/
+	p.intersection = function(rect) {
+		var x1 = rect.x, y1 = rect.y, x2 = x1+rect.width, y2 = y1+rect.height;
+		if (this.x > x1) { x1 = this.x; }
+		if (this.y > y1) { y1 = this.y; }
+		if (this.x + this.width < x2) { x2 = this.x + this.width; }
+		if (this.y + this.height < y2) { y2 = this.y + this.height; }
+		return (x2 <= x1 || y2 <= y1) ? null : new Rectangle(x1, y1, x2-x1, y2-y1);
+	};
+	
+	/** 
+	 * Returns true if the specified rectangle intersects (has any overlap) with this rectangle.
+	 * @method intersects
+	 * @param {Rectangle} rect The rectangle to compare.
+	 * @return {Boolean} True if the rectangles intersect.
+	*/
+	p.intersects = function(rect) {
+		return (rect.x <= this.x+this.width && this.x <= rect.x+rect.width && rect.y <= this.y+this.height && this.y <= rect.y + rect.height);
+	};
+	
+	/** 
+	 * Returns true if the width or height are equal or less than 0.
+	 * @method isEmpty
+	 * @return {Boolean} True if the rectangle is empty.
+	*/
+	p.isEmpty = function() {
+		return this.width <= 0 || this.height <= 0;
+	};
+	
+	/**
+	 * Returns a clone of the Rectangle instance.
+	 * @method clone
+	 * @return {Rectangle} a clone of the Rectangle instance.
+	 **/
+	p.clone = function() {
+		return new Rectangle(this.x, this.y, this.width, this.height);
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Rectangle (x="+this.x+" y="+this.y+" width="+this.width+" height="+this.height+")]";
+	};
+	
+	
+	createjs.Rectangle = Rectangle;
+}());
+
+//##############################################################################
+// ButtonHelper.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * The ButtonHelper is a helper class to create interactive buttons from {{#crossLink "MovieClip"}}{{/crossLink}} or
+	 * {{#crossLink "Sprite"}}{{/crossLink}} instances. This class will intercept mouse events from an object, and
+	 * automatically call {{#crossLink "Sprite/gotoAndStop"}}{{/crossLink}} or {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}},
+	 * to the respective animation labels, add a pointer cursor, and allows the user to define a hit state frame.
+	 *
+	 * The ButtonHelper instance does not need to be added to the stage, but a reference should be maintained to prevent
+	 * garbage collection.
+	 * 
+	 * Note that over states will not work unless you call {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}}.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      var helper = new createjs.ButtonHelper(myInstance, "out", "over", "down", false, myInstance, "hit");
+	 *      myInstance.addEventListener("click", handleClick);
+	 *      function handleClick(event) {
+	 *          // Click Happened.
+	 *      }
+	 *
+	 * @class ButtonHelper
+	 * @param {Sprite|MovieClip} target The instance to manage.
+	 * @param {String} [outLabel="out"] The label or animation to go to when the user rolls out of the button.
+	 * @param {String} [overLabel="over"] The label or animation to go to when the user rolls over the button.
+	 * @param {String} [downLabel="down"] The label or animation to go to when the user presses the button.
+	 * @param {Boolean} [play=false] If the helper should call "gotoAndPlay" or "gotoAndStop" on the button when changing
+	 * states.
+	 * @param {DisplayObject} [hitArea] An optional item to use as the hit state for the button. If this is not defined,
+	 * then the button's visible states will be used instead. Note that the same instance as the "target" argument can be
+	 * used for the hitState.
+	 * @param {String} [hitLabel] The label or animation on the hitArea instance that defines the hitArea bounds. If this is
+	 * null, then the default state of the hitArea will be used. *
+	 * @constructor
+	 */
+	function ButtonHelper(target, outLabel, overLabel, downLabel, play, hitArea, hitLabel) {
+		if (!target.addEventListener) { return; }
+	
+	
+	// public properties:
+		/**
+		 * The target for this button helper.
+		 * @property target
+		 * @type MovieClip | Sprite
+		 * @readonly
+		 **/
+		this.target = target;
+	
+		/**
+		 * The label name or frame number to display when the user mouses out of the target. Defaults to "over".
+		 * @property overLabel
+		 * @type String | Number
+		 **/
+		this.overLabel = overLabel == null ? "over" : overLabel;
+	
+		/**
+		 * The label name or frame number to display when the user mouses over the target. Defaults to "out".
+		 * @property outLabel
+		 * @type String | Number
+		 **/
+		this.outLabel = outLabel == null ? "out" : outLabel;
+	
+		/**
+		 * The label name or frame number to display when the user presses on the target. Defaults to "down".
+		 * @property downLabel
+		 * @type String | Number
+		 **/
+		this.downLabel = downLabel == null ? "down" : downLabel;
+	
+		/**
+		 * If true, then ButtonHelper will call gotoAndPlay, if false, it will use gotoAndStop. Default is false.
+		 * @property play
+		 * @default false
+		 * @type Boolean
+		 **/
+		this.play = play;
+		
+		
+	//  private properties
+		/**
+		 * @property _isPressed
+		 * @type Boolean
+		 * @protected
+		 **/
+		this._isPressed = false;
+	
+		/**
+		 * @property _isOver
+		 * @type Boolean
+		 * @protected
+		 **/
+		this._isOver = false;
+	
+		/**
+		 * @property _enabled
+		 * @type Boolean
+		 * @protected
+		 **/
+		this._enabled = false;
+		
+	// setup:
+		target.mouseChildren = false; // prevents issues when children are removed from the display list when state changes.
+		this.enabled = true;
+		this.handleEvent({});
+		if (hitArea) {
+			if (hitLabel) {
+				hitArea.actionsEnabled = false;
+				hitArea.gotoAndStop&&hitArea.gotoAndStop(hitLabel);
+			}
+			target.hitArea = hitArea;
+		}
+	}
+	var p = ButtonHelper.prototype;
+	
+// getter / setters:
+	/**
+	 * Use the {{#crossLink "ButtonHelper/enabled:property"}}{{/crossLink}} property instead.
+	 * @method setEnabled
+	 * @param {Boolean} value The enabled property to set the instance to.
+	 * @[rptected
+	 * @protected
+	 **/
+	p._setEnabled = function(value) {
+		if (value == this._enabled) { return; }
+		var o = this.target;
+		this._enabled = value;
+		if (value) {
+			o.cursor = "pointer";
+			o.addEventListener("rollover", this);
+			o.addEventListener("rollout", this);
+			o.addEventListener("mousedown", this);
+			o.addEventListener("pressup", this);
+			if (o._reset) { o.__reset = o._reset; o._reset = this._reset;}
+		} else {
+			o.cursor = null;
+			o.removeEventListener("rollover", this);
+			o.removeEventListener("rollout", this);
+			o.removeEventListener("mousedown", this);
+			o.removeEventListener("pressup", this);
+			if (o.__reset) { o._reset = o.__reset; delete(o.__reset); }
+		}
+	};
+	// ButtonHelper.setEnabled is @deprecated. Remove for 1.1+
+	p.setEnabled = createjs.deprecate(p._setEnabled, "ButtonHelper.setEnabled");
+
+	/**
+	 * Use the {{#crossLink "ButtonHelper/enabled:property"}}{{/crossLink}} property instead.
+	 * @method getEnabled
+	 * @protected
+	 * @return {Boolean}
+	 **/
+	p._getEnabled = function() {
+		return this._enabled;
+	};
+	// ButtonHelper.getEnabled is @deprecated. Remove for 1.1+
+	p.getEnabled = createjs.deprecate(p._getEnabled, "ButtonHelper.getEnabled");
+
+	/**
+	 * Enables or disables the button functionality on the target.
+	 * @property enabled
+	 * @type {Boolean}
+	 **/
+	try {
+		Object.defineProperties(p, {
+			enabled: { get: p._getEnabled, set: p._setEnabled }
+		});
+	} catch (e) {} // TODO: use Log
+
+
+// public methods:
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[ButtonHelper]";
+	};
+
+
+// private methods:
+	/**
+	 * @method handleEvent
+	 * @param {Object} evt The mouse event to handle.
+	 * @protected
+	 **/
+	p.handleEvent = function(evt) {
+		var label, t = this.target, type = evt.type;
+		if (type == "mousedown") {
+			this._isPressed = true;
+			label = this.downLabel;
+		} else if (type == "pressup") {
+			this._isPressed = false;
+			label = this._isOver ? this.overLabel : this.outLabel;
+		} else if (type == "rollover") {
+			this._isOver = true;
+			label = this._isPressed ? this.downLabel : this.overLabel;
+		} else { // rollout and default
+			this._isOver = false;
+			label = this._isPressed ? this.overLabel : this.outLabel;
+		}
+		if (this.play) {
+			t.gotoAndPlay&&t.gotoAndPlay(label);
+		} else {
+			t.gotoAndStop&&t.gotoAndStop(label);
+		}
+	};
+	
+	/**
+	 * Injected into target. Preserves the paused state through a reset.
+	 * @method _reset
+	 * @protected
+	 **/
+	p._reset = function() {
+		// TODO: explore better ways to handle this issue. This is hacky & disrupts object signatures.
+		var p = this.paused;
+		this.__reset();
+		this.paused = p;
+	};
+
+
+	createjs.ButtonHelper = ButtonHelper;
+}());
+
+//##############################################################################
+// Shadow.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * This class encapsulates the properties required to define a shadow to apply to a {{#crossLink "DisplayObject"}}{{/crossLink}}
+	 * via its <code>shadow</code> property.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      myImage.shadow = new createjs.Shadow("#000000", 5, 5, 10);
+	 *
+	 * @class Shadow
+	 * @constructor
+	 * @param {String} color The color of the shadow. This can be any valid CSS color value.
+	 * @param {Number} offsetX The x offset of the shadow in pixels.
+	 * @param {Number} offsetY The y offset of the shadow in pixels.
+	 * @param {Number} blur The size of the blurring effect.
+	 **/
+	function Shadow(color, offsetX, offsetY, blur) {
+		
+		
+	// public properties:
+		/** 
+		 * The color of the shadow. This can be any valid CSS color value.
+		 * @property color
+		 * @type String
+		 * @default null
+		 */
+		this.color = color||"black";
+	
+		/** The x offset of the shadow.
+		 * @property offsetX
+		 * @type Number
+		 * @default 0
+		 */
+		this.offsetX = offsetX||0;
+	
+		/** The y offset of the shadow.
+		 * @property offsetY
+		 * @type Number
+		 * @default 0
+		 */
+		this.offsetY = offsetY||0;
+	
+		/** The blur of the shadow.
+		 * @property blur
+		 * @type Number
+		 * @default 0
+		 */
+		this.blur = blur||0;
+	}
+	var p = Shadow.prototype;
+
+// static public properties:
+	/**
+	 * An identity shadow object (all properties are set to 0).
+	 * @property identity
+	 * @type Shadow
+	 * @static
+	 * @final
+	 * @readonly
+	 **/
+	Shadow.identity = new Shadow("transparent", 0, 0, 0);
+
+
+// public methods:
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Shadow]";
+	};
+
+	/**
+	 * Returns a clone of this Shadow instance.
+	 * @method clone
+	 * @return {Shadow} A clone of the current Shadow instance.
+	 **/
+	p.clone = function() {
+		return new Shadow(this.color, this.offsetX, this.offsetY, this.blur);
+	};
+	
+
+	createjs.Shadow = Shadow;
+}());
+
+//##############################################################################
+// SpriteSheet.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Encapsulates the properties and methods associated with a sprite sheet. A sprite sheet is a series of images (usually
+	 * animation frames) combined into a larger image (or images). For example, an animation consisting of eight 100x100
+	 * images could be combined into a single 400x200 sprite sheet (4 frames across by 2 high).
+	 *
+	 * The data passed to the SpriteSheet constructor defines:
+	 * <ol>
+	 * 	<li> The source image or images to use.</li>
+	 * 	<li> The positions of individual image frames.</li>
+	 * 	<li> Sequences of frames that form named animations. Optional.</li>
+	 * 	<li> The target playback framerate. Optional.</li>
+	 * </ol>
+	 * <h3>SpriteSheet Format</h3>
+	 * SpriteSheets are an object with two required properties (`images` and `frames`), and two optional properties
+	 * (`framerate` and `animations`). This makes them easy to define in javascript code, or in JSON.
+	 *
+	 * <h4>images</h4>
+	 * An array of source images. Images can be either an HTMlimage
+	 * instance, or a uri to an image. The former is recommended to control preloading.
+	 *
+	 * 	images: [image1, "path/to/image2.png"],
+	 *
+	 * <h4>frames</h4>
+	 * Defines the individual frames. There are two supported formats for frame data:
+	 * When all of the frames are the same size (in a grid), use an object with `width`, `height`, `regX`, `regY`,
+	 * and `count` properties.
+	 *
+	 * <ul>
+	 *  <li>`width` & `height` are required and specify the dimensions of the frames</li>
+	 *  <li>`regX` & `regY` indicate the registration point or "origin" of the frames</li>
+	 *  <li>`spacing` indicate the spacing between frames</li>
+	 *  <li>`margin` specify the margin around the image(s)</li>
+	 *  <li>`count` allows you to specify the total number of frames in the spritesheet; if omitted, this will
+	 *  be calculated based on the dimensions of the source images and the frames. Frames will be assigned
+	 *  indexes based on their position in the source images (left to right, top to bottom).</li>
+	 * </ul>
+	 *
+	 *  	frames: {width:64, height:64, count:20, regX: 32, regY:64, spacing:0, margin:0}
+	 *
+	 * If the frames are of different sizes, use an array of frame definitions. Each definition is itself an array
+	 * with 4 required and 3 optional entries, in the order:
+	 *
+	 * <ul>
+	 *  <li>The first four, `x`, `y`, `width`, and `height` are required and define the frame rectangle.</li>
+	 *  <li>The fifth, `imageIndex`, specifies the index of the source image (defaults to 0)</li>
+	 *  <li>The last two, `regX` and `regY` specify the registration point of the frame</li>
+	 * </ul>
+	 *
+	 * 	frames: [
+	 * 		// x, y, width, height, imageIndex*, regX*, regY*
+	 * 		[64, 0, 96, 64],
+	 * 		[0, 0, 64, 64, 1, 32, 32]
+	 * 		// etc.
+	 * 	]
+	 *
+	 * <h4>animations</h4>
+	 * Optional. An object defining sequences of frames to play as named animations. Each property corresponds to an
+	 * animation of the same name. Each animation must specify the frames to play, and may
+	 * also include a relative playback `speed` (ex. 2 would playback at double speed, 0.5 at half), and
+	 * the name of the `next` animation to sequence to after it completes.
+	 *
+	 * There are three formats supported for defining the frames in an animation, which can be mixed and matched as appropriate:
+	 * <ol>
+	 * 	<li>for a single frame animation, you can simply specify the frame index
+	 *
+	 * 		animations: {
+	 * 			sit: 7
+	 * 		}
+	 *
+	 * </li>
+	 * <li>
+	 *      for an animation of consecutive frames, you can use an array with two required, and two optional entries
+	 * 		in the order: `start`, `end`, `next`, and `speed`. This will play the frames from start to end inclusive.
+	 *
+	 * 		animations: {
+	 * 			// start, end, next*, speed*
+	 * 			run: [0, 8],
+	 * 			jump: [9, 12, "run", 2]
+	 * 		}
+	 *
+	 *  </li>
+	 *  <li>
+	 *     for non-consecutive frames, you can use an object with a `frames` property defining an array of frame
+	 *     indexes to play in order. The object can also specify `next` and `speed` properties.
+	 *
+	 * 		animations: {
+	 * 			walk: {
+	 * 				frames: [1,2,3,3,2,1]
+	 * 			},
+	 * 			shoot: {
+	 * 				frames: [1,4,5,6],
+	 * 				next: "walk",
+	 * 				speed: 0.5
+	 * 			}
+	 * 		}
+	 *
+	 *  </li>
+	 * </ol>
+	 * <strong>Note:</strong> the `speed` property was added in EaselJS 0.7.0. Earlier versions had a `frequency`
+	 * property instead, which was the inverse of `speed`. For example, a value of "4" would be 1/4 normal speed in
+	 * earlier versions, but is 4x normal speed in EaselJS 0.7.0+.
+	 *
+	 * <h4>framerate</h4>
+	 * Optional. Indicates the default framerate to play this spritesheet at in frames per second. See
+	 * {{#crossLink "SpriteSheet/framerate:property"}}{{/crossLink}} for more information.
+	 *
+	 * 		framerate: 20
+	 *
+	 * Note that the Sprite framerate will only work if the stage update method is provided with the {{#crossLink "Ticker/tick:event"}}{{/crossLink}}
+	 * event generated by the {{#crossLink "Ticker"}}{{/crossLink}}.
+	 *
+	 * 		createjs.Ticker.on("tick", handleTick);
+	 * 		function handleTick(event) {
+	 *			stage.update(event);
+	 *		}
+	 *
+	 * <h3>Example</h3>
+	 * To define a simple sprite sheet, with a single image "sprites.jpg" arranged in a regular 50x50 grid with three
+	 * animations: "stand" showing the first frame, "run" looping frame 1-5 inclusive, and "jump" playing frame 6-8 and
+	 * sequencing back to run.
+	 *
+	 * 		var data = {
+	 * 			images: ["sprites.jpg"],
+	 * 			frames: {width:50, height:50},
+	 * 			animations: {
+	 * 				stand:0,
+	 * 				run:[1,5],
+	 * 				jump:[6,8,"run"]
+	 * 			}
+	 * 		};
+	 * 		var spriteSheet = new createjs.SpriteSheet(data);
+	 * 		var animation = new createjs.Sprite(spriteSheet, "run");
+	 *
+	 * <h3>Generating SpriteSheet Images</h3>
+	 * Spritesheets can be created manually by combining images in PhotoShop, and specifying the frame size or
+	 * coordinates manually, however there are a number of tools that facilitate this.
+	 * <ul>
+	 *     <li>Exporting SpriteSheets or HTML5 content from Adobe Flash/Animate supports the EaselJS SpriteSheet format.</li>
+	 *     <li>The popular <a href="https://www.codeandweb.com/texturepacker/easeljs" target="_blank">Texture Packer</a> has
+	 *     EaselJS support.
+	 *     <li>SWF animations in Adobe Flash/Animate can be exported to SpriteSheets using <a href="http://createjs.com/zoe" target="_blank">Zo&euml;</a></li>
+	 * </ul>
+	 *
+	 * <h3>Cross Origin Issues</h3>
+	 * <strong>Warning:</strong> Images loaded cross-origin will throw cross-origin security errors when interacted with
+	 * using:
+	 * <ul>
+	 *     <li>a mouse</li>
+	 *     <li>methods such as {{#crossLink "Container/getObjectUnderPoint"}}{{/crossLink}}</li>
+	 *     <li>Filters (see {{#crossLink "Filter"}}{{/crossLink}})</li>
+	 *     <li>caching (see {{#crossLink "DisplayObject/cache"}}{{/crossLink}})</li>
+	 * </ul>
+	 * You can get around this by setting `crossOrigin` property on your images before passing them to EaselJS, or
+	 * setting the `crossOrigin` property on PreloadJS' LoadQueue or LoadItems.
+	 *
+	 * 		var image = new Image();
+	 * 		img.crossOrigin="Anonymous";
+	 * 		img.src = "http://server-with-CORS-support.com/path/to/image.jpg";
+	 *
+	 * If you pass string paths to SpriteSheets, they will not work cross-origin. The server that stores the image must
+	 * support cross-origin requests, or this will not work. For more information, check out
+	 * <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS" target="_blank">CORS overview on MDN</a>.
+	 *
+	 * @class SpriteSheet
+	 * @constructor
+	 * @param {Object} data An object describing the SpriteSheet data.
+	 * @extends EventDispatcher
+	 **/
+	function SpriteSheet(data) {
+		this.EventDispatcher_constructor();
+
+
+		// public properties:
+		/**
+		 * Indicates whether all images are finished loading.
+		 * @property complete
+		 * @type Boolean
+		 * @readonly
+		 **/
+		this.complete = true;
+
+		/**
+		 * Specifies the framerate to use by default for Sprite instances using the SpriteSheet. See the Sprite class
+		 * {{#crossLink "Sprite/framerate:property"}}{{/crossLink}} for more information.
+		 * @property framerate
+		 * @type Number
+		 **/
+		this.framerate = 0;
+
+
+		// private properties:
+		/**
+		 * @property _animations
+		 * @protected
+		 * @type Array
+		 **/
+		this._animations = null;
+
+		/**
+		 * @property _frames
+		 * @protected
+		 * @type Array
+		 **/
+		this._frames = null;
+
+		/**
+		 * @property _images
+		 * @protected
+		 * @type Array
+		 **/
+		this._images = null;
+
+		/**
+		 * @property _data
+		 * @protected
+		 * @type Object
+		 **/
+		this._data = null;
+
+		/**
+		 * @property _loadCount
+		 * @protected
+		 * @type Number
+		 **/
+		this._loadCount = 0;
+
+		// only used for simple frame defs:
+		/**
+		 * @property _frameHeight
+		 * @protected
+		 * @type Number
+		 **/
+		this._frameHeight = 0;
+
+		/**
+		 * @property _frameWidth
+		 * @protected
+		 * @type Number
+		 **/
+		this._frameWidth = 0;
+
+		/**
+		 * @property _numFrames
+		 * @protected
+		 * @type Number
+		 **/
+		this._numFrames = 0;
+
+		/**
+		 * @property _regX
+		 * @protected
+		 * @type Number
+		 **/
+		this._regX = 0;
+
+		/**
+		 * @property _regY
+		 * @protected
+		 * @type Number
+		 **/
+		this._regY = 0;
+
+		/**
+		 * @property _spacing
+		 * @protected
+		 * @type Number
+		 **/
+		this._spacing = 0;
+
+		/**
+		 * @property _margin
+		 * @protected
+		 * @type Number
+		 **/
+		this._margin = 0;
+
+		// setup:
+		this._parseData(data);
+	}
+	var p = createjs.extend(SpriteSheet, createjs.EventDispatcher);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+
+// events:
+	/**
+	 * Dispatched when all images are loaded.  Note that this only fires if the images
+	 * were not fully loaded when the sprite sheet was initialized. You should check the complete property
+	 * to prior to adding a listener. Ex.
+	 *
+	 * 	var sheet = new createjs.SpriteSheet(data);
+	 * 	if (!sheet.complete) {
+	 * 		// not preloaded, listen for the complete event:
+	 * 		sheet.addEventListener("complete", handler);
+	 * 	}
+	 *
+	 * @event complete
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type.
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * Dispatched when getFrame is called with a valid frame index. This is primarily intended for use by {{#crossLink "SpriteSheetBuilder"}}{{/crossLink}}
+	 * when doing on-demand rendering.
+	 * @event getframe
+	 * @param {Number} index The frame index.
+	 * @param {Object} frame The frame object that getFrame will return.
+	 */
+
+	/**
+	 * Dispatched when an image encounters an error. A SpriteSheet will dispatch an error event for each image that
+	 * encounters an error, and will still dispatch a {{#crossLink "SpriteSheet/complete:event"}}{{/crossLink}}
+	 * event once all images are finished processing, even if an error is encountered.
+	 * @event error
+	 * @param {String} src The source of the image that failed to load.
+	 * @since 0.8.2
+	 */
+
+
+// getter / setters:
+	/**
+	 * Use the {{#crossLink "SpriteSheet/animations:property"}}{{/crossLink}} property instead.
+	 * @method _getAnimations
+	 * @protected
+	 * @return {Array}
+	 **/
+	p._getAnimations = function() {
+		return this._animations.slice();
+	};
+	// SpriteSheet.getAnimations is @deprecated. Remove for 1.1+
+	p.getAnimations = createjs.deprecate(p._getAnimations, "SpriteSheet.getAnimations");
+
+	/**
+	 * Returns an array of all available animation names available on this sprite sheet as strings.
+	 * @property animations
+	 * @type {Array}
+	 * @readonly
+	 **/
+	try {
+		Object.defineProperties(p, {
+			animations: { get: p._getAnimations }
+		});
+	} catch (e) {}
+
+
+// public methods:
+	/**
+	 * Returns the total number of frames in the specified animation, or in the whole sprite
+	 * sheet if the animation param is omitted. Returns 0 if the spritesheet relies on calculated frame counts, and
+	 * the images have not been fully loaded.
+	 * @method getNumFrames
+	 * @param {String} animation The name of the animation to get a frame count for.
+	 * @return {Number} The number of frames in the animation, or in the entire sprite sheet if the animation param is omitted.
+	 */
+	p.getNumFrames = function(animation) {
+		if (animation == null) {
+			return this._frames ? this._frames.length : this._numFrames || 0;
+		} else {
+			var data = this._data[animation];
+			if (data == null) { return 0; }
+			else { return data.frames.length; }
+		}
+	};
+
+	/**
+	 * Returns an object defining the specified animation. The returned object contains:<UL>
+	 * 	<li>frames: an array of the frame ids in the animation</li>
+	 * 	<li>speed: the playback speed for this animation</li>
+	 * 	<li>name: the name of the animation</li>
+	 * 	<li>next: the default animation to play next. If the animation loops, the name and next property will be the
+	 * 	same.</li>
+	 * </UL>
+	 * @method getAnimation
+	 * @param {String} name The name of the animation to get.
+	 * @return {Object} a generic object with frames, speed, name, and next properties.
+	 **/
+	p.getAnimation = function(name) {
+		return this._data[name];
+	};
+
+	/**
+	 * Returns an object specifying the image and source rect of the specified frame. The returned object has:<UL>
+	 * 	<li>an image property holding a reference to the image object in which the frame is found</li>
+	 * 	<li>a rect property containing a Rectangle instance which defines the boundaries for the frame within that
+	 * 	image.</li>
+	 * 	<li> A regX and regY property corresponding to the regX/Y values for the frame.
+	 * </UL>
+	 * @method getFrame
+	 * @param {Number} frameIndex The index of the frame.
+	 * @return {Object} a generic object with image and rect properties. Returns null if the frame does not exist.
+	 **/
+	p.getFrame = function(frameIndex) {
+		var frame;
+		if (this._frames && (frame=this._frames[frameIndex])) { return frame; }
+		return null;
+	};
+
+	/**
+	 * Returns a {{#crossLink "Rectangle"}}{{/crossLink}} instance defining the bounds of the specified frame relative
+	 * to the origin. For example, a 90 x 70 frame with a regX of 50 and a regY of 40 would return:
+	 *
+	 * 	[x=-50, y=-40, width=90, height=70]
+	 *
+	 * @method getFrameBounds
+	 * @param {Number} frameIndex The index of the frame.
+	 * @param {Rectangle} [rectangle] A Rectangle instance to copy the values into. By default a new instance is created.
+	 * @return {Rectangle} A Rectangle instance. Returns null if the frame does not exist, or the image is not fully loaded.
+	 **/
+	p.getFrameBounds = function(frameIndex, rectangle) {
+		var frame = this.getFrame(frameIndex);
+		return frame ? (rectangle||new createjs.Rectangle()).setValues(-frame.regX, -frame.regY, frame.rect.width, frame.rect.height) : null;
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[SpriteSheet]";
+	};
+
+	/**
+	 * SpriteSheet cannot be cloned. A SpriteSheet can be shared by multiple Sprite instances without cloning it.
+	 * @method clone
+	 **/
+	p.clone = function() {
+		throw("SpriteSheet cannot be cloned.")
+	};
+
+// private methods:
+	/**
+	 * @method _parseData
+	 * @param {Object} data An object describing the SpriteSheet data.
+	 * @protected
+	 **/
+	p._parseData = function(data) {
+		var this$1 = this;
+
+		var i,l,o,a;
+		if (data == null) { return; }
+
+		this.framerate = data.framerate||0;
+
+		// parse images:
+		if (data.images && (l=data.images.length) > 0) {
+			a = this._images = [];
+			for (i=0; i<l; i++) {
+				var img = data.images[i];
+				if (typeof img == "string") {
+					var src = img;
+					img = document.createElement("img");
+					img.src = src;
+				}
+				a.push(img);
+				if (!img.getContext && !img.naturalWidth) {
+					this$1._loadCount++;
+					this$1.complete = false;
+					(function(o, src) { img.onload = function() { o._handleImageLoad(src); } })(this$1, src);
+					(function(o, src) { img.onerror = function() { o._handleImageError(src); } })(this$1, src);
+				}
+			}
+		}
+
+		// parse frames:
+		if (data.frames == null) { // nothing
+		} else if (Array.isArray(data.frames)) {
+			this._frames = [];
+			a = data.frames;
+			for (i=0,l=a.length;i<l;i++) {
+				var arr = a[i];
+				this$1._frames.push({image:this$1._images[arr[4]?arr[4]:0], rect:new createjs.Rectangle(arr[0],arr[1],arr[2],arr[3]), regX:arr[5]||0, regY:arr[6]||0 });
+			}
+		} else {
+			o = data.frames;
+			this._frameWidth = o.width;
+			this._frameHeight = o.height;
+			this._regX = o.regX||0;
+			this._regY = o.regY||0;
+			this._spacing = o.spacing||0;
+			this._margin = o.margin||0;
+			this._numFrames = o.count;
+			if (this._loadCount == 0) { this._calculateFrames(); }
+		}
+
+		// parse animations:
+		this._animations = [];
+		if ((o=data.animations) != null) {
+			this._data = {};
+			var name;
+			for (name in o) {
+				var anim = {name:name};
+				var obj = o[name];
+				if (typeof obj == "number") { // single frame
+					a = anim.frames = [obj];
+				} else if (Array.isArray(obj)) { // simple
+					if (obj.length == 1) { anim.frames = [obj[0]]; }
+					else {
+						anim.speed = obj[3];
+						anim.next = obj[2];
+						a = anim.frames = [];
+						for (i=obj[0];i<=obj[1];i++) {
+							a.push(i);
+						}
+					}
+				} else { // complex
+					anim.speed = obj.speed;
+					anim.next = obj.next;
+					var frames = obj.frames;
+					a = anim.frames = (typeof frames == "number") ? [frames] : frames.slice(0);
+				}
+				if (anim.next === true || anim.next === undefined) { anim.next = name; } // loop
+				if (anim.next === false || (a.length < 2 && anim.next == name)) { anim.next = null; } // stop
+				if (!anim.speed) { anim.speed = 1; }
+				this$1._animations.push(name);
+				this$1._data[name] = anim;
+			}
+		}
+	};
+
+	/**
+	 * @method _handleImageLoad
+	 * @protected
+	 **/
+	p._handleImageLoad = function(src) {
+		if (--this._loadCount == 0) {
+			this._calculateFrames();
+			this.complete = true;
+			this.dispatchEvent("complete");
+		}
+	};
+
+	/**
+	 * @method _handleImageError
+	 * @protected
+	 */
+	p._handleImageError = function (src) {
+		var errorEvent = new createjs.Event("error");
+		errorEvent.src = src;
+		this.dispatchEvent(errorEvent);
+
+		// Complete is still dispatched.
+		if (--this._loadCount == 0) {
+			this.dispatchEvent("complete");
+		}
+	};
+
+	/**
+	 * @method _calculateFrames
+	 * @protected
+	 **/
+	p._calculateFrames = function() {
+		var this$1 = this;
+
+		if (this._frames || this._frameWidth == 0) { return; }
+
+		this._frames = [];
+
+		var maxFrames = this._numFrames || 100000; // if we go over this, something is wrong.
+		var frameCount = 0, frameWidth = this._frameWidth, frameHeight = this._frameHeight;
+		var spacing = this._spacing, margin = this._margin;
+		
+		imgLoop:
+		for (var i=0, imgs=this._images; i<imgs.length; i++) {
+			var img = imgs[i], imgW = (img.width||img.naturalWidth), imgH = (img.height||img.naturalHeight);
+
+			var y = margin;
+			while (y <= imgH-margin-frameHeight) {
+				var x = margin;
+				while (x <= imgW-margin-frameWidth) {
+					if (frameCount >= maxFrames) { break imgLoop; }
+					frameCount++;
+					this$1._frames.push({
+							image: img,
+							rect: new createjs.Rectangle(x, y, frameWidth, frameHeight),
+							regX: this$1._regX,
+							regY: this$1._regY
+						});
+					x += frameWidth+spacing;
+				}
+				y += frameHeight+spacing;
+			}
+		}
+		this._numFrames = frameCount;
+	};
+
+
+	createjs.SpriteSheet = createjs.promote(SpriteSheet, "EventDispatcher");
+}());
+
+//##############################################################################
+// Graphics.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * The Graphics class exposes an easy to use API for generating vector drawing instructions and drawing them to a
+	 * specified context. Note that you can use Graphics without any dependency on the EaselJS framework by calling {{#crossLink "Graphics/draw"}}{{/crossLink}}
+	 * directly, or it can be used with the {{#crossLink "Shape"}}{{/crossLink}} object to draw vector graphics within the
+	 * context of an EaselJS display list.
+	 *
+	 * There are two approaches to working with Graphics object: calling methods on a Graphics instance (the "Graphics API"), or
+	 * instantiating Graphics command objects and adding them to the graphics queue via {{#crossLink "Graphics/append"}}{{/crossLink}}.
+	 * The former abstracts the latter, simplifying beginning and ending paths, fills, and strokes.
+	 *
+	 *      var g = new createjs.Graphics();
+	 *      g.setStrokeStyle(1);
+	 *      g.beginStroke("#000000");
+	 *      g.beginFill("red");
+	 *      g.drawCircle(0,0,30);
+	 *
+	 * All drawing methods in Graphics return the Graphics instance, so they can be chained together. For example,
+	 * the following line of code would generate the instructions to draw a rectangle with a red stroke and blue fill:
+	 *
+	 *      myGraphics.beginStroke("red").beginFill("blue").drawRect(20, 20, 100, 50);
+	 *
+	 * Each graphics API call generates a command object (see below). The last command to be created can be accessed via
+	 * {{#crossLink "Graphics/command:property"}}{{/crossLink}}:
+	 *
+	 *      var fillCommand = myGraphics.beginFill("red").command;
+	 *      // ... later, update the fill style/color:
+	 *      fillCommand.style = "blue";
+	 *      // or change it to a bitmap fill:
+	 *      fillCommand.bitmap(myImage);
+	 *
+	 * For more direct control of rendering, you can instantiate and append command objects to the graphics queue directly. In this case, you
+	 * need to manage path creation manually, and ensure that fill/stroke is applied to a defined path:
+	 *
+	 *      // start a new path. Graphics.beginCmd is a reusable BeginPath instance:
+	 *      myGraphics.append(createjs.Graphics.beginCmd);
+	 *      // we need to define the path before applying the fill:
+	 *      var circle = new createjs.Graphics.Circle(0,0,30);
+	 *      myGraphics.append(circle);
+	 *      // fill the path we just defined:
+	 *      var fill = new createjs.Graphics.Fill("red");
+	 *      myGraphics.append(fill);
+	 *
+	 * These approaches can be used together, for example to insert a custom command:
+	 *
+	 *      myGraphics.beginFill("red");
+	 *      var customCommand = new CustomSpiralCommand(etc);
+	 *      myGraphics.append(customCommand);
+	 *      myGraphics.beginFill("blue");
+	 *      myGraphics.drawCircle(0, 0, 30);
+	 *
+	 * See {{#crossLink "Graphics/append"}}{{/crossLink}} for more info on creating custom commands.
+	 *
+	 * <h4>Tiny API</h4>
+	 * The Graphics class also includes a "tiny API", which is one or two-letter methods that are shortcuts for all of the
+	 * Graphics methods. These methods are great for creating compact instructions, and is used by the Toolkit for CreateJS
+	 * to generate readable code. All tiny methods are marked as protected, so you can view them by enabling protected
+	 * descriptions in the docs.
+	 *
+	 * <table>
+	 *     <tr><td><b>Tiny</b></td><td><b>Method</b></td><td><b>Tiny</b></td><td><b>Method</b></td></tr>
+	 *     <tr><td>mt</td><td>{{#crossLink "Graphics/moveTo"}}{{/crossLink}} </td>
+	 *     <td>lt</td> <td>{{#crossLink "Graphics/lineTo"}}{{/crossLink}}</td></tr>
+	 *     <tr><td>a/at</td><td>{{#crossLink "Graphics/arc"}}{{/crossLink}} / {{#crossLink "Graphics/arcTo"}}{{/crossLink}} </td>
+	 *     <td>bt</td><td>{{#crossLink "Graphics/bezierCurveTo"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>qt</td><td>{{#crossLink "Graphics/quadraticCurveTo"}}{{/crossLink}} (also curveTo)</td>
+	 *     <td>r</td><td>{{#crossLink "Graphics/rect"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>cp</td><td>{{#crossLink "Graphics/closePath"}}{{/crossLink}} </td>
+	 *     <td>c</td><td>{{#crossLink "Graphics/clear"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>f</td><td>{{#crossLink "Graphics/beginFill"}}{{/crossLink}} </td>
+	 *     <td>lf</td><td>{{#crossLink "Graphics/beginLinearGradientFill"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>rf</td><td>{{#crossLink "Graphics/beginRadialGradientFill"}}{{/crossLink}} </td>
+	 *     <td>bf</td><td>{{#crossLink "Graphics/beginBitmapFill"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>ef</td><td>{{#crossLink "Graphics/endFill"}}{{/crossLink}} </td>
+	 *     <td>ss / sd</td><td>{{#crossLink "Graphics/setStrokeStyle"}}{{/crossLink}} / {{#crossLink "Graphics/setStrokeDash"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>s</td><td>{{#crossLink "Graphics/beginStroke"}}{{/crossLink}} </td>
+	 *     <td>ls</td><td>{{#crossLink "Graphics/beginLinearGradientStroke"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>rs</td><td>{{#crossLink "Graphics/beginRadialGradientStroke"}}{{/crossLink}} </td>
+	 *     <td>bs</td><td>{{#crossLink "Graphics/beginBitmapStroke"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>es</td><td>{{#crossLink "Graphics/endStroke"}}{{/crossLink}} </td>
+	 *     <td>dr</td><td>{{#crossLink "Graphics/drawRect"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>rr</td><td>{{#crossLink "Graphics/drawRoundRect"}}{{/crossLink}} </td>
+	 *     <td>rc</td><td>{{#crossLink "Graphics/drawRoundRectComplex"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>dc</td><td>{{#crossLink "Graphics/drawCircle"}}{{/crossLink}} </td>
+	 *     <td>de</td><td>{{#crossLink "Graphics/drawEllipse"}}{{/crossLink}} </td></tr>
+	 *     <tr><td>dp</td><td>{{#crossLink "Graphics/drawPolyStar"}}{{/crossLink}} </td>
+	 *     <td>p</td><td>{{#crossLink "Graphics/decodePath"}}{{/crossLink}} </td></tr>
+	 * </table>
+	 *
+	 * Here is the above example, using the tiny API instead.
+	 *
+	 *      myGraphics.s("red").f("blue").r(20, 20, 100, 50);
+	 *
+	 * @class Graphics
+	 * @constructor
+	 **/
+	function Graphics() {
+
+
+	// public properties
+		/**
+		 * Holds a reference to the last command that was created or appended. For example, you could retain a reference
+		 * to a Fill command in order to dynamically update the color later by using:
+		 *
+		 * 		var myFill = myGraphics.beginFill("red").command;
+		 * 		// update color later:
+		 * 		myFill.style = "yellow";
+		 *
+		 * @property command
+		 * @type Object
+		 **/
+		this.command = null;
+
+
+	// private properties
+		/**
+		 * @property _stroke
+		 * @protected
+		 * @type {Stroke}
+		 **/
+		this._stroke = null;
+
+		/**
+		 * @property _strokeStyle
+		 * @protected
+		 * @type {StrokeStyle}
+		 **/
+		this._strokeStyle = null;
+		
+		/**
+		 * @property _oldStrokeStyle
+		 * @protected
+		 * @type {StrokeStyle}
+		 **/
+		this._oldStrokeStyle = null;
+		
+		/**
+		 * @property _strokeDash
+		 * @protected
+		 * @type {StrokeDash}
+		 **/
+		this._strokeDash = null;
+		
+		/**
+		 * @property _oldStrokeDash
+		 * @protected
+		 * @type {StrokeDash}
+		 **/
+		this._oldStrokeDash = null;
+
+		/**
+		 * @property _strokeIgnoreScale
+		 * @protected
+		 * @type Boolean
+		 **/
+		this._strokeIgnoreScale = false;
+
+		/**
+		 * @property _fill
+		 * @protected
+		 * @type {Fill}
+		 **/
+		this._fill = null;
+
+		/**
+		 * @property _instructions
+		 * @protected
+		 * @type {Array}
+		 **/
+		this._instructions = [];
+
+		/**
+		 * Indicates the last instruction index that was committed.
+		 * @property _commitIndex
+		 * @protected
+		 * @type {Number}
+		 **/
+		this._commitIndex = 0;
+
+		/**
+		 * Uncommitted instructions.
+		 * @property _activeInstructions
+		 * @protected
+		 * @type {Array}
+		 **/
+		this._activeInstructions = [];
+
+		/**
+		 * This indicates that there have been changes to the activeInstruction list since the last updateInstructions call.
+		 * @property _dirty
+		 * @protected
+		 * @type {Boolean}
+		 * @default false
+		 **/
+		this._dirty = false;
+
+		/**
+		 * Index to draw from if a store operation has happened.
+		 * @property _storeIndex
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this._storeIndex = 0;
+
+	// setup:
+		this.clear();
+	}
+	var p = Graphics.prototype;
+	var G = Graphics; // shortcut
+
+// static public methods:
+	/**
+	 * Returns a CSS compatible color string based on the specified RGB numeric color values in the format
+	 * "rgba(255,255,255,1.0)", or if alpha is null then in the format "rgb(255,255,255)". For example,
+	 *
+	 *      createjs.Graphics.getRGB(50, 100, 150, 0.5);
+	 *      // Returns "rgba(50,100,150,0.5)"
+	 *
+	 * It also supports passing a single hex color value as the first param, and an optional alpha value as the second
+	 * param. For example,
+	 *
+	 *      createjs.Graphics.getRGB(0xFF00FF, 0.2);
+	 *      // Returns "rgba(255,0,255,0.2)"
+	 *
+	 * @method getRGB
+	 * @static
+	 * @param {Number} r The red component for the color, between 0 and 0xFF (255).
+	 * @param {Number} g The green component for the color, between 0 and 0xFF (255).
+	 * @param {Number} b The blue component for the color, between 0 and 0xFF (255).
+	 * @param {Number} [alpha] The alpha component for the color where 0 is fully transparent and 1 is fully opaque.
+	 * @return {String} A CSS compatible color string based on the specified RGB numeric color values in the format
+	 * "rgba(255,255,255,1.0)", or if alpha is null then in the format "rgb(255,255,255)".
+	 **/
+	Graphics.getRGB = function(r, g, b, alpha) {
+		if (r != null && b == null) {
+			alpha = g;
+			b = r&0xFF;
+			g = r>>8&0xFF;
+			r = r>>16&0xFF;
+		}
+		if (alpha == null) {
+			return "rgb("+r+","+g+","+b+")";
+		} else {
+			return "rgba("+r+","+g+","+b+","+alpha+")";
+		}
+	};
+
+	/**
+	 * Returns a CSS compatible color string based on the specified HSL numeric color values in the format "hsla(360,100,100,1.0)",
+	 * or if alpha is null then in the format "hsl(360,100,100)".
+	 *
+	 *      createjs.Graphics.getHSL(150, 100, 70);
+	 *      // Returns "hsl(150,100,70)"
+	 *
+	 * @method getHSL
+	 * @static
+	 * @param {Number} hue The hue component for the color, between 0 and 360.
+	 * @param {Number} saturation The saturation component for the color, between 0 and 100.
+	 * @param {Number} lightness The lightness component for the color, between 0 and 100.
+	 * @param {Number} [alpha] The alpha component for the color where 0 is fully transparent and 1 is fully opaque.
+	 * @return {String} A CSS compatible color string based on the specified HSL numeric color values in the format
+	 * "hsla(360,100,100,1.0)", or if alpha is null then in the format "hsl(360,100,100)".
+	 **/
+	Graphics.getHSL = function(hue, saturation, lightness, alpha) {
+		if (alpha == null) {
+			return "hsl("+(hue%360)+","+saturation+"%,"+lightness+"%)";
+		} else {
+			return "hsla("+(hue%360)+","+saturation+"%,"+lightness+"%,"+alpha+")";
+		}
+	};
+
+
+// static properties:
+	/**
+	 * A reusable instance of {{#crossLink "Graphics/BeginPath"}}{{/crossLink}} to avoid
+	 * unnecessary instantiation.
+	 * @property beginCmd
+	 * @type {Graphics.BeginPath}
+	 * @static
+	 **/
+	 // defined at the bottom of this file.
+
+	/**
+	 * Map of Base64 characters to values. Used by {{#crossLink "Graphics/decodePath"}}{{/crossLink}}.
+	 * @property BASE_64
+	 * @static
+	 * @final
+	 * @readonly
+	 * @type {Object}
+	 **/
+	Graphics.BASE_64 = {"A":0,"B":1,"C":2,"D":3,"E":4,"F":5,"G":6,"H":7,"I":8,"J":9,"K":10,"L":11,"M":12,"N":13,"O":14,"P":15,"Q":16,"R":17,"S":18,"T":19,"U":20,"V":21,"W":22,"X":23,"Y":24,"Z":25,"a":26,"b":27,"c":28,"d":29,"e":30,"f":31,"g":32,"h":33,"i":34,"j":35,"k":36,"l":37,"m":38,"n":39,"o":40,"p":41,"q":42,"r":43,"s":44,"t":45,"u":46,"v":47,"w":48,"x":49,"y":50,"z":51,"0":52,"1":53,"2":54,"3":55,"4":56,"5":57,"6":58,"7":59,"8":60,"9":61,"+":62,"/":63};
+
+	/**
+	 * Maps numeric values for the caps parameter of {{#crossLink "Graphics/setStrokeStyle"}}{{/crossLink}} to
+	 * corresponding string values. This is primarily for use with the tiny API. The mappings are as follows: 0 to
+	 * "butt", 1 to "round", and 2 to "square".
+	 * For example, to set the line caps to "square":
+	 *
+	 *      myGraphics.ss(16, 2);
+	 *
+	 * @property STROKE_CAPS_MAP
+	 * @static
+	 * @final
+	 * @readonly
+	 * @type {Array}
+	 **/
+	Graphics.STROKE_CAPS_MAP = ["butt", "round", "square"];
+
+	/**
+	 * Maps numeric values for the joints parameter of {{#crossLink "Graphics/setStrokeStyle"}}{{/crossLink}} to
+	 * corresponding string values. This is primarily for use with the tiny API. The mappings are as follows: 0 to
+	 * "miter", 1 to "round", and 2 to "bevel".
+	 * For example, to set the line joints to "bevel":
+	 *
+	 *      myGraphics.ss(16, 0, 2);
+	 *
+	 * @property STROKE_JOINTS_MAP
+	 * @static
+	 * @final
+	 * @readonly
+	 * @type {Array}
+	 **/
+	Graphics.STROKE_JOINTS_MAP = ["miter", "round", "bevel"];
+
+	/**
+	 * @property _ctx
+	 * @static
+	 * @protected
+	 * @type {CanvasRenderingContext2D}
+	 **/
+	var canvas = (createjs.createCanvas?createjs.createCanvas():document.createElement("canvas"));
+	if (canvas.getContext) {
+		Graphics._ctx = canvas.getContext("2d");
+		canvas.width = canvas.height = 1;
+	}
+
+
+// getter / setters:
+	/**
+	 * Use the {{#crossLink "Graphics/instructions:property"}}{{/crossLink}} property instead.
+	 * @method _getInstructions
+	 * @protected
+	 * @return {Array} The instructions array, useful for chaining
+	 **/
+	p._getInstructions = function() {
+		this._updateInstructions();
+		return this._instructions;
+	};
+	// Graphics.getInstructions is @deprecated. Remove for 1.1+
+	p.getInstructions = createjs.deprecate(p._getInstructions, "Graphics.getInstructions");
+
+	/**
+	 * Returns the graphics instructions array. Each entry is a graphics command object (ex. Graphics.Fill, Graphics.Rect)
+	 * Modifying the returned array directly is not recommended, and is likely to result in unexpected behaviour.
+	 *
+	 * This property is mainly intended for introspection of the instructions (ex. for graphics export).
+	 * @property instructions
+	 * @type {Array}
+	 * @readonly
+	 **/
+	try {
+		Object.defineProperties(p, {
+			instructions: { get: p._getInstructions }
+		});
+	} catch (e) {}
+
+
+// public methods:
+	/**
+	 * Returns true if this Graphics instance has no drawing commands.
+	 * @method isEmpty
+	 * @return {Boolean} Returns true if this Graphics instance has no drawing commands.
+	 **/
+	p.isEmpty = function() {
+		return !(this._instructions.length || this._activeInstructions.length);
+	};
+
+	/**
+	 * Draws the display object into the specified context ignoring its visible, alpha, shadow, and transform.
+	 * Returns true if the draw was handled (useful for overriding functionality).
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Object} data Optional data that is passed to graphics command exec methods. When called from a Shape instance, the shape passes itself as the data parameter. This can be used by custom graphic commands to insert contextual data.
+	 **/
+	p.draw = function(ctx, data) {
+		this._updateInstructions();
+		var instr = this._instructions;
+		for (var i=this._storeIndex, l=instr.length; i<l; i++) {
+			instr[i].exec(ctx, data);
+		}
+	};
+
+	/**
+	 * Draws only the path described for this Graphics instance, skipping any non-path instructions, including fill and
+	 * stroke descriptions. Used for <code>DisplayObject.mask</code> to draw the clipping path, for example.
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method drawAsPath
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 **/
+	p.drawAsPath = function(ctx) {
+		this._updateInstructions();
+		var instr, instrs = this._instructions;
+		for (var i=this._storeIndex, l=instrs.length; i<l; i++) {
+			// the first command is always a beginPath command.
+			if ((instr = instrs[i]).path !== false) { instr.exec(ctx); }
+		}
+	};
+
+
+// public methods that map directly to context 2D calls:
+	/**
+	 * Moves the drawing point to the specified position. A tiny API method "mt" also exists.
+	 * @method moveTo
+	 * @param {Number} x The x coordinate the drawing point should move to.
+	 * @param {Number} y The y coordinate the drawing point should move to.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls).
+	 * @chainable
+	 **/
+	p.moveTo = function(x, y) {
+		return this.append(new G.MoveTo(x,y), true);
+	};
+
+	/**
+	 * Draws a line from the current drawing point to the specified position, which become the new current drawing
+	 * point. Note that you *must* call {{#crossLink "Graphics/moveTo"}}{{/crossLink}} before the first `lineTo()`.
+	 * A tiny API method "lt" also exists.
+	 *
+	 * For detailed information, read the
+	 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#complex-shapes-(paths)">
+	 * whatwg spec</a>.
+	 * @method lineTo
+	 * @param {Number} x The x coordinate the drawing point should draw to.
+	 * @param {Number} y The y coordinate the drawing point should draw to.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.lineTo = function(x, y) {
+		return this.append(new G.LineTo(x,y));
+	};
+
+	/**
+	 * Draws an arc with the specified control points and radius.  For detailed information, read the
+	 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-arcto">
+	 * whatwg spec</a>. A tiny API method "at" also exists.
+	 * @method arcTo
+	 * @param {Number} x1
+	 * @param {Number} y1
+	 * @param {Number} x2
+	 * @param {Number} y2
+	 * @param {Number} radius
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.arcTo = function(x1, y1, x2, y2, radius) {
+		return this.append(new G.ArcTo(x1, y1, x2, y2, radius));
+	};
+
+	/**
+	 * Draws an arc defined by the radius, startAngle and endAngle arguments, centered at the position (x, y). For
+	 * example, to draw a full circle with a radius of 20 centered at (100, 100):
+	 *
+	 *      arc(100, 100, 20, 0, Math.PI*2);
+	 *
+	 * For detailed information, read the
+	 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-arc">whatwg spec</a>.
+	 * A tiny API method "a" also exists.
+	 * @method arc
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} radius
+	 * @param {Number} startAngle Measured in radians.
+	 * @param {Number} endAngle Measured in radians.
+	 * @param {Boolean} anticlockwise
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.arc = function(x, y, radius, startAngle, endAngle, anticlockwise) {
+		return this.append(new G.Arc(x, y, radius, startAngle, endAngle, anticlockwise));
+	};
+
+	/**
+	 * Draws a quadratic curve from the current drawing point to (x, y) using the control point (cpx, cpy). For detailed
+	 * information, read the <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-quadraticcurveto">
+	 * whatwg spec</a>. A tiny API method "qt" also exists.
+	 * @method quadraticCurveTo
+	 * @param {Number} cpx
+	 * @param {Number} cpy
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.quadraticCurveTo = function(cpx, cpy, x, y) {
+		return this.append(new G.QuadraticCurveTo(cpx, cpy, x, y));
+	};
+
+	/**
+	 * Draws a bezier curve from the current drawing point to (x, y) using the control points (cp1x, cp1y) and (cp2x,
+	 * cp2y). For detailed information, read the
+	 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-beziercurveto">
+	 * whatwg spec</a>. A tiny API method "bt" also exists.
+	 * @method bezierCurveTo
+	 * @param {Number} cp1x
+	 * @param {Number} cp1y
+	 * @param {Number} cp2x
+	 * @param {Number} cp2y
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.bezierCurveTo = function(cp1x, cp1y, cp2x, cp2y, x, y) {
+		return this.append(new G.BezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y));
+	};
+
+	/**
+	 * Draws a rectangle at (x, y) with the specified width and height using the current fill and/or stroke.
+	 * For detailed information, read the
+	 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-rect">
+	 * whatwg spec</a>. A tiny API method "r" also exists.
+	 * @method rect
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} w Width of the rectangle
+	 * @param {Number} h Height of the rectangle
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.rect = function(x, y, w, h) {
+		return this.append(new G.Rect(x, y, w, h));
+	};
+
+	/**
+	 * Closes the current path, effectively drawing a line from the current drawing point to the first drawing point specified
+	 * since the fill or stroke was last set. A tiny API method "cp" also exists.
+	 * @method closePath
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.closePath = function() {
+		return this._activeInstructions.length ? this.append(new G.ClosePath()) : this;
+	};
+
+
+// public methods that roughly map to Adobe Flash/Animate graphics APIs:
+	/**
+	 * Clears all drawing instructions, effectively resetting this Graphics instance. Any line and fill styles will need
+	 * to be redefined to draw shapes following a clear call. A tiny API method "c" also exists.
+	 * @method clear
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.clear = function() {
+		this._instructions.length = this._activeInstructions.length = this._commitIndex = 0;
+		this._strokeStyle = this._oldStrokeStyle = this._stroke = this._fill = this._strokeDash = this._oldStrokeDash = null;
+		this._dirty = this._strokeIgnoreScale = false;
+		return this;
+	};
+
+	/**
+	 * Begins a fill with the specified color. This ends the current sub-path. A tiny API method "f" also exists.
+	 * @method beginFill
+	 * @param {String} color A CSS compatible color value (ex. "red", "#FF0000", or "rgba(255,0,0,0.5)"). Setting to
+	 * null will result in no fill.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.beginFill = function(color) {
+		return this._setFill(color ? new G.Fill(color) : null);
+	};
+
+	/**
+	 * Begins a linear gradient fill defined by the line (x0, y0) to (x1, y1). This ends the current sub-path. For
+	 * example, the following code defines a black to white vertical gradient ranging from 20px to 120px, and draws a
+	 * square to display it:
+	 *
+	 *      myGraphics.beginLinearGradientFill(["#000","#FFF"], [0, 1], 0, 20, 0, 120).drawRect(20, 20, 120, 120);
+	 *
+	 * A tiny API method "lf" also exists.
+	 * @method beginLinearGradientFill
+	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient
+	 * drawing from red to blue.
+	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would draw
+	 * the first color to 10% then interpolating to the second color at 90%.
+	 * @param {Number} x0 The position of the first point defining the line that defines the gradient direction and size.
+	 * @param {Number} y0 The position of the first point defining the line that defines the gradient direction and size.
+	 * @param {Number} x1 The position of the second point defining the line that defines the gradient direction and size.
+	 * @param {Number} y1 The position of the second point defining the line that defines the gradient direction and size.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.beginLinearGradientFill = function(colors, ratios, x0, y0, x1, y1) {
+		return this._setFill(new G.Fill().linearGradient(colors, ratios, x0, y0, x1, y1));
+	};
+
+	/**
+	 * Begins a radial gradient fill. This ends the current sub-path. For example, the following code defines a red to
+	 * blue radial gradient centered at (100, 100), with a radius of 50, and draws a circle to display it:
+	 *
+	 *      myGraphics.beginRadialGradientFill(["#F00","#00F"], [0, 1], 100, 100, 0, 100, 100, 50).drawCircle(100, 100, 50);
+	 *
+	 * A tiny API method "rf" also exists.
+	 * @method beginRadialGradientFill
+	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define
+	 * a gradient drawing from red to blue.
+	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1,
+	 * 0.9] would draw the first color to 10% then interpolating to the second color at 90%.
+	 * @param {Number} x0 Center position of the inner circle that defines the gradient.
+	 * @param {Number} y0 Center position of the inner circle that defines the gradient.
+	 * @param {Number} r0 Radius of the inner circle that defines the gradient.
+	 * @param {Number} x1 Center position of the outer circle that defines the gradient.
+	 * @param {Number} y1 Center position of the outer circle that defines the gradient.
+	 * @param {Number} r1 Radius of the outer circle that defines the gradient.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.beginRadialGradientFill = function(colors, ratios, x0, y0, r0, x1, y1, r1) {
+		return this._setFill(new G.Fill().radialGradient(colors, ratios, x0, y0, r0, x1, y1, r1));
+	};
+
+	/**
+	 * Begins a pattern fill using the specified image. This ends the current sub-path. A tiny API method "bf" also
+	 * exists.
+	 * @method beginBitmapFill
+	 * @param {HTMLImageElement | HTMLCanvasElement | HTMLVideoElement} image The Image, Canvas, or Video object to use
+	 * as the pattern. Must be loaded prior to creating a bitmap fill, or the fill will be empty.
+	 * @param {String} repetition Optional. Indicates whether to repeat the image in the fill area. One of "repeat",
+	 * "repeat-x", "repeat-y", or "no-repeat". Defaults to "repeat". Note that Firefox does not support "repeat-x" or
+	 * "repeat-y" (latest tests were in FF 20.0), and will default to "repeat".
+	 * @param {Matrix2D} matrix Optional. Specifies a transformation matrix for the bitmap fill. This transformation
+	 * will be applied relative to the parent transform.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.beginBitmapFill = function(image, repetition, matrix) {
+		return this._setFill(new G.Fill(null,matrix).bitmap(image, repetition));
+	};
+
+	/**
+	 * Ends the current sub-path, and begins a new one with no fill. Functionally identical to <code>beginFill(null)</code>.
+	 * A tiny API method "ef" also exists.
+	 * @method endFill
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.endFill = function() {
+		return this.beginFill();
+	};
+
+	/**
+	 * Sets the stroke style. Like all drawing methods, this can be chained, so you can define
+	 * the stroke style and color in a single line of code like so:
+	 *
+	 * 	myGraphics.setStrokeStyle(8,"round").beginStroke("#F00");
+	 *
+	 * A tiny API method "ss" also exists.
+	 * @method setStrokeStyle
+	 * @param {Number} thickness The width of the stroke.
+	 * @param {String | Number} [caps=0] Indicates the type of caps to use at the end of lines. One of butt,
+	 * round, or square. Defaults to "butt". Also accepts the values 0 (butt), 1 (round), and 2 (square) for use with
+	 * the tiny API.
+	 * @param {String | Number} [joints=0] Specifies the type of joints that should be used where two lines meet.
+	 * One of bevel, round, or miter. Defaults to "miter". Also accepts the values 0 (miter), 1 (round), and 2 (bevel)
+	 * for use with the tiny API.
+	 * @param {Number} [miterLimit=10] If joints is set to "miter", then you can specify a miter limit ratio which
+	 * controls at what point a mitered joint will be clipped.
+	 * @param {Boolean} [ignoreScale=false] If true, the stroke will be drawn at the specified thickness regardless
+	 * of active transformations.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.setStrokeStyle = function(thickness, caps, joints, miterLimit, ignoreScale) {
+		this._updateInstructions(true);
+		this._strokeStyle = this.command = new G.StrokeStyle(thickness, caps, joints, miterLimit, ignoreScale);
+
+		// ignoreScale lives on Stroke, not StrokeStyle, so we do a little trickery:
+		if (this._stroke) { this._stroke.ignoreScale = ignoreScale; }
+		this._strokeIgnoreScale = ignoreScale;
+		return this;
+	};
+	
+	/**
+	 * Sets or clears the stroke dash pattern.
+	 *
+	 * 	myGraphics.setStrokeDash([20, 10], 0);
+	 *
+	 * A tiny API method `sd` also exists.
+	 * @method setStrokeDash
+	 * @param {Array} [segments] An array specifying the dash pattern, alternating between line and gap.
+	 * For example, `[20,10]` would create a pattern of 20 pixel lines with 10 pixel gaps between them.
+	 * Passing null or an empty array will clear the existing stroke dash.
+	 * @param {Number} [offset=0] The offset of the dash pattern. For example, you could increment this value to create a "marching ants" effect.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.setStrokeDash = function(segments, offset) {
+		this._updateInstructions(true);
+		this._strokeDash = this.command = new G.StrokeDash(segments, offset);
+		return this;
+	};
+
+	/**
+	 * Begins a stroke with the specified color. This ends the current sub-path. A tiny API method "s" also exists.
+	 * @method beginStroke
+	 * @param {String} color A CSS compatible color value (ex. "#FF0000", "red", or "rgba(255,0,0,0.5)"). Setting to
+	 * null will result in no stroke.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.beginStroke = function(color) {
+		return this._setStroke(color ? new G.Stroke(color) : null);
+	};
+
+	/**
+	 * Begins a linear gradient stroke defined by the line (x0, y0) to (x1, y1). This ends the current sub-path. For
+	 * example, the following code defines a black to white vertical gradient ranging from 20px to 120px, and draws a
+	 * square to display it:
+	 *
+	 *      myGraphics.setStrokeStyle(10).
+	 *          beginLinearGradientStroke(["#000","#FFF"], [0, 1], 0, 20, 0, 120).drawRect(20, 20, 120, 120);
+	 *
+	 * A tiny API method "ls" also exists.
+	 * @method beginLinearGradientStroke
+	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define
+	 * a gradient drawing from red to blue.
+	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1,
+	 * 0.9] would draw the first color to 10% then interpolating to the second color at 90%.
+	 * @param {Number} x0 The position of the first point defining the line that defines the gradient direction and size.
+	 * @param {Number} y0 The position of the first point defining the line that defines the gradient direction and size.
+	 * @param {Number} x1 The position of the second point defining the line that defines the gradient direction and size.
+	 * @param {Number} y1 The position of the second point defining the line that defines the gradient direction and size.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.beginLinearGradientStroke = function(colors, ratios, x0, y0, x1, y1) {
+		return this._setStroke(new G.Stroke().linearGradient(colors, ratios, x0, y0, x1, y1));
+	};
+
+	/**
+	 * Begins a radial gradient stroke. This ends the current sub-path. For example, the following code defines a red to
+	 * blue radial gradient centered at (100, 100), with a radius of 50, and draws a rectangle to display it:
+	 *
+	 *      myGraphics.setStrokeStyle(10)
+	 *          .beginRadialGradientStroke(["#F00","#00F"], [0, 1], 100, 100, 0, 100, 100, 50)
+	 *          .drawRect(50, 90, 150, 110);
+	 *
+	 * A tiny API method "rs" also exists.
+	 * @method beginRadialGradientStroke
+	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define
+	 * a gradient drawing from red to blue.
+	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1,
+	 * 0.9] would draw the first color to 10% then interpolating to the second color at 90%, then draw the second color
+	 * to 100%.
+	 * @param {Number} x0 Center position of the inner circle that defines the gradient.
+	 * @param {Number} y0 Center position of the inner circle that defines the gradient.
+	 * @param {Number} r0 Radius of the inner circle that defines the gradient.
+	 * @param {Number} x1 Center position of the outer circle that defines the gradient.
+	 * @param {Number} y1 Center position of the outer circle that defines the gradient.
+	 * @param {Number} r1 Radius of the outer circle that defines the gradient.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.beginRadialGradientStroke = function(colors, ratios, x0, y0, r0, x1, y1, r1) {
+		return this._setStroke(new G.Stroke().radialGradient(colors, ratios, x0, y0, r0, x1, y1, r1));
+	};
+
+	/**
+	 * Begins a pattern fill using the specified image. This ends the current sub-path. Note that unlike bitmap fills,
+	 * strokes do not currently support a matrix parameter due to limitations in the canvas API. A tiny API method "bs"
+	 * also exists.
+	 * @method beginBitmapStroke
+	 * @param {HTMLImageElement | HTMLCanvasElement | HTMLVideoElement} image The Image, Canvas, or Video object to use
+	 * as the pattern. Must be loaded prior to creating a bitmap fill, or the fill will be empty.
+	 * @param {String} [repetition=repeat] Optional. Indicates whether to repeat the image in the fill area. One of
+	 * "repeat", "repeat-x", "repeat-y", or "no-repeat". Defaults to "repeat".
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.beginBitmapStroke = function(image, repetition) {
+		// NOTE: matrix is not supported for stroke because transforms on strokes also affect the drawn stroke width.
+		return this._setStroke(new G.Stroke().bitmap(image, repetition));
+	};
+
+	/**
+	 * Ends the current sub-path, and begins a new one with no stroke. Functionally identical to <code>beginStroke(null)</code>.
+	 * A tiny API method "es" also exists.
+	 * @method endStroke
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.endStroke = function() {
+		return this.beginStroke();
+	};
+
+	/**
+	 * Maps the familiar ActionScript <code>curveTo()</code> method to the functionally similar {{#crossLink "Graphics/quadraticCurveTo"}}{{/crossLink}}
+	 * method.
+	 * @method curveTo
+	 * @param {Number} cpx
+	 * @param {Number} cpy
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.curveTo = p.quadraticCurveTo;
+
+	/**
+	 *
+	 * Maps the familiar ActionScript <code>drawRect()</code> method to the functionally similar {{#crossLink "Graphics/rect"}}{{/crossLink}}
+	 * method.
+	 * @method drawRect
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} w Width of the rectangle
+	 * @param {Number} h Height of the rectangle
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.drawRect = p.rect;
+
+	/**
+	 * Draws a rounded rectangle with all corners with the specified radius.
+	 * @method drawRoundRect
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} w
+	 * @param {Number} h
+	 * @param {Number} radius Corner radius.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.drawRoundRect = function(x, y, w, h, radius) {
+		return this.drawRoundRectComplex(x, y, w, h, radius, radius, radius, radius);
+	};
+
+	/**
+	 * Draws a rounded rectangle with different corner radii. Supports positive and negative corner radii. A tiny API
+	 * method "rc" also exists.
+	 * @method drawRoundRectComplex
+	 * @param {Number} x The horizontal coordinate to draw the round rect.
+	 * @param {Number} y The vertical coordinate to draw the round rect.
+	 * @param {Number} w The width of the round rect.
+	 * @param {Number} h The height of the round rect.
+	 * @param {Number} radiusTL Top left corner radius.
+	 * @param {Number} radiusTR Top right corner radius.
+	 * @param {Number} radiusBR Bottom right corner radius.
+	 * @param {Number} radiusBL Bottom left corner radius.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.drawRoundRectComplex = function(x, y, w, h, radiusTL, radiusTR, radiusBR, radiusBL) {
+		return this.append(new G.RoundRect(x, y, w, h, radiusTL, radiusTR, radiusBR, radiusBL));
+	};
+
+	/**
+	 * Draws a circle with the specified radius at (x, y).
+	 *
+	 *      var g = new createjs.Graphics();
+	 *	    g.setStrokeStyle(1);
+	 *	    g.beginStroke(createjs.Graphics.getRGB(0,0,0));
+	 *	    g.beginFill(createjs.Graphics.getRGB(255,0,0));
+	 *	    g.drawCircle(0,0,3);
+	 *
+	 *	    var s = new createjs.Shape(g);
+	 *		s.x = 100;
+	 *		s.y = 100;
+	 *
+	 *	    stage.addChild(s);
+	 *	    stage.update();
+	 *
+	 * A tiny API method "dc" also exists.
+	 * @method drawCircle
+	 * @param {Number} x x coordinate center point of circle.
+	 * @param {Number} y y coordinate center point of circle.
+	 * @param {Number} radius Radius of circle.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.drawCircle = function(x, y, radius) {
+		return this.append(new G.Circle(x, y, radius));
+	};
+
+	/**
+	 * Draws an ellipse (oval) with a specified width (w) and height (h). Similar to {{#crossLink "Graphics/drawCircle"}}{{/crossLink}},
+	 * except the width and height can be different. A tiny API method "de" also exists.
+	 * @method drawEllipse
+	 * @param {Number} x The left coordinate point of the ellipse. Note that this is different from {{#crossLink "Graphics/drawCircle"}}{{/crossLink}}
+	 * which draws from center.
+	 * @param {Number} y The top coordinate point of the ellipse. Note that this is different from {{#crossLink "Graphics/drawCircle"}}{{/crossLink}}
+	 * which draws from the center.
+	 * @param {Number} w The height (horizontal diameter) of the ellipse. The horizontal radius will be half of this
+	 * number.
+	 * @param {Number} h The width (vertical diameter) of the ellipse. The vertical radius will be half of this number.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.drawEllipse = function(x, y, w, h) {
+		return this.append(new G.Ellipse(x, y, w, h));
+	};
+
+	/**
+	 * Draws a star if pointSize is greater than 0, or a regular polygon if pointSize is 0 with the specified number of
+	 * points. For example, the following code will draw a familiar 5 pointed star shape centered at 100, 100 and with a
+	 * radius of 50:
+	 *
+	 *      myGraphics.beginFill("#FF0").drawPolyStar(100, 100, 50, 5, 0.6, -90);
+	 *      // Note: -90 makes the first point vertical
+	 *
+	 * A tiny API method "dp" also exists.
+	 *
+	 * @method drawPolyStar
+	 * @param {Number} x Position of the center of the shape.
+	 * @param {Number} y Position of the center of the shape.
+	 * @param {Number} radius The outer radius of the shape.
+	 * @param {Number} sides The number of points on the star or sides on the polygon.
+	 * @param {Number} pointSize The depth or "pointy-ness" of the star points. A pointSize of 0 will draw a regular
+	 * polygon (no points), a pointSize of 1 will draw nothing because the points are infinitely pointy.
+	 * @param {Number} angle The angle of the first point / corner. For example a value of 0 will draw the first point
+	 * directly to the right of the center.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.drawPolyStar = function(x, y, radius, sides, pointSize, angle) {
+		return this.append(new G.PolyStar(x, y, radius, sides, pointSize, angle));
+	};
+
+	/**
+	 * Appends a graphics command object to the graphics queue. Command objects expose an "exec" method
+	 * that accepts two parameters: the Context2D to operate on, and an arbitrary data object passed into
+	 * {{#crossLink "Graphics/draw"}}{{/crossLink}}. The latter will usually be the Shape instance that called draw.
+	 *
+	 * This method is used internally by Graphics methods, such as drawCircle, but can also be used directly to insert
+	 * built-in or custom graphics commands. For example:
+	 *
+	 * 		// attach data to our shape, so we can access it during the draw:
+	 * 		myShape.color = "red";
+	 *
+	 * 		// append a Circle command object:
+	 * 		myShape.graphics.append(new createjs.Graphics.Circle(50, 50, 30));
+	 *
+	 * 		// append a custom command object with an exec method that sets the fill style
+	 * 		// based on the shape's data, and then fills the circle.
+	 * 		myShape.graphics.append({exec:function(ctx, shape) {
+	 * 			ctx.fillStyle = shape.color;
+	 * 			ctx.fill();
+	 * 		}});
+	 *
+	 * @method append
+	 * @param {Object} command A graphics command object exposing an "exec" method.
+	 * @param {boolean} clean The clean param is primarily for internal use. A value of true indicates that a command does not generate a path that should be stroked or filled.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.append = function(command, clean) {
+		this._activeInstructions.push(command);
+		this.command = command;
+		if (!clean) { this._dirty = true; }
+		return this;
+	};
+
+	/**
+	 * Decodes a compact encoded path string into a series of draw instructions.
+	 * This format is not intended to be human readable, and is meant for use by authoring tools.
+	 * The format uses a base64 character set, with each character representing 6 bits, to define a series of draw
+	 * commands.
+	 *
+	 * Each command is comprised of a single "header" character followed by a variable number of alternating x and y
+	 * position values. Reading the header bits from left to right (most to least significant): bits 1 to 3 specify the
+	 * type of operation (0-moveTo, 1-lineTo, 2-quadraticCurveTo, 3-bezierCurveTo, 4-closePath, 5-7 unused). Bit 4
+	 * indicates whether position values use 12 bits (2 characters) or 18 bits (3 characters), with a one indicating the
+	 * latter. Bits 5 and 6 are currently unused.
+	 *
+	 * Following the header is a series of 0 (closePath), 2 (moveTo, lineTo), 4 (quadraticCurveTo), or 6 (bezierCurveTo)
+	 * parameters. These parameters are alternating x/y positions represented by 2 or 3 characters (as indicated by the
+	 * 4th bit in the command char). These characters consist of a 1 bit sign (1 is negative, 0 is positive), followed
+	 * by an 11 (2 char) or 17 (3 char) bit integer value. All position values are in tenths of a pixel. Except in the
+	 * case of move operations which are absolute, this value is a delta from the previous x or y position (as
+	 * appropriate).
+	 *
+	 * For example, the string "A3cAAMAu4AAA" represents a line starting at -150,0 and ending at 150,0.
+	 * <br />A - bits 000000. First 3 bits (000) indicate a moveTo operation. 4th bit (0) indicates 2 chars per
+	 * parameter.
+	 * <br />n0 - 110111011100. Absolute x position of -150.0px. First bit indicates a negative value, remaining bits
+	 * indicate 1500 tenths of a pixel.
+	 * <br />AA - 000000000000. Absolute y position of 0.
+	 * <br />I - 001100. First 3 bits (001) indicate a lineTo operation. 4th bit (1) indicates 3 chars per parameter.
+	 * <br />Au4 - 000000101110111000. An x delta of 300.0px, which is added to the previous x value of -150.0px to
+	 * provide an absolute position of +150.0px.
+	 * <br />AAA - 000000000000000000. A y delta value of 0.
+	 *
+	 * A tiny API method "p" also exists.
+	 * @method decodePath
+	 * @param {String} str The path string to decode.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.decodePath = function(str) {
+		var this$1 = this;
+
+		var instructions = [this.moveTo, this.lineTo, this.quadraticCurveTo, this.bezierCurveTo, this.closePath];
+		var paramCount = [2, 2, 4, 6, 0];
+		var i=0, l=str.length;
+		var params = [];
+		var x=0, y=0;
+		var base64 = Graphics.BASE_64;
+
+		while (i<l) {
+			var c = str.charAt(i);
+			var n = base64[c];
+			var fi = n>>3; // highest order bits 1-3 code for operation.
+			var f = instructions[fi];
+			// check that we have a valid instruction & that the unused bits are empty:
+			if (!f || (n&3)) { throw("bad path data (@"+i+"): "+c); }
+			var pl = paramCount[fi];
+			if (!fi) { x=y=0; } // move operations reset the position.
+			params.length = 0;
+			i++;
+			var charCount = (n>>2&1)+2;  // 4th header bit indicates number size for this operation.
+			for (var p=0; p<pl; p++) {
+				var num = base64[str.charAt(i)];
+				var sign = (num>>5) ? -1 : 1;
+				num = ((num&31)<<6)|(base64[str.charAt(i+1)]);
+				if (charCount == 3) { num = (num<<6)|(base64[str.charAt(i+2)]); }
+				num = sign*num/10;
+				if (p%2) { x = (num += x); }
+				else { y = (num += y); }
+				params[p] = num;
+				i += charCount;
+			}
+			f.apply(this$1,params);
+		}
+		return this;
+	};
+
+	/**
+	 * Stores all graphics commands so they won't be executed in future draws. Calling store() a second time adds to
+	 * the existing store. This also affects `drawAsPath()`.
+	 *
+	 * This is useful in cases where you are creating vector graphics in an iterative manner (ex. generative art), so
+	 * that only new graphics need to be drawn (which can provide huge performance benefits), but you wish to retain all
+	 * of the vector instructions for later use (ex. scaling, modifying, or exporting).
+	 *
+	 * Note that calling store() will force the active path (if any) to be ended in a manner similar to changing
+	 * the fill or stroke.
+	 *
+	 * For example, consider a application where the user draws lines with the mouse. As each line segment (or collection of
+	 * segments) are added to a Shape, it can be rasterized using {{#crossLink "DisplayObject/updateCache"}}{{/crossLink}},
+	 * and then stored, so that it can be redrawn at a different scale when the application is resized, or exported to SVG.
+	 *
+	 * 	// set up cache:
+	 * 	myShape.cache(0,0,500,500,scale);
+	 *
+	 * 	// when the user drags, draw a new line:
+	 * 	myShape.graphics.moveTo(oldX,oldY).lineTo(newX,newY);
+	 * 	// then draw it into the existing cache:
+	 * 	myShape.updateCache("source-over");
+	 * 	// store the new line, so it isn't redrawn next time:
+	 * 	myShape.store();
+	 *
+	 * 	// then, when the window resizes, we can re-render at a different scale:
+	 * 	// first, unstore all our lines:
+	 * 	myShape.unstore();
+	 * 	// then cache using the new scale:
+	 * 	myShape.cache(0,0,500,500,newScale);
+	 * 	// finally, store the existing commands again:
+	 * 	myShape.store();
+	 *
+	 * @method store
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.store = function() {
+		this._updateInstructions(true);
+		this._storeIndex = this._instructions.length;
+		return this;
+	};
+
+	/**
+	 * Unstores any graphics commands that were previously stored using {{#crossLink "Graphics/store"}}{{/crossLink}}
+	 * so that they will be executed in subsequent draw calls.
+	 *
+	 * @method unstore
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.unstore = function() {
+		this._storeIndex = 0;
+		return this;
+	};
+
+	/**
+	 * Returns a clone of this Graphics instance. Note that the individual command objects are not cloned.
+	 * @method clone
+	 * @return {Graphics} A clone of the current Graphics instance.
+	 **/
+	p.clone = function() {
+		var o = new Graphics();
+		o.command = this.command;
+		o._stroke = this._stroke;
+		o._strokeStyle = this._strokeStyle;
+		o._strokeDash = this._strokeDash;
+		o._strokeIgnoreScale = this._strokeIgnoreScale;
+		o._fill = this._fill;
+		o._instructions = this._instructions.slice();
+		o._commitIndex = this._commitIndex;
+		o._activeInstructions = this._activeInstructions.slice();
+		o._dirty = this._dirty;
+		o._storeIndex = this._storeIndex;
+		return o;
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Graphics]";
+	};
+
+
+// tiny API:
+	/**
+	 * Shortcut to moveTo.
+	 * @method mt
+	 * @param {Number} x The x coordinate the drawing point should move to.
+	 * @param {Number} y The y coordinate the drawing point should move to.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls).
+	 * @chainable
+	 * @protected
+	 **/
+	p.mt = p.moveTo;
+
+	/**
+	 * Shortcut to lineTo.
+	 * @method lt
+	 * @param {Number} x The x coordinate the drawing point should draw to.
+	 * @param {Number} y The y coordinate the drawing point should draw to.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.lt = p.lineTo;
+
+	/**
+	 * Shortcut to arcTo.
+	 * @method at
+	 * @param {Number} x1
+	 * @param {Number} y1
+	 * @param {Number} x2
+	 * @param {Number} y2
+	 * @param {Number} radius
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.at = p.arcTo;
+
+	/**
+	 * Shortcut to bezierCurveTo.
+	 * @method bt
+	 * @param {Number} cp1x
+	 * @param {Number} cp1y
+	 * @param {Number} cp2x
+	 * @param {Number} cp2y
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.bt = p.bezierCurveTo;
+
+	/**
+	 * Shortcut to quadraticCurveTo / curveTo.
+	 * @method qt
+	 * @param {Number} cpx
+	 * @param {Number} cpy
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @protected
+	 * @chainable
+	 **/
+	p.qt = p.quadraticCurveTo;
+
+	/**
+	 * Shortcut to arc.
+	 * @method a
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} radius
+	 * @param {Number} startAngle Measured in radians.
+	 * @param {Number} endAngle Measured in radians.
+	 * @param {Boolean} anticlockwise
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @protected
+	 * @chainable
+	 **/
+	p.a = p.arc;
+
+	/**
+	 * Shortcut to rect.
+	 * @method r
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} w Width of the rectangle
+	 * @param {Number} h Height of the rectangle
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.r = p.rect;
+
+	/**
+	 * Shortcut to closePath.
+	 * @method cp
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.cp = p.closePath;
+
+	/**
+	 * Shortcut to clear.
+	 * @method c
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.c = p.clear;
+
+	/**
+	 * Shortcut to beginFill.
+	 * @method f
+	 * @param {String} color A CSS compatible color value (ex. "red", "#FF0000", or "rgba(255,0,0,0.5)"). Setting to
+	 * null will result in no fill.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.f = p.beginFill;
+
+	/**
+	 * Shortcut to beginLinearGradientFill.
+	 * @method lf
+	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient
+	 * drawing from red to blue.
+	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would draw
+	 * the first color to 10% then interpolating to the second color at 90%.
+	 * @param {Number} x0 The position of the first point defining the line that defines the gradient direction and size.
+	 * @param {Number} y0 The position of the first point defining the line that defines the gradient direction and size.
+	 * @param {Number} x1 The position of the second point defining the line that defines the gradient direction and size.
+	 * @param {Number} y1 The position of the second point defining the line that defines the gradient direction and size.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.lf = p.beginLinearGradientFill;
+
+	/**
+	 * Shortcut to beginRadialGradientFill.
+	 * @method rf
+	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define
+	 * a gradient drawing from red to blue.
+	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1,
+	 * 0.9] would draw the first color to 10% then interpolating to the second color at 90%.
+	 * @param {Number} x0 Center position of the inner circle that defines the gradient.
+	 * @param {Number} y0 Center position of the inner circle that defines the gradient.
+	 * @param {Number} r0 Radius of the inner circle that defines the gradient.
+	 * @param {Number} x1 Center position of the outer circle that defines the gradient.
+	 * @param {Number} y1 Center position of the outer circle that defines the gradient.
+	 * @param {Number} r1 Radius of the outer circle that defines the gradient.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.rf = p.beginRadialGradientFill;
+
+	/**
+	 * Shortcut to beginBitmapFill.
+	 * @method bf
+	 * @param {HTMLImageElement | HTMLCanvasElement | HTMLVideoElement} image The Image, Canvas, or Video object to use
+	 * as the pattern.
+	 * @param {String} repetition Optional. Indicates whether to repeat the image in the fill area. One of "repeat",
+	 * "repeat-x", "repeat-y", or "no-repeat". Defaults to "repeat". Note that Firefox does not support "repeat-x" or
+	 * "repeat-y" (latest tests were in FF 20.0), and will default to "repeat".
+	 * @param {Matrix2D} matrix Optional. Specifies a transformation matrix for the bitmap fill. This transformation
+	 * will be applied relative to the parent transform.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.bf = p.beginBitmapFill;
+
+	/**
+	 * Shortcut to endFill.
+	 * @method ef
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.ef = p.endFill;
+
+	/**
+	 * Shortcut to setStrokeStyle.
+	 * @method ss
+	 * @param {Number} thickness The width of the stroke.
+	 * @param {String | Number} [caps=0] Indicates the type of caps to use at the end of lines. One of butt,
+	 * round, or square. Defaults to "butt". Also accepts the values 0 (butt), 1 (round), and 2 (square) for use with
+	 * the tiny API.
+	 * @param {String | Number} [joints=0] Specifies the type of joints that should be used where two lines meet.
+	 * One of bevel, round, or miter. Defaults to "miter". Also accepts the values 0 (miter), 1 (round), and 2 (bevel)
+	 * for use with the tiny API.
+	 * @param {Number} [miterLimit=10] If joints is set to "miter", then you can specify a miter limit ratio which
+	 * controls at what point a mitered joint will be clipped.
+	 * @param {Boolean} [ignoreScale=false] If true, the stroke will be drawn at the specified thickness regardless
+	 * of active transformations.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.ss = p.setStrokeStyle;
+	
+	/**
+	 * Shortcut to setStrokeDash.
+	 * @method sd
+	 * @param {Array} [segments] An array specifying the dash pattern, alternating between line and gap.
+	 * For example, [20,10] would create a pattern of 20 pixel lines with 10 pixel gaps between them.
+	 * Passing null or an empty array will clear any existing dash.
+	 * @param {Number} [offset=0] The offset of the dash pattern. For example, you could increment this value to create a "marching ants" effect.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.sd = p.setStrokeDash;
+
+	/**
+	 * Shortcut to beginStroke.
+	 * @method s
+	 * @param {String} color A CSS compatible color value (ex. "#FF0000", "red", or "rgba(255,0,0,0.5)"). Setting to
+	 * null will result in no stroke.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.s = p.beginStroke;
+
+	/**
+	 * Shortcut to beginLinearGradientStroke.
+	 * @method ls
+	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define
+	 * a gradient drawing from red to blue.
+	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1,
+	 * 0.9] would draw the first color to 10% then interpolating to the second color at 90%.
+	 * @param {Number} x0 The position of the first point defining the line that defines the gradient direction and size.
+	 * @param {Number} y0 The position of the first point defining the line that defines the gradient direction and size.
+	 * @param {Number} x1 The position of the second point defining the line that defines the gradient direction and size.
+	 * @param {Number} y1 The position of the second point defining the line that defines the gradient direction and size.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.ls = p.beginLinearGradientStroke;
+
+	/**
+	 * Shortcut to beginRadialGradientStroke.
+	 * @method rs
+	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define
+	 * a gradient drawing from red to blue.
+	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1,
+	 * 0.9] would draw the first color to 10% then interpolating to the second color at 90%, then draw the second color
+	 * to 100%.
+	 * @param {Number} x0 Center position of the inner circle that defines the gradient.
+	 * @param {Number} y0 Center position of the inner circle that defines the gradient.
+	 * @param {Number} r0 Radius of the inner circle that defines the gradient.
+	 * @param {Number} x1 Center position of the outer circle that defines the gradient.
+	 * @param {Number} y1 Center position of the outer circle that defines the gradient.
+	 * @param {Number} r1 Radius of the outer circle that defines the gradient.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.rs = p.beginRadialGradientStroke;
+
+	/**
+	 * Shortcut to beginBitmapStroke.
+	 * @method bs
+	 * @param {HTMLImageElement | HTMLCanvasElement | HTMLVideoElement} image The Image, Canvas, or Video object to use
+	 * as the pattern.
+	 * @param {String} [repetition=repeat] Optional. Indicates whether to repeat the image in the fill area. One of
+	 * "repeat", "repeat-x", "repeat-y", or "no-repeat". Defaults to "repeat".
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.bs = p.beginBitmapStroke;
+
+	/**
+	 * Shortcut to endStroke.
+	 * @method es
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.es = p.endStroke;
+
+	/**
+	 * Shortcut to drawRect.
+	 * @method dr
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} w Width of the rectangle
+	 * @param {Number} h Height of the rectangle
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.dr = p.drawRect;
+
+	/**
+	 * Shortcut to drawRoundRect.
+	 * @method rr
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} w
+	 * @param {Number} h
+	 * @param {Number} radius Corner radius.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.rr = p.drawRoundRect;
+
+	/**
+	 * Shortcut to drawRoundRectComplex.
+	 * @method rc
+	 * @param {Number} x The horizontal coordinate to draw the round rect.
+	 * @param {Number} y The vertical coordinate to draw the round rect.
+	 * @param {Number} w The width of the round rect.
+	 * @param {Number} h The height of the round rect.
+	 * @param {Number} radiusTL Top left corner radius.
+	 * @param {Number} radiusTR Top right corner radius.
+	 * @param {Number} radiusBR Bottom right corner radius.
+	 * @param {Number} radiusBL Bottom left corner radius.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.rc = p.drawRoundRectComplex;
+
+	/**
+	 * Shortcut to drawCircle.
+	 * @method dc
+	 * @param {Number} x x coordinate center point of circle.
+	 * @param {Number} y y coordinate center point of circle.
+	 * @param {Number} radius Radius of circle.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.dc = p.drawCircle;
+
+	/**
+	 * Shortcut to drawEllipse.
+	 * @method de
+	 * @param {Number} x The left coordinate point of the ellipse. Note that this is different from {{#crossLink "Graphics/drawCircle"}}{{/crossLink}}
+	 * which draws from center.
+	 * @param {Number} y The top coordinate point of the ellipse. Note that this is different from {{#crossLink "Graphics/drawCircle"}}{{/crossLink}}
+	 * which draws from the center.
+	 * @param {Number} w The height (horizontal diameter) of the ellipse. The horizontal radius will be half of this
+	 * number.
+	 * @param {Number} h The width (vertical diameter) of the ellipse. The vertical radius will be half of this number.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.de = p.drawEllipse;
+
+	/**
+	 * Shortcut to drawPolyStar.
+	 * @method dp
+	 * @param {Number} x Position of the center of the shape.
+	 * @param {Number} y Position of the center of the shape.
+	 * @param {Number} radius The outer radius of the shape.
+	 * @param {Number} sides The number of points on the star or sides on the polygon.
+	 * @param {Number} pointSize The depth or "pointy-ness" of the star points. A pointSize of 0 will draw a regular
+	 * polygon (no points), a pointSize of 1 will draw nothing because the points are infinitely pointy.
+	 * @param {Number} angle The angle of the first point / corner. For example a value of 0 will draw the first point
+	 * directly to the right of the center.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.dp = p.drawPolyStar;
+
+	/**
+	 * Shortcut to decodePath.
+	 * @method p
+	 * @param {String} str The path string to decode.
+	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 * @protected
+	 **/
+	p.p = p.decodePath;
+
+
+// private methods:
+	/**
+	 * @method _updateInstructions
+	 * @param commit
+	 * @protected
+	 **/
+	p._updateInstructions = function(commit) {
+		var instr = this._instructions, active = this._activeInstructions, commitIndex = this._commitIndex;
+
+		if (this._dirty && active.length) {
+			instr.length = commitIndex; // remove old, uncommitted commands
+			instr.push(Graphics.beginCmd);
+
+			var l = active.length, ll = instr.length;
+			instr.length = ll+l;
+			for (var i=0; i<l; i++) { instr[i+ll] = active[i]; }
+
+			if (this._fill) { instr.push(this._fill); }
+			if (this._stroke) {
+				// doesn't need to be re-applied if it hasn't changed.
+				if (this._strokeDash !== this._oldStrokeDash) {
+					instr.push(this._strokeDash);
+				}
+				if (this._strokeStyle !== this._oldStrokeStyle) {
+					instr.push(this._strokeStyle);
+				}
+				if (commit) {
+					this._oldStrokeStyle = this._strokeStyle;
+					this._oldStrokeDash = this._strokeDash;
+				}
+				instr.push(this._stroke);
+			}
+
+			this._dirty = false;
+		}
+
+		if (commit) {
+			active.length = 0;
+			this._commitIndex = instr.length;
+		}
+	};
+
+	/**
+	 * @method _setFill
+	 * @param fill
+	 * @protected
+	 **/
+	p._setFill = function(fill) {
+		this._updateInstructions(true);
+		this.command = this._fill = fill;
+		return this;
+	};
+
+	/**
+	 * @method _setStroke
+	 * @param stroke
+	 * @protected
+	 **/
+	p._setStroke = function(stroke) {
+		this._updateInstructions(true);
+		if (this.command = this._stroke = stroke) {
+			stroke.ignoreScale = this._strokeIgnoreScale;
+		}
+		return this;
+	};
+
+// Command Objects:
+	/**
+	 * @namespace Graphics
+	 */
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/lineTo"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information. See {{#crossLink "Graphics"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class LineTo
+	 * @constructor
+	 * @param {Number} x
+	 * @param {Number} y
+	 **/
+	/**
+	 * @property x
+	 * @type Number
+	 */
+	/**
+	 * @property y
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.LineTo = function(x, y) {
+		this.x = x; this.y = y;
+	}).prototype.exec = function(ctx) { ctx.lineTo(this.x,this.y); };
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/moveTo"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class MoveTo
+	 * @constructor
+	 * @param {Number} x
+	 * @param {Number} y
+	 **/
+	/**
+	 * @property x
+	 * @type Number
+	 */
+	/**
+	 * @property y
+	 * @type Number
+	 */
+	/**
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx
+	 */
+	(G.MoveTo = function(x, y) {
+		this.x = x; this.y = y;
+	}).prototype.exec = function(ctx) { ctx.moveTo(this.x, this.y); };
+
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/arcTo"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class ArcTo
+	 * @constructor
+	 * @param {Number} x1
+	 * @param {Number} y1
+	 * @param {Number} x2
+	 * @param {Number} y2
+	 * @param {Number} radius
+	 **/
+	/**
+	 * @property x1
+	 * @type Number
+	 */
+	/**
+	 * @property y1
+	 * @type Number
+	 */
+	/**
+	 * @property x2
+	 * @type Number
+	 */
+	/**
+	 * @property y2
+	 * @type Number
+	 */
+	/**
+	 * @property radius
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.ArcTo = function(x1, y1, x2, y2, radius) {
+		this.x1 = x1; this.y1 = y1;
+		this.x2 = x2; this.y2 = y2;
+		this.radius = radius;
+	}).prototype.exec = function(ctx) { ctx.arcTo(this.x1, this.y1, this.x2, this.y2, this.radius); };
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/arc"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class Arc
+	 * @constructor
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} radius
+	 * @param {Number} startAngle
+	 * @param {Number} endAngle
+	 * @param {Number} anticlockwise
+	 **/
+	/**
+	 * @property x
+	 * @type Number
+	 */
+	/**
+	 * @property y
+	 * @type Number
+	 */
+	/**
+	 * @property radius
+	 * @type Number
+	 */
+	/**
+	 * @property startAngle
+	 * @type Number
+	 */
+	/**
+	 * @property endAngle
+	 * @type Number
+	 */
+	/**
+	 * @property anticlockwise
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.Arc = function(x, y, radius, startAngle, endAngle, anticlockwise) {
+		this.x = x; this.y = y;
+		this.radius = radius;
+		this.startAngle = startAngle; this.endAngle = endAngle;
+		this.anticlockwise = !!anticlockwise;
+	}).prototype.exec = function(ctx) { ctx.arc(this.x, this.y, this.radius, this.startAngle, this.endAngle, this.anticlockwise); };
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/quadraticCurveTo"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class QuadraticCurveTo
+	 * @constructor
+	 * @param {Number} cpx
+	 * @param {Number} cpy
+	 * @param {Number} x
+	 * @param {Number} y
+	 **/
+	/**
+	 * @property cpx
+	 * @type Number
+	 */
+	/**
+	 * @property cpy
+	 * @type Number
+	 */
+	/**
+	 * @property x
+	 * @type Number
+	 */
+	/**
+	 * @property y
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.QuadraticCurveTo = function(cpx, cpy, x, y) {
+		this.cpx = cpx; this.cpy = cpy;
+		this.x = x; this.y = y;
+	}).prototype.exec = function(ctx) { ctx.quadraticCurveTo(this.cpx, this.cpy, this.x, this.y); };
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/bezierCurveTo"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class BezierCurveTo
+	 * @constructor
+	 * @param {Number} cp1x
+	 * @param {Number} cp1y
+	 * @param {Number} cp2x
+	 * @param {Number} cp2y
+	 * @param {Number} x
+	 * @param {Number} y
+	 **/
+	/**
+	 * @property cp1x
+	 * @type Number
+	 */
+	/**
+	 * @property cp1y
+	 * @type Number
+	 */
+	/**
+	 * @property cp2x
+	 * @type Number
+	 */
+	/**
+	 * @property cp2y
+	 * @type Number
+	 */
+	/**
+	 * @property x
+	 * @type Number
+	 */
+	/**
+	 * @property y
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.BezierCurveTo = function(cp1x, cp1y, cp2x, cp2y, x, y) {
+		this.cp1x = cp1x; this.cp1y = cp1y;
+		this.cp2x = cp2x; this.cp2y = cp2y;
+		this.x = x; this.y = y;
+	}).prototype.exec = function(ctx) { ctx.bezierCurveTo(this.cp1x, this.cp1y, this.cp2x, this.cp2y, this.x, this.y); };
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/rect"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class Rect
+	 * @constructor
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} w
+	 * @param {Number} h
+	 **/
+	/**
+	 * @property x
+	 * @type Number
+	 */
+	/**
+	 * @property y
+	 * @type Number
+	 */
+	/**
+	 * @property w
+	 * @type Number
+	 */
+	/**
+	 * @property h
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.Rect = function(x, y, w, h) {
+		this.x = x; this.y = y;
+		this.w = w; this.h = h;
+	}).prototype.exec = function(ctx) { ctx.rect(this.x, this.y, this.w, this.h); };
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/closePath"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class ClosePath
+	 * @constructor
+	 **/
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.ClosePath = function() {
+	}).prototype.exec = function(ctx) { ctx.closePath(); };
+
+	/**
+	 * Graphics command object to begin a new path. See {{#crossLink "Graphics"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class BeginPath
+	 * @constructor
+	 **/
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.BeginPath = function() {
+	}).prototype.exec = function(ctx) { ctx.beginPath(); };
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/beginFill"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class Fill
+	 * @constructor
+	 * @param {Object} style A valid Context2D fillStyle.
+	 * @param {Matrix2D} matrix
+	 **/
+	/**
+	 * A valid Context2D fillStyle.
+	 * @property style
+	 * @type Object
+	 */
+	/**
+	 * @property matrix
+	 * @type Matrix2D
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	p = (G.Fill = function(style, matrix) {
+		this.style = style;
+		this.matrix = matrix;
+	}).prototype;
+	p.exec = function(ctx) {
+		if (!this.style) { return; }
+		ctx.fillStyle = this.style;
+		var mtx = this.matrix;
+		if (mtx) { ctx.save(); ctx.transform(mtx.a, mtx.b, mtx.c, mtx.d, mtx.tx, mtx.ty); }
+		ctx.fill();
+		if (mtx) { ctx.restore(); }
+	};
+	/**
+	 * Creates a linear gradient style and assigns it to {{#crossLink "Fill/style:property"}}{{/crossLink}}.
+	 * See {{#crossLink "Graphics/beginLinearGradientFill"}}{{/crossLink}} for more information.
+	 * @method linearGradient
+	 * @param {Array} colors
+	 *
+	 * @param {Array} ratios
+	 * @param {Number} x0
+	 * @param {Number} y0
+	 * @param {Number} x1
+	 * @param {Number} y1
+	 * @return {Fill} Returns this Fill object for chaining or assignment.
+	 */
+	p.linearGradient = function(colors, ratios, x0, y0, x1, y1) {
+		var o = this.style =  Graphics._ctx.createLinearGradient(x0, y0, x1, y1);
+		for (var i=0, l=colors.length; i<l; i++) { o.addColorStop(ratios[i], colors[i]); }
+		o.props = {colors:colors, ratios:ratios, x0:x0, y0:y0, x1:x1, y1:y1, type:"linear"};
+		return this;
+	};
+	/**
+	 * Creates a radial gradient style and assigns it to {{#crossLink "Fill/style:property"}}{{/crossLink}}.
+	 * See {{#crossLink "Graphics/beginRadialGradientFill"}}{{/crossLink}} for more information.
+	 * @method radialGradient
+	 * @param {Array} colors
+	 * @param {Array} ratios
+	 * @param {Number} x0
+	 * @param {Number} y0
+	 * @param {Number} r0
+	 * @param {Number} x1
+	 * @param {Number} y1
+	 * @param {Number} r1
+	 * @return {Fill} Returns this Fill object for chaining or assignment.
+	 */
+	p.radialGradient = function(colors, ratios, x0, y0, r0, x1, y1, r1) {
+		var o = this.style =  Graphics._ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);
+		for (var i=0, l=colors.length; i<l; i++) { o.addColorStop(ratios[i], colors[i]); }
+		o.props = {colors:colors, ratios:ratios, x0:x0, y0:y0, r0:r0, x1:x1, y1:y1, r1:r1, type:"radial"};
+		return this;
+	};
+	/**
+	 * Creates a bitmap fill style and assigns it to the {{#crossLink "Fill/style:property"}}{{/crossLink}}.
+	 * See {{#crossLink "Graphics/beginBitmapFill"}}{{/crossLink}} for more information.
+	 * @method bitmap
+	 * @param {HTMLImageElement | HTMLCanvasElement | HTMLVideoElement} image  Must be loaded prior to creating a bitmap fill, or the fill will be empty.
+	 * @param {String} [repetition] One of: repeat, repeat-x, repeat-y, or no-repeat.
+	 * @return {Fill} Returns this Fill object for chaining or assignment.
+	 */
+	p.bitmap = function(image, repetition) {
+		if (image.naturalWidth || image.getContext || image.readyState >= 2) {
+			var o = this.style = Graphics._ctx.createPattern(image, repetition || "");
+			o.props = {image: image, repetition: repetition, type: "bitmap"};
+		}
+		return this;
+	};
+	p.path = false;
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/beginStroke"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class Stroke
+	 * @constructor
+	 * @param {Object} style A valid Context2D fillStyle.
+	 * @param {Boolean} ignoreScale
+	 **/
+	/**
+	 * A valid Context2D strokeStyle.
+	 * @property style
+	 * @type Object
+	 */
+	/**
+	 * @property ignoreScale
+	 * @type Boolean
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	p = (G.Stroke = function(style, ignoreScale) {
+		this.style = style;
+		this.ignoreScale = ignoreScale;
+	}).prototype;
+	p.exec = function(ctx) {
+		if (!this.style) { return; }
+		ctx.strokeStyle = this.style;
+		if (this.ignoreScale) { ctx.save(); ctx.setTransform(1,0,0,1,0,0); }
+		ctx.stroke();
+		if (this.ignoreScale) { ctx.restore(); }
+	};
+	/**
+	 * Creates a linear gradient style and assigns it to {{#crossLink "Stroke/style:property"}}{{/crossLink}}.
+	 * See {{#crossLink "Graphics/beginLinearGradientStroke"}}{{/crossLink}} for more information.
+	 * @method linearGradient
+	 * @param {Array} colors
+	 * @param {Array} ratios
+	 * @param {Number} x0
+	 * @param {Number} y0
+	 * @param {Number} x1
+	 * @param {Number} y1
+	 * @return {Fill} Returns this Stroke object for chaining or assignment.
+	 */
+	p.linearGradient = G.Fill.prototype.linearGradient;
+	/**
+	 * Creates a radial gradient style and assigns it to {{#crossLink "Stroke/style:property"}}{{/crossLink}}.
+	 * See {{#crossLink "Graphics/beginRadialGradientStroke"}}{{/crossLink}} for more information.
+	 * @method radialGradient
+	 * @param {Array} colors
+	 * @param {Array} ratios
+	 * @param {Number} x0
+	 * @param {Number} y0
+	 * @param {Number} r0
+	 * @param {Number} x1
+	 * @param {Number} y1
+	 * @param {Number} r1
+	 * @return {Fill} Returns this Stroke object for chaining or assignment.
+	 */
+	p.radialGradient = G.Fill.prototype.radialGradient;
+	/**
+	 * Creates a bitmap fill style and assigns it to {{#crossLink "Stroke/style:property"}}{{/crossLink}}.
+	 * See {{#crossLink "Graphics/beginBitmapStroke"}}{{/crossLink}} for more information.
+	 * @method bitmap
+	 * @param {HTMLImageElement} image
+	 * @param {String} [repetition] One of: repeat, repeat-x, repeat-y, or no-repeat.
+	 * @return {Fill} Returns this Stroke object for chaining or assignment.
+	 */
+	p.bitmap = G.Fill.prototype.bitmap;
+	p.path = false;
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/setStrokeStyle"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class StrokeStyle
+	 * @constructor
+	 * @param {Number} width
+	 * @param {String} [caps=butt]
+	 * @param {String} [joints=miter]
+	 * @param {Number} [miterLimit=10]
+	 * @param {Boolean} [ignoreScale=false]
+	 **/
+	/**
+	 * @property width
+	 * @type Number
+	 */
+	/**
+	 * One of: butt, round, square
+	 * @property caps
+	 * @type String
+	 */
+	/**
+	 * One of: round, bevel, miter
+	 * @property joints
+	 * @type String
+	 */
+	/**
+	 * @property miterLimit
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	p = (G.StrokeStyle = function(width, caps, joints, miterLimit, ignoreScale) {
+		this.width = width;
+		this.caps = caps;
+		this.joints = joints;
+		this.miterLimit = miterLimit;
+		this.ignoreScale = ignoreScale;
+	}).prototype;
+	p.exec = function(ctx) {
+		ctx.lineWidth = (this.width == null ? "1" : this.width);
+		ctx.lineCap = (this.caps == null ? "butt" : (isNaN(this.caps) ? this.caps : Graphics.STROKE_CAPS_MAP[this.caps]));
+		ctx.lineJoin = (this.joints == null ? "miter" : (isNaN(this.joints) ? this.joints : Graphics.STROKE_JOINTS_MAP[this.joints]));
+		ctx.miterLimit = (this.miterLimit == null ? "10" : this.miterLimit);
+		ctx.ignoreScale = (this.ignoreScale == null ? false : this.ignoreScale);
+	};
+	p.path = false;
+	
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/setStrokeDash"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class StrokeDash
+	 * @constructor
+	 * @param {Array} [segments]
+	 * @param {Number} [offset=0]
+	 **/
+	/**
+	 * @property segments
+	 * @type Array
+	 */
+	/**
+	 * @property offset
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.StrokeDash = function(segments, offset) {
+		this.segments = segments;
+		this.offset = offset||0;
+	}).prototype.exec = function(ctx) {
+		if (ctx.setLineDash) { // feature detection.
+			ctx.setLineDash(this.segments|| G.StrokeDash.EMPTY_SEGMENTS); // instead of [] to reduce churn.
+			ctx.lineDashOffset = this.offset||0;
+		}
+	};
+	/**
+	 * The default value for segments (ie. no dash).
+	 * @property EMPTY_SEGMENTS
+	 * @static
+	 * @final
+	 * @readonly
+	 * @protected
+	 * @type {Array}
+	 **/
+	G.StrokeDash.EMPTY_SEGMENTS = [];
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/drawRoundRectComplex"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class RoundRect
+	 * @constructor
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} w
+	 * @param {Number} h
+	 * @param {Number} radiusTL
+	 * @param {Number} radiusTR
+	 * @param {Number} radiusBR
+	 * @param {Number} radiusBL
+	 **/
+	/**
+	 * @property x
+	 * @type Number
+	 */
+	/**
+	 * @property y
+	 * @type Number
+	 */
+	/**
+	 * @property w
+	 * @type Number
+	 */
+	/**
+	 * @property h
+	 * @type Number
+	 */
+	/**
+	 * @property radiusTL
+	 * @type Number
+	 */
+	/**
+	 * @property radiusTR
+	 * @type Number
+	 */
+	/**
+	 * @property radiusBR
+	 * @type Number
+	 */
+	/**
+	 * @property radiusBL
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.RoundRect = function(x, y, w, h, radiusTL, radiusTR, radiusBR, radiusBL) {
+		this.x = x; this.y = y;
+		this.w = w; this.h = h;
+		this.radiusTL = radiusTL; this.radiusTR = radiusTR;
+		this.radiusBR = radiusBR; this.radiusBL = radiusBL;
+	}).prototype.exec = function(ctx) {
+		var max = (w<h?w:h)/2;
+		var mTL=0, mTR=0, mBR=0, mBL=0;
+		var x = this.x, y = this.y, w = this.w, h = this.h;
+		var rTL = this.radiusTL, rTR = this.radiusTR, rBR = this.radiusBR, rBL = this.radiusBL;
+
+		if (rTL < 0) { rTL *= (mTL=-1); }
+		if (rTL > max) { rTL = max; }
+		if (rTR < 0) { rTR *= (mTR=-1); }
+		if (rTR > max) { rTR = max; }
+		if (rBR < 0) { rBR *= (mBR=-1); }
+		if (rBR > max) { rBR = max; }
+		if (rBL < 0) { rBL *= (mBL=-1); }
+		if (rBL > max) { rBL = max; }
+
+		ctx.moveTo(x+w-rTR, y);
+		ctx.arcTo(x+w+rTR*mTR, y-rTR*mTR, x+w, y+rTR, rTR);
+		ctx.lineTo(x+w, y+h-rBR);
+		ctx.arcTo(x+w+rBR*mBR, y+h+rBR*mBR, x+w-rBR, y+h, rBR);
+		ctx.lineTo(x+rBL, y+h);
+		ctx.arcTo(x-rBL*mBL, y+h+rBL*mBL, x, y+h-rBL, rBL);
+		ctx.lineTo(x, y+rTL);
+		ctx.arcTo(x-rTL*mTL, y-rTL*mTL, x+rTL, y, rTL);
+		ctx.closePath();
+	};
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/drawCircle"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class Circle
+	 * @constructor
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} radius
+	 **/
+	/**
+	 * @property x
+	 * @type Number
+	 */
+	/**
+	 * @property y
+	 * @type Number
+	 */
+	/**
+	 * @property radius
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.Circle = function(x, y, radius) {
+		this.x = x; this.y = y;
+		this.radius = radius;
+	}).prototype.exec = function(ctx) { ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2); };
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/drawEllipse"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class Ellipse
+	 * @constructor
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} w
+	 * @param {Number} h
+	 **/
+	/**
+	 * @property x
+	 * @type Number
+	 */
+	/**
+	 * @property y
+	 * @type Number
+	 */
+	/**
+	 * @property w
+	 * @type Number
+	 */
+	/**
+	 * @property h
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.Ellipse = function(x, y, w, h) {
+		this.x = x; this.y = y;
+		this.w = w; this.h = h;
+	}).prototype.exec = function(ctx) {
+		var x = this.x, y = this.y;
+		var w = this.w, h = this.h;
+
+		var k = 0.5522848;
+		var ox = (w / 2) * k;
+		var oy = (h / 2) * k;
+		var xe = x + w;
+		var ye = y + h;
+		var xm = x + w / 2;
+		var ym = y + h / 2;
+
+		ctx.moveTo(x, ym);
+		ctx.bezierCurveTo(x, ym-oy, xm-ox, y, xm, y);
+		ctx.bezierCurveTo(xm+ox, y, xe, ym-oy, xe, ym);
+		ctx.bezierCurveTo(xe, ym+oy, xm+ox, ye, xm, ye);
+		ctx.bezierCurveTo(xm-ox, ye, x, ym+oy, x, ym);
+	};
+
+	/**
+	 * Graphics command object. See {{#crossLink "Graphics/drawPolyStar"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
+	 * @class PolyStar
+	 * @constructor
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} radius
+	 * @param {Number} sides
+	 * @param {Number} pointSize
+	 * @param {Number} angle
+	 **/
+	/**
+	 * @property x
+	 * @type Number
+	 */
+	/**
+	 * @property y
+	 * @type Number
+	 */
+	/**
+	 * @property radius
+	 * @type Number
+	 */
+	/**
+	 * @property sides
+	 * @type Number
+	 */
+	/**
+	 * @property pointSize
+	 * @type Number
+	 */
+	/**
+	 * @property angle
+	 * @type Number
+	 */
+	/**
+	 * Execute the Graphics command in the provided Canvas context.
+	 * @method exec
+	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
+	 */
+	(G.PolyStar = function(x, y, radius, sides, pointSize, angle) {
+		this.x = x; this.y = y;
+		this.radius = radius;
+		this.sides = sides;
+		this.pointSize = pointSize;
+		this.angle = angle;
+	}).prototype.exec = function(ctx) {
+		var x = this.x, y = this.y;
+		var radius = this.radius;
+		var angle = (this.angle||0)/180*Math.PI;
+		var sides = this.sides;
+		var ps = 1-(this.pointSize||0);
+		var a = Math.PI/sides;
+
+		ctx.moveTo(x+Math.cos(angle)*radius, y+Math.sin(angle)*radius);
+		for (var i=0; i<sides; i++) {
+			angle += a;
+			if (ps != 1) {
+				ctx.lineTo(x+Math.cos(angle)*radius*ps, y+Math.sin(angle)*radius*ps);
+			}
+			angle += a;
+			ctx.lineTo(x+Math.cos(angle)*radius, y+Math.sin(angle)*radius);
+		}
+		ctx.closePath();
+	};
+
+	// docced above.
+	Graphics.beginCmd = new G.BeginPath(); // so we don't have to instantiate multiple instances.
+
+
+	createjs.Graphics = Graphics;
+}());
+
+//##############################################################################
+// DisplayObject.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * DisplayObject is an abstract class that should not be constructed directly. Instead construct subclasses such as
+	 * {{#crossLink "Container"}}{{/crossLink}}, {{#crossLink "Bitmap"}}{{/crossLink}}, and {{#crossLink "Shape"}}{{/crossLink}}.
+	 * DisplayObject is the base class for all display classes in the EaselJS library. It defines the core properties and
+	 * methods that are shared between all display objects, such as transformation properties (x, y, scaleX, scaleY, etc),
+	 * caching, and mouse handlers.
+	 * @class DisplayObject
+	 * @extends EventDispatcher
+	 * @constructor
+	 **/
+	function DisplayObject() {
+		this.EventDispatcher_constructor();
+
+
+	// public properties:
+		/**
+		 * The alpha (transparency) for this display object. 0 is fully transparent, 1 is fully opaque.
+		 * @property alpha
+		 * @type {Number}
+		 * @default 1
+		 **/
+		this.alpha = 1;
+
+		/**
+		 * If a cache is active, this returns the canvas that holds the image of this display object. See {{#crossLink "DisplayObject/cache:method"}}{{/crossLink}}
+		 * for more information. Use this to display the result of a cache. This will be a HTMLCanvasElement unless special cache rules have been deliberately enabled for this cache.
+		 * @property cacheCanvas
+		 * @type {HTMLCanvasElement | Object}
+		 * @default null
+		 * @readonly
+		 **/
+		this.cacheCanvas = null;
+
+		/**
+		 * If a cache has been made, this returns the class that is managing the cacheCanvas and its properties. See {{#crossLink "BitmapCache"}}{{/crossLink}}
+		 * for more information. Use this to control, inspect, and change the cache. In special circumstances this may be a modified or subclassed BitmapCache.
+		 * @property bitmapCache
+		 * @type {BitmapCache}
+		 * @default null
+		 * @readonly
+		 **/
+		this.bitmapCache = null;
+
+		/**
+		 * Unique ID for this display object. Makes display objects easier for some uses.
+		 * @property id
+		 * @type {Number}
+		 * @default -1
+		 **/
+		this.id = createjs.UID.get();
+
+		/**
+		 * Indicates whether to include this object when running mouse interactions. Setting this to `false` for children
+		 * of a {{#crossLink "Container"}}{{/crossLink}} will cause events on the Container to not fire when that child is
+		 * clicked. Setting this property to `false` does not prevent the {{#crossLink "Container/getObjectsUnderPoint"}}{{/crossLink}}
+		 * method from returning the child.
+		 *
+		 * <strong>Note:</strong> In EaselJS 0.7.0, the mouseEnabled property will not work properly with nested Containers. Please
+		 * check out the latest NEXT version in <a href="https://github.com/CreateJS/EaselJS/tree/master/lib">GitHub</a> for an updated version with this issue resolved. The fix will be
+		 * provided in the next release of EaselJS.
+		 * @property mouseEnabled
+		 * @type {Boolean}
+		 * @default true
+		 **/
+		this.mouseEnabled = true;
+
+		/**
+		 * If false, the tick will not run on this display object (or its children). This can provide some performance benefits.
+		 * In addition to preventing the "tick" event from being dispatched, it will also prevent tick related updates
+		 * on some display objects (ex. Sprite & MovieClip frame advancing, and DOMElement display properties).
+		 * @property tickEnabled
+		 * @type Boolean
+		 * @default true
+		 **/
+		this.tickEnabled = true;
+
+		/**
+		 * An optional name for this display object. Included in {{#crossLink "DisplayObject/toString"}}{{/crossLink}} . Useful for
+		 * debugging.
+		 * @property name
+		 * @type {String}
+		 * @default null
+		 **/
+		this.name = null;
+
+		/**
+		 * A reference to the {{#crossLink "Container"}}{{/crossLink}} or {{#crossLink "Stage"}}{{/crossLink}} object that
+		 * contains this display object, or null if it has not been added
+		 * to one.
+		 * @property parent
+		 * @final
+		 * @type {Container}
+		 * @default null
+		 * @readonly
+		 **/
+		this.parent = null;
+
+		/**
+		 * The left offset for this display object's registration point. For example, to make a 100x100px Bitmap rotate
+		 * around its center, you would set regX and {{#crossLink "DisplayObject/regY:property"}}{{/crossLink}} to 50.
+		 * Cached object's registration points should be set based on pre-cache conditions, not cached size.
+		 * @property regX
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.regX = 0;
+
+		/**
+		 * The y offset for this display object's registration point. For example, to make a 100x100px Bitmap rotate around
+		 * its center, you would set {{#crossLink "DisplayObject/regX:property"}}{{/crossLink}} and regY to 50.
+		 * Cached object's registration points should be set based on pre-cache conditions, not cached size.
+		 * @property regY
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.regY = 0;
+
+		/**
+		 * The rotation in degrees for this display object.
+		 * @property rotation
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.rotation = 0;
+
+		/**
+		 * The factor to stretch this display object horizontally. For example, setting scaleX to 2 will stretch the display
+		 * object to twice its nominal width. To horizontally flip an object, set the scale to a negative number.
+		 * @property scaleX
+		 * @type {Number}
+		 * @default 1
+		 **/
+		this.scaleX = 1;
+
+		/**
+		 * The factor to stretch this display object vertically. For example, setting scaleY to 0.5 will stretch the display
+		 * object to half its nominal height. To vertically flip an object, set the scale to a negative number.
+		 * @property scaleY
+		 * @type {Number}
+		 * @default 1
+		 **/
+		this.scaleY = 1;
+
+		/**
+		 * The factor to skew this display object horizontally.
+		 * @property skewX
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.skewX = 0;
+
+		/**
+		 * The factor to skew this display object vertically.
+		 * @property skewY
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.skewY = 0;
+
+		/**
+		 * A shadow object that defines the shadow to render on this display object. Set to `null` to remove a shadow. If
+		 * null, this property is inherited from the parent container.
+		 * @property shadow
+		 * @type {Shadow}
+		 * @default null
+		 **/
+		this.shadow = null;
+
+		/**
+		 * Indicates whether this display object should be rendered to the canvas and included when running the Stage
+		 * {{#crossLink "Stage/getObjectsUnderPoint"}}{{/crossLink}} method.
+		 * @property visible
+		 * @type {Boolean}
+		 * @default true
+		 **/
+		this.visible = true;
+
+		/**
+		 * The x (horizontal) position of the display object, relative to its parent.
+		 * @property x
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.x = 0;
+
+		/** The y (vertical) position of the display object, relative to its parent.
+		 * @property y
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.y = 0;
+
+		/**
+		 * If set, defines the transformation for this display object, overriding all other transformation properties
+		 * (x, y, rotation, scale, skew).
+		 * @property transformMatrix
+		 * @type {Matrix2D}
+		 * @default null
+		 **/
+		this.transformMatrix = null;
+
+		/**
+		 * The composite operation indicates how the pixels of this display object will be composited with the elements
+		 * behind it. If `null`, this property is inherited from the parent container. For more information, read the
+		 * <a href="https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-globalcompositeoperation">
+		 * whatwg spec on compositing</a>. For a list of supported compositeOperation value, visit
+		 * <a href="https://drafts.fxtf.org/compositing/">the W3C draft on Compositing and Blending</a>.
+		 * @property compositeOperation
+		 * @type {String}
+		 * @default null
+		 **/
+		this.compositeOperation = null;
+
+		/**
+		 * Indicates whether the display object should be drawn to a whole pixel when
+		 * {{#crossLink "Stage/snapToPixelEnabled"}}{{/crossLink}} is true. To enable/disable snapping on whole
+		 * categories of display objects, set this value on the prototype (Ex. Text.prototype.snapToPixel = true).
+		 * @property snapToPixel
+		 * @type {Boolean}
+		 * @default true
+		 **/
+		this.snapToPixel = true;
+
+		/**
+		 * An array of Filter objects to apply to this display object. Filters are only applied / updated when {{#crossLink "cache"}}{{/crossLink}}
+		 * or {{#crossLink "updateCache"}}{{/crossLink}} is called on the display object, and only apply to the area that is
+		 * cached.
+		 * @property filters
+		 * @type {Array}
+		 * @default null
+		 **/
+		this.filters = null;
+
+		/**
+		 * A Shape instance that defines a vector mask (clipping path) for this display object.  The shape's transformation
+		 * will be applied relative to the display object's parent coordinates (as if it were a child of the parent).
+		 * @property mask
+		 * @type {Shape}
+		 * @default null
+		 */
+		this.mask = null;
+
+		/**
+		 * A display object that will be tested when checking mouse interactions or testing {{#crossLink "Container/getObjectsUnderPoint"}}{{/crossLink}}.
+		 * The hit area will have its transformation applied relative to this display object's coordinate space (as though
+		 * the hit test object were a child of this display object and relative to its regX/Y). The hitArea will be tested
+		 * using only its own `alpha` value regardless of the alpha value on the target display object, or the target's
+		 * ancestors (parents).
+		 * 
+		 * If set on a {{#crossLink "Container"}}{{/crossLink}}, children of the Container will not receive mouse events.
+		 * This is similar to setting {{#crossLink "mouseChildren"}}{{/crossLink}} to false.
+		 *
+		 * Note that hitArea is NOT currently used by the `hitTest()` method, nor is it supported for {{#crossLink "Stage"}}{{/crossLink}}.
+		 * @property hitArea
+		 * @type {DisplayObject}
+		 * @default null
+		 */
+		this.hitArea = null;
+
+		/**
+		 * A CSS cursor (ex. "pointer", "help", "text", etc) that will be displayed when the user hovers over this display
+		 * object. You must enable mouseover events using the {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}} method to
+		 * use this property. Setting a non-null cursor on a Container will override the cursor set on its descendants.
+		 * @property cursor
+		 * @type {String}
+		 * @default null
+		 */
+		this.cursor = null;
+
+
+	// private properties:
+		/**
+		 * Moved to {{#crossLink "BitmapCache"}}{{/crossLink}}
+		 * @property _cacheScale
+		 * @protected
+		 * @type {Number}
+		 * @default 1
+		 * @deprecated
+		 **/
+
+		/**
+		 * Moved to {{#crossLink "BitmapCache"}}{{/crossLink}}
+		 * @property _cacheDataURLID
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 * @deprecated
+		 */
+
+		/**
+		 * Moved to {{#crossLink "BitmapCache"}}{{/crossLink}}
+		 * @property _cacheDataURL
+		 * @protected
+		 * @type {String}
+		 * @default null
+		 * @deprecated
+		 */
+
+		/**
+		 * @property _props
+		 * @protected
+		 * @type {DisplayObject}
+		 * @default null
+		 **/
+		this._props = new createjs.DisplayProps();
+
+		/**
+		 * @property _rectangle
+		 * @protected
+		 * @type {Rectangle}
+		 * @default null
+		 **/
+		this._rectangle = new createjs.Rectangle();
+
+		/**
+		 * @property _bounds
+		 * @protected
+		 * @type {Rectangle}
+		 * @default null
+		 **/
+		this._bounds = null;
+
+		/**
+		 * Where StageGL should look for required display properties, matters only for leaf display objects. Containers
+		 * or cached objects won't use this property, it's for native display of terminal elements.
+		 * @property _webGLRenderStyle
+		 * @protected
+		 * @type {number}
+		 * @default 0
+		 */
+		this._webGLRenderStyle = DisplayObject._StageGL_NONE;
+	}
+	var p = createjs.extend(DisplayObject, createjs.EventDispatcher);
+
+// static properties:
+	/**
+	 * Listing of mouse event names. Used in _hasMouseEventListener.
+	 * @property _MOUSE_EVENTS
+	 * @protected
+	 * @static
+	 * @type {Array}
+	 **/
+	DisplayObject._MOUSE_EVENTS = ["click","dblclick","mousedown","mouseout","mouseover","pressmove","pressup","rollout","rollover"];
+
+	/**
+	 * Suppresses errors generated when using features like hitTest, mouse events, and {{#crossLink "getObjectsUnderPoint"}}{{/crossLink}}
+	 * with cross domain content.
+	 * @property suppressCrossDomainErrors
+	 * @static
+	 * @type {Boolean}
+	 * @default false
+	 **/
+	DisplayObject.suppressCrossDomainErrors = false;
+
+	/**
+	 * @property _snapToPixelEnabled
+	 * @protected
+	 * @static
+	 * @type {Boolean}
+	 * @default false
+	 **/
+	DisplayObject._snapToPixelEnabled = false; // stage.snapToPixelEnabled is temporarily copied here during a draw to provide global access.
+
+	/**
+	 * Enum like property for determining StageGL render lookup, i.e. where to expect properties.
+	 * @property _StageGL_NONE
+	 * @protected
+	 * @static
+	 * @type {number}
+	 */
+	DisplayObject._StageGL_NONE = 0;
+
+	/**
+	 * Enum like property for determining StageGL render lookup, i.e. where to expect properties.
+	 * @property _StageGL_SPRITE
+	 * @protected
+	 * @static
+	 * @type {number}
+	 */
+	DisplayObject._StageGL_SPRITE = 1;
+
+	/**
+	 * Enum like property for determining StageGL render lookup, i.e. where to expect properties.
+	 * @property _StageGL_BITMAP
+	 * @protected
+	 * @static
+	 * @type {number}
+	 */
+	DisplayObject._StageGL_BITMAP = 2;
+
+	/**
+	 * @property _hitTestCanvas
+	 * @type {HTMLCanvasElement | Object}
+	 * @static
+	 * @protected
+	 **/
+	/**
+	 * @property _hitTestContext
+	 * @type {CanvasRenderingContext2D}
+	 * @static
+	 * @protected
+	 **/
+	var canvas = createjs.createCanvas?createjs.createCanvas():document.createElement("canvas"); // prevent errors on load in browsers without canvas.
+	if (canvas.getContext) {
+		DisplayObject._hitTestCanvas = canvas;
+		DisplayObject._hitTestContext = canvas.getContext("2d");
+		canvas.width = canvas.height = 1;
+	}
+
+// events:
+	/**
+	 * Dispatched when the user presses their left mouse button over the display object. See the 
+	 * {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
+	 * @event mousedown
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * Dispatched when the user presses their left mouse button and then releases it while over the display object.
+	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
+	 * @event click
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * Dispatched when the user double clicks their left mouse button over this display object.
+	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
+	 * @event dblclick
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * Dispatched when the user's mouse enters this display object. This event must be enabled using 
+	 * {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}}. See also {{#crossLink "DisplayObject/rollover:event"}}{{/crossLink}}.
+	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
+	 * @event mouseover
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * Dispatched when the user's mouse leaves this display object. This event must be enabled using 
+	 * {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}}. See also {{#crossLink "DisplayObject/rollout:event"}}{{/crossLink}}.
+	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
+	 * @event mouseout
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * This event is similar to {{#crossLink "DisplayObject/mouseover:event"}}{{/crossLink}}, with the following
+	 * differences: it does not bubble, and it considers {{#crossLink "Container"}}{{/crossLink}} instances as an
+	 * aggregate of their content.
+	 * 
+	 * For example, myContainer contains two overlapping children: shapeA and shapeB. The user moves their mouse over
+	 * shapeA and then directly on to shapeB. With a listener for {{#crossLink "mouseover:event"}}{{/crossLink}} on
+	 * myContainer, two events would be received, each targeting a child element:<OL>
+	 * <LI>when the mouse enters shapeA (target=shapeA)</LI>
+	 * <LI>when the mouse enters shapeB (target=shapeB)</LI>
+	 * </OL>
+	 * However, with a listener for "rollover" instead, only a single event is received when the mouse first enters
+	 * the aggregate myContainer content (target=myContainer).
+	 * 
+	 * This event must be enabled using {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}}.
+	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
+	 * @event rollover
+	 * @since 0.7.0
+	 */
+
+	/**
+	 * This event is similar to {{#crossLink "DisplayObject/mouseout:event"}}{{/crossLink}}, with the following
+	 * differences: it does not bubble, and it considers {{#crossLink "Container"}}{{/crossLink}} instances as an
+	 * aggregate of their content.
+	 * 
+	 * For example, myContainer contains two overlapping children: shapeA and shapeB. The user moves their mouse over
+	 * shapeA, then directly on to shapeB, then off both. With a listener for {{#crossLink "mouseout:event"}}{{/crossLink}}
+	 * on myContainer, two events would be received, each targeting a child element:<OL>
+	 * <LI>when the mouse leaves shapeA (target=shapeA)</LI>
+	 * <LI>when the mouse leaves shapeB (target=shapeB)</LI>
+	 * </OL>
+	 * However, with a listener for "rollout" instead, only a single event is received when the mouse leaves
+	 * the aggregate myContainer content (target=myContainer).
+	 * 
+	 * This event must be enabled using {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}}.
+	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
+	 * @event rollout
+	 * @since 0.7.0
+	 */
+
+	/**
+	 * After a {{#crossLink "DisplayObject/mousedown:event"}}{{/crossLink}} occurs on a display object, a pressmove
+	 * event will be generated on that object whenever the mouse moves until the mouse press is released. This can be
+	 * useful for dragging and similar operations.
+	 *
+	 * **Please note** that if the initial mouse target from a `mousedown` event is removed from the stage after being pressed
+	 * (e.g. during a `pressmove` event), a `pressmove` event is still generated. However since it is no longer in the
+	 * display list, the event can not bubble. This means that previous ancestors (parent containers) will not receive
+	 * the event, and therefore can not re-dispatch it. If you intend to listen for `{{#crossLink "DisplayObject/pressup:event"}}{{/crossLink}}`
+	 * or `pressmove` on a dynamic object (such as a {{#crossLink "MovieClip"}}{{/crossLink}} or {{#crossLink "Container"}}{{/crossLink}}),
+	 * then ensure you set {{#crossLink "Container/mouseChildren:property"}}{{/crossLink}} to `false`.
+	 * @event pressmove
+	 * @since 0.7.0
+	 */
+
+	/**
+	 * After a {{#crossLink "DisplayObject/mousedown:event"}}{{/crossLink}} occurs on a display object, a pressup event
+	 * will be generated on that object when that mouse press is released. This can be useful for dragging and similar
+	 * operations.
+	 *
+	 * **Please note** that if the initial mouse target from a `mousedown` event is removed from the stage after being pressed
+	 * (e.g. during a `pressmove` event), a `pressup` event is still generated. However since it is no longer in the
+	 * display list, the event can not bubble. This means that previous ancestors (parent containers) will not receive
+	 * the event, and therefore can not re-dispatch it. If you intend to listen for `{{#crossLink "DisplayObject/pressmove:event"}}{{/crossLink}}`
+	 * or `pressup` on a dynamic object (such as a {{#crossLink "MovieClip"}}{{/crossLink}} or {{#crossLink "Container"}}{{/crossLink}}),
+	 * then ensure you set {{#crossLink "Container/mouseChildren:property"}}{{/crossLink}} to `false`.
+	 * @event pressup
+	 * @since 0.7.0
+	 */
+
+	/**
+	 * Dispatched when the display object is added to a parent container.
+	 * @event added
+	 */
+
+	/**
+	 * Dispatched when the display object is removed from its parent container.
+	 * @event removed
+	 */
+
+	/**
+	 * Dispatched on each display object on a stage whenever the stage updates. This occurs immediately before the
+	 * rendering (draw) pass. When {{#crossLink "Stage/update"}}{{/crossLink}} is called, first all display objects on
+	 * the stage dispatch the tick event, then all of the display objects are drawn to stage. Children will have their
+	 * {{#crossLink "tick:event"}}{{/crossLink}} event dispatched in order of their depth prior to the event being
+	 * dispatched on their parent.
+	 * @event tick
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type.
+	 * @param {Array} params An array containing any arguments that were passed to the Stage.update() method. For
+	 *      example if you called stage.update("hello"), then the params would be ["hello"].
+	 * @since 0.6.0
+	 */
+
+
+// getter / setters:
+	/**
+	 * Use the {{#crossLink "DisplayObject/stage:property"}}{{/crossLink}} property instead.
+	 * @method _getStage
+	 * @protected
+	 * @return {Stage}
+	 **/
+	p._getStage = function() {
+		// uses dynamic access to avoid circular dependencies;
+		var o = this, _Stage = createjs["Stage"];
+		while (o.parent) { o = o.parent; }
+		if (o instanceof _Stage) { return o; }
+		return null;
+	};
+	// DisplayObject.getStage is @deprecated. Remove for 1.1+
+	p.getStage = createjs.deprecate(p._getStage, "DisplayObject.getStage");
+
+	/**
+	 * Returns the Stage instance that this display object will be rendered on, or null if it has not been added to one.
+	 * @property stage
+	 * @type {Stage}
+	 * @readonly
+	 **/
+
+	/**
+	 * Returns an ID number that uniquely identifies the current cache for this display object. This can be used to
+	 * determine if the cache has changed since a previous check.
+	 * Moved to {{#crossLink "BitmapCache"}}{{/crossLink}}
+	 * @property cacheID
+	 * @deprecated
+	 * @type {Number}
+	 * @default 0
+	 */
+
+	/**
+	 * Set both the {{#crossLink "DisplayObject/scaleX:property"}}{{/crossLink}} and the {{#crossLink "DisplayObject/scaleY"}}{{/crossLink}}
+	 * property to the same value. Note that when you get the value, if the `scaleX` and `scaleY` are different values,
+	 * it will return only the `scaleX`.
+	 * @property scaleX
+	 * @type {Number}
+	 * @default 1
+	 */
+	try {
+		Object.defineProperties(p, {
+			stage: { get: p._getStage },
+			cacheID: {
+				get: function(){ return this.bitmapCache && this.bitmapCache.cacheID },
+				set: function(a){ this.bitmapCache && (this.bitmapCache.cacheID = a) }
+			},
+			scale: {
+				get: function() { return this.scaleX; },
+				set: function(scale) { this.scaleX = this.scaleY = scale; },
+			}
+		});
+	} catch (e) {}
+
+
+// public methods:
+	/**
+	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
+	 * This does not account for whether it would be visible within the boundaries of the stage.
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method isVisible
+	 * @return {Boolean} Boolean indicating whether the display object would be visible if drawn to a canvas
+	 **/
+	p.isVisible = function() {
+		return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0);
+	};
+
+	/**
+	 * Draws the display object into the specified context ignoring its visible, alpha, shadow, and transform.
+	 * Returns <code>true</code> if the draw was handled (useful for overriding functionality).
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Boolean} [ignoreCache=false] Indicates whether the draw operation should ignore any current cache. For example,
+	 * used for drawing the cache (to prevent it from simply drawing an existing cache back into itself).
+	 * @return {Boolean}
+	 **/
+	p.draw = function(ctx, ignoreCache) {
+		var cache = this.bitmapCache;
+		if(cache && !ignoreCache) {
+			return cache.draw(ctx);
+		}
+		return false;
+	};
+
+	/**
+	 * Applies this display object's transformation, alpha, globalCompositeOperation, clipping path (mask), and shadow
+	 * to the specified context. This is typically called prior to {{#crossLink "DisplayObject/draw"}}{{/crossLink}}.
+	 * @method updateContext
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D to update.
+	 **/
+	p.updateContext = function(ctx) {
+		var o=this, mask=o.mask, mtx= o._props.matrix;
+		
+		if (mask && mask.graphics && !mask.graphics.isEmpty()) {
+			mask.getMatrix(mtx);
+			ctx.transform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx, mtx.ty);
+			
+			mask.graphics.drawAsPath(ctx);
+			ctx.clip();
+			
+			mtx.invert();
+			ctx.transform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx, mtx.ty);
+		}
+		
+		this.getMatrix(mtx);
+		var tx = mtx.tx, ty = mtx.ty;
+		if (DisplayObject._snapToPixelEnabled && o.snapToPixel) {
+			tx = tx + (tx < 0 ? -0.5 : 0.5) | 0;
+			ty = ty + (ty < 0 ? -0.5 : 0.5) | 0;
+		}
+		ctx.transform(mtx.a,  mtx.b, mtx.c, mtx.d, tx, ty);
+		ctx.globalAlpha *= o.alpha;
+		if (o.compositeOperation) { ctx.globalCompositeOperation = o.compositeOperation; }
+		if (o.shadow) { this._applyShadow(ctx, o.shadow); }
+	};
+
+	/**
+	 * Draws the display object into a new element, which is then used for subsequent draws. Intended for complex content
+	 * that does not change frequently (ex. a Container with many children that do not move, or a complex vector Shape),
+	 * this can provide for much faster rendering because the content does not need to be re-rendered each tick. The
+	 * cached display object can be moved, rotated, faded, etc freely, however if its content changes, you must manually
+	 * update the cache by calling <code>updateCache()</code> again. You must specify the cached area via the x, y, w,
+	 * and h parameters. This defines the rectangle that will be rendered and cached using this display object's coordinates.
+	 *
+	 * <h4>Example</h4>
+	 * For example if you defined a Shape that drew a circle at 0, 0 with a radius of 25:
+	 *
+	 *      var shape = new createjs.Shape();
+	 *      shape.graphics.beginFill("#ff0000").drawCircle(0, 0, 25);
+	 *      shape.cache(-25, -25, 50, 50);
+	 *
+	 * Note that filters need to be defined <em>before</em> the cache is applied or you will have to call updateCache after
+	 * application. Check out the {{#crossLink "Filter"}}{{/crossLink}} class for more information. Some filters
+	 * (ex. BlurFilter) may not work as expected in conjunction with the scale param.
+	 * 
+	 * Usually, the resulting cacheCanvas will have the dimensions width * scale, height * scale, however some filters (ex. BlurFilter)
+	 * will add padding to the canvas dimensions.
+	 *
+	 * In previous versions caching was handled on DisplayObject but has since been moved to {{#crossLink "BitmapCache"}}{{/crossLink}}.
+	 * This allows for easier interaction and alternate cache methods like WebGL with {{#crossLink "StageGL"}}{{/crossLink}}.
+	 * For more information on the options object, see the BitmapCache {{#crossLink "BitmapCache/define"}}{{/crossLink}}.
+	 *
+	 * @method cache
+	 * @param {Number} x The x coordinate origin for the cache region.
+	 * @param {Number} y The y coordinate origin for the cache region.
+	 * @param {Number} width The width of the cache region.
+	 * @param {Number} height The height of the cache region.
+	 * @param {Number} [scale=1] The scale at which the cache will be created. For example, if you cache a vector shape using
+	 * 	myShape.cache(0,0,100,100,2) then the resulting cacheCanvas will be 200x200 px. This lets you scale and rotate
+	 * 	cached elements with greater fidelity. Default is 1.
+	 * @param {Object} [options=undefined] Specify additional parameters for the cache logic
+	 **/
+	p.cache = function(x, y, width, height, scale, options) {
+		if(!this.bitmapCache){
+			this.bitmapCache = new createjs.BitmapCache();
+		}
+		this.bitmapCache.define(this, x, y, width, height, scale, options);
+	};
+
+	/**
+	 * Redraws the display object to its cache. Calling updateCache without an active cache will throw an error.
+	 * If compositeOperation is null the current cache will be cleared prior to drawing. Otherwise the display object
+	 * will be drawn over the existing cache using the specified compositeOperation.
+	 *
+	 * <h4>Example</h4>
+	 * Clear the current graphics of a cached shape, draw some new instructions, and then update the cache. The new line
+	 * will be drawn on top of the old one.
+	 *
+	 *      // Not shown: Creating the shape, and caching it.
+	 *      shapeInstance.clear();
+	 *      shapeInstance.setStrokeStyle(3).beginStroke("#ff0000").moveTo(100, 100).lineTo(200,200);
+	 *      shapeInstance.updateCache();
+	 *
+	 * In previous versions caching was handled on DisplayObject but has since been moved to {{#crossLink "BitmapCache"}}{{/crossLink}}.
+	 * This allows for easier interaction and alternate cache methods like WebGL and {{#crossLink "StageGL"}}{{/crossLink}}.
+	 *
+	 * @method updateCache
+	 * @param {String} compositeOperation The compositeOperation to use, or null to clear the cache and redraw it.
+	 * <a href="https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-globalcompositeoperation">
+	 * whatwg spec on compositing</a>.
+	 **/
+	p.updateCache = function(compositeOperation) {
+		if(!this.bitmapCache) {
+			throw "cache() must be called before updateCache()";
+		}
+		this.bitmapCache.update(compositeOperation);
+	};
+
+	/**
+	 * Clears the current cache. See {{#crossLink "DisplayObject/cache"}}{{/crossLink}} for more information.
+	 * @method uncache
+	 **/
+	p.uncache = function() {
+		if(this.bitmapCache) {
+			this.bitmapCache.release();
+			this.bitmapCache = undefined;
+		}
+	};
+
+	/**
+	 * Returns a data URL for the cache, or null if this display object is not cached.
+	 * Only generated if the cache has changed, otherwise returns last result.
+	 * @method getCacheDataURL
+	 * @return {String} The image data url for the cache.
+	 **/
+	p.getCacheDataURL = function() {
+		return this.bitmapCache?this.bitmapCache.getDataURL():null;
+	};
+
+	/**
+	 * Transforms the specified x and y position from the coordinate space of the display object
+	 * to the global (stage) coordinate space. For example, this could be used to position an HTML label
+	 * over a specific point on a nested display object. Returns a Point instance with x and y properties
+	 * correlating to the transformed coordinates on the stage.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      displayObject.x = 300;
+	 *      displayObject.y = 200;
+	 *      stage.addChild(displayObject);
+	 *      var point = displayObject.localToGlobal(100, 100);
+	 *      // Results in x=400, y=300
+	 *
+	 * @method localToGlobal
+	 * @param {Number} x The x position in the source display object to transform.
+	 * @param {Number} y The y position in the source display object to transform.
+	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a new Point object with x/y properties will be returned. 
+	 * @return {Point} A Point instance with x and y properties correlating to the transformed coordinates
+	 * on the stage.
+	 **/
+	p.localToGlobal = function(x, y, pt) {
+		return this.getConcatenatedMatrix(this._props.matrix).transformPoint(x,y, pt||new createjs.Point());
+	};
+
+	/**
+	 * Transforms the specified x and y position from the global (stage) coordinate space to the
+	 * coordinate space of the display object. For example, this could be used to determine
+	 * the current mouse position within the display object. Returns a Point instance with x and y properties
+	 * correlating to the transformed position in the display object's coordinate space.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      displayObject.x = 300;
+	 *      displayObject.y = 200;
+	 *      stage.addChild(displayObject);
+	 *      var point = displayObject.globalToLocal(100, 100);
+	 *      // Results in x=-200, y=-100
+	 *
+	 * @method globalToLocal
+	 * @param {Number} x The x position on the stage to transform.
+	 * @param {Number} y The y position on the stage to transform.
+	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a new Point object with x/y properties will be returned. 
+	 * @return {Point} A Point instance with x and y properties correlating to the transformed position in the
+	 * display object's coordinate space.
+	 **/
+	p.globalToLocal = function(x, y, pt) {
+		return this.getConcatenatedMatrix(this._props.matrix).invert().transformPoint(x,y, pt||new createjs.Point());
+	};
+
+	/**
+	 * Transforms the specified x and y position from the coordinate space of this display object to the coordinate
+	 * space of the target display object. Returns a Point instance with x and y properties correlating to the
+	 * transformed position in the target's coordinate space. Effectively the same as using the following code with
+	 * {{#crossLink "DisplayObject/localToGlobal"}}{{/crossLink}} and {{#crossLink "DisplayObject/globalToLocal"}}{{/crossLink}}.
+	 *
+	 *      var pt = this.localToGlobal(x, y);
+	 *      pt = target.globalToLocal(pt.x, pt.y);
+	 *
+	 * @method localToLocal
+	 * @param {Number} x The x position in the source display object to transform.
+	 * @param {Number} y The y position on the source display object to transform.
+	 * @param {DisplayObject} target The target display object to which the coordinates will be transformed.
+	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a new Point object with x/y properties will be returned. 
+	 * @return {Point} Returns a Point instance with x and y properties correlating to the transformed position
+	 * in the target's coordinate space.
+	 **/
+	p.localToLocal = function(x, y, target, pt) {
+		pt = this.localToGlobal(x, y, pt);
+		return target.globalToLocal(pt.x, pt.y, pt);
+	};
+
+	/**
+	 * Shortcut method to quickly set the transform properties on the display object. All parameters are optional.
+	 * Omitted parameters will have the default value set.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      displayObject.setTransform(100, 100, 2, 2);
+	 *
+	 * @method setTransform
+	 * @param {Number} [x=0] The horizontal translation (x position) in pixels
+	 * @param {Number} [y=0] The vertical translation (y position) in pixels
+	 * @param {Number} [scaleX=1] The horizontal scale, as a percentage of 1
+	 * @param {Number} [scaleY=1] the vertical scale, as a percentage of 1
+	 * @param {Number} [rotation=0] The rotation, in degrees
+	 * @param {Number} [skewX=0] The horizontal skew factor
+	 * @param {Number} [skewY=0] The vertical skew factor
+	 * @param {Number} [regX=0] The horizontal registration point in pixels
+	 * @param {Number} [regY=0] The vertical registration point in pixels
+	 * @return {DisplayObject} Returns this instance. Useful for chaining commands.
+	 * @chainable
+	*/
+	p.setTransform = function(x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) {
+		this.x = x || 0;
+		this.y = y || 0;
+		this.scaleX = scaleX == null ? 1 : scaleX;
+		this.scaleY = scaleY == null ? 1 : scaleY;
+		this.rotation = rotation || 0;
+		this.skewX = skewX || 0;
+		this.skewY = skewY || 0;
+		this.regX = regX || 0;
+		this.regY = regY || 0;
+		return this;
+	};
+
+	/**
+	 * Returns a matrix based on this object's current transform.
+	 * @method getMatrix
+	 * @param {Matrix2D} matrix Optional. A Matrix2D object to populate with the calculated values. If null, a new
+	 * Matrix object is returned.
+	 * @return {Matrix2D} A matrix representing this display object's transform.
+	 **/
+	p.getMatrix = function(matrix) {
+		var o = this, mtx = matrix&&matrix.identity() || new createjs.Matrix2D();
+		return o.transformMatrix ?  mtx.copy(o.transformMatrix) : mtx.appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY);
+	};
+
+	/**
+	 * Generates a Matrix2D object representing the combined transform of the display object and all of its
+	 * parent Containers up to the highest level ancestor (usually the {{#crossLink "Stage"}}{{/crossLink}}). This can
+	 * be used to transform positions between coordinate spaces, such as with {{#crossLink "DisplayObject/localToGlobal"}}{{/crossLink}}
+	 * and {{#crossLink "DisplayObject/globalToLocal"}}{{/crossLink}}.
+	 * @method getConcatenatedMatrix
+	 * @param {Matrix2D} [matrix] A {{#crossLink "Matrix2D"}}{{/crossLink}} object to populate with the calculated values.
+	 * If null, a new Matrix2D object is returned.
+	 * @return {Matrix2D} The combined matrix.
+	 **/
+	p.getConcatenatedMatrix = function(matrix) {
+		var o = this, mtx = this.getMatrix(matrix);
+		while (o = o.parent) {
+			mtx.prependMatrix(o.getMatrix(o._props.matrix));
+		}
+		return mtx;
+	};
+
+	/**
+	 * Generates a DisplayProps object representing the combined display properties of the  object and all of its
+	 * parent Containers up to the highest level ancestor (usually the {{#crossLink "Stage"}}{{/crossLink}}).
+	 * @method getConcatenatedDisplayProps
+	 * @param {DisplayProps} [props] A {{#crossLink "DisplayProps"}}{{/crossLink}} object to populate with the calculated values.
+	 * If null, a new DisplayProps object is returned.
+	 * @return {DisplayProps} The combined display properties.
+	 **/
+	p.getConcatenatedDisplayProps = function(props) {
+		var this$1 = this;
+
+		props = props ? props.identity() : new createjs.DisplayProps();
+		var o = this, mtx = o.getMatrix(props.matrix); 
+		do {
+			props.prepend(o.visible, o.alpha, o.shadow, o.compositeOperation);
+			
+			// we do this to avoid problems with the matrix being used for both operations when o._props.matrix is passed in as the props param.
+			// this could be simplified (ie. just done as part of the prepend above) if we switched to using a pool.
+			if (o != this$1) { mtx.prependMatrix(o.getMatrix(o._props.matrix)); }
+		} while (o = o.parent);
+		return props;
+	};
+
+	/**
+	 * Tests whether the display object intersects the specified point in local coordinates (ie. draws a pixel with alpha > 0 at
+	 * the specified position). This ignores the alpha, shadow, hitArea, mask, and compositeOperation of the display object.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      stage.addEventListener("stagemousedown", handleMouseDown);
+	 *      function handleMouseDown(event) {
+	 *          var hit = myShape.hitTest(event.stageX, event.stageY);
+	 *      }
+	 *
+	 * Please note that shape-to-shape collision is not currently supported by EaselJS.
+	 * @method hitTest
+	 * @param {Number} x The x position to check in the display object's local coordinates.
+	 * @param {Number} y The y position to check in the display object's local coordinates.
+	 * @return {Boolean} A Boolean indicating whether a visible portion of the DisplayObject intersect the specified
+	 * local Point.
+	*/
+	p.hitTest = function(x, y) {
+		var ctx = DisplayObject._hitTestContext;
+		ctx.setTransform(1, 0, 0, 1, -x, -y);
+		this.draw(ctx);
+
+		var hit = this._testHit(ctx);
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		ctx.clearRect(0, 0, 2, 2);
+		return hit;
+	};
+
+	/**
+	 * Provides a chainable shortcut method for setting a number of properties on the instance.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      var myGraphics = new createjs.Graphics().beginFill("#ff0000").drawCircle(0, 0, 25);
+	 *      var shape = stage.addChild(new Shape()).set({graphics:myGraphics, x:100, y:100, alpha:0.5});
+	 *
+	 * @method set
+	 * @param {Object} props A generic object containing properties to copy to the DisplayObject instance.
+	 * @return {DisplayObject} Returns the instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	*/
+	p.set = function(props) {
+		var this$1 = this;
+
+		for (var n in props) { this$1[n] = props[n]; }
+		return this;
+	};
+
+	/**
+	 * Returns a rectangle representing this object's bounds in its local coordinate system (ie. with no transformation).
+	 * Objects that have been cached will return the bounds of the cache.
+	 * 
+	 * Not all display objects can calculate their own bounds (ex. Shape). For these objects, you can use 
+	 * {{#crossLink "DisplayObject/setBounds"}}{{/crossLink}} so that they are included when calculating Container
+	 * bounds.
+	 * 
+	 * <table>
+	 * 	<tr><td><b>All</b></td><td>
+	 * 		All display objects support setting bounds manually using setBounds(). Likewise, display objects that
+	 * 		have been cached using cache() will return the bounds of their cache. Manual and cache bounds will override
+	 * 		the automatic calculations listed below.
+	 * 	</td></tr>
+	 * 	<tr><td><b>Bitmap</b></td><td>
+	 * 		Returns the width and height of the sourceRect (if specified) or image, extending from (x=0,y=0).
+	 * 	</td></tr>
+	 * 	<tr><td><b>Sprite</b></td><td>
+	 * 		Returns the bounds of the current frame. May have non-zero x/y if a frame registration point was specified
+	 * 		in the spritesheet data. See also {{#crossLink "SpriteSheet/getFrameBounds"}}{{/crossLink}}
+	 * 	</td></tr>
+	 * 	<tr><td><b>Container</b></td><td>
+	 * 		Returns the aggregate (combined) bounds of all children that return a non-null value from getBounds().
+	 * 	</td></tr>
+	 * 	<tr><td><b>Shape</b></td><td>
+	 * 		Does not currently support automatic bounds calculations. Use setBounds() to manually define bounds.
+	 * 	</td></tr>
+	 * 	<tr><td><b>Text</b></td><td>
+	 * 		Returns approximate bounds. Horizontal values (x/width) are quite accurate, but vertical values (y/height) are
+	 * 		not, especially when using textBaseline values other than "top".
+	 * 	</td></tr>
+	 * 	<tr><td><b>BitmapText</b></td><td>
+	 * 		Returns approximate bounds. Values will be more accurate if spritesheet frame registration points are close
+	 * 		to (x=0,y=0).
+	 * 	</td></tr>
+	* </table>
+	 * 
+	 * Bounds can be expensive to calculate for some objects (ex. text, or containers with many children), and
+	 * are recalculated each time you call getBounds(). You can prevent recalculation on static objects by setting the
+	 * bounds explicitly:
+	 * 
+	 * 	var bounds = obj.getBounds();
+	 * 	obj.setBounds(bounds.x, bounds.y, bounds.width, bounds.height);
+	 * 	// getBounds will now use the set values, instead of recalculating
+	 * 
+	 * To reduce memory impact, the returned Rectangle instance may be reused internally; clone the instance or copy its
+	 * values if you need to retain it.
+	 * 
+	 * 	var myBounds = obj.getBounds().clone();
+	 * 	// OR:
+	 * 	myRect.copy(obj.getBounds());
+	 * 
+	 * @method getBounds
+	 * @return {Rectangle} A Rectangle instance representing the bounds, or null if bounds are not available for this
+	 * object.
+	 **/
+	p.getBounds = function() {
+		if (this._bounds) { return this._rectangle.copy(this._bounds); }
+		var cacheCanvas = this.cacheCanvas;
+		if (cacheCanvas) {
+			var scale = this._cacheScale;
+			return this._rectangle.setValues(this._cacheOffsetX, this._cacheOffsetY, cacheCanvas.width/scale, cacheCanvas.height/scale);
+		}
+		return null;
+	};
+
+	/**
+	 * Returns a rectangle representing this object's bounds in its parent's coordinate system (ie. with transformations applied).
+	 * Objects that have been cached will return the transformed bounds of the cache.
+	 * 
+	 * Not all display objects can calculate their own bounds (ex. Shape). For these objects, you can use 
+	 * {{#crossLink "DisplayObject/setBounds"}}{{/crossLink}} so that they are included when calculating Container
+	 * bounds.
+	 * 
+	 * To reduce memory impact, the returned Rectangle instance may be reused internally; clone the instance or copy its
+	 * values if you need to retain it.
+	 * 
+	 * Container instances calculate aggregate bounds for all children that return bounds via getBounds.
+	 * @method getTransformedBounds
+	 * @return {Rectangle} A Rectangle instance representing the bounds, or null if bounds are not available for this object.
+	 **/
+	p.getTransformedBounds = function() {
+		return this._getBounds();
+	};
+
+	/**
+	 * Allows you to manually specify the bounds of an object that either cannot calculate their own bounds (ex. Shape &
+	 * Text) for future reference, or so the object can be included in Container bounds. Manually set bounds will always
+	 * override calculated bounds.
+	 * 
+	 * The bounds should be specified in the object's local (untransformed) coordinates. For example, a Shape instance
+	 * with a 25px radius circle centered at 0,0 would have bounds of (-25, -25, 50, 50).
+	 * @method setBounds
+	 * @param {Number} x The x origin of the bounds. Pass null to remove the manual bounds.
+	 * @param {Number} y The y origin of the bounds.
+	 * @param {Number} width The width of the bounds.
+	 * @param {Number} height The height of the bounds.
+	 **/
+	p.setBounds = function(x, y, width, height) {
+		if (x == null) { this._bounds = x; return; }
+		this._bounds = (this._bounds || new createjs.Rectangle()).setValues(x, y, width, height);
+	};
+
+	/**
+	 * Returns a clone of this DisplayObject. Some properties that are specific to this instance's current context are
+	 * reverted to their defaults (for example .parent). Caches are not maintained across clones, and some elements
+	 * are copied by reference (masks, individual filter instances, hit area)
+	 * @method clone
+	 * @return {DisplayObject} A clone of the current DisplayObject instance.
+	 **/
+	p.clone = function() {
+		return this._cloneProps(new DisplayObject());
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[DisplayObject (name="+  this.name +")]";
+	};
+
+
+// private methods:
+	/**
+	 * Called before the object gets drawn and is a chance to ensure the display state of the object is correct.
+	 * Mostly used by {{#crossLink "MovieClip"}}{{/crossLink}} and {{#crossLink "BitmapText"}}{{/crossLink}} to
+	 * correct their internal state and children prior to being drawn.
+	 *
+	 * Is manually called via draw in a {{#crossLink "Stage"}}{{/crossLink}} but is automatically called when
+	 * present in a {{#crossLink "StageGL"}}{{/crossLink}} instance.
+	 *
+	 * @method _updateState
+	 * @default null
+	 */
+	p._updateState = null;
+
+	// separated so it can be used more easily in subclasses:
+	/**
+	 * @method _cloneProps
+	 * @param {DisplayObject} o The DisplayObject instance which will have properties from the current DisplayObject
+	 * instance copied into.
+	 * @return {DisplayObject} o
+	 * @protected
+	 **/
+	p._cloneProps = function(o) {
+		o.alpha = this.alpha;
+		o.mouseEnabled = this.mouseEnabled;
+		o.tickEnabled = this.tickEnabled;
+		o.name = this.name;
+		o.regX = this.regX;
+		o.regY = this.regY;
+		o.rotation = this.rotation;
+		o.scaleX = this.scaleX;
+		o.scaleY = this.scaleY;
+		o.shadow = this.shadow;
+		o.skewX = this.skewX;
+		o.skewY = this.skewY;
+		o.visible = this.visible;
+		o.x  = this.x;
+		o.y = this.y;
+		o.compositeOperation = this.compositeOperation;
+		o.snapToPixel = this.snapToPixel;
+		o.filters = this.filters==null?null:this.filters.slice(0);
+		o.mask = this.mask;
+		o.hitArea = this.hitArea;
+		o.cursor = this.cursor;
+		o._bounds = this._bounds;
+		return o;
+	};
+
+	/**
+	 * @method _applyShadow
+	 * @protected
+	 * @param {CanvasRenderingContext2D} ctx
+	 * @param {Shadow} shadow
+	 **/
+	p._applyShadow = function(ctx, shadow) {
+		shadow = shadow || Shadow.identity;
+		ctx.shadowColor = shadow.color;
+		ctx.shadowOffsetX = shadow.offsetX;
+		ctx.shadowOffsetY = shadow.offsetY;
+		ctx.shadowBlur = shadow.blur;
+	};
+
+	/**
+	 * @method _tick
+	 * @param {Object} evtObj An event object that will be dispatched to all tick listeners. This object is reused between dispatchers to reduce construction & GC costs.
+	 * @protected
+	 **/
+	p._tick = function(evtObj) {
+		// because tick can be really performance sensitive, check for listeners before calling dispatchEvent.
+		var ls = this._listeners;
+		if (ls && ls["tick"]) {
+			// reset & reuse the event object to avoid construction / GC costs:
+			evtObj.target = null;
+			evtObj.propagationStopped = evtObj.immediatePropagationStopped = false;
+			this.dispatchEvent(evtObj);
+		}
+	};
+
+	/**
+	 * @method _testHit
+	 * @protected
+	 * @param {CanvasRenderingContext2D} ctx
+	 * @return {Boolean}
+	 **/
+	p._testHit = function(ctx) {
+		try {
+			var hit = ctx.getImageData(0, 0, 1, 1).data[3] > 1;
+		} catch (e) {
+			if (!DisplayObject.suppressCrossDomainErrors) {
+				throw "An error has occurred. This is most likely due to security restrictions on reading canvas pixel data with local or cross-domain images.";
+			}
+		}
+		return hit;
+	};
+
+	/**
+	 * @method _getBounds
+	 * @param {Matrix2D} matrix
+	 * @param {Boolean} ignoreTransform If true, does not apply this object's transform.
+	 * @return {Rectangle}
+	 * @protected
+	 **/
+	p._getBounds = function(matrix, ignoreTransform){
+		return this._transformBounds(this.getBounds(), matrix, ignoreTransform);
+	};
+
+	/**
+	 * @method _transformBounds
+	 * @param {Rectangle} bounds
+	 * @param {Matrix2D} matrix
+	 * @param {Boolean} ignoreTransform
+	 * @return {Rectangle}
+	 * @protected
+	 **/
+	p._transformBounds = function(bounds, matrix, ignoreTransform) {
+		if (!bounds) { return bounds; }
+		var x = bounds.x, y = bounds.y, width = bounds.width, height = bounds.height, mtx = this._props.matrix;
+		mtx = ignoreTransform ? mtx.identity() : this.getMatrix(mtx);
+		
+		if (x || y) { mtx.appendTransform(0,0,1,1,0,0,0,-x,-y); } // TODO: simplify this.
+		if (matrix) { mtx.prependMatrix(matrix); }
+		
+		var x_a = width*mtx.a, x_b = width*mtx.b;
+		var y_c = height*mtx.c, y_d = height*mtx.d;
+		var tx = mtx.tx, ty = mtx.ty;
+		
+		var minX = tx, maxX = tx, minY = ty, maxY = ty;
+
+		if ((x = x_a + tx) < minX) { minX = x; } else if (x > maxX) { maxX = x; }
+		if ((x = x_a + y_c + tx) < minX) { minX = x; } else if (x > maxX) { maxX = x; }
+		if ((x = y_c + tx) < minX) { minX = x; } else if (x > maxX) { maxX = x; }
+
+		if ((y = x_b + ty) < minY) { minY = y; } else if (y > maxY) { maxY = y; }
+		if ((y = x_b + y_d + ty) < minY) { minY = y; } else if (y > maxY) { maxY = y; }
+		if ((y = y_d + ty) < minY) { minY = y; } else if (y > maxY) { maxY = y; }
+
+		return bounds.setValues(minX, minY, maxX-minX, maxY-minY);
+	};
+
+	/**
+	 * Indicates whether the display object has any mouse event listeners or a cursor.
+	 * @method _isMouseOpaque
+	 * @return {Boolean}
+	 * @protected
+	 **/
+	p._hasMouseEventListener = function() {
+		var this$1 = this;
+
+		var evts = DisplayObject._MOUSE_EVENTS;
+		for (var i= 0, l=evts.length; i<l; i++) {
+			if (this$1.hasEventListener(evts[i])) { return true; }
+		}
+		return !!this.cursor;
+	};
+
+	createjs.DisplayObject = createjs.promote(DisplayObject, "EventDispatcher");
+}());
+
+//##############################################################################
+// Container.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+	
+
+// constructor:
+/**
+ * A Container is a nestable display list that allows you to work with compound display elements. For  example you could
+ * group arm, leg, torso and head {{#crossLink "Bitmap"}}{{/crossLink}} instances together into a Person Container, and
+ * transform them as a group, while still being able to move the individual parts relative to each other. Children of
+ * containers have their <code>transform</code> and <code>alpha</code> properties concatenated with their parent
+ * Container.
+ *
+ * For example, a {{#crossLink "Shape"}}{{/crossLink}} with x=100 and alpha=0.5, placed in a Container with <code>x=50</code>
+ * and <code>alpha=0.7</code> will be rendered to the canvas at <code>x=150</code> and <code>alpha=0.35</code>.
+ * Containers have some overhead, so you generally shouldn't create a Container to hold a single child.
+ *
+ * <h4>Example</h4>
+ *
+ *      var container = new createjs.Container();
+ *      container.addChild(bitmapInstance, shapeInstance);
+ *      container.x = 100;
+ *
+ * @class Container
+ * @extends DisplayObject
+ * @constructor
+ **/
+	function Container() {
+		this.DisplayObject_constructor();
+		
+	// public properties:
+		/**
+		 * The array of children in the display list. You should usually use the child management methods such as
+		 * {{#crossLink "Container/addChild"}}{{/crossLink}}, {{#crossLink "Container/removeChild"}}{{/crossLink}},
+		 * {{#crossLink "Container/swapChildren"}}{{/crossLink}}, etc, rather than accessing this directly, but it is
+		 * included for advanced uses.
+		 * @property children
+		 * @type Array
+		 * @default null
+		 **/
+		this.children = [];
+		
+		/**
+		 * Indicates whether the children of this container are independently enabled for mouse/pointer interaction.
+		 * If false, the children will be aggregated under the container - for example, a click on a child shape would
+		 * trigger a click event on the container.
+		 * @property mouseChildren
+		 * @type Boolean
+		 * @default true
+		 **/
+		this.mouseChildren = true;
+		
+		/**
+		 * If false, the tick will not be propagated to children of this Container. This can provide some performance benefits.
+		 * In addition to preventing the "tick" event from being dispatched, it will also prevent tick related updates
+		 * on some display objects (ex. Sprite & MovieClip frame advancing, DOMElement visibility handling).
+		 * @property tickChildren
+		 * @type Boolean
+		 * @default true
+		 **/
+		this.tickChildren = true;
+	}
+	var p = createjs.extend(Container, createjs.DisplayObject);
+	
+	
+// getter / setters:
+	/**
+	 * Use the {{#crossLink "Container/numChildren:property"}}{{/crossLink}} property instead.
+	 * @method _getNumChildren
+	 * @protected
+	 * @return {Number}
+	 **/
+	p._getNumChildren = function() {
+		return this.children.length;
+	};
+	// Container.getNumChildren is @deprecated. Remove for 1.1+
+	p.getNumChildren = createjs.deprecate(p._getNumChildren, "Container.getNumChildren");
+
+	/**
+	 * Returns the number of children in the container.
+	 * @property numChildren
+	 * @type {Number}
+	 * @readonly
+	 **/
+	try {
+		Object.defineProperties(p, {
+			numChildren: { get: p._getNumChildren }
+		});
+	} catch (e) {}
+	
+
+// public methods:
+	/**
+	 * Constructor alias for backwards compatibility. This method will be removed in future versions.
+	 * Subclasses should be updated to use {{#crossLink "Utility Methods/extends"}}{{/crossLink}}.
+	 * @method initialize
+	 * @deprecated in favour of `createjs.promote()`
+	 **/
+	p.initialize = Container; // TODO: deprecated.
+	
+	/**
+	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
+	 * This does not account for whether it would be visible within the boundaries of the stage.
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method isVisible
+	 * @return {Boolean} Boolean indicating whether the display object would be visible if drawn to a canvas
+	 **/
+	p.isVisible = function() {
+		var hasContent = this.cacheCanvas || this.children.length;
+		return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0 && hasContent);
+	};
+
+	/**
+	 * Draws the display object into the specified context ignoring its visible, alpha, shadow, and transform.
+	 * Returns true if the draw was handled (useful for overriding functionality).
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Boolean} [ignoreCache=false] Indicates whether the draw operation should ignore any current cache.
+	 * For example, used for drawing the cache (to prevent it from simply drawing an existing cache back
+	 * into itself).
+	 **/
+	p.draw = function(ctx, ignoreCache) {
+		if (this.DisplayObject_draw(ctx, ignoreCache)) { return true; }
+		
+		// this ensures we don't have issues with display list changes that occur during a draw:
+		var list = this.children.slice();
+		for (var i=0,l=list.length; i<l; i++) {
+			var child = list[i];
+			if (!child.isVisible()) { continue; }
+			
+			// draw the child:
+			ctx.save();
+			child.updateContext(ctx);
+			child.draw(ctx);
+			ctx.restore();
+		}
+		return true;
+	};
+	
+	/**
+	 * Adds a child to the top of the display list.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 * 		container.addChild(bitmapInstance);
+	 *
+	 * You can also add multiple children at once:
+	 *
+	 * 		container.addChild(bitmapInstance, shapeInstance, textInstance);
+	 *
+	 * @method addChild
+	 * @param {DisplayObject} child The display object to add.
+	 * @return {DisplayObject} The child that was added, or the last child if multiple children were added.
+	 **/
+	p.addChild = function(child) {
+		var arguments$1 = arguments;
+		var this$1 = this;
+
+		if (child == null) { return child; }
+		var l = arguments.length;
+		if (l > 1) {
+			for (var i=0; i<l; i++) { this$1.addChild(arguments$1[i]); }
+			return arguments[l-1];
+		}
+		// Note: a lot of duplication with addChildAt, but push is WAY faster than splice.
+		var par=child.parent, silent = par === this;
+		par&&par._removeChildAt(createjs.indexOf(par.children, child), silent);
+		child.parent = this;
+		this.children.push(child);
+		if (!silent) { child.dispatchEvent("added"); }
+		return child;
+	};
+
+	/**
+	 * Adds a child to the display list at the specified index, bumping children at equal or greater indexes up one, and
+	 * setting its parent to this Container.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      addChildAt(child1, index);
+	 *
+	 * You can also add multiple children, such as:
+	 *
+	 *      addChildAt(child1, child2, ..., index);
+	 *
+	 * The index must be between 0 and numChildren. For example, to add myShape under otherShape in the display list,
+	 * you could use:
+	 *
+	 *      container.addChildAt(myShape, container.getChildIndex(otherShape));
+	 *
+	 * This would also bump otherShape's index up by one. Fails silently if the index is out of range.
+	 *
+	 * @method addChildAt
+	 * @param {DisplayObject} child The display object to add.
+	 * @param {Number} index The index to add the child at.
+	 * @return {DisplayObject} Returns the last child that was added, or the last child if multiple children were added.
+	 **/
+	p.addChildAt = function(child, index) {
+		var arguments$1 = arguments;
+		var this$1 = this;
+
+		var l = arguments.length;
+		var indx = arguments[l-1]; // can't use the same name as the index param or it replaces arguments[1]
+		if (indx < 0 || indx > this.children.length) { return arguments[l-2]; }
+		if (l > 2) {
+			for (var i=0; i<l-1; i++) { this$1.addChildAt(arguments$1[i], indx+i); }
+			return arguments[l-2];
+		}
+		var par=child.parent, silent = par === this;
+		par&&par._removeChildAt(createjs.indexOf(par.children, child), silent);
+		child.parent = this;
+		this.children.splice(index, 0, child);
+		if (!silent) { child.dispatchEvent("added"); }
+		return child;
+	};
+
+	/**
+	 * Removes the specified child from the display list. Note that it is faster to use removeChildAt() if the index is
+	 * already known.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      container.removeChild(child);
+	 *
+	 * You can also remove multiple children:
+	 *
+	 *      removeChild(child1, child2, ...);
+	 *
+	 * Returns true if the child (or children) was removed, or false if it was not in the display list.
+	 * @method removeChild
+	 * @param {DisplayObject} child The child to remove.
+	 * @return {Boolean} true if the child (or children) was removed, or false if it was not in the display list.
+	 **/
+	p.removeChild = function(child) {
+		var arguments$1 = arguments;
+		var this$1 = this;
+
+		var l = arguments.length;
+		if (l > 1) {
+			var good = true;
+			for (var i=0; i<l; i++) { good = good && this$1.removeChild(arguments$1[i]); }
+			return good;
+		}
+		return this._removeChildAt(createjs.indexOf(this.children, child));
+	};
+
+	/**
+	 * Removes the child at the specified index from the display list, and sets its parent to null.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      container.removeChildAt(2);
+	 *
+	 * You can also remove multiple children:
+	 *
+	 *      container.removeChild(2, 7, ...)
+	 *
+	 * Returns true if the child (or children) was removed, or false if any index was out of range.
+	 * @method removeChildAt
+	 * @param {Number} index The index of the child to remove.
+	 * @return {Boolean} true if the child (or children) was removed, or false if any index was out of range.
+	 **/
+	p.removeChildAt = function(index) {
+		var arguments$1 = arguments;
+		var this$1 = this;
+
+		var l = arguments.length;
+		if (l > 1) {
+			var a = [];
+			for (var i=0; i<l; i++) { a[i] = arguments$1[i]; }
+			a.sort(function(a, b) { return b-a; });
+			var good = true;
+			for (var i=0; i<l; i++) { good = good && this$1._removeChildAt(a[i]); }
+			return good;
+		}
+		return this._removeChildAt(index);
+	};
+
+	/**
+	 * Removes all children from the display list.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 * 	container.removeAllChildren();
+	 *
+	 * @method removeAllChildren
+	 **/
+	p.removeAllChildren = function() {
+		var this$1 = this;
+
+		var kids = this.children;
+		while (kids.length) { this$1._removeChildAt(0); }
+	};
+
+	/**
+	 * Returns the child at the specified index.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      container.getChildAt(2);
+	 *
+	 * @method getChildAt
+	 * @param {Number} index The index of the child to return.
+	 * @return {DisplayObject} The child at the specified index. Returns null if there is no child at the index.
+	 **/
+	p.getChildAt = function(index) {
+		return this.children[index];
+	};
+	
+	/**
+	 * Returns the child with the specified name.
+	 * @method getChildByName
+	 * @param {String} name The name of the child to return.
+	 * @return {DisplayObject} The child with the specified name.
+	 **/
+	p.getChildByName = function(name) {
+		var kids = this.children;
+		for (var i=0,l=kids.length;i<l;i++) {
+			if(kids[i].name == name) { return kids[i]; }
+		}
+		return null;
+	};
+
+	/**
+	 * Performs an array sort operation on the child list.
+	 *
+	 * <h4>Example: Display children with a higher y in front.</h4>
+	 * 
+	 *      var sortFunction = function(obj1, obj2, options) {
+	 *          if (obj1.y > obj2.y) { return 1; }
+	 *          if (obj1.y < obj2.y) { return -1; }
+	 *          return 0;
+	 *      }
+	 *      container.sortChildren(sortFunction);
+	 *
+	 * @method sortChildren
+	 * @param {Function} sortFunction the function to use to sort the child list. See JavaScript's <code>Array.sort</code>
+	 * documentation for details.
+	 **/
+	p.sortChildren = function(sortFunction) {
+		this.children.sort(sortFunction);
+	};
+
+	/**
+	 * Returns the index of the specified child in the display list, or -1 if it is not in the display list.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      var index = container.getChildIndex(child);
+	 *
+	 * @method getChildIndex
+	 * @param {DisplayObject} child The child to return the index of.
+	 * @return {Number} The index of the specified child. -1 if the child is not found.
+	 **/
+	p.getChildIndex = function(child) {
+		return createjs.indexOf(this.children, child);
+	};
+	
+	/**
+	 * Swaps the children at the specified indexes. Fails silently if either index is out of range.
+	 * @method swapChildrenAt
+	 * @param {Number} index1
+	 * @param {Number} index2
+	 **/
+	p.swapChildrenAt = function(index1, index2) {
+		var kids = this.children;
+		var o1 = kids[index1];
+		var o2 = kids[index2];
+		if (!o1 || !o2) { return; }
+		kids[index1] = o2;
+		kids[index2] = o1;
+	};
+	
+	/**
+	 * Swaps the specified children's depth in the display list. Fails silently if either child is not a child of this
+	 * Container.
+	 * @method swapChildren
+	 * @param {DisplayObject} child1
+	 * @param {DisplayObject} child2
+	 **/
+	p.swapChildren = function(child1, child2) {
+		var kids = this.children;
+		var index1,index2;
+		for (var i=0,l=kids.length;i<l;i++) {
+			if (kids[i] == child1) { index1 = i; }
+			if (kids[i] == child2) { index2 = i; }
+			if (index1 != null && index2 != null) { break; }
+		}
+		if (i==l) { return; } // TODO: throw error?
+		kids[index1] = child2;
+		kids[index2] = child1;
+	};
+	
+	/**
+	 * Changes the depth of the specified child. Fails silently if the child is not a child of this container, or the index is out of range.
+	 * @param {DisplayObject} child
+	 * @param {Number} index  
+	 * @method setChildIndex
+	 **/
+	p.setChildIndex = function(child, index) {
+		var kids = this.children, l=kids.length;
+		if (child.parent != this || index < 0 || index >= l) { return; }
+		for (var i=0;i<l;i++) {
+			if (kids[i] == child) { break; }
+		}
+		if (i==l || i == index) { return; }
+		kids.splice(i,1);
+		kids.splice(index,0,child);
+	};
+
+	/**
+	 * Returns true if the specified display object either is this container or is a descendent (child, grandchild, etc)
+	 * of this container.
+	 * @method contains
+	 * @param {DisplayObject} child The DisplayObject to be checked.
+	 * @return {Boolean} true if the specified display object either is this container or is a descendent.
+	 **/
+	p.contains = function(child) {
+		var this$1 = this;
+
+		while (child) {
+			if (child == this$1) { return true; }
+			child = child.parent;
+		}
+		return false;
+	};
+
+	/**
+	 * Tests whether the display object intersects the specified local point (ie. draws a pixel with alpha > 0 at the
+	 * specified position). This ignores the alpha, shadow and compositeOperation of the display object, and all
+	 * transform properties including regX/Y.
+	 * @method hitTest
+	 * @param {Number} x The x position to check in the display object's local coordinates.
+	 * @param {Number} y The y position to check in the display object's local coordinates.
+	 * @return {Boolean} A Boolean indicating whether there is a visible section of a DisplayObject that overlaps the specified
+	 * coordinates.
+	 **/
+	p.hitTest = function(x, y) {
+		// TODO: optimize to use the fast cache check where possible.
+		return (this.getObjectUnderPoint(x, y) != null);
+	};
+
+	/**
+	 * Returns an array of all display objects under the specified coordinates that are in this container's display
+	 * list. This routine ignores any display objects with {{#crossLink "DisplayObject/mouseEnabled:property"}}{{/crossLink}}
+	 * set to `false`. The array will be sorted in order of visual depth, with the top-most display object at index 0.
+	 * This uses shape based hit detection, and can be an expensive operation to run, so it is best to use it carefully.
+	 * For example, if testing for objects under the mouse, test on tick (instead of on {{#crossLink "DisplayObject/mousemove:event"}}{{/crossLink}}),
+	 * and only if the mouse's position has changed.
+	 * 
+	 * <ul>
+	 *     <li>By default (mode=0) this method evaluates all display objects.</li>
+	 *     <li>By setting the `mode` parameter to `1`, the {{#crossLink "DisplayObject/mouseEnabled:property"}}{{/crossLink}}
+	 * 		and {{#crossLink "mouseChildren:property"}}{{/crossLink}} properties will be respected.</li>
+	 * 	   <li>Setting the `mode` to `2` additionally excludes display objects that do not have active mouse event
+	 * 	   	listeners or a {{#crossLink "DisplayObject:cursor:property"}}{{/crossLink}} property. That is, only objects
+	 * 	   	that would normally intercept mouse interaction will be included. This can significantly improve performance
+	 * 	   	in some cases by reducing the number of display objects that need to be tested.</li>
+	 * </li>
+	 * 
+	 * This method accounts for both {{#crossLink "DisplayObject/hitArea:property"}}{{/crossLink}} and {{#crossLink "DisplayObject/mask:property"}}{{/crossLink}}.
+	 * @method getObjectsUnderPoint
+	 * @param {Number} x The x position in the container to test.
+	 * @param {Number} y The y position in the container to test.
+	 * @param {Number} [mode=0] The mode to use to determine which display objects to include. 0-all, 1-respect mouseEnabled/mouseChildren, 2-only mouse opaque objects.
+	 * @return {Array} An Array of DisplayObjects under the specified coordinates.
+	 **/
+	p.getObjectsUnderPoint = function(x, y, mode) {
+		var arr = [];
+		var pt = this.localToGlobal(x, y);
+		this._getObjectsUnderPoint(pt.x, pt.y, arr, mode>0, mode==1);
+		return arr;
+	};
+
+	/**
+	 * Similar to {{#crossLink "Container/getObjectsUnderPoint"}}{{/crossLink}}, but returns only the top-most display
+	 * object. This runs significantly faster than <code>getObjectsUnderPoint()</code>, but is still potentially an expensive
+	 * operation. See {{#crossLink "Container/getObjectsUnderPoint"}}{{/crossLink}} for more information.
+	 * @method getObjectUnderPoint
+	 * @param {Number} x The x position in the container to test.
+	 * @param {Number} y The y position in the container to test.
+	 * @param {Number} mode The mode to use to determine which display objects to include.  0-all, 1-respect mouseEnabled/mouseChildren, 2-only mouse opaque objects.
+	 * @return {DisplayObject} The top-most display object under the specified coordinates.
+	 **/
+	p.getObjectUnderPoint = function(x, y, mode) {
+		var pt = this.localToGlobal(x, y);
+		return this._getObjectsUnderPoint(pt.x, pt.y, null, mode>0, mode==1);
+	};
+	
+	/**
+	 * Docced in superclass.
+	 */
+	p.getBounds = function() {
+		return this._getBounds(null, true);
+	};
+	
+	
+	/**
+	 * Docced in superclass.
+	 */
+	p.getTransformedBounds = function() {
+		return this._getBounds();
+	};
+
+	/**
+	 * Returns a clone of this Container. Some properties that are specific to this instance's current context are
+	 * reverted to their defaults (for example .parent).
+	 * @method clone
+	 * @param {Boolean} [recursive=false] If true, all of the descendants of this container will be cloned recursively. If false, the
+	 * properties of the container will be cloned, but the new instance will not have any children.
+	 * @return {Container} A clone of the current Container instance.
+	 **/
+	p.clone = function(recursive) {
+		var o = this._cloneProps(new Container());
+		if (recursive) { this._cloneChildren(o); }
+		return o;
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Container (name="+  this.name +")]";
+	};
+
+
+// private methods:
+	/**
+	 * @method _tick
+	 * @param {Object} evtObj An event object that will be dispatched to all tick listeners. This object is reused between dispatchers to reduce construction & GC costs.
+	 * @protected
+	 **/
+	p._tick = function(evtObj) {
+		var this$1 = this;
+
+		if (this.tickChildren) {
+			for (var i=this.children.length-1; i>=0; i--) {
+				var child = this$1.children[i];
+				if (child.tickEnabled && child._tick) { child._tick(evtObj); }
+			}
+		}
+		this.DisplayObject__tick(evtObj);
+	};
+	
+	/**
+	 * Recursively clones all children of this container, and adds them to the target container.
+	 * @method cloneChildren
+	 * @protected
+	 * @param {Container} o The target container.
+	 **/
+	p._cloneChildren = function(o) {
+		var this$1 = this;
+
+		if (o.children.length) { o.removeAllChildren(); }
+		var arr = o.children;
+		for (var i=0, l=this.children.length; i<l; i++) {
+			var clone = this$1.children[i].clone(true);
+			clone.parent = o;
+			arr.push(clone);
+		}
+	};
+	
+	/**
+	 * Removes the child at the specified index from the display list, and sets its parent to null.
+	 * Used by `removeChildAt`, `addChild`, and `addChildAt`.
+	 * @method removeChildAt
+	 * @protected
+	 * @param {Number} index The index of the child to remove.
+	 * @param {Boolean} [silent] Prevents dispatch of `removed` event if true.
+	 * @return {Boolean} true if the child (or children) was removed, or false if any index was out of range.
+	 **/
+	p._removeChildAt = function(index, silent) {
+		if (index < 0 || index > this.children.length-1) { return false; }
+		var child = this.children[index];
+		if (child) { child.parent = null; }
+		this.children.splice(index, 1);
+		if (!silent) { child.dispatchEvent("removed"); }
+		return true;
+	};
+
+	/**
+	 * @method _getObjectsUnderPoint
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Array} arr
+	 * @param {Boolean} mouse If true, it will respect mouse interaction properties like mouseEnabled, mouseChildren, and active listeners.
+	 * @param {Boolean} activeListener If true, there is an active mouse event listener on a parent object.
+	 * @param {Number} currentDepth Indicates the current depth of the search.
+	 * @return {DisplayObject}
+	 * @protected
+	 **/
+	p._getObjectsUnderPoint = function(x, y, arr, mouse, activeListener, currentDepth) {
+		var this$1 = this;
+
+		currentDepth = currentDepth || 0;
+		if (!currentDepth && !this._testMask(this, x, y)) { return null; }
+		var mtx, ctx = createjs.DisplayObject._hitTestContext;
+		activeListener = activeListener || (mouse&&this._hasMouseEventListener());
+
+		// draw children one at a time, and check if we get a hit:
+		var children = this.children, l = children.length;
+		for (var i=l-1; i>=0; i--) {
+			var child = children[i];
+			var hitArea = child.hitArea;
+			if (!child.visible || (!hitArea && !child.isVisible()) || (mouse && !child.mouseEnabled)) { continue; }
+			if (!hitArea && !this$1._testMask(child, x, y)) { continue; }
+			
+			// if a child container has a hitArea then we only need to check its hitAre2a, so we can treat it as a normal DO:
+			if (!hitArea && child instanceof Container) {
+				var result = child._getObjectsUnderPoint(x, y, arr, mouse, activeListener, currentDepth+1);
+				if (!arr && result) { return (mouse && !this$1.mouseChildren) ? this$1 : result; }
+			} else {
+				if (mouse && !activeListener && !child._hasMouseEventListener()) { continue; }
+				
+				// TODO: can we pass displayProps forward, to avoid having to calculate this backwards every time? It's kind of a mixed bag. When we're only hunting for DOs with event listeners, it may not make sense.
+				var props = child.getConcatenatedDisplayProps(child._props);
+				mtx = props.matrix;
+				
+				if (hitArea) {
+					mtx.appendMatrix(hitArea.getMatrix(hitArea._props.matrix));
+					props.alpha = hitArea.alpha;
+				}
+				
+				ctx.globalAlpha = props.alpha;
+				ctx.setTransform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx-x, mtx.ty-y);
+				(hitArea||child).draw(ctx);
+				if (!this$1._testHit(ctx)) { continue; }
+				ctx.setTransform(1, 0, 0, 1, 0, 0);
+				ctx.clearRect(0, 0, 2, 2);
+				if (arr) { arr.push(child); }
+				else { return (mouse && !this$1.mouseChildren) ? this$1 : child; }
+			}
+		}
+		return null;
+	};
+	
+	/**
+	 * @method _testMask
+	 * @param {DisplayObject} target
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @return {Boolean} Indicates whether the x/y is within the masked region.
+	 * @protected
+	 **/
+	p._testMask = function(target, x, y) {
+		var mask = target.mask;
+		if (!mask || !mask.graphics || mask.graphics.isEmpty()) { return true; }
+		
+		var mtx = this._props.matrix, parent = target.parent;
+		mtx = parent ? parent.getConcatenatedMatrix(mtx) : mtx.identity();
+		mtx = mask.getMatrix(mask._props.matrix).prependMatrix(mtx);
+		
+		var ctx = createjs.DisplayObject._hitTestContext;
+		ctx.setTransform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx-x, mtx.ty-y);
+		
+		// draw the mask as a solid fill:
+		mask.graphics.drawAsPath(ctx);
+		ctx.fillStyle = "#000";
+		ctx.fill();
+		
+		if (!this._testHit(ctx)) { return false; }
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		ctx.clearRect(0, 0, 2, 2);
+		
+		return true;
+	};
+	
+	/**
+	 * @method _getBounds
+	 * @param {Matrix2D} matrix
+	 * @param {Boolean} ignoreTransform If true, does not apply this object's transform.
+	 * @return {Rectangle}
+	 * @protected
+	 **/
+	p._getBounds = function(matrix, ignoreTransform) {
+		var this$1 = this;
+
+		var bounds = this.DisplayObject_getBounds();
+		if (bounds) { return this._transformBounds(bounds, matrix, ignoreTransform); }
+		
+		var mtx = this._props.matrix;
+		mtx = ignoreTransform ? mtx.identity() : this.getMatrix(mtx);
+		if (matrix) { mtx.prependMatrix(matrix); }
+		
+		var l = this.children.length, rect=null;
+		for (var i=0; i<l; i++) {
+			var child = this$1.children[i];
+			if (!child.visible || !(bounds = child._getBounds(mtx))) { continue; }
+			if (rect) { rect.extend(bounds.x, bounds.y, bounds.width, bounds.height); }
+			else { rect = bounds.clone(); }
+		}
+		return rect;
+	};
+
+
+	createjs.Container = createjs.promote(Container, "DisplayObject");
+}());
+
+//##############################################################################
+// Stage.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * A stage is the root level {{#crossLink "Container"}}{{/crossLink}} for a display list. Each time its {{#crossLink "Stage/tick"}}{{/crossLink}}
+	 * method is called, it will render its display list to its target canvas.
+	 *
+	 * <h4>Example</h4>
+	 * This example creates a stage, adds a child to it, then uses {{#crossLink "Ticker"}}{{/crossLink}} to update the child
+	 * and redraw the stage using {{#crossLink "Stage/update"}}{{/crossLink}}.
+	 *
+	 *      var stage = new createjs.Stage("canvasElementId");
+	 *      var image = new createjs.Bitmap("imagePath.png");
+	 *      stage.addChild(image);
+	 *      createjs.Ticker.addEventListener("tick", handleTick);
+	 *      function handleTick(event) {
+	 *          image.x += 10;
+	 *          stage.update();
+	 *      }
+	 *
+	 * @class Stage
+	 * @extends Container
+	 * @constructor
+	 * @param {HTMLCanvasElement | String | Object} canvas A canvas object that the Stage will render to, or the string id
+	 * of a canvas object in the current document.
+	 **/
+	function Stage(canvas) {
+		this.Container_constructor();
+	
+	
+	// public properties:
+		/**
+		 * Indicates whether the stage should automatically clear the canvas before each render. You can set this to <code>false</code>
+		 * to manually control clearing (for generative art, or when pointing multiple stages at the same canvas for
+		 * example).
+		 *
+		 * <h4>Example</h4>
+		 *
+		 *      var stage = new createjs.Stage("canvasId");
+		 *      stage.autoClear = false;
+		 *
+		 * @property autoClear
+		 * @type Boolean
+		 * @default true
+		 **/
+		this.autoClear = true;
+	
+		/**
+		 * The canvas the stage will render to. Multiple stages can share a single canvas, but you must disable autoClear for all but the
+		 * first stage that will be ticked (or they will clear each other's render).
+		 *
+		 * When changing the canvas property you must disable the events on the old canvas, and enable events on the
+		 * new canvas or mouse events will not work as expected. For example:
+		 *
+		 *      myStage.enableDOMEvents(false);
+		 *      myStage.canvas = anotherCanvas;
+		 *      myStage.enableDOMEvents(true);
+		 *
+		 * @property canvas
+		 * @type HTMLCanvasElement | Object
+		 **/
+		this.canvas = (typeof canvas == "string") ? document.getElementById(canvas) : canvas;
+	
+		/**
+		 * The current mouse X position on the canvas. If the mouse leaves the canvas, this will indicate the most recent
+		 * position over the canvas, and mouseInBounds will be set to false.
+		 * @property mouseX
+		 * @type Number
+		 * @readonly
+		 **/
+		this.mouseX = 0;
+	
+		/**
+		 * The current mouse Y position on the canvas. If the mouse leaves the canvas, this will indicate the most recent
+		 * position over the canvas, and mouseInBounds will be set to false.
+		 * @property mouseY
+		 * @type Number
+		 * @readonly
+		 **/
+		this.mouseY = 0;
+	
+		/**
+		 * Specifies the area of the stage to affect when calling update. This can be use to selectively
+		 * re-draw specific regions of the canvas. If null, the whole canvas area is drawn.
+		 * @property drawRect
+		 * @type {Rectangle}
+		 */
+		this.drawRect = null;
+	
+		/**
+		 * Indicates whether display objects should be rendered on whole pixels. You can set the
+		 * {{#crossLink "DisplayObject/snapToPixel"}}{{/crossLink}} property of
+		 * display objects to false to enable/disable this behaviour on a per instance basis.
+		 * @property snapToPixelEnabled
+		 * @type Boolean
+		 * @default false
+		 **/
+		this.snapToPixelEnabled = false;
+	
+		/**
+		 * Indicates whether the mouse is currently within the bounds of the canvas.
+		 * @property mouseInBounds
+		 * @type Boolean
+		 * @default false
+		 **/
+		this.mouseInBounds = false;
+	
+		/**
+		 * If true, tick callbacks will be called on all display objects on the stage prior to rendering to the canvas.
+		 * @property tickOnUpdate
+		 * @type Boolean
+		 * @default true
+		 **/
+		this.tickOnUpdate = true;
+	
+		/**
+		 * If true, mouse move events will continue to be called when the mouse leaves the target canvas. See
+		 * {{#crossLink "Stage/mouseInBounds:property"}}{{/crossLink}}, and {{#crossLink "MouseEvent"}}{{/crossLink}}
+		 * x/y/rawX/rawY.
+		 * @property mouseMoveOutside
+		 * @type Boolean
+		 * @default false
+		 **/
+		this.mouseMoveOutside = false;
+		
+		
+		/**
+		 * Prevents selection of other elements in the html page if the user clicks and drags, or double clicks on the canvas.
+		 * This works by calling `preventDefault()` on any mousedown events (or touch equivalent) originating on the canvas.
+		 * @property preventSelection
+		 * @type Boolean
+		 * @default true
+		 **/
+		this.preventSelection = true;
+	
+		/**
+		 * The hitArea property is not supported for Stage.
+		 * @property hitArea
+		 * @type {DisplayObject}
+		 * @default null
+		 */
+		 
+		 
+	// private properties:
+		/**
+		 * Holds objects with data for each active pointer id. Each object has the following properties:
+		 * x, y, event, target, overTarget, overX, overY, inBounds, posEvtObj (native event that last updated position)
+		 * @property _pointerData
+		 * @type {Object}
+		 * @private
+		 */
+		this._pointerData = {};
+	
+		/**
+		 * Number of active pointers.
+		 * @property _pointerCount
+		 * @type {Object}
+		 * @private
+		 */
+		this._pointerCount = 0;
+	
+		/**
+		 * The ID of the primary pointer.
+		 * @property _primaryPointerID
+		 * @type {Object}
+		 * @private
+		 */
+		this._primaryPointerID = null;
+	
+		/**
+		 * @property _mouseOverIntervalID
+		 * @protected
+		 * @type Number
+		 **/
+		this._mouseOverIntervalID = null;
+		
+		/**
+		 * @property _nextStage
+		 * @protected
+		 * @type Stage
+		 **/
+		this._nextStage = null;
+		
+		/**
+		 * @property _prevStage
+		 * @protected
+		 * @type Stage
+		 **/
+		this._prevStage = null;
+		
+		
+	// initialize:
+		this.enableDOMEvents(true);
+	}
+	var p = createjs.extend(Stage, createjs.Container);
+
+// events:
+	/**
+	 * Dispatched when the user moves the mouse over the canvas.
+	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
+	 * @event stagemousemove
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * Dispatched when the user presses their left mouse button on the canvas. See the {{#crossLink "MouseEvent"}}{{/crossLink}}
+	 * class for a listing of event properties.
+	 * @event stagemousedown
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * Dispatched when the user the user presses somewhere on the stage, then releases the mouse button anywhere that the page can detect it (this varies slightly between browsers).
+	 * You can use {{#crossLink "Stage/mouseInBounds:property"}}{{/crossLink}} to check whether the mouse is currently within the stage bounds.
+	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
+	 * @event stagemouseup
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * Dispatched when the mouse moves from within the canvas area (mouseInBounds == true) to outside it (mouseInBounds == false).
+	 * This is currently only dispatched for mouse input (not touch). See the {{#crossLink "MouseEvent"}}{{/crossLink}}
+	 * class for a listing of event properties.
+	 * @event mouseleave
+	 * @since 0.7.0
+	 */
+
+	/**
+	 * Dispatched when the mouse moves into the canvas area (mouseInBounds == false) from outside it (mouseInBounds == true).
+	 * This is currently only dispatched for mouse input (not touch). See the {{#crossLink "MouseEvent"}}{{/crossLink}}
+	 * class for a listing of event properties.
+	 * @event mouseenter
+	 * @since 0.7.0
+	 */
+	 
+	/**
+	 * Dispatched each update immediately before the tick event is propagated through the display list.
+	 * You can call preventDefault on the event object to cancel propagating the tick event.
+	 * @event tickstart
+	 * @since 0.7.0
+	 */
+	 
+	/**
+	 * Dispatched each update immediately after the tick event is propagated through the display list. Does not fire if
+	 * tickOnUpdate is false. Precedes the "drawstart" event.
+	 * @event tickend
+	 * @since 0.7.0
+	 */
+	 
+	/**
+	 * Dispatched each update immediately before the canvas is cleared and the display list is drawn to it.
+	 * You can call preventDefault on the event object to cancel the draw.
+	 * @event drawstart
+	 * @since 0.7.0
+	 */
+	 
+	/**
+	 * Dispatched each update immediately after the display list is drawn to the canvas and the canvas context is restored.
+	 * @event drawend
+	 * @since 0.7.0
+	 */
+
+	 
+// getter / setters:
+	/**
+	 * Specifies a target stage that will have mouse / touch interactions relayed to it after this stage handles them.
+	 * This can be useful in cases where you have multiple layered canvases and want user interactions
+	 * events to pass through. For example, this would relay mouse events from topStage to bottomStage:
+	 *
+	 *      topStage.nextStage = bottomStage;
+	 *
+	 * To disable relaying, set nextStage to null.
+	 * 
+	 * MouseOver, MouseOut, RollOver, and RollOut interactions are also passed through using the mouse over settings
+	 * of the top-most stage, but are only processed if the target stage has mouse over interactions enabled.
+	 * Considerations when using roll over in relay targets:<OL>
+	 * <LI> The top-most (first) stage must have mouse over interactions enabled (via enableMouseOver)</LI>
+	 * <LI> All stages that wish to participate in mouse over interaction must enable them via enableMouseOver</LI>
+	 * <LI> All relay targets will share the frequency value of the top-most stage</LI>
+	 * </OL>
+	 * To illustrate, in this example the targetStage would process mouse over interactions at 10hz (despite passing
+	 * 30 as it's desired frequency):
+	 * 	topStage.nextStage = targetStage;
+	 * 	topStage.enableMouseOver(10);
+	 * 	targetStage.enableMouseOver(30);
+	 * 
+	 * If the target stage's canvas is completely covered by this stage's canvas, you may also want to disable its
+	 * DOM events using:
+	 * 
+	 *	targetStage.enableDOMEvents(false);
+	 * 
+	 * @property nextStage
+	 * @type {Stage}
+	 **/
+	p._get_nextStage = function() {
+		return this._nextStage;
+	};
+	p._set_nextStage = function(value) {
+		if (this._nextStage) { this._nextStage._prevStage = null; }
+		if (value) { value._prevStage = this; }
+		this._nextStage = value;
+	};
+	
+	try {
+		Object.defineProperties(p, {
+			nextStage: { get: p._get_nextStage, set: p._set_nextStage }
+		});
+	} catch (e) {} // TODO: use Log
+
+
+// public methods:
+	/**
+	 * Each time the update method is called, the stage will call {{#crossLink "Stage/tick"}}{{/crossLink}}
+	 * unless {{#crossLink "Stage/tickOnUpdate:property"}}{{/crossLink}} is set to false,
+	 * and then render the display list to the canvas.
+	 *
+	 * @method update
+	 * @param {Object} [props] Props object to pass to `tick()`. Should usually be a {{#crossLink "Ticker"}}{{/crossLink}} event object, or similar object with a delta property.
+	 **/
+	p.update = function(props) {
+		if (!this.canvas) { return; }
+		if (this.tickOnUpdate) { this.tick(props); }
+		if (this.dispatchEvent("drawstart", false, true) === false) { return; }
+		createjs.DisplayObject._snapToPixelEnabled = this.snapToPixelEnabled;
+		var r = this.drawRect, ctx = this.canvas.getContext("2d");
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		if (this.autoClear) {
+			if (r) { ctx.clearRect(r.x, r.y, r.width, r.height); }
+			else { ctx.clearRect(0, 0, this.canvas.width+1, this.canvas.height+1); }
+		}
+		ctx.save();
+		if (this.drawRect) {
+			ctx.beginPath();
+			ctx.rect(r.x, r.y, r.width, r.height);
+			ctx.clip();
+		}
+		this.updateContext(ctx);
+		this.draw(ctx, false);
+		ctx.restore();
+		this.dispatchEvent("drawend");
+	};
+	
+	/**
+	 * Propagates a tick event through the display list. This is automatically called by {{#crossLink "Stage/update"}}{{/crossLink}}
+	 * unless {{#crossLink "Stage/tickOnUpdate:property"}}{{/crossLink}} is set to false.
+	 *
+	 * If a props object is passed to `tick()`, then all of its properties will be copied to the event object that is
+	 * propagated to listeners.
+	 *
+	 * Some time-based features in EaselJS (for example {{#crossLink "Sprite/framerate"}}{{/crossLink}} require that
+	 * a {{#crossLink "Ticker/tick:event"}}{{/crossLink}} event object (or equivalent object with a delta property) be
+	 * passed as the `props` parameter to `tick()`. For example:
+	 *
+	 * 	Ticker.on("tick", handleTick);
+	 * 	function handleTick(evtObj) {
+	 * 		// clone the event object from Ticker, and add some custom data to it:
+	 * 		var evt = evtObj.clone().set({greeting:"hello", name:"world"});
+	 * 		
+	 * 		// pass it to stage.update():
+	 * 		myStage.update(evt); // subsequently calls tick() with the same param
+	 * 	}
+	 * 	
+	 * 	// ...
+	 * 	myDisplayObject.on("tick", handleDisplayObjectTick);
+	 * 	function handleDisplayObjectTick(evt) {
+	 * 		console.log(evt.delta); // the delta property from the Ticker tick event object
+	 * 		console.log(evt.greeting, evt.name); // custom data: "hello world"
+	 * 	}
+	 * 
+	 * @method tick
+	 * @param {Object} [props] An object with properties that should be copied to the event object. Should usually be a Ticker event object, or similar object with a delta property.
+	 **/
+	p.tick = function(props) {
+		if (!this.tickEnabled || this.dispatchEvent("tickstart", false, true) === false) { return; }
+		var evtObj = new createjs.Event("tick");
+		if (props) {
+			for (var n in props) {
+				if (props.hasOwnProperty(n)) { evtObj[n] = props[n]; }
+			}
+		}
+		this._tick(evtObj);
+		this.dispatchEvent("tickend");
+	};
+
+	/**
+	 * Default event handler that calls the Stage {{#crossLink "Stage/update"}}{{/crossLink}} method when a {{#crossLink "DisplayObject/tick:event"}}{{/crossLink}}
+	 * event is received. This allows you to register a Stage instance as a event listener on {{#crossLink "Ticker"}}{{/crossLink}}
+	 * directly, using:
+	 *
+	 *      Ticker.addEventListener("tick", myStage);
+	 *
+	 * Note that if you subscribe to ticks using this pattern, then the tick event object will be passed through to
+	 * display object tick handlers, instead of <code>delta</code> and <code>paused</code> parameters.
+	 * @property handleEvent
+	 * @type Function
+	 **/
+	p.handleEvent = function(evt) {
+		if (evt.type == "tick") { this.update(evt); }
+	};
+
+	/**
+	 * Clears the target canvas. Useful if {{#crossLink "Stage/autoClear:property"}}{{/crossLink}} is set to `false`.
+	 * @method clear
+	 **/
+	p.clear = function() {
+		if (!this.canvas) { return; }
+		var ctx = this.canvas.getContext("2d");
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		ctx.clearRect(0, 0, this.canvas.width+1, this.canvas.height+1);
+	};
+
+	/**
+	 * Returns a data url that contains a Base64-encoded image of the contents of the stage. The returned data url can
+	 * be specified as the src value of an image element.
+	 * @method toDataURL
+	 * @param {String} [backgroundColor] The background color to be used for the generated image. Any valid CSS color
+	 * value is allowed. The default value is a transparent background.
+	 * @param {String} [mimeType="image/png"] The MIME type of the image format to be create. The default is "image/png". If an unknown MIME type
+	 * is passed in, or if the browser does not support the specified MIME type, the default value will be used.
+	 * @return {String} a Base64 encoded image.
+	 **/
+	p.toDataURL = function(backgroundColor, mimeType) {
+		var data, ctx = this.canvas.getContext('2d'), w = this.canvas.width, h = this.canvas.height;
+
+		if (backgroundColor) {
+			data = ctx.getImageData(0, 0, w, h);
+			var compositeOperation = ctx.globalCompositeOperation;
+			ctx.globalCompositeOperation = "destination-over";
+			
+			ctx.fillStyle = backgroundColor;
+			ctx.fillRect(0, 0, w, h);
+		}
+
+		var dataURL = this.canvas.toDataURL(mimeType||"image/png");
+
+		if(backgroundColor) {
+			ctx.putImageData(data, 0, 0);
+			ctx.globalCompositeOperation = compositeOperation;
+		}
+
+		return dataURL;
+	};
+
+	/**
+	 * Enables or disables (by passing a frequency of 0) mouse over ({{#crossLink "DisplayObject/mouseover:event"}}{{/crossLink}}
+	 * and {{#crossLink "DisplayObject/mouseout:event"}}{{/crossLink}}) and roll over events ({{#crossLink "DisplayObject/rollover:event"}}{{/crossLink}}
+	 * and {{#crossLink "DisplayObject/rollout:event"}}{{/crossLink}}) for this stage's display list. These events can
+	 * be expensive to generate, so they are disabled by default. The frequency of the events can be controlled
+	 * independently of mouse move events via the optional `frequency` parameter.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      var stage = new createjs.Stage("canvasId");
+	 *      stage.enableMouseOver(10); // 10 updates per second
+	 *
+	 * @method enableMouseOver
+	 * @param {Number} [frequency=20] Optional param specifying the maximum number of times per second to broadcast
+	 * mouse over/out events. Set to 0 to disable mouse over events completely. Maximum is 50. A lower frequency is less
+	 * responsive, but uses less CPU.
+	 **/
+	p.enableMouseOver = function(frequency) {
+		if (this._mouseOverIntervalID) {
+			clearInterval(this._mouseOverIntervalID);
+			this._mouseOverIntervalID = null;
+			if (frequency == 0) {
+				this._testMouseOver(true);
+			}
+		}
+		if (frequency == null) { frequency = 20; }
+		else if (frequency <= 0) { return; }
+		var o = this;
+		this._mouseOverIntervalID = setInterval(function(){ o._testMouseOver(); }, 1000/Math.min(50,frequency));
+	};
+
+	/**
+	 * Enables or disables the event listeners that stage adds to DOM elements (window, document and canvas). It is good
+	 * practice to disable events when disposing of a Stage instance, otherwise the stage will continue to receive
+	 * events from the page.
+	 *
+	 * When changing the canvas property you must disable the events on the old canvas, and enable events on the
+	 * new canvas or mouse events will not work as expected. For example:
+	 *
+	 *      myStage.enableDOMEvents(false);
+	 *      myStage.canvas = anotherCanvas;
+	 *      myStage.enableDOMEvents(true);
+	 *
+	 * @method enableDOMEvents
+	 * @param {Boolean} [enable=true] Indicates whether to enable or disable the events. Default is true.
+	 **/
+	p.enableDOMEvents = function(enable) {
+		if (enable == null) { enable = true; }
+		var n, o, ls = this._eventListeners;
+		if (!enable && ls) {
+			for (n in ls) {
+				o = ls[n];
+				o.t.removeEventListener(n, o.f, false);
+			}
+			this._eventListeners = null;
+		} else if (enable && !ls && this.canvas) {
+			var t = window.addEventListener ? window : document;
+			var _this = this;
+			ls = this._eventListeners = {};
+			ls["mouseup"] = {t:t, f:function(e) { _this._handleMouseUp(e)} };
+			ls["mousemove"] = {t:t, f:function(e) { _this._handleMouseMove(e)} };
+			ls["dblclick"] = {t:this.canvas, f:function(e) { _this._handleDoubleClick(e)} };
+			ls["mousedown"] = {t:this.canvas, f:function(e) { _this._handleMouseDown(e)} };
+
+			for (n in ls) {
+				o = ls[n];
+				o.t.addEventListener(n, o.f, false);
+			}
+		}
+	};
+
+	/**
+	 * Stage instances cannot be cloned.
+	 * @method clone
+	 **/
+	p.clone = function() {
+		throw("Stage cannot be cloned.");
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Stage (name="+  this.name +")]";
+	};
+
+
+// private methods:
+	/**
+	 * @method _getElementRect
+	 * @protected
+	 * @param {HTMLElement} e
+	 **/
+	p._getElementRect = function(e) {
+		var bounds;
+		try { bounds = e.getBoundingClientRect(); } // this can fail on disconnected DOM elements in IE9
+		catch (err) { bounds = {top: e.offsetTop, left: e.offsetLeft, width:e.offsetWidth, height:e.offsetHeight}; }
+
+		var offX = (window.pageXOffset || document.scrollLeft || 0) - (document.clientLeft || document.body.clientLeft || 0);
+		var offY = (window.pageYOffset || document.scrollTop || 0) - (document.clientTop  || document.body.clientTop  || 0);
+
+		var styles = window.getComputedStyle ? getComputedStyle(e,null) : e.currentStyle; // IE <9 compatibility.
+		var padL = parseInt(styles.paddingLeft)+parseInt(styles.borderLeftWidth);
+		var padT = parseInt(styles.paddingTop)+parseInt(styles.borderTopWidth);
+		var padR = parseInt(styles.paddingRight)+parseInt(styles.borderRightWidth);
+		var padB = parseInt(styles.paddingBottom)+parseInt(styles.borderBottomWidth);
+
+		// note: in some browsers bounds properties are read only.
+		return {
+			left: bounds.left+offX+padL,
+			right: bounds.right+offX-padR,
+			top: bounds.top+offY+padT,
+			bottom: bounds.bottom+offY-padB
+		}
+	};
+
+	/**
+	 * @method _getPointerData
+	 * @protected
+	 * @param {Number} id
+	 **/
+	p._getPointerData = function(id) {
+		var data = this._pointerData[id];
+		if (!data) { data = this._pointerData[id] = {x:0,y:0}; }
+		return data;
+	};
+
+	/**
+	 * @method _handleMouseMove
+	 * @protected
+	 * @param {MouseEvent} e
+	 **/
+	p._handleMouseMove = function(e) {
+		if(!e){ e = window.event; }
+		this._handlePointerMove(-1, e, e.pageX, e.pageY);
+	};
+
+	/**
+	 * @method _handlePointerMove
+	 * @protected
+	 * @param {Number} id
+	 * @param {Event} e
+	 * @param {Number} pageX
+	 * @param {Number} pageY
+	 * @param {Stage} owner Indicates that the event has already been captured & handled by the indicated stage.
+	 **/
+	p._handlePointerMove = function(id, e, pageX, pageY, owner) {
+		if (this._prevStage && owner === undefined) { return; } // redundant listener.
+		if (!this.canvas) { return; }
+		var nextStage=this._nextStage, o=this._getPointerData(id);
+
+		var inBounds = o.inBounds;
+		this._updatePointerPosition(id, e, pageX, pageY);
+		if (inBounds || o.inBounds || this.mouseMoveOutside) {
+			if (id === -1 && o.inBounds == !inBounds) {
+				this._dispatchMouseEvent(this, (inBounds ? "mouseleave" : "mouseenter"), false, id, o, e);
+			}
+			
+			this._dispatchMouseEvent(this, "stagemousemove", false, id, o, e);
+			this._dispatchMouseEvent(o.target, "pressmove", true, id, o, e);
+		}
+		
+		nextStage&&nextStage._handlePointerMove(id, e, pageX, pageY, null);
+	};
+
+	/**
+	 * @method _updatePointerPosition
+	 * @protected
+	 * @param {Number} id
+	 * @param {Event} e
+	 * @param {Number} pageX
+	 * @param {Number} pageY
+	 **/
+	p._updatePointerPosition = function(id, e, pageX, pageY) {
+		var rect = this._getElementRect(this.canvas);
+		pageX -= rect.left;
+		pageY -= rect.top;
+
+		var w = this.canvas.width;
+		var h = this.canvas.height;
+		pageX /= (rect.right-rect.left)/w;
+		pageY /= (rect.bottom-rect.top)/h;
+		var o = this._getPointerData(id);
+		if (o.inBounds = (pageX >= 0 && pageY >= 0 && pageX <= w-1 && pageY <= h-1)) {
+			o.x = pageX;
+			o.y = pageY;
+		} else if (this.mouseMoveOutside) {
+			o.x = pageX < 0 ? 0 : (pageX > w-1 ? w-1 : pageX);
+			o.y = pageY < 0 ? 0 : (pageY > h-1 ? h-1 : pageY);
+		}
+
+		o.posEvtObj = e;
+		o.rawX = pageX;
+		o.rawY = pageY;
+
+		if (id === this._primaryPointerID || id === -1) {
+			this.mouseX = o.x;
+			this.mouseY = o.y;
+			this.mouseInBounds = o.inBounds;
+		}
+	};
+
+	/**
+	 * @method _handleMouseUp
+	 * @protected
+	 * @param {MouseEvent} e
+	 **/
+	p._handleMouseUp = function(e) {
+		this._handlePointerUp(-1, e, false);
+	};
+
+	/**
+	 * @method _handlePointerUp
+	 * @protected
+	 * @param {Number} id
+	 * @param {Event} e
+	 * @param {Boolean} clear
+	 * @param {Stage} owner Indicates that the event has already been captured & handled by the indicated stage.
+	 **/
+	p._handlePointerUp = function(id, e, clear, owner) {
+		var nextStage = this._nextStage, o = this._getPointerData(id);
+		if (this._prevStage && owner === undefined) { return; } // redundant listener.
+		
+		var target=null, oTarget = o.target;
+		if (!owner && (oTarget || nextStage)) { target = this._getObjectsUnderPoint(o.x, o.y, null, true); }
+		
+		if (o.down) { this._dispatchMouseEvent(this, "stagemouseup", false, id, o, e, target); o.down = false; }
+		
+		if (target == oTarget) { this._dispatchMouseEvent(oTarget, "click", true, id, o, e); }
+		this._dispatchMouseEvent(oTarget, "pressup", true, id, o, e);
+		
+		if (clear) {
+			if (id==this._primaryPointerID) { this._primaryPointerID = null; }
+			delete(this._pointerData[id]);
+		} else { o.target = null; }
+		
+		nextStage&&nextStage._handlePointerUp(id, e, clear, owner || target && this);
+	};
+
+	/**
+	 * @method _handleMouseDown
+	 * @protected
+	 * @param {MouseEvent} e
+	 **/
+	p._handleMouseDown = function(e) {
+		this._handlePointerDown(-1, e, e.pageX, e.pageY);
+	};
+
+	/**
+	 * @method _handlePointerDown
+	 * @protected
+	 * @param {Number} id
+	 * @param {Event} e
+	 * @param {Number} pageX
+	 * @param {Number} pageY
+	 * @param {Stage} owner Indicates that the event has already been captured & handled by the indicated stage.
+	 **/
+	p._handlePointerDown = function(id, e, pageX, pageY, owner) {
+		if (this.preventSelection) { e.preventDefault(); }
+		if (this._primaryPointerID == null || id === -1) { this._primaryPointerID = id; } // mouse always takes over.
+		
+		if (pageY != null) { this._updatePointerPosition(id, e, pageX, pageY); }
+		var target = null, nextStage = this._nextStage, o = this._getPointerData(id);
+		if (!owner) { target = o.target = this._getObjectsUnderPoint(o.x, o.y, null, true); }
+
+		if (o.inBounds) { this._dispatchMouseEvent(this, "stagemousedown", false, id, o, e, target); o.down = true; }
+		this._dispatchMouseEvent(target, "mousedown", true, id, o, e);
+		
+		nextStage&&nextStage._handlePointerDown(id, e, pageX, pageY, owner || target && this);
+	};
+
+	/**
+	 * @method _testMouseOver
+	 * @param {Boolean} clear If true, clears the mouseover / rollover (ie. no target)
+	 * @param {Stage} owner Indicates that the event has already been captured & handled by the indicated stage.
+	 * @param {Stage} eventTarget The stage that the cursor is actively over.
+	 * @protected
+	 **/
+	p._testMouseOver = function(clear, owner, eventTarget) {
+		var this$1 = this;
+
+		if (this._prevStage && owner === undefined) { return; } // redundant listener.
+		
+		var nextStage = this._nextStage;
+		if (!this._mouseOverIntervalID) {
+			// not enabled for mouseover, but should still relay the event.
+			nextStage&&nextStage._testMouseOver(clear, owner, eventTarget);
+			return;
+		}
+		var o = this._getPointerData(-1);
+		// only update if the mouse position has changed. This provides a lot of optimization, but has some trade-offs.
+		if (!o || (!clear && this.mouseX == this._mouseOverX && this.mouseY == this._mouseOverY && this.mouseInBounds)) { return; }
+		
+		var e = o.posEvtObj;
+		var isEventTarget = eventTarget || e&&(e.target == this.canvas);
+		var target=null, common = -1, cursor="", t, i, l;
+		
+		if (!owner && (clear || this.mouseInBounds && isEventTarget)) {
+			target = this._getObjectsUnderPoint(this.mouseX, this.mouseY, null, true);
+			this._mouseOverX = this.mouseX;
+			this._mouseOverY = this.mouseY;
+		}
+
+		var oldList = this._mouseOverTarget||[];
+		var oldTarget = oldList[oldList.length-1];
+		var list = this._mouseOverTarget = [];
+
+		// generate ancestor list and check for cursor:
+		t = target;
+		while (t) {
+			list.unshift(t);
+			if (!cursor) { cursor = t.cursor; }
+			t = t.parent;
+		}
+		this.canvas.style.cursor = cursor;
+		if (!owner && eventTarget) { eventTarget.canvas.style.cursor = cursor; }
+
+		// find common ancestor:
+		for (i=0,l=list.length; i<l; i++) {
+			if (list[i] != oldList[i]) { break; }
+			common = i;
+		}
+
+		if (oldTarget != target) {
+			this._dispatchMouseEvent(oldTarget, "mouseout", true, -1, o, e, target);
+		}
+
+		for (i=oldList.length-1; i>common; i--) {
+			this$1._dispatchMouseEvent(oldList[i], "rollout", false, -1, o, e, target);
+		}
+
+		for (i=list.length-1; i>common; i--) {
+			this$1._dispatchMouseEvent(list[i], "rollover", false, -1, o, e, oldTarget);
+		}
+
+		if (oldTarget != target) {
+			this._dispatchMouseEvent(target, "mouseover", true, -1, o, e, oldTarget);
+		}
+		
+		nextStage&&nextStage._testMouseOver(clear, owner || target && this, eventTarget || isEventTarget && this);
+	};
+
+	/**
+	 * @method _handleDoubleClick
+	 * @protected
+	 * @param {MouseEvent} e
+	 * @param {Stage} owner Indicates that the event has already been captured & handled by the indicated stage.
+	 **/
+	p._handleDoubleClick = function(e, owner) {
+		var target=null, nextStage=this._nextStage, o=this._getPointerData(-1);
+		if (!owner) {
+			target = this._getObjectsUnderPoint(o.x, o.y, null, true);
+			this._dispatchMouseEvent(target, "dblclick", true, -1, o, e);
+		}
+		nextStage&&nextStage._handleDoubleClick(e, owner || target && this);
+	};
+
+	/**
+	 * @method _dispatchMouseEvent
+	 * @protected
+	 * @param {DisplayObject} target
+	 * @param {String} type
+	 * @param {Boolean} bubbles
+	 * @param {Number} pointerId
+	 * @param {Object} o
+	 * @param {MouseEvent} [nativeEvent]
+	 * @param {DisplayObject} [relatedTarget]
+	 **/
+	p._dispatchMouseEvent = function(target, type, bubbles, pointerId, o, nativeEvent, relatedTarget) {
+		// TODO: might be worth either reusing MouseEvent instances, or adding a willTrigger method to avoid GC.
+		if (!target || (!bubbles && !target.hasEventListener(type))) { return; }
+		/*
+		// TODO: account for stage transformations?
+		this._mtx = this.getConcatenatedMatrix(this._mtx).invert();
+		var pt = this._mtx.transformPoint(o.x, o.y);
+		var evt = new createjs.MouseEvent(type, bubbles, false, pt.x, pt.y, nativeEvent, pointerId, pointerId==this._primaryPointerID || pointerId==-1, o.rawX, o.rawY);
+		*/
+		var evt = new createjs.MouseEvent(type, bubbles, false, o.x, o.y, nativeEvent, pointerId, pointerId === this._primaryPointerID || pointerId === -1, o.rawX, o.rawY, relatedTarget);
+		target.dispatchEvent(evt);
+	};
+
+
+	createjs.Stage = createjs.promote(Stage, "Container");
+}());
+
+//##############################################################################
+// StageGL.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+/*
+ * README IF EDITING:
+ * Terminology for developers:
+ *
+ * Vertex: a point that help defines a shape, 3 per triangle. Usually has an x,y,z but can have more/less info.
+ * Vertex Property: a piece of information attached to the vertex like a vector3 containing x,y,z
+ * Index/Indices: used in groups of 3 to define a triangle, points to vertices by their index in an array (some render
+ * 		modes do not use these)
+ * Card: a group of 2 triangles used to display a rectangular image
+ * U/V: common names for the [0-1] texture co-ordinates on an image
+ * Batch: a single call to the renderer, best done as little as possible so multiple cards are put into a single batch
+ * Buffer: WebGL array data
+ * Program/Shader: For every vertex we run the Vertex shader. The results are used per pixel by the Fragment shader. When
+ * 		combined and paired these are a shader "program"
+ * Texture: WebGL representation of image data and associated extra information
+ * Slot: A space on the GPU into which textures can be loaded for use in a batch, using "ActiveTexture" switches texture slot.
+ */
+
+(function () {
+	"use strict";
+
+	/**
+	 * A StageGL instance is the root level {{#crossLink "Container"}}{{/crossLink}} for an WebGL-optimized display list,
+	 * which is used in place of the usual {{#crossLink "Stage"}}{{/crossLink}}. This class should behave identically to
+	 * a {{#crossLink "Stage"}}{{/crossLink}} except for WebGL-specific functionality.
+	 *
+	 * Each time the {{#crossLink "Stage/tick"}}{{/crossLink}} method is called, the display list is rendered to the
+	 * target &lt;canvas/&gt; instance, ignoring non-WebGL-compatible display objects. On devices and browsers that don't
+	 * support WebGL, content will automatically be rendered to canvas 2D context instead.
+	 *
+	 * <h4>Limitations</h4>
+	 * - {{#crossLink "Shape"}}{{/crossLink}}, {{#crossLink "Shadow"}}{{/crossLink}}, and {{#crossLink "Text"}}{{/crossLink}}
+	 * 	are not rendered when added to the display list.
+	 * - To display something StageGL cannot render, {{#crossLink "displayObject/cache"}}{{/crossLink}} the object.
+	 *	Caches can be rendered regardless of source.
+	 * - Images are wrapped as a webGL "Texture". Each graphics card has a limit to its concurrent Textures, too many 
+	 * Textures will noticeably slow performance.
+	 * - Each cache counts as an individual Texture. As such {{#crossLink "SpriteSheet"}}{{/crossLink}} and 
+	 * {{#crossLink "SpriteSheetBuilder"}}{{/crossLink}} are recommended practices to help keep texture counts low.
+	 * - To use any image node (DOM Image/Canvas Element) between multiple StageGL instances it must be a 
+	 * {{#crossLink "Bitmap/clone"}}{{/crossLink}}, otherwise the GPU texture loading and tracking will get confused.
+	 * - to avoid an up/down scaled render you must call {{#crossLink "StageGL/updateViewport"}}{{/crossLink}} if you
+	 * resize your canvas after making a StageGL instance, this will properly size the WebGL context stored in memory.
+	 * - Best performance in demanding scenarios will come from manual management of texture memory, but it is handled
+	 * automatically by default. See {{#crossLink "StageGL/releaseTexture"}}{{/crossLink}} for details.
+	 *
+	 * <h4>Example</h4>
+	 * This example creates a StageGL instance, adds a child to it, then uses the EaselJS {{#crossLink "Ticker"}}{{/crossLink}}
+	 * to update the child and redraw the stage.
+	 *
+	 *      var stage = new createjs.StageGL("canvasElementId");
+	 *
+	 *      var image = new createjs.Bitmap("imagePath.png");
+	 *      stage.addChild(image);
+	 *
+	 *      createjs.Ticker.on("tick", handleTick);
+	 *
+	 *      function handleTick(event) {
+	 *          image.x += 10;
+	 *          stage.update();
+	 *      }
+	 *
+	 * <h4>Notes</h4>
+	 * - StageGL is not currently included in the minified version of EaselJS.
+	 * - {{#crossLink "SpriteContainer"}}{{/crossLink}} (the previous approach to WebGL with EaselJS) has been deprecated.
+	 * - Earlier versions of WebGL support in EaselJS (SpriteStage and SpriteContainer) had hard limitations on images
+	 * 	per container, which have been solved.
+	 *
+	 * @class StageGL
+	 * @extends Stage
+	 * @constructor
+	 * @param {HTMLCanvasElement | String | Object} canvas A canvas object that StageGL will render to, or the string id
+	 *  of a canvas object in the current DOM.
+	 * @param {Object} options All the option parameters in a reference object, some are not supported by some browsers.
+	 * @param {Boolean} [options.preserveBuffer=false] If `true`, the canvas is NOT auto-cleared by WebGL (the spec
+	 *  discourages setting this to `true`). This is useful if you want persistent draw effects.
+	 * @param {Boolean} [options.antialias=false] Specifies whether or not the browser's WebGL implementation should try
+	 *  to perform anti-aliasing. This will also enable linear pixel sampling on power-of-two textures (smoother images).
+	 * @param {Boolean} [options.transparent=false] If `true`, the canvas is transparent. This is <strong>very</strong>
+	 * expensive, and should be used with caution.
+	 * @param {Boolean} [options.premultiply=false] Alters color handling. If `true`, this assumes the shader must
+	 * account for pre-multiplied alpha. This can help avoid visual halo effects with some assets, but may also cause
+	 * problems with other assets.
+	 * @param {Integer} [options.autoPurge=1200] How often the system should automatically dump unused textures with
+	 * `purgeTextures(autoPurge)` every `autoPurge/2` draws. See {{#crossLink "StageGL/purgeTextures"}}{{/crossLink}} for more
+	 * information.
+	 */
+	function StageGL(canvas, options) {
+		this.Stage_constructor(canvas);
+
+		if (options !== undefined) {
+			if (typeof options !== "object"){ throw("Invalid options object"); }
+			var premultiply = options.premultiply;
+			var transparent = options.transparent;
+			var antialias = options.antialias;
+			var preserveBuffer = options.preserveBuffer;
+			var autoPurge = options.autoPurge;
+		}
+
+// public properties:
+		/**
+		 * Console log potential issues and problems. This is designed to have <em>minimal</em> performance impact, so
+		 * if extensive debugging information is required, this may be inadequate. See {{#crossLink "WebGLInspector"}}{{/crossLink}}
+		 * @property vocalDebug
+		 * @type {Boolean}
+		 * @default false
+		 */
+		this.vocalDebug = false;
+
+// private properties:
+		/**
+		 * Specifies whether or not the canvas is auto-cleared by WebGL. The WebGL spec discourages `true`.
+		 * If true, the canvas is NOT auto-cleared by WebGL. Used when the canvas context is created and requires
+		 * context re-creation to update.
+		 * @property _preserveBuffer
+		 * @protected
+		 * @type {Boolean}
+		 * @default false
+		 */
+		this._preserveBuffer = preserveBuffer||false;
+
+		/**
+		 * Specifies whether or not the browser's WebGL implementation should try to perform anti-aliasing.
+		 * @property _antialias
+		 * @protected
+		 * @type {Boolean}
+		 * @default false
+		 */
+		this._antialias = antialias||false;
+
+		/**
+		 * Specifies whether or not the browser's WebGL implementation should be transparent.
+		 * @property _transparent
+		 * @protected
+		 * @type {Boolean}
+		 * @default false
+		 */
+		this._transparent = transparent||false;
+
+		/**
+		 * Specifies whether or not StageGL is handling colours as premultiplied alpha.
+		 * @property _premultiply
+		 * @protected
+		 * @type {Boolean}
+		 * @default false
+		 */
+		this._premultiply = premultiply||false;
+
+		/**
+		 * Internal value of {{#crossLink "StageGL/autoPurge"}}{{/crossLink}}
+		 * @property _autoPurge
+		 * @protected
+		 * @type {Integer}
+		 * @default null
+		 */
+		this._autoPurge = undefined;
+		this.autoPurge = autoPurge;	//getter/setter handles setting the real value and validating
+
+		/**
+		 * The width in px of the drawing surface saved in memory.
+		 * @property _viewportWidth
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 */
+		this._viewportWidth = 0;
+
+		/**
+		 * The height in px of the drawing surface saved in memory.
+		 * @property _viewportHeight
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 */
+		this._viewportHeight = 0;
+
+		/**
+		 * A 2D projection matrix used to convert WebGL's viewspace into canvas co-ordinates. Regular canvas display
+		 * uses Top-Left values of [0,0] where WebGL uses a Center [0,0] Top-Right [1,1] (euclidean) system.
+		 * @property _projectionMatrix
+		 * @protected
+		 * @type {Float32Array}
+		 * @default null
+		 */
+		this._projectionMatrix = null;
+
+		/**
+		 * The current WebGL canvas context. Often shorthanded to just "gl" in many parts of the code.
+		 * @property _webGLContext
+		 * @protected
+		 * @type {WebGLRenderingContext}
+		 * @default null
+		 */
+		this._webGLContext = null;
+
+		/**
+		 * The color to use when the WebGL canvas has been cleared. May appear as a background color. Defaults to grey.
+		 * @property _clearColor
+		 * @protected
+		 * @type {Object}
+		 * @default {r: 0.50, g: 0.50, b: 0.50, a: 0.00}
+		 */
+		this._clearColor = {r: 0.50, g: 0.50, b: 0.50, a: 0.00};
+
+		/**
+		 * The maximum number of cards (aka a single sprite) that can be drawn in one draw call. Use getter/setters to
+		 * modify otherwise internal buffers may be incorrect sizes.
+		 * @property _maxCardsPerBatch
+		 * @protected
+		 * @type {Number}
+		 * @default StageGL.DEFAULT_MAX_BATCH_SIZE (10000)
+		 */
+		this._maxCardsPerBatch = StageGL.DEFAULT_MAX_BATCH_SIZE;														//TODO: write getter/setters for this
+
+		/**
+		 * The shader program used to draw the current batch.
+		 * @property _activeShader
+		 * @protected
+		 * @type {WebGLProgram}
+		 * @default null
+		 */
+		this._activeShader = null;
+
+		/**
+		 * The vertex position data for the current draw call.
+		 * @property _vertices
+		 * @protected
+		 * @type {Float32Array}
+		 * @default null
+		 */
+		this._vertices = null;
+
+		/**
+		 * The WebGL buffer attached to {{#crossLink "StageGL/_vertices:property"}}{{/crossLink}}.
+		 * @property _vertexPositionBuffer
+		 * @protected
+		 * @type {WebGLBuffer}
+		 * @default null
+		 */
+		this._vertexPositionBuffer = null;
+
+		/**
+		 * The vertex U/V data for the current draw call.
+		 * @property _uvs
+		 * @protected
+		 * @type {Float32Array}
+		 * @default null
+		 */
+		this._uvs = null;
+
+		/**
+		 * The WebGL buffer attached to {{#crossLink "StageGL/_uvs:property"}}{{/crossLink}}.
+		 * @property _uvPositionBuffer
+		 * @protected
+		 * @type {WebGLBuffer}
+		 * @default null
+		 */
+		this._uvPositionBuffer = null;
+
+		/**
+		 * The vertex indices data for the current draw call.
+		 * @property _indices
+		 * @protected
+		 * @type {Float32Array}
+		 * @default null
+		 */
+		this._indices = null;
+
+		/**
+		 * The WebGL buffer attached to {{#crossLink "StageGL/_indices:property"}}{{/crossLink}}.
+		 * @property _textureIndexBuffer
+		 * @protected
+		 * @type {WebGLBuffer}
+		 * @default null
+		 */
+		this._textureIndexBuffer = null;
+
+		/**
+		 * The vertices data for the current draw call.
+		 * @property _alphas
+		 * @protected
+		 * @type {Float32Array}
+		 * @default null
+		 */
+		this._alphas = null;
+
+		/**
+		 * The WebGL buffer attached to {{#crossLink "StageGL/_alphas:property"}}{{/crossLink}}.
+		 * @property _alphaBuffer
+		 * @protected
+		 * @type {WebGLBuffer}
+		 * @default null
+		 */
+		this._alphaBuffer = null;
+
+		/**
+		 * An index based lookup of every WebGL Texture currently in use.
+		 * @property _drawTexture
+		 * @protected
+		 * @type {Array}
+		 */
+		this._textureDictionary = [];
+
+		/**
+		 * A string based lookup hash of which index a texture is stored at in the dictionary. The lookup string is
+		 * often the src url.
+		 * @property _textureIDs
+		 * @protected
+		 * @type {Object}
+		 */
+		this._textureIDs = {};
+
+		/**
+		 * An array of all the textures currently loaded into the GPU. The index in the array matches the GPU index.
+		 * @property _batchTextures
+		 * @protected
+		 * @type {Array}
+		 */
+		this._batchTextures = [];
+
+		/**
+		 * An array of all the simple filler textures used to prevent issues with missing textures in a batch.
+		 * @property _baseTextures
+		 * @protected
+		 * @type {Array}
+		 */
+		this._baseTextures = [];
+
+		/**
+		 * The number of concurrent textures the GPU can handle. This value is dynamically set from WebGL during initialization
+		 * via `gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS)`. The WebGL spec states that the lowest guaranteed value is 8,
+		 * but it could be higher. Do not set this value higher than the value returned by the GPU. Setting it lower will
+		 * probably reduce performance, but may be advisable to reserve slots for custom filter work.
+		 * NOTE: Can also act as a length for {{#crossLink "StageGL/_batchTextures:property"}}.
+		 * @property _batchTextureCount
+		 * @protected
+		 * @type {Number}
+		 * @default 8
+		 */
+		this._batchTextureCount = 8;
+
+		/**
+		 * The location at which the last texture was inserted into a GPU slot in {{#crossLink "StageGL/_batchTextures:property"}}{{/crossLink}}.
+		 * Manual control of this variable can yield improvements in performance by intelligently replacing textures
+		 * inside a batch to reduce texture re-load. It is impossible to write automated general use code, as it requires
+		 * display list look ahead inspection and/or render foreknowledge.
+		 * @property _lastTextureInsert
+		 * @protected
+		 * @type {Number}
+		 * @default -1
+		 */
+		this._lastTextureInsert = -1;
+
+		/**
+		 * The current batch being drawn, A batch consists of a call to `drawElements` on the GPU. Many of these calls
+		 * can occur per draw.
+		 * @property _batchId
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 */
+		this._batchID = 0;
+
+		/**
+		 * The current draw being performed, may contain multiple batches. Comparing to {{#crossLink "StageGL/_batchID:property"}}{{/crossLink}}
+		 * can reveal batching efficiency.
+		 * @property _drawID
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 */
+		this._drawID = 0;
+
+		/**
+		 * Used to prevent textures in certain GPU slots from being replaced by an insert.
+		 * @property _slotBlackList
+		 * @protected
+		 * @type {Array}
+		 */
+		this._slotBlacklist = [];
+
+		/**
+		 * Used to prevent nested draw calls from accidentally overwriting drawing information by tracking depth.
+		 * @property _isDrawing
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 */
+		this._isDrawing = 0;
+
+		/**
+		 * Used to ensure every canvas used as a texture source has a unique ID.
+		 * @property _lastTrackedCanvas
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 */
+		this._lastTrackedCanvas = 0;
+
+		/**
+		 * Controls whether final rendering output of a {{#crossLink "cacheDraw"}}{{/crossLink}} is the canvas or a render
+		 * texture. See the {{#crossLink "cache"}}{{/crossLink}} function modifications for full implications and discussion.
+		 * @property isCacheControlled
+		 * @protected
+		 * @type {Boolean}
+		 * @default false
+		 * @todo LM: is this supposed to be _isCacheControlled since its private?
+		 */
+		this.isCacheControlled = false;
+
+		/**
+		 * Used to counter-position the object being cached so it aligns with the cache surface. Additionally ensures
+		 * that all rendering starts with a top level container.
+		 * @property _cacheContainer
+		 * @protected
+		 * @type {Container}
+		 * @default An instance of an EaselJS Container.
+		 */
+		this._cacheContainer = new createjs.Container();
+
+		// and begin
+		this._initializeWebGL();
+	}
+	var p = createjs.extend(StageGL, createjs.Stage);
+
+// static methods:
+	/**
+	 * Calculate the U/V co-ordinate based info for sprite frames. Instead of pixel count it uses a 0-1 space. Also includes
+	 * the ability to get info back for a specific frame, or only calculate that one frame.
+	 *
+	 *     //generate UV rects for all entries
+	 *     StageGL.buildUVRects( spriteSheetA );
+	 *     //generate all, fetch the first
+	 *     var firstFrame = StageGL.buildUVRects( spriteSheetB, 0 );
+	 *     //generate the rect for just a single frame for performance's sake
+	 *     var newFrame = StageGL.buildUVRects( dynamicSpriteSheet, newFrameIndex, true );
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method buildUVRects
+	 * @param  {SpriteSheet} spritesheet The spritesheet to find the frames on
+	 * @param  {int} [target=-1] The index of the frame to return
+	 * @param  {Boolean} [onlyTarget=false] Whether "target" is the only frame that gets calculated
+	 * @static
+	 * @return {Object} the target frame if supplied and present or a generic frame {t, l, b, r}
+	 */
+	StageGL.buildUVRects = function (spritesheet, target, onlyTarget) {
+		if (!spritesheet || !spritesheet._frames) { return null; }
+		if (target === undefined) { target = -1; }
+		if (onlyTarget === undefined) { onlyTarget = false; }
+
+		var start = (target != -1 && onlyTarget)?(target):(0);
+		var end = (target != -1 && onlyTarget)?(target+1):(spritesheet._frames.length);
+		for (var i=start; i<end; i++) {
+			var f = spritesheet._frames[i];
+			if (f.uvRect || f.image.width <= 0 || f.image.height <= 0) { continue; }
+
+			var r = f.rect;
+			f.uvRect = {
+				t: r.y / f.image.height,
+				l: r.x / f.image.width,
+				b: (r.y + r.height) / f.image.height,
+				r: (r.x + r.width) / f.image.width
+			};
+		}
+
+		return spritesheet._frames[(target != -1) ? target : 0].uvRect || {t:0, l:0, b:1, r:1};
+	};
+
+	/**
+	 * Test a context to see if it has WebGL enabled on it.
+	 * @method isWebGLActive
+	 * @param {CanvasContext} ctx The context to test
+	 * @static
+	 * @return {Boolean} Whether WebGL is enabled
+	 */
+	StageGL.isWebGLActive = function (ctx) {
+		return ctx &&
+			ctx instanceof WebGLRenderingContext &&
+			typeof WebGLRenderingContext !== 'undefined';
+	};
+
+// static properties:
+	/**
+	 * The number of properties defined per vertex (x, y, textureU, textureV, textureIndex, alpha)
+	 * @property VERTEX_PROPERTY_COUNT
+	 * @static
+	 * @final
+	 * @type {Number}
+	 * @default 6
+	 * @readonly
+	 */
+	StageGL.VERTEX_PROPERTY_COUNT = 6;
+
+	/**
+	 * The number of triangle indices it takes to form a Card. 3 per triangle, 2 triangles.
+	 * @property INDICIES_PER_CARD
+	 * @static
+	 * @final
+	 * @type {Number}
+	 * @default 6
+	 * @readonly
+	 */
+	StageGL.INDICIES_PER_CARD = 6;
+
+	/**
+	 * The default value for the maximum number of cards we want to process in a batch. See
+	 * {{#crossLink "StageGL/WEBGL_MAX_INDEX_NUM:property"}}{{/crossLink}} for a hard limit.
+	 * @property DEFAULT_MAX_BATCH_SIZE
+	 * @static
+	 * @final
+	 * @type {Number}
+	 * @default 10000
+	 * @readonly
+	 */
+	StageGL.DEFAULT_MAX_BATCH_SIZE = 10000;
+
+	/**
+	 * The maximum size WebGL allows for element index numbers. Uses a 16 bit unsigned integer. It takes 6 indices to
+	 * make a unique card.
+	 * @property WEBGL_MAX_INDEX_NUM
+	 * @static
+	 * @final
+	 * @type {Number}
+	 * @default 65536
+	 * @readonly
+	 */
+	StageGL.WEBGL_MAX_INDEX_NUM = Math.pow(2, 16);
+
+	/**
+	 * Default U/V rect for dealing with full coverage from an image source.
+	 * @property UV_RECT
+	 * @static
+	 * @final
+	 * @type {Object}
+	 * @default {t:0, l:0, b:1, r:1}
+	 * @readonly
+	 */
+	StageGL.UV_RECT = {t:0, l:0, b:1, r:1};
+
+	try {
+		/**
+		 * Vertex positions for a card that covers the entire render. Used with render targets primarily.
+		 * @property COVER_VERT
+		 * @static
+		 * @final
+		 * @type {Float32Array}
+		 * @readonly
+		 */
+		StageGL.COVER_VERT = new Float32Array([
+			-1,		 1,		//TL
+			1,		 1,		//TR
+			-1,		-1,		//BL
+			1,		 1,		//TR
+			1,		-1,		//BR
+			-1,		-1		//BL
+		]);
+
+		/**
+		 * U/V for {{#crossLink "StageGL/COVER_VERT:property"}}{{/crossLink}}.
+		 * @property COVER_UV
+		 * @static
+		 * @final
+		 * @type {Float32Array}
+		 * @readonly
+		 */
+		StageGL.COVER_UV = new Float32Array([
+			 0,		 0,		//TL
+			 1,		 0,		//TR
+			 0,		 1,		//BL
+			 1,		 0,		//TR
+			 1,		 1,		//BR
+			 0,		 1		//BL
+		]);
+
+		/**
+		 * Flipped U/V for {{#crossLink "StageGL:COVER_VERT:property"}}{{/crossLink}}.
+		 * @property COVER_UV_FLIP
+		 * @static
+		 * @final
+		 * @type {Float32Array}
+		 * @readonly
+		 */
+		StageGL.COVER_UV_FLIP = new Float32Array([
+			 0,		 1,		//TL
+			 1,		 1,		//TR
+			 0,		 0,		//BL
+			 1,		 1,		//TR
+			 1,		 0,		//BR
+			 0,		 0		//BL
+		]);
+	} catch(e) { /* Breaking in older browsers, but those browsers wont run StageGL so no recovery or warning needed */ }
+
+	/**
+	 * Portion of the shader that contains the "varying" properties required in both vertex and fragment shaders. The
+	 * regular shader is designed to render all expected objects. Shader code may contain templates that are replaced
+	 * pre-compile.
+	 * @property REGULAR_VARYING_HEADER
+	 * @static
+	 * @final
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.REGULAR_VARYING_HEADER = (
+		"precision mediump float;" +
+		"varying vec2 vTextureCoord;" +
+		"varying lowp float indexPicker;" +
+		"varying lowp float alphaValue;"
+	);
+
+	/**
+	 * Actual full header for the vertex shader. Includes the varying header. The regular shader is designed to render
+	 * all expected objects. Shader code may contain templates that are replaced pre-compile.
+	 * @property REGULAR_VERTEX_HEADER
+	 * @static
+	 * @final
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.REGULAR_VERTEX_HEADER = (
+		StageGL.REGULAR_VARYING_HEADER +
+		"attribute vec2 vertexPosition;" +
+		"attribute vec2 uvPosition;" +
+		"attribute lowp float textureIndex;" +
+		"attribute lowp float objectAlpha;" +
+		"uniform mat4 pMatrix;"
+	);
+
+	/**
+	 * Actual full header for the fragment shader. Includes the varying header. The regular shader is designed to render
+	 * all expected objects. Shader code may contain templates that are replaced pre-compile.
+	 * @property REGULAR_FRAGMENT_HEADER
+	 * @static
+	 * @final
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.REGULAR_FRAGMENT_HEADER = (
+		StageGL.REGULAR_VARYING_HEADER +
+		"uniform sampler2D uSampler[{{count}}];"
+	);
+
+	/**
+	 * Body of the vertex shader. The regular shader is designed to render all expected objects. Shader code may contain
+	 * templates that are replaced pre-compile.
+	 * @property REGULAR_VERTEX_BODY
+	 * @static
+	 * @final
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.REGULAR_VERTEX_BODY  = (
+		"void main(void) {" +
+			//DHG TODO: This doesn't work. Must be something wrong with the hand built matrix see js... bypass for now
+			//vertexPosition, round if flag
+			//"gl_Position = pMatrix * vec4(vertexPosition.x, vertexPosition.y, 0.0, 1.0);" +
+			"gl_Position = vec4("+
+				"(vertexPosition.x * pMatrix[0][0]) + pMatrix[3][0]," +
+				"(vertexPosition.y * pMatrix[1][1]) + pMatrix[3][1]," +
+				"pMatrix[3][2]," +
+				"1.0" +
+			");" +
+			"alphaValue = objectAlpha;" +
+			"indexPicker = textureIndex;" +
+			"vTextureCoord = uvPosition;" +
+		"}"
+	);
+
+	/**
+	 * Body of the fragment shader. The regular shader is designed to render all expected objects. Shader code may
+	 * contain templates that are replaced pre-compile.
+	 * @property REGULAR_FRAGMENT_BODY
+	 * @static
+	 * @final
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.REGULAR_FRAGMENT_BODY = (
+		"void main(void) {" +
+			"vec4 color = vec4(1.0, 0.0, 0.0, 1.0);" +
+
+			"if (indexPicker <= 0.5) {" +
+				"color = texture2D(uSampler[0], vTextureCoord);" +
+				"{{alternates}}" +
+			"}" +
+
+			"{{fragColor}}" +
+		"}"
+	);
+	StageGL.REGULAR_FRAG_COLOR_NORMAL = (
+		"gl_FragColor = vec4(color.rgb, color.a * alphaValue);"
+	);
+	StageGL.REGULAR_FRAG_COLOR_PREMULTIPLY = (
+		"if(color.a > 0.0035) {" +		// 1/255 = 0.0039, so ignore any value below 1 because it's probably noise
+			"gl_FragColor = vec4(color.rgb/color.a, color.a * alphaValue);" +
+		"} else {" +
+			"gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);" +
+		"}"
+	);
+
+	//TODO: DHG: a real particle shader
+	/**
+	 * @property PARTICLE_VERTEX_BODY
+	 * @todo
+	 * @final
+	 * @static
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.PARTICLE_VERTEX_BODY = (
+		StageGL.REGULAR_VERTEX_BODY
+	);
+	/**
+	 * @property PARTICLE_FRAGMENT_BODY
+	 * @todo
+	 * @final
+	 * @static
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.PARTICLE_FRAGMENT_BODY = (
+		StageGL.REGULAR_FRAGMENT_BODY
+	);
+
+	/**
+	 * Portion of the shader that contains the "varying" properties required in both vertex and fragment shaders. The
+	 * cover shader is designed to be a simple vertex/uv only texture render that covers the render surface. Shader
+	 * code may contain templates that are replaced pre-compile.
+	 * @property COVER_VARYING_HEADER
+	 * @static
+	 * @final
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.COVER_VARYING_HEADER = (
+		"precision mediump float;" +
+
+		"varying highp vec2 vRenderCoord;" +
+		"varying highp vec2 vTextureCoord;"
+	);
+
+	/**
+	 * Actual full header for the vertex shader. Includes the varying header. The cover shader is designed to be a
+	 * simple vertex/uv only texture render that covers the render surface. Shader code may contain templates that are
+	 * replaced pre-compile.
+	 * @property COVER_VERTEX_HEADER
+	 * @static
+	 * @final
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.COVER_VERTEX_HEADER = (
+		StageGL.COVER_VARYING_HEADER +
+		"attribute vec2 vertexPosition;" +
+		"attribute vec2 uvPosition;" +
+		"uniform float uUpright;"
+	);
+
+	/**
+	 * Actual full header for the fragment shader. Includes the varying header. The cover shader is designed to be a
+	 * simple vertex/uv only texture render that covers the render surface. Shader code may contain templates that are
+	 * replaced pre-compile.
+	 * @property COVER_FRAGMENT_HEADER
+	 * @static
+	 * @final
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.COVER_FRAGMENT_HEADER = (
+		StageGL.COVER_VARYING_HEADER +
+		"uniform sampler2D uSampler;"
+	);
+
+	/**
+	 * Body of the vertex shader. The cover shader is designed to be a simple vertex/uv only texture render that covers
+	 * the render surface. Shader code may contain templates that are replaced pre-compile.
+	 * @property COVER_VERTEX_BODY
+	 * @static
+	 * @final
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.COVER_VERTEX_BODY  = (
+		"void main(void) {" +
+			"gl_Position = vec4(vertexPosition.x, vertexPosition.y, 0.0, 1.0);" +
+			"vRenderCoord = uvPosition;" +
+			"vTextureCoord = vec2(uvPosition.x, abs(uUpright - uvPosition.y));" +
+		"}"
+	);
+
+	/**
+	 * Body of the fragment shader. The cover shader is designed to be a simple vertex/uv only texture render that
+	 * covers the render surface. Shader code may contain templates that are replaced pre-compile.
+	 * @property COVER_FRAGMENT_BODY
+	 * @static
+	 * @final
+	 * @type {String}
+	 * @readonly
+	 */
+	StageGL.COVER_FRAGMENT_BODY = (
+		"void main(void) {" +
+			"vec4 color = texture2D(uSampler, vRenderCoord);" +
+			"gl_FragColor = color;" +
+		"}"
+	);
+
+// events:
+	/**
+	 * Dispatched each update immediately before the canvas is cleared and the display list is drawn to it. You can call
+	 * {{#crossLink "Event/preventDefault"}}{{/crossLink}} on the event to cancel the draw.
+	 * @event drawstart
+	 */
+
+	/**
+	 * Dispatched each update immediately after the display list is drawn to the canvas and the canvas context is restored.
+	 * @event drawend
+	 */
+
+// getter / setters:
+	p._get_isWebGL = function () {
+		return !!this._webGLContext;
+	};
+
+	p._set_autoPurge = function (value) {
+		value = isNaN(value)?1200:value;
+		if (value != -1) {
+			value = value<10?10:value;
+		}
+		this._autoPurge = value;
+	};
+	p._get_autoPurge = function () {
+		return Number(this._autoPurge);
+	};
+
+	try {
+		Object.defineProperties(p, {
+			/**
+			 * Indicates whether WebGL is being used for rendering. For example, this would be `false` if WebGL is not
+			 * supported in the browser.
+			 * @property isWebGL
+			 * @type {Boolean}
+			 * @readonly
+			 */
+			isWebGL: { get: p._get_isWebGL },
+
+			/**
+			 * Specifies whether or not StageGL is automatically purging unused textures. Higher numbers purge less
+			 * often. Values below 10 are upgraded to 10, and -1 disables this feature.
+			 * @property autoPurge
+			 * @protected
+			 * @type {Integer}
+			 * @default 1000
+			 */
+			autoPurge: { get: p._get_autoPurge, set: p._set_autoPurge }
+		});
+	} catch (e) {} // TODO: use Log
+
+
+// constructor methods:
+	/**
+	 * Create and properly initialize the WebGL instance.
+	 * @method _initializeWebGL
+	 * @protected
+	 * @return {WebGLRenderingContext}
+	 */
+	p._initializeWebGL = function () {
+		if (this.canvas) {
+			if (!this._webGLContext || this._webGLContext.canvas !== this.canvas) {
+				// A context hasn't been defined yet,
+				// OR the defined context belongs to a different canvas, so reinitialize.
+
+				// defaults and options
+				var options = {
+					depth: false, // Disable the depth buffer as it isn't used.
+					alpha: this._transparent, // Make the canvas background transparent.
+					stencil: true,
+					antialias: this._antialias,
+					premultipliedAlpha: this._premultiply, // Assume the drawing buffer contains colors with premultiplied alpha.
+					preserveDrawingBuffer: this._preserveBuffer
+				};
+
+				var gl = this._webGLContext = this._fetchWebGLContext(this.canvas, options);
+				if (!gl) { return null; }
+
+				this.updateSimultaneousTextureCount(gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS));
+				this._maxTextureSlots = gl.getParameter(gl.MAX_COMBINED_TEXTURE_IMAGE_UNITS);
+				this._createBuffers(gl);
+				this._initTextures(gl);
+
+				gl.disable(gl.DEPTH_TEST);
+				gl.enable(gl.BLEND);
+				gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+				gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, this._premultiply);
+				//gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, gl.NONE);
+
+				this._webGLContext.clearColor(this._clearColor.r, this._clearColor.g, this._clearColor.b, this._clearColor.a);
+				this.updateViewport(this._viewportWidth || this.canvas.width, this._viewportHeight || this.canvas.height);
+			}
+		} else {
+			this._webGLContext = null;
+		}
+		return this._webGLContext;
+	};
+
+// public methods:
+	/**
+	 * Docced in superclass
+	 */
+	p.update = function (props) {
+		if (!this.canvas) { return; }
+		if (this.tickOnUpdate) { this.tick(props); }
+		this.dispatchEvent("drawstart");
+		if (this.autoClear) { this.clear(); }
+
+		if (this._webGLContext) {
+			// Use WebGL.
+			this._batchDraw(this, this._webGLContext);
+			if (this._autoPurge != -1 && !(this._drawID%((this._autoPurge/2)|0))) {
+				this.purgeTextures(this._autoPurge);
+			}
+		} else {
+			// Use 2D.
+			var ctx = this.canvas.getContext("2d");
+			ctx.save();
+			this.updateContext(ctx);
+			this.draw(ctx, false);
+			ctx.restore();
+		}
+		this.dispatchEvent("drawend");
+	};
+
+	/**
+	 * Docced in superclass
+	 */
+	p.clear = function () {
+		if (!this.canvas) { return; }
+		if (StageGL.isWebGLActive(this._webGLContext)) {
+			var gl = this._webGLContext;
+			var cc = this._clearColor;
+			var adjust = this._transparent ? cc.a : 1.0;
+			// Use WebGL settings; adjust for pre multiplied alpha appropriate to scenario
+			this._webGLContext.clearColor(cc.r * adjust, cc.g * adjust, cc.b * adjust, adjust);
+			gl.clear(gl.COLOR_BUFFER_BIT);
+			this._webGLContext.clearColor(cc.r, cc.g, cc.b, cc.a);
+		} else {
+			// Use 2D.
+			this.Stage_clear();
+		}
+	};
+
+	/**
+	 * Draws the stage into the supplied context if possible. Many WebGL properties only exist on their context. As such
+	 * you cannot share contexts among many StageGLs and each context requires a unique StageGL instance. Contexts that
+	 * don't match the context managed by this StageGL will be treated as a 2D context.
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D | WebGLRenderingContext} context The context object to draw into.
+	 * @param {Boolean} [ignoreCache=false] Indicates whether the draw operation should ignore any current cache. For
+	 *  example, used for drawing the cache (to prevent it from simply drawing an existing cache back into itself).
+	 * @return {Boolean} If the draw was handled by this function
+	 */
+	p.draw = function (context, ignoreCache) {
+		if (context === this._webGLContext && StageGL.isWebGLActive(this._webGLContext)) {
+			var gl = this._webGLContext;
+			this._batchDraw(this, gl, ignoreCache);
+			return true;
+		} else {
+			return this.Stage_draw(context, ignoreCache);
+		}
+	};
+
+	/**
+	 * Draws the target into the correct context, be it a canvas or Render Texture using WebGL.
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method cacheDraw
+	 * @param {DisplayObject} target The object we're drawing into cache.
+	 * For example, used for drawing the cache (to prevent it from simply drawing an existing cache back into itself).
+	 * @param {Array} filters The filters we're drawing into cache.
+	 * @param {BitmapCache} manager The BitmapCache instance looking after the cache
+	 * @return {Boolean} If the draw was handled by this function
+	 */
+	p.cacheDraw = function (target, filters, manager) {
+		if (StageGL.isWebGLActive(this._webGLContext)) {
+			var gl = this._webGLContext;
+			this._cacheDraw(gl, target, filters, manager);
+			return true;
+		} else {
+			return false;
+		}
+	};
+
+	/**
+	 * Blocks, or frees a texture "slot" on the GPU. Can be useful if you are overflowing textures. When overflowing
+	 * textures they are re-uploaded to the GPU every time they're encountered, this can be expensive with large textures.
+	 * By blocking the slot you reduce available slots, potentially increasing draw calls, but mostly you prevent a
+	 * texture being re-uploaded if it would have moved slots due to overflow.
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * For example, block the slot a background image is stored in so there is less re-loading of that image.
+	 * @method protectTextureSlot
+	 * @param  {Number} id The slot to be affected
+	 * @param  {Boolean} [lock=false] Whether this slot is the one being locked.
+	 */
+	p.protectTextureSlot = function (id, lock) {
+		if (id > this._maxTextureSlots || id < 0) {
+			throw "Slot outside of acceptable range";
+		}
+		this._slotBlacklist[id] = !!lock;
+	};
+
+	/**
+	 * Render textures can't draw into themselves so any item being used for renderTextures needs two to alternate between.
+	 * This function creates, gets, and toggles the render surface between the two.
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method getTargetRenderTexture
+	 * @param  {DisplayObject} target The object associated with the render textures, usually a cached object.
+	 * @param  {Number} w The width to create the texture at.
+	 * @param  {Number} h The height to create the texture at.
+	 * @return {Objet}
+	 * @todo fill in return type
+	 */
+	p.getTargetRenderTexture = function (target, w, h) {
+		var result, toggle = false;
+		var gl = this._webGLContext;
+		if (target.__lastRT !== undefined && target.__lastRT === target.__rtA) { toggle = true; }
+		if (!toggle) {
+			if (target.__rtA === undefined) {
+				target.__rtA = this.getRenderBufferTexture(w, h);
+			} else {
+				if (w != target.__rtA._width || h != target.__rtA._height) {
+					this.resizeTexture(target.__rtA, w, h);
+				}
+				this.setTextureParams(gl);
+			}
+			result = target.__rtA;
+		} else {
+			if (target.__rtB === undefined) {
+				target.__rtB = this.getRenderBufferTexture(w, h);
+			} else {
+				if (w != target.__rtB._width || h != target.__rtB._height) {
+					this.resizeTexture(target.__rtB, w, h);
+				}
+				this.setTextureParams(gl);
+			}
+			result = target.__rtB;
+		}
+		if (!result) {
+			throw "Problems creating render textures, known causes include using too much VRAM by not releasing WebGL texture instances";
+		}
+		target.__lastRT = result;
+		return result;
+	};
+
+	/**
+	 * For every image encountered StageGL registers and tracks it automatically. This tracking can cause memory leaks 
+	 * if not purged. StageGL, by default, automatically purges them. This does have a cost and may unfortunately find
+	 * false positives. This function is for manual management of this memory instead of the automatic system controlled
+	 * by the {{#crossLink "StageGL/autoPurge:property"}}{{/crossLink}} property.
+	 *
+	 * This function will recursively remove all textures found on the object, its children, cache, etc. It will uncache 
+	 * objects and remove any texture it finds REGARDLESS of whether it is currently in use elsewhere. It is up to the
+	 * developer to ensure that a texture in use is not removed.
+	 *
+	 * Textures in use, or to be used again shortly, should not be removed. This is simply for performance reasons.
+	 * Removing a texture in use will cause the texture to have to be re-uploaded slowing rendering.
+	 * @method releaseTexture
+	 * @param  {DisplayObject | Texture | Image | Canvas} item An object that used the texture to be discarded.
+	 */
+	p.releaseTexture = function (item) {
+		var this$1 = this;
+
+		var i, l;
+		if (!item) { return; }
+
+		// this is a container object
+		if (item.children) {
+			for (i = 0, l = item.children.length; i < l; i++) {
+				this$1.releaseTexture(item.children[i]);
+			}
+		}
+
+		// this has a cache canvas
+		if (item.cacheCanvas) {
+			item.uncache();
+		}
+
+		var foundImage = undefined;
+		if (item._storeID !== undefined) {
+			// this is a texture itself
+			if (item === this._textureDictionary[item._storeID]) {
+				this._killTextureObject(item);
+				item._storeID = undefined;
+				return;
+			}
+
+			// this is an image or canvas
+			foundImage = item;
+		} else if (item._webGLRenderStyle === 2) {
+			// this is a Bitmap class
+			foundImage = item.image;
+		} else if (item._webGLRenderStyle === 1) {
+			// this is a SpriteSheet, we can't tell which image we used from the list easily so remove them all!
+			for (i = 0, l = item.spriteSheet._images.length; i < l; i++) {
+				this$1.releaseTexture(item.spriteSheet._images[i]);
+			}
+			return;
+		}
+
+		// did we find anything
+		if (foundImage === undefined) {
+			if (this.vocalDebug) {
+				console.log("No associated texture found on release");
+			}
+			return;
+		}
+
+		// remove it
+		this._killTextureObject(this._textureDictionary[foundImage._storeID]);
+		foundImage._storeID = undefined;
+	};
+
+	/**
+	 * Similar to {{#crossLink "releaseTexture"}}{{/crossLink}}, but this function differs by searching for textures to
+	 * release. It works by assuming that it can purge any texture which was last used more than "count" draw calls ago.
+	 * Because this process is unaware of the objects and whether they may be used on your stage, false positives can
+	 * occur. It is recommended to manually manage your memory with {{#crossLink "StageGL/releaseTexture"}}{{/crossLink}},
+	 * however, there are many use cases where this is simpler and error-free. This process is also run by default under
+	 * the hood to prevent leaks. To disable it see the {{#crossLink "StageGL/autoPurge:property"}}{{/crossLink}} property.
+	 * @method purgeTextures
+	 * @param {Number} [count=100] How many renders ago the texture was last used
+	 */
+	p.purgeTextures = function (count) {
+		var this$1 = this;
+
+		if (count == undefined){ count = 100; }
+
+		var dict = this._textureDictionary;
+		var l = dict.length;
+		for (var i= 0; i<l; i++) {
+			var item = dict[i];
+			if (!item) { continue; }
+			if (item._drawID + count <= this$1._drawID) {	// use draw not batch as draw is more indicative of time
+				this$1._killTextureObject(item);
+			}
+		}
+	};
+
+	/**
+	 * Try to set the max textures the system can handle. It should default to the hardware maximum, and lower values
+	 * may limit performance. Some devices have been known to mis-report their max textures, or you may need a standard
+	 * baseline cross devices for testing. Barring the previous suggestions, there is little need to call this function
+	 * as the library will automatically try to find the best value.
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method updateSimultaneousTextureCount
+	 * @param {Number} [count=1] The number of textures intended for simultaneous loading.
+	 */
+	p.updateSimultaneousTextureCount = function (count) {
+		var this$1 = this;
+
+		// TODO: DHG: make sure API works in all instances, may be some issues with buffers etc I haven't foreseen
+		var gl = this._webGLContext;
+		var success = false;
+
+		if (count < 1 || isNaN(count)) { count = 1; }
+		this._batchTextureCount = count;
+
+		while (!success) {
+			try {
+				this$1._activeShader = this$1._fetchShaderProgram(gl);
+				success = true;
+			} catch(e) {
+				if (this$1._batchTextureCount == 1) {
+					throw "Cannot compile shader " + e;
+				}
+
+				this$1._batchTextureCount -= 4;
+				if (this$1._batchTextureCount < 1) { this$1._batchTextureCount = 1; }
+
+				if (this$1.vocalDebug) {
+					console.log("Reducing desired texture count due to errors: " + this$1._batchTextureCount);
+				}
+			}
+		}
+	};
+
+	/**
+	 * Update the WebGL viewport. Note that this does <strong>not</strong> update the canvas element's width/height, but
+	 * the render surface's instead. This is necessary after manually resizing the canvas element on the DOM to avoid a
+	 * up/down scaled render.
+	 * @method updateViewport
+	 * @param {Integer} width The width of the render surface in pixels.
+	 * @param {Integer} height The height of the render surface in pixels.
+	 */
+	p.updateViewport = function (width, height) {
+		this._viewportWidth = width|0;
+		this._viewportHeight = height|0;
+		var gl = this._webGLContext;
+
+		if (gl) {
+			gl.viewport(0, 0, this._viewportWidth, this._viewportHeight);
+
+			// WebGL works with a -1,1 space on its screen. It also follows Y-Up
+			// we need to flip the y, scale and then translate the co-ordinates to match this
+			// additionally we offset into they Y so the polygons are inside the camera's "clipping" plane
+			this._projectionMatrix = new Float32Array([
+				2 / this._viewportWidth,	0,								0,							0,
+				0,							-2 / this._viewportHeight,		1,							0,
+				0,							0,								1,							0,
+				-1,							1,								0.1,						0
+			]);
+			// create the flipped version for use with render texture flipping
+			// DHG: this would be a slice/clone but some platforms don't offer them for Float32Array
+			this._projectionMatrixFlip = new Float32Array([0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]);
+			this._projectionMatrixFlip.set(this._projectionMatrix);
+			this._projectionMatrixFlip[5] *= -1;
+			this._projectionMatrixFlip[13] *= -1;
+		}
+	};
+
+	/**
+	 * Fetches the shader compiled and set up to work with the provided filter/object. The shader is compiled on first
+	 * use and returned on subsequent calls.
+	 * @method getFilterShader
+	 * @param  {Filter|Object} filter The object which will provide the information needed to construct the filter shader.
+	 * @return {WebGLProgram}
+	 */
+	p.getFilterShader = function (filter) {
+		if (!filter) { filter = this; }
+
+		var gl = this._webGLContext;
+		var targetShader = this._activeShader;
+
+		if (filter._builtShader) {
+			targetShader = filter._builtShader;
+			if (filter.shaderParamSetup) {
+				gl.useProgram(targetShader);
+				filter.shaderParamSetup(gl, this, targetShader);
+			}
+		} else {
+			try {
+				targetShader = this._fetchShaderProgram(
+					gl, "filter",
+					filter.VTX_SHADER_BODY, filter.FRAG_SHADER_BODY,
+					filter.shaderParamSetup && filter.shaderParamSetup.bind(filter)
+				);
+				filter._builtShader = targetShader;
+				targetShader._name = filter.toString();
+			} catch (e) {
+				console && console.log("SHADER SWITCH FAILURE", e);
+			}
+		}
+		return targetShader;
+	};
+
+	/**
+	 * Returns a base texture that has no image or data loaded. Not intended for loading images. It may return `null`
+	 * in some error cases, and trying to use a "null" texture can cause renders to fail.
+	 * @method getBaseTexture
+	 * @param  {uint} [w=1] The width of the texture in pixels, defaults to 1
+	 * @param  {uint} [h=1] The height of the texture in pixels, defaults to 1
+	 */
+	p.getBaseTexture = function (w, h) {
+		var width = Math.ceil(w > 0 ? w : 1) || 1;
+		var height = Math.ceil(h > 0 ? h : 1) || 1;
+
+		var gl = this._webGLContext;
+		var texture = gl.createTexture();
+		this.resizeTexture(texture, width, height);
+		this.setTextureParams(gl, false);
+
+		return texture;
+	};
+
+	/**
+	 * Resizes a supplied texture element. May generate invalid textures in some error cases such as; when the texture
+	 * is too large, when an out of texture memory error occurs, or other error scenarios. Trying to use an invalid texture
+	 * can cause renders to hard stop on some devices. Check the WebGL bound texture after running this function.
+	 *
+	 * NOTE: The supplied texture must have been made with the WebGL "texImage2D" function, all default APIs in StageGL
+	 * use this, so this note only matters for library developers and plugins.
+	 *
+	 * @protected
+	 * @method resizeTexture
+	 * @param  {WebGLTexture} texture The GL Texture to be modified.
+	 * @param  {uint} [width=1] The width of the texture in pixels, defaults to 1
+	 * @param  {uint} [height=1] The height of the texture in pixels, defaults to 1
+	 */
+	p.resizeTexture = function (texture, width,height) {
+		var gl = this._webGLContext;
+		gl.bindTexture(gl.TEXTURE_2D, texture);
+		gl.texImage2D(
+			gl.TEXTURE_2D,				// target
+			0,							// level of detail
+			gl.RGBA,					// internal format
+			width, height, 0,			// width, height, border (only for array/null sourced textures)
+			gl.RGBA,					// format (match internal format)
+			gl.UNSIGNED_BYTE,			// type of texture(pixel color depth)
+			null						// image data, we can do null because we're doing array data
+		);
+		texture.width = width;
+		texture.height = height;
+	};
+
+	/**
+	 * Returns a base texture (see {{#crossLink "StageGL/getBaseTexture"}}{{/crossLink}}) for details. Also includes an
+	 * attached and linked render buffer in `texture._frameBuffer`. RenderTextures can be thought of as an internal
+	 * canvas on the GPU that can be drawn to.
+	 * @method getRenderBufferTexture
+	 * @param  {Number} w The width of the texture in pixels.
+	 * @param  {Number} h The height of the texture in pixels.
+	 * @return {Texture} the basic texture instance with a render buffer property.
+	 */
+	p.getRenderBufferTexture = function (w, h) {
+		var gl = this._webGLContext;
+
+		// get the texture
+		var renderTexture = this.getBaseTexture(w, h);
+		if (!renderTexture) { return null; }
+
+		// get the frame buffer
+		var frameBuffer = gl.createFramebuffer();
+		if (!frameBuffer) { return null; }
+
+		// set its width and height for spoofing as an image
+		renderTexture.width = w;
+		renderTexture.height = h;
+
+		// attach frame buffer to texture and provide cross links to look up each other
+		gl.bindFramebuffer(gl.FRAMEBUFFER, frameBuffer);
+		gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, renderTexture, 0);
+		frameBuffer._renderTexture = renderTexture;
+		renderTexture._frameBuffer = frameBuffer;
+
+		// these keep track of themselves simply to reduce complexity of some lookup code
+		renderTexture._storeID = this._textureDictionary.length;
+		this._textureDictionary[renderTexture._storeID] = renderTexture;
+
+		gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+		return renderTexture;
+	};
+
+	/**
+	 * Common utility function used to apply the correct texture processing parameters for the bound texture.
+	 * @method setTextureParams
+	 * @param  {WebGLRenderingContext} gl The canvas WebGL context object to draw into.
+	 * @param  {Boolean} [isPOT=false] Marks whether the texture is "Power of Two", this may allow better quality AA.
+	 */
+	p.setTextureParams = function (gl, isPOT) {
+		if (isPOT && this._antialias) {
+			//non POT linear works in some devices, but performance is NOT good, investigate
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+		} else {
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+		}
+		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+	};
+
+	/**
+	 * Changes the webGL clear, aka "background" color to the provided value. A transparent clear is recommended, as
+	 * non-transparent colours may create undesired boxes around some visuals.
+	 *
+	 * The clear color will also be used for filters and other "render textures". The stage background will ignore the
+	 * transparency value and display a solid color normally. For the stage to recognize and use transparency it must be
+	 * created with the transparent flag set to `true` (see {{#crossLink "StageGL/constructor"}}{{/crossLink}})).
+	 *
+	 * Using "transparent white" to demonstrate, the valid data formats are as follows:
+	 * <ul>
+	 *     <li>"#FFF"</li>
+	 *     <li>"#FFFFFF"</li>
+	 *     <li>"#FFFFFF00"</li>
+	 *     <li>"rgba(255,255,255,0.0)"</li>
+	 * </ul>
+	 * @method setClearColor
+	 * @param {String|int} [color=0x00000000] The new color to use as the background
+	 */
+	p.setClearColor = function (color) {
+		var r, g, b, a, output;
+
+		if (typeof color == "string") {
+			if (color.indexOf("#") == 0) {
+				if (color.length == 4) {
+					color = "#" + color.charAt(1)+color.charAt(1) + color.charAt(2)+color.charAt(2) + color.charAt(3)+color.charAt(3)
+				}
+				r = Number("0x"+color.slice(1, 3))/255;
+				g = Number("0x"+color.slice(3, 5))/255;
+				b = Number("0x"+color.slice(5, 7))/255;
+				a = Number("0x"+color.slice(7, 9))/255;
+			} else if (color.indexOf("rgba(") == 0) {
+				output = color.slice(5, -1).split(",");
+				r = Number(output[0])/255;
+				g = Number(output[1])/255;
+				b = Number(output[2])/255;
+				a = Number(output[3]);
+			}
+		} else {	// >>> is an unsigned shift which is what we want as 0x80000000 and up are negative values
+			r = ((color & 0xFF000000) >>> 24)/255;
+			g = ((color & 0x00FF0000) >>> 16)/255;
+			b = ((color & 0x0000FF00) >>> 8)/255;
+			a = (color & 0x000000FF)/255;
+		}
+
+		this._clearColor.r = r || 0;
+		this._clearColor.g = g || 0;
+		this._clearColor.b = b || 0;
+		this._clearColor.a = a || 0;
+
+		if (!this._webGLContext) { return; }
+		this._webGLContext.clearColor(this._clearColor.r, this._clearColor.g, this._clearColor.b, this._clearColor.a);
+	};
+
+	/**
+	 * docced in subclass
+	 */
+	p.toString = function () {
+		return "[StageGL (name="+  this.name +")]";
+	};
+
+// private methods:
+	/**
+	 * Sets up and returns the WebGL context for the canvas. May return undefined in error scenarios. These can include 
+	 * situations where the canvas element already has a context, 2D or GL.
+	 * @param  {Canvas} canvas The DOM canvas element to attach to
+	 * @param  {Object} options The options to be handed into the WebGL object, see WebGL spec
+	 * @method _fetchWebGLContext
+	 * @protected
+	 * @return {WebGLRenderingContext} The WebGL context, may return undefined in error scenarios
+	 */
+	p._fetchWebGLContext = function (canvas, options) {
+		var gl;
+
+		try {
+			gl = canvas.getContext("webgl", options) || canvas.getContext("experimental-webgl", options);
+		} catch (e) {
+			// don't do anything in catch, null check will handle it
+		}
+
+		if (!gl) {
+			var msg = "Could not initialize WebGL";
+			console.error?console.error(msg):console.log(msg);
+		} else {
+			gl.viewportWidth = canvas.width;
+			gl.viewportHeight = canvas.height;
+		}
+
+		return gl;
+	};
+
+	/**
+	 * Create the completed Shader Program from the vertex and fragment shaders. Allows building of custom shaders for
+	 * filters. Once compiled, shaders are saved so. If the Shader code requires dynamic alterations re-run this function
+	 * to generate a new shader.
+	 * @method _fetchShaderProgram
+	 * @param  {WebGLRenderingContext} gl The canvas WebGL context object to draw into.
+	 * @param  {String} [shaderName="regular"] Working values: "regular", "override", and "filter". Which type of shader to build.
+	 * Filter and override both accept the custom params. Regular and override have all features. Filter is a special case reduced feature shader meant to be over-ridden.
+	 * @param  {String} [customVTX] Extra vertex shader information to replace a regular draw, see 
+	 * {{#crossLink "StageGL/COVER_VERTEX_BODY"}}{{/crossLink}} for default and {{#crossLink "Filter"}}{{/crossLink}} for examples.
+	 * @param  {String} [customFRAG] Extra fragment shader information to replace a regular draw, see 
+	 * {{#crossLink "StageGL/COVER_FRAGMENT_BODY"}}{{/crossLink}} for default and {{#crossLink "Filter"}}{{/crossLink}} for examples.
+	 * @param  {Function} [shaderParamSetup] Function to run so custom shader parameters can get applied for the render.
+	 * @protected
+	 * @return {WebGLProgram} The compiled and linked shader
+	 */
+	p._fetchShaderProgram = function (gl, shaderName, customVTX, customFRAG, shaderParamSetup) {
+		gl.useProgram(null);		// safety to avoid collisions
+
+		// build the correct shader string out of the right headers and bodies
+		var targetFrag, targetVtx;
+		switch (shaderName) {
+			case "filter":
+				targetVtx = StageGL.COVER_VERTEX_HEADER + (customVTX || StageGL.COVER_VERTEX_BODY);
+				targetFrag = StageGL.COVER_FRAGMENT_HEADER + (customFRAG || StageGL.COVER_FRAGMENT_BODY);
+				break;
+			case "particle": //TODO
+				targetVtx = StageGL.REGULAR_VERTEX_HEADER + StageGL.PARTICLE_VERTEX_BODY;
+				targetFrag = StageGL.REGULAR_FRAGMENT_HEADER + StageGL.PARTICLE_FRAGMENT_BODY;
+				break;
+			case "override":
+				targetVtx = StageGL.REGULAR_VERTEX_HEADER + (customVTX || StageGL.REGULAR_VERTEX_BODY);
+				targetFrag = StageGL.REGULAR_FRAGMENT_HEADER + (customFRAG || StageGL.REGULAR_FRAGMENT_BODY);
+				break;
+			case "regular":
+			default:
+				targetVtx = StageGL.REGULAR_VERTEX_HEADER + StageGL.REGULAR_VERTEX_BODY;
+				targetFrag = StageGL.REGULAR_FRAGMENT_HEADER + StageGL.REGULAR_FRAGMENT_BODY;
+				break;
+		}
+
+		// create the separate vars
+		var vertexShader = this._createShader(gl, gl.VERTEX_SHADER, targetVtx);
+		var fragmentShader = this._createShader(gl, gl.FRAGMENT_SHADER, targetFrag);
+
+		// link them together
+		var shaderProgram = gl.createProgram();
+		gl.attachShader(shaderProgram, vertexShader);
+		gl.attachShader(shaderProgram, fragmentShader);
+		gl.linkProgram(shaderProgram);
+		shaderProgram._type = shaderName;
+
+		// check compile status
+		if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+			gl.useProgram(this._activeShader);
+			throw gl.getProgramInfoLog(shaderProgram);
+		}
+
+		// set up the parameters on the shader
+		gl.useProgram(shaderProgram);
+		switch (shaderName) {
+			case "filter":
+				// get the places in memory the shader is stored so we can feed information into them
+				// then save it off on the shader because it's so tied to the shader itself
+				shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "vertexPosition");
+				gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+				shaderProgram.uvPositionAttribute = gl.getAttribLocation(shaderProgram, "uvPosition");
+				gl.enableVertexAttribArray(shaderProgram.uvPositionAttribute);
+
+				shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
+				gl.uniform1i(shaderProgram.samplerUniform, 0);
+
+				shaderProgram.uprightUniform = gl.getUniformLocation(shaderProgram, "uUpright");
+				gl.uniform1f(shaderProgram.uprightUniform, 0);
+
+				// if there's some custom attributes be sure to hook them up
+				if (shaderParamSetup) {
+					shaderParamSetup(gl, this, shaderProgram);
+				}
+				break;
+			case "override":
+			case "particle":
+			case "regular":
+			default:
+				// get the places in memory the shader is stored so we can feed information into them
+				// then save it off on the shader because it's so tied to the shader itself
+				shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "vertexPosition");
+				gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+				shaderProgram.uvPositionAttribute = gl.getAttribLocation(shaderProgram, "uvPosition");
+				gl.enableVertexAttribArray(shaderProgram.uvPositionAttribute);
+
+				shaderProgram.textureIndexAttribute = gl.getAttribLocation(shaderProgram, "textureIndex");
+				gl.enableVertexAttribArray(shaderProgram.textureIndexAttribute);
+
+				shaderProgram.alphaAttribute = gl.getAttribLocation(shaderProgram, "objectAlpha");
+				gl.enableVertexAttribArray(shaderProgram.alphaAttribute);
+
+				var samplers = [];
+				for (var i = 0; i < this._batchTextureCount; i++) {
+					samplers[i] = i;
+				}
+
+				shaderProgram.samplerData = samplers;
+				shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
+				gl.uniform1iv(shaderProgram.samplerUniform, samplers);
+
+				shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "pMatrix");
+				break;
+		}
+
+		gl.useProgram(this._activeShader);
+		return shaderProgram;
+	};
+
+	/**
+	 * Creates a shader from the specified string replacing templates. Template items are defined via `{{` `key` `}}``.
+	 * @method _createShader
+	 * @param  {WebGLRenderingContext} gl The canvas WebGL context object to draw into.
+	 * @param  {Number} type The type of shader to create. gl.VERTEX_SHADER | gl.FRAGMENT_SHADER
+	 * @param  {String} str The definition for the shader.
+	 * @return {WebGLShader}
+	 * @protected
+	 */
+	p._createShader = function (gl, type, str) {
+		// inject the static number
+		str = str.replace(/{{count}}/g, this._batchTextureCount);
+
+		// resolve issue with no dynamic samplers by creating correct samplers in if else chain
+		// TODO: WebGL 2.0 does not need this support
+		var insert = "";
+		for (var i = 1; i<this._batchTextureCount; i++) {
+			insert += "} else if (indexPicker <= "+ i +".5) { color = texture2D(uSampler["+ i +"], vTextureCoord);";
+		}
+		str = str.replace(/{{alternates}}/g, insert);
+		str = str.replace(/{{fragColor}}/g, this._premultiply ? StageGL.REGULAR_FRAG_COLOR_PREMULTIPLY : StageGL.REGULAR_FRAG_COLOR_NORMAL);
+
+		// actually compile the shader
+		var shader = gl.createShader(type);
+		gl.shaderSource(shader, str);
+		gl.compileShader(shader);
+
+		// check compile status
+		if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+			throw gl.getShaderInfoLog(shader);
+		}
+
+		return shader;
+	};
+
+	/**
+	 * Sets up the necessary vertex property buffers, including position and U/V.
+	 * @method _createBuffers
+	 * @param {WebGLRenderingContext} gl
+	 * @protected
+	 */
+	p._createBuffers = function (gl) {
+		var groupCount = this._maxCardsPerBatch * StageGL.INDICIES_PER_CARD;
+		var groupSize, i, l;
+
+		// INFO:
+		// all buffers are created using this pattern
+		// create a WebGL buffer
+		// attach it to context
+		// figure out how many parts it has to an entry
+		// fill it with empty data to reserve the memory
+		// attach the empty data to the GPU
+		// track the sizes on the buffer object
+
+		// INFO:
+		// a single buffer may be optimal in some situations and would be approached like this,
+		// currently not implemented due to lack of need and potential complications with drawCover
+
+		// var vertexBuffer = this._vertexBuffer = gl.createBuffer();
+		// gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+		// groupSize = 2 + 2 + 1 + 1; //x/y, u/v, index, alpha
+		// var vertexData = this._vertexData = new Float32Array(groupCount * groupSize);
+		// for (i=0; i<vertexData.length; i+=groupSize) {
+		// 	vertexData[i+0] = vertexData[i+1] = 0;
+		// 	vertexData[i+2] = vertexData[i+3] = 0.5;
+		// 	vertexData[i+4] = 0;
+		// 	vertexData[i+5] = 1;
+		// }
+		// vertexBuffer.itemSize = groupSize;
+		// vertexBuffer.numItems = groupCount;
+		// TODO bechmark and test using unified buffer
+
+		// the actual position information
+		var vertexPositionBuffer = this._vertexPositionBuffer = gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
+		groupSize = 2;
+		var vertices = this._vertices = new Float32Array(groupCount * groupSize);
+		for (i=0, l=vertices.length; i<l; i+=groupSize) { vertices[i] = vertices[i+1] = 0; }
+		gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.DYNAMIC_DRAW);
+		vertexPositionBuffer.itemSize = groupSize;
+		vertexPositionBuffer.numItems = groupCount;
+
+		// where on the texture it gets its information
+		var uvPositionBuffer = this._uvPositionBuffer = gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER, uvPositionBuffer);
+		groupSize = 2;
+		var uvs = this._uvs = new Float32Array(groupCount * groupSize);
+		for (i=0, l=uvs.length; i<l; i+=groupSize) { uvs[i] = uvs[i+1] = 0; }
+		gl.bufferData(gl.ARRAY_BUFFER, uvs, gl.DYNAMIC_DRAW);
+		uvPositionBuffer.itemSize = groupSize;
+		uvPositionBuffer.numItems = groupCount;
+
+		// what texture it should use
+		var textureIndexBuffer = this._textureIndexBuffer = gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER, textureIndexBuffer);
+		groupSize = 1;
+		var indices = this._indices = new Float32Array(groupCount * groupSize);
+		for (i=0, l=indices.length; i<l; i++) { indices[i] = 0; }
+		gl.bufferData(gl.ARRAY_BUFFER, indices, gl.DYNAMIC_DRAW);
+		textureIndexBuffer.itemSize = groupSize;
+		textureIndexBuffer.numItems = groupCount;
+
+		// what alpha it should have
+		var alphaBuffer = this._alphaBuffer = gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER, alphaBuffer);
+		groupSize = 1;
+		var alphas = this._alphas = new Float32Array(groupCount * groupSize);
+		for (i=0, l=alphas.length; i<l; i++) { alphas[i] = 1; }
+		gl.bufferData(gl.ARRAY_BUFFER, alphas, gl.DYNAMIC_DRAW);
+		alphaBuffer.itemSize = groupSize;
+		alphaBuffer.numItems = groupCount;
+	};
+
+	/**
+	 * Do all the setup steps for textures in the system.
+	 * @method _initTextures
+	 * @protected
+	 */
+	p._initTextures = function () {
+		var this$1 = this;
+
+		//TODO: DHG: add a cleanup routine in here in case this happens mid stream
+
+		// reset counters
+		this._lastTextureInsert = -1;
+
+		// clear containers
+		this._textureDictionary = [];
+		this._textureIDs = {};
+		this._baseTextures = [];
+		this._batchTextures = [];
+
+		// fill in blanks as it helps the renderer be stable while textures are loading and reduces need for safety code
+		for (var i=0; i<this._batchTextureCount;i++) {
+			var tex = this$1.getBaseTexture();
+			this$1._baseTextures[i] = this$1._batchTextures[i] = tex;
+			if (!tex) {
+				throw "Problems creating basic textures, known causes include using too much VRAM by not releasing WebGL texture instances";
+			}
+		}
+	};
+
+	/**
+	 * Load a specific texture, accounting for potential delay, as it might not be preloaded.
+	 * @method _loadTextureImage
+	 * @param {WebGLRenderingContext} gl
+	 * @param {Image} image Actual image to be loaded
+	 * @return {WebGLTexture} The resulting Texture object
+	 * @protected
+	 */
+	p._loadTextureImage = function (gl, image) {
+		var src = image.src;
+
+		if (!src) {
+			// one time canvas property setup
+			image._isCanvas = true;
+			src = image.src = "canvas_" + this._lastTrackedCanvas++;
+		}
+
+		// put the texture into our storage system
+		var storeID = this._textureIDs[src];
+		if (storeID === undefined) {
+			storeID = this._textureIDs[src] = this._textureDictionary.length;
+		}
+		if (this._textureDictionary[storeID] === undefined) {
+			this._textureDictionary[storeID] = this.getBaseTexture();
+		}
+
+		var texture = this._textureDictionary[storeID];
+
+		if (texture) {
+			// get texture params all set up
+			texture._batchID = this._batchID;
+			texture._storeID = storeID;
+			texture._imageData = image;
+			this._insertTextureInBatch(gl, texture);
+
+			// get the data into the texture or wait for it to load
+			image._storeID = storeID;
+			if (image.complete || image.naturalWidth || image._isCanvas) {	// is it already loaded
+				this._updateTextureImageData(gl, image);
+			} else  {
+				image.addEventListener("load", this._updateTextureImageData.bind(this, gl, image));
+			}
+		} else {
+			// we really really should have a texture, try to recover the error by using a saved empty texture so we don't crash
+			var msg = "Problem creating desired texture, known causes include using too much VRAM by not releasing WebGL texture instances";
+			(console.error && console.error(msg)) || console.log(msg);
+
+			texture = this._baseTextures[0];
+			texture._batchID = this._batchID;
+			texture._storeID = -1;
+			texture._imageData = texture;
+			this._insertTextureInBatch(gl, texture);
+		}
+
+		return texture;
+	};
+
+	/**
+	 * Necessary to upload the actual image data to the GPU. Without this the texture will be blank. Called automatically
+	 * in most cases due to loading and caching APIs. Flagging an image source with `_invalid = true` will trigger this
+	 * next time the image is rendered.
+	 * @param {WebGLRenderingContext} gl
+	 * @param {Image | Canvas} image The image data to be uploaded
+	 * @protected
+	 */
+	p._updateTextureImageData = function (gl, image) {
+		// the bitwise & is intentional, cheap exponent 2 check
+		var isNPOT = (image.width & image.width-1) || (image.height & image.height-1);
+		var texture = this._textureDictionary[image._storeID];
+
+		gl.activeTexture(gl.TEXTURE0 + texture._activeIndex);
+		gl.bindTexture(gl.TEXTURE_2D, texture);
+
+		texture.isPOT = !isNPOT;
+		this.setTextureParams(gl, texture.isPOT);
+
+		try {
+			gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+		} catch(e) {
+			var errString = "\nAn error has occurred. This is most likely due to security restrictions on WebGL images with local or cross-domain origins";
+			if(console.error) {
+				//TODO: LM: I recommend putting this into a log function internally, since you do it so often, and each is implemented differently.
+				console.error(errString);
+				console.error(e);
+			} else if (console) {
+				console.log(errString);
+				console.log(e);
+			}
+		}
+
+		image._invalid = false;
+
+		texture._w = image.width;
+		texture._h = image.height;
+
+		if (this.vocalDebug) {
+			if (isNPOT) {
+				console.warn("NPOT(Non Power of Two) Texture: "+ image.src);
+			}
+			if (image.width > gl.MAX_TEXTURE_SIZE || image.height > gl.MAX_TEXTURE_SIZE){
+				console && console.error("Oversized Texture: "+ image.width+"x"+image.height +" vs "+ gl.MAX_TEXTURE_SIZE +"max");
+			}
+		}
+	};
+
+	/**
+	 * Adds the texture to a spot in the current batch, forcing a draw if no spots are free.
+	 * @method _insertTextureInBatch
+	 * @param {WebGLRenderingContext} gl The canvas WebGL context object to draw into.
+	 * @param {WebGLTexture} texture The texture to be inserted.
+	 * @protected
+	 */
+	p._insertTextureInBatch = function (gl, texture) {
+		var this$1 = this;
+
+		// if it wasn't used last batch
+		if (this._batchTextures[texture._activeIndex] !== texture) {
+			// we've got to find it a a spot.
+			var found = -1;
+			var start = (this._lastTextureInsert+1) % this._batchTextureCount;
+			var look = start;
+			do {
+				if (this$1._batchTextures[look]._batchID != this$1._batchID && !this$1._slotBlacklist[look]) {
+					found = look;
+					break;
+				}
+				look = (look+1) % this$1._batchTextureCount;
+			} while (look !== start);
+
+			// we couldn't find anywhere for it go, meaning we're maxed out
+			if (found === -1) {
+				this.batchReason = "textureOverflow";
+				this._drawBuffers(gl);		// <------------------------------------------------------------------------
+				this.batchCardCount = 0;
+				found = start;
+			}
+
+			// lets put it into that spot
+			this._batchTextures[found] = texture;
+			texture._activeIndex = found;
+			var image = texture._imageData;
+			if (image && image._invalid && texture._drawID !== undefined) {
+				this._updateTextureImageData(gl, image);
+			} else {
+				gl.activeTexture(gl.TEXTURE0 + found);
+				gl.bindTexture(gl.TEXTURE_2D, texture);
+				this.setTextureParams(gl);
+			}
+			this._lastTextureInsert = found;
+		} else {
+			var image = texture._imageData;
+			if (texture._storeID != undefined && image && image._invalid) {
+				this._updateTextureImageData(gl, image);
+			}
+		}
+
+		texture._drawID = this._drawID;
+		texture._batchID = this._batchID;
+	};
+
+	/**
+	 * Remove and clean the texture, expects a texture and is inflexible. Mostly for internal use, recommended to call 
+	 * {{#crossLink "StageGL/releaseTexture"}}{{/crossLink}} instead as it will call this with the correct texture object(s).
+	 * Note: Testing shows this may not happen immediately, have to wait frames for WebGL to have actually adjust memory.
+	 * @method _killTextureObject
+	 * @param {Texture} tex The texture to be cleaned out
+	 * @protected
+	 */
+	p._killTextureObject = function (tex) {
+		var this$1 = this;
+
+		if (!tex) { return; }
+		var gl = this._webGLContext;
+
+		// remove linkage
+		if (tex._storeID !== undefined && tex._storeID >= 0) {
+			this._textureDictionary[tex._storeID] = undefined;
+			for (var n in this._textureIDs) {
+				if (this$1._textureIDs[n] == tex._storeID) { delete this$1._textureIDs[n]; }
+			}
+			if(tex._imageData) { tex._imageData._storeID = undefined; }
+			tex._imageData = tex._storeID = undefined;
+		}
+
+		// make sure to drop it out of an active slot
+		if (tex._activeIndex !== undefined && this._batchTextures[tex._activeIndex] === tex) {
+			this._batchTextures[tex._activeIndex] = this._baseTextures[tex._activeIndex];
+		}
+
+		// remove buffers if present
+		try {
+			if (tex._frameBuffer) { gl.deleteFramebuffer(tex._frameBuffer); }
+			tex._frameBuffer = undefined;
+		} catch(e) {
+			/* suppress delete errors because it's already gone or didn't need deleting probably */
+			if (this.vocalDebug) { console.log(e); }
+		}
+
+		// remove entry
+		try {
+			gl.deleteTexture(tex);
+		} catch(e) {
+			/* suppress delete errors because it's already gone or didn't need deleting probably */
+			if (this.vocalDebug) { console.log(e); }
+		}
+	};
+
+	/**
+	 * Store or restore current batch textures into a backup array
+	 * @method _backupBatchTextures
+	 * @param {Boolean} restore Perform a restore instead of a store.
+	 * @param {Array} [target=this._backupTextures] Where to perform the backup, defaults to internal backup.
+	 * @protected
+	 */
+	p._backupBatchTextures = function (restore, target) {
+		var this$1 = this;
+
+		var gl = this._webGLContext;
+
+		if (!this._backupTextures) { this._backupTextures = []; }
+		if (target === undefined) { target = this._backupTextures; }
+
+		for (var i=0; i<this._batchTextureCount; i++) {
+			gl.activeTexture(gl.TEXTURE0 + i);
+			if (restore) {
+				this$1._batchTextures[i] = target[i];
+			} else {
+				target[i] = this$1._batchTextures[i];
+				this$1._batchTextures[i] = this$1._baseTextures[i];
+			}
+			gl.bindTexture(gl.TEXTURE_2D, this$1._batchTextures[i]);
+			this$1.setTextureParams(gl, this$1._batchTextures[i].isPOT);
+		}
+
+		if (restore && target === this._backupTextures) { this._backupTextures = []; }
+	};
+
+	/**
+	 * Begin the drawing process for a regular render.
+	 * @method _batchDraw
+	 * @param {WebGLRenderingContext} gl The canvas WebGL context object to draw into.
+	 * @param {Stage || Container} sceneGraph {{#crossLink "Container"}}{{/crossLink}} object with all that needs to rendered, preferably a Stage.
+	 * @param {Boolean} ignoreCache
+	 * @protected
+	 */
+	p._batchDraw = function (sceneGraph, gl, ignoreCache) {
+		if (this._isDrawing > 0) {
+			this._drawBuffers(gl);
+		}
+		this._isDrawing++;
+		this._drawID++;
+
+		this.batchCardCount = 0;
+		this.depth = 0;
+
+		this._appendToBatchGroup(sceneGraph, gl, new createjs.Matrix2D(), this.alpha, ignoreCache);
+
+		this.batchReason = "drawFinish";
+		this._drawBuffers(gl);								// <--------------------------------------------------------
+		this._isDrawing--;
+	};
+
+	/**
+	 * Perform the drawing process to fill a specific cache texture, including applying filters.
+	 * @method _cacheDraw
+	 * @param {DisplayObject} target The object we're drawing into the cache. For example, used for drawing the cache
+	 * (to prevent it from simply drawing an existing cache back into itself).
+	 * @param {Array} filters The filters we're drawing into cache.
+	 * @param {BitmapCache} manager The BitmapCache instance looking after the cache
+	 * @protected
+	 */
+	p._cacheDraw = function (gl, target, filters, manager) {
+		/*
+		Implicitly there are 4 modes to this function: filtered-sameContext, filtered-uniqueContext, sameContext, uniqueContext.
+		Each situation must be handled slightly differently as 'sameContext' or 'uniqueContext' define how the output works,
+		one drawing directly into the main context and the other drawing into a stored renderTexture respectively.
+		When the draw is a 'filtered' draw, the filters are applied sequentially and will draw into saved textures repeatedly.
+		Once the final filter is done the final output is treated depending upon whether it is a same or unique context.
+		The internal complexity comes from reducing over-draw, shared code, and issues like textures needing to be flipped
+		sometimes when written to render textures.
+		*/
+		var renderTexture;
+		var shaderBackup = this._activeShader;
+		var blackListBackup = this._slotBlacklist;
+		var lastTextureSlot = this._maxTextureSlots-1;
+		var wBackup = this._viewportWidth, hBackup = this._viewportHeight;
+
+		// protect the last slot so that we have somewhere to bind the renderTextures so it doesn't get upset
+		this.protectTextureSlot(lastTextureSlot, true);
+
+		// create offset container for drawing item
+		var mtx = target.getMatrix();
+		mtx = mtx.clone();
+		mtx.scale(1/manager.scale, 1/manager.scale);
+		mtx = mtx.invert();
+		mtx.translate(-manager.offX/manager.scale*target.scaleX, -manager.offY/manager.scale*target.scaleY);
+		var container = this._cacheContainer;
+		container.children = [target];
+		container.transformMatrix = mtx;
+
+		this._backupBatchTextures(false);
+
+		if (filters && filters.length) {
+			this._drawFilters(target, filters, manager);
+		} else {
+			// is this for another stage or mine?
+			if (this.isCacheControlled) {
+				// draw item to canvas				I -> C
+				gl.clear(gl.COLOR_BUFFER_BIT);
+				this._batchDraw(container, gl, true);
+			} else {
+				gl.activeTexture(gl.TEXTURE0 + lastTextureSlot);
+				target.cacheCanvas = this.getTargetRenderTexture(target, manager._drawWidth, manager._drawHeight);
+				renderTexture = target.cacheCanvas;
+
+				// draw item to render texture		I -> T
+				gl.bindFramebuffer(gl.FRAMEBUFFER, renderTexture._frameBuffer);
+				this.updateViewport(manager._drawWidth, manager._drawHeight);
+				this._projectionMatrix = this._projectionMatrixFlip;
+				gl.clear(gl.COLOR_BUFFER_BIT);
+				this._batchDraw(container, gl, true);
+
+				gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+				this.updateViewport(wBackup, hBackup);
+			}
+		}
+
+		this._backupBatchTextures(true);
+
+		this.protectTextureSlot(lastTextureSlot, false);
+		this._activeShader = shaderBackup;
+		this._slotBlacklist = blackListBackup;
+	};
+
+	/**
+	 * Sub portion of _cacheDraw, split off for readability. Do not call independently.
+	 * @method _drawFilters
+	 * @param {DisplayObject} target The object we're drawing with a filter.
+	 * @param {Array} filters The filters we're drawing into cache.
+	 * @param {BitmapCache} manager The BitmapCache instance looking after the cache
+	 */
+	p._drawFilters = function (target, filters, manager) {
+		var this$1 = this;
+
+		var gl = this._webGLContext;
+		var renderTexture;
+		var lastTextureSlot = this._maxTextureSlots-1;
+		var wBackup = this._viewportWidth, hBackup = this._viewportHeight;
+
+		var container = this._cacheContainer;
+		var filterCount = filters.length;
+
+		// we don't know which texture slot we're dealing with previously and we need one out of the way
+		// once we're using that slot activate it so when we make and bind our RenderTexture it's safe there
+		gl.activeTexture(gl.TEXTURE0 + lastTextureSlot);
+		renderTexture = this.getTargetRenderTexture(target, manager._drawWidth, manager._drawHeight);
+
+		// draw item to render texture		I -> T
+		gl.bindFramebuffer(gl.FRAMEBUFFER, renderTexture._frameBuffer);
+		this.updateViewport(manager._drawWidth, manager._drawHeight);
+		gl.clear(gl.COLOR_BUFFER_BIT);
+		this._batchDraw(container, gl, true);
+
+		// bind the result texture to slot 0 as all filters and cover draws assume original content is in slot 0
+		gl.activeTexture(gl.TEXTURE0);
+		gl.bindTexture(gl.TEXTURE_2D, renderTexture);
+		this.setTextureParams(gl);
+
+		var flipY = false;
+		var i = 0, filter = filters[i];
+		do { // this is safe because we wouldn't be in apply filters without a filter count of at least 1
+
+			// swap to correct shader
+			this$1._activeShader = this$1.getFilterShader(filter);
+			if (!this$1._activeShader) { continue; }
+
+			// now the old result is stored in slot 0, make a new render texture
+			gl.activeTexture(gl.TEXTURE0 + lastTextureSlot);
+			renderTexture = this$1.getTargetRenderTexture(target, manager._drawWidth, manager._drawHeight);
+			gl.bindFramebuffer(gl.FRAMEBUFFER, renderTexture._frameBuffer);
+
+			// draw result to render texture	R -> T
+			gl.viewport(0, 0, manager._drawWidth, manager._drawHeight);
+			gl.clear(gl.COLOR_BUFFER_BIT);
+			this$1._drawCover(gl, flipY);
+
+			// bind the result texture to slot 0 as all filters and cover draws assume original content is in slot 0
+			gl.activeTexture(gl.TEXTURE0);
+			gl.bindTexture(gl.TEXTURE_2D, renderTexture);
+			this$1.setTextureParams(gl);
+
+			// use flipping to keep things upright, things already cancel out on a single filter
+			// this needs to be here as multiPass is not accurate to _this_ frame until after shader acquisition
+			if (filterCount > 1 || filters[0]._multiPass) {
+				flipY = !flipY;
+			}
+
+			// work through the multipass if it's there, otherwise move on
+			filter = filter._multiPass !== null ? filter._multiPass : filters[++i];
+		} while (filter);
+
+		// is this for another stage or mine
+		if (this.isCacheControlled) {
+			gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+			this.updateViewport(wBackup, hBackup);
+
+			// draw result to canvas			R -> C
+			this._activeShader = this.getFilterShader(this);
+			gl.clear(gl.COLOR_BUFFER_BIT);
+			this._drawCover(gl, flipY);
+		} else {
+			//TODO: DHG: this is less than ideal. A flipped initial render for this circumstance might help. Adjust the perspective matrix?
+			if (flipY) {
+				gl.activeTexture(gl.TEXTURE0 + lastTextureSlot);
+				renderTexture = this.getTargetRenderTexture(target, manager._drawWidth, manager._drawHeight);
+				gl.bindFramebuffer(gl.FRAMEBUFFER, renderTexture._frameBuffer);
+
+				this._activeShader = this.getFilterShader(this);
+				gl.viewport(0, 0, manager._drawWidth, manager._drawHeight);
+				gl.clear(gl.COLOR_BUFFER_BIT);
+				this._drawCover(gl, !flipY);
+			}
+			gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+			this.updateViewport(wBackup, hBackup);
+
+			// make sure the last texture is the active thing to draw
+			target.cacheCanvas = renderTexture;
+		}
+	};
+
+	/**
+	 * Add all the contents of a container to the pending buffers, called recursively on each container. This may
+	 * trigger a draw if a buffer runs out of space. This is the main workforce of the render loop.
+	 * @method _appendToBatchGroup
+	 * @param {Container} container The {{#crossLink "Container"}}{{/crossLink}} that contains everything to be drawn.
+	 * @param {WebGLRenderingContext} gl The canvas WebGL context object to draw into.
+	 * @param {Matrix2D} concatMtx The effective (concatenated) transformation matrix when beginning this container
+	 * @param {Number} concatAlpha The effective (concatenated) alpha when beginning this container
+	 * @param {Boolean} ignoreCache Don't use an element's cache during this draw
+	 * @protected
+	 */
+	p._appendToBatchGroup = function (container, gl, concatMtx, concatAlpha, ignoreCache) {
+		var this$1 = this;
+
+		// sort out shared properties
+		if (!container._glMtx) { container._glMtx = new createjs.Matrix2D(); }
+		var cMtx = container._glMtx;
+		cMtx.copy(concatMtx);
+		if (container.transformMatrix) {
+			cMtx.appendMatrix(container.transformMatrix);
+		} else {
+			cMtx.appendTransform(
+				container.x, container.y,
+				container.scaleX, container.scaleY,
+				container.rotation, container.skewX, container.skewY,
+				container.regX, container.regY
+			);
+		}
+
+		// sub components of figuring out the position an object holds
+		var subL, subT, subR, subB;
+
+		// actually apply its data to the buffers
+		var l = container.children.length;
+		for (var i = 0; i < l; i++) {
+			var item = container.children[i];
+
+			if (!(item.visible && concatAlpha)) { continue; }
+			if (!item.cacheCanvas || ignoreCache) {
+				if (item._updateState){
+					item._updateState();
+				}
+				if (item.children) {
+					this$1._appendToBatchGroup(item, gl, cMtx, item.alpha * concatAlpha);
+					continue;
+				}
+			}
+
+			// check for overflowing batch, if yes then force a render
+			// TODO: DHG: consider making this polygon count dependant for things like vector draws
+			if (this$1.batchCardCount+1 > this$1._maxCardsPerBatch) {
+				this$1.batchReason = "vertexOverflow";
+				this$1._drawBuffers(gl);					// <------------------------------------------------------------
+				this$1.batchCardCount = 0;
+			}
+
+			// keep track of concatenated position
+			if (!item._glMtx) { item._glMtx = new createjs.Matrix2D(); }
+			var iMtx = item._glMtx;
+			iMtx.copy(cMtx);
+			if (item.transformMatrix) {
+				iMtx.appendMatrix(item.transformMatrix);
+			} else {
+				iMtx.appendTransform(
+					item.x, item.y,
+					item.scaleX, item.scaleY,
+					item.rotation, item.skewX, item.skewY,
+					item.regX, item.regY
+				);
+			}
+
+			var uvRect, texIndex, image, frame, texture, src;
+			var useCache = item.cacheCanvas && !ignoreCache;
+
+			if (item._webGLRenderStyle === 2 || useCache) {			// BITMAP / Cached Canvas
+				image = (ignoreCache?false:item.cacheCanvas) || item.image;
+			} else if (item._webGLRenderStyle === 1) {											// SPRITE
+				frame = item.spriteSheet.getFrame(item.currentFrame);	//TODO: Faster way?
+				if (frame === null) { continue; }
+				image = frame.image;
+			} else {																			// MISC (DOM objects render themselves later)
+				continue;
+			}
+
+			var uvs = this$1._uvs;
+			var vertices = this$1._vertices;
+			var texI = this$1._indices;
+			var alphas = this$1._alphas;
+
+			// calculate texture
+			if (!image) { continue; }
+			if (image._storeID === undefined) {
+				// this texture is new to us so load it and add it to the batch
+				texture = this$1._loadTextureImage(gl, image);
+				this$1._insertTextureInBatch(gl, texture);
+			} else {
+				// fetch the texture (render textures know how to look themselves up to simplify this logic)
+				texture = this$1._textureDictionary[image._storeID];
+				if (!texture){
+					if (this$1.vocalDebug){ console.log("Texture should not be looked up while not being stored."); }
+					continue;
+				}
+
+				// put it in the batch if needed
+				if (texture._batchID !== this$1._batchID) {
+					this$1._insertTextureInBatch(gl, texture);
+				}
+			}
+			texIndex = texture._activeIndex;
+
+			if (item._webGLRenderStyle === 2 || useCache) {			// BITMAP / Cached Canvas
+				if (!useCache && item.sourceRect) {
+					// calculate uvs
+					if (!item._uvRect) { item._uvRect = {}; }
+					src = item.sourceRect;
+					uvRect = item._uvRect;
+					uvRect.t = (src.y)/image.height;
+					uvRect.l = (src.x)/image.width;
+					uvRect.b = (src.y + src.height)/image.height;
+					uvRect.r = (src.x + src.width)/image.width;
+
+					// calculate vertices
+					subL = 0;							subT = 0;
+					subR = src.width+subL;				subB = src.height+subT;
+				} else {
+					// calculate uvs
+					uvRect = StageGL.UV_RECT;
+					// calculate vertices
+					if (useCache) {
+						src = item.bitmapCache;
+						subL = src.x+(src._filterOffX/src.scale);	subT = src.y+(src._filterOffY/src.scale);
+						subR = (src._drawWidth/src.scale)+subL;		subB = (src._drawHeight/src.scale)+subT;
+					} else {
+						subL = 0;						subT = 0;
+						subR = image.width+subL;		subB = image.height+subT;
+					}
+				}
+			} else if (item._webGLRenderStyle === 1) {											// SPRITE
+				var rect = frame.rect;
+
+				// calculate uvs
+				uvRect = frame.uvRect;
+				if (!uvRect) {
+					uvRect = StageGL.buildUVRects(item.spriteSheet, item.currentFrame, false);
+				}
+
+				// calculate vertices
+				subL = -frame.regX;								subT = -frame.regY;
+				subR = rect.width-frame.regX;					subB = rect.height-frame.regY;
+			}
+
+			// These must be calculated here else a forced draw might happen after they're set
+			var offV1 = this$1.batchCardCount*StageGL.INDICIES_PER_CARD;		// offset for 1 component vectors
+			var offV2 = offV1*2;											// offset for 2 component vectors
+
+			//DHG: See Matrix2D.transformPoint for why this math specifically
+			// apply vertices
+			vertices[offV2] =		subL *iMtx.a + subT *iMtx.c +iMtx.tx;		vertices[offV2+1] =		subL *iMtx.b + subT *iMtx.d +iMtx.ty;
+			vertices[offV2+2] =		subL *iMtx.a + subB *iMtx.c +iMtx.tx;		vertices[offV2+3] =		subL *iMtx.b + subB *iMtx.d +iMtx.ty;
+			vertices[offV2+4] =		subR *iMtx.a + subT *iMtx.c +iMtx.tx;		vertices[offV2+5] =		subR *iMtx.b + subT *iMtx.d +iMtx.ty;
+			vertices[offV2+6] =		vertices[offV2+2];							vertices[offV2+7] =		vertices[offV2+3];
+			vertices[offV2+8] =		vertices[offV2+4];							vertices[offV2+9] =		vertices[offV2+5];
+			vertices[offV2+10] =	subR *iMtx.a + subB *iMtx.c +iMtx.tx;		vertices[offV2+11] =	subR *iMtx.b + subB *iMtx.d +iMtx.ty;
+
+			// apply uvs
+			uvs[offV2] =	uvRect.l;			uvs[offV2+1] =	uvRect.t;
+			uvs[offV2+2] =	uvRect.l;			uvs[offV2+3] =	uvRect.b;
+			uvs[offV2+4] =	uvRect.r;			uvs[offV2+5] =	uvRect.t;
+			uvs[offV2+6] =	uvRect.l;			uvs[offV2+7] =	uvRect.b;
+			uvs[offV2+8] =	uvRect.r;			uvs[offV2+9] =	uvRect.t;
+			uvs[offV2+10] =	uvRect.r;			uvs[offV2+11] =	uvRect.b;
+
+			// apply texture
+			texI[offV1] = texI[offV1+1] = texI[offV1+2] = texI[offV1+3] = texI[offV1+4] = texI[offV1+5] = texIndex;
+
+			// apply alpha
+			alphas[offV1] = alphas[offV1+1] = alphas[offV1+2] = alphas[offV1+3] = alphas[offV1+4] = alphas[offV1+5] = item.alpha * concatAlpha;
+
+			this$1.batchCardCount++;
+		}
+	};
+
+	/**
+	 * Draws all the currently defined cards in the buffer to the render surface.
+	 * @method _drawBuffers
+	 * @param {WebGLRenderingContext} gl The canvas WebGL context object to draw into.
+	 * @protected
+	 */
+	p._drawBuffers = function (gl) {
+		var this$1 = this;
+
+		if (this.batchCardCount <= 0) { return; }	// prevents error logs on stages filled with un-renederable content.
+
+		if (this.vocalDebug) {
+			console.log("Draw["+ this._drawID +":"+ this._batchID +"] : "+ this.batchReason);
+		}
+		var shaderProgram = this._activeShader;
+		var vertexPositionBuffer = this._vertexPositionBuffer;
+		var textureIndexBuffer = this._textureIndexBuffer;
+		var uvPositionBuffer = this._uvPositionBuffer;
+		var alphaBuffer = this._alphaBuffer;
+
+		gl.useProgram(shaderProgram);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
+		gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, vertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+		gl.bufferSubData(gl.ARRAY_BUFFER, 0, this._vertices);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, textureIndexBuffer);
+		gl.vertexAttribPointer(shaderProgram.textureIndexAttribute, textureIndexBuffer.itemSize, gl.FLOAT, false, 0, 0);
+		gl.bufferSubData(gl.ARRAY_BUFFER, 0, this._indices);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, uvPositionBuffer);
+		gl.vertexAttribPointer(shaderProgram.uvPositionAttribute, uvPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+		gl.bufferSubData(gl.ARRAY_BUFFER, 0, this._uvs);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, alphaBuffer);
+		gl.vertexAttribPointer(shaderProgram.alphaAttribute, alphaBuffer.itemSize, gl.FLOAT, false, 0, 0);
+		gl.bufferSubData(gl.ARRAY_BUFFER, 0, this._alphas);
+
+		gl.uniformMatrix4fv(shaderProgram.pMatrixUniform, gl.FALSE, this._projectionMatrix);
+
+		for (var i = 0; i < this._batchTextureCount; i++) {
+			var texture = this$1._batchTextures[i];
+			gl.activeTexture(gl.TEXTURE0 + i);
+			gl.bindTexture(gl.TEXTURE_2D, texture);
+			this$1.setTextureParams(gl, texture.isPOT);
+		}
+
+		gl.drawArrays(gl.TRIANGLES, 0, this.batchCardCount*StageGL.INDICIES_PER_CARD);
+		this._batchID++;
+	};
+
+	/**
+	 * Draws a card that covers the entire render surface. Mainly used for filters.
+	 * @method _drawBuffers
+	 * @param {WebGLRenderingContext} gl The canvas WebGL context object to draw into.
+	 * @param {Boolean} flipY Covers are used for things like RenderTextures and because of 3D vs Canvas space this can
+	 * end up meaning the `y` space sometimes requires flipping in the render.
+	 * @protected
+	 */
+	p._drawCover = function (gl, flipY) {
+		if (this._isDrawing > 0) {
+			this._drawBuffers(gl);
+		}
+
+		if (this.vocalDebug) {
+			console.log("Draw["+ this._drawID +":"+ this._batchID +"] : "+ "Cover");
+		}
+		var shaderProgram = this._activeShader;
+		var vertexPositionBuffer = this._vertexPositionBuffer;
+		var uvPositionBuffer = this._uvPositionBuffer;
+
+		gl.clear(gl.COLOR_BUFFER_BIT);
+		gl.useProgram(shaderProgram);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
+		gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, vertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+		gl.bufferSubData(gl.ARRAY_BUFFER, 0, StageGL.COVER_VERT);
+		gl.bindBuffer(gl.ARRAY_BUFFER, uvPositionBuffer);
+		gl.vertexAttribPointer(shaderProgram.uvPositionAttribute, uvPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+		gl.bufferSubData(gl.ARRAY_BUFFER, 0, flipY?StageGL.COVER_UV_FLIP:StageGL.COVER_UV);
+
+		gl.uniform1i(shaderProgram.samplerUniform, 0);
+		gl.uniform1f(shaderProgram.uprightUniform, flipY?0:1);
+
+		gl.drawArrays(gl.TRIANGLES, 0, StageGL.INDICIES_PER_CARD);
+	};
+
+	createjs.StageGL = createjs.promote(StageGL, "Stage");
+}());
+
+//##############################################################################
+// Bitmap.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	
+	/**
+	 * A Bitmap represents an Image, Canvas, or Video in the display list. A Bitmap can be instantiated using an existing
+	 * HTML element, or a string.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 * 	var bitmap = new createjs.Bitmap("imagePath.jpg");
+	 *
+	 * <strong>Notes:</strong>
+	 * <ol>
+	 * 	<li>When using a video source that may loop or seek, use a {{#crossLink "VideoBuffer"}}{{/crossLink}} object to
+	 * 	 prevent blinking / flashing.
+	 * 	<li>When a string path or image tag that is not yet loaded is used, the stage may need to be redrawn before it
+	 * 	 will be displayed.</li>
+	 * 	<li>Bitmaps with an SVG source currently will not respect an alpha value other than 0 or 1. To get around this,
+	 * 	the Bitmap can be cached.</li>
+	 * 	<li>Bitmaps with an SVG source will taint the canvas with cross-origin data, which prevents interactivity. This
+	 * 	happens in all browsers except recent Firefox builds.</li>
+	 * 	<li>Images loaded cross-origin will throw cross-origin security errors when interacted with using a mouse, using
+	 * 	methods such as `getObjectUnderPoint`, or using filters, or caching. You can get around this by setting
+	 * 	`crossOrigin` flags on your images before passing them to EaselJS, eg: `img.crossOrigin="Anonymous";`</li>
+	 * </ol>
+	 *
+	 * @class Bitmap
+	 * @extends DisplayObject
+	 * @constructor
+	 * @param {CanvasImageSource | String | Object} imageOrUri The source image to display. This can be a CanvasImageSource
+	 * (image, video, canvas), an object with a `getImage` method that returns a CanvasImageSource, or a string URL to an image.
+	 * If the latter, a new Image instance with the URL as its src will be used.
+	 **/
+	function Bitmap(imageOrUri) {
+		this.DisplayObject_constructor();
+		
+		
+	// public properties:
+		/**
+		 * The source image to display. This can be a CanvasImageSource
+		 * (image, video, canvas), an object with a `getImage` method that returns a CanvasImageSource, or a string URL to an image.
+		 * If the latter, a new Image instance with the URL as its src will be used.
+		 * @property image
+		 * @type CanvasImageSource | Object
+		 **/
+		if (typeof imageOrUri == "string") {
+			this.image = document.createElement("img");
+			this.image.src = imageOrUri;
+		} else {
+			this.image = imageOrUri;
+		}
+	
+		/**
+		 * Specifies an area of the source image to draw. If omitted, the whole image will be drawn.
+		 * Notes:
+		 * <ul>
+		 *     <li>that video sources must have a width / height set to work correctly with `sourceRect`</li>
+		 *     <li>Cached objects will ignore the `sourceRect` property</li>
+		 * </ul>
+		 * @property sourceRect
+		 * @type Rectangle
+		 * @default null
+		 */
+		this.sourceRect = null;
+
+	// private properties:
+		/**
+		 * Docced in superclass.
+		 */
+		this._webGLRenderStyle = createjs.DisplayObject._StageGL_BITMAP;
+	}
+	var p = createjs.extend(Bitmap, createjs.DisplayObject);
+	
+	
+// public methods:
+	/**
+	 * Constructor alias for backwards compatibility. This method will be removed in future versions.
+	 * Subclasses should be updated to use {{#crossLink "Utility Methods/extends"}}{{/crossLink}}.
+	 * @method initialize
+	 * @deprecated in favour of `createjs.promote()`
+	 **/
+	p.initialize = Bitmap; // TODO: deprecated.
+
+	/**
+	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
+	 * This does not account for whether it would be visible within the boundaries of the stage.
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method isVisible
+	 * @return {Boolean} Boolean indicating whether the display object would be visible if drawn to a canvas
+	 **/
+	p.isVisible = function() {
+		var image = this.image;
+		var hasContent = this.cacheCanvas || (image && (image.naturalWidth || image.getContext || image.readyState >= 2));
+		return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0 && hasContent);
+	};
+
+	/**
+	 * Draws the display object into the specified context ignoring its visible, alpha, shadow, and transform.
+	 * Returns true if the draw was handled (useful for overriding functionality).
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Boolean} [ignoreCache=false] Indicates whether the draw operation should ignore any current cache.
+	 * For example, used for drawing the cache (to prevent it from simply drawing an existing cache back
+	 * into itself).
+	 * @return {Boolean}
+	 **/
+	p.draw = function(ctx, ignoreCache) {
+		if (this.DisplayObject_draw(ctx, ignoreCache)) { return true; }
+		var img = this.image, rect = this.sourceRect;
+		if (img.getImage) { img = img.getImage(); }
+		if (!img) { return true; }
+		if (rect) {
+			// some browsers choke on out of bound values, so we'll fix them:
+			var x1 = rect.x, y1 = rect.y, x2 = x1 + rect.width, y2 = y1 + rect.height, x = 0, y = 0, w = img.width, h = img.height;
+			if (x1 < 0) { x -= x1; x1 = 0; }
+			if (x2 > w) { x2 = w; }
+			if (y1 < 0) { y -= y1; y1 = 0; }
+			if (y2 > h) { y2 = h; }
+			ctx.drawImage(img, x1, y1, x2-x1, y2-y1, x, y, x2-x1, y2-y1);
+		} else {
+			ctx.drawImage(img, 0, 0);
+		}
+		return true;
+	};
+	
+	//Note, the doc sections below document using the specified APIs (from DisplayObject)  from
+	//Bitmap. This is why they have no method implementations.
+	
+	/**
+	 * Because the content of a Bitmap is already in a simple format, cache is unnecessary for Bitmap instances.
+	 * You should <b>not</b> cache Bitmap instances as it can degrade performance.
+	 *
+	 * <strong>However: If you want to use a filter on a Bitmap, you <em>MUST</em> cache it, or it will not work.</strong>
+	 * To see the API for caching, please visit the DisplayObject {{#crossLink "DisplayObject/cache"}}{{/crossLink}}
+	 * method.
+	 * @method cache
+	 **/
+	
+	/**
+	 * Because the content of a Bitmap is already in a simple format, cache is unnecessary for Bitmap instances.
+	 * You should <b>not</b> cache Bitmap instances as it can degrade performance.
+	 *
+	 * <strong>However: If you want to use a filter on a Bitmap, you <em>MUST</em> cache it, or it will not work.</strong>
+	 * To see the API for caching, please visit the DisplayObject {{#crossLink "DisplayObject/cache"}}{{/crossLink}}
+	 * method.
+	 * @method updateCache
+	 **/
+	
+	/**
+	 * Because the content of a Bitmap is already in a simple format, cache is unnecessary for Bitmap instances.
+	 * You should <b>not</b> cache Bitmap instances as it can degrade performance.
+	 *
+	 * <strong>However: If you want to use a filter on a Bitmap, you <em>MUST</em> cache it, or it will not work.</strong>
+	 * To see the API for caching, please visit the DisplayObject {{#crossLink "DisplayObject/cache"}}{{/crossLink}}
+	 * method.
+	 * @method uncache
+	 **/
+
+	/**
+	 * Docced in superclass.
+	 */
+	p.getBounds = function() {
+		var rect = this.DisplayObject_getBounds();
+		if (rect) { return rect; }
+		var image = this.image, o = this.sourceRect || image;
+		var hasContent = (image && (image.naturalWidth || image.getContext || image.readyState >= 2));
+		return hasContent ? this._rectangle.setValues(0, 0, o.width, o.height) : null;
+	};
+	
+	/**
+	 * Returns a clone of the Bitmap instance.
+	 * @method clone
+	 * @param {Boolean} node Whether the underlying dom element should be cloned as well.
+	 * @return {Bitmap} a clone of the Bitmap instance.
+	 **/
+	p.clone = function(node) {
+		var image = this.image;
+		if(image && node){ image = image.cloneNode(); }
+		var o = new Bitmap(image);
+		if (this.sourceRect) { o.sourceRect = this.sourceRect.clone(); }
+		this._cloneProps(o);
+		return o;
+	};
+	
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Bitmap (name="+  this.name +")]";
+	};
+
+	
+	createjs.Bitmap = createjs.promote(Bitmap, "DisplayObject");
+}());
+
+//##############################################################################
+// Sprite.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Displays a frame or sequence of frames (ie. an animation) from a SpriteSheet instance. A sprite sheet is a series of
+	 * images (usually animation frames) combined into a single image. For example, an animation consisting of 8 100x100
+	 * images could be combined into a 400x200 sprite sheet (4 frames across by 2 high). You can display individual frames,
+	 * play frames as an animation, and even sequence animations together.
+	 *
+	 * See the {{#crossLink "SpriteSheet"}}{{/crossLink}} class for more information on setting up frames and animations.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      var instance = new createjs.Sprite(spriteSheet);
+	 *      instance.gotoAndStop("frameName");
+	 *
+	 * Until {{#crossLink "Sprite/gotoAndStop"}}{{/crossLink}} or {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}} is called,
+	 * only the first defined frame defined in the sprite sheet will be displayed.
+	 *
+	 * @class Sprite
+	 * @extends DisplayObject
+	 * @constructor
+	 * @param {SpriteSheet} spriteSheet The SpriteSheet instance to play back. This includes the source image(s), frame
+	 * dimensions, and frame data. See {{#crossLink "SpriteSheet"}}{{/crossLink}} for more information.
+	 * @param {String|Number} [frameOrAnimation] The frame number or animation to play initially.
+	 **/
+	function Sprite(spriteSheet, frameOrAnimation) {
+		this.DisplayObject_constructor();
+		
+		
+	// public properties:
+		/**
+		 * The frame index that will be drawn when draw is called. Note that with some {{#crossLink "SpriteSheet"}}{{/crossLink}}
+		 * definitions, this will advance non-sequentially. This will always be an integer value.
+		 * @property currentFrame
+		 * @type {Number}
+		 * @default 0
+		 * @readonly
+		 **/
+		this.currentFrame = 0;
+	
+		/**
+		 * Returns the name of the currently playing animation.
+		 * @property currentAnimation
+		 * @type {String}
+		 * @final
+		 * @readonly
+		 **/
+		this.currentAnimation = null;
+	
+		/**
+		 * Prevents the animation from advancing each tick automatically. For example, you could create a sprite
+		 * sheet of icons, set paused to true, and display the appropriate icon by setting <code>currentFrame</code>.
+		 * @property paused
+		 * @type {Boolean}
+		 * @default false
+		 **/
+		this.paused = true;
+	
+		/**
+		 * The SpriteSheet instance to play back. This includes the source image, frame dimensions, and frame
+		 * data. See {{#crossLink "SpriteSheet"}}{{/crossLink}} for more information.
+		 * @property spriteSheet
+		 * @type {SpriteSheet}
+		 * @readonly
+		 **/
+		this.spriteSheet = spriteSheet;
+	
+		/**
+		 * Specifies the current frame index within the currently playing animation. When playing normally, this will increase
+		 * from 0 to n-1, where n is the number of frames in the current animation.
+		 *
+		 * This could be a non-integer value if
+		 * using time-based playback (see {{#crossLink "Sprite/framerate"}}{{/crossLink}}, or if the animation's speed is
+		 * not an integer.
+		 * @property currentAnimationFrame
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.currentAnimationFrame = 0;
+	
+		/**
+		 * By default Sprite instances advance one frame per tick. Specifying a framerate for the Sprite (or its related
+		 * SpriteSheet) will cause it to advance based on elapsed time between ticks as appropriate to maintain the target
+		 * framerate.
+		 *
+		 * For example, if a Sprite with a framerate of 10 is placed on a Stage being updated at 40fps, then the Sprite will
+		 * advance roughly one frame every 4 ticks. This will not be exact, because the time between each tick will
+		 * vary slightly between frames.
+		 *
+		 * This feature is dependent on the tick event object (or an object with an appropriate "delta" property) being
+		 * passed into {{#crossLink "Stage/update"}}{{/crossLink}}.
+		 * @property framerate
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.framerate = 0;
+	
+	
+	// private properties:
+		/**
+		 * Current animation object.
+		 * @property _animation
+		 * @protected
+		 * @type {Object}
+		 * @default null
+		 **/
+		this._animation = null;
+	
+		/**
+		 * Current frame index.
+		 * @property _currentFrame
+		 * @protected
+		 * @type {Number}
+		 * @default null
+		 **/
+		this._currentFrame = null;
+		
+		/**
+		 * Skips the next auto advance. Used by gotoAndPlay to avoid immediately jumping to the next frame
+		 * @property _skipAdvance
+		 * @protected
+		 * @type {Boolean}
+		 * @default false
+		 **/
+		this._skipAdvance = false;
+
+		/**
+		 * Docced in superclass.
+		 */
+		this._webGLRenderStyle = createjs.DisplayObject._StageGL_SPRITE;
+
+		if (frameOrAnimation != null) { this.gotoAndPlay(frameOrAnimation); }
+	}
+	var p = createjs.extend(Sprite, createjs.DisplayObject);
+
+	/**
+	 * Constructor alias for backwards compatibility. This method will be removed in future versions.
+	 * Subclasses should be updated to use {{#crossLink "Utility Methods/extends"}}{{/crossLink}}.
+	 * @method initialize
+	 * @deprecated in favour of `createjs.promote()`
+	 **/
+	p.initialize = Sprite; // TODO: Deprecated. This is for backwards support of Flash/Animate spritesheet export.
+
+
+// events:
+	/**
+	 * Dispatched when an animation reaches its ends.
+	 * @event animationend
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type.
+	 * @param {String} name The name of the animation that just ended.
+	 * @param {String} next The name of the next animation that will be played, or null. This will be the same as name if the animation is looping.
+	 * @since 0.6.0
+	 */
+	 
+	/**
+	 * Dispatched any time the current frame changes. For example, this could be due to automatic advancement on a tick,
+	 * or calling gotoAndPlay() or gotoAndStop().
+	 * @event change
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type.
+	 */
+
+
+// public methods:
+	/**
+	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
+	 * This does not account for whether it would be visible within the boundaries of the stage.
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method isVisible
+	 * @return {Boolean} Boolean indicating whether the display object would be visible if drawn to a canvas
+	 **/
+	p.isVisible = function() {
+		var hasContent = this.cacheCanvas || this.spriteSheet.complete;
+		return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0 && hasContent);
+	};
+
+	/**
+	 * Draws the display object into the specified context ignoring its visible, alpha, shadow, and transform.
+	 * Returns true if the draw was handled (useful for overriding functionality).
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Boolean} ignoreCache Indicates whether the draw operation should ignore any current cache.
+	 * For example, used for drawing the cache (to prevent it from simply drawing an existing cache back
+	 * into itself).
+	 **/
+	p.draw = function(ctx, ignoreCache) {
+		if (this.DisplayObject_draw(ctx, ignoreCache)) { return true; }
+		this._normalizeFrame();
+		var o = this.spriteSheet.getFrame(this._currentFrame|0);
+		if (!o) { return false; }
+		var rect = o.rect;
+		if (rect.width && rect.height) { ctx.drawImage(o.image, rect.x, rect.y, rect.width, rect.height, -o.regX, -o.regY, rect.width, rect.height); }
+		return true;
+	};
+
+	//Note, the doc sections below document using the specified APIs (from DisplayObject)  from
+	//Bitmap. This is why they have no method implementations.
+
+	/**
+	 * Because the content of a Sprite is already in a raster format, cache is unnecessary for Sprite instances.
+	 * You should not cache Sprite instances as it can degrade performance.
+	 * @method cache
+	 **/
+
+	/**
+	 * Because the content of a Sprite is already in a raster format, cache is unnecessary for Sprite instances.
+	 * You should not cache Sprite instances as it can degrade performance.
+	 * @method updateCache
+	 **/
+
+	/**
+	 * Because the content of a Sprite is already in a raster format, cache is unnecessary for Sprite instances.
+	 * You should not cache Sprite instances as it can degrade performance.
+	 * @method uncache
+	 **/
+
+	/**
+	 * Play (unpause) the current animation. The Sprite will be paused if either {{#crossLink "Sprite/stop"}}{{/crossLink}}
+	 * or {{#crossLink "Sprite/gotoAndStop"}}{{/crossLink}} is called. Single frame animations will remain
+	 * unchanged.
+	 * @method play
+	 **/
+	p.play = function() {
+		this.paused = false;
+	};
+
+	/**
+	 * Stop playing a running animation. The Sprite will be playing if {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}}
+	 * is called. Note that calling {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}} or {{#crossLink "Sprite/play"}}{{/crossLink}}
+	 * will resume playback.
+	 * @method stop
+	 **/
+	p.stop = function() {
+		this.paused = true;
+	};
+
+	/**
+	 * Sets paused to false and plays the specified animation name, named frame, or frame number.
+	 * @method gotoAndPlay
+	 * @param {String|Number} frameOrAnimation The frame number or animation name that the playhead should move to
+	 * and begin playing.
+	 **/
+	p.gotoAndPlay = function(frameOrAnimation) {
+		this.paused = false;
+		this._skipAdvance = true;
+		this._goto(frameOrAnimation);
+	};
+
+	/**
+	 * Sets paused to true and seeks to the specified animation name, named frame, or frame number.
+	 * @method gotoAndStop
+	 * @param {String|Number} frameOrAnimation The frame number or animation name that the playhead should move to
+	 * and stop.
+	 **/
+	p.gotoAndStop = function(frameOrAnimation) {
+		this.paused = true;
+		this._goto(frameOrAnimation);
+	};
+
+	/**
+	 * Advances the playhead. This occurs automatically each tick by default.
+	 * @param [time] {Number} The amount of time in ms to advance by. Only applicable if framerate is set on the Sprite
+	 * or its SpriteSheet.
+	 * @method advance
+	*/
+	p.advance = function(time) {
+		var fps = this.framerate || this.spriteSheet.framerate;
+		var t = (fps && time != null) ? time/(1000/fps) : 1;
+		this._normalizeFrame(t);
+	};
+	
+	/**
+	 * Returns a {{#crossLink "Rectangle"}}{{/crossLink}} instance defining the bounds of the current frame relative to
+	 * the origin. For example, a 90 x 70 frame with <code>regX=50</code> and <code>regY=40</code> would return a
+	 * rectangle with [x=-50, y=-40, width=90, height=70]. This ignores transformations on the display object.
+	 *
+	 * Also see the SpriteSheet {{#crossLink "SpriteSheet/getFrameBounds"}}{{/crossLink}} method.
+	 * @method getBounds
+	 * @return {Rectangle} A Rectangle instance. Returns null if the frame does not exist, or the image is not fully
+	 * loaded.
+	 **/
+	p.getBounds = function() {
+		// TODO: should this normalizeFrame?
+		return this.DisplayObject_getBounds() || this.spriteSheet.getFrameBounds(this.currentFrame, this._rectangle);
+	};
+
+	/**
+	 * Returns a clone of the Sprite instance. Note that the same SpriteSheet is shared between cloned
+	 * instances.
+	 * @method clone
+	 * @return {Sprite} a clone of the Sprite instance.
+	 **/
+	p.clone = function() {
+		return this._cloneProps(new Sprite(this.spriteSheet));
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Sprite (name="+  this.name +")]";
+	};
+
+// private methods:
+	/**
+	 * @method _cloneProps
+	 * @param {Sprite} o
+	 * @return {Sprite} o
+	 * @protected
+	 **/
+	p._cloneProps = function(o) {
+		this.DisplayObject__cloneProps(o);
+		o.currentFrame = this.currentFrame;
+		o.currentAnimation = this.currentAnimation;
+		o.paused = this.paused;
+		o.currentAnimationFrame = this.currentAnimationFrame;
+		o.framerate = this.framerate;
+		
+		o._animation = this._animation;
+		o._currentFrame = this._currentFrame;
+		o._skipAdvance = this._skipAdvance;
+		return o;
+	};
+	
+	/**
+	 * Advances the <code>currentFrame</code> if paused is not true. This is called automatically when the {{#crossLink "Stage"}}{{/crossLink}}
+	 * ticks.
+	 * @param {Object} evtObj An event object that will be dispatched to all tick listeners. This object is reused between dispatchers to reduce construction & GC costs.
+	 * @protected
+	 * @method _tick
+	 **/
+	p._tick = function(evtObj) {
+		if (!this.paused) {
+			if (!this._skipAdvance) { this.advance(evtObj&&evtObj.delta); }
+			this._skipAdvance = false;
+		}
+		this.DisplayObject__tick(evtObj);
+	};
+
+
+	/**
+	 * Normalizes the current frame, advancing animations and dispatching callbacks as appropriate.
+	 * @protected
+	 * @method _normalizeFrame
+	 **/
+	p._normalizeFrame = function(frameDelta) {
+		frameDelta = frameDelta || 0;
+		var animation = this._animation;
+		var paused = this.paused;
+		var frame = this._currentFrame;
+		var l;
+		
+		if (animation) {
+			var speed = animation.speed || 1;
+			var animFrame = this.currentAnimationFrame;
+			l = animation.frames.length;
+			if (animFrame + frameDelta * speed >= l) {
+				var next = animation.next;
+				if (this._dispatchAnimationEnd(animation, frame, paused, next, l - 1)) {
+					// something changed in the event stack, so we shouldn't make any more changes here.
+					return;
+				} else if (next) {
+					// sequence. Automatically calls _normalizeFrame again with the remaining frames.
+					return this._goto(next, frameDelta - (l - animFrame) / speed);
+				} else {
+					// end.
+					this.paused = true;
+					animFrame = animation.frames.length - 1;
+				}
+			} else {
+				animFrame += frameDelta * speed;
+			}
+			this.currentAnimationFrame = animFrame;
+			this._currentFrame = animation.frames[animFrame | 0]
+		} else {
+			frame = (this._currentFrame += frameDelta);
+			l = this.spriteSheet.getNumFrames();
+			if (frame >= l && l > 0) {
+				if (!this._dispatchAnimationEnd(animation, frame, paused, l - 1)) {
+					// looped.
+					if ((this._currentFrame -= l) >= l) { return this._normalizeFrame(); }
+				}
+			}
+		}
+		frame = this._currentFrame | 0;
+		if (this.currentFrame != frame) {
+			this.currentFrame = frame;
+			this.dispatchEvent("change");
+		}
+	};
+
+	/**
+	 * Dispatches the "animationend" event. Returns true if a handler changed the animation (ex. calling {{#crossLink "Sprite/stop"}}{{/crossLink}},
+	 * {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}}, etc.)
+	 * @property _dispatchAnimationEnd
+	 * @private
+	 * @type {Function}
+	 **/
+	p._dispatchAnimationEnd = function(animation, frame, paused, next, end) {
+		var name = animation ? animation.name : null;
+		if (this.hasEventListener("animationend")) {
+			var evt = new createjs.Event("animationend");
+			evt.name = name;
+			evt.next = next;
+			this.dispatchEvent(evt);
+		}
+		// did the animation get changed in the event stack?:
+		var changed = (this._animation != animation || this._currentFrame != frame);
+		// if the animation hasn't changed, but the sprite was paused, then we want to stick to the last frame:
+		if (!changed && !paused && this.paused) { this.currentAnimationFrame = end; changed = true; }
+		return changed;
+	};
+
+	/**
+	 * Moves the playhead to the specified frame number or animation.
+	 * @method _goto
+	 * @param {String|Number} frameOrAnimation The frame number or animation that the playhead should move to.
+	 * @param {Boolean} [frame] The frame of the animation to go to. Defaults to 0.
+	 * @protected
+	 **/
+	p._goto = function(frameOrAnimation, frame) {
+		this.currentAnimationFrame = 0;
+		if (isNaN(frameOrAnimation)) {
+			var data = this.spriteSheet.getAnimation(frameOrAnimation);
+			if (data) {
+				this._animation = data;
+				this.currentAnimation = frameOrAnimation;
+				this._normalizeFrame(frame);
+			}
+		} else {
+			this.currentAnimation = this._animation = null;
+			this._currentFrame = frameOrAnimation;
+			this._normalizeFrame();
+		}
+	};
+
+
+	createjs.Sprite = createjs.promote(Sprite, "DisplayObject");
+}());
+
+//##############################################################################
+// Shape.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * A Shape allows you to display vector art in the display list. It composites a {{#crossLink "Graphics"}}{{/crossLink}}
+	 * instance which exposes all of the vector drawing methods. The Graphics instance can be shared between multiple Shape
+	 * instances to display the same vector graphics with different positions or transforms.
+	 *
+	 * If the vector art will not
+	 * change between draws, you may want to use the {{#crossLink "DisplayObject/cache"}}{{/crossLink}} method to reduce the
+	 * rendering cost.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      var graphics = new createjs.Graphics().beginFill("#ff0000").drawRect(0, 0, 100, 100);
+	 *      var shape = new createjs.Shape(graphics);
+	 *
+	 *      //Alternatively use can also use the graphics property of the Shape class to renderer the same as above.
+	 *      var shape = new createjs.Shape();
+	 *      shape.graphics.beginFill("#ff0000").drawRect(0, 0, 100, 100);
+	 *
+	 * @class Shape
+	 * @extends DisplayObject
+	 * @constructor
+	 * @param {Graphics} graphics Optional. The graphics instance to display. If null, a new Graphics instance will be created.
+	 **/
+	function Shape(graphics) {
+		this.DisplayObject_constructor();
+		
+		
+	// public properties:
+		/**
+		 * The graphics instance to display.
+		 * @property graphics
+		 * @type Graphics
+		 **/
+		this.graphics = graphics ? graphics : new createjs.Graphics();
+	}
+	var p = createjs.extend(Shape, createjs.DisplayObject);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+
+// public methods:
+	/**
+	 * Returns true or false indicating whether the Shape would be visible if drawn to a canvas.
+	 * This does not account for whether it would be visible within the boundaries of the stage.
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method isVisible
+	 * @return {Boolean} Boolean indicating whether the Shape would be visible if drawn to a canvas
+	 **/
+	p.isVisible = function() {
+		var hasContent = this.cacheCanvas || (this.graphics && !this.graphics.isEmpty());
+		return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0 && hasContent);
+	};
+
+	/**
+	 * Draws the Shape into the specified context ignoring its visible, alpha, shadow, and transform. Returns true if
+	 * the draw was handled (useful for overriding functionality).
+	 *
+	 * <i>NOTE: This method is mainly for internal use, though it may be useful for advanced uses.</i>
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Boolean} [ignoreCache=false] Indicates whether the draw operation should ignore any current cache. For example,
+	 * used for drawing the cache (to prevent it from simply drawing an existing cache back into itself).
+	 * @return {Boolean}
+	 **/
+	p.draw = function(ctx, ignoreCache) {
+		if (this.DisplayObject_draw(ctx, ignoreCache)) { return true; }
+		this.graphics.draw(ctx, this);
+		return true;
+	};
+
+	/**
+	 * Returns a clone of this Shape. Some properties that are specific to this instance's current context are reverted to
+	 * their defaults (for example .parent).
+	 * @method clone
+	 * @param {Boolean} recursive If true, this Shape's {{#crossLink "Graphics"}}{{/crossLink}} instance will also be
+	 * cloned. If false, the Graphics instance will be shared with the new Shape.
+	 **/
+	p.clone = function(recursive) {
+		var g = (recursive && this.graphics) ? this.graphics.clone() : this.graphics;
+		return  this._cloneProps(new Shape(g));
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Shape (name="+  this.name +")]";
+	};
+
+
+	createjs.Shape = createjs.promote(Shape, "DisplayObject");
+}());
+
+//##############################################################################
+// Text.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Display one or more lines of dynamic text (not user editable) in the display list. Line wrapping support (using the
+	 * lineWidth) is very basic, wrapping on spaces and tabs only. Note that as an alternative to Text, you can position HTML
+	 * text above or below the canvas relative to items in the display list using the {{#crossLink "DisplayObject/localToGlobal"}}{{/crossLink}}
+	 * method, or using {{#crossLink "DOMElement"}}{{/crossLink}}.
+	 *
+	 * <b>Please note that Text does not support HTML text, and can only display one font style at a time.</b> To use
+	 * multiple font styles, you will need to create multiple text instances, and position them manually.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      var text = new createjs.Text("Hello World", "20px Arial", "#ff7700");
+	 *      text.x = 100;
+	 *      text.textBaseline = "alphabetic";
+	 *
+	 * CreateJS Text supports web fonts (the same rules as Canvas). The font must be loaded and supported by the browser
+	 * before it can be displayed.
+	 *
+	 * <strong>Note:</strong> Text can be expensive to generate, so cache instances where possible. Be aware that not all
+	 * browsers will render Text exactly the same.
+	 * @class Text
+	 * @extends DisplayObject
+	 * @constructor
+	 * @param {String} [text] The text to display.
+	 * @param {String} [font] The font style to use. Any valid value for the CSS font attribute is acceptable (ex. "bold
+	 * 36px Arial").
+	 * @param {String} [color] The color to draw the text in. Any valid value for the CSS color attribute is acceptable (ex.
+	 * "#F00", "red", or "#FF0000").
+	 **/
+	function Text(text, font, color) {
+		this.DisplayObject_constructor();
+		
+		
+	// public properties:
+		/**
+		 * The text to display.
+		 * @property text
+		 * @type String
+		 **/
+		this.text = text;
+	
+		/**
+		 * The font style to use. Any valid value for the CSS font attribute is acceptable (ex. "bold 36px Arial").
+		 * @property font
+		 * @type String
+		 **/
+		this.font = font;
+	
+		/**
+		 * The color to draw the text in. Any valid value for the CSS color attribute is acceptable (ex. "#F00"). Default is "#000".
+		 * It will also accept valid canvas fillStyle values.
+		 * @property color
+		 * @type String
+		 **/
+		this.color = color;
+	
+		/**
+		 * The horizontal text alignment. Any of "start", "end", "left", "right", and "center". For detailed
+		 * information view the
+		 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#text-styles">
+		 * whatwg spec</a>. Default is "left".
+		 * @property textAlign
+		 * @type String
+		 **/
+		this.textAlign = "left";
+	
+		/**
+		 * The vertical alignment point on the font. Any of "top", "hanging", "middle", "alphabetic", "ideographic", or
+		 * "bottom". For detailed information view the <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#text-styles">
+		 * whatwg spec</a>. Default is "top".
+		 * @property textBaseline
+		 * @type String
+		*/
+		this.textBaseline = "top";
+	
+		/**
+		 * The maximum width to draw the text. If maxWidth is specified (not null), the text will be condensed or
+		 * shrunk to make it fit in this width. For detailed information view the
+		 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#text-styles">
+		 * whatwg spec</a>.
+		 * @property maxWidth
+		 * @type Number
+		*/
+		this.maxWidth = null;
+	
+		/**
+		 * If greater than 0, the text will be drawn as a stroke (outline) of the specified width.
+		 * @property outline
+		 * @type Number
+		 **/
+		this.outline = 0;
+	
+		/**
+		 * Indicates the line height (vertical distance between baselines) for multi-line text. If null or 0,
+		 * the value of getMeasuredLineHeight is used.
+		 * @property lineHeight
+		 * @type Number
+		 **/
+		this.lineHeight = 0;
+	
+		/**
+		 * Indicates the maximum width for a line of text before it is wrapped to multiple lines. If null,
+		 * the text will not be wrapped.
+		 * @property lineWidth
+		 * @type Number
+		 **/
+		this.lineWidth = null;
+	}
+	var p = createjs.extend(Text, createjs.DisplayObject);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+	
+// static properties:
+	/**
+	 * @property _workingContext
+	 * @type CanvasRenderingContext2D
+	 * @private
+	 **/
+	var canvas = (createjs.createCanvas?createjs.createCanvas():document.createElement("canvas"));
+	if (canvas.getContext) { Text._workingContext = canvas.getContext("2d"); canvas.width = canvas.height = 1; }
+	
+	
+// constants:
+	/**
+	 * Lookup table for the ratio to offset bounds x calculations based on the textAlign property.
+	 * @property H_OFFSETS
+	 * @type Object
+	 * @protected
+	 * @static
+	 **/
+	Text.H_OFFSETS = {start: 0, left: 0, center: -0.5, end: -1, right: -1};
+	
+	/**
+	 * Lookup table for the ratio to offset bounds y calculations based on the textBaseline property.
+	 * @property H_OFFSETS
+	 * @type Object
+	 * @protected
+	 * @static
+	 **/
+	Text.V_OFFSETS = {top: 0, hanging: -0.01, middle: -0.4, alphabetic: -0.8, ideographic: -0.85, bottom: -1};
+
+
+// public methods:
+	/**
+	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
+	 * This does not account for whether it would be visible within the boundaries of the stage.
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method isVisible
+	 * @return {Boolean} Whether the display object would be visible if drawn to a canvas
+	 **/
+	p.isVisible = function() {
+		var hasContent = this.cacheCanvas || (this.text != null && this.text !== "");
+		return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0 && hasContent);
+	};
+
+	/**
+	 * Draws the Text into the specified context ignoring its visible, alpha, shadow, and transform.
+	 * Returns true if the draw was handled (useful for overriding functionality).
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Boolean} ignoreCache Indicates whether the draw operation should ignore any current cache.
+	 * For example, used for drawing the cache (to prevent it from simply drawing an existing cache back
+	 * into itself).
+	 **/
+	p.draw = function(ctx, ignoreCache) {
+		if (this.DisplayObject_draw(ctx, ignoreCache)) { return true; }
+
+		var col = this.color || "#000";
+		if (this.outline) { ctx.strokeStyle = col; ctx.lineWidth = this.outline*1; }
+		else { ctx.fillStyle = col; }
+		
+		this._drawText(this._prepContext(ctx));
+		return true;
+	};
+
+	/**
+	 * Returns the measured, untransformed width of the text without wrapping. Use getBounds for a more robust value.
+	 * @method getMeasuredWidth
+	 * @return {Number} The measured, untransformed width of the text.
+	 **/
+	p.getMeasuredWidth = function() {
+		return this._getMeasuredWidth(this.text);
+	};
+
+	/**
+	 * Returns an approximate line height of the text, ignoring the lineHeight property. This is based on the measured
+	 * width of a "M" character multiplied by 1.2, which provides an approximate line height for most fonts.
+	 * @method getMeasuredLineHeight
+	 * @return {Number} an approximate line height of the text, ignoring the lineHeight property. This is
+	 * based on the measured width of a "M" character multiplied by 1.2, which approximates em for most fonts.
+	 **/
+	p.getMeasuredLineHeight = function() {
+		return this._getMeasuredWidth("M")*1.2;
+	};
+
+	/**
+	 * Returns the approximate height of multi-line text by multiplying the number of lines against either the
+	 * <code>lineHeight</code> (if specified) or {{#crossLink "Text/getMeasuredLineHeight"}}{{/crossLink}}. Note that
+	 * this operation requires the text flowing logic to run, which has an associated CPU cost.
+	 * @method getMeasuredHeight
+	 * @return {Number} The approximate height of the untransformed multi-line text.
+	 **/
+	p.getMeasuredHeight = function() {
+		return this._drawText(null,{}).height;
+	};
+
+	/**
+	 * Docced in superclass.
+	 */
+	p.getBounds = function() {
+		var rect = this.DisplayObject_getBounds();
+		if (rect) { return rect; }
+		if (this.text == null || this.text === "") { return null; }
+		var o = this._drawText(null, {});
+		var w = (this.maxWidth && this.maxWidth < o.width) ? this.maxWidth : o.width;
+		var x = w * Text.H_OFFSETS[this.textAlign||"left"];
+		var lineHeight = this.lineHeight||this.getMeasuredLineHeight();
+		var y = lineHeight * Text.V_OFFSETS[this.textBaseline||"top"];
+		return this._rectangle.setValues(x, y, w, o.height);
+	};
+	
+	/**
+	 * Returns an object with width, height, and lines properties. The width and height are the visual width and height
+	 * of the drawn text. The lines property contains an array of strings, one for
+	 * each line of text that will be drawn, accounting for line breaks and wrapping. These strings have trailing
+	 * whitespace removed.
+	 * @method getMetrics
+	 * @return {Object} An object with width, height, and lines properties.
+	 **/
+	p.getMetrics = function() {
+		var o = {lines:[]};
+		o.lineHeight = this.lineHeight || this.getMeasuredLineHeight();
+		o.vOffset = o.lineHeight * Text.V_OFFSETS[this.textBaseline||"top"];
+		return this._drawText(null, o, o.lines);
+	};
+
+	/**
+	 * Returns a clone of the Text instance.
+	 * @method clone
+	 * @return {Text} a clone of the Text instance.
+	 **/
+	p.clone = function() {
+		return this._cloneProps(new Text(this.text, this.font, this.color));
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Text (text="+  (this.text.length > 20 ? this.text.substr(0, 17)+"..." : this.text) +")]";
+	};
+
+
+// private methods:
+	/**
+	 * @method _cloneProps
+	 * @param {Text} o
+	 * @protected
+	 * @return {Text} o
+	 **/
+	p._cloneProps = function(o) {
+		this.DisplayObject__cloneProps(o);
+		o.textAlign = this.textAlign;
+		o.textBaseline = this.textBaseline;
+		o.maxWidth = this.maxWidth;
+		o.outline = this.outline;
+		o.lineHeight = this.lineHeight;
+		o.lineWidth = this.lineWidth;
+		return o;
+	};
+
+	/**
+	 * @method _getWorkingContext
+	 * @param {CanvasRenderingContext2D} ctx
+	 * @return {CanvasRenderingContext2D}
+	 * @protected
+	 **/
+	p._prepContext = function(ctx) {
+		ctx.font = this.font||"10px sans-serif";
+		ctx.textAlign = this.textAlign||"left";
+		ctx.textBaseline = this.textBaseline||"top";
+		ctx.lineJoin = "miter";
+		ctx.miterLimit = 2.5;
+		return ctx;
+	};
+
+	/**
+	 * Draws multiline text.
+	 * @method _drawText
+	 * @param {CanvasRenderingContext2D} ctx
+	 * @param {Object} o
+	 * @param {Array} lines
+	 * @return {Object}
+	 * @protected
+	 **/
+	p._drawText = function(ctx, o, lines) {
+		var this$1 = this;
+
+		var paint = !!ctx;
+		if (!paint) {
+			ctx = Text._workingContext;
+			ctx.save();
+			this._prepContext(ctx);
+		}
+		var lineHeight = this.lineHeight||this.getMeasuredLineHeight();
+		
+		var maxW = 0, count = 0;
+		var hardLines = String(this.text).split(/(?:\r\n|\r|\n)/);
+		for (var i=0, l=hardLines.length; i<l; i++) {
+			var str = hardLines[i];
+			var w = null;
+			
+			if (this$1.lineWidth != null && (w = ctx.measureText(str).width) > this$1.lineWidth) {
+				// text wrapping:
+				var words = str.split(/(\s)/);
+				str = words[0];
+				w = ctx.measureText(str).width;
+				
+				for (var j=1, jl=words.length; j<jl; j+=2) {
+					// Line needs to wrap:
+					var wordW = ctx.measureText(words[j] + words[j+1]).width;
+					if (w + wordW > this$1.lineWidth) {
+						if (paint) { this$1._drawTextLine(ctx, str, count*lineHeight); }
+						if (lines) { lines.push(str); }
+						if (w > maxW) { maxW = w; }
+						str = words[j+1];
+						w = ctx.measureText(str).width;
+						count++;
+					} else {
+						str += words[j] + words[j+1];
+						w += wordW;
+					}
+				}
+			}
+			
+			if (paint) { this$1._drawTextLine(ctx, str, count*lineHeight); }
+			if (lines) { lines.push(str); }
+			if (o && w == null) { w = ctx.measureText(str).width; }
+			if (w > maxW) { maxW = w; }
+			count++;
+		}
+		
+		if (o) {
+			o.width = maxW;
+			o.height = count*lineHeight;
+		}
+		if (!paint) { ctx.restore(); }
+		return o;
+	};
+
+	/**
+	 * @method _drawTextLine
+	 * @param {CanvasRenderingContext2D} ctx
+	 * @param {String} text
+	 * @param {Number} y
+	 * @protected
+	 **/
+	p._drawTextLine = function(ctx, text, y) {
+		// Chrome 17 will fail to draw the text if the last param is included but null, so we feed it a large value instead:
+		if (this.outline) { ctx.strokeText(text, 0, y, this.maxWidth||0xFFFF); }
+		else { ctx.fillText(text, 0, y, this.maxWidth||0xFFFF); }
+	};
+	
+	
+	/**
+	 * @method _getMeasuredWidth
+	 * @param {String} text
+	 * @protected
+	 **/
+	p._getMeasuredWidth = function(text) {
+		var ctx = Text._workingContext;
+		ctx.save();
+		var w = this._prepContext(ctx).measureText(text).width;
+		ctx.restore();
+		return w;
+	};
+
+
+	createjs.Text = createjs.promote(Text, "DisplayObject");
+}());
+
+//##############################################################################
+// BitmapText.js
+//##############################################################################
+
+this.createjs = this.createjs || {};
+
+(function () {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Displays text using bitmap glyphs defined in a sprite sheet. Multi-line text is supported using new line characters,
+	 * but automatic wrapping is not supported. See the {{#crossLink "BitmapText/spriteSheet:property"}}{{/crossLink}}
+	 * property for more information on defining glyphs.
+	 *
+	 * <strong>Important:</strong> While BitmapText extends Container, it is not designed to be used as one.
+	 * As such, methods like addChild and removeChild are disabled.
+	 *
+	 *
+	 * @class BitmapText
+	 * @extends DisplayObject
+	 * @param {String} [text=""] The text to display.
+	 * @param {SpriteSheet} [spriteSheet=null] The spritesheet that defines the character glyphs.
+	 * @constructor
+	 **/
+	function BitmapText(text, spriteSheet) {
+		this.Container_constructor();
+		
+		
+	// public properties:
+		/**
+		 * The text to display.
+		 * @property text
+		 * @type String
+		 * @default ""
+		 **/
+		this.text = text||"";
+		
+		/**
+		 * A SpriteSheet instance that defines the glyphs for this bitmap text. Each glyph/character
+		 * should have a single frame animation defined in the sprite sheet named the same as
+		 * corresponding character. For example, the following animation definition:
+		 *
+		 * 		"A": {frames: [0]}
+		 *
+		 * would indicate that the frame at index 0 of the spritesheet should be drawn for the "A" character. The short form
+		 * is also acceptable:
+		 * 
+		 * 		"A": 0
+		 *
+		 * Note that if a character in the text is not found in the sprite sheet, it will also
+		 * try to use the alternate case (upper or lower).
+		 *
+		 * See SpriteSheet for more information on defining sprite sheet data.
+		 * @property spriteSheet
+		 * @type SpriteSheet
+		 * @default null
+		 **/
+		this.spriteSheet = spriteSheet;
+	
+		/**
+		 * The height of each line of text. If 0, then it will use a line height calculated
+		 * by checking for the height of the "1", "T", or "L" character (in that order). If
+		 * those characters are not defined, it will use the height of the first frame of the
+		 * sprite sheet.
+		 * @property lineHeight
+		 * @type Number
+		 * @default 0
+		 **/
+		this.lineHeight = 0;
+	
+		/**
+		 * This spacing (in pixels) will be added after each character in the output.
+		 * @property letterSpacing
+		 * @type Number
+		 * @default 0
+		 **/
+		this.letterSpacing = 0;
+	
+		/**
+		 * If a space character is not defined in the sprite sheet, then empty pixels equal to
+		 * spaceWidth will be inserted instead. If 0, then it will use a value calculated
+		 * by checking for the width of the "1", "l", "E", or "A" character (in that order). If
+		 * those characters are not defined, it will use the width of the first frame of the
+		 * sprite sheet.
+		 * @property spaceWidth
+		 * @type Number
+		 * @default 0
+		 **/
+		this.spaceWidth = 0;
+		
+		
+	// private properties:
+	 	/**
+		 * @property _oldProps
+		 * @type Object
+		 * @protected
+		 **/
+		this._oldProps = {text:0,spriteSheet:0,lineHeight:0,letterSpacing:0,spaceWidth:0};
+
+		/**
+		 * Used to track the object which this class attached listeners to, helps optimize listener attachment.
+		 * @property _oldStage
+		 * @type Stage
+		 * @protected
+		 */
+		this._oldStage = null;
+		/**
+		 * The event listener proxy triggered drawing draw for special circumstances.
+		 * @property _drawAction
+		 * @type function
+		 * @protected
+		 */
+		this._drawAction = null;
+	}
+	var p = createjs.extend(BitmapText, createjs.Container);
+
+// static properties:
+	/**
+	 * BitmapText uses Sprite instances to draw text. To reduce the creation and destruction of instances (and thus garbage collection), it maintains
+	 * an internal object pool of sprite instances to reuse. Increasing this value can cause more sprites to be
+	 * retained, slightly increasing memory use, but reducing instantiation.
+	 * @property maxPoolSize
+	 * @type Number
+	 * @static
+	 * @default 100
+	 **/
+	BitmapText.maxPoolSize = 100;
+	
+	/**
+	 * Sprite object pool.
+	 * @type {Array}
+	 * @static
+	 * @private
+	 */
+	BitmapText._spritePool = [];
+
+	
+// public methods:
+	/**
+	 * Docced in superclass.
+	 **/
+	p.draw = function(ctx, ignoreCache) {
+		if (this.DisplayObject_draw(ctx, ignoreCache)) { return; }
+		this._updateState();
+		this.Container_draw(ctx, ignoreCache);
+	};
+	
+	/**
+	 * Docced in superclass.
+	 **/
+	p.getBounds = function() {
+		this._updateText();
+		return this.Container_getBounds();
+	};
+	
+	/**
+	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
+	 * This does not account for whether it would be visible within the boundaries of the stage.
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method isVisible
+	 * @return {Boolean} Boolean indicating whether the display object would be visible if drawn to a canvas
+	 **/
+	p.isVisible = function() {
+		var hasContent = this.cacheCanvas || (this.spriteSheet && this.spriteSheet.complete && this.text);
+		return !!(this.visible && this.alpha > 0 && this.scaleX !== 0 && this.scaleY !== 0 && hasContent);
+	};
+	
+	p.clone = function() {
+		return this._cloneProps(new BitmapText(this.text, this.spriteSheet));
+	};
+	
+	/**
+	 * <strong>Disabled in BitmapText.</strong>
+	 * @method addChild
+	 **/
+	/**
+	 * <strong>Disabled in BitmapText.</strong>
+	 * @method addChildAt
+	 **/
+	/**
+	 * <strong>Disabled in BitmapText.</strong>
+	 * @method removeChild
+	 **/
+	/**
+	 * <strong>Disabled in BitmapText.</strong>
+	 * @method removeChildAt
+	 **/
+	/**
+	 * <strong>Disabled in BitmapText.</strong>
+	 * @method removeAllChildren
+	 **/
+	p.addChild = p.addChildAt = p.removeChild = p.removeChildAt = p.removeAllChildren = function() {};
+
+
+// private methods:
+	/**
+	 * Docced in superclass.
+	 **/
+	p._updateState = function() {
+		this._updateText();
+	};
+
+ 	/**
+	 * @method _cloneProps
+	 * @param {BitmapText} o
+	 * @return {BitmapText} o
+	 * @protected
+	 **/
+	p._cloneProps = function(o) {
+		this.Container__cloneProps(o);
+		o.lineHeight = this.lineHeight;
+		o.letterSpacing = this.letterSpacing;
+		o.spaceWidth = this.spaceWidth;
+		return o;
+	};
+	
+	/**
+	 * @method _getFrameIndex
+	 * @param {String} character
+	 * @param {SpriteSheet} spriteSheet
+	 * @return {Number}
+	 * @protected
+	 **/
+	p._getFrameIndex = function(character, spriteSheet) {
+		var c, o = spriteSheet.getAnimation(character);
+		if (!o) {
+			(character != (c = character.toUpperCase())) || (character != (c = character.toLowerCase())) || (c=null);
+			if (c) { o = spriteSheet.getAnimation(c); }
+		}
+		return o && o.frames[0];
+	};
+	
+	/**
+	 * @method _getFrame
+	 * @param {String} character
+	 * @param {SpriteSheet} spriteSheet
+	 * @return {Object}
+	 * @protected
+	 **/
+	p._getFrame = function(character, spriteSheet) {
+		var index = this._getFrameIndex(character, spriteSheet);
+		return index == null ? index : spriteSheet.getFrame(index);
+	};
+
+	/**
+	 * @method _getLineHeight
+	 * @param {SpriteSheet} ss
+	 * @return {Number}
+	 * @protected
+	 **/
+	p._getLineHeight = function(ss) {
+		var frame = this._getFrame("1",ss) || this._getFrame("T",ss) || this._getFrame("L",ss) || ss.getFrame(0);
+		return frame ? frame.rect.height : 1;
+	};
+
+	/**
+	 * @method _getSpaceWidth
+	 * @param {SpriteSheet} ss
+	 * @return {Number}
+	 * @protected
+	 **/
+	p._getSpaceWidth = function(ss) {
+		var frame = this._getFrame("1",ss) || this._getFrame("l",ss) || this._getFrame("e",ss) || this._getFrame("a",ss) || ss.getFrame(0);
+		return frame ? frame.rect.width : 1;
+	};
+
+	/**
+	 * @method _updateText
+	 * @protected
+	 **/
+	p._updateText = function() {
+		var this$1 = this;
+
+		var x=0, y=0, o=this._oldProps, change=false, spaceW=this.spaceWidth, lineH=this.lineHeight, ss=this.spriteSheet;
+		var pool=BitmapText._spritePool, kids=this.children, childIndex=0, numKids=kids.length, sprite;
+		
+		for (var n in o) {
+			if (o[n] != this$1[n]) {
+				o[n] = this$1[n];
+				change = true;
+			}
+		}
+		if (!change) { return; }
+		
+		var hasSpace = !!this._getFrame(" ", ss);
+		if (!hasSpace && !spaceW) { spaceW = this._getSpaceWidth(ss); }
+		if (!lineH) { lineH = this._getLineHeight(ss); }
+		
+		for(var i=0, l=this.text.length; i<l; i++) {
+			var character = this$1.text.charAt(i);
+			if (character == " " && !hasSpace) {
+				x += spaceW;
+				continue;
+			} else if (character=="\n" || character=="\r") {
+				if (character=="\r" && this$1.text.charAt(i+1) == "\n") { i++; } // crlf
+				x = 0;
+				y += lineH;
+				continue;
+			}
+
+			var index = this$1._getFrameIndex(character, ss);
+			if (index == null) { continue; }
+			
+			if (childIndex < numKids) {
+				sprite = kids[childIndex];
+			} else {
+				kids.push(sprite = pool.length ? pool.pop() : new createjs.Sprite());
+				sprite.parent = this$1;
+				numKids++;
+			}
+			sprite.spriteSheet = ss;
+			sprite.gotoAndStop(index);
+			sprite.x = x;
+			sprite.y = y;
+			childIndex++;
+			
+			x += sprite.getBounds().width + this$1.letterSpacing;
+		}
+		while (numKids > childIndex) {
+			 // faster than removeChild.
+			pool.push(sprite = kids.pop());
+			sprite.parent = null;
+			numKids--;
+		}
+		if (pool.length > BitmapText.maxPoolSize) { pool.length = BitmapText.maxPoolSize; }
+	};
+
+
+	createjs.BitmapText = createjs.promote(BitmapText, "Container");
+}());
+
+//##############################################################################
+// MovieClip.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * The MovieClip class associates a TweenJS Timeline with an EaselJS {{#crossLink "Container"}}{{/crossLink}}. It allows
+	 * you to create objects which encapsulate timeline animations, state changes, and synched actions. The MovieClip
+	 * class has been included in the EaselJS minified file since 0.7.0.
+	 *
+	 * Currently MovieClip only works properly if it is tick based (as opposed to time based) though some concessions have
+	 * been made to support time-based timelines in the future.
+	 *
+	 * <h4>Example</h4>
+	 * This example animates two shapes back and forth. The grey shape starts on the left, but we jump to a mid-point in
+	 * the animation using {{#crossLink "MovieClip/gotoAndPlay"}}{{/crossLink}}.
+	 *
+	 *      var stage = new createjs.Stage("canvas");
+	 *      createjs.Ticker.addEventListener("tick", stage);
+	 *
+	 *      var mc = new createjs.MovieClip({loop:-1, labels:{myLabel:20}});
+	 *      stage.addChild(mc);
+	 *
+	 *      var child1 = new createjs.Shape(
+	 *          new createjs.Graphics().beginFill("#999999")
+	 *              .drawCircle(30,30,30));
+	 *      var child2 = new createjs.Shape(
+	 *          new createjs.Graphics().beginFill("#5a9cfb")
+	 *              .drawCircle(30,30,30));
+	 *
+	 *      mc.timeline.addTween(
+	 *          createjs.Tween.get(child1)
+	 *              .to({x:0}).to({x:60}, 50).to({x:0}, 50));
+	 *      mc.timeline.addTween(
+	 *          createjs.Tween.get(child2)
+	 *              .to({x:60}).to({x:0}, 50).to({x:60}, 50));
+	 *
+	 *      mc.gotoAndPlay("start");
+	 *
+	 * It is recommended to use <code>tween.to()</code> to animate and set properties (use no duration to have it set
+	 * immediately), and the <code>tween.wait()</code> method to create delays between animations. Note that using the
+	 * <code>tween.set()</code> method to affect properties will likely not provide the desired result.
+	 *
+	 * @class MovieClip
+	 * @main MovieClip
+	 * @param {Object} [props] The configuration properties to apply to this instance (ex. `{mode:MovieClip.SYNCHED}`).
+	 * Supported props for the MovieClip are listed below. These props are set on the corresponding instance properties except where
+	 * specified.<UL>
+	 *    <LI> `mode`</LI>
+	 *    <LI> `startPosition`</LI>
+	 *    <LI> `frameBounds`</LI>
+	 * </UL>
+	 * 
+	 * This object will also be passed into the Timeline instance associated with this MovieClip. See the documentation
+	 * for Timeline for a list of supported props (ex. `paused`, `labels`, `loop`, `reversed`, etc.)
+	 * @extends Container
+	 * @constructor
+	 **/
+	function MovieClip(props) {
+		this.Container_constructor();
+		!MovieClip.inited&&MovieClip.init(); // static init
+		
+		var mode, startPosition, loop, labels;
+		
+		// handle old params (mode, startPosition, loop, labels):
+		// TODO: deprecated param handling:
+		if (props instanceof String || arguments.length > 1) {
+			mode = props;
+			startPosition = arguments[1];
+			loop = arguments[2];
+			labels = arguments[3];
+			if (loop == null) { loop = -1; }
+			props = null;
+		} else if (props) {
+			mode = props.mode;
+			startPosition = props.startPosition;
+			loop = props.loop;
+			labels = props.labels;
+		}
+		if (!props) { props = {labels:labels}; }
+		
+		
+	// public properties:
+		/**
+		 * Controls how this MovieClip advances its time. Must be one of 0 (INDEPENDENT), 1 (SINGLE_FRAME), or 2 (SYNCHED).
+		 * See each constant for a description of the behaviour.
+		 * @property mode
+		 * @type String
+		 * @default null
+		 **/
+		this.mode = mode||MovieClip.INDEPENDENT;
+	
+		/**
+		 * Specifies what the first frame to play in this movieclip, or the only frame to display if mode is SINGLE_FRAME.
+		 * @property startPosition
+		 * @type Number
+		 * @default 0
+		 */
+		this.startPosition = startPosition||0;
+	
+		/**
+		 * Specifies how many times this MovieClip should loop. A value of -1 indicates it should loop indefinitely. A value of
+		 * 1 would cause it to loop once (ie. play a total of twice).
+		 * @property loop
+		 * @type Number
+		 * @default -1
+		 */
+		this.loop = loop === true ? -1 : (loop || 0);
+	
+		/**
+		 * The current frame of the movieclip.
+		 * @property currentFrame
+		 * @type Number
+		 * @default 0
+		 * @readonly
+		 */
+		this.currentFrame = 0;
+	
+		/**
+		 * If true, the MovieClip's position will not advance when ticked.
+		 * @property paused
+		 * @type Boolean
+		 * @default false
+		 */
+		this.paused = props.paused||false;
+	
+		/**
+		 * If true, actions in this MovieClip's tweens will be run when the playhead advances.
+		 * @property actionsEnabled
+		 * @type Boolean
+		 * @default true
+		 */
+		this.actionsEnabled = true;
+	
+		/**
+		 * If true, the MovieClip will automatically be reset to its first frame whenever the timeline adds
+		 * it back onto the display list. This only applies to MovieClip instances with mode=INDEPENDENT.
+		 * <br><br>
+		 * For example, if you had a character animation with a "body" child MovieClip instance
+		 * with different costumes on each frame, you could set body.autoReset = false, so that
+		 * you can manually change the frame it is on, without worrying that it will be reset
+		 * automatically.
+		 * @property autoReset
+		 * @type Boolean
+		 * @default true
+		 */
+		this.autoReset = true;
+		
+		/**
+		 * An array of bounds for each frame in the MovieClip. This is mainly intended for tool output.
+		 * @property frameBounds
+		 * @type Array
+		 * @default null
+		 */
+		this.frameBounds = this.frameBounds||props.frameBounds; // frameBounds are set on the prototype in Animate.
+		
+		/**
+		 * By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip
+		 * will cause it to advance based on elapsed time between ticks as appropriate to maintain the target
+		 * framerate.
+		 *
+		 * For example, if a MovieClip with a framerate of 10 is placed on a Stage being updated at 40fps, then the MovieClip will
+		 * advance roughly one frame every 4 ticks. This will not be exact, because the time between each tick will
+		 * vary slightly between frames.
+		 *
+		 * This feature is dependent on the tick event object (or an object with an appropriate "delta" property) being
+		 * passed into {{#crossLink "Stage/update"}}{{/crossLink}}.
+		 * @property framerate
+		 * @type {Number}
+		 * @default null
+		 **/
+		this.framerate = null;
+		
+		// set up the needed props for Timeline:
+		props.useTicks = props.paused = true;
+		
+		/**
+		 * The TweenJS Timeline that is associated with this MovieClip. This is created automatically when the MovieClip
+		 * instance is initialized. Animations are created by adding <a href="http://tweenjs.com">TweenJS</a> Tween
+		 * instances to the timeline.
+		 *
+		 * <h4>Example</h4>
+		 *
+		 *      var tween = createjs.Tween.get(target).to({x:0}).to({x:100}, 30);
+		 *      var mc = new createjs.MovieClip();
+		 *      mc.timeline.addTween(tween);
+		 *
+		 * Elements can be added and removed from the timeline by toggling an "_off" property
+		 * using the <code>tweenInstance.to()</code> method. Note that using <code>Tween.set</code> is not recommended to
+		 * create MovieClip animations. The following example will toggle the target off on frame 0, and then back on for
+		 * frame 1. You can use the "visible" property to achieve the same effect.
+		 *
+		 *      var tween = createjs.Tween.get(target).to({_off:false})
+		 *          .wait(1).to({_off:true})
+		 *          .wait(1).to({_off:false});
+		 *
+		 * @property timeline
+		 * @type Timeline
+		 * @default null
+		 */
+		this.timeline = new createjs.Timeline(props);
+		
+		
+	// private properties:
+		/**
+		 * @property _synchOffset
+		 * @type Number
+		 * @default 0
+		 * @private
+		 */
+		this._synchOffset = 0;
+	
+		/**
+		 * @property _rawPosition
+		 * @type Number
+		 * @default -1
+		 * @private
+		 */
+		this._rawPosition = -1; // TODO: evaluate using a ._reset Boolean prop instead of -1.
+		
+		/**
+		 * @property _bound_resolveState
+		 * @type Function
+		 * @private
+		 */
+		this._bound_resolveState = this._resolveState.bind(this);
+	
+	
+		/**
+		 * The time remaining from the previous tick, only applicable when .framerate is set.
+		 * @property _t
+		 * @type Number
+		 * @private
+		 */
+		this._t = 0;
+	
+		/**
+		 * List of display objects that are actively being managed by the MovieClip.
+		 * @property _managed
+		 * @type Object
+		 * @private
+		 */
+		this._managed = {};
+	}
+	var p = createjs.extend(MovieClip, createjs.Container);
+
+
+// constants:
+	/**
+	 * The MovieClip will advance independently of its parent, even if its parent is paused.
+	 * This is the default mode.
+	 * @property INDEPENDENT
+	 * @static
+	 * @type String
+	 * @default "independent"
+	 * @readonly
+	 **/
+	MovieClip.INDEPENDENT = "independent";
+
+	/**
+	 * The MovieClip will only display a single frame (as determined by the startPosition property).
+	 * @property SINGLE_FRAME
+	 * @static
+	 * @type String
+	 * @default "single"
+	 * @readonly
+	 **/
+	MovieClip.SINGLE_FRAME = "single";
+
+	/**
+	 * The MovieClip will be advanced only when its parent advances and will be synched to the position of
+	 * the parent MovieClip.
+	 * @property SYNCHED
+	 * @static
+	 * @type String
+	 * @default "synched"
+	 * @readonly
+	 **/
+	MovieClip.SYNCHED = "synched";
+	
+	
+// static properties:
+	MovieClip.inited = false;
+	
+	
+// static methods:
+	MovieClip.init = function() {
+		if (MovieClip.inited) { return; }
+		// plugins introduce some overhead to Tween, so we only install this if an MC is instantiated.
+		MovieClipPlugin.install();
+		MovieClip.inited = true;
+	};
+	
+	
+// getter / setters:
+	/**
+	 * Use the {{#crossLink "MovieClip/labels:property"}}{{/crossLink}} property instead.
+	 * @method _getLabels
+	 * @protected
+	 * @return {Array}
+	 **/
+	p._getLabels = function() {
+		return this.timeline.getLabels();
+	};
+	// MovieClip.getLabels is @deprecated. Remove for 1.1+
+	p.getLabels = createjs.deprecate(p._getLabels, "MovieClip.getLabels");
+
+	/**
+	 * Use the {{#crossLink "MovieClip/currentLabel:property"}}{{/crossLink}} property instead.
+	 * @method _getCurrentLabel
+	 * @protected
+	 * @return {String}
+	 **/
+	p._getCurrentLabel = function() {
+		return this.timeline.currentLabel;
+	};
+	// MovieClip.getCurrentLabel is @deprecated. Remove for 1.1+
+	p.getCurrentLabel = createjs.deprecate(p._getCurrentLabel, "MovieClip.getCurrentLabel");
+
+	/**
+	 * Use the {{#crossLink "MovieClip/duration:property"}}{{/crossLink}} property instead.
+	 * @method _getDuration
+	 * @protected
+	 * @return {Number}
+	 **/
+	p._getDuration = function() {
+		return this.timeline.duration;
+	};
+	// MovieClip.getDuration is @deprecated. Remove for 1.1+
+	p.getDuration = createjs.deprecate(p._getDuration, "MovieClip.getDuration");
+
+	/**
+	 * Returns an array of objects with label and position (aka frame) properties, sorted by position.
+	 * @property labels
+	 * @type {Array}
+	 * @readonly
+	 **/
+	
+	/**
+	 * Returns the name of the label on or immediately before the current frame.
+	 * @property currentLabel
+	 * @type {String}
+	 * @readonly
+	 **/
+	
+	/**
+	 * Returns the duration of this MovieClip in seconds or ticks.
+	 * @property totalFrames
+	 * @type {Number}
+	 * @readonly
+	 **/
+	
+	/**
+	 * Returns the duration of this MovieClip in seconds or ticks.
+	 * @property duration
+	 * @type {Number}
+	 * @readonly
+	 **/
+	try {
+		Object.defineProperties(p, {
+			labels: { get: p._getLabels },
+			currentLabel: { get: p._getCurrentLabel },
+			totalFrames: { get: p._getDuration },
+			duration: { get: p._getDuration }
+			// TODO: can we just proxy .currentFrame to tl.position as well? Ditto for .loop (or just remove entirely).
+		});
+	} catch (e) {}
+
+
+// public methods:
+	/**
+	 * Constructor alias for backwards compatibility. This method will be removed in future versions.
+	 * Subclasses should be updated to use {{#crossLink "Utility Methods/extends"}}{{/crossLink}}.
+	 * @method initialize
+	 * @deprecated in favour of `createjs.promote()`
+	 **/
+	p.initialize = MovieClip; // TODO: Deprecated. This is for backwards support of Adobe Flash/Animate
+
+	/**
+	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
+	 * This does not account for whether it would be visible within the boundaries of the stage.
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method isVisible
+	 * @return {Boolean} Boolean indicating whether the display object would be visible if drawn to a canvas
+	 **/
+	p.isVisible = function() {
+		// children are placed in draw, so we can't determine if we have content.
+		return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0);
+	};
+
+	/**
+	 * Draws the display object into the specified context ignoring its visible, alpha, shadow, and transform.
+	 * Returns true if the draw was handled (useful for overriding functionality).
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Boolean} ignoreCache Indicates whether the draw operation should ignore any current cache.
+	 * For example, used for drawing the cache (to prevent it from simply drawing an existing cache back
+	 * into itself).
+	 **/
+	p.draw = function(ctx, ignoreCache) {
+		// draw to cache first:
+		if (this.DisplayObject_draw(ctx, ignoreCache)) { return true; }
+		this._updateState();
+		this.Container_draw(ctx, ignoreCache);
+		return true;
+	};
+
+	/**
+	 * Sets paused to false.
+	 * @method play
+	 **/
+	p.play = function() {
+		this.paused = false;
+	};
+	
+	/**
+	 * Sets paused to true.
+	 * @method stop
+	 **/
+	p.stop = function() {
+		this.paused = true;
+	};
+	
+	/**
+	 * Advances this movie clip to the specified position or label and sets paused to false.
+	 * @method gotoAndPlay
+	 * @param {String|Number} positionOrLabel The animation name or frame number to go to.
+	 **/
+	p.gotoAndPlay = function(positionOrLabel) {
+		this.paused = false;
+		this._goto(positionOrLabel);
+	};
+	
+	/**
+	 * Advances this movie clip to the specified position or label and sets paused to true.
+	 * @method gotoAndStop
+	 * @param {String|Number} positionOrLabel The animation or frame name to go to.
+	 **/
+	p.gotoAndStop = function(positionOrLabel) {
+		this.paused = true;
+		this._goto(positionOrLabel);
+	};
+	
+	/**
+	 * Advances the playhead. This occurs automatically each tick by default.
+	 * @param [time] {Number} The amount of time in ms to advance by. Only applicable if framerate is set.
+	 * @method advance
+	*/
+	p.advance = function(time) {
+		var this$1 = this;
+
+		var independent = MovieClip.INDEPENDENT;
+		if (this.mode !== independent) { return; } // update happens in draw for synched clips
+		
+		// if this MC doesn't have a framerate, hunt ancestors for one:
+		var o=this, fps = o.framerate;
+		while ((o = o.parent) && fps === null) { if (o.mode === independent) { fps = o._framerate; } }
+		this._framerate = fps;
+		
+		if (this.paused) { return; }
+		
+		// calculate how many frames to advance:
+		var t = (fps !== null && fps !== -1 && time !== null) ? time/(1000/fps) + this._t : 1;
+		var frames = t|0;
+		this._t = t-frames; // leftover time, save to add to next advance.
+		
+		while (frames--) { this$1._updateTimeline(this$1._rawPosition+1, false); }
+	};
+	
+	/**
+	 * MovieClip instances cannot be cloned.
+	 * @method clone
+	 **/
+	p.clone = function() {
+		// TODO: add support for this? Need to clone the Timeline & retarget tweens - pretty complex.
+		throw("MovieClip cannot be cloned.");
+	};
+	
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[MovieClip (name="+  this.name +")]";
+	};
+
+
+// private methods:
+	/**
+	 * Docced in superclass.
+	 **/
+	p._updateState = function() {
+		if (this._rawPosition === -1 || this.mode !== MovieClip.INDEPENDENT) { this._updateTimeline(-1); }
+	};
+
+	/**
+	 * @method _tick
+	 * @param {Object} evtObj An event object that will be dispatched to all tick listeners. This object is reused between dispatchers to reduce construction & GC costs.
+	 * function.
+	 * @protected
+	 **/
+	p._tick = function(evtObj) {
+		this.advance(evtObj&&evtObj.delta);
+		this.Container__tick(evtObj);
+	};
+	
+	/**
+	 * @method _goto
+	 * @param {String|Number} positionOrLabel The animation name or frame number to go to.
+	 * @protected
+	 **/
+	p._goto = function(positionOrLabel) {
+		var pos = this.timeline.resolve(positionOrLabel);
+		if (pos == null) { return; }
+		this._t = 0;
+		this._updateTimeline(pos, true);
+	};
+	
+	/**
+	 * @method _reset
+	 * @private
+	 **/
+	p._reset = function() {
+		this._rawPosition = -1;
+		this._t = this.currentFrame = 0;
+		this.paused = false;
+	};
+	
+	/**
+	 * @method _updateTimeline
+	 * @param {Boolean} jump Indicates whether this update is due to jumping (via gotoAndXX) to a new position.
+	 * @protected
+	 **/
+	p._updateTimeline = function(rawPosition, jump) {
+		var synced = this.mode !== MovieClip.INDEPENDENT, tl = this.timeline;
+		if (synced) { rawPosition = this.startPosition + (this.mode===MovieClip.SINGLE_FRAME?0:this._synchOffset); }
+		if (rawPosition < 0) { rawPosition = 0; }
+		if (this._rawPosition === rawPosition && !synced) { return; }
+		this._rawPosition = rawPosition;
+		
+		// update timeline position, ignoring actions if this is a graphic.
+		tl.loop = this.loop; // TODO: should we maintain this on MovieClip, or just have it on timeline?
+		tl.setPosition(rawPosition, synced || !this.actionsEnabled, jump, this._bound_resolveState);
+	};
+	
+	/**
+	 * Renders position 0 without running actions or updating _rawPosition.
+	 * Primarily used by Animate CC to build out the first frame in the constructor of MC symbols.
+	 * NOTE: not tested when run after the MC advances past the first frame.
+	 * @method _renderFirstFrame
+	 * @protected
+	 **/
+	p._renderFirstFrame = function() {
+		var tl = this.timeline, pos = tl.rawPosition;
+		tl.setPosition(0, true, true, this._bound_resolveState);
+		tl.rawPosition = pos;
+	};
+	
+	/**
+	 * Runs via a callback after timeline property updates and before actions.
+	 * @method _resolveState
+	 * @protected
+	 **/
+	p._resolveState = function() {
+		var this$1 = this;
+
+		var tl = this.timeline;
+		this.currentFrame = tl.position;
+		
+		for (var n in this._managed) { this$1._managed[n] = 1; }
+
+		var tweens = tl.tweens;
+		for (var i=0, l=tweens.length; i<l; i++) {
+			var tween = tweens[i],  target = tween.target;
+			if (target === this$1 || tween.passive) { continue; } // TODO: this assumes the actions tween from Animate has `this` as the target. There's likely a better approach.
+			var offset = tween._stepPosition;
+
+			if (target instanceof createjs.DisplayObject) {
+				// motion tween.
+				this$1._addManagedChild(target, offset);
+			} else {
+				// state tween.
+				this$1._setState(target.state, offset);
+			}
+		}
+
+		var kids = this.children;
+		for (i=kids.length-1; i>=0; i--) {
+			var id = kids[i].id;
+			if (this$1._managed[id] === 1) {
+				this$1.removeChildAt(i);
+				delete(this$1._managed[id]);
+			}
+		}
+	};
+
+	/**
+	 * @method _setState
+	 * @param {Array} state
+	 * @param {Number} offset
+	 * @protected
+	 **/
+	p._setState = function(state, offset) {
+		var this$1 = this;
+
+		if (!state) { return; }
+		for (var i=state.length-1;i>=0;i--) {
+			var o = state[i];
+			var target = o.t;
+			var props = o.p;
+			for (var n in props) { target[n] = props[n]; }
+			this$1._addManagedChild(target, offset);
+		}
+	};
+
+	/**
+	 * Adds a child to the timeline, and sets it up as a managed child.
+	 * @method _addManagedChild
+	 * @param {MovieClip} child The child MovieClip to manage
+	 * @param {Number} offset
+	 * @private
+	 **/
+	p._addManagedChild = function(child, offset) {
+		if (child._off) { return; }
+		this.addChildAt(child,0);
+
+		if (child instanceof MovieClip) {
+			child._synchOffset = offset;
+			// TODO: this does not precisely match Adobe Flash/Animate, which loses track of the clip if it is renamed or removed from the timeline, which causes it to reset.
+			// TODO: should also reset when MovieClip loops, though that will be a bit tricky to detect.
+			if (child.mode === MovieClip.INDEPENDENT && child.autoReset && (!this._managed[child.id])) { child._reset(); }
+		}
+		this._managed[child.id] = 2;
+	};
+	
+	/**
+	 * @method _getBounds
+	 * @param {Matrix2D} matrix
+	 * @param {Boolean} ignoreTransform
+	 * @return {Rectangle}
+	 * @protected
+	 **/
+	p._getBounds = function(matrix, ignoreTransform) {
+		var bounds = this.DisplayObject_getBounds();
+		if (!bounds) {
+			if (this.frameBounds) { bounds = this._rectangle.copy(this.frameBounds[this.currentFrame]); }
+		}
+		if (bounds) { return this._transformBounds(bounds, matrix, ignoreTransform); }
+		return this.Container__getBounds(matrix, ignoreTransform);
+	};
+
+
+	createjs.MovieClip = createjs.promote(MovieClip, "Container");
+
+
+
+// MovieClipPlugin for TweenJS:
+	/**
+	 * This plugin works with <a href="http://tweenjs.com" target="_blank">TweenJS</a> to prevent the startPosition
+	 * property from tweening.
+	 * @private
+	 * @class MovieClipPlugin
+	 * @constructor
+	 **/
+	function MovieClipPlugin() {
+		throw("MovieClipPlugin cannot be instantiated.")
+	}
+	
+	/**
+	 * @property priority
+	 * @type {Number}
+	 * @static
+	 * @readonly
+	 **/
+	MovieClipPlugin.priority = 100; // very high priority, should run first
+	
+	/**
+	 * @property ID
+	 * @type {String}
+	 * @static
+	 * @readonly
+	 **/
+	MovieClipPlugin.ID = "MovieClip";
+
+	/**
+	 * @method install
+	 * @static
+	 **/
+	MovieClipPlugin.install = function() {
+		createjs.Tween._installPlugin(MovieClipPlugin);
+	};
+	
+	/**
+	 * @method init
+	 * @param {Tween} tween
+	 * @param {String} prop
+	 * @param {*} value
+	 * @static
+	 **/
+	MovieClipPlugin.init = function(tween, prop, value) {
+		if (prop === "startPosition" && tween.target instanceof MovieClip) { tween._addPlugin(MovieClipPlugin); }
+	};
+	
+	/**
+	 * @method step
+	 * @param {Tween} tween
+	 * @param {TweenStep} step
+	 * @param {Object} props
+	 * @static
+	 **/
+	MovieClipPlugin.step = function(tween, step, props) {};
+
+	/**
+	 * @method change
+	 * @param {Tween} tween
+	 * @param {TweenStep} step
+	 * @param {*} value
+	 * @param {Number} ratio
+	 * @param {Object} end
+	 * @return {*}
+	 * @static
+	 */
+	MovieClipPlugin.change = function(tween, step, prop, value, ratio, end) {
+		if (prop === "startPosition") { return (ratio === 1 ? step.props[prop] : step.prev.props[prop]); }
+	};
+
+}());
+
+//##############################################################################
+// SpriteSheetUtils.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+	
+	
+// constructor:
+	/**
+	 * The SpriteSheetUtils class is a collection of static methods for working with {{#crossLink "SpriteSheet"}}{{/crossLink}}s.
+	 * A sprite sheet is a series of images (usually animation frames) combined into a single image on a regular grid. For
+	 * example, an animation consisting of 8 100x100 images could be combined into a 400x200 sprite sheet (4 frames across
+	 * by 2 high). The SpriteSheetUtils class uses a static interface and should not be instantiated.
+	 * @class SpriteSheetUtils
+	 * @static
+	 **/
+	function SpriteSheetUtils() {
+		throw "SpriteSheetUtils cannot be instantiated";
+	}
+
+
+// private static properties:
+	/**
+	 * @property _workingCanvas
+	 * @static
+	 * @type HTMLCanvasElement | Object
+	 * @protected
+	*/
+	/**
+	 * @property _workingContext
+	 * @static
+	 * @type CanvasRenderingContext2D
+	 * @protected
+	*/
+	var canvas = (createjs.createCanvas?createjs.createCanvas():document.createElement("canvas"));
+	if (canvas.getContext) {
+		SpriteSheetUtils._workingCanvas = canvas;
+		SpriteSheetUtils._workingContext = canvas.getContext("2d");
+		canvas.width = canvas.height = 1;
+	}
+
+
+// public static methods:
+	/**
+	 * Returns a single frame of the specified sprite sheet as a new PNG image. An example of when this may be useful is
+	 * to use a spritesheet frame as the source for a bitmap fill.
+	 *
+	 * <strong>WARNING:</strong> In almost all cases it is better to display a single frame using a {{#crossLink "Sprite"}}{{/crossLink}}
+	 * with a {{#crossLink "Sprite/gotoAndStop"}}{{/crossLink}} call than it is to slice out a frame using this
+	 * method and display it with a Bitmap instance. You can also crop an image using the {{#crossLink "Bitmap/sourceRect"}}{{/crossLink}}
+	 * property of {{#crossLink "Bitmap"}}{{/crossLink}}.
+	 *
+	 * The extractFrame method may cause cross-domain warnings since it accesses pixels directly on the canvas.
+	 * @method extractFrame
+	 * @static
+	 * @param {SpriteSheet} spriteSheet The SpriteSheet instance to extract a frame from.
+	 * @param {Number|String} frameOrAnimation The frame number or animation name to extract. If an animation
+	 * name is specified, only the first frame of the animation will be extracted.
+	 * @return {HTMLImageElement} a single frame of the specified sprite sheet as a new PNG image.
+	*/
+	SpriteSheetUtils.extractFrame = function(spriteSheet, frameOrAnimation) {
+		if (isNaN(frameOrAnimation)) {
+			frameOrAnimation = spriteSheet.getAnimation(frameOrAnimation).frames[0];
+		}
+		var data = spriteSheet.getFrame(frameOrAnimation);
+		if (!data) { return null; }
+		var r = data.rect;
+		var canvas = SpriteSheetUtils._workingCanvas;
+		canvas.width = r.width;
+		canvas.height = r.height;
+		SpriteSheetUtils._workingContext.drawImage(data.image, r.x, r.y, r.width, r.height, 0, 0, r.width, r.height);
+		var img = document.createElement("img");
+		img.src = canvas.toDataURL("image/png");
+		return img;
+	};
+
+	// SpriteSheetUtils.addFlippedFrames is @deprecated. Remove for 1.1+
+	SpriteSheetUtils.addFlippedFrames = createjs.deprecate(null, "SpriteSheetUtils.addFlippedFrames");
+
+	// SpriteSheetUtils.addFlippedFrames is @deprecated. Remove for 1.1+
+	SpriteSheetUtils.mergeAlpha = createjs.deprecate(null, "SpriteSheetUtils.mergeAlpha");
+
+	
+// private static methods:
+	SpriteSheetUtils._flip = function(spriteSheet, count, h, v) {
+		var imgs = spriteSheet._images;
+		var canvas = SpriteSheetUtils._workingCanvas;
+		var ctx = SpriteSheetUtils._workingContext;
+		var il = imgs.length/count;
+		for (var i=0;i<il;i++) {
+			var src = imgs[i];
+			src.__tmp = i; // a bit hacky, but faster than doing indexOf below.
+			ctx.setTransform(1,0,0,1,0,0);
+			ctx.clearRect(0,0,canvas.width+1,canvas.height+1);
+			canvas.width = src.width;
+			canvas.height = src.height;
+			ctx.setTransform(h?-1:1, 0, 0, v?-1:1, h?src.width:0, v?src.height:0);
+			ctx.drawImage(src,0,0);
+			var img = document.createElement("img");
+			img.src = canvas.toDataURL("image/png");
+			// work around a strange bug in Safari:
+			img.width = (src.width||src.naturalWidth);
+			img.height = (src.height||src.naturalHeight);
+			imgs.push(img);
+		}
+
+		var frames = spriteSheet._frames;
+		var fl = frames.length/count;
+		for (i=0;i<fl;i++) {
+			src = frames[i];
+			var rect = src.rect.clone();
+			img = imgs[src.image.__tmp+il*count];
+
+			var frame = {image:img,rect:rect,regX:src.regX,regY:src.regY};
+			if (h) {
+				rect.x = (img.width||img.naturalWidth)-rect.x-rect.width; // update rect
+				frame.regX = rect.width-src.regX; // update registration point
+			}
+			if (v) {
+				rect.y = (img.height||img.naturalHeight)-rect.y-rect.height;  // update rect
+				frame.regY = rect.height-src.regY; // update registration point
+			}
+			frames.push(frame);
+		}
+
+		var sfx = "_"+(h?"h":"")+(v?"v":"");
+		var names = spriteSheet._animations;
+		var data = spriteSheet._data;
+		var al = names.length/count;
+		for (i=0;i<al;i++) {
+			var name = names[i];
+			src = data[name];
+			var anim = {name:name+sfx,speed:src.speed,next:src.next,frames:[]};
+			if (src.next) { anim.next += sfx; }
+			frames = src.frames;
+			for (var j=0,l=frames.length;j<l;j++) {
+				anim.frames.push(frames[j]+fl*count);
+			}
+			data[anim.name] = anim;
+			names.push(anim.name);
+		}
+	};
+
+
+	createjs.SpriteSheetUtils = SpriteSheetUtils;
+}());
+
+//##############################################################################
+// SpriteSheetBuilder.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * The SpriteSheetBuilder allows you to generate {{#crossLink "SpriteSheet"}}{{/crossLink}} instances at run time
+	 * from any display object. This can allow you to maintain your assets as vector graphics (for low file size), and
+	 * render them at run time as SpriteSheets for better performance.
+	 *
+	 * SpriteSheets can be built either synchronously, or asynchronously, so that large SpriteSheets can be generated
+	 * without locking the UI.
+	 *
+	 * Note that the "images" used in the generated SpriteSheet are actually canvas elements, and that they will be
+	 * sized to the nearest power of 2 up to the value of {{#crossLink "SpriteSheetBuilder/maxWidth:property"}}{{/crossLink}}
+	 * or {{#crossLink "SpriteSheetBuilder/maxHeight:property"}}{{/crossLink}}.
+	 * @class SpriteSheetBuilder
+	 * @param {Number} [framerate=0] The {{#crossLink "SpriteSheet/framerate:property"}}{{/crossLink}} of
+	 * {{#crossLink "SpriteSheet"}}{{/crossLink}} instances that are created.
+	 * @extends EventDispatcher
+	 * @constructor
+	 **/
+	function SpriteSheetBuilder(framerate) {
+		this.EventDispatcher_constructor();
+		
+	// public properties:
+		/**
+		 * The maximum width for the images (not individual frames) in the generated SpriteSheet. It is recommended to
+		 * use a power of 2 for this value (ex. 1024, 2048, 4096). If the frames cannot all fit within the max
+		 * dimensions, then additional images will be created as needed.
+		 * @property maxWidth
+		 * @type Number
+		 * @default 2048
+		*/
+		this.maxWidth = 2048;
+	
+		/**
+		 * The maximum height for the images (not individual frames) in the generated SpriteSheet. It is recommended to
+		 * use a power of 2 for this value (ex. 1024, 2048, 4096). If the frames cannot all fit within the max
+		 * dimensions, then additional images will be created as needed.
+		 * @property maxHeight
+		 * @type Number
+		 * @default 2048
+		 **/
+		this.maxHeight = 2048;
+	
+		/**
+		 * The SpriteSheet that was generated. This will be null before a build is completed successfully.
+		 * @property spriteSheet
+		 * @type SpriteSheet
+		 **/
+		this.spriteSheet = null;
+	
+		/**
+		 * The scale to apply when drawing all frames to the SpriteSheet. This is multiplied against any scale specified
+		 * in the addFrame call. This can be used, for example, to generate a SpriteSheet at run time that is tailored
+		 * to the a specific device resolution (ex. tablet vs mobile).
+		 * @property scale
+		 * @type Number
+		 * @default 1
+		 **/
+		this.scale = 1;
+	
+		/**
+		* The padding to use between frames. This is helpful to preserve antialiasing on drawn vector content.
+		* @property padding
+		* @type Number
+		* @default 1
+		**/
+		this.padding = 1;
+	
+		/**
+		 * A number from 0.01 to 0.99 that indicates what percentage of time the builder can use. This can be
+		 * thought of as the number of seconds per second the builder will use. For example, with a timeSlice value of 0.3,
+		 * the builder will run 20 times per second, using approximately 15ms per build (30% of available time, or 0.3s per second).
+		 * Defaults to 0.3.
+		 * @property timeSlice
+		 * @type Number
+		 * @default 0.3
+		 **/
+		this.timeSlice = 0.3;
+	
+		/**
+		 * A value between 0 and 1 that indicates the progress of a build, or -1 if a build has not
+		 * been initiated.
+		 * @property progress
+		 * @type Number
+		 * @default -1
+		 * @readonly
+		 */
+		this.progress = -1;
+
+		/**
+		 * A {{#crossLink "SpriteSheet/framerate:property"}}{{/crossLink}} value that will be passed to new {{#crossLink "SpriteSheet"}}{{/crossLink}} instances that are
+		 * created. If no framerate is specified (or it is 0), then SpriteSheets will use the {{#crossLink "Ticker"}}{{/crossLink}}
+		 * framerate.
+		 * @property framerate
+		 * @type Number
+		 * @default 0
+		 */
+		this.framerate = framerate || 0;
+	
+	
+	// private properties:
+		/**
+		 * @property _frames
+		 * @protected
+		 * @type Array
+		 **/
+		this._frames = [];
+	
+		/**
+		 * @property _animations
+		 * @protected
+		 * @type Array
+		 **/
+		this._animations = {};
+	
+		/**
+		 * @property _data
+		 * @protected
+		 * @type Array
+		 **/
+		this._data = null;
+	
+		/**
+		 * @property _nextFrameIndex
+		 * @protected
+		 * @type Number
+		 **/
+		this._nextFrameIndex = 0;
+	
+		/**
+		 * @property _index
+		 * @protected
+		 * @type Number
+		 **/
+		this._index = 0;
+	
+		/**
+		 * @property _timerID
+		 * @protected
+		 * @type Number
+		 **/
+		this._timerID = null;
+	
+		/**
+		 * @property _scale
+		 * @protected
+		 * @type Number
+		 **/
+		this._scale = 1;
+	}
+	var p = createjs.extend(SpriteSheetBuilder, createjs.EventDispatcher);
+
+// constants:
+	SpriteSheetBuilder.ERR_DIMENSIONS = "frame dimensions exceed max spritesheet dimensions";
+	SpriteSheetBuilder.ERR_RUNNING = "a build is already running";
+
+// events:
+	/**
+	 * Dispatched when a build completes.
+	 * @event complete
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type.
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * Dispatched when an asynchronous build has progress.
+	 * @event progress
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type.
+	 * @param {Number} progress The current progress value (0-1).
+	 * @since 0.6.0
+	 */
+
+
+// public methods:
+	/**
+	 * Adds a frame to the {{#crossLink "SpriteSheet"}}{{/crossLink}}. Note that the frame will not be drawn until you
+	 * call {{#crossLink "SpriteSheetBuilder/build"}}{{/crossLink}} method. The optional setup params allow you to have
+	 * a function run immediately before the draw occurs. For example, this allows you to add a single source multiple
+	 * times, but manipulate it or its children to change it to generate different frames.
+	 *
+	 * Note that the source's transformations (x, y, scale, rotate, alpha) will be ignored, except for regX/Y. To apply
+	 * transforms to a source object and have them captured in the SpriteSheet, simply place it into a {{#crossLink "Container"}}{{/crossLink}}
+	 * and pass in the Container as the source.
+	 * @method addFrame
+	 * @param {DisplayObject} source The source {{#crossLink "DisplayObject"}}{{/crossLink}}  to draw as the frame.
+	 * @param {Rectangle} [sourceRect] A {{#crossLink "Rectangle"}}{{/crossLink}} defining the portion of the
+	 * source to draw to the frame. If not specified, it will look for a `getBounds` method, bounds property, or
+	 * `nominalBounds` property on the source to use. If one is not found, the frame will be skipped.
+	 * @param {Number} [scale=1] Optional. The scale to draw this frame at. Default is 1.
+	 * @param {Function} [setupFunction] A function to call immediately before drawing this frame. It will be called with two parameters: the source, and setupData.
+	 * @param {Object} [setupData] Arbitrary setup data to pass to setupFunction as the second parameter.
+	 * @return {Number} The index of the frame that was just added, or null if a sourceRect could not be determined.
+	 **/
+	p.addFrame = function(source, sourceRect, scale, setupFunction, setupData) {
+		if (this._data) { throw SpriteSheetBuilder.ERR_RUNNING; }
+		var rect = sourceRect||source.bounds||source.nominalBounds;
+		if (!rect&&source.getBounds) { rect = source.getBounds(); }
+		if (!rect) { return null; }
+		scale = scale||1;
+		return this._frames.push({source:source, sourceRect:rect, scale:scale, funct:setupFunction, data:setupData, index:this._frames.length, height:rect.height*scale})-1;
+	};
+
+	/**
+	 * Adds an animation that will be included in the created {{#crossLink "SpriteSheet"}}{{/crossLink}}.
+	 * @method addAnimation
+	 * @param {String} name The name for the animation.
+	 * @param {Array} frames An array of frame indexes that comprise the animation. Ex. [3,6,5] would describe an animation
+	 * that played frame indexes 3, 6, and 5 in that order.
+	 * @param {String} [next] Specifies the name of the animation to continue to after this animation ends. You can
+	 * also pass false to have the animation stop when it ends. By default it will loop to the start of the same animation.
+	 * @param {Number} [speed] Specifies a frame advance speed for this animation. For example, a value of 0.5 would
+	 * cause the animation to advance every second tick. Note that earlier versions used `frequency` instead, which had
+	 * the opposite effect.
+	 **/
+	p.addAnimation = function(name, frames, next, speed) {
+		if (this._data) { throw SpriteSheetBuilder.ERR_RUNNING; }
+		this._animations[name] = {frames:frames, next:next, speed:speed};
+	};
+
+	/**
+	 * This will take a {{#crossLink "MovieClip"}}{{/crossLink}} instance, and add its frames and labels to this
+	 * builder. Labels will be added as an animation running from the label index to the next label. For example, if
+	 * there is a label named "foo" at frame 0 and a label named "bar" at frame 10, in a MovieClip with 15 frames, it
+	 * will add an animation named "foo" that runs from frame index 0 to 9, and an animation named "bar" that runs from
+	 * frame index 10 to 14.
+	 *
+	 * Note that this will iterate through the full MovieClip with {{#crossLink "MovieClip/actionsEnabled:property"}}{{/crossLink}}
+	 * set to `false`, ending on the last frame.
+	 * @method addMovieClip
+	 * @param {MovieClip} source The source MovieClip instance to add to the SpriteSheet.
+	 * @param {Rectangle} [sourceRect] A {{#crossLink "Rectangle"}}{{/crossLink}} defining the portion of the source to
+	 * draw to the frame. If not specified, it will look for a {{#crossLink "DisplayObject/getBounds"}}{{/crossLink}}
+	 * method, `frameBounds` Array, `bounds` property, or `nominalBounds` property on the source to use. If one is not
+	 * found, the MovieClip will be skipped.
+	 * @param {Number} [scale=1] The scale to draw the movie clip at.
+	 * @param {Function} [setupFunction] A function to call immediately before drawing each frame. It will be called
+	 * with three parameters: the source, setupData, and the frame index.
+	 * @param {Object} [setupData] Arbitrary setup data to pass to setupFunction as the second parameter.
+	 * @param {Function} [labelFunction] This method will be called for each MovieClip label that is added with four
+	 * parameters: the label name, the source MovieClip instance, the starting frame index (in the movieclip timeline)
+	 * and the end index. It must return a new name for the label/animation, or `false` to exclude the label.
+	 **/
+	p.addMovieClip = function(source, sourceRect, scale, setupFunction, setupData, labelFunction) {
+		var this$1 = this;
+
+		if (this._data) { throw SpriteSheetBuilder.ERR_RUNNING; }
+		var rects = source.frameBounds;
+		var rect = sourceRect||source.bounds||source.nominalBounds;
+		if (!rect&&source.getBounds) { rect = source.getBounds(); }
+		if (!rect && !rects) { return; }
+
+		var i, l, baseFrameIndex = this._frames.length;
+		var duration = source.timeline.duration;
+		for (i=0; i<duration; i++) {
+			var r = (rects&&rects[i]) ? rects[i] : rect;
+			this$1.addFrame(source, r, scale, this$1._setupMovieClipFrame, {i:i, f:setupFunction, d:setupData});
+		}
+		var labels = source.timeline._labels;
+		var lbls = [];
+		for (var n in labels) {
+			lbls.push({index:labels[n], label:n});
+		}
+		if (lbls.length) {
+			lbls.sort(function(a,b){ return a.index-b.index; });
+			for (i=0,l=lbls.length; i<l; i++) {
+				var label = lbls[i].label;
+				var start = baseFrameIndex+lbls[i].index;
+				var end = baseFrameIndex+((i == l-1) ? duration : lbls[i+1].index);
+				var frames = [];
+				for (var j=start; j<end; j++) { frames.push(j); }
+				if (labelFunction) {
+					label = labelFunction(label, source, start, end);
+					if (!label) { continue; }
+				}
+				this$1.addAnimation(label, frames, true); // for now, this loops all animations.
+			}
+		}
+	};
+
+	/**
+	 * Builds a {{#crossLink "SpriteSheet"}}{{/crossLink}} instance based on the current frames.
+	 * @method build
+	 * @return {SpriteSheet} The created SpriteSheet instance, or null if a build is already running or an error
+	 * occurred.
+	 **/
+	p.build = function() {
+		if (this._data) { throw SpriteSheetBuilder.ERR_RUNNING; }
+		this._startBuild();
+		while (this._drawNext()) {}
+		this._endBuild();
+		return this.spriteSheet;
+	};
+
+	/**
+	 * Asynchronously builds a {{#crossLink "SpriteSheet"}}{{/crossLink}} instance based on the current frames. It will
+	 * run 20 times per second, using an amount of time defined by `timeSlice`. When it is complete it will call the
+	 * specified callback.
+	 * @method buildAsync
+	 * @param {Number} [timeSlice] Sets the timeSlice property on this instance.
+	 **/
+	p.buildAsync = function(timeSlice) {
+		if (this._data) { throw SpriteSheetBuilder.ERR_RUNNING; }
+		this.timeSlice = timeSlice;
+		this._startBuild();
+		var _this = this;
+		this._timerID = setTimeout(function() { _this._run(); }, 50-Math.max(0.01, Math.min(0.99, this.timeSlice||0.3))*50);
+	};
+
+	/**
+	 * Stops the current asynchronous build.
+	 * @method stopAsync
+	 **/
+	p.stopAsync = function() {
+		clearTimeout(this._timerID);
+		this._data = null;
+	};
+
+	/**
+	 * SpriteSheetBuilder instances cannot be cloned.
+	 * @method clone
+	 **/
+	p.clone = function() {
+		throw("SpriteSheetBuilder cannot be cloned.");
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[SpriteSheetBuilder]";
+	};
+
+
+// private methods:
+	/**
+	 * @method _startBuild
+	 * @protected
+	 **/
+	p._startBuild = function() {
+		var this$1 = this;
+
+		var pad = this.padding||0;
+		this.progress = 0;
+		this.spriteSheet = null;
+		this._index = 0;
+		this._scale = this.scale;
+		var dataFrames = [];
+		this._data = {
+			images: [],
+			frames: dataFrames,
+			framerate: this.framerate,
+			animations: this._animations // TODO: should we "clone" _animations in case someone adds more animations after a build?
+		};
+
+		var frames = this._frames.slice();
+		frames.sort(function(a,b) { return (a.height<=b.height) ? -1 : 1; });
+
+		if (frames[frames.length-1].height+pad*2 > this.maxHeight) { throw SpriteSheetBuilder.ERR_DIMENSIONS; }
+		var y=0, x=0;
+		var img = 0;
+		while (frames.length) {
+			var o = this$1._fillRow(frames, y, img, dataFrames, pad);
+			if (o.w > x) { x = o.w; }
+			y += o.h;
+			if (!o.h || !frames.length) {
+				var canvas = createjs.createCanvas?createjs.createCanvas():document.createElement("canvas");
+				canvas.width = this$1._getSize(x,this$1.maxWidth);
+				canvas.height = this$1._getSize(y,this$1.maxHeight);
+				this$1._data.images[img] = canvas;
+				if (!o.h) {
+					x=y=0;
+					img++;
+				}
+			}
+		}
+	};
+	
+	/**
+	 * @method _setupMovieClipFrame
+	 * @protected
+	 * @return {Number} The width & height of the row.
+	 **/
+	p._setupMovieClipFrame = function(source, data) {
+		var ae = source.actionsEnabled;
+		source.actionsEnabled = false;
+		source.gotoAndStop(data.i);
+		source.actionsEnabled = ae;
+		data.f&&data.f(source, data.d, data.i);
+	};
+
+	/**
+	 * @method _getSize
+	 * @protected
+	 * @return {Number} The width & height of the row.
+	 **/
+	p._getSize = function(size,max) {
+		var pow = 4;
+		while (Math.pow(2,++pow) < size){}
+		return Math.min(max,Math.pow(2,pow));
+	};
+
+	/**
+	 * @method _fillRow
+	 * @param {Array} frames
+	 * @param {Number} y
+	 * @param {HTMLImageElement} img
+	 * @param {Object} dataFrames
+	 * @param {Number} pad
+	 * @protected
+	 * @return {Number} The width & height of the row.
+	 **/
+	p._fillRow = function(frames, y, img, dataFrames, pad) {
+		var this$1 = this;
+
+		var w = this.maxWidth;
+		var maxH = this.maxHeight;
+		y += pad;
+		var h = maxH-y;
+		var x = pad;
+		var height = 0;
+		for (var i=frames.length-1; i>=0; i--) {
+			var frame = frames[i];
+			var sc = this$1._scale*frame.scale;
+			var rect = frame.sourceRect;
+			var source = frame.source;
+			var rx = Math.floor(sc*rect.x-pad);
+			var ry = Math.floor(sc*rect.y-pad);
+			var rh = Math.ceil(sc*rect.height+pad*2);
+			var rw = Math.ceil(sc*rect.width+pad*2);
+			if (rw > w) { throw SpriteSheetBuilder.ERR_DIMENSIONS; }
+			if (rh > h || x+rw > w) { continue; }
+			frame.img = img;
+			frame.rect = new createjs.Rectangle(x,y,rw,rh);
+			height = height || rh;
+			frames.splice(i,1);
+			dataFrames[frame.index] = [x,y,rw,rh,img,Math.round(-rx+sc*source.regX-pad),Math.round(-ry+sc*source.regY-pad)];
+			x += rw;
+		}
+		return {w:x, h:height};
+	};
+
+	/**
+	 * @method _endBuild
+	 * @protected
+	 **/
+	p._endBuild = function() {
+		this.spriteSheet = new createjs.SpriteSheet(this._data);
+		this._data = null;
+		this.progress = 1;
+		this.dispatchEvent("complete");
+	};
+
+	/**
+	 * @method _run
+	 * @protected
+	 **/
+	p._run = function() {
+		var this$1 = this;
+
+		var ts = Math.max(0.01, Math.min(0.99, this.timeSlice||0.3))*50;
+		var t = (new Date()).getTime()+ts;
+		var complete = false;
+		while (t > (new Date()).getTime()) {
+			if (!this$1._drawNext()) { complete = true; break; }
+		}
+		if (complete) {
+			this._endBuild();
+		} else {
+			var _this = this;
+			this._timerID = setTimeout(function() { _this._run(); }, 50-ts);
+		}
+		var p = this.progress = this._index/this._frames.length;
+		if (this.hasEventListener("progress")) {
+			var evt = new createjs.Event("progress");
+			evt.progress = p;
+			this.dispatchEvent(evt);
+		}
+	};
+
+	/**
+	 * @method _drawNext
+	 * @protected
+	 * @return Boolean Returns false if this is the last draw.
+	 **/
+	p._drawNext = function() {
+		var frame = this._frames[this._index];
+		var sc = frame.scale*this._scale;
+		var rect = frame.rect;
+		var sourceRect = frame.sourceRect;
+		var canvas = this._data.images[frame.img];
+		var ctx = canvas.getContext("2d");
+		frame.funct&&frame.funct(frame.source, frame.data);
+		ctx.save();
+		ctx.beginPath();
+		ctx.rect(rect.x, rect.y, rect.width, rect.height);
+		ctx.clip();
+		ctx.translate(Math.ceil(rect.x-sourceRect.x*sc), Math.ceil(rect.y-sourceRect.y*sc));
+		ctx.scale(sc,sc);
+		frame.source.draw(ctx); // display object will draw itself.
+		ctx.restore();
+		return (++this._index) < this._frames.length;
+	};
+
+
+	createjs.SpriteSheetBuilder = createjs.promote(SpriteSheetBuilder, "EventDispatcher");
+}());
+
+//##############################################################################
+// DOMElement.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * <b>This class is still experimental, and more advanced use is likely to be buggy. Please report bugs.</b>
+	 *
+	 * A DOMElement allows you to associate a HTMLElement with the display list. It will be transformed
+	 * within the DOM as though it is child of the {{#crossLink "Container"}}{{/crossLink}} it is added to. However, it is
+	 * not rendered to canvas, and as such will retain whatever z-index it has relative to the canvas (ie. it will be
+	 * drawn in front of or behind the canvas).
+	 *
+	 * The position of a DOMElement is relative to their parent node in the DOM. It is recommended that
+	 * the DOM Object be added to a div that also contains the canvas so that they share the same position
+	 * on the page.
+	 *
+	 * DOMElement is useful for positioning HTML elements over top of canvas content, and for elements
+	 * that you want to display outside the bounds of the canvas. For example, a tooltip with rich HTML
+	 * content.
+	 *
+	 * <h4>Mouse Interaction</h4>
+	 *
+	 * DOMElement instances are not full EaselJS display objects, and do not participate in EaselJS mouse
+	 * events or support methods like hitTest. To get mouse events from a DOMElement, you must instead add handlers to
+	 * the htmlElement (note, this does not support EventDispatcher)
+	 *
+	 *      var domElement = new createjs.DOMElement(htmlElement);
+	 *      domElement.htmlElement.onclick = function() {
+	 *          console.log("clicked");
+	 *      }
+	 *
+	 * <strong>Important:</strong> This class needs to be notified it is about to be drawn, this will happen automatically
+	 * if you call stage.update, calling stage.draw or disabling tickEnabled will miss important steps and it will render
+	 * stale information.
+	 *
+	 * @class DOMElement
+	 * @extends DisplayObject
+	 * @constructor
+	 * @param {HTMLElement} htmlElement A reference or id for the DOM element to manage.
+	 */
+	function DOMElement(htmlElement) {
+		this.DisplayObject_constructor();
+		
+		if (typeof(htmlElement)=="string") { htmlElement = document.getElementById(htmlElement); }
+		this.mouseEnabled = false;
+		
+		var style = htmlElement.style;
+		style.position = "absolute";
+		style.transformOrigin = style.WebkitTransformOrigin = style.msTransformOrigin = style.MozTransformOrigin = style.OTransformOrigin = "0% 0%";
+		
+		
+	// public properties:
+		/**
+		 * The DOM object to manage.
+		 * @property htmlElement
+		 * @type HTMLElement
+		 */
+		this.htmlElement = htmlElement;
+	
+	
+	// private properties:
+		/**
+		 * @property _oldMtx
+		 * @type Matrix2D
+		 * @protected
+		 */
+		this._oldProps = null;
+
+		/**
+		 * Used to track the object which this class attached listeners to, helps optimize listener attachment.
+		 * @property _oldStage
+		 * @type Stage
+		 * @protected
+		 */
+		this._oldStage = null;
+		/**
+		 * The event listener proxy triggered drawing draw for special circumstances.
+		 * @property _drawAction
+		 * @type function
+		 * @protected
+		 */
+		this._drawAction = null;
+	}
+	var p = createjs.extend(DOMElement, createjs.DisplayObject);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+
+// public methods:
+	/**
+	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
+	 * This does not account for whether it would be visible within the boundaries of the stage.
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method isVisible
+	 * @return {Boolean} Boolean indicating whether the display object would be visible if drawn to a canvas
+	 */
+	p.isVisible = function() {
+		return this.htmlElement != null;
+	};
+
+	/**
+	 * Draws the display object into the specified context ignoring its visible, alpha, shadow, and transform.
+	 * Returns true if the draw was handled (useful for overriding functionality).
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Boolean} ignoreCache Indicates whether the draw operation should ignore any current cache.
+	 * For example, used for drawing the cache (to prevent it from simply drawing an existing cache back
+	 * into itself).
+	 * @return {Boolean}
+	 */
+	p.draw = function(ctx, ignoreCache) {
+		// this relies on the _tick method because draw isn't called if the parent is not visible.
+		// the actual update happens in _handleDrawEnd
+		return true;
+	};
+
+	/**
+	 * Not applicable to DOMElement.
+	 * @method cache
+	 */
+	p.cache = function() {};
+
+	/**
+	 * Not applicable to DOMElement.
+	 * @method uncache
+	 */
+	p.uncache = function() {};
+
+	/**
+	 * Not applicable to DOMElement.
+	 * @method updateCache
+	 */
+	p.updateCache = function() {};
+
+	/**
+	 * Not applicable to DOMElement.
+	 * @method hitTest
+	 */
+	p.hitTest = function() {};
+
+	/**
+	 * Not applicable to DOMElement.
+	 * @method localToGlobal
+	 */
+	p.localToGlobal = function() {};
+
+	/**
+	 * Not applicable to DOMElement.
+	 * @method globalToLocal
+	 */
+	p.globalToLocal = function() {};
+
+	/**
+	 * Not applicable to DOMElement.
+	 * @method localToLocal
+	 */
+	p.localToLocal = function() {};
+
+	/**
+	 * DOMElement cannot be cloned. Throws an error.
+	 * @method clone
+	 */
+	p.clone = function() {
+		throw("DOMElement cannot be cloned.")
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 */
+	p.toString = function() {
+		return "[DOMElement (name="+  this.name +")]";
+	};
+
+	/**
+     * Interaction events should be added to `htmlElement`, and not the DOMElement instance, since DOMElement instances
+	 * are not full EaselJS display objects and do not participate in EaselJS mouse events.
+	 * @event click
+	 */
+
+     /**
+     * Interaction events should be added to `htmlElement`, and not the DOMElement instance, since DOMElement instances
+ 	 * are not full EaselJS display objects and do not participate in EaselJS mouse events.
+	 * @event dblClick
+	 */
+
+     /**
+      * Interaction events should be added to `htmlElement`, and not the DOMElement instance, since DOMElement instances
+ 	  * are not full EaselJS display objects and do not participate in EaselJS mouse events.
+	  * @event mousedown
+	  */
+
+     /**
+      * The HTMLElement can listen for the mouseover event, not the DOMElement instance.
+      * Since DOMElement instances are not full EaselJS display objects and do not participate in EaselJS mouse events.
+      * @event mouseover
+	  */
+
+     /**
+      * Not applicable to DOMElement.
+	  * @event tick
+	  */
+
+
+// private methods:
+	/**
+	 * @method _tick
+	 * @param {Object} evtObj An event object that will be dispatched to all tick listeners. This object is reused between dispatchers to reduce construction & GC costs.
+	 * function.
+	 * @protected
+	 */
+	p._tick = function(evtObj) {
+		var stage = this.stage;
+		if(stage && stage !== this._oldStage) {
+			this._drawAction && stage.off("drawend", this._drawAction);
+			this._drawAction = stage.on("drawend", this._handleDrawEnd, this);
+			this._oldStage = stage;
+		}
+		this.DisplayObject__tick(evtObj);
+	};
+	
+	/**
+	 * @method _handleDrawEnd
+	 * @param {Event} evt
+	 * @protected
+	 */
+	p._handleDrawEnd = function(evt) {
+		var o = this.htmlElement;
+		if (!o) { return; }
+		var style = o.style;
+		
+		var props = this.getConcatenatedDisplayProps(this._props), mtx = props.matrix;
+		
+		var visibility = props.visible ? "visible" : "hidden";
+		if (visibility != style.visibility) { style.visibility = visibility; }
+		if (!props.visible) { return; }
+		
+		var oldProps = this._oldProps, oldMtx = oldProps&&oldProps.matrix;
+		var n = 10000; // precision
+		
+		if (!oldMtx || !oldMtx.equals(mtx)) {
+			var str = "matrix(" + (mtx.a*n|0)/n +","+ (mtx.b*n|0)/n +","+ (mtx.c*n|0)/n +","+ (mtx.d*n|0)/n +","+ (mtx.tx+0.5|0);
+			style.transform = style.WebkitTransform = style.OTransform = style.msTransform = str +","+ (mtx.ty+0.5|0) +")";
+			style.MozTransform = str +"px,"+ (mtx.ty+0.5|0) +"px)";
+			if (!oldProps) { oldProps = this._oldProps = new createjs.DisplayProps(true, null); }
+			oldProps.matrix.copy(mtx);
+		}
+		
+		if (oldProps.alpha != props.alpha) {
+			style.opacity = ""+(props.alpha*n|0)/n;
+			oldProps.alpha = props.alpha;
+		}
+	};
+
+
+	createjs.DOMElement = createjs.promote(DOMElement, "DisplayObject");
+}());
+
+//##############################################################################
+// Filter.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Base class that all filters should inherit from. Filters need to be applied to objects that have been cached using
+	 * the {{#crossLink "DisplayObject/cache"}}{{/crossLink}} method. If an object changes, please cache it again, or use
+	 * {{#crossLink "DisplayObject/updateCache"}}{{/crossLink}}. Note that the filters must be applied before caching.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      myInstance.filters = [
+	 *          new createjs.ColorFilter(0, 0, 0, 1, 255, 0, 0),
+	 *          new createjs.BlurFilter(5, 5, 10)
+	 *      ];
+	 *      myInstance.cache(0,0, 100, 100);
+	 *
+	 * Note that each filter can implement a {{#crossLink "Filter/getBounds"}}{{/crossLink}} method, which returns the
+	 * margins that need to be applied in order to fully display the filter. For example, the {{#crossLink "BlurFilter"}}{{/crossLink}}
+	 * will cause an object to feather outwards, resulting in a margin around the shape.
+	 *
+	 * <h4>EaselJS Filters</h4>
+	 * EaselJS comes with a number of pre-built filters:
+	 * <ul><li>{{#crossLink "AlphaMapFilter"}}{{/crossLink}} : Map a greyscale image to the alpha channel of a display object</li>
+	 *      <li>{{#crossLink "AlphaMaskFilter"}}{{/crossLink}}: Map an image's alpha channel to the alpha channel of a display object</li>
+	 *      <li>{{#crossLink "BlurFilter"}}{{/crossLink}}: Apply vertical and horizontal blur to a display object</li>
+	 *      <li>{{#crossLink "ColorFilter"}}{{/crossLink}}: Color transform a display object</li>
+	 *      <li>{{#crossLink "ColorMatrixFilter"}}{{/crossLink}}: Transform an image using a {{#crossLink "ColorMatrix"}}{{/crossLink}}</li>
+	 * </ul>
+	 *
+	 * @class Filter
+	 * @constructor
+	 **/
+	function Filter() {
+		/**
+		 * A flag stating that this filter uses a context draw mode and cannot be batched into imageData processing.
+		 * @property usesContext
+		 * @type {boolean}
+		 * @default false
+		 */
+		this.usesContext = false;
+
+		/**
+		 * Another filter that is required to act as part of this filter and created and managed under the hood.
+		 * @private
+		 * @property _multiPass
+		 * @type {Filter}
+		 * @default null
+		 */
+		this._multiPass = null;
+
+		/**
+		 * Pre-processed template shader code. It will be parsed before being fed in into the shader compiler.
+		 * This should be based upon StageGL.SHADER_VERTEX_BODY_REGULAR
+		 * @property VTX_SHADER
+		 * @virtual
+		 * @type {String}
+		 * @readonly
+		 */
+		this.VTX_SHADER_BODY = null;
+
+		/**
+		 * Pre-processed template shader code. It will be parsed before being fed in into the shader compiler.
+		 * This should be based upon StageGL.SHADER_FRAGMENT_BODY_REGULAR
+		 * @property FRAG_SHADER
+		 * @virtual
+		 * @type {String}
+		 * @readonly
+		 */
+		this.FRAG_SHADER_BODY = null;
+	}
+	var p = Filter.prototype;
+
+// public methods:
+	/**
+	 * Provides padding values for this filter. That is, how much the filter will extend the visual bounds of an object it is applied to.
+	 * @method getBounds
+	 * @param {Rectangle} [rect] If specified, the provided Rectangle instance will be expanded by the padding amounts and returned.
+	 * @return {Rectangle} If a `rect` param was provided, it is returned. If not, either a new rectangle with the padding values, or null if no padding is required for this filter.
+	 **/
+	p.getBounds = function(rect) {
+		return rect;
+	};
+
+	/**
+	 * Assign any unique uniforms or other setup functionality here.
+	 * @method shaderParamSetup
+	 * @virtual
+	 * @param {WebGLContext} gl The context associated with the stage performing the render.
+	 * @param {StageGL} stage The stage instance that will be rendering.
+	 * @param {ShaderProgram} shaderProgram The compiled shader that is going to be used to perform the render.
+	 */
+	p.shaderParamSetup = function(gl, stage, shaderProgram) {};
+
+	/**
+	 * Applies the filter to the specified context.
+	 * @method applyFilter
+	 * @param {CanvasRenderingContext2D} ctx The 2D context to use as the source.
+	 * @param {Number} x The x position to use for the source rect.
+	 * @param {Number} y The y position to use for the source rect.
+	 * @param {Number} width The width to use for the source rect.
+	 * @param {Number} height The height to use for the source rect.
+	 * @param {CanvasRenderingContext2D} [targetCtx] The 2D context to draw the result to. Defaults to the context passed to ctx.
+	 * @param {Number} [targetX] The x position to draw the result to. Defaults to the value passed to x.
+	 * @param {Number} [targetY] The y position to draw the result to. Defaults to the value passed to y.
+	 * @return {Boolean} If the filter was applied successfully.
+	 **/
+	p.applyFilter = function(ctx, x, y, width, height, targetCtx, targetX, targetY) {
+		// this is the default behaviour because most filters access pixel data. It is overridden when not needed.
+		targetCtx = targetCtx || ctx;
+		if (targetX == null) { targetX = x; }
+		if (targetY == null) { targetY = y; }
+		try {
+			var imageData = ctx.getImageData(x, y, width, height);
+		} catch (e) {
+			return false;
+		}
+		if (this._applyFilter(imageData)) {
+			targetCtx.putImageData(imageData, targetX, targetY);
+			return true;
+		}
+		return false;
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[Filter]";
+	};
+
+	/**
+	 * Returns a clone of this Filter instance.
+	 * @method clone
+	 * @return {Filter} A clone of the current Filter instance.
+	 **/
+	p.clone = function() {
+		return new Filter();
+	};
+	
+// private methods:
+	/**
+	 * @method _applyFilter
+	 * @param {ImageData} imageData Target ImageData instance.
+	 * @return {Boolean}
+	 **/
+	p._applyFilter = function(imageData) { return true; };
+
+
+	createjs.Filter = Filter;
+}());
+
+//##############################################################################
+// BitmapCache.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * The BitmapCache is an internal representation of all the cache properties and logic required in order to "cache"
+	 * an object. This information and functionality used to be located on a {{#crossLink "DisplayObject/cache"}}{{/crossLink}}
+	 * method in {{#crossLink "DisplayObject"}}{{/crossLink}}, but was moved to its own class.
+	 *
+	 * Caching in this context is purely visual, and will render the DisplayObject out into an image to be used instead
+	 * of the object. The actual cache itself is still stored on the target with the {{#crossLink "DisplayObject/cacheCanvas:property"}}{{/crossLink}}.
+	 * Working with a singular image like a {{#crossLink "Bitmap"}}{{/crossLink}} there is little benefit to performing 
+	 * a cache as it is already a single image. Caching is best done on containers containing multiple complex parts that 
+	 * do not move often, so that rendering the image instead will improve overall rendering speed. A cached object will 
+	 * not visually update until explicitly told to do so with a call to update, much like a Stage. If a cache is being 
+	 * updated every frame it is likely not improving rendering performance. Cache are best used when updates will be sparse.
+	 *
+	 * Caching is also a co-requisite for applying filters to prevent expensive filters running constantly without need, 
+	 * and to physically enable some effects. The BitmapCache is also responsible for applying filters to objects and 
+	 * reads each {{#crossLink "Filter"}}{{/crossLink}} due to this relationship. Real-time Filters are not recommended 
+	 * performance wise when dealing with a Context2D canvas. For best performance and to still allow for some visual 
+	 * effects use a compositeOperation when possible.
+	 * @class BitmapCache
+	 * @constructor
+	 **/
+	function BitmapCache() {
+
+		// public:
+		/**
+		 * Width of the cache relative to the target object.
+		 * @property width
+		 * @protected
+		 * @type {Number}
+		 * @default undefined
+		 **/
+		this.width = undefined;
+
+		/**
+		 * Height of the cache relative to the target object.
+		 * @property height
+		 * @protected
+		 * @type {Number}
+		 * @default undefined
+		 * @todo Should the width and height be protected?
+		 **/
+		this.height = undefined;
+
+		/**
+		 * Horizontal position of the cache relative to the target's origin.
+		 * @property x
+		 * @protected
+		 * @type {Number}
+		 * @default undefined
+		 **/
+		this.x = undefined;
+
+		/**
+		 * Vertical position of the cache relative to target's origin.
+		 * @property y
+		 * @protected
+		 * @type {Number}
+		 * @default undefined
+		 **/
+		this.y = undefined;
+
+		/**
+		 * The internal scale of the cache image, does not affects display size. This is useful to both increase and
+		 * decrease render quality. Objects with increased scales are more likely to look good when scaled up or rotated.
+		 * Objects with decreased scales can save on rendering performance.
+		 * @property scale
+		 * @protected
+		 * @type {Number}
+		 * @default 1
+		 **/
+		this.scale = 1;
+
+		/**
+		 * The x offset used for drawing into the cache itself, accounts for both transforms applied.
+		 * @property offX
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.offX = 0;
+
+		/**
+		 * The y offset used for drawing into the cache itself, accounts for both transforms applied.
+		 * @property offY
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.offY = 0;
+
+		/**
+		 * Track how many times the cache has been updated, mostly used for preventing duplicate cacheURLs.
+		 * This can be useful to see if a cache has been updated.
+		 * @property cacheID
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this.cacheID = 0;
+
+		// protected:
+		/**
+		 * The relative offset of the filter's x position, used for drawing the cache onto its container.
+		 * Re-calculated every update call before drawing.
+		 * @property _filterOffY
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this._filterOffX = 0;
+
+		/**
+		 * The relative offset of the filter's y position, used for drawing the cache onto its container.
+		 * Re-calculated every update call before drawing.
+		 * @property _filterOffY
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this._filterOffY = 0;
+
+		/**
+		 * The cacheID when a DataURL was requested.
+		 * @property _cacheDataURLID
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this._cacheDataURLID = 0;
+
+		/**
+		 * The cache's DataURL, generated on-demand using the getter.
+		 * @property _cacheDataURL
+		 * @protected
+		 * @type {String}
+		 * @default null
+		 **/
+		this._cacheDataURL = null;
+
+		/**
+		 * Internal tracking of final bounding width, approximately width*scale; however, filters can complicate the actual value.
+		 * @property _drawWidth
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this._drawWidth = 0;
+
+		/**
+		 * Internal tracking of final bounding height, approximately height*scale; however, filters can complicate the actual value.
+		 * @property _drawHeight
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this._drawHeight = 0;
+	}
+	var p = BitmapCache.prototype;
+
+	/**
+	 * Returns the bounds that surround all applied filters, relies on each filter to describe how it changes bounds.
+	 * @method getFilterBounds
+	 * @param {DisplayObject} target The object to check the filter bounds for.
+	 * @param {Rectangle} [output=null] Optional parameter, if provided then calculated bounds will be applied to that object.
+	 * @return {Rectangle} bounds object representing the bounds with filters.
+	 * @static
+	 **/
+	BitmapCache.getFilterBounds = function(target, output) {
+		if(!output){ output = new createjs.Rectangle(); }
+		var filters = target.filters;
+		var filterCount = filters && filters.length;
+		if (!!filterCount <= 0) { return output; }
+
+		for(var i=0; i<filterCount; i++) {
+			var f = filters[i];
+			if(!f || !f.getBounds){ continue; }
+			var test = f.getBounds();
+			if(!test){ continue; }
+			if(i==0) {
+				output.setValues(test.x, test.y, test.width, test.height);
+			} else {
+				output.extend(test.x, test.y, test.width, test.height);
+			}
+		}
+
+		return output;
+	};
+
+// public methods:
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[BitmapCache]";
+	};
+
+	/**
+	 * Actually create the correct cache surface and properties associated with it. Caching and it's benefits are discussed
+	 * by the {{#crossLink "DisplayObject/cache"}}{{/crossLink}} function and this class description. Here are the detailed
+	 * specifics of how to use the options object.
+	 *
+	 * - If options.useGL is set to "new" a StageGL is created and contained on this for use when rendering the cache.
+	 * - If options.useGL is set to "stage" if the current stage is a StageGL it will be used. If not then it will default to "new".
+	 * - If options.useGL is a StageGL instance it will not create one but use the one provided.
+	 * - If options.useGL is undefined a Context 2D cache will be performed.
+	 *
+	 * This means you can use any combination of StageGL and 2D with either, neither, or both the stage and cache being
+	 * WebGL. Using "new" with a StageGL display list is highly unrecommended, but still an option. It should be avoided
+	 * due to negative performance reasons and the Image loading limitation noted in the class complications above.
+	 *
+	 * When "options.useGL" is set to the parent stage of the target and WebGL, performance is increased by using
+	 * "RenderTextures" instead of canvas elements. These are internal Textures on the graphics card stored in the GPU.
+	 * Because they are no longer canvases you cannot perform operations you could with a regular canvas. The benefit
+	 * is that this avoids the slowdown of copying the texture back and forth from the GPU to a Canvas element.
+	 * This means "stage" is the recommended option when available.
+	 *
+	 * A StageGL cache does not infer the ability to draw objects a StageGL cannot currently draw, i.e. do not use a
+	 * WebGL context cache when caching a Shape, Text, etc.
+	 * <h4>WebGL cache with a 2D context</h4>
+	 *
+	 *     var stage = new createjs.Stage();
+	 *     var bmp = new createjs.Bitmap(src);
+	 *     bmp.cache(0, 0, bmp.width, bmp.height, 1, {gl: "new"});          // no StageGL to use, so make one
+	 *
+	 *     var shape = new createjs.Shape();
+	 *     shape.graphics.clear().fill("red").drawRect(0,0,20,20);
+	 *     shape.cache(0, 0, 20, 20, 1);                             // cannot use WebGL cache
+	 *
+	 * <h4>WebGL cache with a WebGL context</h4>
+	 *
+	 *     var stageGL = new createjs.StageGL();
+	 *     var bmp = new createjs.Bitmap(src);
+	 *     bmp.cache(0, 0, bmp.width, bmp.height, 1, {gl: "stage"});       // use our StageGL to cache
+	 *
+	 *     var shape = new createjs.Shape();
+	 *     shape.graphics.clear().fill("red").drawRect(0,0,20,20);
+	 *     shape.cache(0, 0, 20, 20, 1);                             // cannot use WebGL cache
+	 *
+	 * You may wish to create your own StageGL instance to control factors like clear color, transparency, AA, and
+	 * others. If you do, pass a new instance in instead of "true", the library will automatically set the
+	 * {{#crossLink "StageGL/isCacheControlled"}}{{/crossLink}} to true on your instance. This will trigger it to behave
+	 * correctly, and not assume your main context is WebGL.
+	 *
+	 * @public
+	 * @method BitmapCache.cache
+	 * @param {Number} x The x coordinate origin for the cache region.
+	 * @param {Number} y The y coordinate origin for the cache region.
+	 * @param {Number} width The width of the cache region.
+	 * @param {Number} height The height of the cache region.
+	 * @param {Number} [scale=1] The scale at which the cache will be created. For example, if you cache a vector shape
+	 * using myShape.cache(0,0,100,100,2) then the resulting cacheCanvas will be 200x200 px. This lets you scale and
+	 * rotate cached elements with greater fidelity. Default is 1.
+	 * @param {Object} [options=undefined] Specify additional parameters for the cache logic
+	 * @param {undefined|"new"|"stage"|StageGL} [options.useGL=undefined] Select whether to use context 2D, or WebGL rendering, and
+	 * whether to make a new stage instance or use an existing one. See above for extensive details on use.
+	 * @for BitmapCache
+	 */
+	 p.define = function(target, x, y, width, height, scale, options) {
+		if(!target){ throw "No symbol to cache"; }
+		this._options = options;
+		this.target = target;
+
+		this.width =		width >= 1 ? width : 1;
+		this.height =		height >= 1 ? height : 1;
+		this.x =			x || 0;
+		this.y =			y || 0;
+		this.scale =		scale || 1;
+
+		this.update();
+	};
+
+	/**
+	 * Directly called via {{#crossLink "DisplayObject/updateCache:method"}}{{/crossLink}}, but also internally. This
+	 * has the dual responsibility of making sure the surface is ready to be drawn to, and performing the draw. For
+	 * full details of each behaviour, check the protected functions {{#crossLink "BitmapCache/_updateSurface"}}{{/crossLink}}
+	 * and {{#crossLink "BitmapCache/_drawToCache"}}{{/crossLink}} respectively.
+	 * @method update
+	 * @param {String} [compositeOperation=null] The DisplayObject this cache is linked to.
+	 **/
+	p.update = function(compositeOperation) {
+		if(!this.target) { throw "define() must be called before update()"; }
+
+		var filterBounds = BitmapCache.getFilterBounds(this.target);
+		var surface = this.target.cacheCanvas;
+
+		this._drawWidth = Math.ceil(this.width*this.scale) + filterBounds.width;
+		this._drawHeight = Math.ceil(this.height*this.scale) + filterBounds.height;
+
+		if(!surface || this._drawWidth != surface.width || this._drawHeight != surface.height) {
+			this._updateSurface();
+		}
+
+		this._filterOffX = filterBounds.x;
+		this._filterOffY = filterBounds.y;
+		this.offX = this.x*this.scale + this._filterOffX;
+		this.offY = this.y*this.scale + this._filterOffY;
+
+		this._drawToCache(compositeOperation);
+
+		this.cacheID = this.cacheID?this.cacheID+1:1;
+	};
+
+	/**
+	 * Reset and release all the properties and memory associated with this cache.
+	 * @method release
+	 **/
+	p.release = function() {
+		if (this._webGLCache) {
+			// if it isn't cache controlled clean up after yourself
+			if (!this._webGLCache.isCacheControlled) {
+				if (this.__lastRT){ this.__lastRT = undefined; }
+				if (this.__rtA){ this._webGLCache._killTextureObject(this.__rtA); }
+				if (this.__rtB){ this._webGLCache._killTextureObject(this.__rtB); }
+				if (this.target && this.target.cacheCanvas){ this._webGLCache._killTextureObject(this.target.cacheCanvas); }
+			}
+			// set the context to none and let the garbage collector get the rest when the canvas itself gets removed
+			this._webGLCache = false;
+		} else {
+			var stage = this.target.stage;
+			if (stage instanceof createjs.StageGL){
+				stage.releaseTexture(this.target.cacheCanvas);
+			}
+		}
+
+		this.target = this.target.cacheCanvas = null;
+		this.cacheID = this._cacheDataURLID = this._cacheDataURL = undefined;
+		this.width = this.height = this.x = this.y = this.offX = this.offY = 0;
+		this.scale = 1;
+	};
+
+	/**
+	 * Returns a data URL for the cache, or `null` if this display object is not cached.
+	 * Uses {{#crossLink "BitmapCache/cacheID:property"}}{{/crossLink}} to ensure a new data URL is not generated if the
+	 * cache has not changed.
+	 * @method getCacheDataURL
+	 * @return {String} The image data url for the cache.
+	 **/
+	p.getCacheDataURL = function() {
+		var cacheCanvas = this.target && this.target.cacheCanvas;
+		if (!cacheCanvas) { return null; }
+		if (this.cacheID != this._cacheDataURLID) {
+			this._cacheDataURLID = this.cacheID;
+			this._cacheDataURL = cacheCanvas.toDataURL?cacheCanvas.toDataURL():null;	// incase function is
+		}
+		return this._cacheDataURL;
+	};
+
+	/**
+	 * Use context2D drawing commands to display the cache canvas being used.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The context to draw into.
+	 * @return {Boolean} Whether the draw was handled successfully.
+	 **/
+	p.draw = function(ctx) {
+		if(!this.target) { return false; }
+		ctx.drawImage(this.target.cacheCanvas,
+			this.x + (this._filterOffX/this.scale),		this.y + (this._filterOffY/this.scale),
+			this._drawWidth/this.scale,					this._drawHeight/this.scale
+		);
+		return true;
+	};
+
+// private methods:
+	/**
+	 * Create or resize the invisible canvas/surface that is needed for the display object(s) to draw to,
+	 * and in turn be used in their stead when drawing. The surface is resized to the size defined
+	 * by the width and height, factoring in scaling and filters. Adjust them to adjust the output size.
+	 * @method _updateSurface
+	 * @protected
+	 **/
+	p._updateSurface = function() {
+		if (!this._options || !this._options.useGL) {
+			var surface = this.target.cacheCanvas;
+
+			// create it if it's missing
+			if(!surface) {
+				surface = this.target.cacheCanvas = createjs.createCanvas?createjs.createCanvas():document.createElement("canvas");
+			}
+
+			// now size it
+			surface.width = this._drawWidth;
+			surface.height = this._drawHeight;
+			return;
+		}
+
+		// create it if it's missing
+		if (!this._webGLCache) {
+			if (this._options.useGL === "stage") {
+				if(!(this.target.stage && this.target.stage.isWebGL)){
+					var error = "Cannot use 'stage' for cache because the object's parent stage is ";
+					error += this.target.stage ? "non WebGL." : "not set, please addChild to the correct stage.";
+					throw error;
+				}
+				this.target.cacheCanvas = true; // will be replaced with RenderTexture, temporary positive value for old "isCached" checks
+				this._webGLCache = this.target.stage;
+
+			} else if(this._options.useGL === "new") {
+				this.target.cacheCanvas = document.createElement("canvas"); // we can turn off autopurge because we wont be making textures here
+				this._webGLCache = new createjs.StageGL(this.target.cacheCanvas, {antialias: true, transparent: true, autoPurge: -1});
+				this._webGLCache.isCacheControlled = true;	// use this flag to control stage sizing and final output
+
+			} else if(this._options.useGL instanceof createjs.StageGL) {
+				this.target.cacheCanvas = true; // will be replaced with RenderTexture, temporary positive value for old "isCached" checks
+				this._webGLCache = this._options.useGL;
+				this._webGLCache.isCacheControlled = true;	// use this flag to control stage sizing and final output
+
+			} else {
+				throw "Invalid option provided to useGL, expected ['stage', 'new', StageGL, undefined], got "+ this._options.useGL;
+			}
+		}
+
+		// now size render surfaces
+		var surface = this.target.cacheCanvas;
+		var stageGL = this._webGLCache;
+
+		// if we have a dedicated stage we've gotta size it
+		if (stageGL.isCacheControlled) {
+			surface.width = this._drawWidth;
+			surface.height = this._drawHeight;
+			stageGL.updateViewport(this._drawWidth, this._drawHeight);
+		}
+		if (this.target.filters) {
+			// with filters we can't tell how many we'll need but the most we'll ever need is two, so make them now
+			stageGL.getTargetRenderTexture(this.target, this._drawWidth,this._drawHeight);
+			stageGL.getTargetRenderTexture(this.target, this._drawWidth,this._drawHeight);
+		} else {
+			// without filters then we only need one RenderTexture, and that's only if its not a dedicated stage
+			if (!stageGL.isCacheControlled) {
+				stageGL.getTargetRenderTexture(this.target, this._drawWidth,this._drawHeight);
+			}
+		}
+	};
+
+	/**
+	 * Perform the cache draw out for context 2D now that the setup properties have been performed.
+	 * @method _drawToCache
+	 * @protected
+	 **/
+	p._drawToCache = function(compositeOperation) {
+		var surface = this.target.cacheCanvas;
+		var target = this.target;
+		var webGL = this._webGLCache;
+
+		if (webGL){
+			//TODO: auto split blur into an x/y pass
+			webGL.cacheDraw(target, target.filters, this);
+
+			// we may of swapped around which element the surface is, so we re-fetch it
+			surface = this.target.cacheCanvas;
+
+			surface.width = this._drawWidth;
+			surface.height = this._drawHeight;
+		} else {
+			var ctx = surface.getContext("2d");
+
+			if (!compositeOperation) {
+				ctx.clearRect(0, 0, this._drawWidth+1, this._drawHeight+1);
+			}
+
+			ctx.save();
+			ctx.globalCompositeOperation = compositeOperation;
+			ctx.setTransform(this.scale,0,0,this.scale, -this._filterOffX,-this._filterOffY);
+			ctx.translate(-this.x, -this.y);
+			target.draw(ctx, true);
+			ctx.restore();
+
+
+			if (target.filters && target.filters.length) {
+				this._applyFilters(ctx);
+			}
+		}
+		surface._invalid = true;
+	};
+
+	/**
+	 * Work through every filter and apply its individual visual transformation.
+	 * @method _applyFilters
+	 * @protected
+	 **/
+	p._applyFilters = function(ctx) {
+		var filters = this.target.filters;
+
+		var w = this._drawWidth;
+		var h = this._drawHeight;
+
+		var data;
+
+		var i = 0, filter = filters[i];
+		do { // this is safe because we wouldn't be in apply filters without a filter count of at least 1
+			if(filter.usesContext){
+				if(data) {
+					ctx.putImageData(data, 0,0);
+					data = null;
+				}
+				filter.applyFilter(ctx, 0,0, w,h);
+			} else {
+				if(!data) {
+					data = ctx.getImageData(0,0, w,h);
+				}
+				filter._applyFilter(data);
+			}
+
+			// work through the multipass if it's there, otherwise move on
+			filter = filter._multiPass !== null ? filter._multiPass : filters[++i];
+		} while (filter);
+
+		//done
+		if(data) {
+			ctx.putImageData(data, 0,0);
+		}
+	};
+
+	createjs.BitmapCache = BitmapCache;
+}());
+
+//##############################################################################
+// BlurFilter.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Applies a box blur to DisplayObjects in context 2D and a Gaussian blur in webgl. Note that this filter is fairly
+	 * intensive, particularly if the quality is set higher than 1.
+	 *
+	 * <h4>Example</h4>
+	 * This example creates a red circle, and then applies a 5 pixel blur to it. It uses the {{#crossLink "Filter/getBounds"}}{{/crossLink}}
+	 * method to account for the spread that the blur causes.
+	 *
+	 *      var shape = new createjs.Shape().set({x:100,y:100});
+	 *      shape.graphics.beginFill("#ff0000").drawCircle(0,0,50);
+	 *
+	 *      var blurFilter = new createjs.BlurFilter(5, 5, 1);
+	 *      shape.filters = [blurFilter];
+	 *      var bounds = blurFilter.getBounds();
+	 *
+	 *      shape.cache(-50+bounds.x, -50+bounds.y, 100+bounds.width, 100+bounds.height);
+	 *
+	 * See {{#crossLink "Filter"}}{{/crossLink}} for an more information on applying filters.
+	 * @class BlurFilter
+	 * @extends Filter
+	 * @constructor
+	 * @param {Number} [blurX=0] The horizontal blur radius in pixels.
+	 * @param {Number} [blurY=0] The vertical blur radius in pixels.
+	 * @param {Number} [quality=1] The number of blur iterations.
+	 **/
+	function BlurFilter( blurX, blurY, quality) {
+		this.Filter_constructor();
+
+		// public properties:
+		/**
+		 * Horizontal blur radius in pixels
+		 * @property blurX
+		 * @default 0
+		 * @type Number
+		 **/
+		this._blurX = blurX;
+		this._blurXTable = [];
+		this._lastBlurX = null;
+
+		/**
+		 * Vertical blur radius in pixels
+		 * @property blurY
+		 * @default 0
+		 * @type Number
+		 **/
+		this._blurY = blurY;
+		this._blurYTable = [];
+		this._lastBlurY = null;
+
+		/**
+		 * Number of blur iterations. For example, a value of 1 will produce a rough blur. A value of 2 will produce a
+		 * smoother blur, but take twice as long to run.
+		 * @property quality
+		 * @default 1
+		 * @type Number
+		 **/
+		this._quality;
+		this._lastQuality = null;
+
+		/**
+		 * This is a template to generate the shader for {{#crossLink FRAG_SHADER_BODY}}{{/crossLink}}
+		 */
+		this.FRAG_SHADER_TEMPLATE = (
+			"uniform float xWeight[{{blurX}}];" +
+			"uniform float yWeight[{{blurY}}];" +
+			"uniform vec2 textureOffset;" +
+			"void main(void) {" +
+				"vec4 color = vec4(0.0);" +
+
+				"float xAdj = ({{blurX}}.0-1.0)/2.0;" +
+				"float yAdj = ({{blurY}}.0-1.0)/2.0;" +
+				"vec2 sampleOffset;" +
+
+				"for(int i=0; i<{{blurX}}; i++) {" +
+					"for(int j=0; j<{{blurY}}; j++) {" +
+						"sampleOffset = vRenderCoord + (textureOffset * vec2(float(i)-xAdj, float(j)-yAdj));" +
+						"color += texture2D(uSampler, sampleOffset) * (xWeight[i] * yWeight[j]);" +
+					"}" +
+				"}" +
+
+				"gl_FragColor = color.rgba;" +
+			"}"
+		);
+
+		// update the filter using the setters
+		if(isNaN(quality) || quality < 1){ quality = 1; }
+		this.setQuality(quality|0);
+	}
+	var p = createjs.extend(BlurFilter, createjs.Filter);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+	p.getBlurX = function() { return this._blurX; };
+	p.getBlurY = function() { return this._blurY; };
+	p.setBlurX = function(value) {
+		if(isNaN(value) || value < 0){ value = 0; }
+		this._blurX = value;
+	};
+	p.setBlurY = function(value) {
+		if(isNaN(value) || value < 0){ value = 0; }
+		this._blurY = value;
+	};
+	p.getQuality = function() { return this._quality; };
+	p.setQuality = function(value) {
+		if(isNaN(value) || value < 0){ value = 0; }
+		this._quality = value | 0;
+	};
+	p._getShader = function() {
+		var xChange = this._lastBlurX !== this._blurX;
+		var yChange = this._lastBlurY !== this._blurY;
+		var qChange = this._lastQuality !== this._quality;
+		if(xChange || yChange || qChange) {
+			if(xChange || qChange) { this._blurXTable = this._getTable(this._blurX * this._quality); }
+			if(yChange || qChange) { this._blurYTable = this._getTable(this._blurY * this._quality); }
+			this._updateShader();
+			this._lastBlurX = this._blurX;
+			this._lastBlurY = this._blurY;
+			this._lastQuality = this._quality;
+			return undefined; // force a rebuild
+		}
+		return this._compiledShader;
+	};
+	p._setShader = function() { this._compiledShader; };
+
+	try {
+		Object.defineProperties(p, {
+			blurX: { get: p.getBlurX, set: p.setBlurX },
+			blurY: { get: p.getBlurY, set: p.setBlurY },
+			quality: { get: p.getQuality, set: p.setQuality },
+			_builtShader: { get: p._getShader, set: p._setShader}
+		});
+	} catch (e) { console.log(e); }
+
+	/**
+	 * Internal lookup function to create gaussian distribution.
+	 * @method _getTable
+	 * @param {Number} spread How many steps in the curve.
+	 * @return {Array<Number>} An array with Math.ceil(spread*2) entries with appropriately distributed weights.
+	 */
+	p._getTable = function(spread) {
+		var EDGE = 4.2;
+		if(spread<=1) { return [1]; }
+
+		var result = [];
+		var count = Math.ceil(spread*2);
+		count += (count%2)?0:1;
+		var adjust = (count/2)|0;
+		for(var i = -adjust; i<=adjust; i++) {
+			var x = (i/adjust)*EDGE;
+			result.push(1/Math.sqrt(2*Math.PI) * Math.pow(Math.E, -(Math.pow(x,2)/4)));
+		}
+		var factor = result.reduce(function(a, b) { return a + b; });
+		return result.map(function(currentValue, index, array) { return currentValue/factor; });
+	};
+
+	/**
+	 * Internal update function to create shader properties.
+	 * @method _updateShader
+	 */
+	p._updateShader = function() {
+		if(this._blurX === undefined || this._blurY === undefined){ return; }
+		var result = this.FRAG_SHADER_TEMPLATE;
+		result = result.replace(/\{\{blurX\}\}/g, (this._blurXTable.length).toFixed(0));
+		result = result.replace(/\{\{blurY\}\}/g, (this._blurYTable.length).toFixed(0));
+		this.FRAG_SHADER_BODY = result;
+	};
+
+	/** docced in super class **/
+	p.shaderParamSetup = function(gl, stage, shaderProgram) {
+		// load the normalized gaussian weight tables
+		gl.uniform1fv(
+			gl.getUniformLocation(shaderProgram, "xWeight"),
+			this._blurXTable
+		);
+		gl.uniform1fv(
+			gl.getUniformLocation(shaderProgram, "yWeight"),
+			this._blurYTable
+		);
+
+		// what is the size of a single pixel in -1, 1 (webGL) space
+		gl.uniform2f(
+			gl.getUniformLocation(shaderProgram, "textureOffset"),
+			2/(stage._viewportWidth*this._quality), 2/(stage._viewportHeight*this._quality)
+		);
+	};
+
+// constants:
+	/**
+	 * Array of multiply values for blur calculations.
+	 * @property MUL_TABLE
+	 * @type Array
+	 * @protected
+	 * @static
+	 **/
+	BlurFilter.MUL_TABLE = [1, 171, 205, 293, 57, 373, 79, 137, 241, 27, 391, 357, 41, 19, 283, 265, 497, 469, 443, 421, 25, 191, 365, 349, 335, 161, 155, 149, 9, 278, 269, 261, 505, 245, 475, 231, 449, 437, 213, 415, 405, 395, 193, 377, 369, 361, 353, 345, 169, 331, 325, 319, 313, 307, 301, 37, 145, 285, 281, 69, 271, 267, 263, 259, 509, 501, 493, 243, 479, 118, 465, 459, 113, 446, 55, 435, 429, 423, 209, 413, 51, 403, 199, 393, 97, 3, 379, 375, 371, 367, 363, 359, 355, 351, 347, 43, 85, 337, 333, 165, 327, 323, 5, 317, 157, 311, 77, 305, 303, 75, 297, 294, 73, 289, 287, 71, 141, 279, 277, 275, 68, 135, 67, 133, 33, 262, 260, 129, 511, 507, 503, 499, 495, 491, 61, 121, 481, 477, 237, 235, 467, 232, 115, 457, 227, 451, 7, 445, 221, 439, 218, 433, 215, 427, 425, 211, 419, 417, 207, 411, 409, 203, 202, 401, 399, 396, 197, 49, 389, 387, 385, 383, 95, 189, 47, 187, 93, 185, 23, 183, 91, 181, 45, 179, 89, 177, 11, 175, 87, 173, 345, 343, 341, 339, 337, 21, 167, 83, 331, 329, 327, 163, 81, 323, 321, 319, 159, 79, 315, 313, 39, 155, 309, 307, 153, 305, 303, 151, 75, 299, 149, 37, 295, 147, 73, 291, 145, 289, 287, 143, 285, 71, 141, 281, 35, 279, 139, 69, 275, 137, 273, 17, 271, 135, 269, 267, 133, 265, 33, 263, 131, 261, 130, 259, 129, 257, 1];
+
+	/**
+	 * Array of shift values for blur calculations.
+	 * @property SHG_TABLE
+	 * @type Array
+	 * @protected
+	 * @static
+	 **/
+	BlurFilter.SHG_TABLE = [0, 9, 10, 11, 9, 12, 10, 11, 12, 9, 13, 13, 10, 9, 13, 13, 14, 14, 14, 14, 10, 13, 14, 14, 14, 13, 13, 13, 9, 14, 14, 14, 15, 14, 15, 14, 15, 15, 14, 15, 15, 15, 14, 15, 15, 15, 15, 15, 14, 15, 15, 15, 15, 15, 15, 12, 14, 15, 15, 13, 15, 15, 15, 15, 16, 16, 16, 15, 16, 14, 16, 16, 14, 16, 13, 16, 16, 16, 15, 16, 13, 16, 15, 16, 14, 9, 16, 16, 16, 16, 16, 16, 16, 16, 16, 13, 14, 16, 16, 15, 16, 16, 10, 16, 15, 16, 14, 16, 16, 14, 16, 16, 14, 16, 16, 14, 15, 16, 16, 16, 14, 15, 14, 15, 13, 16, 16, 15, 17, 17, 17, 17, 17, 17, 14, 15, 17, 17, 16, 16, 17, 16, 15, 17, 16, 17, 11, 17, 16, 17, 16, 17, 16, 17, 17, 16, 17, 17, 16, 17, 17, 16, 16, 17, 17, 17, 16, 14, 17, 17, 17, 17, 15, 16, 14, 16, 15, 16, 13, 16, 15, 16, 14, 16, 15, 16, 12, 16, 15, 16, 17, 17, 17, 17, 17, 13, 16, 15, 17, 17, 17, 16, 15, 17, 17, 17, 16, 15, 17, 17, 14, 16, 17, 17, 16, 17, 17, 16, 15, 17, 16, 14, 17, 16, 15, 17, 16, 17, 17, 16, 17, 15, 16, 17, 14, 17, 16, 15, 17, 16, 17, 13, 17, 16, 17, 17, 16, 17, 14, 17, 16, 17, 16, 17, 16, 17, 9];
+
+// public methods:
+	/** docced in super class **/
+	p.getBounds = function (rect) {
+		var x = this.blurX|0, y = this.blurY| 0;
+		if(x <= 0 && y <= 0) { return rect; }
+		var q = Math.pow(this.quality, 0.2);
+		return (rect || new createjs.Rectangle()).pad(y*q+1,x*q+1,y*q+1,x*q+1);
+	};
+
+	/** docced in super class **/
+	p.clone = function() {
+		return new BlurFilter(this.blurX, this.blurY, this.quality);
+	};
+
+	/** docced in super class **/
+	p.toString = function() {
+		return "[BlurFilter]";
+	};
+
+
+// private methods:
+
+	/** docced in super class **/
+	p._applyFilter = function (imageData) {
+		var radiusX = this._blurX >> 1;
+		if (isNaN(radiusX) || radiusX < 0) return false;
+		var radiusY = this._blurY >> 1;
+		if (isNaN(radiusY) || radiusY < 0) return false;
+		if (radiusX == 0 && radiusY == 0) return false;
+
+		var iterations = this.quality;
+		if (isNaN(iterations) || iterations < 1) iterations = 1;
+		iterations |= 0;
+		if (iterations > 3) iterations = 3;
+		if (iterations < 1) iterations = 1;
+
+		var px = imageData.data;
+		var x=0, y=0, i=0, p=0, yp=0, yi=0, yw=0, r=0, g=0, b=0, a=0, pr=0, pg=0, pb=0, pa=0;
+
+		var divx = (radiusX + radiusX + 1) | 0;
+		var divy = (radiusY + radiusY + 1) | 0;
+		var w = imageData.width | 0;
+		var h = imageData.height | 0;
+
+		var w1 = (w - 1) | 0;
+		var h1 = (h - 1) | 0;
+		var rxp1 = (radiusX + 1) | 0;
+		var ryp1 = (radiusY + 1) | 0;
+
+		var ssx = {r:0,b:0,g:0,a:0};
+		var sx = ssx;
+		for ( i = 1; i < divx; i++ )
+		{
+			sx = sx.n = {r:0,b:0,g:0,a:0};
+		}
+		sx.n = ssx;
+
+		var ssy = {r:0,b:0,g:0,a:0};
+		var sy = ssy;
+		for ( i = 1; i < divy; i++ )
+		{
+			sy = sy.n = {r:0,b:0,g:0,a:0};
+		}
+		sy.n = ssy;
+
+		var si = null;
+
+
+		var mtx = BlurFilter.MUL_TABLE[radiusX] | 0;
+		var stx = BlurFilter.SHG_TABLE[radiusX] | 0;
+		var mty = BlurFilter.MUL_TABLE[radiusY] | 0;
+		var sty = BlurFilter.SHG_TABLE[radiusY] | 0;
+
+		while (iterations-- > 0) {
+
+			yw = yi = 0;
+			var ms = mtx;
+			var ss = stx;
+			for (y = h; --y > -1;) {
+				r = rxp1 * (pr = px[(yi) | 0]);
+				g = rxp1 * (pg = px[(yi + 1) | 0]);
+				b = rxp1 * (pb = px[(yi + 2) | 0]);
+				a = rxp1 * (pa = px[(yi + 3) | 0]);
+
+				sx = ssx;
+
+				for( i = rxp1; --i > -1; )
+				{
+					sx.r = pr;
+					sx.g = pg;
+					sx.b = pb;
+					sx.a = pa;
+					sx = sx.n;
+				}
+
+				for( i = 1; i < rxp1; i++ )
+				{
+					p = (yi + ((w1 < i ? w1 : i) << 2)) | 0;
+					r += ( sx.r = px[p]);
+					g += ( sx.g = px[p+1]);
+					b += ( sx.b = px[p+2]);
+					a += ( sx.a = px[p+3]);
+
+					sx = sx.n;
+				}
+
+				si = ssx;
+				for ( x = 0; x < w; x++ )
+				{
+					px[yi++] = (r * ms) >>> ss;
+					px[yi++] = (g * ms) >>> ss;
+					px[yi++] = (b * ms) >>> ss;
+					px[yi++] = (a * ms) >>> ss;
+
+					p = ((yw + ((p = x + radiusX + 1) < w1 ? p : w1)) << 2);
+
+					r -= si.r - ( si.r = px[p]);
+					g -= si.g - ( si.g = px[p+1]);
+					b -= si.b - ( si.b = px[p+2]);
+					a -= si.a - ( si.a = px[p+3]);
+
+					si = si.n;
+
+				}
+				yw += w;
+			}
+
+			ms = mty;
+			ss = sty;
+			for (x = 0; x < w; x++) {
+				yi = (x << 2) | 0;
+
+				r = (ryp1 * (pr = px[yi])) | 0;
+				g = (ryp1 * (pg = px[(yi + 1) | 0])) | 0;
+				b = (ryp1 * (pb = px[(yi + 2) | 0])) | 0;
+				a = (ryp1 * (pa = px[(yi + 3) | 0])) | 0;
+
+				sy = ssy;
+				for( i = 0; i < ryp1; i++ )
+				{
+					sy.r = pr;
+					sy.g = pg;
+					sy.b = pb;
+					sy.a = pa;
+					sy = sy.n;
+				}
+
+				yp = w;
+
+				for( i = 1; i <= radiusY; i++ )
+				{
+					yi = ( yp + x ) << 2;
+
+					r += ( sy.r = px[yi]);
+					g += ( sy.g = px[yi+1]);
+					b += ( sy.b = px[yi+2]);
+					a += ( sy.a = px[yi+3]);
+
+					sy = sy.n;
+
+					if( i < h1 )
+					{
+						yp += w;
+					}
+				}
+
+				yi = x;
+				si = ssy;
+				if ( iterations > 0 )
+				{
+					for ( y = 0; y < h; y++ )
+					{
+						p = yi << 2;
+						px[p+3] = pa =(a * ms) >>> ss;
+						if ( pa > 0 )
+						{
+							px[p]   = ((r * ms) >>> ss );
+							px[p+1] = ((g * ms) >>> ss );
+							px[p+2] = ((b * ms) >>> ss );
+						} else {
+							px[p] = px[p+1] = px[p+2] = 0
+						}
+
+						p = ( x + (( ( p = y + ryp1) < h1 ? p : h1 ) * w )) << 2;
+
+						r -= si.r - ( si.r = px[p]);
+						g -= si.g - ( si.g = px[p+1]);
+						b -= si.b - ( si.b = px[p+2]);
+						a -= si.a - ( si.a = px[p+3]);
+
+						si = si.n;
+
+						yi += w;
+					}
+				} else {
+					for ( y = 0; y < h; y++ )
+					{
+						p = yi << 2;
+						px[p+3] = pa =(a * ms) >>> ss;
+						if ( pa > 0 )
+						{
+							pa = 255 / pa;
+							px[p]   = ((r * ms) >>> ss ) * pa;
+							px[p+1] = ((g * ms) >>> ss ) * pa;
+							px[p+2] = ((b * ms) >>> ss ) * pa;
+						} else {
+							px[p] = px[p+1] = px[p+2] = 0
+						}
+
+						p = ( x + (( ( p = y + ryp1) < h1 ? p : h1 ) * w )) << 2;
+
+						r -= si.r - ( si.r = px[p]);
+						g -= si.g - ( si.g = px[p+1]);
+						b -= si.b - ( si.b = px[p+2]);
+						a -= si.a - ( si.a = px[p+3]);
+
+						si = si.n;
+
+						yi += w;
+					}
+				}
+			}
+
+		}
+		return true;
+	};
+
+	createjs.BlurFilter = createjs.promote(BlurFilter, "Filter");
+}());
+
+//##############################################################################
+// AlphaMapFilter.js
+//##############################################################################
+
+this.createjs = this.createjs || {};
+
+(function () {
+	"use strict";
+	
+	
+// constructor:
+	/**
+	 * Applies a greyscale alpha map image (or canvas) to the target, such that the alpha channel of the result will
+	 * be copied from the red channel of the map, and the RGB channels will be copied from the target.
+	 *
+	 * Generally, it is recommended that you use {{#crossLink "AlphaMaskFilter"}}{{/crossLink}}, because it has much
+	 * better performance.
+	 *
+	 * <h4>Example</h4>
+	 * This example draws a red->blue box, caches it, and then uses the cache canvas as an alpha map on a 100x100 image.
+	 *
+	 *       var box = new createjs.Shape();
+	 *       box.graphics.beginLinearGradientFill(["#ff0000", "#0000ff"], [0, 1], 0, 0, 0, 100)
+	 *       box.graphics.drawRect(0, 0, 100, 100);
+	 *       box.cache(0, 0, 100, 100);
+	 *
+	 *       var bmp = new createjs.Bitmap("path/to/image.jpg");
+	 *       bmp.filters = [
+	 *           new createjs.AlphaMapFilter(box.cacheCanvas)
+	 *       ];
+	 *       bmp.cache(0, 0, 100, 100);
+	 *       stage.addChild(bmp);
+	 *
+	 * See {{#crossLink "Filter"}}{{/crossLink}} for more information on applying filters.
+	 * @class AlphaMapFilter
+	 * @extends Filter
+	 * @constructor
+	 * @param {HTMLImageElement|HTMLCanvasElement} alphaMap The greyscale image (or canvas) to use as the alpha value for the
+	 * result. This should be exactly the same dimensions as the target.
+	 **/
+	function AlphaMapFilter(alphaMap) {
+		this.Filter_constructor();
+	
+	// public properties:
+		/**
+		 * The greyscale image (or canvas) to use as the alpha value for the result. This should be exactly the same
+		 * dimensions as the target.
+		 * @property alphaMap
+		 * @type HTMLImageElement|HTMLCanvasElement
+		 **/
+		this.alphaMap = alphaMap;
+		
+		
+	// private properties:
+		/**
+		 * @property _alphaMap
+		 * @protected
+		 * @type HTMLImageElement|HTMLCanvasElement
+		 **/
+		this._alphaMap = null;
+		
+		/**
+		 * @property _mapData
+		 * @protected
+		 * @type Uint8ClampedArray
+		 **/
+		this._mapData = null;
+		this._mapTexture = null;
+
+		this.FRAG_SHADER_BODY = (
+			"uniform sampler2D uAlphaSampler;"+
+
+			"void main(void) {" +
+				"vec4 color = texture2D(uSampler, vRenderCoord);" +
+				"vec4 alphaMap = texture2D(uAlphaSampler, vTextureCoord);" +
+
+				// some image formats can have transparent white rgba(1,1,1, 0) when put on the GPU, this means we need a slight tweak
+				// using ceil ensure that the colour will be used so long as it exists but pure transparency will be treated black
+				"gl_FragColor = vec4(color.rgb, color.a * (alphaMap.r * ceil(alphaMap.a)));" +
+			"}"
+		);
+	}
+	var p = createjs.extend(AlphaMapFilter, createjs.Filter);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+	/** docced in super class **/
+	p.shaderParamSetup = function(gl, stage, shaderProgram) {
+		if(!this._mapTexture) { this._mapTexture = gl.createTexture(); }
+
+		gl.activeTexture(gl.TEXTURE1);
+		gl.bindTexture(gl.TEXTURE_2D, this._mapTexture);
+		stage.setTextureParams(gl);
+		gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, this.alphaMap);
+
+		gl.uniform1i(
+			gl.getUniformLocation(shaderProgram, "uAlphaSampler"),
+			1
+		);
+	};
+
+// public methods:
+	/** docced in super class **/
+	p.clone = function () {
+		var o = new AlphaMapFilter(this.alphaMap);
+		o._alphaMap = this._alphaMap;
+		o._mapData = this._mapData;
+		return o;
+	};
+
+	/** docced in super class **/
+	p.toString = function () {
+		return "[AlphaMapFilter]";
+	};
+
+
+// private methods:
+	/** docced in super class **/
+	p._applyFilter = function (imageData) {
+		if (!this.alphaMap) { return true; }
+		if (!this._prepAlphaMap()) { return false; }
+		
+		// TODO: update to support scenarios where the target has different dimensions.
+		var data = imageData.data;
+		var map = this._mapData;
+		for(var i=0, l=data.length; i<l; i += 4) { data[i + 3] = map[i] || 0; }
+		
+		return true;
+	};
+
+	/**
+	 * @method _prepAlphaMap
+	 * @protected
+	 **/
+	p._prepAlphaMap = function () {
+		if (!this.alphaMap) { return false; }
+		if (this.alphaMap == this._alphaMap && this._mapData) { return true; }
+
+		this._mapData = null;
+		var map = this._alphaMap = this.alphaMap;
+		var canvas = map;
+		var ctx;
+		if (map instanceof HTMLCanvasElement) {
+			ctx = canvas.getContext("2d");
+		} else {
+			canvas = createjs.createCanvas ? createjs.createCanvas() : document.createElement("canvas");
+			canvas.width = map.width;
+			canvas.height = map.height;
+			ctx = canvas.getContext("2d");
+			ctx.drawImage(map, 0, 0);
+		}
+
+		try {
+			var imgData = ctx.getImageData(0, 0, map.width, map.height);
+		} catch (e) {
+			//if (!this.suppressCrossDomainErrors) throw new Error("unable to access local image data: " + e);
+			return false;
+		}
+		
+		this._mapData = imgData.data;
+		return true;
+	};
+
+
+	createjs.AlphaMapFilter = createjs.promote(AlphaMapFilter, "Filter");
+}());
+
+//##############################################################################
+// AlphaMaskFilter.js
+//##############################################################################
+
+this.createjs = this.createjs || {};
+
+(function () {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Applies the alpha from the mask image (or canvas) to the target, such that the alpha channel of the result will
+	 * be derived from the mask, and the RGB channels will be copied from the target. This can be used, for example, to
+	 * apply an alpha mask to a display object. This can also be used to combine a JPG compressed RGB image with a PNG32
+	 * alpha mask, which can result in a much smaller file size than a single PNG32 containing ARGB.
+	 *
+	 * <b>IMPORTANT NOTE: This filter currently does not support the targetCtx, or targetX/Y parameters correctly.</b>
+	 *
+	 * <h4>Example</h4>
+	 * This example draws a gradient box, then caches it and uses the "cacheCanvas" as the alpha mask on a 100x100 image.
+	 *
+	 *      var box = new createjs.Shape();
+	 *      box.graphics.beginLinearGradientFill(["#000000", "rgba(0, 0, 0, 0)"], [0, 1], 0, 0, 100, 100)
+	 *      box.graphics.drawRect(0, 0, 100, 100);
+	 *      box.cache(0, 0, 100, 100);
+	 *
+	 *      var bmp = new createjs.Bitmap("path/to/image.jpg");
+	 *      bmp.filters = [
+	 *          new createjs.AlphaMaskFilter(box.cacheCanvas)
+	 *      ];
+	 *      bmp.cache(0, 0, 100, 100);
+	 *
+	 * See {{#crossLink "Filter"}}{{/crossLink}} for more information on applying filters.
+	 * @class AlphaMaskFilter
+	 * @extends Filter
+	 * @constructor
+	 * @param {HTMLImageElement|HTMLCanvasElement} mask
+	 **/
+	function AlphaMaskFilter(mask) {
+		this.Filter_constructor();
+	
+	// public properties:
+		/**
+		 * The image (or canvas) to use as the mask.
+		 * @property mask
+		 * @type HTMLImageElement|HTMLCanvasElement
+		 **/
+		this.mask = mask;
+
+		/** docced in super class **/
+		this.usesContext = true;
+
+		this.FRAG_SHADER_BODY = (
+			"uniform sampler2D uAlphaSampler;"+
+
+			"void main(void) {" +
+				"vec4 color = texture2D(uSampler, vRenderCoord);" +
+				"vec4 alphaMap = texture2D(uAlphaSampler, vTextureCoord);" +
+
+				"gl_FragColor = vec4(color.rgb, color.a * alphaMap.a);" +
+			"}"
+		);
+	}
+	var p = createjs.extend(AlphaMaskFilter, createjs.Filter);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+	/** docced in super class **/
+	p.shaderParamSetup = function(gl, stage, shaderProgram) {
+		if(!this._mapTexture) { this._mapTexture = gl.createTexture(); }
+
+		gl.activeTexture(gl.TEXTURE1);
+		gl.bindTexture(gl.TEXTURE_2D, this._mapTexture);
+		stage.setTextureParams(gl);
+		gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, this.mask);
+
+		gl.uniform1i(
+			gl.getUniformLocation(shaderProgram, "uAlphaSampler"),
+			1
+		);
+	};
+
+// public methods:
+	/**
+	 * Applies the filter to the specified context.
+	 *
+	 * <strong>IMPORTANT NOTE: This filter currently does not support the targetCtx, or targetX/Y parameters
+	 * correctly.</strong>
+	 * @method applyFilter
+	 * @param {CanvasRenderingContext2D} ctx The 2D context to use as the source.
+	 * @param {Number} x The x position to use for the source rect.
+	 * @param {Number} y The y position to use for the source rect.
+	 * @param {Number} width The width to use for the source rect.
+	 * @param {Number} height The height to use for the source rect.
+	 * @param {CanvasRenderingContext2D} [targetCtx] NOT SUPPORTED IN THIS FILTER. The 2D context to draw the result to. Defaults to the context passed to ctx.
+	 * @param {Number} [targetX] NOT SUPPORTED IN THIS FILTER. The x position to draw the result to. Defaults to the value passed to x.
+	 * @param {Number} [targetY] NOT SUPPORTED IN THIS FILTER. The y position to draw the result to. Defaults to the value passed to y.
+	 * @return {Boolean} If the filter was applied successfully.
+	 **/
+	p.applyFilter = function (ctx, x, y, width, height, targetCtx, targetX, targetY) {
+		if (!this.mask) { return true; }
+		targetCtx = targetCtx || ctx;
+		if (targetX == null) { targetX = x; }
+		if (targetY == null) { targetY = y; }
+
+		targetCtx.save();
+		if (ctx != targetCtx) {
+			// TODO: support targetCtx and targetX/Y
+			// clearRect, then draw the ctx in?
+			return false;
+		}
+
+		targetCtx.globalCompositeOperation = "destination-in";
+		targetCtx.drawImage(this.mask, targetX, targetY);
+		targetCtx.restore();
+		return true;
+	};
+
+	/** docced in super class **/
+	p.clone = function () {
+		return new AlphaMaskFilter(this.mask);
+	};
+
+	/** docced in super class **/
+	p.toString = function () {
+		return "[AlphaMaskFilter]";
+	};
+
+
+	createjs.AlphaMaskFilter = createjs.promote(AlphaMaskFilter, "Filter");
+}());
+
+//##############################################################################
+// ColorFilter.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Applies a color transform to DisplayObjects.
+	 *
+	 * <h4>Example</h4>
+	 * This example draws a red circle, and then transforms it to Blue. This is accomplished by multiplying all the channels
+	 * to 0 (except alpha, which is set to 1), and then adding 255 to the blue channel.
+	 *
+	 *      var shape = new createjs.Shape().set({x:100,y:100});
+	 *      shape.graphics.beginFill("#ff0000").drawCircle(0,0,50);
+	 *
+	 *      shape.filters = [
+	 *          new createjs.ColorFilter(0,0,0,1, 0,0,255,0)
+	 *      ];
+	 *      shape.cache(-50, -50, 100, 100);
+	 *
+	 * See {{#crossLink "Filter"}}{{/crossLink}} for an more information on applying filters.
+	 * @class ColorFilter
+	 * @param {Number} [redMultiplier=1] The amount to multiply against the red channel. This is a range between 0 and 1.
+	 * @param {Number} [greenMultiplier=1] The amount to multiply against the green channel. This is a range between 0 and 1.
+	 * @param {Number} [blueMultiplier=1] The amount to multiply against the blue channel. This is a range between 0 and 1.
+	 * @param {Number} [alphaMultiplier=1] The amount to multiply against the alpha channel. This is a range between 0 and 1.
+	 * @param {Number} [redOffset=0] The amount to add to the red channel after it has been multiplied. This is a range
+	 * between -255 and 255.
+	 * @param {Number} [greenOffset=0] The amount to add to the green channel after it has been multiplied. This is a range
+	  * between -255 and 255.
+	 * @param {Number} [blueOffset=0] The amount to add to the blue channel after it has been multiplied. This is a range
+	  * between -255 and 255.
+	 * @param {Number} [alphaOffset=0] The amount to add to the alpha channel after it has been multiplied. This is a range
+	  * between -255 and 255.
+	 * @constructor
+	 * @extends Filter
+	 **/
+	function ColorFilter(redMultiplier, greenMultiplier, blueMultiplier, alphaMultiplier, redOffset, greenOffset, blueOffset, alphaOffset) {
+		this.Filter_constructor();
+
+	// public properties:
+		/**
+		 * Red channel multiplier.
+		 * @property redMultiplier
+		 * @type Number
+		 **/
+		this.redMultiplier = redMultiplier != null ? redMultiplier : 1;
+	
+		/**
+		 * Green channel multiplier.
+		 * @property greenMultiplier
+		 * @type Number
+		 **/
+		this.greenMultiplier = greenMultiplier != null ? greenMultiplier : 1;
+	
+		/**
+		 * Blue channel multiplier.
+		 * @property blueMultiplier
+		 * @type Number
+		 **/
+		this.blueMultiplier = blueMultiplier != null ? blueMultiplier : 1;
+	
+		/**
+		 * Alpha channel multiplier.
+		 * @property alphaMultiplier
+		 * @type Number
+		 **/
+		this.alphaMultiplier = alphaMultiplier != null ? alphaMultiplier : 1;
+	
+		/**
+		 * Red channel offset (added to value).
+		 * @property redOffset
+		 * @type Number
+		 **/
+		this.redOffset = redOffset || 0;
+	
+		/**
+		 * Green channel offset (added to value).
+		 * @property greenOffset
+		 * @type Number
+		 **/
+		this.greenOffset = greenOffset || 0;
+	
+		/**
+		 * Blue channel offset (added to value).
+		 * @property blueOffset
+		 * @type Number
+		 **/
+		this.blueOffset = blueOffset || 0;
+	
+		/**
+		 * Alpha channel offset (added to value).
+		 * @property alphaOffset
+		 * @type Number
+		 **/
+		this.alphaOffset = alphaOffset || 0;
+
+		this.FRAG_SHADER_BODY = (
+			"uniform vec4 uColorMultiplier;" +
+			"uniform vec4 uColorOffset;" +
+
+			"void main(void) {" +
+				"vec4 color = texture2D(uSampler, vRenderCoord);" +
+
+				"gl_FragColor = (color * uColorMultiplier) + uColorOffset;" +
+			"}"
+		);
+
+	}
+	var p = createjs.extend(ColorFilter, createjs.Filter);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+
+// public methods:
+	/** docced in super class **/
+	p.shaderParamSetup = function(gl, stage, shaderProgram) {
+		gl.uniform4f(
+			gl.getUniformLocation(shaderProgram, "uColorMultiplier"),
+			this.redMultiplier, this.greenMultiplier, this.blueMultiplier, this.alphaMultiplier
+		);
+
+		gl.uniform4f(
+			gl.getUniformLocation(shaderProgram, "uColorOffset"),
+			this.redOffset/255, this.greenOffset/255, this.blueOffset/255, this.alphaOffset/255
+		);
+	};
+
+	/** docced in super class **/
+	p.toString = function() {
+		return "[ColorFilter]";
+	};
+
+	/** docced in super class **/
+	p.clone = function() {
+		return new ColorFilter(
+			this.redMultiplier, this.greenMultiplier, this.blueMultiplier, this.alphaMultiplier,
+			this.redOffset, this.greenOffset, this.blueOffset, this.alphaOffset
+		);
+	};
+
+// private methods:
+	/** docced in super class **/
+	p._applyFilter = function(imageData) {
+		var this$1 = this;
+
+		var data = imageData.data;
+		var l = data.length;
+		for (var i=0; i<l; i+=4) {
+			data[i] = data[i]*this$1.redMultiplier+this$1.redOffset;
+			data[i+1] = data[i+1]*this$1.greenMultiplier+this$1.greenOffset;
+			data[i+2] = data[i+2]*this$1.blueMultiplier+this$1.blueOffset;
+			data[i+3] = data[i+3]*this$1.alphaMultiplier+this$1.alphaOffset;
+		}
+		return true;
+	};
+
+
+	createjs.ColorFilter = createjs.promote(ColorFilter, "Filter");
+}());
+
+//##############################################################################
+// ColorMatrix.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Provides helper functions for assembling a matrix for use with the {{#crossLink "ColorMatrixFilter"}}{{/crossLink}}.
+	 * Most methods return the instance to facilitate chained calls.
+	 *
+	 * <h4>Example</h4>
+	 *
+	 *      myColorMatrix.adjustHue(20).adjustBrightness(50);
+	 *
+	 * See {{#crossLink "Filter"}}{{/crossLink}} for an example of how to apply filters, or {{#crossLink "ColorMatrixFilter"}}{{/crossLink}}
+	 * for an example of how to use ColorMatrix to change a DisplayObject's color.
+	 * @class ColorMatrix
+	 * @param {Number} brightness
+	 * @param {Number} contrast
+	 * @param {Number} saturation
+	 * @param {Number} hue
+	 * @constructor
+	 **/
+	function ColorMatrix(brightness, contrast, saturation, hue) {
+		this.setColor(brightness, contrast, saturation, hue);
+	}
+	var p = ColorMatrix.prototype;
+
+// constants:
+	/**
+	 * Array of delta values for contrast calculations.
+	 * @property DELTA_INDEX
+	 * @type Array
+	 * @protected
+	 * @static
+	 **/
+	ColorMatrix.DELTA_INDEX = [
+		0,    0.01, 0.02, 0.04, 0.05, 0.06, 0.07, 0.08, 0.1,  0.11,
+		0.12, 0.14, 0.15, 0.16, 0.17, 0.18, 0.20, 0.21, 0.22, 0.24,
+		0.25, 0.27, 0.28, 0.30, 0.32, 0.34, 0.36, 0.38, 0.40, 0.42,
+		0.44, 0.46, 0.48, 0.5,  0.53, 0.56, 0.59, 0.62, 0.65, 0.68,
+		0.71, 0.74, 0.77, 0.80, 0.83, 0.86, 0.89, 0.92, 0.95, 0.98,
+		1.0,  1.06, 1.12, 1.18, 1.24, 1.30, 1.36, 1.42, 1.48, 1.54,
+		1.60, 1.66, 1.72, 1.78, 1.84, 1.90, 1.96, 2.0,  2.12, 2.25,
+		2.37, 2.50, 2.62, 2.75, 2.87, 3.0,  3.2,  3.4,  3.6,  3.8,
+		4.0,  4.3,  4.7,  4.9,  5.0,  5.5,  6.0,  6.5,  6.8,  7.0,
+		7.3,  7.5,  7.8,  8.0,  8.4,  8.7,  9.0,  9.4,  9.6,  9.8,
+		10.0
+	];
+
+	/**
+	 * Identity matrix values.
+	 * @property IDENTITY_MATRIX
+	 * @type Array
+	 * @protected
+	 * @static
+	 **/
+	ColorMatrix.IDENTITY_MATRIX = [
+		1,0,0,0,0,
+		0,1,0,0,0,
+		0,0,1,0,0,
+		0,0,0,1,0,
+		0,0,0,0,1
+	];
+
+	/**
+	 * The constant length of a color matrix.
+	 * @property LENGTH
+	 * @type Number
+	 * @protected
+	 * @static
+	 **/
+	ColorMatrix.LENGTH = ColorMatrix.IDENTITY_MATRIX.length;
+
+
+// public methods:
+	/**
+	 * Resets the instance with the specified values.
+	 * @method setColor
+	 * @param {Number} brightness
+	 * @param {Number} contrast
+	 * @param {Number} saturation
+	 * @param {Number} hue
+	 * @return {ColorMatrix} The ColorMatrix instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 */
+	p.setColor = function(brightness,contrast,saturation,hue) {
+		return this.reset().adjustColor(brightness,contrast,saturation,hue);
+	};
+
+	/**
+	 * Resets the matrix to identity values.
+	 * @method reset
+	 * @return {ColorMatrix} The ColorMatrix instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 */
+	p.reset = function() {
+		return this.copy(ColorMatrix.IDENTITY_MATRIX);
+	};
+
+	/**
+	 * Shortcut method to adjust brightness, contrast, saturation and hue.
+	 * Equivalent to calling adjustHue(hue), adjustContrast(contrast),
+	 * adjustBrightness(brightness), adjustSaturation(saturation), in that order.
+	 * @method adjustColor
+	 * @param {Number} brightness
+	 * @param {Number} contrast
+	 * @param {Number} saturation
+	 * @param {Number} hue
+	 * @return {ColorMatrix} The ColorMatrix instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.adjustColor = function(brightness,contrast,saturation,hue) {
+		this.adjustHue(hue);
+		this.adjustContrast(contrast);
+		this.adjustBrightness(brightness);
+		return this.adjustSaturation(saturation);
+	};
+
+	/**
+	 * Adjusts the brightness of pixel color by adding the specified value to the red, green and blue channels.
+	 * Positive values will make the image brighter, negative values will make it darker.
+	 * @method adjustBrightness
+	 * @param {Number} value A value between -255 & 255 that will be added to the RGB channels.
+	 * @return {ColorMatrix} The ColorMatrix instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.adjustBrightness = function(value) {
+		if (value == 0 || isNaN(value)) { return this; }
+		value = this._cleanValue(value,255);
+		this._multiplyMatrix([
+			1,0,0,0,value,
+			0,1,0,0,value,
+			0,0,1,0,value,
+			0,0,0,1,0,
+			0,0,0,0,1
+		]);
+		return this;
+	};
+
+	/**
+	 * Adjusts the contrast of pixel color.
+	 * Positive values will increase contrast, negative values will decrease contrast.
+	 * @method adjustContrast
+	 * @param {Number} value A value between -100 & 100.
+	 * @return {ColorMatrix} The ColorMatrix instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.adjustContrast = function(value) {
+		if (value == 0 || isNaN(value)) { return this; }
+		value = this._cleanValue(value,100);
+		var x;
+		if (value<0) {
+			x = 127+value/100*127;
+		} else {
+			x = value%1;
+			if (x == 0) {
+				x = ColorMatrix.DELTA_INDEX[value];
+			} else {
+				x = ColorMatrix.DELTA_INDEX[(value<<0)]*(1-x)+ColorMatrix.DELTA_INDEX[(value<<0)+1]*x; // use linear interpolation for more granularity.
+			}
+			x = x*127+127;
+		}
+		this._multiplyMatrix([
+			x/127,0,0,0,0.5*(127-x),
+			0,x/127,0,0,0.5*(127-x),
+			0,0,x/127,0,0.5*(127-x),
+			0,0,0,1,0,
+			0,0,0,0,1
+		]);
+		return this;
+	};
+
+	/**
+	 * Adjusts the color saturation of the pixel.
+	 * Positive values will increase saturation, negative values will decrease saturation (trend towards greyscale).
+	 * @method adjustSaturation
+	 * @param {Number} value A value between -100 & 100.
+	 * @return {ColorMatrix} The ColorMatrix instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.adjustSaturation = function(value) {
+		if (value == 0 || isNaN(value)) { return this; }
+		value = this._cleanValue(value,100);
+		var x = 1+((value > 0) ? 3*value/100 : value/100);
+		var lumR = 0.3086;
+		var lumG = 0.6094;
+		var lumB = 0.0820;
+		this._multiplyMatrix([
+			lumR*(1-x)+x,lumG*(1-x),lumB*(1-x),0,0,
+			lumR*(1-x),lumG*(1-x)+x,lumB*(1-x),0,0,
+			lumR*(1-x),lumG*(1-x),lumB*(1-x)+x,0,0,
+			0,0,0,1,0,
+			0,0,0,0,1
+		]);
+		return this;
+	};
+
+
+	/**
+	 * Adjusts the hue of the pixel color.
+	 * @method adjustHue
+	 * @param {Number} value A value between -180 & 180.
+	 * @return {ColorMatrix} The ColorMatrix instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.adjustHue = function(value) {
+		if (value == 0 || isNaN(value)) { return this; }
+		value = this._cleanValue(value,180)/180*Math.PI;
+		var cosVal = Math.cos(value);
+		var sinVal = Math.sin(value);
+		var lumR = 0.213;
+		var lumG = 0.715;
+		var lumB = 0.072;
+		this._multiplyMatrix([
+			lumR+cosVal*(1-lumR)+sinVal*(-lumR),lumG+cosVal*(-lumG)+sinVal*(-lumG),lumB+cosVal*(-lumB)+sinVal*(1-lumB),0,0,
+			lumR+cosVal*(-lumR)+sinVal*(0.143),lumG+cosVal*(1-lumG)+sinVal*(0.140),lumB+cosVal*(-lumB)+sinVal*(-0.283),0,0,
+			lumR+cosVal*(-lumR)+sinVal*(-(1-lumR)),lumG+cosVal*(-lumG)+sinVal*(lumG),lumB+cosVal*(1-lumB)+sinVal*(lumB),0,0,
+			0,0,0,1,0,
+			0,0,0,0,1
+		]);
+		return this;
+	};
+
+	/**
+	 * Concatenates (multiplies) the specified matrix with this one.
+	 * @method concat
+	 * @param {Array} matrix An array or ColorMatrix instance.
+	 * @return {ColorMatrix} The ColorMatrix instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.concat = function(matrix) {
+		matrix = this._fixMatrix(matrix);
+		if (matrix.length != ColorMatrix.LENGTH) { return this; }
+		this._multiplyMatrix(matrix);
+		return this;
+	};
+
+	/**
+	 * Returns a clone of this ColorMatrix.
+	 * @method clone
+	 * @return {ColorMatrix} A clone of this ColorMatrix.
+	 **/
+	p.clone = function() {
+		return (new ColorMatrix()).copy(this);
+	};
+
+	/**
+	 * Return a length 25 (5x5) array instance containing this matrix's values.
+	 * @method toArray
+	 * @return {Array} An array holding this matrix's values.
+	 **/
+	p.toArray = function() {
+		var this$1 = this;
+
+		var arr = [];
+		for (var i= 0, l=ColorMatrix.LENGTH; i<l; i++) {
+			arr[i] = this$1[i];
+		}
+		return arr;
+	};
+
+	/**
+	 * Copy the specified matrix's values to this matrix.
+	 * @method copy
+	 * @param {Array} matrix An array or ColorMatrix instance.
+	 * @return {ColorMatrix} The ColorMatrix instance the method is called on (useful for chaining calls.)
+	 * @chainable
+	 **/
+	p.copy = function(matrix) {
+		var this$1 = this;
+
+		var l = ColorMatrix.LENGTH;
+		for (var i=0;i<l;i++) {
+			this$1[i] = matrix[i];
+		}
+		return this;
+	};
+	
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return "[ColorMatrix]";
+	};
+
+
+// private methods:
+	/**
+	 * @method _multiplyMatrix
+	 * @param {Array} matrix
+	 * @protected
+	 **/
+	p._multiplyMatrix = function(matrix) {
+		var this$1 = this;
+
+		var i, j, k, col = [];
+
+		for (i=0;i<5;i++) {
+			for (j=0;j<5;j++) {
+				col[j] = this$1[j+i*5];
+			}
+			for (j=0;j<5;j++) {
+				var val=0;
+				for (k=0;k<5;k++) {
+					val += matrix[j+k*5]*col[k];
+				}
+				this$1[j+i*5] = val;
+			}
+		}
+	};
+
+	/**
+	 * Make sure values are within the specified range, hue has a limit of 180, brightness is 255, others are 100.
+	 * @method _cleanValue
+	 * @param {Number} value The raw number
+	 * @param {Number} limit The maximum that the number can be. The minimum is the limit * -1.
+	 * @protected
+	 **/
+	p._cleanValue = function(value, limit) {
+		return Math.min(limit,Math.max(-limit,value));
+	};
+
+	/**
+	 * Makes sure matrixes are 5x5 (25 long).
+	 * @method _fixMatrix
+	 * @param {Array} matrix
+	 * @protected
+	 **/
+	p._fixMatrix = function(matrix) {
+		if (matrix instanceof ColorMatrix) { matrix = matrix.toArray(); }
+		if (matrix.length < ColorMatrix.LENGTH) {
+			matrix = matrix.slice(0,matrix.length).concat(ColorMatrix.IDENTITY_MATRIX.slice(matrix.length,ColorMatrix.LENGTH));
+		} else if (matrix.length > ColorMatrix.LENGTH) {
+			matrix = matrix.slice(0,ColorMatrix.LENGTH);
+		}
+		return matrix;
+	};
+
+
+	createjs.ColorMatrix = ColorMatrix;
+}());
+
+//##############################################################################
+// ColorMatrixFilter.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+	 * Allows you to carry out complex color operations such as modifying saturation, brightness, or inverting. See the
+	 * {{#crossLink "ColorMatrix"}}{{/crossLink}} for more information on changing colors. For an easier color transform,
+	 * consider the {{#crossLink "ColorFilter"}}{{/crossLink}}.
+	 *
+	 * <h4>Example</h4>
+	 * This example creates a red circle, inverts its hue, and then saturates it to brighten it up.
+	 *
+	 *      var shape = new createjs.Shape().set({x:100,y:100});
+	 *      shape.graphics.beginFill("#ff0000").drawCircle(0,0,50);
+	 *
+	 *      var matrix = new createjs.ColorMatrix().adjustHue(180).adjustSaturation(100);
+	 *      shape.filters = [
+	 *          new createjs.ColorMatrixFilter(matrix)
+	 *      ];
+	 *
+	 *      shape.cache(-50, -50, 100, 100);
+	 *
+	 * See {{#crossLink "Filter"}}{{/crossLink}} for an more information on applying filters.
+	 * @class ColorMatrixFilter
+	 * @constructor
+	 * @extends Filter
+	 * @param {Array | ColorMatrix} matrix A 4x5 matrix describing the color operation to perform. See also the {{#crossLink "ColorMatrix"}}{{/crossLink}}
+	 * class.
+	 **/
+	function ColorMatrixFilter(matrix) {
+		this.Filter_constructor();
+
+	// public properties:
+		/**
+		 * A 4x5 matrix describing the color operation to perform. See also the {{#crossLink "ColorMatrix"}}{{/crossLink}}
+		 * @property matrix
+		 * @type Array | ColorMatrix
+		 **/
+		this.matrix = matrix;
+
+		this.FRAG_SHADER_BODY = (
+			"uniform mat4 uColorMatrix;" +
+			"uniform vec4 uColorMatrixOffset;" +
+
+			"void main(void) {" +
+				"vec4 color = texture2D(uSampler, vRenderCoord);" +
+
+				"mat4 m = uColorMatrix;" +
+				"vec4 newColor = vec4(0,0,0,0);" +
+				"newColor.r = color.r*m[0][0] + color.g*m[0][1] + color.b*m[0][2] + color.a*m[0][3];" +
+				"newColor.g = color.r*m[1][0] + color.g*m[1][1] + color.b*m[1][2] + color.a*m[1][3];" +
+				"newColor.b = color.r*m[2][0] + color.g*m[2][1] + color.b*m[2][2] + color.a*m[2][3];" +
+				"newColor.a = color.r*m[3][0] + color.g*m[3][1] + color.b*m[3][2] + color.a*m[3][3];" +
+
+				"gl_FragColor = newColor + uColorMatrixOffset;" +
+			"}"
+		);
+	}
+	var p = createjs.extend(ColorMatrixFilter, createjs.Filter);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+	/** docced in super class **/
+	p.shaderParamSetup = function(gl, stage, shaderProgram) {
+		var mat = this.matrix;
+		var colorMatrix = new Float32Array([
+			mat[0],mat[1],mat[2],mat[3],
+			mat[5],mat[6],mat[7],mat[8],
+			mat[10],mat[11],mat[12],mat[13],
+			mat[15],mat[16],mat[17],mat[18]
+		]);
+
+		gl.uniformMatrix4fv(
+			gl.getUniformLocation(shaderProgram, "uColorMatrix"),
+			false, colorMatrix
+		);
+		gl.uniform4f(
+			gl.getUniformLocation(shaderProgram, "uColorMatrixOffset"),
+			mat[4]/255, mat[9]/255, mat[14]/255, mat[19]/255
+		);
+	};
+
+// public methods:
+	/** docced in super class **/
+	p.toString = function() {
+		return "[ColorMatrixFilter]";
+	};
+
+	/** docced in super class **/
+	p.clone = function() {
+		return new ColorMatrixFilter(this.matrix);
+	};
+
+// private methods:
+	/** docced in super class **/
+	p._applyFilter = function(imageData) { 
+		var data = imageData.data;
+		var l = data.length;
+		var r,g,b,a;
+		var mtx = this.matrix;
+		var m0 =  mtx[0],  m1 =  mtx[1],  m2 =  mtx[2],  m3 =  mtx[3],  m4 =  mtx[4];
+		var m5 =  mtx[5],  m6 =  mtx[6],  m7 =  mtx[7],  m8 =  mtx[8],  m9 =  mtx[9];
+		var m10 = mtx[10], m11 = mtx[11], m12 = mtx[12], m13 = mtx[13], m14 = mtx[14];
+		var m15 = mtx[15], m16 = mtx[16], m17 = mtx[17], m18 = mtx[18], m19 = mtx[19];
+
+		for (var i=0; i<l; i+=4) {
+			r = data[i];
+			g = data[i+1];
+			b = data[i+2];
+			a = data[i+3];
+			data[i] = r*m0+g*m1+b*m2+a*m3+m4; // red
+			data[i+1] = r*m5+g*m6+b*m7+a*m8+m9; // green
+			data[i+2] = r*m10+g*m11+b*m12+a*m13+m14; // blue
+			data[i+3] = r*m15+g*m16+b*m17+a*m18+m19; // alpha
+		}
+		return true;
+	};
+
+	createjs.ColorMatrixFilter = createjs.promote(ColorMatrixFilter, "Filter");
+}());
+
+//##############################################################################
+// Touch.js
+//##############################################################################
+
+this.createjs = this.createjs||{};
+
+(function() {
+	"use strict";
+
+
+// constructor:
+	/**
+ * Global utility for working with multi-touch enabled devices in EaselJS. Currently supports W3C Touch API (iOS and
+ * modern Android browser) and the Pointer API (IE), including ms-prefixed events in IE10, and unprefixed in IE11.
+ *
+ * Ensure that you {{#crossLink "Touch/disable"}}{{/crossLink}} touch when cleaning up your application. You do not have
+ * to check if touch is supported to enable it, as it will fail gracefully if it is not supported.
+ *
+ * <h4>Example</h4>
+ *
+ *      var stage = new createjs.Stage("canvasId");
+ *      createjs.Touch.enable(stage);
+ *
+ * <strong>Note:</strong> It is important to disable Touch on a stage that you are no longer using:
+ *
+ *      createjs.Touch.disable(stage);
+ *
+ * @class Touch
+ * @static
+ **/
+	function Touch() {
+		throw "Touch cannot be instantiated";
+	}
+
+
+// public static methods:
+	/**
+	 * Returns `true` if touch is supported in the current browser.
+	 * @method isSupported
+	 * @return {Boolean} Indicates whether touch is supported in the current browser.
+	 * @static
+	 **/
+	Touch.isSupported = function() {
+		return	!!(('ontouchstart' in window) // iOS & Android
+			|| (window.navigator['msPointerEnabled'] && window.navigator['msMaxTouchPoints'] > 0) // IE10
+			|| (window.navigator['pointerEnabled'] && window.navigator['maxTouchPoints'] > 0)); // IE11+
+	};
+
+	/**
+	 * Enables touch interaction for the specified EaselJS {{#crossLink "Stage"}}{{/crossLink}}. Currently supports iOS
+	 * (and compatible browsers, such as modern Android browsers), and IE10/11. Supports both single touch and
+	 * multi-touch modes. Extends the EaselJS {{#crossLink "MouseEvent"}}{{/crossLink}} model, but without support for
+	 * double click or over/out events. See the MouseEvent {{#crossLink "MouseEvent/pointerId:property"}}{{/crossLink}}
+	 * for more information.
+	 * @method enable
+	 * @param {Stage} stage The {{#crossLink "Stage"}}{{/crossLink}} to enable touch on.
+	 * @param {Boolean} [singleTouch=false] If `true`, only a single touch will be active at a time.
+	 * @param {Boolean} [allowDefault=false] If `true`, then default gesture actions (ex. scrolling, zooming) will be
+	 * allowed when the user is interacting with the target canvas.
+	 * @return {Boolean} Returns `true` if touch was successfully enabled on the target stage.
+	 * @static
+	 **/
+	Touch.enable = function(stage, singleTouch, allowDefault) {
+		if (!stage || !stage.canvas || !Touch.isSupported()) { return false; }
+		if (stage.__touch) { return true; }
+
+		// inject required properties on stage:
+		stage.__touch = {pointers:{}, multitouch:!singleTouch, preventDefault:!allowDefault, count:0};
+
+		// note that in the future we may need to disable the standard mouse event model before adding
+		// these to prevent duplicate calls. It doesn't seem to be an issue with iOS devices though.
+		if ('ontouchstart' in window) { Touch._IOS_enable(stage); }
+		else if (window.navigator['msPointerEnabled'] || window.navigator["pointerEnabled"]) { Touch._IE_enable(stage); }
+		return true;
+	};
+
+	/**
+	 * Removes all listeners that were set up when calling `Touch.enable()` on a stage.
+	 * @method disable
+	 * @param {Stage} stage The {{#crossLink "Stage"}}{{/crossLink}} to disable touch on.
+	 * @static
+	 **/
+	Touch.disable = function(stage) {
+		if (!stage) { return; }
+		if ('ontouchstart' in window) { Touch._IOS_disable(stage); }
+		else if (window.navigator['msPointerEnabled'] || window.navigator["pointerEnabled"]) { Touch._IE_disable(stage); }
+		
+		delete stage.__touch;
+	};
+
+
+// Private static methods:
+	/**
+	 * @method _IOS_enable
+	 * @protected
+	 * @param {Stage} stage
+	 * @static
+	 **/
+	Touch._IOS_enable = function(stage) {
+		var canvas = stage.canvas;
+		var f = stage.__touch.f = function(e) { Touch._IOS_handleEvent(stage,e); };
+		canvas.addEventListener("touchstart", f, false);
+		canvas.addEventListener("touchmove", f, false);
+		canvas.addEventListener("touchend", f, false);
+		canvas.addEventListener("touchcancel", f, false);
+	};
+
+	/**
+	 * @method _IOS_disable
+	 * @protected
+	 * @param {Stage} stage
+	 * @static
+	 **/
+	Touch._IOS_disable = function(stage) {
+		var canvas = stage.canvas;
+		if (!canvas) { return; }
+		var f = stage.__touch.f;
+		canvas.removeEventListener("touchstart", f, false);
+		canvas.removeEventListener("touchmove", f, false);
+		canvas.removeEventListener("touchend", f, false);
+		canvas.removeEventListener("touchcancel", f, false);
+	};
+
+	/**
+	 * @method _IOS_handleEvent
+	 * @param {Stage} stage
+	 * @param {Object} e The event to handle
+	 * @protected
+	 * @static
+	 **/
+	Touch._IOS_handleEvent = function(stage, e) {
+		var this$1 = this;
+
+		if (!stage) { return; }
+		if (stage.__touch.preventDefault) { e.preventDefault&&e.preventDefault(); }
+		var touches = e.changedTouches;
+		var type = e.type;
+		for (var i= 0,l=touches.length; i<l; i++) {
+			var touch = touches[i];
+			var id = touch.identifier;
+			if (touch.target != stage.canvas) { continue; }
+
+			if (type == "touchstart") {
+				this$1._handleStart(stage, id, e, touch.pageX, touch.pageY);
+			} else if (type == "touchmove") {
+				this$1._handleMove(stage, id, e, touch.pageX, touch.pageY);
+			} else if (type == "touchend" || type == "touchcancel") {
+				this$1._handleEnd(stage, id, e);
+			}
+		}
+	};
+
+	/**
+	 * @method _IE_enable
+	 * @protected
+	 * @param {Stage} stage
+	 * @static
+	 **/
+	Touch._IE_enable = function(stage) {
+		var canvas = stage.canvas;
+		var f = stage.__touch.f = function(e) { Touch._IE_handleEvent(stage,e); };
+
+		if (window.navigator["pointerEnabled"] === undefined) {
+			canvas.addEventListener("MSPointerDown", f, false);
+			window.addEventListener("MSPointerMove", f, false);
+			window.addEventListener("MSPointerUp", f, false);
+			window.addEventListener("MSPointerCancel", f, false);
+			if (stage.__touch.preventDefault) { canvas.style.msTouchAction = "none"; }
+		} else {
+			canvas.addEventListener("pointerdown", f, false);
+			window.addEventListener("pointermove", f, false);
+			window.addEventListener("pointerup", f, false);
+			window.addEventListener("pointercancel", f, false);
+			if (stage.__touch.preventDefault) { canvas.style.touchAction = "none"; }
+
+		}
+		stage.__touch.activeIDs = {};
+	};
+
+	/**
+	 * @method _IE_disable
+	 * @protected
+	 * @param {Stage} stage
+	 * @static
+	 **/
+	Touch._IE_disable = function(stage) {
+		var f = stage.__touch.f;
+
+		if (window.navigator["pointerEnabled"] === undefined) {
+			window.removeEventListener("MSPointerMove", f, false);
+			window.removeEventListener("MSPointerUp", f, false);
+			window.removeEventListener("MSPointerCancel", f, false);
+			if (stage.canvas) {
+				stage.canvas.removeEventListener("MSPointerDown", f, false);
+			}
+		} else {
+			window.removeEventListener("pointermove", f, false);
+			window.removeEventListener("pointerup", f, false);
+			window.removeEventListener("pointercancel", f, false);
+			if (stage.canvas) {
+				stage.canvas.removeEventListener("pointerdown", f, false);
+			}
+		}
+	};
+
+	/**
+	 * @method _IE_handleEvent
+	 * @param {Stage} stage
+	 * @param {Object} e The event to handle.
+	 * @protected
+	 * @static
+	 **/
+	Touch._IE_handleEvent = function(stage, e) {
+		if (!stage) { return; }
+		if (stage.__touch.preventDefault) { e.preventDefault && e.preventDefault(); }
+		var type = e.type;
+		var id = e.pointerId;
+		var ids = stage.__touch.activeIDs;
+
+		if (type == "MSPointerDown" || type == "pointerdown") {
+			if (e.srcElement != stage.canvas) { return; }
+			ids[id] = true;
+			this._handleStart(stage, id, e, e.pageX, e.pageY);
+		} else if (ids[id]) { // it's an id we're watching
+			if (type == "MSPointerMove" || type == "pointermove") {
+				this._handleMove(stage, id, e, e.pageX, e.pageY);
+			} else if (type == "MSPointerUp" || type == "MSPointerCancel"
+					|| type == "pointerup" || type == "pointercancel") {
+				delete(ids[id]);
+				this._handleEnd(stage, id, e);
+			}
+		}
+	};
+
+	/**
+	 * @method _handleStart
+	 * @param {Stage} stage
+	 * @param {String|Number} id
+	 * @param {Object} e
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @protected
+	 **/
+	Touch._handleStart = function(stage, id, e, x, y) {
+		var props = stage.__touch;
+		if (!props.multitouch && props.count) { return; }
+		var ids = props.pointers;
+		if (ids[id]) { return; }
+		ids[id] = true;
+		props.count++;
+		stage._handlePointerDown(id, e, x, y);
+	};
+
+	/**
+	 * @method _handleMove
+	 * @param {Stage} stage
+	 * @param {String|Number} id
+	 * @param {Object} e
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @protected
+	 **/
+	Touch._handleMove = function(stage, id, e, x, y) {
+		if (!stage.__touch.pointers[id]) { return; }
+		stage._handlePointerMove(id, e, x, y);
+	};
+
+	/**
+	 * @method _handleEnd
+	 * @param {Stage} stage
+	 * @param {String|Number} id
+	 * @param {Object} e
+	 * @protected
+	 **/
+	Touch._handleEnd = function(stage, id, e) {
+		// TODO: cancel should be handled differently for proper UI (ex. an up would trigger a click, a cancel would more closely resemble an out).
+		var props = stage.__touch;
+		var ids = props.pointers;
+		if (!ids[id]) { return; }
+		props.count--;
+		stage._handlePointerUp(id, e, true);
+		delete(ids[id]);
+	};
+
+
+	createjs.Touch = Touch;
+}());
+
+//##############################################################################
+// version.js
+//##############################################################################
+
+this.createjs = this.createjs || {};
+
+(function() {
+	"use strict";
+
+	/**
+	 * Static class holding library specific information such as the version and buildDate of
+	 * the library.
+	 * @class EaselJS
+	 **/
+	var s = createjs.EaselJS = createjs.EaselJS || {};
+
+	/**
+	 * The version string for this release.
+	 * @property version
+	 * @type String
+	 * @static
+	 **/
+	s.version = /*=version*/"1.0.0"; // injected by build process
+
+	/**
+	 * The build date for this release in UTC format.
+	 * @property buildDate
+	 * @type String
+	 * @static
+	 **/
+	s.buildDate = /*=date*/"Thu, 14 Sep 2017 19:47:53 GMT"; // injected by build process
+
+})();
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  scopeId,
+  cssModules
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  // inject cssModules
+  if (cssModules) {
+    var computed = options.computed || (options.computed = {})
+    Object.keys(cssModules).forEach(function (key) {
+      var module = cssModules[key]
+      computed[key] = function () { return module }
+    })
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_normalize_alignment_js__ = __webpack_require__(23);
+/*
+|--------------------------------------------------------------------------
+| EaselAlign
+|--------------------------------------------------------------------------
+| This mixin provides alignment support to a component. It handles the
+| `align` prop.
+|
+| Any component mixing this in should also mix in EaselDisplayObject.
+|
+| A component that mixes this in should provide:
+| * getAlignDimensions - A method that returns a Promise that resolves with
+|                        an object formatted as `{x, y, width, height}`.
+|
+*/
+
+
+
+
+/* harmony default export */ exports["a"] = {
+    props: ['align'],
+    watch: {
+        align: function align() {
+            if (this.component) {
+                this.updateAlign();
+            }
+        },
+    },
+    mounted: function mounted() {
+        var this$1 = this;
+
+        this.$watch('component', function () { return this$1.updateAlign(); });
+    },
+    computed: {
+        /**
+         * Normalizes the `align` prop's value by ensuring it is an array and
+         * horizontal value comes before vertical value.
+         * @return {Array}
+         */
+        normalizedAlign: function normalizedAlign() {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__libs_normalize_alignment_js__["a" /* default */])(this.align || ['', '']);
+        },
+    },
+    methods: {
+        /**
+         * Sets the offset values for this element to those set by the align
+         * prop. Returns a Promise that resolves with dimensions that were
+         * passed to this method.
+         * @return Promise
+         */
+        updateAlign: function updateAlign() {
+            var this$1 = this;
+
+            return this.remainInvisibleUntil(
+                this.getAlignDimensions()
+                    // .then((dimensions) => this.$nextTick().then(() => dimensions))
+                    .then(
+                        function (dimensions) {
+                            var w = dimensions.width,
+                                h = dimensions.height,
+                                hAlign = this$1.normalizedAlign[0] || 'left',
+                                vAlign = this$1.normalizedAlign[1] || 'top';
+                            if (hAlign === 'left') {
+                                this$1.component.regX = 0;
+                            } else if (hAlign === 'center') {
+                                this$1.component.regX = w / 2;
+                            } else if (hAlign === 'right') {
+                                this$1.component.regX = w;
+                            }
+                            if (vAlign === 'top') {
+                                this$1.component.regY = 0;
+                            } else if (vAlign === 'center') {
+                                this$1.component.regY = h / 2;
+                            } else if (vAlign === 'bottom') {
+                                this$1.component.regY = h;
+                            }
+                            return dimensions;
+                        },
+                        function (error) {
+                            console.error('Cannot align:', error);
+                            throw error;
+                        }
+                    )
+            );
+        },
+        /**
+         * Returns a Promise that resolves with an object like
+         * `{width, height}` so that alignment can be calculated. Subclasses
+         * must define this method.
+         * @return {Object}
+         */
+        getAlignDimensions: function getAlignDimensions() {
+            // Components should override this
+            throw new Error('EaselAlign components must define a `getAlignDimensions` method');
+        },
+    },
+};
+
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ |-----------------------------------------------------------------------------
+ | EaselCache
+ |-----------------------------------------------------------------------------
+ | This mixin provides cache support to a component. It handles the `cache`
+ | prop at initialization and any updates.
+ |
+ | It operates transparently, so it should be impossible to tell it's active
+ | except that the code may operate more speedily.
+ |
+ | Any component mixing this in should also mix in EaselDisplayObject.
+ |
+ | A component that mixes this in should provide:
+ | * updatesEaselCache - A top-level Array of the names of props or properties
+ |                       to watch for changes that should trigger a cache
+ |                       refresh
+ | * getCacheBounds    - A method that returns a Promise which resolves with
+ |                       an object formatted as `{x, y, width, height}`.
+ |
+ */
+
+/* harmony default export */ exports["a"] = {
+    props: ['cache'],
+    /**
+     * Components that mix this in should replace this with an array of props
+     * or properties that should trigger cache refreshes when they change.
+     * @type {Array}
+     */
+    updatesEaselCache: ['scale'],
+    data: function data() {
+        return {
+            cacheStarted: false,
+            cacheNeedsUpdate: false,
+            beforeCaches: [],
+            cacheWhens: [],
+        };
+    },
+    mounted: function mounted() {
+        var this$1 = this;
+
+        this.updateCacheOnChange = function () {
+            this$1.cacheNeedsUpdate = true;
+            this$1.setParentCacheNeedsUpdate();
+        };
+        var setupOnChange = function () {
+            if (this$1.component) {
+                this$1.component.on('change', this$1.updateCacheOnChange);
+            }
+        };
+        window.addEventListener('resize', this.updateCacheOnChange);
+        setupOnChange();
+        this.$watch('component', setupOnChange);
+        this.$options.updatesEaselCache.forEach(function (prop) {
+            this$1.$watch(prop, function () { return this$1.cacheNeedsUpdate = true; });
+        });
+        Object.keys(this.$options.props).forEach(function (prop) {
+            this$1.$watch(prop, function () { return this$1.setParentCacheNeedsUpdate(); });
+        });
+        this.$nextTick(function () { return this$1.cacheInit(); });
+    },
+    destroyed: function destroyed() {
+        window.removeEventListener('resize', this.updateCacheOnChange);
+    },
+    watch: {
+        shouldCache: function shouldCache() {
+            if (this.shouldCache) {
+                this.cacheInit();
+            } else {
+                this.cacheDestroy();
+            }
+        },
+        cacheNeedsUpdate: function cacheNeedsUpdate() {
+            var this$1 = this;
+
+            if (this.cacheNeedsUpdate && this.shouldCache) {
+                this.$nextTick(function () {
+                    if (this$1.component && this$1.component.cacheCanvas) {
+                        this$1.cacheDestroy();
+                        this$1.cacheInit();
+                        // Didn't use updateCache() because it has a bug in
+                        // which it gives a new cache the same size as the
+                        // existing cache.
+                    }
+                });
+            }
+        },
+    },
+    computed: {
+        shouldCache: function shouldCache$1() {
+            return this.cache
+                || this.cacheWhens.reduce(function (result, callback) { return result || callback(); }, false);
+        },
+        cacheScale: function cacheScale() {
+            var scale = this.scale || 1;
+            var parent = this.easelParent;
+            while (parent) {
+                if (parent.viewportScale) {
+                    scale *= parent.viewportScale.scaleX;
+                } else {
+                    scale *= parent.scale || 1;
+                }
+                parent = parent.easelParent;
+            }
+            return scale;
+        },
+    },
+    methods: {
+        beforeCache: function beforeCache(callback) {
+            this.beforeCaches.push(callback);
+        },
+        triggerBeforeCaches: function triggerBeforeCaches() {
+            this.beforeCaches.forEach(function (callback) { return callback(); });
+        },
+        cacheWhen: function cacheWhen(callback) {
+            this.cacheWhens.push(callback);
+        },
+        cacheInit: function cacheInit() {
+            var this$1 = this;
+
+            if (this.shouldCache) {
+                this.getCacheBounds()
+                    .then(function (ref) {
+                        var x = ref.x;
+                        var y = ref.y;
+                        var width = ref.width;
+                        var height = ref.height;
+
+                        this$1.triggerBeforeCaches();
+
+                        this$1.easelCanvas.createCanvas(function () {
+                            this$1.component.cache(x, y, width, height, this$1.cacheScale * window.devicePixelRatio);
+                        });
+                        this$1.cacheStarted = true;
+                        this$1.cacheNeedsUpdate = false;
+                    })
+                    .catch(function (error) { return console.error(("Cannot cache: " + error), error); });
+            }
+        },
+        cacheDestroy: function cacheDestroy() {
+            this.component.uncache();
+            this.cacheStarted = false;
+            this.cacheNeedsUpdate = false;
+        },
+        setParentCacheNeedsUpdate: function setParentCacheNeedsUpdate() {
+            if (this.easelParent && 'cacheNeedsUpdate' in this.easelParent) {
+                this.easelParent.cacheNeedsUpdate = true;
+            }
+        },
+        /**
+         * Get the bounds of a rectangle containing the element. This must be
+         * defined by the subclass. It must return `{x, y, width, height}`.
+         * These values are passed directly to EaselJS's cache() method. See
+         * its documentation.
+         * @return {Object}
+         */
+        getCacheBounds: function getCacheBounds() {
+            return Promise.reject('EaselCache components must define a `getCacheBounds` method');
+        },
+        /**
+         * Get the cache bounds as they would be seen from the parent's
+         * perspective, and large enough to contain the element rotated to any
+         * degree along with its shadow, if any.
+         * EaselContainer uses this to calculate its own cache bounds.
+         * @return {object}
+         */
+        getRelativeCacheBounds: function getRelativeCacheBounds() {
+            var this$1 = this;
+
+            return this.getCacheBounds()
+                .then(function (bounds) {
+                    var x = ((this$1.x || 0) - this$1.component.regX) + bounds.x;
+                    var y = ((this$1.y || 0) - this$1.component.regY) + bounds.y;
+                    return {
+                        x: x,
+                        y: y,
+                        width: bounds.width,
+                        height: bounds.height,
+                    };
+                })
+                .then(function (bounds) { return this$1.expandForShadow(bounds); })
+                .then(function (bounds) { return this$1.getSmallestSquare(bounds); })
+        },
+        /**
+         * Return the bounds of the smallest square that can contain the given
+         * bounds rotated to any degree.
+         * @param  {Object} bounds
+         * @return {Object}
+         */
+        getSmallestSquare: function getSmallestSquare(ref) {
+            var x = ref.x;
+            var y = ref.y;
+            var width = ref.width;
+            var height = ref.height;
+
+            // Use width and height as the legs of a right triangle and figure
+            // out the hypotenuse. Thanks, Pythagoras.
+            // The hypotenuse is the longest possible length that the object
+            // could extend.
+            var hypotenuse = Math.sqrt(
+                Math.pow(width, 2)
+                + Math.pow(height, 2)
+            );
+            return {
+                x: -hypotenuse,
+                y: -hypotenuse,
+                width: hypotenuse * 2,
+                height: hypotenuse * 2,
+            };
+
+        },
+        /**
+         * Return the smallest bounds that can contain both bounds
+         * @param  {Object} a
+         * @param  {Object} b
+         * @return {Object}
+         */
+        getSmallestCombination: function getSmallestCombination(a, b) {
+            var x = Math.min(a.x, b.x);
+            var y = Math.min(a.y, b.y);
+            var width = Math.max(
+                (b.x - x) + b.width,
+                (a.x - x) + a.width
+            );
+            var height = Math.max(
+                (b.y - y) + b.height,
+                (a.y - y) + a.height
+            );
+            return {
+                x: x,
+                y: y,
+                width: width,
+                height: height,
+            };
+        },
+        /**
+         * If a shadow exists, add its dimensions as padding on all sides
+         * @return {Object}
+         */
+        expandForShadow: function expandForShadow(bounds) {
+            if (!this.shadow) {
+                return bounds;
+            }
+            // Expand bounds to cover the shadow offsets and blurriness
+            // in every direction. Needs to be every direction, since
+            // rotation is applied before shadow.
+            var ref = this.shadow;
+            var color = ref[0];
+            var offsetX = ref[1];
+            var offsetY = ref[2];
+            var blurriness = ref[3];
+            // Find the longest possible edge and expand the bounds in
+            // every direction. We cannot be less naive, because we
+            // want to account for every rotation.
+            var padding = Math.max(offsetX, offsetY) + blurriness;
+            return {
+                x: bounds.x - padding,
+                y: bounds.y - padding,
+                width: bounds.width + padding * 2,
+                height: bounds.height + padding * 2,
+            };
+        },
+    },
+};
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__libs_easel_event_binder_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__libs_PromiseParty_js__ = __webpack_require__(22);
+/*
+|--------------------------------------------------------------------------
+| EaselDisplayObject
+|--------------------------------------------------------------------------
+|
+| This mixin gives an Easel Vue component the required elements to be
+| visible on the canvas.
+|
+*/
+
+
+
+
+
+var passthroughProps = ['rotation', 'cursor', 'name'];
+
+/* harmony default export */ exports["a"] = {
+    inject: ['easelParent', 'easelCanvas'],
+    props: {
+        x: {},
+        y: {},
+        regX: {},
+        regY: {},
+        flip: {},
+        rotation: {},
+        scale: {},
+        alpha: {},
+        shadow: {},
+        cursor: {},
+        visible: {
+            default: true,
+        },
+        name: {},
+    },
+    data: function data() {
+        var this$1 = this;
+
+        return {
+            component: null,
+            forceInvisiblePromises: new __WEBPACK_IMPORTED_MODULE_2__libs_PromiseParty_js__["a" /* default */]()
+                .on('change', function (count) { return this$1.forceInvisible = count > 0; }),
+            forceInvisible: false,
+        };
+    },
+    mounted: function mounted() {
+        var this$1 = this;
+
+        this.$watch('component', function (now, old) {
+            if (old) {
+                this$1.displayObjectBreakdown(old);
+            }
+            if (now) {
+                this$1.displayObjectInit();
+            }
+        });
+        // These just get copied directly onto the component; no funny business
+        passthroughProps.forEach(function (prop) {
+            this$1.$watch(prop, function () {
+                if (this$1.component) {
+                    this$1.component[prop] = this$1[prop];
+                }
+            });
+        });
+        this.$watch('x', function () {
+            if (this$1.component) {
+                this$1.component.x = this$1.x || 0;
+            }
+        });
+        this.$watch('y', function () {
+            if (this$1.component) {
+                this$1.component.y = this$1.y || 0;
+            }
+        });
+        this.$watch('regX', function () {
+            if (this$1.component) {
+                this$1.component.regX = this$1.regX || 0;
+            }
+        });
+        this.$watch('regY', function () {
+            if (this$1.component) {
+                this$1.component.regY = this$1.regY || 0;
+            }
+        });
+        this.$watch('flip', function () {
+            if (this$1.component) {
+                this$1.updateScales();
+            }
+        });
+        this.$watch('scale', function () {
+            if (this$1.component) {
+                this$1.updateScales();
+            }
+        });
+        this.$watch('alpha', function () {
+            if (this$1.component) {
+                this$1.updateAlpha();
+            }
+        });
+        this.$watch('shadow', function () {
+            if (this$1.component) {
+                this$1.updateShadow();
+            }
+        });
+        this.$watch('shouldBeVisible', function () {
+            if (this$1.component) {
+                this$1.updateVisibility();
+            }
+        });
+    },
+    computed: {
+        shouldBeVisible: function shouldBeVisible() {
+            return this.visible && !this.forceInvisible;
+        },
+    },
+    destroyed: function destroyed() {
+        this.displayObjectBreakdown();
+    },
+    methods: {
+        displayObjectInit: function displayObjectInit() {
+            var this$1 = this;
+
+            __WEBPACK_IMPORTED_MODULE_0__libs_easel_event_binder_js__["a" /* default */].bindEvents(this, this.component);
+            this.component.x = this.x || 0;
+            this.component.y = this.y || 0;
+            passthroughProps.forEach(function (prop) {
+                this$1.component[prop] = this$1[prop];
+            });
+            this.updateScales();
+            this.updateAlpha();
+            this.updateShadow();
+            this.updateVisibility();
+            this.easelParent.addChild(this);
+        },
+        displayObjectBreakdown: function displayObjectBreakdown(easelComponent) {
+            if ( easelComponent === void 0 ) easelComponent = null;
+
+            this.easelParent.removeChild(this, easelComponent);
+        },
+        updateScales: function updateScales() {
+            if (this.component) {
+                var scale = this.scale || 1;
+                this.component.scaleX = this.flip === 'horizontal' || this.flip === 'both' ? -scale : scale;
+                this.component.scaleY = this.flip === 'vertical' || this.flip === 'both' ? -scale : scale;
+            }
+        },
+        updateAlpha: function updateAlpha() {
+            this.component.alpha = isNaN(this.alpha) || this.alpha === null ? 1 : this.alpha;
+        },
+        updateShadow: function updateShadow() {
+            if (this.shadow) {
+                this.component.shadow = new __WEBPACK_IMPORTED_MODULE_1__easeljs_easel_js__["a" /* default */].Shadow(this.shadow[0], this.shadow[1], this.shadow[2], this.shadow[3]);
+            } else {
+                this.component.shadow = null;
+            }
+        },
+        updateVisibility: function updateVisibility() {
+            this.component.visible = this.shouldBeVisible;
+        },
+        /**
+         * Force visible = false until this promise has resolved or rejected.
+         * Returns a Promise that resolves when the given one does.
+         * @param  {Promise} promise
+         * @return {Promise}
+         */
+        remainInvisibleUntil: function remainInvisibleUntil(promise) {
+            this.forceInvisiblePromises.add(promise);
+            return promise;
+        },
+    },
+};
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__filters_js__ = __webpack_require__(7);
+
+
+
+var build = __WEBPACK_IMPORTED_MODULE_1__filters_js__["a" /* default */].build.bind(__WEBPACK_IMPORTED_MODULE_1__filters_js__["a" /* default */]);
+
+/* harmony default export */ exports["a"] = {
+    props: ['filters'],
+    mounted: function mounted() {
+        var this$1 = this;
+
+        this.cacheWhen(function () { return this$1.filters && this$1.filters.length > 0; });
+        this.beforeCache(function () {
+            if (this$1.filters && this$1.filters.length > 0) {
+                this$1.component.filters = this$1.filters.map(build);
+            } else {
+                this$1.component.filters = null;
+            }
+        });
+    },
+};
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ exports["a"] = getDimensionsFromGetBounds;
+
+function getDimensionsFromGetBounds(component) {
+    return new Promise(function (resolve, error) {
+        var getBounds = function () {
+            try {
+                if (!component.component) {
+                    // Component is uninitialized or went away, abandon.
+                    clearInterval(waiting);
+                    reject('No component available to getBounds');
+                } else if (component.component.getBounds()) {
+                    // Got the bounds, resolve with them
+                    clearInterval(waiting);
+                    var ref = component.component.getBounds();
+                    var x = ref.x;
+                    var y = ref.y;
+                    var width = ref.width;
+                    var height = ref.height;
+                    resolve({x: x, y: y, width: width, height: height});
+                }
+                // else keep waiting...
+            } catch (e) {
+                // trouble! quit trying
+                clearInterval(waiting);
+                throw e;
+            }
+        }
+        var waiting = setInterval(getBounds, 10);
+        getBounds();
+    });
+};
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__filters_FilterSet_js__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filters_ColorMatrixFilter_js__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__filters_PixelStrokeFilter_js__ = __webpack_require__(20);
+
+
+
+
+
+var filters = new __WEBPACK_IMPORTED_MODULE_1__filters_FilterSet_js__["a" /* default */]();
+
+filters.register('BlurFilter', __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].BlurFilter);
+filters.register('ColorFilter', __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].ColorFilter);
+filters.register('ColorMatrixFilter', __WEBPACK_IMPORTED_MODULE_2__filters_ColorMatrixFilter_js__["a" /* default */]);
+filters.register('PixelStrokeFilter', __WEBPACK_IMPORTED_MODULE_3__filters_PixelStrokeFilter_js__["a" /* default */]);
+
+/* harmony default export */ exports["a"] = filters;
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_intersection__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_intersection___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_intersection__);
+/* unused harmony export eventTypes */
+/*
+|--------------------------------------------------------------------------
+| easel-event-binder.js
+|--------------------------------------------------------------------------
+|
+| Binds all requested EaselJS events to a Vue component
+|
+*/
+
+// Need to add and test these events for Canvas
+// * drawend
+// * drawstart
+// * mouseenter
+// * mouseleave
+// * stagemousedown
+// * stagemousemove
+// * stagemouseup
+// * tickend
+// * tickstart
+
+
+
+var eventTypes = [
+    'added',
+    'animationend',
+    'change',
+    'click',
+    'dblclick',
+    'mousedown',
+    'mouseout',
+    'mouseover',
+    'pressmove',
+    'pressup',
+    'removed',
+    'rollout',
+    'rollover',
+    'tick',
+];
+
+var componentDemandsEventType = function (component, eventType) {
+    return Boolean(
+        component.$options._parentListeners
+        && component.$options._parentListeners[eventType]
+    );
+};
+
+var augmentEvent = function (component, event) {
+    event.component = component;
+    if (component.easelCanvas && component.easelCanvas.augmentEvent) {
+        event = component.easelCanvas.augmentEvent(event);
+    }
+    return event;
+};
+
+/* harmony default export */ exports["a"] = {
+    bindEvents: function bindEvents(vueComponent, easelComponent) {
+        eventTypes.forEach(function (eventType) {
+            if (!componentDemandsEventType(vueComponent, eventType)) {
+                return;
+            }
+            easelComponent.addEventListener(
+                eventType,
+                function (event) { return vueComponent.$emit(eventType, augmentEvent(vueComponent, event)); }
+            );
+        });
+    }
+};
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_sort_by_dom_js__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_findindex__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_findindex___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_findindex__);
+/*
+|--------------------------------------------------------------------------
+| EaselParent
+|--------------------------------------------------------------------------
+|
+| This mixin lets a Vue component act as a container for an Easel Vue
+| component.
+|
+*/
+
+
+
+
+
+/* harmony default export */ exports["a"] = {
+    provide: function provide() {
+        return {
+            easelParent: this,
+        };
+    },
+    data: function data() {
+        return {
+            // not guaranteed to be in order
+            children: [],
+        };
+    },
+    updated: function updated() {
+        var this$1 = this;
+
+        // runs when the DOM changes
+        this.$nextTick(function () { return this$1.syncEaselChildren(); });
+    },
+    watch: {
+        children: function children() {
+            this.syncEaselChildren();
+        },
+    },
+    methods: {
+        syncEaselChildren: function syncEaselChildren() {
+            var this$1 = this;
+
+            if (this.component) {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__libs_sort_by_dom_js__["a" /* default */])(this.children).forEach(function (vueChild, i) {
+                    var atPosition = this$1.component.numChildren >= i ? this$1.component.getChildAt(i) : null;
+                    if (vueChild.component === atPosition) {
+                        // already there
+                        return;
+                    }
+                    this$1.component.addChildAt(vueChild.component, i);
+                });
+            }
+        },
+        addChild: function addChild(vueChild) {
+            if (!this.hasChild(vueChild)) {
+                this.children.push(vueChild);
+            }
+        },
+        removeChild: function removeChild(vueChild, easelComponent) {
+            if ( easelComponent === void 0 ) easelComponent = null;
+
+            var index = this.indexOfChild(vueChild);
+            if (index < 0) {
+                return false;
+            }
+            this.children.splice(index, 1);
+            if (this.component) {
+                this.component.removeChild(easelComponent || vueChild.component);
+            }
+            return true;
+        },
+        hasChild: function hasChild(vueChild) {
+            return this.indexOfChild(vueChild) > -1;
+        },
+        indexOfChild: function indexOfChild(vueChild) {
+            return __WEBPACK_IMPORTED_MODULE_2_lodash_findindex___default()(this.children, vueChild);
+        },
+    },
+};
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() { return this; })();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(28),
+  /* template */
+  null,
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/ymdkit/Desktop/Compus/vue-easeljs/src/components/EaselBitmap.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-744c5688", Component.options)
+  } else {
+    hotAPI.reload("data-v-744c5688", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(29),
+  /* template */
+  __webpack_require__(37),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/ymdkit/Desktop/Compus/vue-easeljs/src/components/EaselCanvas.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] EaselCanvas.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-f609c736", Component.options)
+  } else {
+    hotAPI.reload("data-v-f609c736", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(30),
+  /* template */
+  __webpack_require__(36),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/ymdkit/Desktop/Compus/vue-easeljs/src/components/EaselContainer.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] EaselContainer.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-9a9eb3f8", Component.options)
+  } else {
+    hotAPI.reload("data-v-9a9eb3f8", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(31),
+  /* template */
+  null,
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/ymdkit/Desktop/Compus/vue-easeljs/src/components/EaselShape.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-02cc86a4", Component.options)
+  } else {
+    hotAPI.reload("data-v-02cc86a4", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(32),
+  /* template */
+  null,
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/ymdkit/Desktop/Compus/vue-easeljs/src/components/EaselSprite.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ede1a95c", Component.options)
+  } else {
+    hotAPI.reload("data-v-ede1a95c", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(33),
+  /* template */
+  __webpack_require__(35),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/ymdkit/Desktop/Compus/vue-easeljs/src/components/EaselSpriteSheet.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] EaselSpriteSheet.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2c4a53dd", Component.options)
+  } else {
+    hotAPI.reload("data-v-2c4a53dd", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(34),
+  /* template */
+  null,
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/ymdkit/Desktop/Compus/vue-easeljs/src/components/EaselText.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7d0892fa", Component.options)
+  } else {
+    hotAPI.reload("data-v-7d0892fa", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+
+
+/**
+ |------------------------
+ | ColorMatrixFilter
+ |------------------------
+ | A version of the ColorMatrixFilter that accepts scalar constructor
+ | parameters for ease-of-use.
+ |
+ | The constructor creates a ColorMatrix using the constructor params and
+ | passes it to the EaselJS ColorMatrixFilter constructor.
+ */
+var ColorMatrixFilter = (function (superclass) {
+    function ColorMatrixFilter(brightness, contrast, saturation, hue) {
+        var matrix = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].ColorMatrix(brightness, contrast, saturation, hue);
+        __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].ColorMatrixFilter.apply(this, [matrix]);
+    }
+
+    if ( superclass ) ColorMatrixFilter.__proto__ = superclass;
+    ColorMatrixFilter.prototype = Object.create( superclass && superclass.prototype );
+    ColorMatrixFilter.prototype.constructor = ColorMatrixFilter;
+
+    return ColorMatrixFilter;
+}(__WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].ColorMatrixFilter));
+
+/* harmony default export */ exports["a"] = ColorMatrixFilter;;
+
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+
+
+var FilterSet = function FilterSet() {
+    this.filters = [];
+};
+
+FilterSet.prototype.register = function register (name, Filter) {
+    if (Filter.prototype.applyFilter) {
+        this.filters[name] = Filter;
+    } else {
+        var prototype = Filter.prototype || Filter.constructor.prototype;
+        if (prototype.adjustContext) {
+            prototype.usesContext = true;
+            prototype.applyFilter = function (ctx, x, y, w, h, tctx, tx, ty) {
+                return this.adjustContext(ctx, x, y, w, h, tctx, tx, ty);
+            };
+        } else if (prototype.adjustImageData) {
+            prototype.usesContext = false;
+            prototype._applyFilter = function (imageData) {
+                return this.adjustImageData(imageData);
+            };
+        } else {
+            throw new Error('Incompatible filter');
+        }
+        for (var field in __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Filter.prototype) {
+            if (!prototype[field]) {
+                prototype[field] = __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Filter.prototype[field];
+            }
+        }
+        this.filters[name] = Filter;
+    }
+};
+
+FilterSet.prototype.build = function build (filterArray) {
+    var filterName = filterArray[0];
+    var args = [null ].concat( filterArray.slice(1));
+    var Filter = this.filters[filterName];
+    if (!Filter) {
+        throw new Error(("No such filter registered: " + filterName));
+    }
+    return new (Function.prototype.bind.apply(Filter, args));
+};
+
+/* harmony default export */ exports["a"] = FilterSet;;
+
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+
+
+/**
+ |------------------------
+ | PixelStrokeFilter
+ |------------------------
+ | Add a stroke to an element
+ */
+
+var calculatedBrushes = {};
+
+var PixelStrokeFilter = function PixelStrokeFilter(stroke, size, options) {
+    if ( stroke === void 0 ) stroke = [];
+    if ( size === void 0 ) size = 1;
+    if ( options === void 0 ) options = {};
+
+    this.strokeRed = stroke[0] || 0;
+    this.strokeGreen = stroke[1] || 0;
+    this.strokeBlue = stroke[2] || 0;
+    this.strokeAlpha = stroke[3] || 255;
+    this.size = size;
+    this.brush = this.calculateBrush(size);
+    this.alphaCache = {};
+    this.options = options;
+};
+
+PixelStrokeFilter.prototype.adjustImageData = function adjustImageData (imageData) {
+        var this$1 = this;
+
+    var ref = this;
+        var strokeRed = ref.strokeRed;
+        var strokeGreen = ref.strokeGreen;
+        var strokeBlue = ref.strokeBlue;
+        var strokeAlpha = ref.strokeAlpha;
+    var antiAlias = typeof this.options.antiAlias === 'undefined' ? true : this.options.antiAlias;
+    var data = imageData.data;
+        var width = imageData.width;
+        var height = imageData.height;
+    var length = data.length;
+    var copy = data.slice(0);
+    var activatePixel = function (x, y, a) {
+        if (x < 0 || y < 0 || x >= width || y >= height) {
+            return;
+        }
+        var i = (y * width + x) * 4;
+        var alpha = antiAlias
+            ? this$1.alphaCache[a] || (this$1.alphaCache[a] = Math.round(Math.floor(strokeAlpha * a)))
+            : strokeAlpha;
+        if (!copy[i + 3] && data[i + 3] < alpha) {
+             data[i + 0] = strokeRed;
+             data[i + 1] = strokeGreen;
+             data[i + 2] = strokeBlue;
+             data[i + 3] = alpha;
+        }
+    };
+    var applyBrush = function (sx, sy) {
+        for (var i = 0; i < this$1.brush.length; i++) {
+            var ref = this$1.brush[i];
+                var y = ref.y;
+                var minX = ref.minX;
+                var maxX = ref.maxX;
+                var a = ref.a;
+            activatePixel(sx + minX, sy + y, a);
+            activatePixel(sx + maxX, sy + y, a);
+            for (var j = minX + 1; j <= maxX - 1; j++) {
+                activatePixel(sx + j, sy + y, 1);
+            }
+        }
+    };
+    for (var x = 0; x < width; x++) {
+        for (var y = 0; y < height; y++) {
+            if (copy[(y * width + x) * 4 + 3] > 0) {
+                applyBrush(x, y);
+            }
+        }
+    }
+    return true;
+};
+
+PixelStrokeFilter.prototype.calculateBrush = function calculateBrush (size) {
+    if (calculatedBrushes[size]) {
+        return calculatedBrushes[size];
+    }
+    /*
+    Imagine a circle like this
+           1 | 2
+         \   /
+       8       3
+       -       -
+       7       4
+         /   \
+           6 | 5
+    */
+    var map = {};
+    // Figure out sector 4
+    for (var y = 0; y <= size; y++) {
+        var tan = y / size;
+        var angle = Math.atan(tan);
+        var cos = Math.cos(angle);
+        var sin = Math.sin(angle);
+        var realX = cos * size;
+        var realY = sin * size;
+        var ceilX = Math.ceil(realX);
+        var ceilY = Math.ceil(realY);
+        var intensityX = realX - Math.floor(realX);
+        var intensityY = realY - Math.floor(realY);
+        var intensity = (intensityX + intensityY) / 2;
+        if (intensity === 0) {
+            intensity = 1;
+        }
+        map[ceilY] = {
+            x: ceilX,
+            y: ceilY,
+            a: intensity,
+        };
+    }
+    // Flip sector 4's x and y to get sector 5
+    for (var field in map) {
+        var ref = map[field];
+            var y$1 = ref.x;
+            var x = ref.y;
+            var a = ref.a;
+        if (!map[y$1]) {
+            map[y$1] = {
+                x: x,
+                y: y$1,
+                a: a,
+            };
+        }
+    }
+    // Use that to build horizontal lines
+    // from 7 to 4
+    // from 6 to 5
+    // from 1 to 2
+    // from 8 to 3
+    var lines = [];
+    for (var field$1 in map) {
+        var ref$1 = map[field$1];
+            var x$1 = ref$1.x;
+            var y$2 = ref$1.y;
+            var a$1 = ref$1.a;
+        lines.push({
+            y: y$2,
+            minX: -x$1,
+            maxX: x$1,
+            a: a$1,
+        });
+        if (y$2 !== 0) {
+            lines.push({
+                y: -y$2,
+                minX: -x$1,
+                maxX: x$1,
+                a: a$1,
+            });
+        }
+    }
+    calculatedBrushes[size] = lines;
+    return calculatedBrushes[size];
+};
+
+PixelStrokeFilter.prototype.getBounds = function getBounds (rect) {
+        if ( rect === void 0 ) rect = null;
+
+    return (rect || new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Rectangle()).pad(this.size * 2, this.size * 2, this.size * 2, this.size * 2);
+};
+
+/* harmony default export */ exports["a"] = PixelStrokeFilter;;
+
+
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ |---------------------
+ | Events
+ |---------------------
+ | You need a basic event library. Here it is.
+ |
+ | Call events.on(string, Function) when you want it to send <string> events
+ | to <Function>.
+ |
+ | Call events.off(string, Function) when you want it to stop.
+ |
+ | Call events.fire(string, ...args) to call all the callbacks for <string>
+ | with the arguments that follow it.
+ |
+ */
+var Events = function Events(ref) {
+    if ( ref === void 0 ) ref = {};
+    var errorCode = ref.errorCode;
+
+    this.callbacks = [];
+    this.errorCode = errorCode;
+};
+
+Events.prototype.on = function on (event, cb) {
+    this.callbacks.push({event: event, cb: cb});
+};
+
+Events.prototype.off = function off (removeEvent, removeCb) {
+    this.callbacks = this.callbacks
+        .filter(function (ref) {
+                var event = ref.event;
+                var cb = ref.cb;
+
+                return ! (event === removeEvent && cb === removeCb);
+        });
+};
+
+Events.prototype.fire = function fire (fireEvent) {
+        var arguments$1 = arguments;
+
+        var this$1 = this;
+        var args = [], len = arguments.length - 1;
+        while ( len-- > 0 ) args[ len ] = arguments$1[ len + 1 ];
+
+    this.callbacks
+        .filter(function (ref) {
+                var event = ref.event;
+
+                return event === fireEvent;
+        })
+        .forEach(function (ref) {
+                var cb = ref.cb;
+
+            try {
+                cb.apply(void 0, args)
+            } catch (e) {
+                if (this$1.errorCode && fireEvent !== this$1.errorCode) {
+                    this$1.fire(this$1.errorCode, fireEvent, args, cb, e);
+                }
+            }
+        });
+};
+
+/* harmony default export */ exports["a"] = Events;;
+
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Events__ = __webpack_require__(21);
+
+
+/**
+ |-------------------
+ | PromiseParty
+ |-------------------
+ | Send your Promises to a party and keep track of how many are there. Promises
+ | leave the party when they resolve or reject.
+ |
+ | When a Promise is added, an 'add' event is fired, with the number of
+ | Promises currently at the party.
+ |
+ | When a Promise completes (either resolves or rejects), a 'remove' event is
+ | fired, with the number of Promises currently at the party.
+ |
+ | In both cases, a 'change' event is fired, and wouldn't you know it, it also
+ | includes the number of Promises currently at the party.
+ |
+ | Use `on(<event name>, <callback>)` to listen to events.
+ |
+ | Use `off(<event name>, <callback>)` when you don't want to listen anymore.
+ |
+ | Use `add(Promise)` to send a new Promise to the party.
+ |
+ */
+var PromiseParty = function PromiseParty() {
+    this.events = new __WEBPACK_IMPORTED_MODULE_0__Events__["a" /* default */]({errorCode: 'error'});
+    this.promises = new Set();
+};
+
+PromiseParty.prototype.add = function add (promise) {
+        var this$1 = this;
+
+    if (!promise.finally) {
+        throw new Error('We only accept promises here');
+    }
+
+    this.promises.add(promise);
+    this.events.fire('add', this.promises.size);
+    this.events.fire('change', this.promises.size);
+
+    promise.finally(function () {
+        this$1.promises.delete(promise);
+        this$1.events.fire('remove', this$1.promises.size);
+        this$1.events.fire('change', this$1.promises.size);
+    });
+};
+
+PromiseParty.prototype.on = function on (event, cb) {
+    this.events.on(event, cb);
+    return this;
+};
+
+PromiseParty.prototype.off = function off (event, cb) {
+    this.events.off(event, cb);
+    return this;
+};
+
+/* harmony default export */ exports["a"] = PromiseParty;;
+
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* unused harmony export horizontalValues */
+/* unused harmony export verticalValues */
+/* harmony export (immutable) */ exports["a"] = normalizeAlignment;
+
+var horizontalValues = ['', 'left', 'center', 'right', 'start', 'end'];
+var verticalValues = ['', 'top', 'center', 'bottom', 'hanging', 'middle', 'alphabetic', 'ideographic'];
+
+var isHorizontal = function (value) { return horizontalValues.indexOf(value) > -1; };
+var isVertical = function (value) { return verticalValues.indexOf(value) > -1; };
+
+function normalizeAlignment(alignment) {
+    if (typeof alignment === 'string') {
+        alignment = alignment.trim().split(/\-/);
+    }
+    var first = alignment[0];
+    var second = alignment[1];
+    if (isHorizontal(first) && isVertical(second)) {
+        return [first, second];
+    }
+    if (isVertical(first) && isHorizontal(second)) {
+        return [second, first];
+    }
+    throw new Error(("Illegal alignment, bad mix of values or unknown value in: " + first + ", " + second));
+};
+
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ exports["a"] = sortByDom;
+/* unused harmony export sorter */
+
+/**
+ |----------------------------
+ | sort-by-dom.js
+ |----------------------------
+ | Given an array of Vue components, this will sort them in the same order
+ | their elements are in the DOM.
+ |
+ */
+
+function sortByDom(components) {
+    return [].concat( components ).sort(sorter);
+};
+
+function sorter(a, b) {
+    var compare = a.$el.compareDocumentPosition(b.$el);
+    if (compare & Node.DOCUMENT_POSITION_DISCONNECTED) {
+        throw new Error('Nodes are not in the same tree');
+    }
+    if (compare & Node.DOCUMENT_POSITION_CONTAINS) {
+        // b contains a, b should come first
+        return 1;
+    }
+    if (compare & Node.DOCUMENT_POSITION_CONTAINED_BY) {
+        // a contains b, a should come first
+        return -1;
+    }
+    if (compare & Node.DOCUMENT_POSITION_PRECEDING) {
+        // b precedes a, b should come first
+        return 1;
+    }
+    if (compare & Node.DOCUMENT_POSITION_FOLLOWING) {
+        // a precedes b, a should come first
+        return -1;
+    }
+    // default to No Change
+    return 0;
+};
+
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+module.exports = function(module) {
+	if(!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if(!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			configurable: false,
+			get: function() { return module.l; }
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			configurable: false,
+			get: function() { return module.i; }
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+}
+
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, module) {/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as the size to enable large array optimizations. */
+var LARGE_ARRAY_SIZE = 200;
+
+/** Used as the `TypeError` message for "Functions" methods. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/** Used to compose bitmasks for comparison styles. */
+var UNORDERED_COMPARE_FLAG = 1,
+    PARTIAL_COMPARE_FLAG = 2;
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0,
+    MAX_SAFE_INTEGER = 9007199254740991,
+    MAX_INTEGER = 1.7976931348623157e+308,
+    NAN = 0 / 0;
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    objectTag = '[object Object]',
+    promiseTag = '[object Promise]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    symbolTag = '[object Symbol]',
+    weakMapTag = '[object WeakMap]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/** Used to match property names within property paths. */
+var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
+    reIsPlainProp = /^\w*$/,
+    reLeadingDot = /^\./,
+    rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+
+/**
+ * Used to match `RegExp`
+ * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ */
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to match backslashes in property paths. */
+var reEscapeChar = /\\(\\)?/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect host constructors (Safari). */
+var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Used to detect unsigned integer values. */
+var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+/** Used to identify `toStringTag` values of typed arrays. */
+var typedArrayTags = {};
+typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
+typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
+typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
+typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
+typedArrayTags[uint32Tag] = true;
+typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
+typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
+typedArrayTags[dataViewTag] = typedArrayTags[dateTag] =
+typedArrayTags[errorTag] = typedArrayTags[funcTag] =
+typedArrayTags[mapTag] = typedArrayTags[numberTag] =
+typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
+typedArrayTags[setTag] = typedArrayTags[stringTag] =
+typedArrayTags[weakMapTag] = false;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Detect free variable `process` from Node.js. */
+var freeProcess = moduleExports && freeGlobal.process;
+
+/** Used to access faster Node.js helpers. */
+var nodeUtil = (function() {
+  try {
+    return freeProcess && freeProcess.binding('util');
+  } catch (e) {}
+}());
+
+/* Node.js helper references. */
+var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
+
+/**
+ * A specialized version of `_.some` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} predicate The function invoked per iteration.
+ * @returns {boolean} Returns `true` if any element passes the predicate check,
+ *  else `false`.
+ */
+function arraySome(array, predicate) {
+  var index = -1,
+      length = array ? array.length : 0;
+
+  while (++index < length) {
+    if (predicate(array[index], index, array)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * The base implementation of `_.findIndex` and `_.findLastIndex` without
+ * support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {Function} predicate The function invoked per iteration.
+ * @param {number} fromIndex The index to search from.
+ * @param {boolean} [fromRight] Specify iterating from right to left.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function baseFindIndex(array, predicate, fromIndex, fromRight) {
+  var length = array.length,
+      index = fromIndex + (fromRight ? 1 : -1);
+
+  while ((fromRight ? index-- : ++index < length)) {
+    if (predicate(array[index], index, array)) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+/**
+ * The base implementation of `_.property` without support for deep paths.
+ *
+ * @private
+ * @param {string} key The key of the property to get.
+ * @returns {Function} Returns the new accessor function.
+ */
+function baseProperty(key) {
+  return function(object) {
+    return object == null ? undefined : object[key];
+  };
+}
+
+/**
+ * The base implementation of `_.times` without support for iteratee shorthands
+ * or max array length checks.
+ *
+ * @private
+ * @param {number} n The number of times to invoke `iteratee`.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the array of results.
+ */
+function baseTimes(n, iteratee) {
+  var index = -1,
+      result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+  return result;
+}
+
+/**
+ * The base implementation of `_.unary` without support for storing metadata.
+ *
+ * @private
+ * @param {Function} func The function to cap arguments for.
+ * @returns {Function} Returns the new capped function.
+ */
+function baseUnary(func) {
+  return function(value) {
+    return func(value);
+  };
+}
+
+/**
+ * Gets the value at `key` of `object`.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {string} key The key of the property to get.
+ * @returns {*} Returns the property value.
+ */
+function getValue(object, key) {
+  return object == null ? undefined : object[key];
+}
+
+/**
+ * Checks if `value` is a host object in IE < 9.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
+ */
+function isHostObject(value) {
+  // Many host objects are `Object` objects that can coerce to strings
+  // despite having improperly defined `toString` methods.
+  var result = false;
+  if (value != null && typeof value.toString != 'function') {
+    try {
+      result = !!(value + '');
+    } catch (e) {}
+  }
+  return result;
+}
+
+/**
+ * Converts `map` to its key-value pairs.
+ *
+ * @private
+ * @param {Object} map The map to convert.
+ * @returns {Array} Returns the key-value pairs.
+ */
+function mapToArray(map) {
+  var index = -1,
+      result = Array(map.size);
+
+  map.forEach(function(value, key) {
+    result[++index] = [key, value];
+  });
+  return result;
+}
+
+/**
+ * Creates a unary function that invokes `func` with its argument transformed.
+ *
+ * @private
+ * @param {Function} func The function to wrap.
+ * @param {Function} transform The argument transform.
+ * @returns {Function} Returns the new function.
+ */
+function overArg(func, transform) {
+  return function(arg) {
+    return func(transform(arg));
+  };
+}
+
+/**
+ * Converts `set` to an array of its values.
+ *
+ * @private
+ * @param {Object} set The set to convert.
+ * @returns {Array} Returns the values.
+ */
+function setToArray(set) {
+  var index = -1,
+      result = Array(set.size);
+
+  set.forEach(function(value) {
+    result[++index] = value;
+  });
+  return result;
+}
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype,
+    funcProto = Function.prototype,
+    objectProto = Object.prototype;
+
+/** Used to detect overreaching core-js shims. */
+var coreJsData = root['__core-js_shared__'];
+
+/** Used to detect methods masquerading as native. */
+var maskSrcKey = (function() {
+  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+  return uid ? ('Symbol(src)_1.' + uid) : '';
+}());
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/** Used to detect if a method is native. */
+var reIsNative = RegExp('^' +
+  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
+  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+);
+
+/** Built-in value references. */
+var Symbol = root.Symbol,
+    Uint8Array = root.Uint8Array,
+    propertyIsEnumerable = objectProto.propertyIsEnumerable,
+    splice = arrayProto.splice;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeKeys = overArg(Object.keys, Object),
+    nativeMax = Math.max;
+
+/* Built-in method references that are verified to be native. */
+var DataView = getNative(root, 'DataView'),
+    Map = getNative(root, 'Map'),
+    Promise = getNative(root, 'Promise'),
+    Set = getNative(root, 'Set'),
+    WeakMap = getNative(root, 'WeakMap'),
+    nativeCreate = getNative(Object, 'create');
+
+/** Used to detect maps, sets, and weakmaps. */
+var dataViewCtorString = toSource(DataView),
+    mapCtorString = toSource(Map),
+    promiseCtorString = toSource(Promise),
+    setCtorString = toSource(Set),
+    weakMapCtorString = toSource(WeakMap);
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = Symbol ? Symbol.prototype : undefined,
+    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined,
+    symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+/**
+ * Creates a hash object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Hash(entries) {
+  var this$1 = this;
+
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this$1.set(entry[0], entry[1]);
+  }
+}
+
+/**
+ * Removes all key-value entries from the hash.
+ *
+ * @private
+ * @name clear
+ * @memberOf Hash
+ */
+function hashClear() {
+  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+}
+
+/**
+ * Removes `key` and its value from the hash.
+ *
+ * @private
+ * @name delete
+ * @memberOf Hash
+ * @param {Object} hash The hash to modify.
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function hashDelete(key) {
+  return this.has(key) && delete this.__data__[key];
+}
+
+/**
+ * Gets the hash value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Hash
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function hashGet(key) {
+  var data = this.__data__;
+  if (nativeCreate) {
+    var result = data[key];
+    return result === HASH_UNDEFINED ? undefined : result;
+  }
+  return hasOwnProperty.call(data, key) ? data[key] : undefined;
+}
+
+/**
+ * Checks if a hash value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Hash
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function hashHas(key) {
+  var data = this.__data__;
+  return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
+}
+
+/**
+ * Sets the hash `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Hash
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the hash instance.
+ */
+function hashSet(key, value) {
+  var data = this.__data__;
+  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
+  return this;
+}
+
+// Add methods to `Hash`.
+Hash.prototype.clear = hashClear;
+Hash.prototype['delete'] = hashDelete;
+Hash.prototype.get = hashGet;
+Hash.prototype.has = hashHas;
+Hash.prototype.set = hashSet;
+
+/**
+ * Creates an list cache object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function ListCache(entries) {
+  var this$1 = this;
+
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this$1.set(entry[0], entry[1]);
+  }
+}
+
+/**
+ * Removes all key-value entries from the list cache.
+ *
+ * @private
+ * @name clear
+ * @memberOf ListCache
+ */
+function listCacheClear() {
+  this.__data__ = [];
+}
+
+/**
+ * Removes `key` and its value from the list cache.
+ *
+ * @private
+ * @name delete
+ * @memberOf ListCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function listCacheDelete(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    return false;
+  }
+  var lastIndex = data.length - 1;
+  if (index == lastIndex) {
+    data.pop();
+  } else {
+    splice.call(data, index, 1);
+  }
+  return true;
+}
+
+/**
+ * Gets the list cache value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf ListCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function listCacheGet(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  return index < 0 ? undefined : data[index][1];
+}
+
+/**
+ * Checks if a list cache value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf ListCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function listCacheHas(key) {
+  return assocIndexOf(this.__data__, key) > -1;
+}
+
+/**
+ * Sets the list cache `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf ListCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the list cache instance.
+ */
+function listCacheSet(key, value) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    data.push([key, value]);
+  } else {
+    data[index][1] = value;
+  }
+  return this;
+}
+
+// Add methods to `ListCache`.
+ListCache.prototype.clear = listCacheClear;
+ListCache.prototype['delete'] = listCacheDelete;
+ListCache.prototype.get = listCacheGet;
+ListCache.prototype.has = listCacheHas;
+ListCache.prototype.set = listCacheSet;
+
+/**
+ * Creates a map cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function MapCache(entries) {
+  var this$1 = this;
+
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this$1.set(entry[0], entry[1]);
+  }
+}
+
+/**
+ * Removes all key-value entries from the map.
+ *
+ * @private
+ * @name clear
+ * @memberOf MapCache
+ */
+function mapCacheClear() {
+  this.__data__ = {
+    'hash': new Hash,
+    'map': new (Map || ListCache),
+    'string': new Hash
+  };
+}
+
+/**
+ * Removes `key` and its value from the map.
+ *
+ * @private
+ * @name delete
+ * @memberOf MapCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function mapCacheDelete(key) {
+  return getMapData(this, key)['delete'](key);
+}
+
+/**
+ * Gets the map value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf MapCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function mapCacheGet(key) {
+  return getMapData(this, key).get(key);
+}
+
+/**
+ * Checks if a map value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf MapCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function mapCacheHas(key) {
+  return getMapData(this, key).has(key);
+}
+
+/**
+ * Sets the map `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf MapCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the map cache instance.
+ */
+function mapCacheSet(key, value) {
+  getMapData(this, key).set(key, value);
+  return this;
+}
+
+// Add methods to `MapCache`.
+MapCache.prototype.clear = mapCacheClear;
+MapCache.prototype['delete'] = mapCacheDelete;
+MapCache.prototype.get = mapCacheGet;
+MapCache.prototype.has = mapCacheHas;
+MapCache.prototype.set = mapCacheSet;
+
+/**
+ *
+ * Creates an array cache object to store unique values.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [values] The values to cache.
+ */
+function SetCache(values) {
+  var this$1 = this;
+
+  var index = -1,
+      length = values ? values.length : 0;
+
+  this.__data__ = new MapCache;
+  while (++index < length) {
+    this$1.add(values[index]);
+  }
+}
+
+/**
+ * Adds `value` to the array cache.
+ *
+ * @private
+ * @name add
+ * @memberOf SetCache
+ * @alias push
+ * @param {*} value The value to cache.
+ * @returns {Object} Returns the cache instance.
+ */
+function setCacheAdd(value) {
+  this.__data__.set(value, HASH_UNDEFINED);
+  return this;
+}
+
+/**
+ * Checks if `value` is in the array cache.
+ *
+ * @private
+ * @name has
+ * @memberOf SetCache
+ * @param {*} value The value to search for.
+ * @returns {number} Returns `true` if `value` is found, else `false`.
+ */
+function setCacheHas(value) {
+  return this.__data__.has(value);
+}
+
+// Add methods to `SetCache`.
+SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
+SetCache.prototype.has = setCacheHas;
+
+/**
+ * Creates a stack cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Stack(entries) {
+  this.__data__ = new ListCache(entries);
+}
+
+/**
+ * Removes all key-value entries from the stack.
+ *
+ * @private
+ * @name clear
+ * @memberOf Stack
+ */
+function stackClear() {
+  this.__data__ = new ListCache;
+}
+
+/**
+ * Removes `key` and its value from the stack.
+ *
+ * @private
+ * @name delete
+ * @memberOf Stack
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function stackDelete(key) {
+  return this.__data__['delete'](key);
+}
+
+/**
+ * Gets the stack value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Stack
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function stackGet(key) {
+  return this.__data__.get(key);
+}
+
+/**
+ * Checks if a stack value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Stack
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function stackHas(key) {
+  return this.__data__.has(key);
+}
+
+/**
+ * Sets the stack `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Stack
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the stack cache instance.
+ */
+function stackSet(key, value) {
+  var cache = this.__data__;
+  if (cache instanceof ListCache) {
+    var pairs = cache.__data__;
+    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
+      pairs.push([key, value]);
+      return this;
+    }
+    cache = this.__data__ = new MapCache(pairs);
+  }
+  cache.set(key, value);
+  return this;
+}
+
+// Add methods to `Stack`.
+Stack.prototype.clear = stackClear;
+Stack.prototype['delete'] = stackDelete;
+Stack.prototype.get = stackGet;
+Stack.prototype.has = stackHas;
+Stack.prototype.set = stackSet;
+
+/**
+ * Creates an array of the enumerable property names of the array-like `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @param {boolean} inherited Specify returning inherited property names.
+ * @returns {Array} Returns the array of property names.
+ */
+function arrayLikeKeys(value, inherited) {
+  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+  // Safari 9 makes `arguments.length` enumerable in strict mode.
+  var result = (isArray(value) || isArguments(value))
+    ? baseTimes(value.length, String)
+    : [];
+
+  var length = result.length,
+      skipIndexes = !!length;
+
+  for (var key in value) {
+    if ((inherited || hasOwnProperty.call(value, key)) &&
+        !(skipIndexes && (key == 'length' || isIndex(key, length)))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+/**
+ * Gets the index at which the `key` is found in `array` of key-value pairs.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} key The key to search for.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if (eq(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+
+/**
+ * The base implementation of `_.get` without support for default values.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path of the property to get.
+ * @returns {*} Returns the resolved value.
+ */
+function baseGet(object, path) {
+  path = isKey(path, object) ? [path] : castPath(path);
+
+  var index = 0,
+      length = path.length;
+
+  while (object != null && index < length) {
+    object = object[toKey(path[index++])];
+  }
+  return (index && index == length) ? object : undefined;
+}
+
+/**
+ * The base implementation of `getTag`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  return objectToString.call(value);
+}
+
+/**
+ * The base implementation of `_.hasIn` without support for deep paths.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {Array|string} key The key to check.
+ * @returns {boolean} Returns `true` if `key` exists, else `false`.
+ */
+function baseHasIn(object, key) {
+  return object != null && key in Object(object);
+}
+
+/**
+ * The base implementation of `_.isEqual` which supports partial comparisons
+ * and tracks traversed objects.
+ *
+ * @private
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @param {Function} [customizer] The function to customize comparisons.
+ * @param {boolean} [bitmask] The bitmask of comparison flags.
+ *  The bitmask may be composed of the following flags:
+ *     1 - Unordered comparison
+ *     2 - Partial comparison
+ * @param {Object} [stack] Tracks traversed `value` and `other` objects.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ */
+function baseIsEqual(value, other, customizer, bitmask, stack) {
+  if (value === other) {
+    return true;
+  }
+  if (value == null || other == null || (!isObject(value) && !isObjectLike(other))) {
+    return value !== value && other !== other;
+  }
+  return baseIsEqualDeep(value, other, baseIsEqual, customizer, bitmask, stack);
+}
+
+/**
+ * A specialized version of `baseIsEqual` for arrays and objects which performs
+ * deep comparisons and tracks traversed objects enabling objects with circular
+ * references to be compared.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Function} [customizer] The function to customize comparisons.
+ * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual`
+ *  for more details.
+ * @param {Object} [stack] Tracks traversed `object` and `other` objects.
+ * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+ */
+function baseIsEqualDeep(object, other, equalFunc, customizer, bitmask, stack) {
+  var objIsArr = isArray(object),
+      othIsArr = isArray(other),
+      objTag = arrayTag,
+      othTag = arrayTag;
+
+  if (!objIsArr) {
+    objTag = getTag(object);
+    objTag = objTag == argsTag ? objectTag : objTag;
+  }
+  if (!othIsArr) {
+    othTag = getTag(other);
+    othTag = othTag == argsTag ? objectTag : othTag;
+  }
+  var objIsObj = objTag == objectTag && !isHostObject(object),
+      othIsObj = othTag == objectTag && !isHostObject(other),
+      isSameTag = objTag == othTag;
+
+  if (isSameTag && !objIsObj) {
+    stack || (stack = new Stack);
+    return (objIsArr || isTypedArray(object))
+      ? equalArrays(object, other, equalFunc, customizer, bitmask, stack)
+      : equalByTag(object, other, objTag, equalFunc, customizer, bitmask, stack);
+  }
+  if (!(bitmask & PARTIAL_COMPARE_FLAG)) {
+    var objIsWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
+        othIsWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
+
+    if (objIsWrapped || othIsWrapped) {
+      var objUnwrapped = objIsWrapped ? object.value() : object,
+          othUnwrapped = othIsWrapped ? other.value() : other;
+
+      stack || (stack = new Stack);
+      return equalFunc(objUnwrapped, othUnwrapped, customizer, bitmask, stack);
+    }
+  }
+  if (!isSameTag) {
+    return false;
+  }
+  stack || (stack = new Stack);
+  return equalObjects(object, other, equalFunc, customizer, bitmask, stack);
+}
+
+/**
+ * The base implementation of `_.isMatch` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Object} object The object to inspect.
+ * @param {Object} source The object of property values to match.
+ * @param {Array} matchData The property names, values, and compare flags to match.
+ * @param {Function} [customizer] The function to customize comparisons.
+ * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+ */
+function baseIsMatch(object, source, matchData, customizer) {
+  var index = matchData.length,
+      length = index,
+      noCustomizer = !customizer;
+
+  if (object == null) {
+    return !length;
+  }
+  object = Object(object);
+  while (index--) {
+    var data = matchData[index];
+    if ((noCustomizer && data[2])
+          ? data[1] !== object[data[0]]
+          : !(data[0] in object)
+        ) {
+      return false;
+    }
+  }
+  while (++index < length) {
+    data = matchData[index];
+    var key = data[0],
+        objValue = object[key],
+        srcValue = data[1];
+
+    if (noCustomizer && data[2]) {
+      if (objValue === undefined && !(key in object)) {
+        return false;
+      }
+    } else {
+      var stack = new Stack;
+      if (customizer) {
+        var result = customizer(objValue, srcValue, key, object, source, stack);
+      }
+      if (!(result === undefined
+            ? baseIsEqual(srcValue, objValue, customizer, UNORDERED_COMPARE_FLAG | PARTIAL_COMPARE_FLAG, stack)
+            : result
+          )) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+/**
+ * The base implementation of `_.isNative` without bad shim checks.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a native function,
+ *  else `false`.
+ */
+function baseIsNative(value) {
+  if (!isObject(value) || isMasked(value)) {
+    return false;
+  }
+  var pattern = (isFunction(value) || isHostObject(value)) ? reIsNative : reIsHostCtor;
+  return pattern.test(toSource(value));
+}
+
+/**
+ * The base implementation of `_.isTypedArray` without Node.js optimizations.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ */
+function baseIsTypedArray(value) {
+  return isObjectLike(value) &&
+    isLength(value.length) && !!typedArrayTags[objectToString.call(value)];
+}
+
+/**
+ * The base implementation of `_.iteratee`.
+ *
+ * @private
+ * @param {*} [value=_.identity] The value to convert to an iteratee.
+ * @returns {Function} Returns the iteratee.
+ */
+function baseIteratee(value) {
+  // Don't store the `typeof` result in a variable to avoid a JIT bug in Safari 9.
+  // See https://bugs.webkit.org/show_bug.cgi?id=156034 for more details.
+  if (typeof value == 'function') {
+    return value;
+  }
+  if (value == null) {
+    return identity;
+  }
+  if (typeof value == 'object') {
+    return isArray(value)
+      ? baseMatchesProperty(value[0], value[1])
+      : baseMatches(value);
+  }
+  return property(value);
+}
+
+/**
+ * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeys(object) {
+  if (!isPrototype(object)) {
+    return nativeKeys(object);
+  }
+  var result = [];
+  for (var key in Object(object)) {
+    if (hasOwnProperty.call(object, key) && key != 'constructor') {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+/**
+ * The base implementation of `_.matches` which doesn't clone `source`.
+ *
+ * @private
+ * @param {Object} source The object of property values to match.
+ * @returns {Function} Returns the new spec function.
+ */
+function baseMatches(source) {
+  var matchData = getMatchData(source);
+  if (matchData.length == 1 && matchData[0][2]) {
+    return matchesStrictComparable(matchData[0][0], matchData[0][1]);
+  }
+  return function(object) {
+    return object === source || baseIsMatch(object, source, matchData);
+  };
+}
+
+/**
+ * The base implementation of `_.matchesProperty` which doesn't clone `srcValue`.
+ *
+ * @private
+ * @param {string} path The path of the property to get.
+ * @param {*} srcValue The value to match.
+ * @returns {Function} Returns the new spec function.
+ */
+function baseMatchesProperty(path, srcValue) {
+  if (isKey(path) && isStrictComparable(srcValue)) {
+    return matchesStrictComparable(toKey(path), srcValue);
+  }
+  return function(object) {
+    var objValue = get(object, path);
+    return (objValue === undefined && objValue === srcValue)
+      ? hasIn(object, path)
+      : baseIsEqual(srcValue, objValue, undefined, UNORDERED_COMPARE_FLAG | PARTIAL_COMPARE_FLAG);
+  };
+}
+
+/**
+ * A specialized version of `baseProperty` which supports deep paths.
+ *
+ * @private
+ * @param {Array|string} path The path of the property to get.
+ * @returns {Function} Returns the new accessor function.
+ */
+function basePropertyDeep(path) {
+  return function(object) {
+    return baseGet(object, path);
+  };
+}
+
+/**
+ * The base implementation of `_.toString` which doesn't convert nullish
+ * values to empty strings.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ */
+function baseToString(value) {
+  // Exit early for strings to avoid a performance hit in some environments.
+  if (typeof value == 'string') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return symbolToString ? symbolToString.call(value) : '';
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+/**
+ * Casts `value` to a path array if it's not one.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @returns {Array} Returns the cast property path array.
+ */
+function castPath(value) {
+  return isArray(value) ? value : stringToPath(value);
+}
+
+/**
+ * A specialized version of `baseIsEqualDeep` for arrays with support for
+ * partial deep comparisons.
+ *
+ * @private
+ * @param {Array} array The array to compare.
+ * @param {Array} other The other array to compare.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {number} bitmask The bitmask of comparison flags. See `baseIsEqual`
+ *  for more details.
+ * @param {Object} stack Tracks traversed `array` and `other` objects.
+ * @returns {boolean} Returns `true` if the arrays are equivalent, else `false`.
+ */
+function equalArrays(array, other, equalFunc, customizer, bitmask, stack) {
+  var isPartial = bitmask & PARTIAL_COMPARE_FLAG,
+      arrLength = array.length,
+      othLength = other.length;
+
+  if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
+    return false;
+  }
+  // Assume cyclic values are equal.
+  var stacked = stack.get(array);
+  if (stacked && stack.get(other)) {
+    return stacked == other;
+  }
+  var index = -1,
+      result = true,
+      seen = (bitmask & UNORDERED_COMPARE_FLAG) ? new SetCache : undefined;
+
+  stack.set(array, other);
+  stack.set(other, array);
+
+  // Ignore non-index properties.
+  while (++index < arrLength) {
+    var arrValue = array[index],
+        othValue = other[index];
+
+    if (customizer) {
+      var compared = isPartial
+        ? customizer(othValue, arrValue, index, other, array, stack)
+        : customizer(arrValue, othValue, index, array, other, stack);
+    }
+    if (compared !== undefined) {
+      if (compared) {
+        continue;
+      }
+      result = false;
+      break;
+    }
+    // Recursively compare arrays (susceptible to call stack limits).
+    if (seen) {
+      if (!arraySome(other, function(othValue, othIndex) {
+            if (!seen.has(othIndex) &&
+                (arrValue === othValue || equalFunc(arrValue, othValue, customizer, bitmask, stack))) {
+              return seen.add(othIndex);
+            }
+          })) {
+        result = false;
+        break;
+      }
+    } else if (!(
+          arrValue === othValue ||
+            equalFunc(arrValue, othValue, customizer, bitmask, stack)
+        )) {
+      result = false;
+      break;
+    }
+  }
+  stack['delete'](array);
+  stack['delete'](other);
+  return result;
+}
+
+/**
+ * A specialized version of `baseIsEqualDeep` for comparing objects of
+ * the same `toStringTag`.
+ *
+ * **Note:** This function only supports comparing values with tags of
+ * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {string} tag The `toStringTag` of the objects to compare.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {number} bitmask The bitmask of comparison flags. See `baseIsEqual`
+ *  for more details.
+ * @param {Object} stack Tracks traversed `object` and `other` objects.
+ * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+ */
+function equalByTag(object, other, tag, equalFunc, customizer, bitmask, stack) {
+  switch (tag) {
+    case dataViewTag:
+      if ((object.byteLength != other.byteLength) ||
+          (object.byteOffset != other.byteOffset)) {
+        return false;
+      }
+      object = object.buffer;
+      other = other.buffer;
+
+    case arrayBufferTag:
+      if ((object.byteLength != other.byteLength) ||
+          !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
+        return false;
+      }
+      return true;
+
+    case boolTag:
+    case dateTag:
+    case numberTag:
+      // Coerce booleans to `1` or `0` and dates to milliseconds.
+      // Invalid dates are coerced to `NaN`.
+      return eq(+object, +other);
+
+    case errorTag:
+      return object.name == other.name && object.message == other.message;
+
+    case regexpTag:
+    case stringTag:
+      // Coerce regexes to strings and treat strings, primitives and objects,
+      // as equal. See http://www.ecma-international.org/ecma-262/7.0/#sec-regexp.prototype.tostring
+      // for more details.
+      return object == (other + '');
+
+    case mapTag:
+      var convert = mapToArray;
+
+    case setTag:
+      var isPartial = bitmask & PARTIAL_COMPARE_FLAG;
+      convert || (convert = setToArray);
+
+      if (object.size != other.size && !isPartial) {
+        return false;
+      }
+      // Assume cyclic values are equal.
+      var stacked = stack.get(object);
+      if (stacked) {
+        return stacked == other;
+      }
+      bitmask |= UNORDERED_COMPARE_FLAG;
+
+      // Recursively compare objects (susceptible to call stack limits).
+      stack.set(object, other);
+      var result = equalArrays(convert(object), convert(other), equalFunc, customizer, bitmask, stack);
+      stack['delete'](object);
+      return result;
+
+    case symbolTag:
+      if (symbolValueOf) {
+        return symbolValueOf.call(object) == symbolValueOf.call(other);
+      }
+  }
+  return false;
+}
+
+/**
+ * A specialized version of `baseIsEqualDeep` for objects with support for
+ * partial deep comparisons.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {number} bitmask The bitmask of comparison flags. See `baseIsEqual`
+ *  for more details.
+ * @param {Object} stack Tracks traversed `object` and `other` objects.
+ * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+ */
+function equalObjects(object, other, equalFunc, customizer, bitmask, stack) {
+  var isPartial = bitmask & PARTIAL_COMPARE_FLAG,
+      objProps = keys(object),
+      objLength = objProps.length,
+      othProps = keys(other),
+      othLength = othProps.length;
+
+  if (objLength != othLength && !isPartial) {
+    return false;
+  }
+  var index = objLength;
+  while (index--) {
+    var key = objProps[index];
+    if (!(isPartial ? key in other : hasOwnProperty.call(other, key))) {
+      return false;
+    }
+  }
+  // Assume cyclic values are equal.
+  var stacked = stack.get(object);
+  if (stacked && stack.get(other)) {
+    return stacked == other;
+  }
+  var result = true;
+  stack.set(object, other);
+  stack.set(other, object);
+
+  var skipCtor = isPartial;
+  while (++index < objLength) {
+    key = objProps[index];
+    var objValue = object[key],
+        othValue = other[key];
+
+    if (customizer) {
+      var compared = isPartial
+        ? customizer(othValue, objValue, key, other, object, stack)
+        : customizer(objValue, othValue, key, object, other, stack);
+    }
+    // Recursively compare objects (susceptible to call stack limits).
+    if (!(compared === undefined
+          ? (objValue === othValue || equalFunc(objValue, othValue, customizer, bitmask, stack))
+          : compared
+        )) {
+      result = false;
+      break;
+    }
+    skipCtor || (skipCtor = key == 'constructor');
+  }
+  if (result && !skipCtor) {
+    var objCtor = object.constructor,
+        othCtor = other.constructor;
+
+    // Non `Object` object instances with different constructors are not equal.
+    if (objCtor != othCtor &&
+        ('constructor' in object && 'constructor' in other) &&
+        !(typeof objCtor == 'function' && objCtor instanceof objCtor &&
+          typeof othCtor == 'function' && othCtor instanceof othCtor)) {
+      result = false;
+    }
+  }
+  stack['delete'](object);
+  stack['delete'](other);
+  return result;
+}
+
+/**
+ * Gets the data for `map`.
+ *
+ * @private
+ * @param {Object} map The map to query.
+ * @param {string} key The reference key.
+ * @returns {*} Returns the map data.
+ */
+function getMapData(map, key) {
+  var data = map.__data__;
+  return isKeyable(key)
+    ? data[typeof key == 'string' ? 'string' : 'hash']
+    : data.map;
+}
+
+/**
+ * Gets the property names, values, and compare flags of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the match data of `object`.
+ */
+function getMatchData(object) {
+  var result = keys(object),
+      length = result.length;
+
+  while (length--) {
+    var key = result[length],
+        value = object[key];
+
+    result[length] = [key, value, isStrictComparable(value)];
+  }
+  return result;
+}
+
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+function getNative(object, key) {
+  var value = getValue(object, key);
+  return baseIsNative(value) ? value : undefined;
+}
+
+/**
+ * Gets the `toStringTag` of `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+var getTag = baseGetTag;
+
+// Fallback for data views, maps, sets, and weak maps in IE 11,
+// for data views in Edge < 14, and promises in Node.js.
+if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
+    (Map && getTag(new Map) != mapTag) ||
+    (Promise && getTag(Promise.resolve()) != promiseTag) ||
+    (Set && getTag(new Set) != setTag) ||
+    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
+  getTag = function(value) {
+    var result = objectToString.call(value),
+        Ctor = result == objectTag ? value.constructor : undefined,
+        ctorString = Ctor ? toSource(Ctor) : undefined;
+
+    if (ctorString) {
+      switch (ctorString) {
+        case dataViewCtorString: return dataViewTag;
+        case mapCtorString: return mapTag;
+        case promiseCtorString: return promiseTag;
+        case setCtorString: return setTag;
+        case weakMapCtorString: return weakMapTag;
+      }
+    }
+    return result;
+  };
+}
+
+/**
+ * Checks if `path` exists on `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path to check.
+ * @param {Function} hasFunc The function to check properties.
+ * @returns {boolean} Returns `true` if `path` exists, else `false`.
+ */
+function hasPath(object, path, hasFunc) {
+  path = isKey(path, object) ? [path] : castPath(path);
+
+  var result,
+      index = -1,
+      length = path.length;
+
+  while (++index < length) {
+    var key = toKey(path[index]);
+    if (!(result = object != null && hasFunc(object, key))) {
+      break;
+    }
+    object = object[key];
+  }
+  if (result) {
+    return result;
+  }
+  var length = object ? object.length : 0;
+  return !!length && isLength(length) && isIndex(key, length) &&
+    (isArray(object) || isArguments(object));
+}
+
+/**
+ * Checks if `value` is a valid array-like index.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+ * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ */
+function isIndex(value, length) {
+  length = length == null ? MAX_SAFE_INTEGER : length;
+  return !!length &&
+    (typeof value == 'number' || reIsUint.test(value)) &&
+    (value > -1 && value % 1 == 0 && value < length);
+}
+
+/**
+ * Checks if `value` is a property name and not a property path.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {Object} [object] The object to query keys on.
+ * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
+ */
+function isKey(value, object) {
+  if (isArray(value)) {
+    return false;
+  }
+  var type = typeof value;
+  if (type == 'number' || type == 'symbol' || type == 'boolean' ||
+      value == null || isSymbol(value)) {
+    return true;
+  }
+  return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
+    (object != null && value in Object(object));
+}
+
+/**
+ * Checks if `value` is suitable for use as unique object key.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+ */
+function isKeyable(value) {
+  var type = typeof value;
+  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+    ? (value !== '__proto__')
+    : (value === null);
+}
+
+/**
+ * Checks if `func` has its source masked.
+ *
+ * @private
+ * @param {Function} func The function to check.
+ * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+ */
+function isMasked(func) {
+  return !!maskSrcKey && (maskSrcKey in func);
+}
+
+/**
+ * Checks if `value` is likely a prototype object.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+ */
+function isPrototype(value) {
+  var Ctor = value && value.constructor,
+      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
+
+  return value === proto;
+}
+
+/**
+ * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` if suitable for strict
+ *  equality comparisons, else `false`.
+ */
+function isStrictComparable(value) {
+  return value === value && !isObject(value);
+}
+
+/**
+ * A specialized version of `matchesProperty` for source values suitable
+ * for strict equality comparisons, i.e. `===`.
+ *
+ * @private
+ * @param {string} key The key of the property to get.
+ * @param {*} srcValue The value to match.
+ * @returns {Function} Returns the new spec function.
+ */
+function matchesStrictComparable(key, srcValue) {
+  return function(object) {
+    if (object == null) {
+      return false;
+    }
+    return object[key] === srcValue &&
+      (srcValue !== undefined || (key in Object(object)));
+  };
+}
+
+/**
+ * Converts `string` to a property path array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the property path array.
+ */
+var stringToPath = memoize(function(string) {
+  string = toString(string);
+
+  var result = [];
+  if (reLeadingDot.test(string)) {
+    result.push('');
+  }
+  string.replace(rePropName, function(match, number, quote, string) {
+    result.push(quote ? string.replace(reEscapeChar, '$1') : (number || match));
+  });
+  return result;
+});
+
+/**
+ * Converts `value` to a string key if it's not a string or symbol.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @returns {string|symbol} Returns the key.
+ */
+function toKey(value) {
+  if (typeof value == 'string' || isSymbol(value)) {
+    return value;
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+/**
+ * Converts `func` to its source code.
+ *
+ * @private
+ * @param {Function} func The function to process.
+ * @returns {string} Returns the source code.
+ */
+function toSource(func) {
+  if (func != null) {
+    try {
+      return funcToString.call(func);
+    } catch (e) {}
+    try {
+      return (func + '');
+    } catch (e) {}
+  }
+  return '';
+}
+
+/**
+ * This method is like `_.find` except that it returns the index of the first
+ * element `predicate` returns truthy for instead of the element itself.
+ *
+ * @static
+ * @memberOf _
+ * @since 1.1.0
+ * @category Array
+ * @param {Array} array The array to inspect.
+ * @param {Function} [predicate=_.identity]
+ *  The function invoked per iteration.
+ * @param {number} [fromIndex=0] The index to search from.
+ * @returns {number} Returns the index of the found element, else `-1`.
+ * @example
+ *
+ * var users = [
+ *   { 'user': 'barney',  'active': false },
+ *   { 'user': 'fred',    'active': false },
+ *   { 'user': 'pebbles', 'active': true }
+ * ];
+ *
+ * _.findIndex(users, function(o) { return o.user == 'barney'; });
+ * // => 0
+ *
+ * // The `_.matches` iteratee shorthand.
+ * _.findIndex(users, { 'user': 'fred', 'active': false });
+ * // => 1
+ *
+ * // The `_.matchesProperty` iteratee shorthand.
+ * _.findIndex(users, ['active', false]);
+ * // => 0
+ *
+ * // The `_.property` iteratee shorthand.
+ * _.findIndex(users, 'active');
+ * // => 2
+ */
+function findIndex(array, predicate, fromIndex) {
+  var length = array ? array.length : 0;
+  if (!length) {
+    return -1;
+  }
+  var index = fromIndex == null ? 0 : toInteger(fromIndex);
+  if (index < 0) {
+    index = nativeMax(length + index, 0);
+  }
+  return baseFindIndex(array, baseIteratee(predicate, 3), index);
+}
+
+/**
+ * Creates a function that memoizes the result of `func`. If `resolver` is
+ * provided, it determines the cache key for storing the result based on the
+ * arguments provided to the memoized function. By default, the first argument
+ * provided to the memoized function is used as the map cache key. The `func`
+ * is invoked with the `this` binding of the memoized function.
+ *
+ * **Note:** The cache is exposed as the `cache` property on the memoized
+ * function. Its creation may be customized by replacing the `_.memoize.Cache`
+ * constructor with one whose instances implement the
+ * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
+ * method interface of `delete`, `get`, `has`, and `set`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to have its output memoized.
+ * @param {Function} [resolver] The function to resolve the cache key.
+ * @returns {Function} Returns the new memoized function.
+ * @example
+ *
+ * var object = { 'a': 1, 'b': 2 };
+ * var other = { 'c': 3, 'd': 4 };
+ *
+ * var values = _.memoize(_.values);
+ * values(object);
+ * // => [1, 2]
+ *
+ * values(other);
+ * // => [3, 4]
+ *
+ * object.a = 2;
+ * values(object);
+ * // => [1, 2]
+ *
+ * // Modify the result cache.
+ * values.cache.set(object, ['a', 'b']);
+ * values(object);
+ * // => ['a', 'b']
+ *
+ * // Replace `_.memoize.Cache`.
+ * _.memoize.Cache = WeakMap;
+ */
+function memoize(func, resolver) {
+  if (typeof func != 'function' || (resolver && typeof resolver != 'function')) {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  var memoized = function() {
+    var args = arguments,
+        key = resolver ? resolver.apply(this, args) : args[0],
+        cache = memoized.cache;
+
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    var result = func.apply(this, args);
+    memoized.cache = cache.set(key, result);
+    return result;
+  };
+  memoized.cache = new (memoize.Cache || MapCache);
+  return memoized;
+}
+
+// Assign cache to `_.memoize`.
+memoize.Cache = MapCache;
+
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+/**
+ * Checks if `value` is likely an `arguments` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArguments(function() { return arguments; }());
+ * // => true
+ *
+ * _.isArguments([1, 2, 3]);
+ * // => false
+ */
+function isArguments(value) {
+  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
+    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
+}
+
+/**
+ * Checks if `value` is classified as an `Array` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+ * @example
+ *
+ * _.isArray([1, 2, 3]);
+ * // => true
+ *
+ * _.isArray(document.body.children);
+ * // => false
+ *
+ * _.isArray('abc');
+ * // => false
+ *
+ * _.isArray(_.noop);
+ * // => false
+ */
+var isArray = Array.isArray;
+
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+function isArrayLike(value) {
+  return value != null && isLength(value.length) && !isFunction(value);
+}
+
+/**
+ * This method is like `_.isArrayLike` except that it also checks if `value`
+ * is an object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array-like object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArrayLikeObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLikeObject(document.body.children);
+ * // => true
+ *
+ * _.isArrayLikeObject('abc');
+ * // => false
+ *
+ * _.isArrayLikeObject(_.noop);
+ * // => false
+ */
+function isArrayLikeObject(value) {
+  return isObjectLike(value) && isArrayLike(value);
+}
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 8-9 which returns 'object' for typed array and other constructors.
+  var tag = isObject(value) ? objectToString.call(value) : '';
+  return tag == funcTag || tag == genTag;
+}
+
+/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+ * @example
+ *
+ * _.isLength(3);
+ * // => true
+ *
+ * _.isLength(Number.MIN_VALUE);
+ * // => false
+ *
+ * _.isLength(Infinity);
+ * // => false
+ *
+ * _.isLength('3');
+ * // => false
+ */
+function isLength(value) {
+  return typeof value == 'number' &&
+    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+/**
+ * Checks if `value` is classified as a typed array.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ * @example
+ *
+ * _.isTypedArray(new Uint8Array);
+ * // => true
+ *
+ * _.isTypedArray([]);
+ * // => false
+ */
+var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
+
+/**
+ * Converts `value` to a finite number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.12.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted number.
+ * @example
+ *
+ * _.toFinite(3.2);
+ * // => 3.2
+ *
+ * _.toFinite(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toFinite(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toFinite('3.2');
+ * // => 3.2
+ */
+function toFinite(value) {
+  if (!value) {
+    return value === 0 ? value : 0;
+  }
+  value = toNumber(value);
+  if (value === INFINITY || value === -INFINITY) {
+    var sign = (value < 0 ? -1 : 1);
+    return sign * MAX_INTEGER;
+  }
+  return value === value ? value : 0;
+}
+
+/**
+ * Converts `value` to an integer.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted integer.
+ * @example
+ *
+ * _.toInteger(3.2);
+ * // => 3
+ *
+ * _.toInteger(Number.MIN_VALUE);
+ * // => 0
+ *
+ * _.toInteger(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toInteger('3.2');
+ * // => 3
+ */
+function toInteger(value) {
+  var result = toFinite(value),
+      remainder = result % 1;
+
+  return result === result ? (remainder ? result - remainder : result) : 0;
+}
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+/**
+ * Converts `value` to a string. An empty string is returned for `null`
+ * and `undefined` values. The sign of `-0` is preserved.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ * @example
+ *
+ * _.toString(null);
+ * // => ''
+ *
+ * _.toString(-0);
+ * // => '-0'
+ *
+ * _.toString([1, 2, 3]);
+ * // => '1,2,3'
+ */
+function toString(value) {
+  return value == null ? '' : baseToString(value);
+}
+
+/**
+ * Gets the value at `path` of `object`. If the resolved value is
+ * `undefined`, the `defaultValue` is returned in its place.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.7.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path of the property to get.
+ * @param {*} [defaultValue] The value returned for `undefined` resolved values.
+ * @returns {*} Returns the resolved value.
+ * @example
+ *
+ * var object = { 'a': [{ 'b': { 'c': 3 } }] };
+ *
+ * _.get(object, 'a[0].b.c');
+ * // => 3
+ *
+ * _.get(object, ['a', '0', 'b', 'c']);
+ * // => 3
+ *
+ * _.get(object, 'a.b.c', 'default');
+ * // => 'default'
+ */
+function get(object, path, defaultValue) {
+  var result = object == null ? undefined : baseGet(object, path);
+  return result === undefined ? defaultValue : result;
+}
+
+/**
+ * Checks if `path` is a direct or inherited property of `object`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path to check.
+ * @returns {boolean} Returns `true` if `path` exists, else `false`.
+ * @example
+ *
+ * var object = _.create({ 'a': _.create({ 'b': 2 }) });
+ *
+ * _.hasIn(object, 'a');
+ * // => true
+ *
+ * _.hasIn(object, 'a.b');
+ * // => true
+ *
+ * _.hasIn(object, ['a', 'b']);
+ * // => true
+ *
+ * _.hasIn(object, 'b');
+ * // => false
+ */
+function hasIn(object, path) {
+  return object != null && hasPath(object, path, baseHasIn);
+}
+
+/**
+ * Creates an array of the own enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects. See the
+ * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+ * for more details.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keys(new Foo);
+ * // => ['a', 'b'] (iteration order is not guaranteed)
+ *
+ * _.keys('hi');
+ * // => ['0', '1']
+ */
+function keys(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+}
+
+/**
+ * This method returns the first argument it receives.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Util
+ * @param {*} value Any value.
+ * @returns {*} Returns `value`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ *
+ * console.log(_.identity(object) === object);
+ * // => true
+ */
+function identity(value) {
+  return value;
+}
+
+/**
+ * Creates a function that returns the value at `path` of a given object.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Util
+ * @param {Array|string} path The path of the property to get.
+ * @returns {Function} Returns the new accessor function.
+ * @example
+ *
+ * var objects = [
+ *   { 'a': { 'b': 2 } },
+ *   { 'a': { 'b': 1 } }
+ * ];
+ *
+ * _.map(objects, _.property('a.b'));
+ * // => [2, 1]
+ *
+ * _.map(_.sortBy(objects, _.property(['a', 'b'])), 'a.b');
+ * // => [1, 2]
+ */
+function property(path) {
+  return isKey(path) ? baseProperty(toKey(path)) : basePropertyDeep(path);
+}
+
+module.exports = findIndex;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10), __webpack_require__(25)(module)))
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/** `Object#toString` result references. */
+var funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]';
+
+/**
+ * Used to match `RegExp`
+ * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ */
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+/** Used to detect host constructors (Safari). */
+var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+/**
+ * A faster alternative to `Function#apply`, this function invokes `func`
+ * with the `this` binding of `thisArg` and the arguments of `args`.
+ *
+ * @private
+ * @param {Function} func The function to invoke.
+ * @param {*} thisArg The `this` binding of `func`.
+ * @param {Array} args The arguments to invoke `func` with.
+ * @returns {*} Returns the result of `func`.
+ */
+function apply(func, thisArg, args) {
+  switch (args.length) {
+    case 0: return func.call(thisArg);
+    case 1: return func.call(thisArg, args[0]);
+    case 2: return func.call(thisArg, args[0], args[1]);
+    case 3: return func.call(thisArg, args[0], args[1], args[2]);
+  }
+  return func.apply(thisArg, args);
+}
+
+/**
+ * A specialized version of `_.includes` for arrays without support for
+ * specifying an index to search from.
+ *
+ * @private
+ * @param {Array} [array] The array to inspect.
+ * @param {*} target The value to search for.
+ * @returns {boolean} Returns `true` if `target` is found, else `false`.
+ */
+function arrayIncludes(array, value) {
+  var length = array ? array.length : 0;
+  return !!length && baseIndexOf(array, value, 0) > -1;
+}
+
+/**
+ * This function is like `arrayIncludes` except that it accepts a comparator.
+ *
+ * @private
+ * @param {Array} [array] The array to inspect.
+ * @param {*} target The value to search for.
+ * @param {Function} comparator The comparator invoked per element.
+ * @returns {boolean} Returns `true` if `target` is found, else `false`.
+ */
+function arrayIncludesWith(array, value, comparator) {
+  var index = -1,
+      length = array ? array.length : 0;
+
+  while (++index < length) {
+    if (comparator(value, array[index])) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function arrayMap(array, iteratee) {
+  var index = -1,
+      length = array ? array.length : 0,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+  return result;
+}
+
+/**
+ * The base implementation of `_.findIndex` and `_.findLastIndex` without
+ * support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {Function} predicate The function invoked per iteration.
+ * @param {number} fromIndex The index to search from.
+ * @param {boolean} [fromRight] Specify iterating from right to left.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function baseFindIndex(array, predicate, fromIndex, fromRight) {
+  var length = array.length,
+      index = fromIndex + (fromRight ? 1 : -1);
+
+  while ((fromRight ? index-- : ++index < length)) {
+    if (predicate(array[index], index, array)) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+/**
+ * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} value The value to search for.
+ * @param {number} fromIndex The index to search from.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function baseIndexOf(array, value, fromIndex) {
+  if (value !== value) {
+    return baseFindIndex(array, baseIsNaN, fromIndex);
+  }
+  var index = fromIndex - 1,
+      length = array.length;
+
+  while (++index < length) {
+    if (array[index] === value) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+/**
+ * The base implementation of `_.isNaN` without support for number objects.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
+ */
+function baseIsNaN(value) {
+  return value !== value;
+}
+
+/**
+ * The base implementation of `_.unary` without support for storing metadata.
+ *
+ * @private
+ * @param {Function} func The function to cap arguments for.
+ * @returns {Function} Returns the new capped function.
+ */
+function baseUnary(func) {
+  return function(value) {
+    return func(value);
+  };
+}
+
+/**
+ * Checks if a cache value for `key` exists.
+ *
+ * @private
+ * @param {Object} cache The cache to query.
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function cacheHas(cache, key) {
+  return cache.has(key);
+}
+
+/**
+ * Gets the value at `key` of `object`.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {string} key The key of the property to get.
+ * @returns {*} Returns the property value.
+ */
+function getValue(object, key) {
+  return object == null ? undefined : object[key];
+}
+
+/**
+ * Checks if `value` is a host object in IE < 9.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
+ */
+function isHostObject(value) {
+  // Many host objects are `Object` objects that can coerce to strings
+  // despite having improperly defined `toString` methods.
+  var result = false;
+  if (value != null && typeof value.toString != 'function') {
+    try {
+      result = !!(value + '');
+    } catch (e) {}
+  }
+  return result;
+}
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype,
+    funcProto = Function.prototype,
+    objectProto = Object.prototype;
+
+/** Used to detect overreaching core-js shims. */
+var coreJsData = root['__core-js_shared__'];
+
+/** Used to detect methods masquerading as native. */
+var maskSrcKey = (function() {
+  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+  return uid ? ('Symbol(src)_1.' + uid) : '';
+}());
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/** Used to detect if a method is native. */
+var reIsNative = RegExp('^' +
+  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
+  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+);
+
+/** Built-in value references. */
+var splice = arrayProto.splice;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max,
+    nativeMin = Math.min;
+
+/* Built-in method references that are verified to be native. */
+var Map = getNative(root, 'Map'),
+    nativeCreate = getNative(Object, 'create');
+
+/**
+ * Creates a hash object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Hash(entries) {
+  var this$1 = this;
+
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this$1.set(entry[0], entry[1]);
+  }
+}
+
+/**
+ * Removes all key-value entries from the hash.
+ *
+ * @private
+ * @name clear
+ * @memberOf Hash
+ */
+function hashClear() {
+  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+}
+
+/**
+ * Removes `key` and its value from the hash.
+ *
+ * @private
+ * @name delete
+ * @memberOf Hash
+ * @param {Object} hash The hash to modify.
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function hashDelete(key) {
+  return this.has(key) && delete this.__data__[key];
+}
+
+/**
+ * Gets the hash value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Hash
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function hashGet(key) {
+  var data = this.__data__;
+  if (nativeCreate) {
+    var result = data[key];
+    return result === HASH_UNDEFINED ? undefined : result;
+  }
+  return hasOwnProperty.call(data, key) ? data[key] : undefined;
+}
+
+/**
+ * Checks if a hash value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Hash
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function hashHas(key) {
+  var data = this.__data__;
+  return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
+}
+
+/**
+ * Sets the hash `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Hash
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the hash instance.
+ */
+function hashSet(key, value) {
+  var data = this.__data__;
+  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
+  return this;
+}
+
+// Add methods to `Hash`.
+Hash.prototype.clear = hashClear;
+Hash.prototype['delete'] = hashDelete;
+Hash.prototype.get = hashGet;
+Hash.prototype.has = hashHas;
+Hash.prototype.set = hashSet;
+
+/**
+ * Creates an list cache object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function ListCache(entries) {
+  var this$1 = this;
+
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this$1.set(entry[0], entry[1]);
+  }
+}
+
+/**
+ * Removes all key-value entries from the list cache.
+ *
+ * @private
+ * @name clear
+ * @memberOf ListCache
+ */
+function listCacheClear() {
+  this.__data__ = [];
+}
+
+/**
+ * Removes `key` and its value from the list cache.
+ *
+ * @private
+ * @name delete
+ * @memberOf ListCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function listCacheDelete(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    return false;
+  }
+  var lastIndex = data.length - 1;
+  if (index == lastIndex) {
+    data.pop();
+  } else {
+    splice.call(data, index, 1);
+  }
+  return true;
+}
+
+/**
+ * Gets the list cache value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf ListCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function listCacheGet(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  return index < 0 ? undefined : data[index][1];
+}
+
+/**
+ * Checks if a list cache value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf ListCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function listCacheHas(key) {
+  return assocIndexOf(this.__data__, key) > -1;
+}
+
+/**
+ * Sets the list cache `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf ListCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the list cache instance.
+ */
+function listCacheSet(key, value) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    data.push([key, value]);
+  } else {
+    data[index][1] = value;
+  }
+  return this;
+}
+
+// Add methods to `ListCache`.
+ListCache.prototype.clear = listCacheClear;
+ListCache.prototype['delete'] = listCacheDelete;
+ListCache.prototype.get = listCacheGet;
+ListCache.prototype.has = listCacheHas;
+ListCache.prototype.set = listCacheSet;
+
+/**
+ * Creates a map cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function MapCache(entries) {
+  var this$1 = this;
+
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this$1.set(entry[0], entry[1]);
+  }
+}
+
+/**
+ * Removes all key-value entries from the map.
+ *
+ * @private
+ * @name clear
+ * @memberOf MapCache
+ */
+function mapCacheClear() {
+  this.__data__ = {
+    'hash': new Hash,
+    'map': new (Map || ListCache),
+    'string': new Hash
+  };
+}
+
+/**
+ * Removes `key` and its value from the map.
+ *
+ * @private
+ * @name delete
+ * @memberOf MapCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function mapCacheDelete(key) {
+  return getMapData(this, key)['delete'](key);
+}
+
+/**
+ * Gets the map value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf MapCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function mapCacheGet(key) {
+  return getMapData(this, key).get(key);
+}
+
+/**
+ * Checks if a map value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf MapCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function mapCacheHas(key) {
+  return getMapData(this, key).has(key);
+}
+
+/**
+ * Sets the map `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf MapCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the map cache instance.
+ */
+function mapCacheSet(key, value) {
+  getMapData(this, key).set(key, value);
+  return this;
+}
+
+// Add methods to `MapCache`.
+MapCache.prototype.clear = mapCacheClear;
+MapCache.prototype['delete'] = mapCacheDelete;
+MapCache.prototype.get = mapCacheGet;
+MapCache.prototype.has = mapCacheHas;
+MapCache.prototype.set = mapCacheSet;
+
+/**
+ *
+ * Creates an array cache object to store unique values.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [values] The values to cache.
+ */
+function SetCache(values) {
+  var this$1 = this;
+
+  var index = -1,
+      length = values ? values.length : 0;
+
+  this.__data__ = new MapCache;
+  while (++index < length) {
+    this$1.add(values[index]);
+  }
+}
+
+/**
+ * Adds `value` to the array cache.
+ *
+ * @private
+ * @name add
+ * @memberOf SetCache
+ * @alias push
+ * @param {*} value The value to cache.
+ * @returns {Object} Returns the cache instance.
+ */
+function setCacheAdd(value) {
+  this.__data__.set(value, HASH_UNDEFINED);
+  return this;
+}
+
+/**
+ * Checks if `value` is in the array cache.
+ *
+ * @private
+ * @name has
+ * @memberOf SetCache
+ * @param {*} value The value to search for.
+ * @returns {number} Returns `true` if `value` is found, else `false`.
+ */
+function setCacheHas(value) {
+  return this.__data__.has(value);
+}
+
+// Add methods to `SetCache`.
+SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
+SetCache.prototype.has = setCacheHas;
+
+/**
+ * Gets the index at which the `key` is found in `array` of key-value pairs.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} key The key to search for.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if (eq(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+
+/**
+ * The base implementation of methods like `_.intersection`, without support
+ * for iteratee shorthands, that accepts an array of arrays to inspect.
+ *
+ * @private
+ * @param {Array} arrays The arrays to inspect.
+ * @param {Function} [iteratee] The iteratee invoked per element.
+ * @param {Function} [comparator] The comparator invoked per element.
+ * @returns {Array} Returns the new array of shared values.
+ */
+function baseIntersection(arrays, iteratee, comparator) {
+  var includes = comparator ? arrayIncludesWith : arrayIncludes,
+      length = arrays[0].length,
+      othLength = arrays.length,
+      othIndex = othLength,
+      caches = Array(othLength),
+      maxLength = Infinity,
+      result = [];
+
+  while (othIndex--) {
+    var array = arrays[othIndex];
+    if (othIndex && iteratee) {
+      array = arrayMap(array, baseUnary(iteratee));
+    }
+    maxLength = nativeMin(array.length, maxLength);
+    caches[othIndex] = !comparator && (iteratee || (length >= 120 && array.length >= 120))
+      ? new SetCache(othIndex && array)
+      : undefined;
+  }
+  array = arrays[0];
+
+  var index = -1,
+      seen = caches[0];
+
+  outer:
+  while (++index < length && result.length < maxLength) {
+    var value = array[index],
+        computed = iteratee ? iteratee(value) : value;
+
+    value = (comparator || value !== 0) ? value : 0;
+    if (!(seen
+          ? cacheHas(seen, computed)
+          : includes(result, computed, comparator)
+        )) {
+      othIndex = othLength;
+      while (--othIndex) {
+        var cache = caches[othIndex];
+        if (!(cache
+              ? cacheHas(cache, computed)
+              : includes(arrays[othIndex], computed, comparator))
+            ) {
+          continue outer;
+        }
+      }
+      if (seen) {
+        seen.push(computed);
+      }
+      result.push(value);
+    }
+  }
+  return result;
+}
+
+/**
+ * The base implementation of `_.isNative` without bad shim checks.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a native function,
+ *  else `false`.
+ */
+function baseIsNative(value) {
+  if (!isObject(value) || isMasked(value)) {
+    return false;
+  }
+  var pattern = (isFunction(value) || isHostObject(value)) ? reIsNative : reIsHostCtor;
+  return pattern.test(toSource(value));
+}
+
+/**
+ * The base implementation of `_.rest` which doesn't validate or coerce arguments.
+ *
+ * @private
+ * @param {Function} func The function to apply a rest parameter to.
+ * @param {number} [start=func.length-1] The start position of the rest parameter.
+ * @returns {Function} Returns the new function.
+ */
+function baseRest(func, start) {
+  start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
+  return function() {
+    var args = arguments,
+        index = -1,
+        length = nativeMax(args.length - start, 0),
+        array = Array(length);
+
+    while (++index < length) {
+      array[index] = args[start + index];
+    }
+    index = -1;
+    var otherArgs = Array(start + 1);
+    while (++index < start) {
+      otherArgs[index] = args[index];
+    }
+    otherArgs[start] = array;
+    return apply(func, this, otherArgs);
+  };
+}
+
+/**
+ * Casts `value` to an empty array if it's not an array like object.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @returns {Array|Object} Returns the cast array-like object.
+ */
+function castArrayLikeObject(value) {
+  return isArrayLikeObject(value) ? value : [];
+}
+
+/**
+ * Gets the data for `map`.
+ *
+ * @private
+ * @param {Object} map The map to query.
+ * @param {string} key The reference key.
+ * @returns {*} Returns the map data.
+ */
+function getMapData(map, key) {
+  var data = map.__data__;
+  return isKeyable(key)
+    ? data[typeof key == 'string' ? 'string' : 'hash']
+    : data.map;
+}
+
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+function getNative(object, key) {
+  var value = getValue(object, key);
+  return baseIsNative(value) ? value : undefined;
+}
+
+/**
+ * Checks if `value` is suitable for use as unique object key.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+ */
+function isKeyable(value) {
+  var type = typeof value;
+  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+    ? (value !== '__proto__')
+    : (value === null);
+}
+
+/**
+ * Checks if `func` has its source masked.
+ *
+ * @private
+ * @param {Function} func The function to check.
+ * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+ */
+function isMasked(func) {
+  return !!maskSrcKey && (maskSrcKey in func);
+}
+
+/**
+ * Converts `func` to its source code.
+ *
+ * @private
+ * @param {Function} func The function to process.
+ * @returns {string} Returns the source code.
+ */
+function toSource(func) {
+  if (func != null) {
+    try {
+      return funcToString.call(func);
+    } catch (e) {}
+    try {
+      return (func + '');
+    } catch (e) {}
+  }
+  return '';
+}
+
+/**
+ * Creates an array of unique values that are included in all given arrays
+ * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * for equality comparisons. The order of result values is determined by the
+ * order they occur in the first array.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Array
+ * @param {...Array} [arrays] The arrays to inspect.
+ * @returns {Array} Returns the new array of intersecting values.
+ * @example
+ *
+ * _.intersection([2, 1], [2, 3]);
+ * // => [2]
+ */
+var intersection = baseRest(function(arrays) {
+  var mapped = arrayMap(arrays, castArrayLikeObject);
+  return (mapped.length && mapped[0] === arrays[0])
+    ? baseIntersection(mapped)
+    : [];
+});
+
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+function isArrayLike(value) {
+  return value != null && isLength(value.length) && !isFunction(value);
+}
+
+/**
+ * This method is like `_.isArrayLike` except that it also checks if `value`
+ * is an object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array-like object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArrayLikeObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLikeObject(document.body.children);
+ * // => true
+ *
+ * _.isArrayLikeObject('abc');
+ * // => false
+ *
+ * _.isArrayLikeObject(_.noop);
+ * // => false
+ */
+function isArrayLikeObject(value) {
+  return isObjectLike(value) && isArrayLike(value);
+}
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 8-9 which returns 'object' for typed array and other constructors.
+  var tag = isObject(value) ? objectToString.call(value) : '';
+  return tag == funcTag || tag == genTag;
+}
+
+/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+ * @example
+ *
+ * _.isLength(3);
+ * // => true
+ *
+ * _.isLength(Number.MIN_VALUE);
+ * // => false
+ *
+ * _.isLength(Infinity);
+ * // => false
+ *
+ * _.isLength('3');
+ * // => false
+ */
+function isLength(value) {
+  return typeof value == 'number' &&
+    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+module.exports = intersection;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__libs_get_dimensions_from_get_bounds_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselAlign_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselCache_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__ = __webpack_require__(5);
+
+
+
+
+
+
+
+
+/* harmony default export */ exports["default"] = {
+    props: ['image'],
+    updatesEaselCache: ['component', 'scale'],
+    mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_3__mixins_EaselAlign_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__mixins_EaselCache_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__["a" /* default */]],
+    render: function render() {
+        return '<!-- bitmap -->';
+    },
+    watch: {
+        image: function image() {
+            this.component = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Bitmap(this.image);
+        },
+    },
+    mounted: function mounted() {
+        this.component = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Bitmap(this.image);
+    },
+    methods: {
+        getAlignDimensions: function getAlignDimensions() {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__libs_get_dimensions_from_get_bounds_js__["a" /* default */])(this);
+        },
+        getCacheBounds: function getCacheBounds() {
+            return this.updateAlign()
+                .then(function (ref) {
+                    var width = ref.width;
+                    var height = ref.height;
+
+                    return {
+                        x: 0,
+                        y: 0,
+                        width: width,
+                        height: height,
+                    };
+                });
+        },
+    },
+};
+
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__libs_easel_event_binder_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_EaselParent_js__ = __webpack_require__(9);
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ exports["default"] = {
+    mixins: [__WEBPACK_IMPORTED_MODULE_2__mixins_EaselParent_js__["a" /* default */]],
+    provide: function provide() {
+        return {
+            easelCanvas: this,
+        };
+    },
+    props: {
+        antiAlias: {
+            default: true,
+        },
+        height: {},
+        width: {},
+        viewportHeight: {},
+        viewportWidth: {},
+    },
+    data: function data() {
+        return {
+            component: null,
+            context: null,
+            easelCanvas: this,
+        };
+    },
+    mounted: function mounted() {
+        var this$1 = this;
+
+        this.component = new __WEBPACK_IMPORTED_MODULE_1__easeljs_easel_js__["a" /* default */].Stage(this.$refs.canvas);
+        this.context = this.component.canvas.getContext('2d');
+        __WEBPACK_IMPORTED_MODULE_1__easeljs_easel_js__["a" /* default */].Touch.enable(this.component, false, true);
+        __WEBPACK_IMPORTED_MODULE_0__libs_easel_event_binder_js__["a" /* default */].bindEvents(this, this.component);
+        __WEBPACK_IMPORTED_MODULE_1__easeljs_easel_js__["a" /* default */].Ticker.addEventListener('tick', function (event) { return this$1.component.update(event); });
+        this.resizeHandler = function () { return this$1.updateSize(); };
+        window.addEventListener('resize', this.resizeHandler);
+        this.updateSize(); // updates anti-alias afterward
+        this.component.enableMouseOver();
+    },
+    destroyed: function destroyed() {
+        __WEBPACK_IMPORTED_MODULE_1__easeljs_easel_js__["a" /* default */].Touch.disable(this.component);
+        window.removeEventListener('resize', this.resizeHandler);
+    },
+    watch: {
+        antiAlias: function antiAlias() {
+            this.updateAntiAlias();
+        },
+        height: function height() {
+            this.updateSize();
+        },
+        width: function width() {
+            this.updateSize();
+        },
+        viewportScale: function viewportScale() {
+            this.updateSize();
+        },
+    },
+    computed: {
+        viewport: function viewport() {
+            return {
+                width: this.viewportWidth || this.width,
+                height: this.viewportHeight || this.height,
+            };
+        },
+        viewportScale: function viewportScale$1() {
+            return {
+                scaleX: this.width / this.viewport.width,
+                scaleY: this.height / this.viewport.height,
+            };
+        },
+    },
+    methods: {
+        updateAntiAlias: function updateAntiAlias() {
+            this.context.imageSmoothingEnabled       = this.antiAlias;
+            this.context.mozImageSmoothingEnabled    = this.antiAlias;
+            this.context.webkitImageSmoothingEnabled = this.antiAlias;
+            this.context.msImageSmoothingEnabled     = this.antiAlias;
+        },
+        updateSize: function updateSize() {
+            var this$1 = this;
+
+            var canvas = this.$refs.canvas;
+            canvas.width = this.width * window.devicePixelRatio;
+            canvas.height = this.height * window.devicePixelRatio;
+            canvas.style.width = this.width + 'px';
+            canvas.style.height = this.height + 'px';
+            this.component.scaleX = this.viewportScale.scaleX * window.devicePixelRatio;
+            this.component.scaleY = this.viewportScale.scaleY * window.devicePixelRatio;
+            this.$nextTick(function () { return this$1.updateAntiAlias(); });
+        },
+        createCanvas: function createCanvas(cb) {
+            // Save any existing createCanvas
+            var beforeCreateCanvas = __WEBPACK_IMPORTED_MODULE_1__easeljs_easel_js__["a" /* default */].createCanvas;
+            // Create a new createCanvas that will apply our changes
+            __WEBPACK_IMPORTED_MODULE_1__easeljs_easel_js__["a" /* default */].createCanvas = this.createCreateCanvasMethod();
+            // Call code that will need createCanvas
+            cb();
+            // Replace old createCanvas
+            __WEBPACK_IMPORTED_MODULE_1__easeljs_easel_js__["a" /* default */].createCanvas = beforeCreateCanvas;
+        },
+        createCreateCanvasMethod: function createCreateCanvasMethod() {
+            var this$1 = this;
+
+            return function () {
+                // Create canvas
+                var canvas = document.createElement('canvas');
+                // Save the original getContext
+                var getContext = canvas.getContext.bind(canvas);
+                // Replace the original getContext
+                canvas.getContext = function (type) {
+                    // Get the context using the original
+                    var context = getContext(type);
+                    // Set the anti-aliasing
+                    context.imageSmoothingEnabled       = this$1.antiAlias;
+                    context.mozImageSmoothingEnabled    = this$1.antiAlias;
+                    context.webkitImageSmoothingEnabled = this$1.antiAlias;
+                    context.msImageSmoothingEnabled     = this$1.antiAlias;
+                    // Return the context, as usual
+                    return context;
+                }
+                // Return the new, auto-alias-fixing canvas
+                return canvas;
+            };
+        },
+        augmentEvent: function augmentEvent(event) {
+            var ref = this.translateCoordinates(event.stageX, event.stageY);
+            var x = ref[0];
+            var y = ref[1];
+            event.viewportX = x;
+            event.viewportY = y;
+            return event;
+        },
+        translateCoordinates: function translateCoordinates(stageX, stageY) {
+            return [
+                stageX / this.component.scaleX,
+                stageY / this.component.scaleY
+            ];
+        },
+    },
+};
+
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_EaselParent_js__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselFilter_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselAlign_js__ = __webpack_require__(2);
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+/* harmony default export */ exports["default"] = {
+    mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2__mixins_EaselParent_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__mixins_EaselFilter_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__mixins_EaselAlign_js__["a" /* default */]],
+    updatesEaselCache: ['children', 'scale'],
+    mounted: function mounted() {
+        this.component = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Container();
+    },
+    methods: {
+        getCacheBounds: function getCacheBounds() {
+            var this$1 = this;
+
+            return Promise.all(
+                    this.children
+                        .map(function (component) {
+                            return component.getRelativeCacheBounds
+                                ? component.getRelativeCacheBounds()
+                                : Promise.reject(("<" + (component.$options.name) + "> does not mixin EaselCache"));
+                        })
+                )
+                .then(function (allBounds) {
+                    return allBounds.reduce(
+                        this$1.getSmallestCombination,
+                        {x: 0, y: 0, width: 1, height: 1}
+                    );
+                });
+        },
+    },
+};
+
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_EaselCache_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselFilter_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselAlign_js__ = __webpack_require__(2);
+
+
+
+
+
+
+
+/* harmony default export */ exports["default"] = {
+    mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__mixins_EaselAlign_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2__mixins_EaselCache_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_3__mixins_EaselFilter_js__["a" /* default */]],
+    props: ['form', 'fill', 'stroke', 'dimensions'],
+    updatesEaselCache: ['form', 'fill', 'stroke', 'dimensions', 'scale'],
+    render: function render() {
+        return '<!-- shape -->';
+    },
+    watch: {
+        form: function form() {       this.refresh() },
+        fill: function fill() {       this.refresh() },
+        stroke: function stroke() {     this.refresh() },
+        dimensions: function dimensions() { this.refresh() },
+    },
+    computed: {
+        radiuses: function radiuses() {
+            // If no radius dimensions were given, empty array.
+            // If 4 radius dimensions were given, use them.
+            // Otherwise, assume just 1 radius dimension was given
+            // and use it four times
+            if (this.dimensions.length <= 2) {
+                return [];
+            } else if (this.dimensions.length === 6) {
+                return this.dimensions.slice(2, 6);
+            } else {
+                return [this.dimensions[2], this.dimensions[2], this.dimensions[2], this.dimensions[2]];
+            }
+        },
+    },
+    mounted: function mounted() {
+        this.component = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Shape();
+        this.refresh();
+    },
+    methods: {
+        refresh: function refresh() {
+            if (this.component) {
+                this.component.graphics.clear();
+                if (this.fill) {
+                    this.component.graphics.beginFill(this.fill);
+                }
+                if (this.stroke) {
+                    this.component.graphics.beginStroke(this.stroke);
+                }
+                this.drawForm();
+                this.updateAlign();
+            }
+        },
+        drawForm: function drawForm() {
+            if (this.form === 'circle') {
+                this.component.graphics.drawCircle(this.dimensions, this.dimensions, this.dimensions);
+            } else if (this.form === 'ellipse') {
+                this.component.graphics.drawEllipse(0, 0, this.dimensions[0], this.dimensions[1]);
+            } else if (this.form === 'rect') {
+                var radiuses = this.radiuses;
+                // If no radius dimensions were given, draw a rectangle.
+                if (radiuses.length === 0) {
+                    this.component.graphics.drawRect(0, 0, this.dimensions[0], this.dimensions[1]);
+                } else {
+                    this.component.graphics.drawRoundRectComplex(0, 0, this.dimensions[0], this.dimensions[1], radiuses[0], radiuses[1], radiuses[2], radiuses[3]);
+                }
+            } else if (this.form === 'star') {
+                this.component.graphics.drawPolyStar(this.dimensions[0], this.dimensions[0], this.dimensions[0], this.dimensions[1], this.dimensions[2], 0);
+            }
+        },
+        getAlignDimensions: function getAlignDimensions() {
+            if (this.form === 'rect' || this.form === 'ellipse') {
+                return Promise.resolve({
+                    width: this.dimensions[0],
+                    height: this.dimensions[1],
+                });
+            } else if (this.form === 'circle') {
+                return Promise.resolve({
+                    width: this.dimensions * 2,
+                    height: this.dimensions * 2,
+                });
+            } else if (this.form === 'star') {
+                return Promise.resolve({
+                    width: this.dimensions[0] * 2,
+                    height: this.dimensions[0] * 2,
+                });
+            } else {
+                return Promise.reject(("No dimensions available for form " + (this.form)));
+            }
+        },
+        getCacheBounds: function getCacheBounds() {
+            return this.updateAlign() // make sure that's in place
+                .then(function (ref) {
+                    var width = ref.width;
+                    var height = ref.height;
+
+                    return {
+                        x: 0,
+                        y: 0,
+                        width: width,
+                        height: height,
+                    };
+                });
+        },
+    },
+};
+
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__libs_get_dimensions_from_get_bounds_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselAlign_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselCache_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__ = __webpack_require__(5);
+
+
+
+
+
+
+
+
+/* harmony default export */ exports["default"] = {
+    inject: ['spriteSheet'],
+    props: ['animation'],
+    updatesEaselCache: ['animation', 'scale'],
+    mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_3__mixins_EaselAlign_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__mixins_EaselCache_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__["a" /* default */]],
+    render: function render() {
+        return '<!-- sprite -->';
+    },
+    watch: {
+        animation: function animation() {
+            if (this.component) {
+                this.component.gotoAndPlay(this.animation);
+            }
+        },
+    },
+    mounted: function mounted() {
+        this.component = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Sprite(this.spriteSheet);
+        if (this.animation) {
+            this.component.gotoAndPlay(this.animation);
+        }
+    },
+    methods: {
+        getAlignDimensions: function getAlignDimensions() {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__libs_get_dimensions_from_get_bounds_js__["a" /* default */])(this);
+        },
+        getCacheBounds: function getCacheBounds() {
+            return this.updateAlign()
+                .then(function (ref) {
+                    var width = ref.width;
+                    var height = ref.height;
+
+                    return {
+                        x: 0,
+                        y: 0,
+                        width: width,
+                        height: height,
+                    };
+                });
+        },
+    },
+};
+
+
+/***/ },
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ exports["default"] = {
+    provide: function provide() {
+        return {
+            spriteSheet: this.spriteSheet,
+        };
+    },
+    props: ['images', 'frames', 'animations', 'framerate'],
+    data: function data() {
+        return {
+            spriteSheet: new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].SpriteSheet({
+                images: this.images,
+                frames: this.frames,
+                animations: this.animations,
+                framerate: this.framerate,
+            }),
+        };
+    },
+};
+
+
+/***/ },
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_EaselAlign_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_get_dimensions_from_get_bounds_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__ = __webpack_require__(5);
+
+
+
+
+
+
+
+
+/* harmony default export */ exports["default"] = {
+    mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2__mixins_EaselAlign_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__["a" /* default */]],
+    props: ['text', 'font', 'color'],
+    updatesEaselCache: ['text', 'font', 'color', 'scale'],
+    render: function render() {
+        return '<!-- text -->';
+    },
+    watch: {
+        text: function text() {
+            this.component.text = this.text;
+        },
+        font: function font() {
+            this.component.font = this.font;
+        },
+        color: function color() {
+            this.component.color = this.color;
+        },
+    },
+    mounted: function mounted() {
+        this.component = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Text(this.text, this.font, this.color);
+    },
+    methods: {
+        updateAlign: function updateAlign() {
+            var ref = this.normalizedAlign;
+            var horizontal = ref[0];
+            var vertical = ref[1];
+            this.component.textAlign = horizontal || 'left';
+            this.component.textBaseline = vertical === 'center' ? 'middle' : (vertical || 'top');
+        },
+        getAlignDimensions: function getAlignDimensions() {
+            return this.getCacheBounds();
+        },
+        getCacheBounds: function getCacheBounds() {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__libs_get_dimensions_from_get_bounds_js__["a" /* default */])(this)
+                .then(function (ref) {
+                    var x = ref.x;
+                    var y = ref.y;
+                    var width = ref.width;
+                    var height = ref.height;
+
+                    return {x: x, y: y, width: width, height: height};
+                });
+        },
+    },
+};
+
+
+/***/ },
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_vm._t("default")], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-2c4a53dd", module.exports)
+  }
+}
+
+/***/ },
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_vm._t("default")], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-9a9eb3f8", module.exports)
+  }
+}
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('canvas', {
+    ref: "canvas"
+  }, [_vm._t("default")], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-f609c736", module.exports)
+  }
+}
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__filters_js__ = __webpack_require__(7);
+
+
+
+module.exports = {
+    createjs:         __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */],
+    easeljs:          __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */],
+    EaselBitmap:      __webpack_require__(11),
+    EaselCanvas:      __webpack_require__(12),
+    EaselContainer:   __webpack_require__(13),
+    EaselShape:       __webpack_require__(14),
+    EaselSprite:      __webpack_require__(15),
+    EaselSpriteSheet: __webpack_require__(16),
+    EaselText:        __webpack_require__(17),
+    install: function install(Vue) {
+        Vue.component('easel-bitmap', this.EaselBitmap);
+        Vue.component('easel-canvas', this.EaselCanvas);
+        Vue.component('easel-container', this.EaselContainer);
+        Vue.component('easel-shape', this.EaselShape);
+        Vue.component('easel-sprite', this.EaselSprite);
+        Vue.component('easel-sprite-sheet', this.EaselSpriteSheet);
+        Vue.component('easel-text', this.EaselText);
+    },
+    registerFilter: function registerFilter() {
+        var arguments$1 = arguments;
+
+        var args = [], len = arguments.length;
+        while ( len-- ) args[ len ] = arguments$1[ len ];
+
+        return __WEBPACK_IMPORTED_MODULE_1__filters_js__["a" /* default */].register.apply(__WEBPACK_IMPORTED_MODULE_1__filters_js__["a" /* default */], args);
+    },
+};
+
+
+/***/ }
+/******/ ])));
+//# sourceMappingURL=index.js.map

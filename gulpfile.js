@@ -9,9 +9,6 @@ elixir.ready(function () {
     output: {
       libraryTarget: 'commonjs',
     },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin()
-    ]
   });
 });
 
