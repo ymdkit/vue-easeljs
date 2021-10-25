@@ -18,6 +18,8 @@ export default {
     updatesEaselCache: ['children', 'scale'],
     mounted() {
         this.component = new easeljs.Container();
+        this.component.regX = this.regX;
+        this.component.regY = this.regY;
     },
     watch: {
         regX() {
