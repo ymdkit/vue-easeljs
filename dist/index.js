@@ -22184,6 +22184,8 @@ module.exports = intersection;
     updatesEaselCache: ['children', 'scale'],
     mounted: function mounted() {
         this.component = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Container();
+        this.component.regX = this.regX;
+        this.component.regY = this.regY;
     },
     watch: {
         regX: function regX() {
