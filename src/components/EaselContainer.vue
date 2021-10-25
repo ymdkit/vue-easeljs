@@ -13,10 +13,19 @@ import EaselFilter from '../mixins/EaselFilter.js';
 import EaselAlign from '../mixins/EaselAlign.js';
 
 export default {
+    props: ['regX','regY'],
     mixins: [EaselDisplayObject, EaselParent, EaselCache, EaselFilter, EaselAlign],
     updatesEaselCache: ['children', 'scale'],
     mounted() {
         this.component = new easeljs.Container();
+    },
+    watch: {
+        regX() {
+            this.component.regX = this.regX;
+        },
+        regY() {
+            this.component.regY = this.regY;
+        }
     },
     methods: {
         getAlignDimensions() {

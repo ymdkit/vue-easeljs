@@ -22179,10 +22179,19 @@ module.exports = intersection;
 
 
 /* harmony default export */ exports["default"] = {
+    props: ['regX','regY'],
     mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2__mixins_EaselParent_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__mixins_EaselFilter_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__mixins_EaselAlign_js__["a" /* default */]],
     updatesEaselCache: ['children', 'scale'],
     mounted: function mounted() {
         this.component = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Container();
+    },
+    watch: {
+        regX: function regX() {
+            this.component.regX = this.regX;
+        },
+        regY: function regY() {
+            this.component.regY = this.regY;
+        }
     },
     methods: {
         getAlignDimensions: function getAlignDimensions() {
