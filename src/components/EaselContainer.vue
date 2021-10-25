@@ -10,11 +10,10 @@ import EaselDisplayObject from '../mixins/EaselDisplayObject.js';
 import EaselParent from '../mixins/EaselParent.js';
 import EaselCache from '../mixins/EaselCache.js';
 import EaselFilter from '../mixins/EaselFilter.js';
-import EaselAlign from '../mixins/EaselAlign.js';
 
 export default {
     props: ['regX','regY'],
-    mixins: [EaselDisplayObject, EaselParent, EaselCache, EaselFilter, EaselAlign],
+    mixins: [EaselDisplayObject, EaselParent, EaselCache, EaselFilter],
     updatesEaselCache: ['children', 'scale'],
     mounted() {
         this.component = new easeljs.Container();
@@ -30,9 +29,6 @@ export default {
         }
     },
     methods: {
-        getAlignDimensions() {
-            return this.getCacheBounds();
-        },
         getCacheBounds() {
             return Promise.all(
                     this.children

@@ -16880,111 +16880,6 @@ module.exports = function normalizeComponent (
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_normalize_alignment_js__ = __webpack_require__(23);
-/*
-|--------------------------------------------------------------------------
-| EaselAlign
-|--------------------------------------------------------------------------
-| This mixin provides alignment support to a component. It handles the
-| `align` prop.
-|
-| Any component mixing this in should also mix in EaselDisplayObject.
-|
-| A component that mixes this in should provide:
-| * getAlignDimensions - A method that returns a Promise that resolves with
-|                        an object formatted as `{x, y, width, height}`.
-|
-*/
-
-
-
-
-/* harmony default export */ exports["a"] = {
-    props: ['align'],
-    watch: {
-        align: function align() {
-            if (this.component) {
-                this.updateAlign();
-            }
-        },
-    },
-    mounted: function mounted() {
-        var this$1 = this;
-
-        this.$watch('component', function () { return this$1.updateAlign(); });
-    },
-    computed: {
-        /**
-         * Normalizes the `align` prop's value by ensuring it is an array and
-         * horizontal value comes before vertical value.
-         * @return {Array}
-         */
-        normalizedAlign: function normalizedAlign() {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__libs_normalize_alignment_js__["a" /* default */])(this.align || ['', '']);
-        },
-    },
-    methods: {
-        /**
-         * Sets the offset values for this element to those set by the align
-         * prop. Returns a Promise that resolves with dimensions that were
-         * passed to this method.
-         * @return Promise
-         */
-        updateAlign: function updateAlign() {
-            var this$1 = this;
-
-            return this.remainInvisibleUntil(
-                this.getAlignDimensions()
-                    // .then((dimensions) => this.$nextTick().then(() => dimensions))
-                    .then(
-                        function (dimensions) {
-                            var w = dimensions.width,
-                                h = dimensions.height,
-                                hAlign = this$1.normalizedAlign[0] || 'left',
-                                vAlign = this$1.normalizedAlign[1] || 'top';
-                            if (hAlign === 'left') {
-                                this$1.component.regX = 0;
-                            } else if (hAlign === 'center') {
-                                this$1.component.regX = w / 2;
-                            } else if (hAlign === 'right') {
-                                this$1.component.regX = w;
-                            }
-                            if (vAlign === 'top') {
-                                this$1.component.regY = 0;
-                            } else if (vAlign === 'center') {
-                                this$1.component.regY = h / 2;
-                            } else if (vAlign === 'bottom') {
-                                this$1.component.regY = h;
-                            }
-                            return dimensions;
-                        },
-                        function (error) {
-                            console.error('Cannot align:', error);
-                            throw error;
-                        }
-                    )
-            );
-        },
-        /**
-         * Returns a Promise that resolves with an object like
-         * `{width, height}` so that alignment can be calculated. Subclasses
-         * must define this method.
-         * @return {Object}
-         */
-        getAlignDimensions: function getAlignDimensions() {
-            // Components should override this
-            throw new Error('EaselAlign components must define a `getAlignDimensions` method');
-        },
-    },
-};
-
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
 /**
  |-----------------------------------------------------------------------------
  | EaselCache
@@ -17251,7 +17146,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17431,7 +17326,7 @@ var passthroughProps = ['rotation', 'cursor', 'name'];
 
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17455,6 +17350,111 @@ var build = __WEBPACK_IMPORTED_MODULE_1__filters_js__["a" /* default */].build.b
                 this$1.component.filters = null;
             }
         });
+    },
+};
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_normalize_alignment_js__ = __webpack_require__(23);
+/*
+|--------------------------------------------------------------------------
+| EaselAlign
+|--------------------------------------------------------------------------
+| This mixin provides alignment support to a component. It handles the
+| `align` prop.
+|
+| Any component mixing this in should also mix in EaselDisplayObject.
+|
+| A component that mixes this in should provide:
+| * getAlignDimensions - A method that returns a Promise that resolves with
+|                        an object formatted as `{x, y, width, height}`.
+|
+*/
+
+
+
+
+/* harmony default export */ exports["a"] = {
+    props: ['align'],
+    watch: {
+        align: function align() {
+            if (this.component) {
+                this.updateAlign();
+            }
+        },
+    },
+    mounted: function mounted() {
+        var this$1 = this;
+
+        this.$watch('component', function () { return this$1.updateAlign(); });
+    },
+    computed: {
+        /**
+         * Normalizes the `align` prop's value by ensuring it is an array and
+         * horizontal value comes before vertical value.
+         * @return {Array}
+         */
+        normalizedAlign: function normalizedAlign() {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__libs_normalize_alignment_js__["a" /* default */])(this.align || ['', '']);
+        },
+    },
+    methods: {
+        /**
+         * Sets the offset values for this element to those set by the align
+         * prop. Returns a Promise that resolves with dimensions that were
+         * passed to this method.
+         * @return Promise
+         */
+        updateAlign: function updateAlign() {
+            var this$1 = this;
+
+            return this.remainInvisibleUntil(
+                this.getAlignDimensions()
+                    // .then((dimensions) => this.$nextTick().then(() => dimensions))
+                    .then(
+                        function (dimensions) {
+                            var w = dimensions.width,
+                                h = dimensions.height,
+                                hAlign = this$1.normalizedAlign[0] || 'left',
+                                vAlign = this$1.normalizedAlign[1] || 'top';
+                            if (hAlign === 'left') {
+                                this$1.component.regX = 0;
+                            } else if (hAlign === 'center') {
+                                this$1.component.regX = w / 2;
+                            } else if (hAlign === 'right') {
+                                this$1.component.regX = w;
+                            }
+                            if (vAlign === 'top') {
+                                this$1.component.regY = 0;
+                            } else if (vAlign === 'center') {
+                                this$1.component.regY = h / 2;
+                            } else if (vAlign === 'bottom') {
+                                this$1.component.regY = h;
+                            }
+                            return dimensions;
+                        },
+                        function (error) {
+                            console.error('Cannot align:', error);
+                            throw error;
+                        }
+                    )
+            );
+        },
+        /**
+         * Returns a Promise that resolves with an object like
+         * `{width, height}` so that alignment can be calculated. Subclasses
+         * must define this method.
+         * @return {Object}
+         */
+        getAlignDimensions: function getAlignDimensions() {
+            // Components should override this
+            throw new Error('EaselAlign components must define a `getAlignDimensions` method');
+        },
     },
 };
 
@@ -21945,11 +21945,11 @@ module.exports = intersection;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__libs_get_dimensions_from_get_bounds_js__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselAlign_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselCache_js__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselAlign_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselCache_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__ = __webpack_require__(4);
 
 
 
@@ -22159,18 +22159,16 @@ module.exports = intersection;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_EaselParent_js__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselFilter_js__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselAlign_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselFilter_js__ = __webpack_require__(4);
 //
 //
 //
 //
 //
 //
-
 
 
 
@@ -22180,7 +22178,7 @@ module.exports = intersection;
 
 /* harmony default export */ exports["default"] = {
     props: ['regX','regY'],
-    mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2__mixins_EaselParent_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__mixins_EaselFilter_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__mixins_EaselAlign_js__["a" /* default */]],
+    mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2__mixins_EaselParent_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__mixins_EaselFilter_js__["a" /* default */]],
     updatesEaselCache: ['children', 'scale'],
     mounted: function mounted() {
         this.component = new __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__["a" /* default */].Container();
@@ -22196,9 +22194,6 @@ module.exports = intersection;
         }
     },
     methods: {
-        getAlignDimensions: function getAlignDimensions() {
-            return this.getCacheBounds();
-        },
         getCacheBounds: function getCacheBounds() {
             var this$1 = this;
 
@@ -22227,10 +22222,10 @@ module.exports = intersection;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_EaselCache_js__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselFilter_js__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselAlign_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_EaselCache_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselFilter_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselAlign_js__ = __webpack_require__(5);
 
 
 
@@ -22345,11 +22340,11 @@ module.exports = intersection;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__libs_get_dimensions_from_get_bounds_js__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselAlign_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselCache_js__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselAlign_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_EaselCache_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__ = __webpack_require__(4);
 
 
 
@@ -22442,11 +22437,11 @@ module.exports = intersection;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easeljs_easel_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_EaselAlign_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_EaselDisplayObject_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_EaselAlign_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_EaselCache_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_get_dimensions_from_get_bounds_js__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_EaselFilter_js__ = __webpack_require__(4);
 
 
 
