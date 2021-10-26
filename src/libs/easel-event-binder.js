@@ -35,6 +35,7 @@ export const eventTypes = [
     'rollout',
     'rollover',
     'tick',
+    'stagemousedown'
 ];
 
 const componentDemandsEventType = function (component, eventType) {

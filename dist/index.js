@@ -17566,6 +17566,7 @@ var eventTypes = [
     'rollout',
     'rollover',
     'tick',
+    'stagemousedown'
 ];
 
 var componentDemandsEventType = function (component, eventType) {
